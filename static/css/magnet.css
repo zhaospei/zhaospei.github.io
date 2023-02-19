@@ -1,0 +1,12 @@
+.magnet {
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    cursor: pointer;
+    background-color: white;
+    color: rgb(15, 33, 38);
+    font-weight: 600;
+    padding: 3px;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.2) 2px 4px 9px 2px;
+}

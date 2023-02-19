@@ -1,0 +1,34 @@
+.edus-row {
+    display: flex;
+}
+
+.edus-row>* {
+    width: 50%;
+}
+
+.edus-row>*:nth-of-type(1) {
+    padding-right: 20px;
+}
+
+.edus-row>*:nth-of-type(2) {
+    padding-left: 20px;
+}
+
+.edus-row h2 {
+    margin-bottom: 4px;
+    color: #9dc4df;
+}
+
+.edu-row h3 {
+    margin-top: 4px;
+}
+
+@media only screen and (max-width: 600px) {
+    .edu-row {
+        flex-direction: column;
+    }
+    .edu-row>* {
+        width: 100%;
+        padding: 0 !important;
+    }
+}
