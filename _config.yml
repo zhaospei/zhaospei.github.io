@@ -52,3 +52,7 @@ permalink: pretty
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag

@@ -1,0 +1,24 @@
+<header>
+    <div class="flexbox">
+        <div class="center-on-mobile">
+            <h1>
+                <a class="logo" href="/">
+                    <span class="sr-only">Zhaospei</span>
+                    <!-- <img src="/media/logo.jpeg" alt="Page Logo" width="50"> -->
+                </a>
+            </h1>
+        </div>
+
+        <nav class="main-nav hide-on-mobile">
+            <ul>
+                {% for item in site.data.navigation %}
+                <li {% if page.url==item.link %} class="current" {% endif %}>
+                    <a href="{{ item.link }}">
+                        {{ item.name }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+</header>

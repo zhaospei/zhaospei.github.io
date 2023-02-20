@@ -1,11 +1,63 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat|Shrikhand|Staatliches);
+
 body,
 html {
     margin: 0;
     height: 100%;
     width: 100%;
     background-color: #315162;
-    color: #fff
+    color: #fff;
+    box-sizing: inherit;
+}
+
+header .flexbox {
+    display: flex;
+    height: 50px;
+}
+
+header .flexbox>* {
+    margin: auto;
+}
+
+header h1,
+header nav {
+    display: inline-block;
+    margin: 0;
+    font-size: 2em;
+}
+
+nav ul,
+.meta ul {
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+nav li,
+.meta li {
+    display: inline-block;
+}
+
+.main-nav li a,
+.meta li a {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-weight: 900;
+    font-size: .75em;
+    padding: .5em 1em;
+    text-shadow: none;
+    text-transform: uppercase;
+    -webkit-transition: all .25s;
+    -moz-transition: all .25s;
+    -o-transition: all .25s;
+    transition: all .25s;
+}
+
+.main-nav li.current a,
+.meta li.current a {
+    color: white;
 }
 
 .content {
@@ -14,6 +66,7 @@ html {
     height: 100%;
     margin: auto
 }
+
 
 h1 {
     font-family: Staatliches, cursive;
@@ -36,7 +89,13 @@ p {
 }
 
 a {
-    color: #8ec3de
+    color: #8ec3de;
+    text-decoration: none;
+}
+
+hr {
+    height: 2px;
+    background-color: white;
 }
 
 .content-section {
@@ -54,4 +113,3 @@ footer {
     font-size: 12px;
     color: hsla(0, 0%, 100%, .7)
 }
-
