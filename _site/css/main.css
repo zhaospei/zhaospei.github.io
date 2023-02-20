@@ -1,0 +1,57 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat|Shrikhand|Staatliches);
+body,
+html {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #315162;
+    color: #fff
+}
+
+.content {
+    font-family: Montserrat, sans-serif;
+    width: 90%;
+    height: 100%;
+    margin: auto
+}
+
+h1 {
+    font-family: Staatliches, cursive;
+    letter-spacing: 2px;
+    font-size: 40px
+}
+
+h2 {
+    font-size: 26px;
+    letter-spacing: 1px;
+    font-family: Staatliches
+}
+
+h3 {
+    font-size: 16px
+}
+
+p {
+    font-size: 16px
+}
+
+a {
+    color: #8ec3de
+}
+
+.content-section {
+    box-sizing: border-box;
+    background-color: #21343c;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 40px auto
+}
+
+footer {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: hsla(0, 0%, 100%, .7)
+}
+
