@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/48708971/199606417-6b92039e-002f-4ecd-82e1-401283c19481.gif" alt="animated" />
+  <img class="full-on-mobile" src="https://user-images.githubusercontent.com/48708971/199606417-6b92039e-002f-4ecd-82e1-401283c19481.gif" width="50%" alt="animated" />
 </p>
 
 ### Hi 👋, I'm Tuan-Dung Bui 🌱 (aka Zhao).
@@ -21,7 +21,7 @@ improving myself everyday.
 ### GITHUB'S STATS
 
 <p align="center">
-  <a href="https://github.com/zhaospei"><img height="40%" alt="Github Streak" src="https://github-readme-streak-stats.herokuapp.com?user=zhaospei&theme=flag-india&hide_border=true"></a>
+  <a href="https://github.com/zhaospei"><img class="full-on-mobile" width="50%" alt="Github Streak" src="https://github-readme-streak-stats.herokuapp.com?user=zhaospei&theme=flag-india&hide_border=true"></a>
 </p>
 
 ---
