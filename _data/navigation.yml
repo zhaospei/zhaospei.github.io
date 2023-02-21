@@ -1,6 +1,8 @@
 - name: Home
   link: /
-- name: About
-  link: /about/
 - name: Blog
   link: /blog.html
+- name: Resume
+  link: /assets/BuiTuanDung-Resume-1.pdf
+- name: About
+  link: /about/
