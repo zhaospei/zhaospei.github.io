@@ -1,6 +1,54 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-21T03:26:31+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Tuan-Dung Bui</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">First Post</title><link href="http://localhost:4000/jekyll/update/2023/02/20/first-post/" rel="alternate" type="text/html" title="First Post" /><published>2023-02-20T23:25:36+07:00</published><updated>2023-02-20T23:25:36+07:00</updated><id>http://localhost:4000/jekyll/update/2023/02/20/first-post</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2023/02/20/first-post/"><![CDATA[<p>01:46:58 21.02.23</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-21T22:33:22+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Tuan-Dung Bui</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Test post theme</title><link href="http://localhost:4000/dummy/2023/02/21/test-post-theme/" rel="alternate" type="text/html" title="Test post theme" /><published>2023-02-21T00:00:00+07:00</published><updated>2023-02-21T00:00:00+07:00</updated><id>http://localhost:4000/dummy/2023/02/21/test-post-theme</id><content type="html" xml:base="http://localhost:4000/dummy/2023/02/21/test-post-theme/"><![CDATA[<h2 id="autoprefixer-">Autoprefixer <a href="http://cultofmartians.com/tasks/autoprefixer-grid.html"><img src="http://cultofmartians.com/assets/badges/badge.svg" alt="Cult Of Martians" /></a></h2>
 
-<h3 id="đây-là-bài-viết-đầu-tiên">Đây là bài viết đầu tiên!</h3>
+<p><img align="right" width="94" height="71" src="http://postcss.github.io/autoprefixer/logo.svg" title="Autoprefixer logo by Anton Lovchikov" /></p>
+
+<p><a href="https://github.com/postcss/postcss">PostCSS</a> plugin to parse CSS and add vendor prefixes to CSS rules using values
+from <a href="https://caniuse.com/">Can I Use</a>. It is recommended by Google and used in Twitter and Alibaba.</p>
+
+<p>Write your CSS rules without vendor prefixes (in fact, forget about them
+entirely):</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">::placeholder</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">gray</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.image</span> <span class="p">{</span>
+  <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url(image@1x.png)</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">@media</span> <span class="p">(</span><span class="n">min-resolution</span><span class="p">:</span> <span class="m">2dppx</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.image</span> <span class="p">{</span>
+    <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url(image@2x.png)</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Autoprefixer will use the data based on current browser popularity and property
+support to apply prefixes for you. You can try the <a href="https://autoprefixer.github.io/">interactive demo</a>
+of Autoprefixer.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">::-moz-placeholder</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">gray</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nd">::placeholder</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">gray</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.image</span> <span class="p">{</span>
+  <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url(image@1x.png)</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">@media</span> <span class="p">(</span><span class="n">-webkit-min-device-pixel-ratio</span><span class="p">:</span> <span class="m">2</span><span class="p">),</span>
+       <span class="p">(</span><span class="n">min-resolution</span><span class="p">:</span> <span class="m">2dppx</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.image</span> <span class="p">{</span>
+    <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url(image@2x.png)</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Twitter account for news and releases: <a href="https://twitter.com/autoprefixer">@autoprefixer</a>.</p>
+
+<p><a href="https://evilmartians.com/?utm_source=autoprefixer">
+<img src="https://evilmartians.com/badges/sponsored-by-evil-martians.svg" alt="Sponsored by Evil Martians" width="236" height="54" />
+</a></p>]]></content><author><name>zhao</name></author><category term="dummy" /><category term="abc" /><category term="xyz" /><summary type="html"><![CDATA[Autoprefixer]]></summary></entry><entry><title type="html">The first post</title><link href="http://localhost:4000/dummy/2023/02/20/the-first-post/" rel="alternate" type="text/html" title="The first post" /><published>2023-02-20T23:25:36+07:00</published><updated>2023-02-20T23:25:36+07:00</updated><id>http://localhost:4000/dummy/2023/02/20/the-first-post</id><content type="html" xml:base="http://localhost:4000/dummy/2023/02/20/the-first-post/"><![CDATA[<p>01:46:58 21.02.23</p>
+
+<h2 id="đây-là-bài-viết-đầu-tiên">Đây là bài viết đầu tiên!</h2>
 
 <p>Tất nhiên rồi đây là bài viết đầu tiên !</p>
 
@@ -12,4 +60,4 @@
 
 <p>See yaa,</p>
 
-<p>Zhao!</p>]]></content><author><name>zhao</name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[01:46:58 21.02.23]]></summary></entry></feed>
+<p>Zhao!</p>]]></content><author><name>zhao</name></author><category term="dummy" /><category term="dummy" /><category term="zhao" /><summary type="html"><![CDATA[01:46:58 21.02.23]]></summary></entry></feed>

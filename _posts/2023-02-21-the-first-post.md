@@ -1,14 +1,16 @@
 ---
 layout: post
-title:  "First Post"
+title:  "The first post"
 date:   2023-02-20 23:25:36 +0700
-categories: jekyll update
+up_date: 2023-02-21
+categories: dummy
 author: zhao
+tags: ["dummy", "zhao"]
 ---
 
 01:46:58 21.02.23
 
-### Đây là bài viết đầu tiên!
+## Đây là bài viết đầu tiên!
 
 Tất nhiên rồi đây là bài viết đầu tiên !
 

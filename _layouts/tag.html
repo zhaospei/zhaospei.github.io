@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<h1> Tag: #{{page.tag}} </h1>
+
+<div class="content-section">
+    <ul>
+        {% for post in site.posts %}
+        {% if post.tags contains page.tag %}
+        <li><a class="post" href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</div>
