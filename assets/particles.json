@@ -53,7 +53,7 @@
             "width": 2
         },
         "move": {
-            "enable": false,
+            "enable": true,
             "speed": 12,
             "direction": "none",
             "random": false,
