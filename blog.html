@@ -3,17 +3,18 @@ layout: page
 title: Blog
 permalink: /blog.html
 ---
-<h1>Most Recent Content</h1>
+
+<h2 class="h2-post-list" style="margin-top: 40px;">Most Recent Content</h2>
 <div class="post-list">
   {% for post in site.posts %}
   <a href="{{ post.url }}" class="post-container">
-    <h2> {{ post.title }} </h2>
-    Published by on {{ post.date | date: "%b %-d, %Y" }}
-    <ul class="post-tag">
-      {% for tag in post.tags %}
-      <li> <a href="/tag/{{tag}}">#{{ tag }}</a> </li> {% unless forloop.last %} {% endunless %}
+    <div style="padding: 24px 32px;">
+      {% for category in post.categories %}
+      <h4> // {{ category | capitalize }} // </h4>
       {% endfor %}
-    </ul>
+      <h3> {{ post.title }} </h3>
+      <div class="post-date">{{ post.date | date: "%b %-d, %Y" }} </div>
+    </div>
   </a>
   {% endfor %}
 </div>

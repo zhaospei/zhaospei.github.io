@@ -3,7 +3,7 @@ layout: post
 title:  "Test post theme"
 categories: dummy
 author: zhao
-tags: ["abc", "xyz"]
+tags: ["abc", "xyz", "zhao"]
 ---
 
 ## Autoprefixer [![Cult Of Martians][cult-img]][cult]

@@ -1,23 +1,66 @@
 .post-list {
-    margin-top: 50px;
-    display: grid;
-    grid-auto-flow: column;
-    gap: 32px;
+    display: flex;
+    justify-content: space-between;
     margin-top: 64px;
-    width: 100%;
+    flex-wrap: wrap;
 }
 
 .post-container {
-    margin: 0px 0px 32px;
-    width: 300px;
+    flex: 1 1 0px;
+    margin: 4px 4px;
     background: rgb(255, 255, 255);
     border-radius: 16px;
     box-shadow: rgba(11, 43, 158, 0.15) 0px 6px 20px -6px;
-    box-sizing: border-box;
-    display: block;
     height: min-content;
     position: relative;
     text-decoration: none;
     transition: box-shadow 0.4s ease 0s, transform 0.4s ease 0s;
     will-change: box-shadow, transform;
+}
+
+.post-container:hover {
+    box-shadow: rgba(0, 44, 155, 0.15) 0px 10px 20px -2px;
+    transform: translateY(-4px);
+}
+
+.post-container h4 {
+    color: rgb(0, 105, 255);
+    display: inline-block;
+    font-family: JetBrains Mono, monospace;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 800px;
+    letter-spacing: 1px;
+    line-height: 24px;
+    margin-bottom: 9px;
+    text-transform: uppercase;
+}
+
+.post-container h3 {
+    color: rgb(8, 27, 75);
+    display: -webkit-box;
+    font-size: 18px;
+    font-weight: 500px;
+    line-height: 28px;
+    margin: 8px 0px;
+    overflow: hidden;
+    -moz-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
+
+.h2-post-list {
+    color: rgb(8, 27, 75);
+    font-family: Epilogue, sans-serif;
+    font-size: 32px;
+    font-weight: 700px;
+    letter-spacing: -0.5px;
+    line-height: 40px;
+    margin: 0px 0px 32px;
+}
+
+.post-container .post-date {
+    color: rgb(192, 194, 211);
+    font-size: 14px;
+    font-weight: 500px;
+    line-height: 1.6;
 }

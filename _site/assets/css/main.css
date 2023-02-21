@@ -1,4 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat|Shrikhand|Staatliches|Epilogue|Inter);
+@import url(https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap);
 
 /* *,
 ::after,
@@ -61,7 +63,6 @@ footer {
 
 header .flexbox {
     display: flex;
-    height: 50px;
     margin-bottom: 16px;
 }
 
@@ -69,8 +70,7 @@ header .flexbox>* {
     margin: auto;
 }
 
-header h1,
-header nav {
+header h1 {
     display: inline-block;
     margin: 0;
     margin-left: 20px;
@@ -79,10 +79,9 @@ header nav {
 
 nav ul,
 .meta ul {
-    padding: 0;
-    margin: 0;
-    white-space: nowrap;
-    display: inline-block;
+    font-size: 36px;
+    display: flex;
+    justify-content: space-between;
 }
 
 nav li,
@@ -92,6 +91,7 @@ nav li,
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    margin: 4px 4px;
 }
 
 nav li:hover,
@@ -104,7 +104,7 @@ nav li:hover,
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    font-weight: 900;
+    font-weight: 900px;
     font-size: .75em;
     padding: .5em 1em;
     text-shadow: none;
@@ -129,9 +129,7 @@ nav li:hover,
 
 
 .content-section {
-    box-sizing: border-box;
-    background-color: #21343cb0;
-    width: 100%;
+    background-color: #f9fafe9c;
     padding: 20px;
     border-radius: 10px;
     margin: 40px auto
@@ -145,5 +143,9 @@ nav li:hover,
 
     .flexbox {
         flex-direction: column;
+    }
+
+    .center-on-mobile {
+        margin: auto;
     }
 }

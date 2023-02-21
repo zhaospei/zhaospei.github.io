@@ -1,14 +1,21 @@
 ---
 layout: default
 ---
-<h1> Tag: #{{page.tag}} </h1>
 
-<div class="content-section">
-    <ul>
+<h2 class="h2-post-list" style="margin-top: 40px; margin-left: 10%; color: white;">Tag: #{{page.tag}}</h2>
+
+<div class="post-list">
         {% for post in site.posts %}
         {% if post.tags contains page.tag %}
-        <li><a class="post" href="{{ post.url }}">{{ post.title }}</a></li>
+        <a href="{{ post.url }}" class="post-container">
+            <div style="padding: 24px 32px;">
+                {% for category in post.categories %}
+                <h4> // {{ category | capitalize }} // </h4>
+                {% endfor %}
+                <h3> {{ post.title }} </h3>
+                <div class="post-date">{{ post.date | date: "%b %-d, %Y" }} </div>
+            </div>
+        </a>
         {% endif %}
         {% endfor %}
-    </ul>
 </div>
