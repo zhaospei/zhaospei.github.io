@@ -3,8 +3,10 @@
     position: absolute;
     text-align: center;
     cursor: pointer;
-    background-color: #fff;
-    color: #0f2126;
+    /* background-color: #fffff */
+    background-color:  rgb(239, 242, 251);
+    /* color: #0f2126; */
+    color: rgba(0,0,0,0.7);
     font-weight: 600;
     padding: 3px;
     border-radius: 2px;
