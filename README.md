@@ -1,2 +1,3 @@
 # zhaospei.github.io
-My small portfolio, blog wirrten by jekyll.
+My portfolio, markdown blog written by **jekyll**.
+Hosted on **Github pages**.
