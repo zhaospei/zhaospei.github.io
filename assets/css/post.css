@@ -1,12 +1,9 @@
-.post .content-section {
-    background-color: white;
-}
-
 .post-content {
     margin-left: 10%;
 }
 
 .post {
+    background-color: white;
     color: rgb(77, 91, 124);
     font-size: 16px;
     line-height: 24px;
@@ -14,16 +11,9 @@
     font-family: Inter, sans-serif;
     text-rendering: optimizeLegibility;
     width: 80%;
-}
-
-@media only screen and (max-width:800px) {
-    .post {
-        width: 100%;
-    }
-
-    .post-header {
-        flex-direction: column;
-    }
+    padding: 40px;
+    border-radius: 10px;
+    margin: 40px auto;
 }
 
 .post h1,
@@ -150,4 +140,16 @@
     object-fit: contain;
     vertical-align: middle;
     width: 48px;
+}
+
+@media only screen and (max-width:800px) {
+    .post {
+        width: 90%;
+        padding: 20px;
+        margin: 0 auto;
+    }
+
+    .post-header {
+        flex-direction: column;
+    }
 }

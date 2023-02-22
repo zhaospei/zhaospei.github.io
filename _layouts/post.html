@@ -3,50 +3,51 @@ layout: default
 ---
 
 <div class="post">
-    <div class="content-section">
-        <header class="post-header">
-            <div class="post-tittle">
-                {% for category in page.categories %}
-                <h4> // {{ category | capitalize }} // </h4>
+    <header class="post-header">
+        <div class="post-tittle">
+            {% for category in page.categories %}
+            <h4> // {{ category | capitalize }} // </h4>
+            {% endfor %}
+            <h1>{{ page.title | upcase }}</h1>
+            <div class="meta"> Published on {{ page.date | date: "%b %-d, %Y" }}
+                {% if page.up_date %}
+                · Updated on {{ page.up_date | date: "%b %-d, %Y" }}
+                {% endif %}
+            </div>
+            <ul class="post-tag">
+                {% for tag in page.tags %}
+                <li> <a href="/tag/{{tag}}">#{{ tag }}</a> </li> {% unless forloop.last %} {% endunless %}
                 {% endfor %}
-                <h1>{{ page.title | upcase }}</h1>
-                <div class="meta"> Published on {{ page.date | date: "%b %-d, %Y" }}
-                    {%if page.up_date %}
-                    · Updated on {{ page.up_date | date: "%b %-d, %Y" }}
-                    {% endif %}
-                </div>
-                <ul class="post-tag">
-                    {% for tag in page.tags %}
-                    <li> <a href="/tag/{{tag}}">#{{ tag }}</a> </li> {% unless forloop.last %} {% endunless %}
-                    {% endfor %}
-                </ul>
-            </div>
-            {% assign author = site.authors | where: 'short_name', page.author | first %}
+            </ul>
+        </div>
+        {% assign author = site.authors | where: 'short_name', page.author | first %}
 
-            {% if author %}
-            <div class="post-author">
-                <div class="author-img">
-                    <img src="/assets/media/author/zhao.jpeg" alt="zhao-img">
-                </div>
-                <div class="author-name">
-                    By <a href="{{ author.url }}">{{ author.name }}</a>
-                    <div class="author-position"> {{ author.position }} </div>
-                </div>
+        {% if author %}
+        <div class="post-author">
+            <div class="author-img">
+                {% if author.img != nil %}
+                <img src="{{ author.img }}" alt="user-img">
+                {% else %}
+                <img src="/assets/media/author/default_img.jpeg" alt="user-img">
+                {% endif %}
             </div>
-            {% endif %}
-        </header>
-        <article class="post-content">
-            {{ content }}
-        </article>
-        <div id="hyvor-talk-view"></div>
-        <script type="text/javascript">
-            var HYVOR_TALK_WEBSITE = 8512;
-            var HYVOR_TALK_CONFIG = {
-                url: false,
-                id: false
-            };
-        </script>
-        <script async type="text/javascript" src="//talk.hyvor.com/web-api/embed.js"></script>
-    </div>
-
+            <div class="author-name">
+                By <a href="{{ author.url }}">{{ author.name }}</a>
+                <div class="author-position"> {{ author.position }} </div>
+            </div>
+        </div>
+        {% endif %}
+    </header>
+    <article class="post-content">
+        {{ content }}
+    </article>
+    <div id="hyvor-talk-view"></div>
+    <script type="text/javascript">
+        var HYVOR_TALK_WEBSITE = 8512;
+        var HYVOR_TALK_CONFIG = {
+            url: false,
+            id: false
+        };
+    </script>
+    <script async type="text/javascript" src="//talk.hyvor.com/web-api/embed.js"></script>
 </div>

@@ -1,15 +1,43 @@
 ---
 layout: default
 ---
-<h1>{{ page.name }}</h1>
-<h2>{{ page.position }}</h2>
+<div class="content-section">
+  <div class="user-profile">
+    <div class="user-img">
+      {% if page.img != nil %}
+      <img src="{{ page.img }}" alt="user-img">
+      {% else %}
+      <img src="/assets/media/author/default_img.jpeg" alt="user-img">
+      {% endif %}
+    </div>
+    <div class="user-info">
+      <h1 class="user-name">
+        {{page. name }}
+      </h1>
+      <h2 class="user-position">
+        {{ page.position }}
+      </h2>
+      <p class="user-about">
+        {{ page.content }}
+      </p>
+    </div>
+  </div>
+</div>
 
-{{ content }}
-
-<h2>Posts</h2>
-<ul>
-  {% assign filtered_posts = site.posts | where: 'author', page.short_name %}
-  {% for post in filtered_posts %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
+<div class="content-section">
+  <h2 class="h2-post-list" style="margin: 20px 40px;">Posts</h2>
+  <div class="post-list" style="margin: 0px">
+    {% assign filtered_posts = site.posts | where: 'author', page.short_name %}
+    {% for post in filtered_posts %}
+    <a href="{{ post.url }}" class="post-container">
+      <div style="padding: 24px 32px;">
+        {% for category in post.categories %}
+        <h4> // {{ category | capitalize }} // </h4>
+        {% endfor %}
+        <h3> {{ post.title }} </h3>
+        <div class="post-date">{{ post.date | date: "%b %-d, %Y" }} </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>

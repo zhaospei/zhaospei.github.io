@@ -40,7 +40,8 @@ h3 {
 }
 
 p {
-    font-size: 16px
+    font-size: 16px;
+    text-indent: 2em
 }
 
 a {
@@ -130,6 +131,7 @@ nav li:hover,
 
 .content-section {
     background-color: #f9fafe9c;
+    color: rgb(3, 27, 78);
     padding: 20px;
     border-radius: 10px;
     margin: 40px auto
@@ -147,5 +149,9 @@ nav li:hover,
 
     .center-on-mobile {
         margin: auto;
+    }
+
+    .content {
+        width: 95%;
     }
 }
