@@ -1,85 +1,151 @@
-.about-div {
-    padding-bottom: 30px
+@import url(https://fonts.googleapis.com/css?family=Montserrat|Shrikhand|Staatliches|Epilogue|Inter);
+@import url(https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap);
+
+/* *,
+::after,
+::before {
+    box-sizing: border-box;
+} */
+
+body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #315162;
+    color: #fff;
 }
 
-.about-div h1 {
-    font-size: 64px
+ol,
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.word-board {
-    height: 250px;
-    position: relative
+h1 {
+    font-family: Staatliches, cursive;
+    letter-spacing: 2px;
+    font-size: 40px
 }
 
-.help-text {
-    position: absolute;
-    bottom: 0;
-    right: 5%;
-    font-size: 14px;
-    color: #87949a
+h2 {
+    font-size: 26px;
+    letter-spacing: 1px;
+    font-family: Staatliches
 }
 
-.about-content {
-    width: 80%
+h3 {
+    font-size: 16px
 }
 
-.about-content p {
-    font-size: 16px;
-    line-height: 24px
+p {
+    font-size: 16px
 }
 
-.links {
-    display: -webkit-flex;
-    display: flex
-}
-
-.links a {
-    width: 80px;
-    height: 80px;
-    margin: 4px;
-    display: block;
+a {
+    color: #8ec3de;
     text-decoration: none;
-    border-radius: 50%;
-    padding: 16px;
-    transition: background-color .5s
 }
 
-.links a:hover {
-    background-color: #193640
+hr {
+    height: 2px;
+    background-color: white;
 }
 
-.links a:hover .label {
-    opacity: 1
-}
 
-.code-link {
-    width: 80px;
-    margin: 0 auto;
-}
-
-.label {
-    opacity: 0;
+footer {
     text-align: center;
-    color: hsla(0, 0%, 100%, .8);
-    font-size: 14px;
-    transition: opacity .5s
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: hsla(0, 0%, 100%, .7)
 }
 
-.row {
-    display: -webkit-flex;
+header .flexbox {
     display: flex;
-    -webkit-justify-content: space-between;
-    justify-content: space-between
+    margin-bottom: 16px;
 }
 
-@media only screen and (max-width:769px) {
-    .about-content {
-        width: 100%
+header .flexbox>* {
+    margin: auto;
+}
+
+header h1 {
+    display: inline-block;
+    margin: 0;
+    margin-left: 20px;
+    font-size: 2em;
+}
+
+nav ul,
+.meta ul {
+    font-size: 36px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li,
+.meta li {
+    display: flex;
+    font-family: Staatliches, cursive;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin: 4px 8px;
+}
+
+nav li:hover,
+.meta li:hover {
+    background: #21343cb0;
+}
+
+.main-nav li a,
+.meta li a {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-weight: 900px;
+    font-size: .75em;
+    padding: 4px 8px;
+    text-shadow: none;
+    text-transform: uppercase;
+    -webkit-transition: all .25s;
+    -moz-transition: all .25s;
+    -o-transition: all .25s;
+    transition: all .25s;
+}
+
+.main-nav li.current a,
+.meta li.current a {
+    color: white;
+}
+
+.content {
+    font-family: Montserrat, sans-serif;
+    width: 90%;
+    height: 100%;
+    margin: auto
+}
+
+
+.content-section {
+    background-color: #f9fafe9c;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 40px auto
+}
+
+
+@media only screen and (max-width:600px) {
+    .full-on-mobile {
+        width: 100%;
     }
-    .row {
-        -webkit-flex-direction: column;
+
+    .flexbox {
         flex-direction: column;
-        -webkit-align-items: center;
-        align-items: center
+    }
+
+    .center-on-mobile {
+        margin: auto;
     }
 }
