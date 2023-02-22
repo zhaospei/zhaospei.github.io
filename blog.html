@@ -1,20 +1,21 @@
 ---
 layout: page
-title: Blog
+title: Blog.
 permalink: /blog.html
 ---
-
-<h2 class="h2-post-list" style="margin-top: 40px;">Most Recent Contents</h2>
-<div class="post-list">
-  {% for post in site.posts %}
-  <a href="{{ post.url }}" class="post-container">
-    <div style="padding: 24px 32px;">
-      {% for category in post.categories %}
-      <h4> // {{ category | capitalize }} // </h4>
-      {% endfor %}
-      <h3> {{ post.title }} </h3>
-      <div class="post-date">{{ post.date | date: "%b %-d, %Y" }} </div>
-    </div>
-  </a>
-  {% endfor %}
+<div class="content-section">
+  <h2 class="h2-post-list" style="margin-top: 40px;">Most Recent Contents</h2>
+  <div class="post-list">
+    {% for post in site.posts %}
+    <a href="{{ post.url }}" class="post-container">
+      <div style="padding: 24px 32px;">
+        {% for category in post.categories %}
+        <h4> // {{ category | capitalize }} // </h4>
+        {% endfor %}
+        <h3> {{ post.title }} </h3>
+        <div class="post-date">{{ post.date | date: "%b %-d, %Y" }} </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
 </div>

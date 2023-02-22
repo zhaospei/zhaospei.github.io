@@ -1,8 +1,7 @@
 ---
 layout: post
-title: About
+title: About.
 permalink: /about/
-date: 22-02-2023
 ---
 
 ## "Enter to grow in wisdom, depart to serve better thy country thy kind."

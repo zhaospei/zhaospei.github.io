@@ -16,6 +16,7 @@
     text-decoration: none;
     transition: box-shadow 0.4s ease 0s, transform 0.4s ease 0s;
     will-change: box-shadow, transform;
+    min-width: 200px;
 }
 
 .post-container:hover {

@@ -66,8 +66,15 @@ plugins:
 collections:
   authors:
     output: true
+  projects:
+    output: false
 
 defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
   - scope:
       path: ""
       type: "authors"

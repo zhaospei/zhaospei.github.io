@@ -9,7 +9,10 @@ layout: default
             <h4> // {{ category | capitalize }} // </h4>
             {% endfor %}
             <h1>{{ page.title | upcase }}</h1>
-            <div class="meta"> Published on {{ page.date | date: "%b %-d, %Y" }}
+            <div class="meta">
+                {% if page.date %}
+                Published on {{ page.date | date: "%b %-d, %Y" }}
+                {% endif %}
                 {% if page.up_date %}
                 · Updated on {{ page.up_date | date: "%b %-d, %Y" }}
                 {% endif %}

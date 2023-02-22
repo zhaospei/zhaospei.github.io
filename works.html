@@ -1,0 +1,20 @@
+---
+layout: page
+title: Works.
+permalink: /works.html
+---
+<div id="projects" class="content-section">
+  {% for project in site.projects %}
+    <div class="project">
+      <div>
+        <div>
+          <div class="project-img">
+            <img src="{{ project.img }}" alt="project-img">
+          </div>
+          <h2>{{ project.name }}</h2>
+          {{ project.content }}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
