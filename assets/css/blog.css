@@ -48,6 +48,10 @@
     -webkit-line-clamp: 4;
 }
 
+.post-content p {
+    text-indent: 2em;
+}
+
 .h2-post-list {
     color: rgb(8, 27, 75);
     font-family: Epilogue, sans-serif;

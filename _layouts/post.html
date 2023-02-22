@@ -7,7 +7,7 @@ layout: default
         <header class="post-header">
             <div class="post-tittle">
                 {% for category in page.categories %}
-                    <h4> // {{ category | capitalize }} // </h4>
+                <h4> // {{ category | capitalize }} // </h4>
                 {% endfor %}
                 <h1>{{ page.title | upcase }}</h1>
                 <div class="meta"> Published on {{ page.date | date: "%b %-d, %Y" }}
@@ -38,6 +38,15 @@ layout: default
         <article class="post-content">
             {{ content }}
         </article>
+        <div id="hyvor-talk-view"></div>
+        <script type="text/javascript">
+            var HYVOR_TALK_WEBSITE = 8512;
+            var HYVOR_TALK_CONFIG = {
+                url: false,
+                id: false
+            };
+        </script>
+        <script async type="text/javascript" src="//talk.hyvor.com/web-api/embed.js"></script>
     </div>
 
 </div>
