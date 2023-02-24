@@ -1,20 +1,24 @@
 ---
-layout: post
+layout: post 
 title: About.
 permalink: /about/
 ---
 
-## "Enter to grow in wisdom, depart to serve better thy country thy kind."
+# ...this site
 
-Xin chào, tớ tên là **Dũng** (Tên đầy đủ là của tớ là **Bùi Tuấn Dũng**, cậu cũng có thể gọi tớ là **"Zhao"**).
+> **Writing forces sharper understanding** - Andy Matuschak
 
-Tớ hiện đang là sinh viên năm hai, ngành Công nghệ thông tin. Ngôi trường mà tớ theo học hiện tại là **Trường Đại học Công nghệ, ĐHQGHN.**
+Đúng vậy, tôi tạo ra site này nhằm mục đích cải thiện khả năng viết lách của bản thân. Đó là nơi tôi chia sẻ ý tưởng, kinh nghiệm về những thứ tôi đã nghiên cứu hoặc trong quá trình thực hiện. Do lần đầu viết lách, nên không thể tránh khỏi những soi sót ngoài ý muốn. Mong bạn đọc có thể bỏ qua và góp ý để tôi cải thiện ngày một tốt hơn.
 
-Mục đích của tớ tạo blog này nhằm mục đích cải thiện khả năng viết lách của tớ. Những bài viết của blog có thể là những bài viết học thuật hay những bài viết chia sẻ trải nghiệm của bản thân tớ.
+# ...me
 
-Do lần đầu, tớ làm blog nên thiếu sót là điều không thể tránh khỏi. Và tớ rất vui khi nhận được những lời góp ý từ cậu.
+Tôi tên là **Dũng** (Tên đầy đủ là **Bùi Tuấn Dũng**, bạn cũng có thể gọi tôi là **"Zhao"**).
 
-Cậu có thể trao đổi với tớ qua email: [dungbuit1k28@gmail.com](mailto:dungbuit1k28@gmail.com). Hoặc trao đổi trực tiếp ở phần comment phía dưới.
+Tôi hiện đang là sinh viên năm hai, ngành Công nghệ thông tin. Ngôi trường mà tôi theo học hiện tại là **Trường Đại học Công nghệ, ĐHQGHN.**
 
-Một lần nữa, tớ xin chân thành cảm ơn cậu đã ghé thăm blog này của tớ!
+Tôi hiện đang nghiên cứu về công nghệ phần mềm và AI/ML.
+
+Bạn có thể trao đổi với tôi qua email: [dungbuit1k28@gmail.com](mailto:dungbuit1k28@gmail.com). Hoặc trao đổi trực tiếp ở phần comment phía dưới.
+
+Một lần nữa, tôi xin chân thành cảm ơn bạn đã ghé thăm blog này của tôi!
 
