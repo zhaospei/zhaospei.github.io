@@ -1,57 +1,92 @@
----
-layout: default
----
+<html>
 
-<div class="post">
-    <header class="post-header">
-        <div class="post-tittle">
-            {% for category in page.categories %}
-            <h4> // {{ category | capitalize }} // </h4>
-            {% endfor %}
-            <h1>{{ page.title | upcase }}</h1>
-            <div class="meta">
-                {% if page.date %}
-                Published on {{ page.date | date: "%b %-d, %Y" }}
-                {% endif %}
-                {% if page.up_date %}
-                · Updated on {{ page.up_date | date: "%b %-d, %Y" }}
-                {% endif %}
-            </div>
-            <ul class="post-tag">
-                {% for tag in page.tags %}
-                <li> <a href="/tag/{{tag}}">#{{ tag }}</a> </li> {% unless forloop.last %} {% endunless %}
-                {% endfor %}
-            </ul>
-        </div>
-        {% assign author = site.authors | where: 'short_name', page.author | first %}
+{% include head.html %}
 
-        {% if author %}
-        <div class="post-author">
-            <div class="author-img">
-                {% if author.img != nil %}
-                <img src="{{ author.img }}" alt="user-img">
-                {% else %}
-                <img src="/assets/media/author/default_img.jpeg" alt="user-img">
-                {% endif %}
-            </div>
-            <div class="author-name">
-                By <a href="{{ author.url }}">{{ author.name }}</a>
-                <div class="author-position"> {{ author.position }} </div>
+<body style="background-color: white;">
+    {% include header.html %}
+
+    <article class="content">
+        <div class="post">
+            <div class="post-content-container">
+                <header class="post-header">
+                    <div class="post-tittle">
+                        {% for category in page.categories %}
+                        <h4> // {{ category | capitalize }} // </h4>
+                        {% endfor %}
+                        <h1>{{ page.title | upcase }}</h1>
+                        <div class="meta">
+                            {% if page.date %}
+                            Published on {{ page.date | date: "%b %-d, %Y" }}
+                            {% endif %}
+                            {% if page.up_date %}
+                            · Updated on {{ page.up_date | date: "%b %-d, %Y" }}
+                            {% endif %}
+                        </div>
+                        <ul class="post-tag">
+                            {% for tag in page.tags %}
+                            <li> <a href="/tag/{{tag}}">#{{ tag }}</a> </li> {% unless forloop.last %} {% endunless %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% assign author = site.authors | where: 'short_name', page.author | first %}
+
+                    {% if author %}
+                    <div class="post-author">
+                        <div class="author-img">
+                            {% if author.img != nil %}
+                            <img src="{{ author.img }}" alt="user-img">
+                            {% else %}
+                            <img src="/assets/media/author/default_img.jpeg" alt="user-img">
+                            {% endif %}
+                        </div>
+                        <div class="author-name">
+                            By <a href="{{ author.url }}">{{ author.name }}</a>
+                            <div class="author-position"> {{ author.position }} </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </header>
+                <!-- {% if page.table_content != false %}
+                <div class="table-of-contents-container">
+                    {% toc %}
+                </div>
+                {% endif %} -->
+                <article class="post-content">
+                    {{ content }}
+                </article>
             </div>
         </div>
-        {% endif %}
-    </header>
-    <article class="post-content">
-        {{ content }}
+        <div id="hyvor-talk-view"></div>
+        <script type="text/javascript">
+            var HYVOR_TALK_WEBSITE = 8512;
+            var HYVOR_TALK_CONFIG = {
+                url: false,
+                id: false
+            };
+        </script>
+        <script async type="text/javascript" src="//talk.hyvor.com/web-api/embed.js"></script>
     </article>
-    <div id="hyvor-talk-view"></div>
-    <script type="text/javascript">
-        var HYVOR_TALK_WEBSITE = 8512;
-        var HYVOR_TALK_CONFIG = {
-            url: false,
-            id: false
-        };
-    </script>
-    <script async type="text/javascript" src="//talk.hyvor.com/web-api/embed.js"></script>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-</div>
+    <style>
+        .flexbox {
+            background-color: #315162;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+        }
+
+        .sr-only {
+            color: white;
+        }
+    </style>
+    {% include footer.html %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="/assets/js/particles.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/magnet.js"></script>
+    <script src="/assets/js/app.js"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+        type="text/javascript"></script>
+</body>
+
+</html>

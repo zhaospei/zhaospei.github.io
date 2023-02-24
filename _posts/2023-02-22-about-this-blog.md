@@ -4,7 +4,7 @@ title:  "Một bài giới thiệu về cái blog nho nhỏ này"
 categories: dummy
 author: zhao
 tags: ["doc", "talk", "zhao"]
-date_update: 23-02-2003
+up_date: 2023-02-24
 ---
 
 Chào!

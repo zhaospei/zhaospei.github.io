@@ -1,19 +1,14 @@
-.post-content {
-    margin-left: 10%;
-}
-
 .post {
     background-color: white;
     color: rgb(77, 91, 124);
     font-size: 16px;
     line-height: 24px;
-    margin: auto;
     font-family: Inter, sans-serif;
-    text-rendering: optimizeLegibility;
     width: 80%;
     padding: 40px;
     border-radius: 10px;
     margin: 40px auto;
+    padding: 0px 24px;
 }
 
 .post h1,
@@ -22,7 +17,8 @@
 .post h4,
 .post h5 {
     font-family: Epilogue, sans-serif;
-    margin: 1em 0;
+    margin: 0 0;
+    padding: 1em 0;
 }
 
 .post h1 {
@@ -142,6 +138,38 @@
     width: 48px;
 }
 
+.table-of-contents-container {
+    position: sticky;
+    top: 32px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    padding: 0 32px 16px 0px;
+}
+
+.section-nav:before {
+    content: "CONTENTS";
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+
+.section-nav {
+    color: rgb(0, 12, 43);
+    letter-spacing: 1px;
+    line-height: 1.2;
+    list-style: none;
+    opacity: 1;
+}
+
+.toc-entry {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    margin: 12px 0px 0px;
+}
+
 @media only screen and (max-width:800px) {
     .post {
         width: 90%;
@@ -151,5 +179,9 @@
 
     .post-header {
         flex-direction: column;
+    }
+
+    .table-of-contents-container {
+        display: none;
     }
 }

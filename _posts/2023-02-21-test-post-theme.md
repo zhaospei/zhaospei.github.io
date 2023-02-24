@@ -6,7 +6,7 @@ author: zhao
 tags: ["abc", "xyz", "zhao"]
 ---
 
-## Autoprefixer [![Cult Of Martians][cult-img]][cult]
+## Autoprefixer
  
 > The man who comes back through the door in the wall will never be quite the same as the man who went out.
 
@@ -111,3 +111,15 @@ $$ \nabla_\boldsymbol{x} J(\boldsymbol{x}) $$
 [PostCSS]:          https://github.com/postcss/postcss
 [cult]:             http://cultofmartians.com/tasks/autoprefixer-grid.html
 
+## 1-Click Deployment
+## Prerequisites
+## Step 1 — Creating a GitLab Enterprise Edition Droplet
+## Step 2 — Accessing the Droplet via SSH to Enable Configuration
+## Step 2 — Editing the Configuration File
+## Step 3 — Configuring GitLab via the Web Interface
+
+## Related
+## How To Set Up a Masterless Puppet Environment on Ubuntu 14.04
+## Viewtutorial
+## How To Build Docker Images and Host a Docker Image Repository with GitLab
+## Viewtutorial
