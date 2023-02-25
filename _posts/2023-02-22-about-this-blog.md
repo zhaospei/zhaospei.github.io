@@ -5,6 +5,7 @@ categories: dummy
 author: zhao
 tags: ["doc", "talk", "zhao"]
 up_date: 2023-02-24
+comments: true
 ---
 
 Chào!

@@ -3,10 +3,17 @@
 {% include head.html %}
 
 <body style="background-color: white;">
-    {% include header.html %}
-
+    <header class="blog-header">
+        <a href="/blog.html">
+            <span class="blog-logo"></span>
+            <span class="blog-header-text"> zhaospei </br> răng chi mô ri </span>
+        </a>
+    </header>
     <article class="content">
         <div class="post">
+            <h2>
+                <a href="/blog.html" style="font-family: Inter, sans-serif;"><-  Quay về trang chủ</a>
+            </h2>
             <div class="post-content-container">
                 <header class="post-header">
                     <div class="post-tittle">
@@ -56,6 +63,7 @@
                 </article>
             </div>
         </div>
+        {% if page.comments %}
         <div id="hyvor-talk-view"></div>
         <script type="text/javascript">
             var HYVOR_TALK_WEBSITE = 8512;
@@ -65,6 +73,7 @@
             };
         </script>
         <script async type="text/javascript" src="//talk.hyvor.com/web-api/embed.js"></script>
+        {% endif%}
     </article>
     <style>
         .flexbox {

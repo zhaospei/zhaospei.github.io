@@ -1,14 +1,24 @@
 .post {
     background-color: white;
-    color: rgb(77, 91, 124);
-    font-size: 16px;
-    line-height: 24px;
+    color: rgb(25, 45, 91);
     font-family: Inter, sans-serif;
-    width: 80%;
-    padding: 40px;
-    border-radius: 10px;
-    margin: 40px auto;
-    padding: 0px 24px;
+    max-width: 720px;
+    height: auto;
+    min-height: calc(100% - 260px);
+    margin: 0 auto;
+    padding: 20px;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+pre {
+    background-color: #faf8f588;
+    border: 1px solid #dfe2e588;
+    border-radius: 8px;
+    clear: both;
+    overflow-x: auto;
+    padding: 16px 16px;
+    font-size: 16px;
 }
 
 .post h1,
@@ -18,7 +28,6 @@
 .post h5 {
     font-family: Epilogue, sans-serif;
     margin: 0 0;
-    padding: 1em 0;
 }
 
 .post h1 {
@@ -45,9 +54,20 @@
     color: rgb(0, 105, 255);
 }
 
+.post p {
+    text-align: justify;
+    line-height: 1.5em;
+}
+
+.post a:hover {
+    text-decoration: underline;
+}
+
 .post-header {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: 48px;
 }
 
 .post-tag {
@@ -93,6 +113,11 @@
 .post-tag li a:hover {
     background: rgb(18, 83, 250);
     color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.post-author {
+    display: flex;
 }
 
 .author-name {
@@ -125,7 +150,6 @@
 .author-img {
     box-sizing: content-box;
     display: inline-block;
-    margin-top: 24px;
     position: relative;
 }
 
@@ -168,6 +192,34 @@
     letter-spacing: 1px;
     line-height: 1.1;
     margin: 12px 0px 0px;
+}
+
+.blog-header a {
+    display: flex;
+    margin: 16px 16px;
+}
+
+
+.blog-logo {
+    width: 48px;
+    height: 48px;
+    border: 3px solid #FFF;
+    box-shadow: 0 0 0 3px #1c84d9;
+    border-radius: 50%;
+    content: " ";
+    display: inline-block;
+    background: url(/assets/media/author/zhao.jpeg) no-repeat center center;
+    background-size: auto;
+    background-size: contain;
+}
+
+.blog-header-text {
+    display: block;
+    font-family: Epilogue, sans-serif;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    font-size: 24px;
+    margin: auto 16px;
 }
 
 @media only screen and (max-width:800px) {

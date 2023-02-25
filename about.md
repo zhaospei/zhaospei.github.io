@@ -3,6 +3,7 @@ layout: post
 title: About.
 permalink: /about/
 table_content: false
+comments: true
 ---
 
 # ...this site

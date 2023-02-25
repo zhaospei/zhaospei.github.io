@@ -4,6 +4,7 @@ title:  "Test post theme"
 categories: dummy
 author: zhao
 tags: ["abc", "xyz", "zhao"]
+comments: true
 ---
 
 ## Autoprefixer
@@ -70,6 +71,21 @@ def predict():
         'probability': proba
     }
 
+```
+
+```rust
+impl Display for Hotkey {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        if self.modifiers.is_control() {
+            // Phím ⌃ Control
+        }
+        if self.modifiers.is_super() {
+            // Phím ⌘ Cmd trên macÓ
+        }
+        ...
+        write!(f, "{}", keys)
+    }
+}
 ```
 
 Autoprefixer will use the data based on current browser popularity and property
