@@ -2,23 +2,17 @@
     background-color: white;
     color: rgb(25, 45, 91);
     font-family: Inter, sans-serif;
-    max-width: 720px;
-    height: auto;
-    min-height: calc(100% - 260px);
-    margin: 0 auto;
     padding: 20px;
     word-wrap: break-word;
     hyphens: auto;
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-pre {
-    background-color: #faf8f588;
-    border: 1px solid #dfe2e588;
-    border-radius: 8px;
-    clear: both;
-    overflow-x: auto;
-    padding: 16px 16px;
-    font-size: 16px;
+.post-content-container {
+    max-width: 720px;
 }
 
 .post h1,
@@ -165,7 +159,7 @@ pre {
 .table-of-contents-container {
     position: sticky;
     top: 32px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
     margin-right: 16px;
     margin-bottom: 16px;
@@ -232,7 +226,9 @@ pre {
     .post-header {
         flex-direction: column;
     }
+}
 
+@media only screen and (max-width:600px) {
     .table-of-contents-container {
         display: none;
     }

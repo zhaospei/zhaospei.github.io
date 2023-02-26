@@ -11,10 +11,15 @@
     </header>
     <article class="content">
         <div class="post">
-            <h2>
-                <a href="/blog.html" style="font-family: Inter, sans-serif;"><-  Quay về trang chủ</a>
-            </h2>
+            {% if page.table_content != false %}
+            <div class="table-of-contents-container">
+                {% toc %}
+            </div>
+            {% endif %}
             <div class="post-content-container">
+                <h2>
+                    <a href="/blog.html" style="font-family: Inter, sans-serif;"><- Quay về trang chủ</a>
+                </h2>
                 <header class="post-header">
                     <div class="post-tittle">
                         {% for category in page.categories %}
@@ -53,11 +58,6 @@
                     </div>
                     {% endif %}
                 </header>
-                <!-- {% if page.table_content != false %}
-                <div class="table-of-contents-container">
-                    {% toc %}
-                </div>
-                {% endif %} -->
                 <article class="post-content">
                     {{ content }}
                 </article>

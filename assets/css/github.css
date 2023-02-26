@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono&display=swap');
+
+pre {
+    background-color:#a2a2a221;
+    border: 1px solid #dfe2e588;
+    border-radius: 8px;
+    clear: both;
+    overflow-x: auto;
+    padding: 16px 16px;
+    font-size: 14px;
+}
+
+pre, code {
+    font-family: 'Azeret Mono', monospace;
+}
+
 .highlight .hll { background-color: #ffffcc }
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
