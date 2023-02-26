@@ -35,7 +35,7 @@
 
 .links a {
     width: 80px;
-    height: 80px;   
+    height: 80px;
     margin: 4px;
     display: flex;
     align-items: center;
@@ -50,20 +50,8 @@
     background-color: #193640
 }
 
-.links a:hover .label {
-    opacity: 0
-}
-
 .code-link {
     width: 80px;
-}
-
-.label {
-    opacity: 0;
-    text-align: center;
-    color: hsla(0, 0%, 100%, .8);
-    font-size: 14px;
-    transition: opacity .5s;
 }
 
 .row {
@@ -77,6 +65,7 @@
     .about-content {
         width: 100%
     }
+
     .row {
         -webkit-flex-direction: column;
         flex-direction: column;
