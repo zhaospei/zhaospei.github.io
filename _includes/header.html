@@ -13,9 +13,16 @@
             <ul>
                 {% for item in site.data.navigation %}
                 <li {% if page.url==item.link %} class="current" {% endif %}>
+                    {% if item.name == "Resume" %}
+                    <a href="{{ item.link }}" target="_blank">
+                        {{ item.name }}
+                    </a>
+                    {% else %}
                     <a href="{{ item.link }}">
                         {{ item.name }}
                     </a>
+                    {% endif %}
+
                 </li>
                 {% endfor %}
             </ul>
