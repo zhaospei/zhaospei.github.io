@@ -87,6 +87,7 @@
     margin: 16px 0;
     list-style: disc;
     line-height: 1.5em;
+    text-align: justify;
 }
 
 .post-content li {
@@ -294,10 +295,8 @@
 }
 
 @media only screen and (max-width:800px) {
-    .post {
+    .blog-content {
         width: 90%;
-        padding: 20px;
-        margin: 0 auto;
     }
 
     .post-header {
