@@ -1,3 +1,12 @@
+.blog-content {
+    max-width: -webkit-calc(720px - (30px * 2));
+    max-width: calc(720px - (30px * 2));
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
 .post {
     background-color: white;
     color: rgb(25, 45, 91);
@@ -6,13 +15,12 @@
     word-wrap: break-word;
     hyphens: auto;
     display: flex;
-    width: 70%;
     margin: 0 auto;
     padding: 20px;
 }
 
 .post-content-container {
-    max-width: 720px;
+    /* max-width: 720px; */
 }
 
 .post h1,
@@ -55,6 +63,34 @@
 
 .post a:hover {
     text-decoration: underline;
+}
+
+.post-content h4 {
+    font-family: Epilogue, sans-serif;
+    color: rgb(3, 27, 78);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    line-height: 16px;
+    margin: 0px;
+    padding: 0px;
+    word-break: break-word;
+}
+
+.post-content h3 {
+    font-size: 20px;
+}
+
+.post-content ul {
+    padding-left: 2em;
+    margin: 16px 0;
+    list-style: disc;
+    line-height: 1.5em;
+}
+
+.post-content li {
+    padding: 4px 0;
 }
 
 .post-header {
@@ -157,7 +193,6 @@
 }
 
 .table-of-contents-container {
-    position: sticky;
     top: 32px;
     font-size: 12px;
     font-weight: 500;
@@ -167,9 +202,9 @@
 }
 
 .section-nav:before {
-    content: "CONTENTS";
+    content: "Table of contents";
     font-weight: 800;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 
@@ -182,7 +217,7 @@
 }
 
 .toc-entry {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     letter-spacing: 1px;
     line-height: 1.1;
     margin: 12px 0px 0px;
@@ -193,6 +228,13 @@
     margin: 16px 16px;
 }
 
+.toc-h2 a {
+    padding-left: 1em;
+}
+
+.toc-h3 a {
+    padding-left: 2em;
+}
 
 .blog-logo {
     width: 48px;
@@ -216,6 +258,41 @@
     margin: auto 16px;
 }
 
+.page-navigation {
+    display: flex;
+    position: relative;
+    margin: 5em 0;
+    border-top: 1px solid #d4d4d4;
+    line-height: 1.4;
+}
+
+.page-navigation a {
+    border-bottom: 0;
+    font-weight: 700;
+    padding-bottom: 10px;
+    width: 50%;
+    padding-top: 10px;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.page-navigation .nav-arrow {
+    font-weight: 400;
+    font-size: 14px;
+    color: #6b7886;
+    margin-bottom: 3px;
+}
+
+.page-navigation .post-title {
+    font-weight: 700;
+}
+
+.page-navigation .next {
+    text-align: right;
+    padding-right: 0;
+    padding-left: 20px;
+}
+
 @media only screen and (max-width:800px) {
     .post {
         width: 90%;
@@ -225,11 +302,5 @@
 
     .post-header {
         flex-direction: column;
-    }
-}
-
-@media only screen and (max-width:600px) {
-    .table-of-contents-container {
-        display: none;
     }
 }

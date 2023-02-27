@@ -9,13 +9,8 @@
             <span class="blog-header-text"> zhaospei </br> răng chi mô ri </span>
         </a>
     </header>
-    <article class="content">
+    <article class="content blog-content">
         <div class="post">
-            {% if page.table_content != false %}
-            <div class="table-of-contents-container">
-                {% toc %}
-            </div>
-            {% endif %}
             <div class="post-content-container">
                 <h2>
                     <a href="/blog.html" style="font-family: Inter, sans-serif;"><- Quay về trang chủ</a>
@@ -23,7 +18,7 @@
                 <header class="post-header">
                     <div class="post-tittle">
                         {% for category in page.categories %}
-                        <h4> // {{ category | capitalize }} // </h4>
+                        <h4> // {{ category }} // </h4>
                         {% endfor %}
                         <h1>{{ page.title | upcase }}</h1>
                         <div class="meta">
@@ -58,22 +53,57 @@
                     </div>
                     {% endif %}
                 </header>
+                {% if page.table_content != false %}
+                <div class="table-of-contents-container">
+                    {% toc %}
+                </div>
+                {% endif %}
                 <article class="post-content">
                     {{ content }}
                 </article>
             </div>
         </div>
+
+        <nav class="page-navigation">
+            {% if page.previous.url %}
+            <a class="prev" href="{{page.previous.url}}">
+                <div class="nav-arrow"> Previous </div>
+                <span class="post-title">{{page.previous.title}}</span>
+            </a>
+            {% endif %}
+            {% if page.next.url %}
+            <a class="next" href="{{page.next.url}}">
+                <div class="nav-arrow"> Next </div>
+                <span class="post-title">{{page.next.title}}</span>
+            </a>
+            {% endif %}
+        </nav>
+
+
         {% if page.comments %}
-        <div id="hyvor-talk-view"></div>
-        <script type="text/javascript">
-            var HYVOR_TALK_WEBSITE = 8512;
-            var HYVOR_TALK_CONFIG = {
-                url: false,
-                id: false
+        <div id="disqus_thread"></div>
+        <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
             };
+            */
+            (function () { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://https-zhaospei-github-io.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
         </script>
-        <script async type="text/javascript" src="//talk.hyvor.com/web-api/embed.js"></script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+                Disqus.</a></noscript>
         {% endif%}
+
+        {% include footer.html %}
     </article>
     <style>
         .flexbox {
@@ -87,7 +117,6 @@
             color: white;
         }
     </style>
-    {% include footer.html %}
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="/assets/js/particles.js"></script>
