@@ -21,9 +21,7 @@
 title: Tuan-Dung Bui
 email: dungbuit1k28@gamil.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  A markdown blog made by Tuan-Dung Bui aka Zhao (zhaospei). Hosted on zhaospei.github.io. I'll write something i like maybe my study or life.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://zhaospei.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: zhaospei
@@ -31,6 +29,7 @@ github_username:  zhaospei
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 kramdown:
   syntax_highlighter: rouge
   input: GFM
@@ -94,3 +93,7 @@ defaults:
       path: ""
     values:
       toc: true
+  - scope:
+      path: ""
+    values:
+      comments: true
