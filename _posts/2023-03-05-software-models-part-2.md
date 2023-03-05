@@ -1,68 +1,14 @@
 ---
 layout: post
-title:  "Một số mô hình phát triển phần mềm (Phần 1)"
+title:  "Một số mô hình phát triển phần mềm (Phần 2)"
 categories: SE
 author: zhao
 tags: ["software", "model"]
-up_date: 2023-03-05
 ---
 
-Mô hình phát triển phần mềm là thể hiện trừu tượng của các tiến trình phát triển phần mềm. Nó xác định các pha/ giai đoạn trong phát triển phần mềm. Trong các dự án phát triển phần mềm, mô hình đóng vai trò rất quan trọng. Mô hình đóng vai trò là hướng đi và quyết định đến chất lượng đầu ra của sản phẩm.
+Tiếp nối bài viết: [Một số mô hình phát triển phần mềm (Phần 1)](/se/2023/02/27/software-models-chapter-1/)
 
-Có nhiều loại mô hình phát triển phần mềm khác nhau như:
-- Mô hình thác nước
-- Mô hình xoắn ốc
-- Mô hình tăng trưởng
-- Mô hình Scrum
-…
-
-Trong bài viết này, tôi sẽ mô tả và phân tích chi tiết hai loại mô hình phát triển phần mềm bao gồm: Mô hình thác nước (Waterfall model), Mô hình chữ V (V-Shaped Model). 
-
-# 1. Mô hình thác nước
-Mô hình thác nước được xem là mô hình đầu tiên được giới thiệu. Đây là mô hình SDLC lâu đời với đơn giản nhất. Mô hình thác nước là mô hình điển hình cho phát triển phần mềm đảm bảo bảo tốt. 
-
-![Mô hình thác nước](/assets/media/post/waterfall-model.png)
-
-## a. Đặc điểm
-Trong mô hình thác nước, toàn bộ quá trình phát triển phần mềm được chia thành các giai đoạn riêng biệt. Trong mô hình thác nước, thông thường, kết quả của một pha/ giai đoạn đóng vai trò là đầu vào cho pha/ giai đoạn tiếp theo.
-
-Đặc điểm quan trọng nhất của mô hình thác nước là phát triển tuần tự tuyến tính (Vì vậy, nó còn có tên gọi khác là linear - sequential life cycle model). Tức trong mô hình thác nước, giai đoạn tiếp theo chỉ được bắt đầu sau khi các mục tiêu đã được xác định của giai đoạn trước được hoàn thành. Trong mô hình này, các giai đoạn phát triển một cách độc lập mà không xếp chồng lẫn nhau. 
-
-Tuy nhiên, trong thực tế việc thực hiện tốt một pha không phải dễ và việc xảy ra vấn đề ở là điều hiển nhiên. Vậy nếu trong quá trình phát triển gặp vấn đề có liên quan đến giai đoạn đã hoàn thành trước đó thì phải giải quyết như nào? Câu trả lời là chúng ta vẫn có thể quay lại giai đoạn trước đó sau khi đã thực hiện xong giai đoạn đấy. Tuy nhiên, sau khi quay lại, chúng ta vẫn phải tuân theo tính tuần tự của model. 
-
-### Các giai đoạn tuần tự trong mô hình thác nước
-- **Thu thập và phân tích yêu cầu**: Tất cả mọi yêu cầu có thể của hệ thống được xác định trong giai đoạn này và được ghi lại đầy đủ trong tài liệu đặc tả yêu cầu.
-- **Thiết kế**: Các thông số kỹ thuật trong giai đoạn đầu tiên được nghiên cứu trong giai đoạn này. Thiết kế giúp ta xác định những yêu cầu về phần cứng hệ thống, giúp ta xác định được kiến thức tổng thể của hệ thống.
-- **Triển khai và kiểm thử đơn vị:** Với số liệu đầu vào từ giai đoạn thiết kế, chúng ta phát triển các chương trình nhỏ gọi là Unit, sẽ được tích hợp trong giai đoạn tiếp theo. Mỗi đơn vị được triển khai và kiểm thử chức năng của nó được gọi là Unit Testing. 
-- **Tích hợp và kiểm thử hệ thống:** Tất cả các đơn vị được thực hiện trong giai đoạn trước được tích hợp vào một hệ thống xác định. Sau khi tích hợp, toàn bộ hệ thống sẽ được kiểm tra chức năng và phi chức năng. 
-- **Vận hành và bảo trì:**  Sản phẩm được triển khai trong môi trường của khách hàng hoặc được tung ra thị trường. Có thể có một số lỗi xảy ra trong môi trường của khách hàng, bảo trì được thực hiện để khắc phục những vấn đề trong môi trường khách hàng. Hoặc khi cần nâng cấp sản phẩm, thêm tính năng mới, bảo trì sẽ được sẽ được thực hiện.
-
-## b. Ưu, nhược điểm
-Mô hình thác nước được thực hiện tuần tự tuyến tính, do vậy ưu điểm lớn nhất của nó là đơn giản, dễ dàng để học và thực hiện. Mô hình đảm bảo chất lượng cao cho sản phẩm.  
-
-Mỗi pha của mô hình được thực hiện khi pha trước đấy đã được hoàn thiện. Vì vậy, cần làm mỗi pha phải tốt, chất lượng, khi đó mới thực hiện pha tiếp theo do nếu xảy ra lỗi việc quay lại pha trước đáy sẽ mất rất nhiều thời gian.
-
-Do đó, công việc thực thiện của người phát triển nhiều hơn. Mỗi giai đoạn không chỉ thực thi mà còn viết docs và giảng giải cho những người giai đoạn tiếp theo. Dẫn đến người phát triển cần bỏ ra nhiều thời gian hơn làm cho sản phẩm thực hiện theo mô hình này thường thực hiện lâu, chi phí cao. 
-
-Đây là nhược điểm rõ ràng nhất của mô hình này. Bù lại, sản phẩm sẽ đảm bảo chất lượng cao do mỗi pha được thực hiện một cách hoàn chỉnh, đầy đủ, chính xác.
-
-Chính vì vậy, mô hình thác nước chỉ phù hợp với các dự án vừa và nhỏ do những dự án này có thể xác định rõ yêu cầu từ đầu. Ngược lại, đối với những dự án lớn, việc xác định yêu cầu rõ ràng từ ban đầu là rất khó. Ngoài ra, việc làm tuần tự với dự án lớn là rất tốn thời gian khi mà khách hàng luôn mong muốn có sản phẩm chất lượng càng sớm càng tốt. 
-
-Mô hình thác nước là mô hình đầu tiên, mọi mô hình cơ bản hiện nay đều xuất phát, phát triển từ mô hình thác nước.
-
-# 2. Mô hình chữ V
-Chất lượng kiểm thử phần mềm được đánh giá qua bộ test kiểm thử và quá trình thực hiện kiểm thử. Do vậy, chất lượng của bộ test kiểm thử là rất quan trọng. Tuy nhiên, mô hình thác nước đến giai đoạn kiểm thử mới được sinh test. Việc sinh test của mô hình thác nước khiến cho khả năng phát hiện ra lỗi của bộ test rất là thấp, dẫn đến việc kiểm thử, đánh giá chất lượng phần mềm không khách quan, chính xác. Và mô hình chữ V đã được cải tiến từ thác nước để giải quyết vấn đề sinh test muộn từ mô hình thấy nước. 
-
-![Mô hình chữ V](/assets/media/post/v-model.png)
-
-## a. Đặc điểm
-Cũng giống như mô hình thác nước, các giai đoạn trong mô hình chữ V được thực hiện một cách tuần tự theo hình chữ V. Tuy nhiên, cải tiến của mô hình chữ V đến từ việc sinh bộ test kiểm thử sớm bằng cách tích hợp liên kết giai đoạn kiểm thử cho từng giai đoạn phát triển tương ứng. Có nghĩa là, đối với mỗi giai đoạn trong chu kỳ phát triển sẽ có giai đoạn kiểm thử tương ứng. Mỗi giai đoạn bên trái model sẽ sinh bộ test cho giai đoạn kiểm thử bên phải của model:
-- Giai đoạn phân tích đặc tả yêu cầu sinh bộ test cho giai đoạn kiểm thử hệ thống, giai đoạn kiểm thử chấp nhận
-- Giai đoạn thiết kế sinh bộ test cho giai đoạn kiểm thử tích hợp.
-- Quá trình implementing thực hiện luôn giai đoạn kiểm thử unit.
-
-## b. Ưu, nhược điểm
-Do V Model kế thừa hầu hết từ Waterfall Model nên mọi ưu, nhược điểm đa số đều giống Waterfall Model. Tuy nhiên, ưu điểm nổi bật nhất so với Waterfall Model là giai đoạn kiểm thử được thực hiện ngay từ đầu qua công việc sinh bộ test sớm cho giai đoạn kiểm thử tương ứng nên bộ test trong V Model chính xác hơn. Nhờ vậy, việc kiểm thử được thực hiện nhanh chóng, chính xác và đánh giá phần mềm một cách khách quan nhất.   
+Trong bài viết này, tôi sẽ mô tả và phân tích chi tiết hai loại mô hình phát triển phần mềm bao gồm: Bản mẫu, Xoắn ốc. 
 
 # 3. Bản mẫu
 Đặc điểm của mô hình thác nước là cần xác định rõ yêu cầu từ đầu. Nhưng trong thực tế rất ít dự án xác định được rõ yêu cầu từ đầu. Vậy cần phải làm sao? Bản mẫu chính là giải pháp giải quyết vấn đề này.
@@ -85,6 +31,8 @@ Mặc dù vậy, chúng ta vẫn có cách làm được nhưng không phải l�
 
 # 4. Xoắn ốc
 Mô hình thác nước, chữ V chỉ phù hợp các dự án vừa và nhỏ, những dự án được xác định rõ yêu cầu từ đầu. Việc xác định những yêu cầu khó, phức tạp đã được giải quyết nhờ bản mẫu. Tuy nhiên, trong thực tế, đa số có dự án đều lớn, phức tạp. Vậy với các dự án lớn thì giải quyết như nào? Mô hình xoắn ốc là một lựa chọn mô hình để thực hiện các dự án lớn, phức tạp. 
+
+![Mô hình xoắn ốc](/assets/media/post/xoan-oc.png)
 
 ## a. Đặc điểm 
 
