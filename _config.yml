@@ -69,6 +69,9 @@ collections:
   projects:
     output: false
 
+feed:
+  path: /feed.xml
+
 defaults:
   - scope:
       path: ""

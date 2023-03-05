@@ -222,11 +222,42 @@
     letter-spacing: 1px;
     line-height: 1.1;
     margin: 12px 0px 0px;
+    padding-left: 1em;
+}
+
+.blog-header {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #ececec;
 }
 
 .blog-header a {
     display: flex;
     margin: 16px 16px;
+}
+
+.menu,
+.menu-link {
+    color: #0d122b;
+    text-decoration: none;
+    opacity: 0.7;
+    letter-spacing: 0.3px;
+    font-weight: 400;
+    display: flex;
+    font-size: 16px;
+}
+
+a.menu-link {
+   display: block;
+   margin: auto 16px;
+}
+
+
+
+.trigger-container {
+    display: flex;
+    font-family: Epilogue, sans-serif;
+    text-align: center;
 }
 
 .toc-h2 a {
