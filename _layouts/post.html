@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html lang="vi" xml:lang="vi">
 
-{% include head.html %}
+<head>
+    <meta charset="utf-8">
+    <title>{{site.title}} - {{ page.title }}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="/assets/css/main.css" rel="stylesheet">
+    <link href="/assets/css/github.css" rel="stylesheet">
+    <link href="/assets/css/post.css" rel="stylesheet">
+    {% feed_meta %}
+    {% seo %}
+</head>
 
 <body style="background-color: white;">
     <header class="blog-header">
@@ -11,8 +20,8 @@
         </a>
         <nav class="trigger-container"><a class="menu-link" href="/blog.html">home</a><a class="menu-link"
                 href="/archive/">archive</a><a class="menu-link" href="/blog/about/">about</a><a class="menu-link rss"
-                href="/feed.xml" target="_blank"> <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 512 512"
-                    fill="#ED812E">
+                href="/feed.xml" target="_blank"> <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                    viewBox="0 0 512 512" fill="#ED812E">
                     <title>RSS</title>
                     <path d="M108.56,342.78a60.34,60.34,0,1,0,60.56,60.44A60.63,60.63,0,0,0,108.56,342.78Z">
                     </path>
@@ -24,8 +33,18 @@
                 </svg> </a>
         </nav>
     </header>
-    <article class="content blog-content">
-        <div class="post">
+    {% if page.img-feature %}
+    <div class="post-feature" style="background-image: url('{{ page.img-feature}}');">
+        <div class="overlay"></div>
+    </div>
+    {% else %}
+    <div class="post-feature" style="background-image: url(/assets/media/feature/default.jpg);">
+        <div class="overlay"></div>
+    </div>
+    {% endif%}
+
+    <div class="blog-content">
+        <div class="middle-container">
             <div class="post-content-container">
                 <header class="post-header">
                     <div class="post-tittle">
@@ -48,7 +67,6 @@
                         </ul>
                     </div>
                     {% assign author = site.authors | where: 'short_name', page.author | first %}
-
                     {% if author %}
                     <div class="post-author">
                         <div class="author-img">
@@ -65,80 +83,68 @@
                     </div>
                     {% endif %}
                 </header>
-                {% if page.table_content != false %}
-                <div class="table-of-contents-container">
-                    {% toc %}
-                </div>
-                {% endif %}
                 <article class="post-content">
                     {{ content }}
                 </article>
             </div>
+            <nav class="page-navigation">
+                {% if page.previous.url %}
+                <a class="prev" href="{{page.previous.url}}">
+                    <div class="nav-arrow"> Previous </div>
+                    <span class="post-title">{{page.previous.title}}</span>
+                </a>
+                {% else %}
+                <a class="prev" href="#">
+                    <div class="nav-arrow"> </div>
+                    <span class="post-title"> </span>
+                </a>
+                {% endif %}
+                {% if page.next.url %}
+                <a class="next" href="{{page.next.url}}">
+                    <div class="nav-arrow"> Next </div>
+                    <span class="post-title">{{page.next.title}}</span>
+                </a>
+                {% else %}
+                <a class="next" href="#">
+                    <div class="nav-arrow"> </div>
+                    <span class="post-title"></span>
+                </a>
+                {% endif %}
+            </nav>
+            {% if page.comments %}
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+                /*
+                var disqus_config = function () {
+                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                */
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://https-zhaospei-github-io.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by
+                    Disqus.</a></noscript>
+            {% endif%}
+
+            {% include footer.html %}
         </div>
-
-        <nav class="page-navigation">
-            {% if page.previous.url %}
-            <a class="prev" href="{{page.previous.url}}">
-                <div class="nav-arrow"> Previous </div>
-                <span class="post-title">{{page.previous.title}}</span>
-            </a>
-            {% else %}
-            <a class="prev" href="#">
-                <div class="nav-arrow">  </div>
-                <span class="post-title"> </span>
-            </a>
+        <div class="right-container sticky">
+            {% if page.table_content != false %}
+            <div class="table-of-contents-container">
+                {% toc %}
+            </div>
             {% endif %}
-            {% if page.next.url %}
-            <a class="next" href="{{page.next.url}}">
-                <div class="nav-arrow"> Next </div>
-                <span class="post-title">{{page.next.title}}</span>
-            </a>
-            {% else %}
-            <a class="next" href="#">
-                <div class="nav-arrow">  </div>
-                <span class="post-title"></span>
-            </a>
-            {% endif %}
-        </nav>
-
-
-        {% if page.comments %}
-        <div id="disqus_thread"></div>
-        <script>
-            /**
-            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-            /*
-            var disqus_config = function () {
-            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
-            */
-            (function () { // DON'T EDIT BELOW THIS LINE
-                var d = document, s = d.createElement('script');
-                s.src = 'https://https-zhaospei-github-io.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
-                Disqus.</a></noscript>
-        {% endif%}
-
-        {% include footer.html %}
-    </article>
-    <style>
-        .flexbox {
-            background-color: #315162;
-            position: -webkit-sticky;
-            position: sticky;
-            top: 0;
-        }
-
-        .sr-only {
-            color: white;
-        }
-    </style>
+        </div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="/assets/js/main.js"></script>

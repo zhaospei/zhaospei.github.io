@@ -5,7 +5,7 @@ pre {
     border: 1px solid #dfe2e588;
     border-radius: 8px;
     clear: both;
-    overflow-x: auto;
+    /* overflow-x: auto; */
     padding: 16px 16px;
     font-size: 14px;
 }

@@ -10,17 +10,17 @@ comments: true
 
 **Writing forces sharper understanding** - Andy Matuschak
 
-Đúng vậy, tôi tạo ra site này nhằm mục đích cải thiện khả năng viết lách của bản thân. Đó là nơi tôi chia sẻ ý tưởng, kinh nghiệm về những thứ tôi đã nghiên cứu hoặc trong quá trình thực hiện. Do lần đầu viết lách, nên không thể tránh khỏi những soi sót ngoài ý muốn. Mong bạn đọc có thể bỏ qua và góp ý để tôi cải thiện ngày một tốt hơn.
+Yes, I created this site to improve my writing skills. It's where I share ideas and experiences about things I've researched or worked on. Because it's my first time writing, it's inevitable that I'll make some unexpected mistakes. Hope readers can ignore and give me suggestions to improve day by day.
 
 # ...me
 
-Tôi tên là **Dũng** (Tên đầy đủ là **Bùi Tuấn Dũng**, bạn cũng có thể gọi tôi là **"Zhao"**).
+My name is **Dung** (Full-name is **Bui Tuan Dung** , you can also call me **“Zhao”** ).
 
-Tôi hiện đang là sinh viên năm hai, ngành Công nghệ thông tin. Ngôi trường mà tôi theo học hiện tại là **Trường Đại học Công nghệ, ĐHQGHN.**
+I am currently a sophomore, majoring in Information Technology. University of Engineering and Technology, VNU is my school.
 
-Tôi hiện đang nghiên cứu về công nghệ phần mềm và AI/ML.
+I am currently studying software engineering and AI/ML.
 
-Bạn đọc có thể trao đổi với tôi qua email: [dungbuit1k28@gmail.com](mailto:dungbuit1k28@gmail.com).
+You can communicate with me via email: [dungbuit1k28@gmail.com](mailto:dungbuit1k28@gmail.com).
 
-Một lần nữa, tôi xin chân thành cảm ơn bạn đã ghé thăm blog này của tôi!
+Once again, I sincerely thank you for visiting my blog!
 
