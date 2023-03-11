@@ -8,3 +8,12 @@ $('#particles-js').css('height', height);
 $('.post-content a').attr('target', '_blank');
 
 $('.project a').attr('target', '_blank');
+
+$('.up-to-top').click(function(){
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        // behavior: 'smooth'
+    });
+});
+
