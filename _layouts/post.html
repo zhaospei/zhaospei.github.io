@@ -60,7 +60,8 @@
                             {% endif %}
                             {% if page.up_date %}
                             · Updated on {{ page.up_date | date: "%b %-d, %Y" }}
-                            {% endif %}
+                            {% endif %} · 
+                            {% include reading-time.html %}
                         </div>
                         <ul class="post-tag">
                             {% for tag in page.tags %}
@@ -113,6 +114,7 @@
                 </a>
                 {% endif %}
             </nav>
+            {% include share-buttons.html %}
             {% if page.comments %}
             <div id="disqus_thread"></div>
             <script>
@@ -136,8 +138,6 @@
                     by
                     Disqus.</a></noscript>
             {% endif%}
-
-            {% include footer.html %}
         </div>
         <div class="right-container sticky">
             {% if page.table_content != false %}
@@ -147,10 +147,11 @@
             {% endif %}
         </div>
     </div>
-
+    {% include footer.html %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/scroll.js"></script>
+    {% include lazyload.html %}
 </body>
 
 </html>

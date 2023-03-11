@@ -150,10 +150,15 @@ nav li:hover,
 }
 
 .fixed-bottom {
+    font-family: Inter,sans-serif;
     color: #0d122b;
     margin-top: 8em;
     padding: 2em;
     text-align: center;
+    font-weight: 800;
+}
+
+.fixed-bottom a:hover {
     font-weight: 800;
 }
 

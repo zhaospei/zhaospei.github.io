@@ -34,6 +34,9 @@
     padding: 20px;
 }
 
+.post-feature {
+    font-family: Epilogue, sans-serif;
+}
 
 .overlay {
     position: absolute;
@@ -296,6 +299,12 @@ a.menu-link {
     padding-left: 2em;
 }
 
+
+.table-of-contents-container li.active {
+    border-left: 4px solid rgb(8, 27, 75);
+    padding-left: 12px;
+}
+
 .table-of-contents-container li.active > a {
 	font-weight: 800;
     color: rgb(8, 27, 75);
@@ -372,8 +381,19 @@ a.menu-link {
 .reading-line {
     position: fixed;
     top: 0;
-    border-bottom: 8px solid #1c84d9;
+    border-bottom: 4px solid #1c84d9;
     z-index: 404;
+}
+
+.up-to-top {
+    position: fixed;
+    z-index: 4004;
+    /* display: none; */
+    bottom: 2em;
+    right: 2em;
+    border: 40px solid #1c84d9;
+    cursor: pointer;
+    
 }
 
 .table-of-contents-container {
