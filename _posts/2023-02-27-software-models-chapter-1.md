@@ -16,10 +16,10 @@ Có nhiều loại mô hình phát triển phần mềm khác nhau như:
 - Mô hình Scrum
 …
 
-Trong bài viết này, tôi sẽ mô tả và phân tích chi tiết hai loại mô hình phát triển phần mềm bao gồm: Mô hình thác nước (Waterfall model), Mô hình chữ V (V-Shaped Model). 
+Trong bài viết này, tôi sẽ mô tả và phân tích chi tiết bốn loại mô hình phát triển phần mềm cơ bản nhất bao gồm: Mô hình thác nước (Waterfall model), Mô hình chữ V (V-Shaped Model), Bản mẫu và Mô hình xoắn ốc.
 
 # 1. Mô hình thác nước
-Mô hình thác nước được xem là mô hình đầu tiên được giới thiệu. Đây là mô hình SDLC lâu đời với đơn giản nhất. Mô hình thác nước là mô hình điển hình cho phát triển phần mềm đảm bảo bảo tốt. 
+Mô hình thác nước được xem là mô hình đầu tiên được giới thiệu. Đây là mô hình SDLC (Software Development Life Cycle) lâu đời với đơn giản nhất. Mô hình thác nước là mô hình điển hình cho phát triển phần mềm đảm bảo bảo tốt. 
 
 ![Mô hình thác nước](/assets/media/post/waterfall-model.png)
 
@@ -131,3 +131,10 @@ Mô hình xoắn ốc giải quyết được các hạn chế của mô hình t
 Quá trình phát triển có thể được chia các phần nhỏ hơn và các phần rủi ro có thể được phát triển sớm hơn giúp quản lý rủi ro tốt hơn.
 
 Tuy nhiên, việc quản lý, quy trình phát triển mô hình xoắn ốc sẽ phức tạp. Từ đó, mô hình xoắn ốc không phù hợp với các mô hình vừa và nhỏ hoặc rủi ro thấp. Ngoài ra, số lượng lớn các giai đoạn đòi hỏi cần một số lượng lớn tài liệu. 
+
+# Kết luận
+Mô hình đóng vai trò là hướng đi và quyết định đến chất lượng đầu ra của sản phẩm. Vì vậy, việc xác định đúng và chính xác mô hình cho phần mềm là rất quan trọng. Mỗi mô hình quy trình tuân theo một loạt các bước duy nhất đối với loại của nó để đảm bảo thành công trong quy trình phát triển phần mềm. Tùy vào cấu trúc phần mềm mà từ đó chọn đúng mô hình phần mềm để thực hiện. Trong thực tế, chúng ta không nhất thiết phải sử dụng đúng các mô hình phần mềm trên mà có thể "biến tấu", thay đổi để phù hợp với dự án phần mềm.
+
+<h2 class="no_toc"> Refs </h2>
+
+- [https://www.tutorialspoint.com/sdlc/index.htm](https://www.tutorialspoint.com/sdlc/index.htm)
