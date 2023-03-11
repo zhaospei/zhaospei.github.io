@@ -358,7 +358,7 @@ a.menu-link {
     padding-left: 20px;
 }
 
-.blog-content img {
+.post-content img {
     width: 90%;
 }
 
@@ -367,6 +367,18 @@ a.menu-link {
     position: -webkit-sticky;
     top: 0; /* required */
     align-self: flex-start;
+}
+
+.reading-line {
+    position: fixed;
+    top: 0;
+    border-bottom: 8px solid #1c84d9;
+    z-index: 404;
+}
+
+.table-of-contents-container {
+    height: 80vh;
+    overflow: auto;
 }
 
 @media only screen and (max-width:800px) {
@@ -385,4 +397,16 @@ a.menu-link {
     .blog-header {
         padding: 0 0;
     }
+
+    .middle-container {
+        max-width: 100%;
+    }
+
+    .blog-content {
+        padding-left: 30px;
+        padding-right: 0;
+    }
+
+
+
 }

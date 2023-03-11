@@ -8,10 +8,3 @@ $('#particles-js').css('height', height);
 $('.post-content a').attr('target', '_blank');
 
 $('.project a').attr('target', '_blank');
-
-$('.toc-entry a').click(function(){
-    $('.toc-entry').each(function(){
-        $(this).removeClass('active');
-    });
-    $(this).parent().addClass('active');
-});
