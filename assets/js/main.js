@@ -16,4 +16,3 @@ $('.up-to-top').click(function(){
         // behavior: 'smooth'
     });
 });
-

@@ -10,6 +10,16 @@
     <link href="/assets/css/post.css" rel="stylesheet">
     {% feed_meta %}
     {% seo %}
+    <!-- PushAlert -->
+    <script type="text/javascript">
+        (function (d, t) {
+            var g = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            g.src = "https://cdn.pushalert.co/integrate_55d0c6f2bb25d77135409cb92e6df535.js";
+            s.parentNode.insertBefore(g, s);
+        }(document, "script"));
+    </script>
+    <!-- End PushAlert -->
 </head>
 
 <body style="background-color: white;">
@@ -60,7 +70,7 @@
                             {% endif %}
                             {% if page.up_date %}
                             · Updated on {{ page.up_date | date: "%b %-d, %Y" }}
-                            {% endif %} · 
+                            {% endif %} ·
                             {% include reading-time.html %}
                         </div>
                         <ul class="post-tag">
@@ -86,6 +96,7 @@
                     </div>
                     {% endif %}
                 </header>
+
                 <article class="post-content">
                     {{ content }}
                 </article>
