@@ -2,6 +2,16 @@
 <html lang="vi" xml:lang="vi">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HSCBJBJKGQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-HSCBJBJKGQ');
+    </script>
+
     <meta charset="utf-8">
     <title>{{site.title}} - {{ page.title }}</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -10,16 +20,6 @@
     <link href="/assets/css/post.css" rel="stylesheet">
     {% feed_meta %}
     {% seo %}
-    <!-- PushAlert -->
-    <script type="text/javascript">
-        (function (d, t) {
-            var g = d.createElement(t),
-                s = d.getElementsByTagName(t)[0];
-            g.src = "https://cdn.pushalert.co/integrate_55d0c6f2bb25d77135409cb92e6df535.js";
-            s.parentNode.insertBefore(g, s);
-        }(document, "script"));
-    </script>
-    <!-- End PushAlert -->
 </head>
 
 <body style="background-color: white;">
