@@ -30,8 +30,7 @@
             <span class="blog-logo"></span>
             <span class="blog-header-text"> zhaospei </br> răng chi mô ri </span>
         </a>
-        <nav class="trigger-container"><a class="menu-link" href="/blog.html">home</a><a class="menu-link"
-                href="/archive/">archive</a><a class="menu-link" href="/blog/about/">about</a><a class="menu-link rss"
+        <nav class="trigger-container"><a class="menu-link" href="/blog.html">home</a><a class="menu-link" href="/about/">about</a><a class="menu-link rss"
                 href="/feed.xml" target="_blank"> <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17"
                     viewBox="0 0 512 512" fill="#ED812E">
                     <title>RSS</title>
@@ -126,33 +125,10 @@
                 {% endif %}
             </nav>
             {% include share-buttons.html %}
-            {% if page.comments %}
-            <div id="disqus_thread"></div>
-            <script>
-                /**
-                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-                /*
-                var disqus_config = function () {
-                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-                */
-                (function () { // DON'T EDIT BELOW THIS LINE
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://https-zhaospei-github-io.disqus.com/embed.js';
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
-                    by
-                    Disqus.</a></noscript>
-            {% endif%}
         </div>
         <div class="right-container sticky">
             {% if page.table_content != false %}
-            <div class="table-of-contents-container">
+            <div class="table-of-contents-container scroll">
                 {% toc %}
             </div>
             {% endif %}
