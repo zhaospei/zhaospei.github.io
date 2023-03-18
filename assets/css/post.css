@@ -53,13 +53,13 @@
 .blog-content h3,
 .blog-content h4,
 .blog-content h5 {
-    font-family: Epilogue, sans-serif;
+    font-family: Inter, sans-serif;
     padding: 10px 0;
 }
 
 .blog-content h1 {
     color: rgb(3, 27, 78);
-    font-size: 32px;
+    font-size: 40px;
     font-style: normal;
     font-weight: bold;
     letter-spacing: -0.5px;
@@ -399,6 +399,7 @@ a.menu-link {
 .table-of-contents-container {
     height: 80vh;
     overflow: auto;
+    padding-right: 8px;
 }
 
 @media only screen and (max-width:800px) {

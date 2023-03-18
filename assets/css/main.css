@@ -150,7 +150,7 @@ nav li:hover,
 }
 
 .fixed-bottom {
-    font-family: Inter,sans-serif;
+    font-family: Inter, sans-serif;
     color: #0d122b;
     margin-top: 8em;
     padding: 2em;
@@ -162,12 +162,28 @@ nav li:hover,
     font-weight: 800;
 }
 
-a.footer_item{
+a.footer_item {
     display: inline-block;
     font-weight: 300;
     padding: 1em;
     color: #0d122b;
 }
+
+.scroll::-webkit-scrollbar {
+  width: 10px;
+}
+ 
+.scroll::-webkit-scrollbar-thumb {
+  background: rgb(8, 27, 75);
+  border-radius: 20px;
+}
+
+.scroll::-webkit-scrollbar-track {
+  background: #ddd;
+  border-radius: 20px;
+}
+
+
 
 @media only screen and (max-width:600px) {
     .full-on-mobile {
