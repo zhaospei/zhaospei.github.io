@@ -4,15 +4,27 @@
 @tailwind base;
 
 @layer base {
-    h1 {
-      @apply font-bold text-2xl;
+    .prose h1 {
+      @apply font-bold text-2xl mt-8 mb-4;
     }
-    h2 {
-      @apply font-bold text-xl;
+    .prose h2 {
+      @apply font-bold text-xl mt-8 mb-4;
     }
-    h3 {
-      @apply font-bold text-lg;
+    .prose h3 {
+      @apply font-bold text-lg mt-8 mb-4;
     }
+    .prose p {
+      @apply mt-5 mb-5 indent-8;
+    }
+
+    .prose ul {
+      @apply list-disc ml-16;
+    }
+
+    .prose li {
+      @apply mt-2 mb-2;
+    }
+
     a {
       @apply text-blue-600;
     }

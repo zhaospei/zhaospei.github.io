@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  Chuyện chi chi rằng rằng (Phần 1)
 categories: Dummy
 author: zhao

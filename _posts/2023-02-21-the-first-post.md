@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "The first post"
 date:   2023-02-20 23:25:36 +0700
 up_date: 2023-02-24

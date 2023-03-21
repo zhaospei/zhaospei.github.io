@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "Test post theme"
 categories: Dummy
 author: zhao

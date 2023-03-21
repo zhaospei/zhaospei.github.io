@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "Một bài giới thiệu về cái blog nho nhỏ này"
 categories: Dummy
 author: zhao

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title:  "Một số mô hình phát triển phần mềm (Phần 1)"
 categories: SE
 author: zhao
@@ -135,7 +135,3 @@ Tuy nhiên, việc quản lý, quy trình phát triển mô hình xoắn ốc s�
 
 # Kết luận
 Mô hình đóng vai trò là hướng đi và quyết định đến chất lượng đầu ra của sản phẩm. Vì vậy, việc xác định đúng và chính xác mô hình cho phần mềm là rất quan trọng. Mỗi mô hình quy trình tuân theo một loạt các bước duy nhất đối với loại của nó để đảm bảo thành công trong quy trình phát triển phần mềm. Tùy vào cấu trúc phần mềm mà từ đó chọn đúng mô hình phần mềm để thực hiện. Trong thực tế, chúng ta không nhất thiết phải sử dụng đúng các mô hình phần mềm trên mà có thể "biến tấu", thay đổi để phù hợp với dự án phần mềm.
-
-<h2 class="no_toc"> Refs </h2>
-
-- [https://www.tutorialspoint.com/sdlc/index.htm](https://www.tutorialspoint.com/sdlc/index.htm)
