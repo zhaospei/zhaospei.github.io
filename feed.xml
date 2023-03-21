@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://zhaospei.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhaospei.github.io//" rel="alternate" type="text/html" /><updated>2023-03-21T13:15:21+00:00</updated><id>https://zhaospei.github.io//feed.xml</id><title type="html">Tuan-Dung Bui</title><subtitle>A markdown blog made by Tuan-Dung Bui aka Zhao (zhaospei). Hosted on zhaospei.github.io. I'll write something i like maybe my study or life.</subtitle><author><name>Tuan-Dung Bui</name></author><entry><title type="html">Chuyện chi chi rằng rằng (Phần 1)</title><link href="https://zhaospei.github.io//dummy/2023/03/20/chuyen-chi-chi/" rel="alternate" type="text/html" title="Chuyện chi chi rằng rằng (Phần 1)" /><published>2023-03-20T00:00:00+00:00</published><updated>2023-03-20T00:00:00+00:00</updated><id>https://zhaospei.github.io//dummy/2023/03/20/chuyen-chi-chi</id><content type="html" xml:base="https://zhaospei.github.io//dummy/2023/03/20/chuyen-chi-chi/"><![CDATA[<p>Bài này tớ sẽ chia sẻ về một ngày thứ bảy vô dụng của tớ khi mà tớ ngủ hơn 12 tiếng một ngày. Mục đích của bài viết này chỉ là một bài viết vui, không nhằm truyền bá tư tưởng cực đoạn, bạn đọc cân nhắc trước khi đọc để tránh ảnh hưởng tinh thần của bạn.</p>]]></content><author><name>zhao</name></author><category term="Dummy" /><category term="dummy" /><summary type="html"><![CDATA[Bài này tớ sẽ chia sẻ về một ngày thứ bảy vô dụng của tớ khi mà tớ ngủ hơn 12 tiếng một ngày. Mục đích của bài viết này chỉ là một bài viết vui, không nhằm truyền bá tư tưởng cực đoạn, bạn đọc cân nhắc trước khi đọc để tránh ảnh hưởng tinh thần của bạn.]]></summary></entry><entry><title type="html">Một số mô hình phát triển phần mềm (Phần 1)</title><link href="https://zhaospei.github.io//se/2023/02/27/software-models-chapter-1/" rel="alternate" type="text/html" title="Một số mô hình phát triển phần mềm (Phần 1)" /><published>2023-02-27T00:00:00+00:00</published><updated>2023-02-27T00:00:00+00:00</updated><id>https://zhaospei.github.io//se/2023/02/27/software-models-chapter-1</id><content type="html" xml:base="https://zhaospei.github.io//se/2023/02/27/software-models-chapter-1/"><![CDATA[<p>Mô hình phát triển phần mềm là thể hiện trừu tượng của các tiến trình phát triển phần mềm. Nó xác định các pha/ giai đoạn trong phát triển phần mềm. Trong các dự án phát triển phần mềm, mô hình đóng vai trò rất quan trọng. Mô hình đóng vai trò là hướng đi và quyết định đến chất lượng đầu ra của sản phẩm.</p>
+
+<p>Có nhiều loại mô hình phát triển phần mềm khác nhau như:</p>
+<ul>
+  <li>Mô hình thác nước</li>
+  <li>Mô hình xoắn ốc</li>
+  <li>Mô hình tăng trưởng</li>
+  <li>Mô hình Scrum
+…</li>
+</ul>
+
+<p>Trong bài viết này, tôi sẽ mô tả và phân tích chi tiết bốn loại mô hình phát triển phần mềm cơ bản nhất bao gồm: Mô hình thác nước (Waterfall model), Mô hình chữ V (V-Shaped Model), Bản mẫu và Mô hình xoắn ốc.</p>
+
+<h1 id="1-mô-hình-thác-nước">1. Mô hình thác nước</h1>
+<p>Mô hình thác nước được xem là mô hình đầu tiên được giới thiệu. Đây là mô hình SDLC (Software Development Life Cycle) lâu đời với đơn giản nhất. Mô hình thác nước là mô hình điển hình cho phát triển phần mềm đảm bảo bảo tốt.</p>
+
+<p><img src="/assets/media/post/waterfall-model.png" alt="Mô hình thác nước" /></p>
+
+<h2 id="a-đặc-điểm">a. Đặc điểm</h2>
+<p>Trong mô hình thác nước, toàn bộ quá trình phát triển phần mềm được chia thành các giai đoạn riêng biệt. Trong mô hình thác nước, thông thường, kết quả của một pha/ giai đoạn đóng vai trò là đầu vào cho pha/ giai đoạn tiếp theo.</p>
+
+<p>Đặc điểm quan trọng nhất của mô hình thác nước là phát triển tuần tự tuyến tính (Vì vậy, nó còn có tên gọi khác là linear - sequential life cycle model). Tức trong mô hình thác nước, giai đoạn tiếp theo chỉ được bắt đầu sau khi các mục tiêu đã được xác định của giai đoạn trước được hoàn thành. Trong mô hình này, các giai đoạn phát triển một cách độc lập mà không xếp chồng lẫn nhau.</p>
+
+<p>Tuy nhiên, trong thực tế việc thực hiện tốt một pha không phải dễ và việc xảy ra vấn đề ở là điều hiển nhiên. Vậy nếu trong quá trình phát triển gặp vấn đề có liên quan đến giai đoạn đã hoàn thành trước đó thì phải giải quyết như nào? Câu trả lời là chúng ta vẫn có thể quay lại giai đoạn trước đó sau khi đã thực hiện xong giai đoạn đấy. Tuy nhiên, sau khi quay lại, chúng ta vẫn phải tuân theo tính tuần tự của model.</p>
+
+<h3 id="các-giai-đoạn-tuần-tự-trong-mô-hình-thác-nước">Các giai đoạn tuần tự trong mô hình thác nước</h3>
+<ul>
+  <li><strong>Thu thập và phân tích yêu cầu</strong>: Tất cả mọi yêu cầu có thể của hệ thống được xác định trong giai đoạn này và được ghi lại đầy đủ trong tài liệu đặc tả yêu cầu.</li>
+  <li><strong>Thiết kế</strong>: Các thông số kỹ thuật trong giai đoạn đầu tiên được nghiên cứu trong giai đoạn này. Thiết kế giúp ta xác định những yêu cầu về phần cứng hệ thống, giúp ta xác định được kiến thức tổng thể của hệ thống.</li>
+  <li><strong>Triển khai và kiểm thử đơn vị:</strong> Với số liệu đầu vào từ giai đoạn thiết kế, chúng ta phát triển các chương trình nhỏ gọi là Unit, sẽ được tích hợp trong giai đoạn tiếp theo. Mỗi đơn vị được triển khai và kiểm thử chức năng của nó được gọi là Unit Testing.</li>
+  <li><strong>Tích hợp và kiểm thử hệ thống:</strong> Tất cả các đơn vị được thực hiện trong giai đoạn trước được tích hợp vào một hệ thống xác định. Sau khi tích hợp, toàn bộ hệ thống sẽ được kiểm tra chức năng và phi chức năng.</li>
+  <li><strong>Vận hành và bảo trì:</strong>  Sản phẩm được triển khai trong môi trường của khách hàng hoặc được tung ra thị trường. Có thể có một số lỗi xảy ra trong môi trường của khách hàng, bảo trì được thực hiện để khắc phục những vấn đề trong môi trường khách hàng. Hoặc khi cần nâng cấp sản phẩm, thêm tính năng mới, bảo trì sẽ được sẽ được thực hiện.</li>
+</ul>
+
+<h2 id="b-ưu-nhược-điểm">b. Ưu, nhược điểm</h2>
+<p>Mô hình thác nước được thực hiện tuần tự tuyến tính, do vậy ưu điểm lớn nhất của nó là đơn giản, dễ dàng để học và thực hiện. Mô hình đảm bảo chất lượng cao cho sản phẩm.</p>
+
+<p>Mỗi pha của mô hình được thực hiện khi pha trước đấy đã được hoàn thiện. Vì vậy, cần làm mỗi pha phải tốt, chất lượng, khi đó mới thực hiện pha tiếp theo do nếu xảy ra lỗi việc quay lại pha trước đáy sẽ mất rất nhiều thời gian.</p>
+
+<p>Do đó, công việc thực thiện của người phát triển nhiều hơn. Mỗi giai đoạn không chỉ thực thi mà còn viết docs và giảng giải cho những người giai đoạn tiếp theo. Dẫn đến người phát triển cần bỏ ra nhiều thời gian hơn làm cho sản phẩm thực hiện theo mô hình này thường thực hiện lâu, chi phí cao.</p>
+
+<p>Đây là nhược điểm rõ ràng nhất của mô hình này. Bù lại, sản phẩm sẽ đảm bảo chất lượng cao do mỗi pha được thực hiện một cách hoàn chỉnh, đầy đủ, chính xác.</p>
+
+<p>Chính vì vậy, mô hình thác nước chỉ phù hợp với các dự án vừa và nhỏ do những dự án này có thể xác định rõ yêu cầu từ đầu. Ngược lại, đối với những dự án lớn, việc xác định yêu cầu rõ ràng từ ban đầu là rất khó. Ngoài ra, việc làm tuần tự với dự án lớn là rất tốn thời gian khi mà khách hàng luôn mong muốn có sản phẩm chất lượng càng sớm càng tốt.</p>
+
+<p>Mô hình thác nước là mô hình đầu tiên, mọi mô hình cơ bản hiện nay đều xuất phát, phát triển từ mô hình thác nước.</p>
+
+<h1 id="2-mô-hình-chữ-v">2. Mô hình chữ V</h1>
+<p>Chất lượng kiểm thử phần mềm được đánh giá qua bộ test kiểm thử và quá trình thực hiện kiểm thử. Do vậy, chất lượng của bộ test kiểm thử là rất quan trọng. Tuy nhiên, mô hình thác nước đến giai đoạn kiểm thử mới được sinh test. Việc sinh test của mô hình thác nước khiến cho khả năng phát hiện ra lỗi của bộ test rất là thấp, dẫn đến việc kiểm thử, đánh giá chất lượng phần mềm không khách quan, chính xác. Và mô hình chữ V đã được cải tiến từ thác nước để giải quyết vấn đề sinh test muộn từ mô hình thấy nước.</p>
+
+<p><img src="/assets/media/post/v-model.png" alt="Mô hình chữ V" title="Mô hình chữ V" /></p>
+
+<h2 id="a-đặc-điểm-1">a. Đặc điểm</h2>
+<p>Cũng giống như mô hình thác nước, các giai đoạn trong mô hình chữ V được thực hiện một cách tuần tự theo hình chữ V. Tuy nhiên, cải tiến của mô hình chữ V đến từ việc sinh bộ test kiểm thử sớm bằng cách tích hợp liên kết giai đoạn kiểm thử cho từng giai đoạn phát triển tương ứng. Có nghĩa là, đối với mỗi giai đoạn trong chu kỳ phát triển sẽ có giai đoạn kiểm thử tương ứng. Mỗi giai đoạn bên trái model sẽ sinh bộ test cho giai đoạn kiểm thử bên phải của model:</p>
+<ul>
+  <li>Giai đoạn phân tích đặc tả yêu cầu sinh bộ test cho giai đoạn kiểm thử hệ thống, giai đoạn kiểm thử chấp nhận</li>
+  <li>Giai đoạn thiết kế sinh bộ test cho giai đoạn kiểm thử tích hợp.</li>
+  <li>Quá trình implementing thực hiện luôn giai đoạn kiểm thử unit.</li>
+</ul>
+
+<h2 id="b-ưu-nhược-điểm-1">b. Ưu, nhược điểm</h2>
+<p>Do V Model kế thừa hầu hết từ Waterfall Model nên mọi ưu, nhược điểm đa số đều giống Waterfall Model. Tuy nhiên, ưu điểm nổi bật nhất so với Waterfall Model là giai đoạn kiểm thử được thực hiện ngay từ đầu qua công việc sinh bộ test sớm cho giai đoạn kiểm thử tương ứng nên bộ test trong V Model chính xác hơn. Nhờ vậy, việc kiểm thử được thực hiện nhanh chóng, chính xác và đánh giá phần mềm một cách khách quan nhất.</p>
+
+<h1 id="3-bản-mẫu">3. Bản mẫu</h1>
+<p>Đặc điểm của mô hình thác nước là cần xác định rõ yêu cầu từ đầu. Nhưng trong thực tế rất ít dự án xác định được rõ yêu cầu từ đầu. Vậy cần phải làm sao? Bản mẫu chính là giải pháp giải quyết vấn đề này.</p>
+
+<h2 id="a-đặc-điểm-2">a. Đặc điểm</h2>
+<p>Bản mẫu là mô hình phát triển phần mềm được phát triển dựa trên các yêu cầu của hệ thống. Dựa vào bản mẫu, khách hàng có cái nhìn tổng quan về hệ thống thực tế.</p>
+
+<p>Bản mẫu cho phép hiểu các yêu cầu của khách hàng ở giai đoạn phát triển ban đầu ngay cả những yêu cầu khó xác định. Nhờ nhận được những phản hồi có giá trị từ khách hàng, từ đó giúp các nhà thiết kế và phát triển phần mềm hiểu chính xác những gì được mong đợi từ sản phẩm đang được phát triển.</p>
+
+<p>Chúng ta cần dồn chi phí và nguồn lực nhiều cho làm bản mẫu, dẫn tới các công đoạn còn lại sẽ thiếu thời gian và chi phí, … Kết quả là chất lượng sản phẩm nhất là tài liệu và chất lượng code dễ có vấn đề. Ngoài ra, việc chú trọng đến bản mẫu (thường cho yêu cầu chức năng) dẫn đến dễ bỏ qua các yêu cầu phi chức năng và đa số các dự án không đạt các yêu cầu phi chức năng. Chính vì vậy, thực tế nó không được dùng phổ biến như một mô hình phát triển phần mềm. Tuy nhiên, tư tưởng của bản mẫu rất quan trọng. Nó là mấu chốt để chúng ta lôi kéo khách hàng, giải quyết những yêu cầu không được rõ ràng. Do đó, người ta thường dùng bản mẫu như là một phương pháp thu thập yêu cầu cho các mô hình khác. 
+Bây giờ, người ta dùng bản mẫu như là một kỹ thuật thu thập yêu cầu.</p>
+
+<h2 id="b-ưu-nhược-điểm-2">b. Ưu, nhược điểm</h2>
+<p>Ưu điểm lớn nhất của bản mẫu giúp ta giải quyết việc xác định các yêu cầu khó của mô hình thác nước. Nhờ bản mẫu, việc xác định yêu cầu được diễn ra thuận chính xác nhờ đó việc thực hiện phần mềm dựa trên mô hình thác nước được diễn ra một cách thuận lợi. 
+Bù lại, chúng ta cần chi phí cao khi sử dụng bản mẫu do cần nhiều nguồn lực cho việc làm bản mẫu. Ngoài ra, sự tham gia của khách hàng vào bản mẫu là rất quan trọng.</p>
+
+<p>Tuy nhiên trong thực tế, việc nhiệt tình tham gia của khách hàng là khó, dẫn tới xây dựng bản mẫu khó chính xác. Từ đó, yêu cầu xác định không được rõ ràng.</p>
+
+<p>Mặc dù vậy, chúng ta vẫn có cách làm được nhưng không phải là điều dễ dàng.</p>
+
+<h1 id="4-xoắn-ốc">4. Xoắn ốc</h1>
+<p>Mô hình thác nước, chữ V chỉ phù hợp các dự án vừa và nhỏ, những dự án được xác định rõ yêu cầu từ đầu. Việc xác định những yêu cầu khó, phức tạp đã được giải quyết nhờ bản mẫu. Tuy nhiên, trong thực tế, đa số có dự án đều lớn, phức tạp. Vậy với các dự án lớn thì giải quyết như nào? Mô hình xoắn ốc là một lựa chọn mô hình để thực hiện các dự án lớn, phức tạp.</p>
+
+<p><img src="/assets/media/post/xoan-oc.png" alt="Mô hình xoắn ốc" /></p>
+<h2 id="a-đặc-điểm-3">a. Đặc điểm</h2>
+
+<p>Mô hình xoắn ốc là mô hình phát triển phần mềm kết hợp ý tưởng phát triển lặp đi lặp lại với các giai đoạn có hệ thống, được kiểm soát của mô hình thác nước.</p>
+
+<p>Mô hình xoắn ốc này là sự kết hợp giữa mô hình quy trình phát triển lặp và mô hình phát triển tuyến tính tuần tự, tức là mô hình thác nước với sự nhấn mạnh rất cao vào phân tích rủi ro. Nó cho phép phát hành sản phẩm qua mỗi lần lặp xung quanh hình xoắn ốc.
+Thực chất, mô hình xoắn ốc được kết hợp từ mô hình thác nước sử dụng bản mẫu để giải quyết những yêu cầu khó. Ngoài ra nó còn có quá trình phân tích rủi ro của dự án.</p>
+
+<p>Mô hình xoắn ốc là quy trình phát triển định hướng rủi ro cho các dự án phần mềm, nghĩa là trọng tâm dự án quản lý rủi ro thông qua nhiều lần lặp lại quy trình phát triển phần mềm.</p>
+
+<p>Mặc dù, các quá trình được lặp đi lặp lại nhưng mô hình vẫn theo tư tưởng phát triển tăng dần.</p>
+
+<h3 id="các-giai-đoạn-trong-phát-triển-phần-mềm-theo-mô-hình-xoắn-ốc">Các giai đoạn trong phát triển phần mềm theo mô hình xoắn ốc</h3>
+<ul>
+  <li><strong>Planning</strong>: Lập kế hoạch, trong đó phạm vi của dự án được xác định. Một kế hoạch được tạo ra cho lần lần lặp tiếp theo của mô hình xoắn ốc.</li>
+  <li><strong>Risk Analysis</strong>: Trong giai đoạn này, các rủi ro liên quan đến dự án được xác định và đánh giá.</li>
+  <li><strong>Engineering</strong>: Trong giai đoạn này, phần mềm được phát triển dựa trên lần thu thập yêu cầu trước đó.</li>
+  <li><strong>Evaluation</strong>: Phần mềm được đánh giá để xác định xem nó có đáp ứng các yêu cầu của khách hàng hay không và liệu nó có chất lượng cao hay không?</li>
+  <li><strong>Planning</strong>: Vòng lặp tiếp theo của vòng xoắn ốc bắt đầu bằng một giai đoạn lập kế hoạch mới, dựa trên kết quả đánh giá.</li>
+</ul>
+
+<p>Trong thực tế, chúng ta không thể bê bản mẫu hay mô hình thác nước vào dự án lớn do đối với những dự án càng lớn, tỉ lệ thất bại càng cao. 
+Vậy chúng ta thực hiện nó như thế nào? Chúng ta có hai chiến lược để thực hiện quá trình phát triển:</p>
+<ul>
+  <li><strong>Quá trình Implementing</strong></li>
+</ul>
+
+<p>Theo thống kê tính năng khách hàng sử dụng, nhận thấy có 20% tính năng bắt buộc phải có của phần mềm (core), 40 % tính năng thường xuyên được sử dụng và 40% tính năng hiếm khi sử dụng.</p>
+
+<p>Chúng ta có thể thực hiện quá trình implementing một cách tuần tự, tức là thực hiện xong 20% tính năng bắt buộc, sau khi quá trình kiểm thử được diễn ra xong thành công, mới tiếp tục thực hiện 40% tính năng thường xuyên sử dụng. Tiếp tục với 40% tính năng hiếm khi sử dụng. 
+Nhờ vậy, giúp chúng ta giảm thiểu khi thực hiện. Đây gọi là chống rủi ro.</p>
+
+<ul>
+  <li><strong>Phân tích rủi ro</strong></li>
+</ul>
+
+<p>Nhận thấy, khi chúng ta muốn xây một căn nhà cao 5 tầng, chúng ta có thể xây 3 tầng đầu tiên. Sau một thời gian, chúng ta có thể xây 2 tầng còn lại. Tuy nhiên, cái móng để xây nhà phải làm chắc có thể trụ được 5 tầng, không phải chỉ cho 3 tầng của tòa nhà được. 
+Chính vì vậy, khi chúng ta thực hiện 20% tính năng core của phần mềm thì base không chỉ đủ 20% core đấy mà phải làm base cho cả hệ thống. Nhờ vậy, giảm thiểu rủi ro cho hệ thống.</p>
+
+<p>Chúng ta, cần phải phát hiện rủi ro có thể xảy ra với dự án. Từ đó, xây dựng phương án giảm thiểu thiệt hại.</p>
+
+<p>Tuy nhiên, mô hình xoắn ốc lại không được dùng trong thực tế do tính khả thi của phân tích rủi ro. Để phân tích được rủi ro, chúng ta cần những người có kinh nghiệm lớn, trải qua nhiều số người như này rất hiếm.
+Tuy nhiên, mô hình xoắn lại có giá trị cao về học thuật.</p>
+
+<h2 id="b-ưu-nhược-điểm-3">b. Ưu, nhược điểm</h2>
+<p>Ưu điểm của mô hình xoắn ốc là nó cho phép các yếu tố, tính năng của sản phẩm được thêm vào ngay cả khi chúng đã được thực thi. Điều này đảm bảo rằng không có xung đột với các yêu cầu và thiết kế trước đó của phần mềm.</p>
+
+<p>Mô hình xoắn ốc giải quyết được các hạn chế của mô hình thác nước. Các yêu cầu trong mô hình xoắn ốc có thể được thay đổi. Nhờ đó, các yêu cầu được xác định rõ ràng, chính xác hơn. Việc phát triển phần theo mô hình xoắn ốc giúp cho khách hàng có thể thấy toàn bộ hệ thống sớm hơn. 
+Quá trình phát triển có thể được chia các phần nhỏ hơn và các phần rủi ro có thể được phát triển sớm hơn giúp quản lý rủi ro tốt hơn.</p>
+
+<p>Tuy nhiên, việc quản lý, quy trình phát triển mô hình xoắn ốc sẽ phức tạp. Từ đó, mô hình xoắn ốc không phù hợp với các mô hình vừa và nhỏ hoặc rủi ro thấp. Ngoài ra, số lượng lớn các giai đoạn đòi hỏi cần một số lượng lớn tài liệu.</p>
+
+<h1 id="kết-luận">Kết luận</h1>
+<p>Mô hình đóng vai trò là hướng đi và quyết định đến chất lượng đầu ra của sản phẩm. Vì vậy, việc xác định đúng và chính xác mô hình cho phần mềm là rất quan trọng. Mỗi mô hình quy trình tuân theo một loạt các bước duy nhất đối với loại của nó để đảm bảo thành công trong quy trình phát triển phần mềm. Tùy vào cấu trúc phần mềm mà từ đó chọn đúng mô hình phần mềm để thực hiện. Trong thực tế, chúng ta không nhất thiết phải sử dụng đúng các mô hình phần mềm trên mà có thể “biến tấu”, thay đổi để phù hợp với dự án phần mềm.</p>
+
+<h2 class="no_toc"> Refs </h2>
+
+<ul>
+  <li><a href="https://www.tutorialspoint.com/sdlc/index.htm">https://www.tutorialspoint.com/sdlc/index.htm</a></li>
+</ul>]]></content><author><name>zhao</name></author><category term="SE" /><category term="software" /><category term="model" /><summary type="html"><![CDATA[Mô hình phát triển phần mềm là thể hiện trừu tượng của các tiến trình phát triển phần mềm. Nó xác định các pha/ giai đoạn trong phát triển phần mềm. Trong các dự án phát triển phần mềm, mô hình đóng vai trò rất quan trọng. Mô hình đóng vai trò là hướng đi và quyết định đến chất lượng đầu ra của sản phẩm.]]></summary></entry><entry><title type="html">Một bài giới thiệu về cái blog nho nhỏ này</title><link href="https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/" rel="alternate" type="text/html" title="Một bài giới thiệu về cái blog nho nhỏ này" /><published>2023-02-22T00:00:00+00:00</published><updated>2023-02-22T00:00:00+00:00</updated><id>https://zhaospei.github.io//dummy/2023/02/22/about-this-blog</id><content type="html" xml:base="https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/"><![CDATA[<p>Chào!
+Hmm, đầu tiên phải giới thiệu đôi chút về bản thân nhỉ? À chắc không cần, vì mấy cái câu giới thiệu bản thân tớ 
+viết đi viết lại ở hầu hết mọi trang của blog rồi… LOL.</p>
+
+<p>Lần đầu tiên viết bài, không biết viết như nào :)). Chắc tớ sẽ nói vì sao tớ lại tạo cái blog nào và cách tớ thực hiện nó.</p>
+
+<h2 id="tại-sao-tớ-lại-xây-dựng-cái-blog-này">Tại sao tớ lại xây dựng cái blog này?</h2>
+<p>À chắc cái blog này được tạo bởi vì các ý nghĩ vớ vẩn của tớ tại một thời điểm nào đấy.
+Tớ tạo blog này với mục đích ban đầu là tạo ra một chỗ lưu trữ những bài viết của tớ, nó có thể là các bài viết học thuật hay là 
+những bài viết vớ vẩn chia sẻ trải nghiệm của bản thân tớ. Nhưng mục đích cuối cùng tớ muốn hướng tới là cải thiện khả năng viết
+lách của bản thân và tìm một niềm vui khác khi rảnh.</p>
+
+<h2 id="cách-tớ-thực-hiện-cái-blog-này">Cách tớ thực hiện cái blog này…</h2>
+<p>Ban đầu, tớ định dùng <strong>Django</strong> để xây dựng blog nhưng nghĩ lại là dùng <strong>Django</strong> thì host kiểu gì vì tớ không có tiền để duy trì hosting. Tớ cũng đã nghĩ đến các hosting free nhưng mà nó khá là ba chấm và deloy <strong>Django</strong> rất rườm rà. Và rồi, tớ nghĩ sao tớ 
+không dùng chính <strong>Github Pages</strong> để host nhỉ? Cuối cùng, tớ đã quyết định dùng nó để host và sử dụng <strong>jekyll</strong> để xây dựng blog. 
+Và rồi, tớ đã bắt tay vào làm nó…</p>
+
+<p>Về giao diện của blog, tớ lấy cảm hứng từ <a href="https://reaganhenke.com/">Reaganhenke</a> và <a href="https://www.digitalocean.com/">Digital Ocean</a>.</p>
+
+<p>Tớ biết đến <a href="https://reaganhenke.com/">Reaganhenke</a> nhờ vào một hôm tìm cái trang web nghe nhạc lofi để học. Sau khi tìm hiểu, tớ có biết đến <a href="https://imissmycafe.com/">I Miss My Cafe</a>. Đây là một trang đối với tớ khá là hay, recommend cậu trang này nhé!(à cậu có thể vào để tìm hiểu về nó nhé :))). Tính tớ hay tò mò nên tớ đã lục lọi để tìm ra source của nó để clone lại một trang giống như vậy :)). Kết quả là tớ chỉ tìm được page của người làm ra nó. Và rồi, tớ bị thu hút bởi thiết kế của page, nhất là mấy cái card đầu của page. Haha, và rồi tớ lấy nó để làm giao diện.
+ <em>(Reagan Henke, if you see this blog, please forgive me for using it without your permission!)</em>.</p>
+
+<p>Còn <a href="https://www.digitalocean.com/">Digital Ocean</a> thì một lần tớ tìm tutorial và tìm ra nó. Đây cũng một trang chất lượng, recommend cậu trang này nữa nhé! (À thực ra ai cũng biết đến trang này :))).</p>
+
+<p>Ngoài ra tớ còn sử dụng <a href="https://vincentgarreau.com/particles.js/">particles.js</a> để làm mấy cái lines nối nhau trông rườm rà ở background và <a href="https://talk.hyvor.com/">Hyvor</a> để làm phần comment (Tớ chỉ được dùng thử 15 ngày nên không biết 15 ngày sau nó có bị mất không :))).</p>
+
+<h2 id="mục-đích-hướng-đến-của-blog">Mục đích hướng đến của blog…</h2>
+<p>Blog này tớ dự định sẽ là chia sẻ những bài viết, chủ đề mà tớ tìm hiểu và nghiên cứu. Hiện tại, tớ đang theo Lab CNPM nên đa số bài viết sẽ liên quan đến chủ đề này. Nếu cậu cũng đang tìm hiểu về chủ đề này thì có thể đọc blog của tớ nhé để giúp tớ cản thiện bài viết của bản thân. Ngoài ra, tớ cũng đang tìm hiểu về AI/ML nữa. Cũng có thể sẽ là những bài viết chia sẻ những trải nghiệm của bản thân. Nhưng mà tớ rất là lười viết nên có thể rất lâu tớ mới viết một bài mới _D:.</p>
+
+<p>Cậu cũng có thể gửi bài tới blog nhé. Rất là khuyến khích ủng hộ luôn.</p>
+
+<h2 id="mong-muốn-của-tớ">Mong muốn của tớ…</h2>
+<p>Tớ tạo blog vì ý nghĩ nhất thời và mục đích cá nhân là nhiều nên tớ cũng không mong blog sẽ được biết đến rộng rãi. À được nhiều người biết thì cũng không sao. Mong rằng với những người biết đến blog của tớ sẽ nhận được điều gì đó mới mẻ khi đọc những bài viết vớ vẩn của tớ. Vậy thôi…</p>
+
+<p>Cậu có thể xem source code của blog tớ tại <a href="https://github.com/zhaospei/zhaospei.github.io">Github</a>.</p>
+
+<p>Cảm ơn cậu đã ghé thăm blog của tớ và đọc cái post mở đầu xàm này. 
+Nếu có gì góp ý cho blog thì cậu comment phía dưới nhé, tớ sẽ sớm khắc phục. (À comment sớm nhé chứ phần comment chỉ được dùng thử 15 ngày :)).</p>
+
+<p><br /></p>
+<div style="text-align: right"> 
+See yaaaaaaaaaaaaaaaaaaaaaaaaaaaa,
+</div>
+
+<div style="text-align: right"> 
+<strong>Zhao</strong>
+</div>]]></content><author><name>zhao</name></author><category term="Dummy" /><category term="doc" /><category term="talk" /><category term="zhao" /><summary type="html"><![CDATA[Chào! Hmm, đầu tiên phải giới thiệu đôi chút về bản thân nhỉ? À chắc không cần, vì mấy cái câu giới thiệu bản thân tớ viết đi viết lại ở hầu hết mọi trang của blog rồi… LOL.]]></summary></entry><entry><title type="html">Test post theme</title><link href="https://zhaospei.github.io//dummy/2023/02/21/test-post-theme/" rel="alternate" type="text/html" title="Test post theme" /><published>2023-02-21T00:00:00+00:00</published><updated>2023-02-21T00:00:00+00:00</updated><id>https://zhaospei.github.io//dummy/2023/02/21/test-post-theme</id><content type="html" xml:base="https://zhaospei.github.io//dummy/2023/02/21/test-post-theme/"><![CDATA[<h2 id="autoprefixer">Autoprefixer</h2>
+
+<blockquote>
+  <p>The man who comes back through the door in the wall will never be quite the same as the man who went out.</p>
+</blockquote>
+
+<p><a href="https://github.com/postcss/postcss">PostCSS</a> plugin to parse CSS and add vendor prefixes to CSS rules using values
+from <a href="https://caniuse.com/">Can I Use</a>. It is recommended by Google and used in Twitter and Alibaba.</p>
+
+<p>Write your CSS rules without vendor prefixes (in fact, forget about them
+entirely):</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">::placeholder</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">gray</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.image</span> <span class="p">{</span>
+  <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url(image@1x.png)</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">@media</span> <span class="p">(</span><span class="n">min-resolution</span><span class="p">:</span> <span class="m">2dppx</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.image</span> <span class="p">{</span>
+    <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url(image@2x.png)</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">os</span>
+
+<span class="kn">from</span> <span class="n">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">jsonify</span><span class="p">,</span> <span class="n">request</span>
+
+<span class="kn">from</span> <span class="n">.common</span> <span class="kn">import</span> <span class="n">load_from_s3</span><span class="p">,</span> <span class="n">load_from_disk</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="nc">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="n">MODEL_SOURCE</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s">'MODEL_SOURCE'</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">MODEL_SOURCE</span>  <span class="o">==</span> <span class="s">'S3'</span><span class="p">:</span>
+    <span class="n">MODEL</span> <span class="o">=</span> <span class="nf">load_from_s3</span><span class="p">()</span>
+<span class="k">elif</span> <span class="n">MODEL_SOURCE</span> <span class="o">==</span> <span class="s">'DISK'</span><span class="p">:</span>
+    <span class="n">MODEL</span> <span class="o">=</span> <span class="nf">load_from_disk</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s">"Invalid value for MODEL_SOURCE: </span><span class="si">{</span><span class="n">MODEL_SOURCE</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+
+<span class="n">features</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">'age'</span><span class="p">,</span> 
+    <span class="s">'fnlwgt'</span><span class="p">,</span> 
+    <span class="s">'education_num'</span><span class="p">,</span> 
+    <span class="s">'capital_gain'</span><span class="p">,</span> 
+    <span class="s">'capital_loss'</span><span class="p">,</span> 
+    <span class="s">'hours_per_week'</span>
+<span class="p">]</span>
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s">"/"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">serve</span><span class="p">():</span>
+    <span class="k">return</span> <span class="nf">jsonify</span><span class="p">(</span><span class="n">success</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s">"/predict"</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">"POST"</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">predict</span><span class="p">():</span>
+    <span class="n">request_payload</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">json</span>
+    <span class="n">payload</span> <span class="o">=</span> <span class="p">[</span><span class="n">request_payload</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span> <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">features</span><span class="p">]</span>
+    <span class="n">proba</span> <span class="o">=</span> <span class="n">MODEL</span><span class="p">.</span><span class="nf">predict_proba</span><span class="p">([</span><span class="n">payload</span><span class="p">])[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> 
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s">'prediction'</span><span class="p">:</span> <span class="s">'&gt;$50K'</span> <span class="k">if</span> <span class="n">proba</span> <span class="o">&gt;=</span> <span class="mf">0.5</span> <span class="k">else</span> <span class="s">'&lt;=$50K'</span><span class="p">,</span>
+        <span class="s">'probability'</span><span class="p">:</span> <span class="n">proba</span>
+    <span class="p">}</span>
+
+</code></pre></div></div>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">impl</span> <span class="n">Display</span> <span class="k">for</span> <span class="n">Hotkey</span> <span class="p">{</span>
+    <span class="k">fn</span> <span class="nf">fmt</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">,</span> <span class="n">f</span><span class="p">:</span> <span class="o">&amp;</span><span class="k">mut</span> <span class="nn">std</span><span class="p">::</span><span class="nn">fmt</span><span class="p">::</span><span class="n">Formatter</span><span class="o">&lt;</span><span class="nv">'_</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nn">std</span><span class="p">::</span><span class="nn">fmt</span><span class="p">::</span><span class="nb">Result</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">self</span><span class="py">.modifiers</span><span class="nf">.is_control</span><span class="p">()</span> <span class="p">{</span>
+            <span class="c1">// Phím ⌃ Control</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="k">self</span><span class="py">.modifiers</span><span class="nf">.is_super</span><span class="p">()</span> <span class="p">{</span>
+            <span class="c1">// Phím ⌘ Cmd trên macÓ</span>
+        <span class="p">}</span>
+        <span class="o">...</span>
+        <span class="nd">write!</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s">"{}"</span><span class="p">,</span> <span class="n">keys</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Autoprefixer will use the data based on current browser popularity and property
+support to apply prefixes for you. You can try the <a href="https://autoprefixer.github.io/">interactive demo</a>
+of Autoprefixer.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">::-moz-placeholder</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">gray</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nd">::placeholder</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">gray</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.image</span> <span class="p">{</span>
+  <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url(image@1x.png)</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">@media</span> <span class="p">(</span><span class="n">-webkit-min-device-pixel-ratio</span><span class="p">:</span> <span class="m">2</span><span class="p">),</span>
+       <span class="p">(</span><span class="n">min-resolution</span><span class="p">:</span> <span class="m">2dppx</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.image</span> <span class="p">{</span>
+    <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url(image@2x.png)</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Twitter account for news and releases: <a href="https://twitter.com/autoprefixer">@autoprefixer</a>.</p>
+
+<p><a href="https://evilmartians.com/?utm_source=autoprefixer">
+<img src="https://evilmartians.com/badges/sponsored-by-evil-martians.svg" alt="Sponsored by Evil Martians" width="236" height="54" />
+</a></p>
+
+<h1 id="testing-out-latex">Testing out latex</h1>
+
+\[\nabla_\boldsymbol{x} J(\boldsymbol{x})\]
+
+<h2 id="1-click-deployment">1-Click Deployment</h2>
+<h2 id="prerequisites">Prerequisites</h2>
+<h2 id="step-1--creating-a-gitlab-enterprise-edition-droplet">Step 1 — Creating a GitLab Enterprise Edition Droplet</h2>
+<h2 id="step-2--accessing-the-droplet-via-ssh-to-enable-configuration">Step 2 — Accessing the Droplet via SSH to Enable Configuration</h2>
+<h2 id="step-2--editing-the-configuration-file">Step 2 — Editing the Configuration File</h2>
+<h2 id="step-3--configuring-gitlab-via-the-web-interface">Step 3 — Configuring GitLab via the Web Interface</h2>
+
+<h2 id="related">Related</h2>
+<h2 id="how-to-set-up-a-masterless-puppet-environment-on-ubuntu-1404">How To Set Up a Masterless Puppet Environment on Ubuntu 14.04</h2>
+<h2 id="viewtutorial">Viewtutorial</h2>
+<h2 id="how-to-build-docker-images-and-host-a-docker-image-repository-with-gitlab">How To Build Docker Images and Host a Docker Image Repository with GitLab</h2>
+<h2 id="viewtutorial-1">Viewtutorial</h2>
+
+<h2 id="how-to-build-docker-images-and-host-a-docker-image-repository-with-gitlab-1">How To Build Docker Images and Host a Docker Image Repository with GitLab</h2>
+<h2 id="viewtutorial-2">Viewtutorial</h2>
+
+<h2 id="how-to-build-docker-images-and-host-a-docker-image-repository-with-gitlab-2">How To Build Docker Images and Host a Docker Image Repository with GitLab</h2>
+<h2 id="viewtutorial-3">Viewtutorial</h2>
+
+<h2 id="how-to-build-docker-images-and-host-a-docker-image-repository-with-gitlab-3">How To Build Docker Images and Host a Docker Image Repository with GitLab</h2>
+<h2 id="viewtutorial-4">Viewtutorial</h2>
+
+<h2 id="how-to-build-docker-images-and-host-a-docker-image-repository-with-gitlab-4">How To Build Docker Images and Host a Docker Image Repository with GitLab</h2>
+<h2 id="viewtutorial-5">Viewtutorial</h2>
+
+<h2 id="how-to-build-docker-images-and-host-a-docker-image-repository-with-gitlab-5">How To Build Docker Images and Host a Docker Image Repository with GitLab</h2>
+<h2 id="viewtutorial-6">Viewtutorial</h2>
+<h2 id="how-to-build-docker-images-and-host-a-docker-image-repository-with-gitlab-6">How To Build Docker Images and Host a Docker Image Repository with GitLab</h2>
+<h2 id="viewtutorial-7">Viewtutorial</h2>
+<h2 id="how-to-build-docker-images-and-host-a-docker-image-repository-with-gitlab-7">How To Build Docker Images and Host a Docker Image Repository with GitLab</h2>
+<h2 id="viewtutorial-8">Viewtutorial</h2>
+
+<h2 id="how-to-build-docker-images-and-host-a-docker-image-repository-with-gitlab-8">How To Build Docker Images and Host a Docker Image Repository with GitLab</h2>
+<h2 id="viewtutorial-9">Viewtutorial</h2>]]></content><author><name>zhao</name></author><category term="Dummy" /><category term="abc" /><category term="xyz" /><category term="zhao" /><summary type="html"><![CDATA[Autoprefixer The man who comes back through the door in the wall will never be quite the same as the man who went out.]]></summary></entry><entry><title type="html">The first post</title><link href="https://zhaospei.github.io//dummy/2023/02/20/the-first-post/" rel="alternate" type="text/html" title="The first post" /><published>2023-02-20T16:25:36+00:00</published><updated>2023-02-20T16:25:36+00:00</updated><id>https://zhaospei.github.io//dummy/2023/02/20/the-first-post</id><content type="html" xml:base="https://zhaospei.github.io//dummy/2023/02/20/the-first-post/"><![CDATA[<p>Đây là bài viết đầu tiên!</p>
+
+<p>Tất nhiên rồi đây là bài viết đầu tiên !</p>
+
+<p>Và bài viết này mục đích chỉ để test tính năng của blog.</p>
+
+<p>Có cần phải nói sơ qua về mục đích của việc tạo blog này không nhỉ? Nếu có, thì blog được mình tạo ra một cách tình cờ. Mục đích ban đầu của mình tạo blog này chỉ để note lại những thứ cần thiết và mình tâm đắc nhất trong quá trình học công nghệ thông tin của mình và một vài chút xàm xí gì đấy ! LOLLLLL!</p>
+
+<p>Hmm, chẳng biết viết gì nhiều. Nói chung là mong cái blog này sẽ được biết đến rộng rãi :D!</p>
+
+<p>01:46:58 21.02.23</p>
+
+<p>See yaa,
+Zhao!</p>]]></content><author><name>zhao</name></author><category term="Dummy" /><category term="dummy" /><category term="zhao" /><summary type="html"><![CDATA[Đây là bài viết đầu tiên!]]></summary></entry></feed>
