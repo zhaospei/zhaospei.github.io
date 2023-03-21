@@ -1,16 +1,14 @@
 ---
-layout: post
+layout: default
 title:  "The first post"
 date:   2023-02-20 23:25:36 +0700
 up_date: 2023-02-24
-categories: dummy
+categories: Dummy
 author: zhao
 tags: ["dummy", "zhao"]
 ---
 
-01:46:58 21.02.23
-
-## Đây là bài viết đầu tiên!
+Đây là bài viết đầu tiên!
 
 Tất nhiên rồi đây là bài viết đầu tiên !
 
@@ -20,6 +18,7 @@ Có cần phải nói sơ qua về mục đích của việc tạo blog này kh�
 
 Hmm, chẳng biết viết gì nhiều. Nói chung là mong cái blog này sẽ được biết đến rộng rãi :D!
 
-See yaa,
+01:46:58 21.02.23
 
+See yaa,
 Zhao! 

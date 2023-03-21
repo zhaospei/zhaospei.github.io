@@ -1,11 +1,13 @@
 ---
 name: Memory Card
 img: /assets/media/project/memory-card.png
+link: https://zhaospei.github.io/Memory-Card/
+techs: [JavaScript]
+ref:
+    Website: "https://zhaospei.github.io/Memory-Card/"
+    Code on GitHub: "https://github.com/zhaospei/Memory-Card"
 ---
 
-- **Tech**: JavaScript
-- **Description**: A cardgame web app created in 24 hours, choosing all two similar cards to win.
-        
-- **Source**: [https://github.com/zhaospei/Memory-Card](https://github.com/zhaospei/Memory-Card).
+These are some personal projects I have been working on to learn more about different libraries and browser APIs. I like trying out “the last new thing” in a small project and publish it on my GitHub account, both as a personal reminder of what I did, and to help people looking for examples.
 
-- **Demo**: [https://zhaospei.github.io/Memory-Card/](https://zhaospei.github.io/Memory-Card/).
+

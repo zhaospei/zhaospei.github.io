@@ -1,7 +1,7 @@
 ---
-layout: post
+layout: default
 title:  "Test post theme"
-categories: dummy
+categories: Dummy
 author: zhao
 tags: ["abc", "xyz", "zhao"]
 comments: true
