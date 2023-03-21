@@ -2,19 +2,39 @@
 layout: page
 title: Works.
 permalink: /works.html
+color: "from-purple-400 from-yellow-500"
+description: These are some personal projects I have been working on to learn more about different libraries and browser APIs. I like trying out “the last new thing” in a small project and publish it on my GitHub account, both as a personal reminder of what I did, and to help people looking for examples.
 ---
-<div id="projects" class="content-section">
+<h3 class="font-bold text-xl md:text-3xl tracking-tight mb-4 mt-8 text-black dark:text-white">
+  Recent Person Projects.
+</h3>
+<ul class="grid w-full grid-cols-1 gap-6 mt-4 mb-10">
   {% for project in site.projects %}
-    <div class="project">
-      <div>
-        <div>
-          <div class="project-img">
-            <img src="{{ project.img }}" alt="project-img">
-          </div>
-          <h2>{{ project.name }}</h2>
-          {{ project.content }}
-        </div>
+  <li class="border-solid border border-gray-300 rounded w-full bg-white dark:bg-gray-900">
+    <a href="{{ project.link }}">
+      <img src=" {{ project.img }}">
+    </a>
+    <div class="p-4">
+      <div class="text-4xl font-bold text-left text-gray-900 dark:text-gray-100"> {{ project.name }}</div>
+      <div class="flex flex-row-reverse flex-wrap  w-full">
+        {% for tech in project.techs %}
+          <span class="inline-block items-center bg-slate-500 text-white font-semibold px-2 mt-2 ml-2 border-solid border rounded">
+            {{ tech }}
+          </span>
+        {% endfor %}
+      </div>
+      <div class="mt-1 text-gray-600">
+        {{ project.content }}
+      </div>
+      <div class="flex flex-wrap gap-2 mt-4">
+        {% for r in project.ref %}
+        <a class="h-8 flex items-center justify-center bg-transparent text-blue-500 hover:text-blue-700 font-semibold px-4 border-solid border border-indigo-600 rounded"
+          href=" {{ r[1] }} ">
+           {{ r[0] }} 
+        </a>
+        {% endfor %}
       </div>
     </div>
+  </li>
   {% endfor %}
-</div>
+</ul>

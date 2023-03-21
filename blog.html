@@ -1,21 +1,67 @@
 ---
 layout: page
-title: Post.
-permalink: /post.html
+title: Blog.
+permalink: /blog.html
+color: "from-green-400 to-blue-500"
+description: I've written posts since March 2023. I like talking about web development, machine learning and others. Use the search below to filter by title or summary.
 ---
-<div class="content-section">
-  <h2 class="h2-post-list" style="margin-top: 40px;">Most Recent Contents</h2>
-  <div class="post-list">
-    {% for post in site.posts %}
-    <a href="{{ post.url }}" class="post-container">
-      <div style="padding: 24px 32px;">
-        {% for category in post.categories %}
-        <h4> // {{ category | capitalize }} // </h4>
-        {% endfor %}
-        <h3> {{ post.title }} </h3>
-        <div class="post-date">{{ post.date | date: "%b %-d, %Y" }} </div>
+
+<h3 class="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white"> Most Recent. </h3>
+{% for post in site.posts limit:3 %}
+  <a class="w-full" href="{{ post.url }}">
+    <div class="w-full mb-8">
+      <div class="flex flex-row">
+        <div class="flex-none mt-1.5 mr-5 w-24 h-16 relative rounded-sm">
+          {% if post.img-feature %}
+            <img alt="Post image feature" src="{{ post.img-feature }}" class="w-full">
+          {% else %}
+            <img alt="Post image feature" src="/dist/assets/media/feature/default.jpg" class="w-full">
+          {% endif %}
+        </div>
+        <div class="w-full">
+          <div class="flex flex-col justify-between md:flex-row">
+            <h4 class="w-full mb-2 text-lg font-medium text-gray-900 md:text-xl dark:text-gray-100">
+              {{ post.title }}
+            </h4>
+            <p class="font-bold w-32 mb-4 text-left text-sky-900 md:text-right md:mb-0">
+              {% for category in post.categories %}
+                {{ category | append: ' '}}
+              {% endfor %}
+            </p>
+          </div>
+          <div class="text-gray-600 dark:text-gray-400"> {{ post.excerpt }} </div>
+        </div>
       </div>
-    </a>
-    {% endfor %}
-  </div>
-</div>
+    </div>
+  </a>
+{% endfor %}
+
+<h3 class="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white"> All Posts. </h3>
+{% for post in site.posts %}
+  <a class="w-full" href="{{ post.url }}">
+    <div class="w-full mb-8">
+      <div class="flex flex-row">
+        <div class="flex-none mt-1.5 mr-5 w-24 h-16 relative rounded-sm">
+          {% if post.img-feature %}
+            <img alt="Post image feature" src="{{ post.img-feature }}" class="w-full">
+          {% else %}
+            <img alt="Post image feature" src="/assets/media/feature/default.jpg" class="w-full">
+          {% endif %}
+        </div>
+        <div class="w-full">
+          <div class="flex flex-col justify-between md:flex-row">
+            <h4 class="w-full mb-2 text-lg font-medium text-gray-900 md:text-xl dark:text-gray-100">
+              {{ post.title }}
+            </h4>
+            <p class="font-bold w-32 mb-4 text-left text-sky-900 md:text-right md:mb-0"> 
+              {% for category in post.categories %}
+                {{ category | append: ' '}}
+              {% endfor %}
+            </p>
+          </div>
+          <div class="text-gray-600 dark:text-gray-400"> {{ post.excerpt }} </div>
+        </div>
+      </div>
+    </div>
+  </a>
+{% endfor %}

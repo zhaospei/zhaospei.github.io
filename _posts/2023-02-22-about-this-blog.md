@@ -1,7 +1,7 @@
 ---
-layout: post
+layout: default
 title:  "Một bài giới thiệu về cái blog nho nhỏ này"
-categories: dummy
+categories: Dummy
 author: zhao
 tags: ["doc", "talk", "zhao"]
 up_date: 2023-02-24

@@ -1,20 +1,33 @@
 <!DOCTYPE html>
-<html lang="vi" xml:lang="vi">
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HSCBJBJKGQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-HSCBJBJKGQ');
+    </script>
     
-    {% include head.html %}
-
-        <body>
-            {% include header.html %}
-            
-            <article class="content">
-                <div id="particles-js"></div>
-                {{ content }}
-            </article> 
-
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-            <script src="/assets/js/particles.js"></script>
-            <script src="/assets/js/main.js"></script>
-            <script src="/assets/js/magnet.js"></script>
-            <script src="/assets/js/app.js"></script>
-        </body>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/github.css" | relative_url }}">
+    {% feed_meta %}
+    {% seo %}
+  </head>
+  <body>
+    <div class="bg-gray-50">
+      {% include header.html %}
+      <main class="flex flex-col justify-center px-8 bg-gray-50">
+        <div class="flex flex-col justify-center items-start max-w-2xl border-gray-200 mx-auto pb-16">
+          {{ content }}
+        </div>
+        {% include footer.html %}
+      </main>
+    </div>
+  </body>
 </html>

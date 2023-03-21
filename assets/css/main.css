@@ -1,209 +1,22 @@
-@import url(https://fonts.googleapis.com/css?family=Shrikhand|Staatliches|Epilogue|Inter);
-@import url(https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap);
+--- 
+--- 
 
-html {
-    scroll-behavior: smooth;
-    margin: 0px;
-    padding: 0px
-}
+@tailwind base;
 
-body {
-    margin: 0;
-    background-color: #315162;
-    color: #fff;
-    position: relative;
-}
-
-ol,
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-h1 {
-    font-family: Staatliches, cursive;
-    letter-spacing: 2px;
-    font-size: 40px
-}
-
-h2 {
-    font-size: 26px;
-    letter-spacing: 1px;
-    font-family: Staatliches
-}
-
-h3 {
-    font-size: 16px
-}
-
-p {
-    font-size: 16px;
-    text-indent: 2em;
-    word-break: break-word;
-}
-
-a {
-    color: #197bac;
-    text-decoration: none;
-}
-
-hr {
-    height: 2px;
-    background-color: white;
-}
-
-blockquote {
-    display: block;
-    padding: 5px 10px;
-    margin: 10px 0;
-    border-left-width: 5px;
-    border-left-style: solid;
-    border-radius: 5px;
-    background-color: #eee;
-}
-
-blockquote p {
-    font-size: 20px;
-}
-
-
-header .flexbox {
-    display: flex;
-    margin-bottom: 16px;
-}
-
-header .flexbox>* {
-    margin: auto;
-}
-
-header h1 {
-    display: inline-block;
-    margin: 0;
-    margin-left: 20px;
-    font-size: 2em;
-}
-
-.logo {
-    color: #8ec3de
-}
-
-nav ul,
-.meta ul {
-    font-size: 36px;
-    display: flex;
-    justify-content: space-between;
-}
-
-nav li,
-.meta li {
-    display: flex;
-    font-family: Staatliches, cursive;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    margin: 4px 8px;
-}
-
-nav li:hover,
-.meta li:hover {
-    background: #21343cb0;
-}
-
-.main-nav li a,
-.meta li a {
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    color: #8ec3de;
-    border-radius: 5px;
-    font-weight: 900px;
-    font-size: .75em;
-    padding: 4px 8px;
-    text-shadow: none;
-    text-transform: uppercase;
-    -webkit-transition: all .25s;
-    -moz-transition: all .25s;
-    -o-transition: all .25s;
-    transition: all .25s;
-}
-
-.main-nav li.current a,
-.meta li.current a {
-    color: white;
-}
-
-.content {
-    font-family: Montserrat, sans-serif;
-    width: 90%;
-    margin: auto
-}
-
-
-.content-section {
-    background-color: #f9fafe9c;
-    color: rgb(3, 27, 78);
-    padding: 20px;
-    border-radius: 10px;
-    margin: 40px auto
-}
-
-.fixed-bottom {
-    font-family: Inter, sans-serif;
-    color: #0d122b;
-    margin-top: 8em;
-    padding: 2em;
-    text-align: center;
-    font-weight: 800;
-}
-
-.fixed-bottom a:hover {
-    font-weight: 800;
-}
-
-a.footer_item {
-    display: inline-block;
-    font-weight: 300;
-    padding: 1em;
-    color: #0d122b;
-}
-
-.scroll::-webkit-scrollbar {
-  width: 10px;
-}
- 
-.scroll::-webkit-scrollbar-thumb {
-  background: rgb(8, 27, 75);
-  border-radius: 20px;
-}
-
-.scroll::-webkit-scrollbar-track {
-  background: #ddd;
-  border-radius: 20px;
-}
-
-
-
-@media only screen and (max-width:600px) {
-    .full-on-mobile {
-        width: 100%;
+@layer base {
+    h1 {
+      @apply font-bold text-2xl;
     }
-
-    .flexbox {
-        flex-direction: column;
+    h2 {
+      @apply font-bold text-xl;
     }
-
-    .center-on-mobile {
-        margin: auto;
+    h3 {
+      @apply font-bold text-lg;
     }
-
-    .content {
-        width: 95%;
+    a {
+      @apply text-blue-600;
     }
+  }
 
-    nav ul,
-    .meta ul {
-        font-size: 24px;
-    }
-}
+@tailwind components;
+@tailwind utilities;
