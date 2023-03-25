@@ -15,16 +15,16 @@ layout: default
                 {% else %}
                     <img src="/assets/media/author/default_img.jpeg" alt="{{ author.name }}">
                 {% endif %}
-                <p class="ml-2 text-sm text-gray-700 dark:text-gray-300">
+                <p class="ml-2 text-sm text-gray-700">
                     {{ author.name }} / {{ page.date | date: "%B %-d, %Y" }}
                 </p>
             {% endif %}
         </div>
-        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400 min-w-32 md:mt-0">
+        <p class="mt-2 text-sm text-gray-600 min-w-32 md:mt-0">
             {% include reading-time.html %}
         </p>
     </div>
-    <div class="w-full mt-4 prose dark:prose-dark max-w-none">
+    <div class="w-full mt-4 prose max-w-none">
         {{ content }}
     </div>
 

@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode: 'class',
   content: [
     './_drafts/**/*.html',
     './_includes/**/*.html',

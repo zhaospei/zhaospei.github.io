@@ -4,15 +4,26 @@
 @tailwind base;
 
 @layer base {
+    html {
+      font-family: 'Inter', sans-serif;
+    }
+
+    a {
+      @apply text-blue-600;
+    }
+
     .prose h1 {
       @apply font-bold text-2xl mt-8 mb-4;
     }
+
     .prose h2 {
       @apply font-bold text-xl mt-8 mb-4;
     }
+
     .prose h3 {
       @apply font-bold text-lg mt-8 mb-4;
     }
+
     .prose p {
       @apply mt-5 mb-5 indent-8;
     }
@@ -25,9 +36,18 @@
       @apply mt-2 mb-2;
     }
 
-    a {
-      @apply text-blue-600;
+    #results-container {
+      @apply w-full box-border my-4 px-4 py-4 text-gray-900 bg-white border border-solid border-slate-300 rounded-md;
     }
+
+    #results-container li {
+      @apply px-4 hover:bg-indigo-300 hover:text-indigo-600	border-0 rounded-md;
+    }
+    
+    #results-container li p {
+      @apply w-full py-2 text-lg font-medium text-gray-900 md:text-xl;
+    }
+
   }
 
 @tailwind components;
