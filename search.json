@@ -1,0 +1,66 @@
+[
+  
+    {
+      "title"    : "Cách sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)",
+      "categories" : "Testing",
+      "tags"     : "pairwise, all-pairs, testing",
+      "url"      : "/testing/2023/03/25/two-pairs-testing/",
+      "date"     : "2023-03-25 00:00:00 +0000",
+      "content": "[  {% for post in site.posts %}    {      &quot;title&quot;    : &quot;{{ post.title | escape }}&quot;,      &quot;categories&quot; : &quot;{{ post.categories }}&quot;,      &quot;tags&quot;     : &quot;{{ post.tags | join: &#39;, &#39; }}&quot;,      &quot;url&quot;      : &quot;{{ site.baseurl }}{{ post.url }}&quot;,      &quot;date&quot;     : &quot;{{ post.date }}&quot;,      &quot;content&quot;: &quot;{{ page.content | strip_html | strip_newlines | remove_chars | escape }}&quot;    } {% unless forloop.last %},{% endunless %}  {% endfor %}]"
+    } ,
+  
+    {
+      "title"    : "Sử dụng SVG như một Placeholder",
+      "categories" : "OP",
+      "tags"     : "js",
+      "url"      : "/op/2023/03/21/how-to-use-svg-to-show-images/",
+      "date"     : "2023-03-21 00:00:00 +0000",
+      "content": "[  {% for post in site.posts %}    {      &quot;title&quot;    : &quot;{{ post.title | escape }}&quot;,      &quot;categories&quot; : &quot;{{ post.categories }}&quot;,      &quot;tags&quot;     : &quot;{{ post.tags | join: &#39;, &#39; }}&quot;,      &quot;url&quot;      : &quot;{{ site.baseurl }}{{ post.url }}&quot;,      &quot;date&quot;     : &quot;{{ post.date }}&quot;,      &quot;content&quot;: &quot;{{ page.content | strip_html | strip_newlines | remove_chars | escape }}&quot;    } {% unless forloop.last %},{% endunless %}  {% endfor %}]"
+    } ,
+  
+    {
+      "title"    : "Chuyện chi chi rằng rằng (Phần 1)",
+      "categories" : "Dummy",
+      "tags"     : "dummy",
+      "url"      : "/dummy/2023/03/20/chuyen-chi-chi/",
+      "date"     : "2023-03-20 00:00:00 +0000",
+      "content": "[  {% for post in site.posts %}    {      &quot;title&quot;    : &quot;{{ post.title | escape }}&quot;,      &quot;categories&quot; : &quot;{{ post.categories }}&quot;,      &quot;tags&quot;     : &quot;{{ post.tags | join: &#39;, &#39; }}&quot;,      &quot;url&quot;      : &quot;{{ site.baseurl }}{{ post.url }}&quot;,      &quot;date&quot;     : &quot;{{ post.date }}&quot;,      &quot;content&quot;: &quot;{{ page.content | strip_html | strip_newlines | remove_chars | escape }}&quot;    } {% unless forloop.last %},{% endunless %}  {% endfor %}]"
+    } ,
+  
+    {
+      "title"    : "Một số mô hình phát triển phần mềm (Phần 1)",
+      "categories" : "SE",
+      "tags"     : "software, model",
+      "url"      : "/se/2023/02/27/software-models-chapter-1/",
+      "date"     : "2023-02-27 00:00:00 +0000",
+      "content": "[  {% for post in site.posts %}    {      &quot;title&quot;    : &quot;{{ post.title | escape }}&quot;,      &quot;categories&quot; : &quot;{{ post.categories }}&quot;,      &quot;tags&quot;     : &quot;{{ post.tags | join: &#39;, &#39; }}&quot;,      &quot;url&quot;      : &quot;{{ site.baseurl }}{{ post.url }}&quot;,      &quot;date&quot;     : &quot;{{ post.date }}&quot;,      &quot;content&quot;: &quot;{{ page.content | strip_html | strip_newlines | remove_chars | escape }}&quot;    } {% unless forloop.last %},{% endunless %}  {% endfor %}]"
+    } ,
+  
+    {
+      "title"    : "Một bài giới thiệu về cái blog nho nhỏ này",
+      "categories" : "Dummy",
+      "tags"     : "doc, talk, zhao",
+      "url"      : "/dummy/2023/02/22/about-this-blog/",
+      "date"     : "2023-02-22 00:00:00 +0000",
+      "content": "[  {% for post in site.posts %}    {      &quot;title&quot;    : &quot;{{ post.title | escape }}&quot;,      &quot;categories&quot; : &quot;{{ post.categories }}&quot;,      &quot;tags&quot;     : &quot;{{ post.tags | join: &#39;, &#39; }}&quot;,      &quot;url&quot;      : &quot;{{ site.baseurl }}{{ post.url }}&quot;,      &quot;date&quot;     : &quot;{{ post.date }}&quot;,      &quot;content&quot;: &quot;{{ page.content | strip_html | strip_newlines | remove_chars | escape }}&quot;    } {% unless forloop.last %},{% endunless %}  {% endfor %}]"
+    } ,
+  
+    {
+      "title"    : "Test post theme",
+      "categories" : "Dummy",
+      "tags"     : "abc, xyz, zhao",
+      "url"      : "/dummy/2023/02/21/test-post-theme/",
+      "date"     : "2023-02-21 00:00:00 +0000",
+      "content": "[  {% for post in site.posts %}    {      &quot;title&quot;    : &quot;{{ post.title | escape }}&quot;,      &quot;categories&quot; : &quot;{{ post.categories }}&quot;,      &quot;tags&quot;     : &quot;{{ post.tags | join: &#39;, &#39; }}&quot;,      &quot;url&quot;      : &quot;{{ site.baseurl }}{{ post.url }}&quot;,      &quot;date&quot;     : &quot;{{ post.date }}&quot;,      &quot;content&quot;: &quot;{{ page.content | strip_html | strip_newlines | remove_chars | escape }}&quot;    } {% unless forloop.last %},{% endunless %}  {% endfor %}]"
+    } ,
+  
+    {
+      "title"    : "The first post",
+      "categories" : "Dummy",
+      "tags"     : "dummy, zhao",
+      "url"      : "/dummy/2023/02/20/the-first-post/",
+      "date"     : "2023-02-20 16:25:36 +0000",
+      "content": "[  {% for post in site.posts %}    {      &quot;title&quot;    : &quot;{{ post.title | escape }}&quot;,      &quot;categories&quot; : &quot;{{ post.categories }}&quot;,      &quot;tags&quot;     : &quot;{{ post.tags | join: &#39;, &#39; }}&quot;,      &quot;url&quot;      : &quot;{{ site.baseurl }}{{ post.url }}&quot;,      &quot;date&quot;     : &quot;{{ post.date }}&quot;,      &quot;content&quot;: &quot;{{ page.content | strip_html | strip_newlines | remove_chars | escape }}&quot;    } {% unless forloop.last %},{% endunless %}  {% endfor %}]"
+    } 
+  
+]

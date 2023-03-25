@@ -1,4 +1,69 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://zhaospei.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhaospei.github.io//" rel="alternate" type="text/html" /><updated>2023-03-25T05:36:02+00:00</updated><id>https://zhaospei.github.io//feed.xml</id><title type="html">Tuan-Dung Bui</title><subtitle>A markdown blog made by Tuan-Dung Bui aka Zhao (zhaospei). Hosted on zhaospei.github.io. I'll write something i like maybe my study or life.</subtitle><author><name>Tuan-Dung Bui</name></author><entry><title type="html">Sử dụng SVG như một Placeholder</title><link href="https://zhaospei.github.io//op/2023/03/21/how-to-use-svg-to-show-images/" rel="alternate" type="text/html" title="Sử dụng SVG như một Placeholder" /><published>2023-03-21T00:00:00+00:00</published><updated>2023-03-21T00:00:00+00:00</updated><id>https://zhaospei.github.io//op/2023/03/21/how-to-use-svg-to-show-images</id><content type="html" xml:base="https://zhaospei.github.io//op/2023/03/21/how-to-use-svg-to-show-images/"><![CDATA[<p>Trong post này chúng ta sẽ nói về:</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://zhaospei.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhaospei.github.io//" rel="alternate" type="text/html" /><updated>2023-03-25T12:01:47+00:00</updated><id>https://zhaospei.github.io//feed.xml</id><title type="html">Tuan-Dung Bui</title><subtitle>A markdown blog made by Tuan-Dung Bui aka Zhao (zhaospei). Hosted on zhaospei.github.io. I'll write something i like maybe my study or life.</subtitle><author><name>Tuan-Dung Bui</name></author><entry><title type="html">Cách sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)</title><link href="https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/" rel="alternate" type="text/html" title="Cách sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)" /><published>2023-03-25T00:00:00+00:00</published><updated>2023-03-25T00:00:00+00:00</updated><id>https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing</id><content type="html" xml:base="https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/"><![CDATA[<p>Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp
+(Pairwise Testing hay All-Pairs Testing).</p>
+
+<h1 id="định-nghĩa-thế-nào-là-all-pairs-testing">Định nghĩa: Thế nào là All-Pairs Testing?</h1>
+
+<p>Theo <strong>ISTQB</strong>, <strong>All-Pairs Testing (hay Pairwise Testing)</strong> là một kỹ thuật kiểm thử hộp đen trong đó các test cases được thiết kế để thực hiện tất cả các tổ hợp có thể có của từng cặp tham số đầu vào. Tức là với mỗi cặp input đầu vào, tất cả các giá trị của cặp input đấy được phủ toàn bộ (Một test case có thể phủ được nhiều cặp input khác nhau).</p>
+
+<p>Kỹ thuật <strong>All-Pairs</strong> rất hữu ích để thiết kế các bài kiểm tra cho các ứng dụng liên quan đến nhiều tham số. Các thử nghiệm được thiết kế sao cho đối với mỗi cặp tham số đầu vào của một hệ thống, có tất cả các tổ hợp riêng biệt có thể có của các tham số đó. Bộ thử nghiệm bao gồm tất cả các tổ hợp; do đó, nó không toàn diện nhưng rất hiệu quả trong việc tìm lỗi.</p>
+
+<p>Kiểm thử <strong>All-Pairs</strong> được áp dụng phổ biến trong công nghiệp khi mà một số vấn đề chỉ được xảy ra bởi sự tương tác giữa các tham số đầu vào hoặc components. Kiểm thử <strong>All-Pairs</strong> có thể tìm được đến 50 - 90% lỗi của phần mềm, hệ thống.</p>
+
+<h1 id="cách-sinh-test-cho-all-pairs-testing">Cách sinh test cho All-Pairs Testing</h1>
+
+<p>Chúng ta sẽ lấy ví dụ cho <strong>Ứng dụng giao dịch xe</strong> với các yêu cầu sau:</p>
+
+<ul>
+  <li>Ứng dụng giao dịch xe cho phép Mua và Bán xe.</li>
+  <li>Nó sẽ hỗ trợ giao dịch ở Delhi và Mumbai.</li>
+  <li>Ứng dụng phải có số đăng ký có thể hợp lệ hoặc không hợp lệ.</li>
+  <li>Nó sẽ cho phép giao dịch với các hãng xe: BMW, Audi và Mercedes.</li>
+  <li>Có thể thực hiện hai loại booking: E-booking và In-store.</li>
+  <li>Chỉ có thể đặt xe trong giờ giao dịch.</li>
+</ul>
+
+<p>Chúng ta sẽ thực hiện việc sinh test cho ca kiểm thử <strong>All-Pairs</strong> lần lượt theo các bước sau:</p>
+
+<h3 id="bước-1-liệt-kê-các-giá-trị-của-các-tham-số-đầu-vào">Bước 1: Liệt kê các giá trị của các tham số đầu vào.</h3>
+
+<p>Chúng ta có thể dễ dàng liêt kê các giá trị có thể có của các tham số đầu vào của ứng dụng như sau:</p>
+
+<ul>
+  <li><strong>Loại giao dịch</strong>: Mua, Bán.</li>
+  <li><strong>Vị trí</strong>: Delhi, Mumbai.</li>
+  <li><strong>Hãng xe</strong>: BMW, Audi, Mercedes.</li>
+  <li><strong>Số đăng ký xe</strong>: Valid (5000 giá trị), Invalid</li>
+  <li><strong>Loại giao dịch</strong>: E-Booking, In-store</li>
+  <li><strong>Thời gian giao dịch</strong>: Thời gian trong giờ làm việc, Thời gian ngoài giờ làm việc</li>
+</ul>
+
+<p>Nếu chúng ta sinh test cases một cách không khoa học cho toàn bộ các tổ hợp hợp lệ thì sẽ có đến:</p>
+<ul>
+  <li>2 . 2 . 3 . 5000 . 2 . 2 = <strong>24000</strong> test cases tổ hợp hợp lệ.</li>
+</ul>
+
+<p>Chưa kể chúng ta còn chưa tính đến các test cases không hợp lệ trong quá trình sinh test.</p>
+
+<h3 id="bước-2-đơn-giản-hóa-việc-sinh-test-cases-simplify">Bước 2: Đơn giản hóa việc sinh test cases (Simplify)</h3>
+<p>Chúng ta sẽ đơn giản việc sinh các test cases theo các cách:</p>
+<ul>
+  <li>Sử dụng một kỹ thuật lẫy mẫu thông minh</li>
+  <li>Sử dụng các nhóm hay ranh giới, ngay cả khi dữ liệu không rời rạc.</li>
+  <li>Giảm số đăng ký xuống còn hai loại: Valid và Invaild.</li>
+</ul>
+
+<p>Bây giờ, số test cases chúng ta sẽ phải sinh sẽ còn lại:</p>
+<ul>
+  <li>2 . 2 . 3 . 2 . 2 . 2  = <strong>96</strong> test cases.</li>
+</ul>
+
+<p>Woa Woa Woa! Chúng ta đã giảm số lượng các test case cần phải sinh một số rất lớn rồi đúng không? Nhưng đây vẫn chưa phải các sinh hợp lí để cho số lượng test cases nhỏ nhất có thể. Tiếp tục nào!</p>
+
+<h3 id="bước-3-sắp-xếp-các-biến-và-giá-trị-liên-quan">Bước 3: Sắp xếp các biến và giá trị liên quan</h3>
+
+<p>Khi chúng ta sắp xếp các biến và giá trị liên quan chúng ta sẽ có một bảng trông như thế này đây.</p>
+
+<p><img src="https://www.softwaretestinghelp.com/wp-content/qa/uploads/2015/10/all-pairs-testing-example-1.jpg" alt="" /></p>]]></content><author><name>zhao</name></author><category term="Testing" /><category term="pairwise" /><category term="all-pairs" /><category term="testing" /><summary type="html"><![CDATA[Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp (Pairwise Testing hay All-Pairs Testing).]]></summary></entry><entry><title type="html">Sử dụng SVG như một Placeholder</title><link href="https://zhaospei.github.io//op/2023/03/21/how-to-use-svg-to-show-images/" rel="alternate" type="text/html" title="Sử dụng SVG như một Placeholder" /><published>2023-03-21T00:00:00+00:00</published><updated>2023-03-21T00:00:00+00:00</updated><id>https://zhaospei.github.io//op/2023/03/21/how-to-use-svg-to-show-images</id><content type="html" xml:base="https://zhaospei.github.io//op/2023/03/21/how-to-use-svg-to-show-images/"><![CDATA[<p>Trong post này chúng ta sẽ nói về:</p>
 <ul>
   <li>Tổng quan về các loại placeholder</li>
   <li>SVG-based placeholders (edges, shapes and silhouettes)</li>

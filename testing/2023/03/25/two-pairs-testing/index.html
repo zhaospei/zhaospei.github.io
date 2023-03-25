@@ -14,7 +14,7 @@
     crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <title>Một bài giới thiệu về cái blog nho nhỏ này - Tuan-Dung Bui</title>
+    <title>Cách sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing) - Tuan-Dung Bui</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -24,22 +24,22 @@
     <script src="/assets/js/main.js"></script>
     <link type="application/atom+xml" rel="alternate" href="https://zhaospei.github.io//feed.xml" title="Tuan-Dung Bui" />
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Một bài giới thiệu về cái blog nho nhỏ này | Tuan-Dung Bui</title>
+<title>Cách sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing) | Tuan-Dung Bui</title>
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Một bài giới thiệu về cái blog nho nhỏ này" />
+<meta property="og:title" content="Cách sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)" />
 <meta name="author" content="zhao" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Chào! Hmm, đầu tiên phải giới thiệu đôi chút về bản thân nhỉ? À chắc không cần, vì mấy cái câu giới thiệu bản thân tớ viết đi viết lại ở hầu hết mọi trang của blog rồi… LOL." />
-<meta property="og:description" content="Chào! Hmm, đầu tiên phải giới thiệu đôi chút về bản thân nhỉ? À chắc không cần, vì mấy cái câu giới thiệu bản thân tớ viết đi viết lại ở hầu hết mọi trang của blog rồi… LOL." />
-<link rel="canonical" href="https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/" />
-<meta property="og:url" content="https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/" />
+<meta name="description" content="Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp (Pairwise Testing hay All-Pairs Testing)." />
+<meta property="og:description" content="Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp (Pairwise Testing hay All-Pairs Testing)." />
+<link rel="canonical" href="https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/" />
+<meta property="og:url" content="https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/" />
 <meta property="og:site_name" content="Tuan-Dung Bui" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-02-22T00:00:00+00:00" />
+<meta property="article:published_time" content="2023-03-25T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Một bài giới thiệu về cái blog nho nhỏ này" />
+<meta property="twitter:title" content="Cách sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"zhao"},"dateModified":"2023-02-22T00:00:00+00:00","datePublished":"2023-02-22T00:00:00+00:00","description":"Chào! Hmm, đầu tiên phải giới thiệu đôi chút về bản thân nhỉ? À chắc không cần, vì mấy cái câu giới thiệu bản thân tớ viết đi viết lại ở hầu hết mọi trang của blog rồi… LOL.","headline":"Một bài giới thiệu về cái blog nho nhỏ này","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/"},"url":"https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"zhao"},"dateModified":"2023-03-25T00:00:00+00:00","datePublished":"2023-03-25T00:00:00+00:00","description":"Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp (Pairwise Testing hay All-Pairs Testing).","headline":"Cách sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/"},"url":"https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -80,7 +80,7 @@
         
           <article class="flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-16">
     <h1 class="font-extrabold mb-1 text-5xl leading-tight">
-        Một bài giới thiệu về cái blog nho nhỏ này
+        Cách sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)
     </h1>
     <div class="flex flex-col items-start justify-between w-full mt-2 md:flex-row md:items-center">
         <div class="flex items-center">
@@ -91,7 +91,7 @@
                     <img class="object-cover w-[40px] h-[40px] rounded-full" src="/assets/media/author/zhao.jpg" alt="Tuan-Dung Bui">
                 
                 <p class="ml-2 text-sm text-gray-700">
-                    Tuan-Dung Bui / February 22, 2023
+                    Tuan-Dung Bui / March 25, 2023
                 </p>
             
         </div>
@@ -103,65 +103,83 @@
         </p>
     </div>
     <div class="w-full mt-4 prose max-w-none">
-        <p>Chào!
-Hmm, đầu tiên phải giới thiệu đôi chút về bản thân nhỉ? À chắc không cần, vì mấy cái câu giới thiệu bản thân tớ 
-viết đi viết lại ở hầu hết mọi trang của blog rồi… LOL.</p>
+        <p>Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp
+(Pairwise Testing hay All-Pairs Testing).</p>
 
-<p>Lần đầu tiên viết bài, không biết viết như nào :)). Chắc tớ sẽ nói vì sao tớ lại tạo cái blog nào và cách tớ thực hiện nó.</p>
+<h1 id="định-nghĩa-thế-nào-là-all-pairs-testing">Định nghĩa: Thế nào là All-Pairs Testing?</h1>
 
-<h2 id="tại-sao-tớ-lại-xây-dựng-cái-blog-này">Tại sao tớ lại xây dựng cái blog này?</h2>
-<p>À chắc cái blog này được tạo bởi vì các ý nghĩ vớ vẩn của tớ tại một thời điểm nào đấy.
-Tớ tạo blog này với mục đích ban đầu là tạo ra một chỗ lưu trữ những bài viết của tớ, nó có thể là các bài viết học thuật hay là 
-những bài viết vớ vẩn chia sẻ trải nghiệm của bản thân tớ. Nhưng mục đích cuối cùng tớ muốn hướng tới là cải thiện khả năng viết
-lách của bản thân và tìm một niềm vui khác khi rảnh.</p>
+<p>Theo <strong>ISTQB</strong>, <strong>All-Pairs Testing (hay Pairwise Testing)</strong> là một kỹ thuật kiểm thử hộp đen trong đó các test cases được thiết kế để thực hiện tất cả các tổ hợp có thể có của từng cặp tham số đầu vào. Tức là với mỗi cặp input đầu vào, tất cả các giá trị của cặp input đấy được phủ toàn bộ (Một test case có thể phủ được nhiều cặp input khác nhau).</p>
 
-<h2 id="cách-tớ-thực-hiện-cái-blog-này">Cách tớ thực hiện cái blog này…</h2>
-<p>Ban đầu, tớ định dùng <strong>Django</strong> để xây dựng blog nhưng nghĩ lại là dùng <strong>Django</strong> thì host kiểu gì vì tớ không có tiền để duy trì hosting. Tớ cũng đã nghĩ đến các hosting free nhưng mà nó khá là ba chấm và deloy <strong>Django</strong> rất rườm rà. Và rồi, tớ nghĩ sao tớ 
-không dùng chính <strong>Github Pages</strong> để host nhỉ? Cuối cùng, tớ đã quyết định dùng nó để host và sử dụng <strong>jekyll</strong> để xây dựng blog. 
-Và rồi, tớ đã bắt tay vào làm nó…</p>
+<p>Kỹ thuật <strong>All-Pairs</strong> rất hữu ích để thiết kế các bài kiểm tra cho các ứng dụng liên quan đến nhiều tham số. Các thử nghiệm được thiết kế sao cho đối với mỗi cặp tham số đầu vào của một hệ thống, có tất cả các tổ hợp riêng biệt có thể có của các tham số đó. Bộ thử nghiệm bao gồm tất cả các tổ hợp; do đó, nó không toàn diện nhưng rất hiệu quả trong việc tìm lỗi.</p>
 
-<p>Về giao diện của blog, tớ lấy cảm hứng từ <a href="https://reaganhenke.com/">Reaganhenke</a> và <a href="https://www.digitalocean.com/">Digital Ocean</a>.</p>
+<p>Kiểm thử <strong>All-Pairs</strong> được áp dụng phổ biến trong công nghiệp khi mà một số vấn đề chỉ được xảy ra bởi sự tương tác giữa các tham số đầu vào hoặc components. Kiểm thử <strong>All-Pairs</strong> có thể tìm được đến 50 - 90% lỗi của phần mềm, hệ thống.</p>
 
-<p>Tớ biết đến <a href="https://reaganhenke.com/">Reaganhenke</a> nhờ vào một hôm tìm cái trang web nghe nhạc lofi để học. Sau khi tìm hiểu, tớ có biết đến <a href="https://imissmycafe.com/">I Miss My Cafe</a>. Đây là một trang đối với tớ khá là hay, recommend cậu trang này nhé!(à cậu có thể vào để tìm hiểu về nó nhé :))). Tính tớ hay tò mò nên tớ đã lục lọi để tìm ra source của nó để clone lại một trang giống như vậy :)). Kết quả là tớ chỉ tìm được page của người làm ra nó. Và rồi, tớ bị thu hút bởi thiết kế của page, nhất là mấy cái card đầu của page. Haha, và rồi tớ lấy nó để làm giao diện.
- <em>(Reagan Henke, if you see this blog, please forgive me for using it without your permission!)</em>.</p>
+<h1 id="cách-sinh-test-cho-all-pairs-testing">Cách sinh test cho All-Pairs Testing</h1>
 
-<p>Còn <a href="https://www.digitalocean.com/">Digital Ocean</a> thì một lần tớ tìm tutorial và tìm ra nó. Đây cũng một trang chất lượng, recommend cậu trang này nữa nhé! (À thực ra ai cũng biết đến trang này :))).</p>
+<p>Chúng ta sẽ lấy ví dụ cho <strong>Ứng dụng giao dịch xe</strong> với các yêu cầu sau:</p>
 
-<p>Ngoài ra tớ còn sử dụng <a href="https://vincentgarreau.com/particles.js/">particles.js</a> để làm mấy cái lines nối nhau trông rườm rà ở background và <a href="https://talk.hyvor.com/">Hyvor</a> để làm phần comment (Tớ chỉ được dùng thử 15 ngày nên không biết 15 ngày sau nó có bị mất không :))).</p>
+<ul>
+  <li>Ứng dụng giao dịch xe cho phép Mua và Bán xe.</li>
+  <li>Nó sẽ hỗ trợ giao dịch ở Delhi và Mumbai.</li>
+  <li>Ứng dụng phải có số đăng ký có thể hợp lệ hoặc không hợp lệ.</li>
+  <li>Nó sẽ cho phép giao dịch với các hãng xe: BMW, Audi và Mercedes.</li>
+  <li>Có thể thực hiện hai loại booking: E-booking và In-store.</li>
+  <li>Chỉ có thể đặt xe trong giờ giao dịch.</li>
+</ul>
 
-<h2 id="mục-đích-hướng-đến-của-blog">Mục đích hướng đến của blog…</h2>
-<p>Blog này tớ dự định sẽ là chia sẻ những bài viết, chủ đề mà tớ tìm hiểu và nghiên cứu. Hiện tại, tớ đang theo Lab CNPM nên đa số bài viết sẽ liên quan đến chủ đề này. Nếu cậu cũng đang tìm hiểu về chủ đề này thì có thể đọc blog của tớ nhé để giúp tớ cản thiện bài viết của bản thân. Ngoài ra, tớ cũng đang tìm hiểu về AI/ML nữa. Cũng có thể sẽ là những bài viết chia sẻ những trải nghiệm của bản thân. Nhưng mà tớ rất là lười viết nên có thể rất lâu tớ mới viết một bài mới _D:.</p>
+<p>Chúng ta sẽ thực hiện việc sinh test cho ca kiểm thử <strong>All-Pairs</strong> lần lượt theo các bước sau:</p>
 
-<p>Cậu cũng có thể gửi bài tới blog nhé. Rất là khuyến khích ủng hộ luôn.</p>
+<h3 id="bước-1-liệt-kê-các-giá-trị-của-các-tham-số-đầu-vào">Bước 1: Liệt kê các giá trị của các tham số đầu vào.</h3>
 
-<h2 id="mong-muốn-của-tớ">Mong muốn của tớ…</h2>
-<p>Tớ tạo blog vì ý nghĩ nhất thời và mục đích cá nhân là nhiều nên tớ cũng không mong blog sẽ được biết đến rộng rãi. À được nhiều người biết thì cũng không sao. Mong rằng với những người biết đến blog của tớ sẽ nhận được điều gì đó mới mẻ khi đọc những bài viết vớ vẩn của tớ. Vậy thôi…</p>
+<p>Chúng ta có thể dễ dàng liêt kê các giá trị có thể có của các tham số đầu vào của ứng dụng như sau:</p>
 
-<p>Cậu có thể xem source code của blog tớ tại <a href="https://github.com/zhaospei/zhaospei.github.io">Github</a>.</p>
+<ul>
+  <li><strong>Loại giao dịch</strong>: Mua, Bán.</li>
+  <li><strong>Vị trí</strong>: Delhi, Mumbai.</li>
+  <li><strong>Hãng xe</strong>: BMW, Audi, Mercedes.</li>
+  <li><strong>Số đăng ký xe</strong>: Valid (5000 giá trị), Invalid</li>
+  <li><strong>Loại giao dịch</strong>: E-Booking, In-store</li>
+  <li><strong>Thời gian giao dịch</strong>: Thời gian trong giờ làm việc, Thời gian ngoài giờ làm việc</li>
+</ul>
 
-<p>Cảm ơn cậu đã ghé thăm blog của tớ và đọc cái post mở đầu xàm này. 
-Nếu có gì góp ý cho blog thì cậu comment phía dưới nhé, tớ sẽ sớm khắc phục. (À comment sớm nhé chứ phần comment chỉ được dùng thử 15 ngày :)).</p>
+<p>Nếu chúng ta sinh test cases một cách không khoa học cho toàn bộ các tổ hợp hợp lệ thì sẽ có đến:</p>
+<ul>
+  <li>2 . 2 . 3 . 5000 . 2 . 2 = <strong>24000</strong> test cases tổ hợp hợp lệ.</li>
+</ul>
 
-<p><br /></p>
-<div style="text-align: right"> 
-See yaaaaaaaaaaaaaaaaaaaaaaaaaaaa,
-</div>
+<p>Chưa kể chúng ta còn chưa tính đến các test cases không hợp lệ trong quá trình sinh test.</p>
 
-<div style="text-align: right"> 
-<strong>Zhao</strong>
-</div>
+<h3 id="bước-2-đơn-giản-hóa-việc-sinh-test-cases-simplify">Bước 2: Đơn giản hóa việc sinh test cases (Simplify)</h3>
+<p>Chúng ta sẽ đơn giản việc sinh các test cases theo các cách:</p>
+<ul>
+  <li>Sử dụng một kỹ thuật lẫy mẫu thông minh</li>
+  <li>Sử dụng các nhóm hay ranh giới, ngay cả khi dữ liệu không rời rạc.</li>
+  <li>Giảm số đăng ký xuống còn hai loại: Valid và Invaild.</li>
+</ul>
 
+<p>Bây giờ, số test cases chúng ta sẽ phải sinh sẽ còn lại:</p>
+<ul>
+  <li>2 . 2 . 3 . 2 . 2 . 2  = <strong>96</strong> test cases.</li>
+</ul>
+
+<p>Woa Woa Woa! Chúng ta đã giảm số lượng các test case cần phải sinh một số rất lớn rồi đúng không? Nhưng đây vẫn chưa phải các sinh hợp lí để cho số lượng test cases nhỏ nhất có thể. Tiếp tục nào!</p>
+
+<h3 id="bước-3-sắp-xếp-các-biến-và-giá-trị-liên-quan">Bước 3: Sắp xếp các biến và giá trị liên quan</h3>
+
+<p>Khi chúng ta sắp xếp các biến và giá trị liên quan chúng ta sẽ có một bảng trông như thế này đây.</p>
+
+<p><img src="https://www.softwaretestinghelp.com/wp-content/qa/uploads/2015/10/all-pairs-testing-example-1.jpg" alt="" /></p>
 
     </div>
 
     <div class="ml-8 mt-8 mb-8 font-normal">
         <b class="font-semibold text-xl"> Tags: </b>
         
-            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400" href="/tag/doc"> doc </a>
+            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400" href="/tag/pairwise"> pairwise </a>
         
-            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400" href="/tag/talk"> talk </a>
+            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400" href="/tag/all-pairs"> all-pairs </a>
         
-            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400" href="/tag/zhao"> zhao </a>
+            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400" href="/tag/testing"> testing </a>
         
     </div>
 
@@ -275,19 +293,19 @@ See yaaaaaaaaaaaaaaaaaaaaaaaaaaaa,
         <span style="font-weight: 600; font-size: 18px;">Share on: </span>
         <div id="share-buttons">
             <div class="facebook" title="Share this on Facebook"
-                onclick="window.open('http://www.facebook.com/share.php?u=https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/');"><svg
+                onclick="window.open('http://www.facebook.com/share.php?u=https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/');"><svg
                     viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z" />
                 </svg></div>
             <div class="twitter" title="Share this on Twitter"
-                onclick="window.open('ttps://twitter.com/intent/tweet?text=https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/');"><svg
+                onclick="window.open('ttps://twitter.com/intent/tweet?text=https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/');"><svg
                     viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z" />
                 </svg></div>
             <div class="reddit" title="Share this on Reddit"
-                onclick="window.open('http://www.reddit.com/submit?url=https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/');">
+                onclick="window.open('http://www.reddit.com/submit?url=https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/');">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <g>
                         <path fill="none" d="M0 0h24v24H0z" />
@@ -297,14 +315,14 @@ See yaaaaaaaaaaaaaaaaaaaaaaaaaaaa,
                 </svg>
             </div>
             <div class="linkedin" title="Share this on Linkedin"
-                onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/&title=&summary=&source=');">
+                onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/&title=&summary=&source=');">
                 <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z" />
                 </svg>
             </div>
             <!-- <div class="mail" title="Share this through Email"
-            onclick="window.open('mailto:?&body=https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/');"><svg viewBox="0 0 1792 1792"
+            onclick="window.open('mailto:?&body=https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/');"><svg viewBox="0 0 1792 1792"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z" />
