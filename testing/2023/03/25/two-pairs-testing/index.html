@@ -2,7 +2,7 @@
 <html lang="en-US" class="light" style="color-scheme: light;">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HSCBJBJKGQ"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-HSCBJBJKGQ"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -11,22 +11,22 @@
         gtag('config', 'G-HSCBJBJKGQ');
     </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5949973426329392"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <title>Cách sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing) - Tuan-Dung Bui</title>
+    <title>Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing) - Tuan-Dung Bui</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/github.css">
-    <script src="/assets/js/main.js"></script>
+    <!-- <script src="/assets/js/main.js"></script> -->
     <link type="application/atom+xml" rel="alternate" href="https://zhaospei.github.io//feed.xml" title="Tuan-Dung Bui" />
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Cách sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing) | Tuan-Dung Bui</title>
+<title>Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing) | Tuan-Dung Bui</title>
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Cách sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)" />
+<meta property="og:title" content="Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)" />
 <meta name="author" content="zhao" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp (Pairwise Testing hay All-Pairs Testing)." />
@@ -37,50 +37,53 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-03-25T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Cách sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)" />
+<meta property="twitter:title" content="Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"zhao"},"dateModified":"2023-03-25T00:00:00+00:00","datePublished":"2023-03-25T00:00:00+00:00","description":"Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp (Pairwise Testing hay All-Pairs Testing).","headline":"Cách sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/"},"url":"https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"zhao"},"dateModified":"2023-03-25T00:00:00+00:00","datePublished":"2023-03-25T00:00:00+00:00","description":"Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp (Pairwise Testing hay All-Pairs Testing).","headline":"Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/"},"url":"https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
   <body>
     <div class="bg-gray-50 dark:bg-gray-900">
       <header class="flex flex-col justify-center px-8">
-    <nav class="flex items-center justify-between w-full relative max-w-2xl border-gray-200 mx-auto pt-8 pb-8 text-gray-900 bg-gray-50 bg-opacity-60 ">
-        <div class="">
-            
-                <a class="font-semibold text-gray-800 inline-block p-1 px-3 py-2 rounded-lg hover:bg-gray-200 transition-all"  href="/">
-                    Home
-                </a>
-            
-                <a class="font-semibold text-gray-800 inline-block p-1 px-3 py-2 rounded-lg hover:bg-gray-200 transition-all"  href="/works.html">
-                    Works
-                </a>
-            
-                <a class="font-semibold text-gray-800 inline-block p-1 px-3 py-2 rounded-lg hover:bg-gray-200 transition-all"  href="/blog.html">
-                    Blog
-                </a>
-            
-                <a class="font-semibold text-gray-800 inline-block p-1 px-3 py-2 rounded-lg hover:bg-gray-200 transition-all"  href="/assets/BuiTuanDung-Resume-1.pdf">
-                    Resume
-                </a>
-            
-                <a class="font-semibold text-gray-800 inline-block p-1 px-3 py-2 rounded-lg hover:bg-gray-200 transition-all"  href="/about/">
-                    About
-                </a>
-            
+    <nav
+        class="flex items-center justify-between w-full relative max-w-3xl border-gray-200 mx-auto pt-8 pb-8 text-gray-900 bg-gray-50 bg-opacity-60 ">
+        <div class=""><button class="mobile-menu visible md:hidden w-auto"
+                type="button"><svg class="h-5 w-5 absolute text-gray-900 dark:text-gray-100" width="20" height="20"
+                    viewBox="0 0 20 20" fill="none" data-hide="false">
+                    <path d="M2.5 7.5H17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    <path d="M2.5 12.5H17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                </svg><svg class="h-5 w-5 absolute text-gray-900 dark:text-gray-100" viewBox="0 0 24 24" width="24"
+                    height="24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                    fill="none" shape-rendering="geometricPrecision" data-hide="true">
+                    <path d="M18 6L6 18"></path>
+                    <path d="M6 6l12 12"></path>
+                </svg></button>
+                
+                    <a class="font-normal text-gray-800 dark:text-gray-200 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all"
+                     href="/"><span class="capsize">Home</span></a>
+                
+                    <a class="font-normal text-gray-800 dark:text-gray-200 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all"
+                     href="/works.html"><span class="capsize">Works</span></a>
+                
+                    <a class="font-normal text-gray-800 dark:text-gray-200 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all"
+                     href="/blog.html"><span class="capsize">Blog</span></a>
+                
+                    <a class="font-normal text-gray-800 dark:text-gray-200 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all"
+                     href="/assets/BuiTuanDung-Resume-1.pdf"><span class="capsize">Resume</span></a>
+                
+                    <a class="font-normal text-gray-800 dark:text-gray-200 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all"
+                     href="/about/"><span class="capsize">About</span></a>
+                
         </div>
-        <!-- <button id="theme-toggle" type="button" class="text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 rounded-lg text-sm p-2.5">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-        </button> -->
     </nav>
 </header>
       <main class="flex flex-col justify-center px-8 bg-gray-50">
-        
           <article class="flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-16">
     <h1 class="font-extrabold mb-1 text-5xl leading-tight">
-        Cách sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)
+        Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)
     </h1>
     <div class="flex flex-col items-start justify-between w-full mt-2 md:flex-row md:items-center">
         <div class="flex items-center">
@@ -98,7 +101,7 @@
         <p class="mt-2 text-sm text-gray-600 min-w-32 md:mt-0">
             
 
-3 min read
+4 min read
 
         </p>
     </div>
@@ -110,9 +113,16 @@
 
 <p>Theo <strong>ISTQB</strong>, <strong>All-Pairs Testing (hay Pairwise Testing)</strong> là một kỹ thuật kiểm thử hộp đen trong đó các test cases được thiết kế để thực hiện tất cả các tổ hợp có thể có của từng cặp tham số đầu vào. Tức là với mỗi cặp input đầu vào, tất cả các giá trị của cặp input đấy được phủ toàn bộ (Một test case có thể phủ được nhiều cặp input khác nhau).</p>
 
-<p>Kỹ thuật <strong>All-Pairs</strong> rất hữu ích để thiết kế các bài kiểm tra cho các ứng dụng liên quan đến nhiều tham số. Các thử nghiệm được thiết kế sao cho đối với mỗi cặp tham số đầu vào của một hệ thống, có tất cả các tổ hợp riêng biệt có thể có của các tham số đó. Bộ thử nghiệm bao gồm tất cả các tổ hợp; do đó, nó không toàn diện nhưng rất hiệu quả trong việc tìm lỗi.</p>
+<p>Kỹ thuật <strong>All-Pairs</strong> rất hữu ích để thiết kế các bài kiểm tra cho các ứng dụng liên quan đến nhiều tham số. Các thử nghiệm được thiết kế sao cho đối với mỗi cặp tham số đầu vào của một hệ thống, có tất cả các tổ hợp riêng biệt có thể có của các tham số đó. Do bộ thử nghiệm bao gồm tất cả các tổ hợp nên nó không toàn diện nhưng rất hiệu quả trong việc tìm lỗi.</p>
 
-<p>Kiểm thử <strong>All-Pairs</strong> được áp dụng phổ biến trong công nghiệp khi mà một số vấn đề chỉ được xảy ra bởi sự tương tác giữa các tham số đầu vào hoặc components. Kiểm thử <strong>All-Pairs</strong> có thể tìm được đến 50 - 90% lỗi của phần mềm, hệ thống.</p>
+<p>Kiểm thử <strong>All-Pairs</strong> được áp dụng phổ biến trong công nghiệp khi mà một số vấn đề chỉ được xảy ra bởi sự tương tác giữa các tham số đầu vào hoặc components. Kiểm thử <strong>All-Pairs</strong> có thể tìm được đến <strong>50 - 90%</strong> lỗi của phần mềm, hệ thống.</p>
+
+<h1 id="số-test-cases-cần-sinh-cho-all-pairs-testing">Số test cases cần sinh cho All-Pairs Testing</h1>
+<p>Ta có công thức tính số lượng test cases cần sinh như sau:</p>
+
+<p><strong>Số lượng test case = Số lượng miền giá trị lớn nhất của các biến * Số lượng miền giá trị lớn nhất của các biến</strong></p>
+
+<p>Chứng minh tính đúng đắn của công thức:</p>
 
 <h1 id="cách-sinh-test-cho-all-pairs-testing">Cách sinh test cho All-Pairs Testing</h1>
 
@@ -138,11 +148,11 @@
   <li><strong>Vị trí</strong>: Delhi, Mumbai.</li>
   <li><strong>Hãng xe</strong>: BMW, Audi, Mercedes.</li>
   <li><strong>Số đăng ký xe</strong>: Valid (5000 giá trị), Invalid</li>
-  <li><strong>Loại giao dịch</strong>: E-Booking, In-store</li>
+  <li><strong>Cách thức giao dịch</strong>: E-Booking, In-store</li>
   <li><strong>Thời gian giao dịch</strong>: Thời gian trong giờ làm việc, Thời gian ngoài giờ làm việc</li>
 </ul>
 
-<p>Nếu chúng ta sinh test cases một cách không khoa học cho toàn bộ các tổ hợp hợp lệ thì sẽ có đến:</p>
+<p>Nếu chúng ta sinh test cases cho toàn bộ các tổ hợp hợp lệ thì sẽ có đến:</p>
 <ul>
   <li>2 . 2 . 3 . 5000 . 2 . 2 = <strong>24000</strong> test cases tổ hợp hợp lệ.</li>
 </ul>
@@ -152,10 +162,11 @@
 <h3 id="bước-2-đơn-giản-hóa-việc-sinh-test-cases-simplify">Bước 2: Đơn giản hóa việc sinh test cases (Simplify)</h3>
 <p>Chúng ta sẽ đơn giản việc sinh các test cases theo các cách:</p>
 <ul>
-  <li>Sử dụng một kỹ thuật lẫy mẫu thông minh</li>
+  <li>Sử dụng một cách lẫy mẫu thông minh</li>
   <li>Sử dụng các nhóm hay ranh giới, ngay cả khi dữ liệu không rời rạc.</li>
-  <li>Giảm số đăng ký xuống còn hai loại: Valid và Invaild.</li>
 </ul>
+
+<p>Theo đó chúng ta có thể giảm số đăng ký xuống còn hai loại: Valid và Invaild.</p>
 
 <p>Bây giờ, số test cases chúng ta sẽ phải sinh sẽ còn lại:</p>
 <ul>
@@ -164,11 +175,92 @@
 
 <p>Woa Woa Woa! Chúng ta đã giảm số lượng các test case cần phải sinh một số rất lớn rồi đúng không? Nhưng đây vẫn chưa phải các sinh hợp lí để cho số lượng test cases nhỏ nhất có thể. Tiếp tục nào!</p>
 
-<h3 id="bước-3-sắp-xếp-các-biến-và-giá-trị-liên-quan">Bước 3: Sắp xếp các biến và giá trị liên quan</h3>
+<h3 id="bước-3-sắp-xếp-các-biến-theo-miền-giá-trị">Bước 3: Sắp xếp các biến theo miền giá trị</h3>
 
-<p>Khi chúng ta sắp xếp các biến và giá trị liên quan chúng ta sẽ có một bảng trông như thế này đây.</p>
+<p>Chúng ta tiến hành sắp xếp các biến theo thứ tự giảm dần số lượng miền giá trị: Tức biến có nhiều miền giá trị nhất sẽ được xếp đầu tiên  và biến có ít miền giá trị nhất được xếp cuối cùng. Sau khi sắp xếp, chúng ta sẽ có một bảng trông như thế này đây.</p>
 
-<p><img src="https://www.softwaretestinghelp.com/wp-content/qa/uploads/2015/10/all-pairs-testing-example-1.jpg" alt="" /></p>
+<table>
+  <thead>
+    <tr>
+      <th>Hãng xe</th>
+      <th>Loại giao dịch</th>
+      <th>Vị trí</th>
+      <th>Số đăng ký xe</th>
+      <th>Cách thức giao dịch</th>
+      <th>Thời gian giao dịch</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="bước-4-sắp-xếp-các-miền-giá-trị-của-các-biến-để-tạo-bộ-kiểm-thử">Bước 4: Sắp xếp các miền giá trị của các biến để tạo bộ kiểm thử</h3>
+
+<p>Chúng ta sẽ lần lượt điền giá trị của bảng trống đã tạo phía trên theo từng cột một.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hãng xe</th>
+      <th>Loại giao dịch</th>
+      <th>Vị trí</th>
+      <th>Số đăng ký xe</th>
+      <th>Cách thức giao dịch</th>
+      <th>Thời gian giao dịch</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>BMW</td>
+      <td>Mua</td>
+      <td>Delhi</td>
+      <td>Valid</td>
+      <td>E-booking</td>
+      <td>Trong giờ</td>
+    </tr>
+    <tr>
+      <td>Audi</td>
+      <td>Bán</td>
+      <td>Mumbai</td>
+      <td>Invalid</td>
+      <td>In-store</td>
+      <td>Ngoài giờ</td>
+    </tr>
+    <tr>
+      <td>Mercedes</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
 
     </div>
 
