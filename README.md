@@ -6,12 +6,23 @@ This is the source code for my blog [zhaospei.github.io](https://zhaospei.github
 - Ruby version 2.5.0 or higher
 - RubyGems
 - GCC and Make
+- NodeJS
 
 ## Installing it
 
+Clone the project with: 
+
+`$ git clone https://github.com/zhaospei/zhaospei.github.io.git`
+
 After cloning the project, install the `jekyll` and bundler `gems`
 
+`$ cd zhaospei.github.io`
+
 `$ gem install jekyll bundler`
+
+Install node packages with:
+
+`$ npm install `
 
 ## Developing
 
