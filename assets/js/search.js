@@ -10,10 +10,9 @@ window.onload = function () {
     var $results_container = document.getElementById("results-container");
     var $search_input = document.getElementById("search-input");
     $search_input.addEventListener("input", function(e){
-        console.log(e);
-        $p = $search_input.value;
+        $p = document.querySelector("#results-container li p");
         console.log($p);
-        if ($p == "") {
+        if ($p == null) {
             $results_container.style.display = 'none';
         }
         else {
