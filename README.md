@@ -24,6 +24,10 @@ Install node packages with:
 
 `$ npm install `
 
+Install other gems with:
+
+`$ bundle install `
+
 ## Developing
 
 Run: `$ bundle exec jekyll server`
