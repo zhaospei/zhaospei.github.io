@@ -1,23 +1,15 @@
 <header class="flex flex-col justify-center px-8">
-    <nav
-        class="flex items-center justify-between w-full relative max-w-3xl border-gray-200 mx-auto pt-8 pb-8 text-gray-900 bg-gray-50 bg-opacity-60 ">
-        <div class=""><button class="mobile-menu visible md:hidden w-auto"
-                type="button"><svg class="h-5 w-5 absolute text-gray-900 dark:text-gray-100" width="20" height="20"
-                    viewBox="0 0 20 20" fill="none" data-hide="false">
-                    <path d="M2.5 7.5H17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round"></path>
-                    <path d="M2.5 12.5H17.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round"></path>
-                </svg><svg class="h-5 w-5 absolute text-gray-900 dark:text-gray-100" viewBox="0 0 24 24" width="24"
-                    height="24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                    fill="none" shape-rendering="geometricPrecision" data-hide="true">
-                    <path d="M18 6L6 18"></path>
-                    <path d="M6 6l12 12"></path>
-                </svg></button>
-                {% for item in site.data.navigation %}
-                    <a class="font-normal text-gray-800 dark:text-gray-200 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all"
-                    {% if page.url==item.link %} style="font-weight: 600;" {% endif %} href="{{ item.link }}"><span class="capsize">{{ item.name }}</span></a>
-                {% endfor %}
+    <nav class="flex items-center justify-between w-full relative max-w-2xl border-gray-200 mx-auto pt-8 pb-8 text-gray-900 bg-gray-50 bg-opacity-60 ">
+        <div class="">
+            {% for item in site.data.navigation %}
+                <a class="font-semibold text-gray-800 inline-block p-1 px-3 py-2 rounded-lg hover:bg-gray-200 transition-all" {% if page.url==item.link %} class="current" {% endif %} href="{{ item.link }}">
+                    {{ item.name }}
+                </a>
+            {% endfor %}
         </div>
+        <!-- <button id="theme-toggle" type="button" class="text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 rounded-lg text-sm p-2.5">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+        </button> -->
     </nav>
 </header>

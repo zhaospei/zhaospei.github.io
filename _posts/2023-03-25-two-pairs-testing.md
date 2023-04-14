@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)"
+title:  "Cách sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)"
 categories: Testing
 author: zhao
 tags: ["pairwise", "all-pairs", "testing"]
@@ -14,18 +14,9 @@ Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiể
 
 Theo **ISTQB**, **All-Pairs Testing (hay Pairwise Testing)** là một kỹ thuật kiểm thử hộp đen trong đó các test cases được thiết kế để thực hiện tất cả các tổ hợp có thể có của từng cặp tham số đầu vào. Tức là với mỗi cặp input đầu vào, tất cả các giá trị của cặp input đấy được phủ toàn bộ (Một test case có thể phủ được nhiều cặp input khác nhau).
 
-Kỹ thuật **All-Pairs** rất hữu ích để thiết kế các bài kiểm tra cho các ứng dụng liên quan đến nhiều tham số. Các thử nghiệm được thiết kế sao cho đối với mỗi cặp tham số đầu vào của một hệ thống, có tất cả các tổ hợp riêng biệt có thể có của các tham số đó. Do bộ thử nghiệm bao gồm tất cả các tổ hợp nên nó không toàn diện nhưng rất hiệu quả trong việc tìm lỗi.
+Kỹ thuật **All-Pairs** rất hữu ích để thiết kế các bài kiểm tra cho các ứng dụng liên quan đến nhiều tham số. Các thử nghiệm được thiết kế sao cho đối với mỗi cặp tham số đầu vào của một hệ thống, có tất cả các tổ hợp riêng biệt có thể có của các tham số đó. Bộ thử nghiệm bao gồm tất cả các tổ hợp; do đó, nó không toàn diện nhưng rất hiệu quả trong việc tìm lỗi.
 
-Kiểm thử **All-Pairs** được áp dụng phổ biến trong công nghiệp khi mà một số vấn đề chỉ được xảy ra bởi sự tương tác giữa các tham số đầu vào hoặc components. Kiểm thử **All-Pairs** có thể tìm được đến **50 - 90%** lỗi của phần mềm, hệ thống.
-
-
-# Số test cases cần sinh cho All-Pairs Testing
-Ta có công thức tính số lượng test cases cần sinh như sau:
-    
-**Số lượng test case = Số lượng miền giá trị lớn nhất của các biến * Số lượng miền giá trị lớn nhất của các biến**
-
-Chứng minh tính đúng đắn của công thức:
-
+Kiểm thử **All-Pairs** được áp dụng phổ biến trong công nghiệp khi mà một số vấn đề chỉ được xảy ra bởi sự tương tác giữa các tham số đầu vào hoặc components. Kiểm thử **All-Pairs** có thể tìm được đến 50 - 90% lỗi của phần mềm, hệ thống.
 
 # Cách sinh test cho All-Pairs Testing
 
@@ -48,44 +39,27 @@ Chúng ta có thể dễ dàng liêt kê các giá trị có thể có của cá
 - **Vị trí**: Delhi, Mumbai.
 - **Hãng xe**: BMW, Audi, Mercedes.
 - **Số đăng ký xe**: Valid (5000 giá trị), Invalid
-- **Cách thức giao dịch**: E-Booking, In-store
+- **Loại giao dịch**: E-Booking, In-store
 - **Thời gian giao dịch**: Thời gian trong giờ làm việc, Thời gian ngoài giờ làm việc
 
-Nếu chúng ta sinh test cases cho toàn bộ các tổ hợp hợp lệ thì sẽ có đến: 
+Nếu chúng ta sinh test cases một cách không khoa học cho toàn bộ các tổ hợp hợp lệ thì sẽ có đến: 
 - 2 . 2 . 3 . 5000 . 2 . 2 = **24000** test cases tổ hợp hợp lệ.
 
 Chưa kể chúng ta còn chưa tính đến các test cases không hợp lệ trong quá trình sinh test. 
 
 ### Bước 2: Đơn giản hóa việc sinh test cases (Simplify)
 Chúng ta sẽ đơn giản việc sinh các test cases theo các cách:
-- Sử dụng một cách lẫy mẫu thông minh
+- Sử dụng một kỹ thuật lẫy mẫu thông minh
 - Sử dụng các nhóm hay ranh giới, ngay cả khi dữ liệu không rời rạc.
-
-Theo đó chúng ta có thể giảm số đăng ký xuống còn hai loại: Valid và Invaild.
+- Giảm số đăng ký xuống còn hai loại: Valid và Invaild.
 
 Bây giờ, số test cases chúng ta sẽ phải sinh sẽ còn lại:
 - 2 . 2 . 3 . 2 . 2 . 2  = **96** test cases.
 
 Woa Woa Woa! Chúng ta đã giảm số lượng các test case cần phải sinh một số rất lớn rồi đúng không? Nhưng đây vẫn chưa phải các sinh hợp lí để cho số lượng test cases nhỏ nhất có thể. Tiếp tục nào!
 
-### Bước 3: Sắp xếp các biến theo miền giá trị
+### Bước 3: Sắp xếp các biến và giá trị liên quan
 
-Chúng ta tiến hành sắp xếp các biến theo thứ tự giảm dần số lượng miền giá trị: Tức biến có nhiều miền giá trị nhất sẽ được xếp đầu tiên  và biến có ít miền giá trị nhất được xếp cuối cùng. Sau khi sắp xếp, chúng ta sẽ có một bảng trông như thế này đây.
+Khi chúng ta sắp xếp các biến và giá trị liên quan chúng ta sẽ có một bảng trông như thế này đây.
 
-| Hãng xe 	| Loại giao dịch 	| Vị trí 	| Số đăng ký xe 	| Cách thức giao dịch 	| Thời gian giao dịch 	|
-|----------------	|--------	|---------	|---------------	|----------------	|---------------------	|
-|             	|        |      |              |         |           |
-|            	|     	|    	|            |           |             	|
-|           |        	|         	|               	|                	|                     	|
-
-### Bước 4: Sắp xếp các miền giá trị của các biến để tạo bộ kiểm thử
-
-Chúng ta sẽ lần lượt điền giá trị của bảng trống đã tạo phía trên theo từng cột một. 
-
-| Hãng xe 	| Loại giao dịch 	| Vị trí 	| Số đăng ký xe 	| Cách thức giao dịch 	| Thời gian giao dịch 	|
-|----------------	|--------	|---------	|---------------	|----------------	|---------------------	|
-| BMW            	|Mua        | Delhi     | Valid             |E-booking          |  Trong giờ            |
-| Audi            	|Bán     	| Mumbai   	| Invalid           |In-store           |  Ngoài giờ          	|
-| Mercedes          |        	|         	|               	|                	|                     	|
-
-
+![](https://www.softwaretestinghelp.com/wp-content/qa/uploads/2015/10/all-pairs-testing-example-1.jpg)

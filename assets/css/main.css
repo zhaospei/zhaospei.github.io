@@ -17,7 +17,7 @@
     }
 
     .prose h2 {
-      @apply font-bold text-xl mt-8 mb-4; 
+      @apply font-bold text-xl mt-8 mb-4;
     }
 
     .prose h3 {
@@ -36,32 +36,16 @@
       @apply mt-2 mb-2;
     }
 
-    .prose table {
-      display: block;
-      width: max-content;
-      max-width: 100%;
-      overflow: auto;
-      @apply my-8;
-    }
-
-    .prose thead, tr, th, td {
-      @apply border border-solid px-2 py-2 text-center;
-    }
-
-    .prose th {
-      @apply bg-indigo-300;
-    }
-
     #results-container {
       @apply w-full box-border my-4 px-4 py-4 text-gray-900 bg-white border border-solid border-slate-300 rounded-md;
     }
 
     #results-container li {
-      @apply px-4 hover:bg-green-200	border-0 rounded-md;
+      @apply px-4 hover:bg-indigo-300 hover:text-indigo-600	border-0 rounded-md;
     }
     
     #results-container li p {
-      @apply w-full py-2 text-lg font-medium text-gray-900 hover:text-green-800 md:text-xl;
+      @apply w-full py-2 text-lg font-medium text-gray-900 md:text-xl;
     }
 
   }
