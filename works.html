@@ -8,11 +8,11 @@ description: These are some personal projects I have been working on to learn mo
 <h3 class="font-bold text-xl md:text-3xl tracking-tight mb-4 mt-8 text-black">
   Recent Person Projects.
 </h3>
-<ul class="grid w-full grid-cols-1 gap-6 mt-4 mb-10">
+<ul class="grid w-full grid-cols-1 md:grid-cols-2 gap-6 mt-4 mb-10">
   {% for project in site.projects %}
-  <li class="border-solid border border-gray-300 rounded w-full bg-white">
+  <li class="border-solid border border-gray-300 hover:border-slate-500 rounded w-full bg-white">
     <a href="{{ project.link }}">
-      <img src=" {{ project.img }}">
+      <img src=" {{ project.img }}" class="object-cover w-full md:h-36 lg:h-60" loading="lazy">
     </a>
     <div class="p-4">
       <div class="text-4xl font-bold text-left text-gray-900"> {{ project.name }}</div>
