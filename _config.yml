@@ -8,6 +8,8 @@ github_username:  zhaospei
 author: Tuan-Dung Bui
 language: vi
 
+timezone: Asia/Bangkok
+
 google_analytics: 'G-HSCBJBJKGQ'
 
 markdown: kramdown
@@ -69,4 +71,3 @@ exclude:
   - package.json
   - postcss.config.js
   - tailwind.config.js
-  - yarn.lock
