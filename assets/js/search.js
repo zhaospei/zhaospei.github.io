@@ -10,9 +10,10 @@ window.onload = function () {
     var $results_container = document.getElementById("results-container");
     var $search_input = document.getElementById("search-input");
     $search_input.addEventListener("input", function(e){
-        $p = document.querySelector("#results-container li p");
+        console.log(e);
+        $p = $search_input.value;
         console.log($p);
-        if ($p == null) {
+        if ($p == "") {
             $results_container.style.display = 'none';
         }
         else {
@@ -20,4 +21,3 @@ window.onload = function () {
         }
     });
 }
-
