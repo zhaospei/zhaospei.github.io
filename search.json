@@ -7,11 +7,15 @@ sitemap:
   {% for post in site.posts %}
     {
       "title"    : "{{ post.title | escape }}",
+      "title-lower"    : "{{ post.title | escape | downcase}}",
+      "sub-titile" : "{{ post.subtitle | escape }}",
+      "sub-titile-lower" : "{{ post.subtitle | escape | downcase}}",
       "categories" : "{{ post.categories }}",
       "tags"     : "{{ post.tags | join: ', ' }}",
       "url"      : "{{ site.baseurl }}{{ post.url }}",
       "date"     : "{{ post.date }}",
-      "content": "{{ page.content | strip_html | strip_newlines | remove_chars | escape }}"
+      "img-feature": "{{ post.img-feature}}",
+      "content": "{{ post.content | strip_html | strip_newlines | remove_chars | escape | replace : "\", ""}}"
     } {% unless forloop.last %},{% endunless %}
-  {% endfor %}
+  {% endfor %}  
 ]
