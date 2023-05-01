@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://zhaospei.github.io//authors/zhao/</loc>
-<lastmod>2023-05-01T15:14:26+07:00</lastmod>
+<lastmod>2023-05-01T18:03:03+07:00</lastmod>
 </url>
 <url>
 <loc>https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/</loc>
@@ -23,6 +23,10 @@
 <url>
 <loc>https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/</loc>
 <lastmod>2023-03-25T00:00:00+07:00</lastmod>
+</url>
+<url>
+<loc>https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter/</loc>
+<lastmod>2023-05-01T00:00:00+07:00</lastmod>
 </url>
 <url>
 <loc>https://zhaospei.github.io//about/</loc>
@@ -70,7 +74,13 @@
 <loc>https://zhaospei.github.io//tag/testing/</loc>
 </url>
 <url>
+<loc>https://zhaospei.github.io//tag/k6/</loc>
+</url>
+<url>
+<loc>https://zhaospei.github.io//tag/jmeter/</loc>
+</url>
+<url>
 <loc>https://zhaospei.github.io//assets/BuiTuanDung-Resume-1.pdf</loc>
-<lastmod>2023-05-01T15:13:27+07:00</lastmod>
+<lastmod>2023-05-01T18:02:35+07:00</lastmod>
 </url>
 </urlset>

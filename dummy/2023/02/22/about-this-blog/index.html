@@ -7,10 +7,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/github.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/scroll.js"></script>
     <link type="application/atom+xml" rel="alternate" href="https://zhaospei.github.io//feed.xml" title="Tuan-Dung Bui" />
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Một bài giới thiệu về cái blog nho nhỏ này | Tuan-Dung Bui</title>
@@ -37,7 +38,7 @@
       <div
     class="hidden fixed w-full h-screen inset-0 bg-gray-200 dark:bg-gray-800 opacity-95 z-50 transition-transform transform ease-in-out duration-300 translate-x-0 mobile-menu">
     <button type="button" aria-label="toggle modal"
-        class="fixed right-4 top-4 h-8 w-8 cursor-auto focus:outline-none border-none mobile-menu-btn-close"><svg
+        class="cursor-pointer fixed right-4 top-4 h-8 w-8 cursor-auto focus:outline-none border-none mobile-menu-btn-close"><svg
             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
             class="text-gray-900 dark:text-gray-100">
             <path fill-rule="evenodd"
@@ -60,7 +61,7 @@
     </nav>
 </div>
 
-<header class="flex flex-col justify-center">
+<header class="flex flex-col justify-center w-full">
     <nav
         class="flex items-center justify-between w-full relative max-w-3xl border-gray-200 mx-auto pt-8 pb-8 text-gray-900 backdrop-blur-sm">
         <div class="ml-[-0.60rem]">
@@ -86,7 +87,7 @@
                     class="capsize">About</span></a>
             
         </div>
-        <button class="mobile-menu-btn-open visible md:hidden fixed right-4 top-4 h-8 w-8 cursor-auto focus:outline-none border-none mobile-menu-btn" type="button">
+        <button class="cursor-pointer mobile-menu-btn-open visible md:hidden fixed right-4 top-4 h-8 w-8 cursor-auto focus:outline-none border-none mobile-menu-btn" type="button">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                 class="text-gray-900 dark:text-gray-100">
                 <path fill-rule="evenodd"
@@ -97,32 +98,50 @@
     </nav>
 </header>
       <main class="flex flex-col justify-center px-8 bg-gray-50">
-          <article class="flex flex-col items-start justify-center w-full max-w-3xl mx-auto mb-16">
-    <h1 class="font-extrabold mb-1 text-5xl leading-tight">
-        Một bài giới thiệu về cái blog nho nhỏ này
-    </h1>
-    <div class="flex flex-col items-start justify-between w-full mt-2 md:flex-row md:items-center">
-        <div class="flex items-center">
-            
+          <style>
+    .reading-line {
+        position: fixed;
+        top: 0;
+        left: 0;
+        border-bottom: 4px solid #1c84d9;
+        z-index: 404;
+    }
+</style>
 
-            
+<div class="reading-line">
+</div>
+<div class="post-container lg:pl-[19.5rem]">
+    <article
+        class="post-content-container flex flex-col items-start justify-center max-w-3xl mx-auto xl:max-w-none xl:ml-0 xl:mr-[15.5rem] xl:pr-24">
+        <h1 class="font-extrabold mb-1 text-5xl leading-tight">
+            Một bài giới thiệu về cái blog nho nhỏ này
+        </h1>
+        <div class="flex flex-col items-start justify-between w-full mt-2 md:flex-row md:items-center">
+            <div class="flex items-center">
                 
-                    <img class="object-cover w-[40px] h-[40px] rounded-full" src="/assets/media/author/zhao.jpg" alt="Tuan-Dung Bui">
+                
+                
+                <img class="object-cover w-[40px] h-[40px] rounded-full" src="/assets/media/author/zhao.jpg" alt="Tuan-Dung Bui">
                 
                 <p class="ml-2 text-sm text-gray-700">
                     Tuan-Dung Bui / February 22, 2023
                 </p>
-            
-        </div>
-        <p class="mt-2 text-sm text-gray-600 min-w-32 md:mt-0">
-            
+                
+            </div>
+            <p class="mt-2 text-sm text-gray-600 min-w-32 md:mt-0">
+                
 
 3 min read
 
-        </p>
-    </div>
-    <div class="w-full mt-4 prose max-w-none">
-        <p>Chào!
+            </p>
+        </div>
+        <div class="relative not-prose my-[2em] first:mt-0 last:mb-0 rounded-2xl overflow-hidden mx-auto">
+            
+            <img alt="Post image feature" src="/assets/media/feature/about-this-blog.jpg" loading="lazy" class="w-full">
+            
+        </div>
+        <div class="post-content w-full mt-4 prose max-w-none">
+            <p>Chào!
 Hmm, đầu tiên phải giới thiệu đôi chút về bản thân nhỉ? À chắc không cần, vì mấy cái câu giới thiệu bản thân tớ 
 viết đi viết lại ở hầu hết mọi trang của blog rồi… LOL.</p>
 
@@ -171,20 +190,23 @@ See yaaaaaaaaaaaaaaaaaaaaaaaaaaaa,
 </div>
 
 
-    </div>
+        </div>
 
-    <div class="ml-8 mt-8 mb-8 font-normal">
-        <b class="font-semibold text-xl"> Tags: </b>
-        
-            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400" href="/tag/doc"> doc </a>
-        
-            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400" href="/tag/talk"> talk </a>
-        
-            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400" href="/tag/zhao"> zhao </a>
-        
-    </div>
+        <div class="ml-8 mt-8 mb-8 font-normal">
+            <b class="font-semibold text-xl"> Tags: </b>
+            
+            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400"
+                href="/tag/doc"> doc </a>
+            
+            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400"
+                href="/tag/talk"> talk </a>
+            
+            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400"
+                href="/tag/zhao"> zhao </a>
+            
+        </div>
 
-    
+        
 
 <style>
     #share-container {
@@ -331,9 +353,102 @@ See yaaaaaaaaaaaaaaaaaaaaaaaaaaaa,
         </div>
     </div>
 </div>
-</article>
+
+        <style>
+    .page-navigation {
+        display: flex;
+        position: relative;
+        margin: 5em 0;
+        border-top: 1px solid #d4d4d4;
+        line-height: 1.4;
+    }
+
+    .page-navigation a {
+        border-bottom: 0;
+        font-weight: 700;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        text-decoration: none;
+        box-sizing: border-box;
+    }
+
+    .page-navigation .nav-arrow {
+        font-weight: 400;
+        font-size: 14px;
+        color: #6b7886;
+        margin-bottom: 3px;
+    }
+
+    .page-navigation .post-title {
+        font-weight: 700;
+    }
+
+    .page-navigation .next {
+        text-align: right;
+        padding-right: 0;
+        padding-left: 20px;
+    }
+</style>
+
+<nav class="page-navigation w-full flex-col md:flex-row">
+    
+    
+    <a class="next w-full md:w-2/4" href="/se/2023/02/27/software-models-chapter-1/">
+        <div class="nav-arrow"> Next </div>
+        <span class="post-title">Một số mô hình phát triển phần mềm (Phần 1)</span>
+    </a>
+    
+</nav>
+
+        <style>
+
+  .table-of-contents-container li a {
+    color: rgb(8, 27, 75);
+  }
+
+  .table-of-contents-container li.active>a {
+    color: #1c84d9;
+  }
+
+  .toc-h1>a {
+    font-weight: 600;
+  }
+
+  .toc-h2>a {
+    padding-left: 1em;
+    font-weight: 500;
+  }
+
+  .toc-h3>a {
+    padding-left: 2em;
+    font-weight: 400;
+  }
 
 
+  @media only screen and (max-width:720px) {
+    .table-of-contents-container {
+      display: none;
+    }
+  }
+</style>
+
+
+<div class="fixed z-20 top-[3.8125rem] bottom-0 right-[max(0px,calc(50%-45rem))] w-[19.5rem] py-10 overflow-y-auto hidden xl:block">
+    <div class="px-8">
+      <h5 class="text-slate-900 font-semibold mb-4 text-sm leading-6 "> On this page </h5>
+      <div class="table-of-contents-container scroll text-slate-700 text-sm leading-6">
+        <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#tại-sao-tớ-lại-xây-dựng-cái-blog-này">Tại sao tớ lại xây dựng cái blog này?</a></li>
+<li class="toc-entry toc-h2"><a href="#cách-tớ-thực-hiện-cái-blog-này">Cách tớ thực hiện cái blog này…</a></li>
+<li class="toc-entry toc-h2"><a href="#mục-đích-hướng-đến-của-blog">Mục đích hướng đến của blog…</a></li>
+<li class="toc-entry toc-h2"><a href="#mong-muốn-của-tớ">Mong muốn của tớ…</a></li>
+</ul>
+      </div>
+    </div>  
+</div>
+
+    </article>
+</div>
         <footer class="flex flex-col justify-center items-start max-w-2xl mx-auto w-full mb-8 pb-16">
         <hr class="w-full border-t border-slate-50/25 mb-8">
         <div class="w-full flex justify-center font-light text-gray-600">

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en-US" class="light" style="color-scheme: light;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Điểm mạnh/yếu công cụ kiểm thử chịu tải tự động k6 với các đối thủ - Tuan-Dung Bui</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/github.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/scroll.js"></script>
+    <link type="application/atom+xml" rel="alternate" href="https://zhaospei.github.io//feed.xml" title="Tuan-Dung Bui" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Điểm mạnh/yếu công cụ kiểm thử chịu tải tự động k6 với các đối thủ | Tuan-Dung Bui</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Điểm mạnh/yếu công cụ kiểm thử chịu tải tự động k6 với các đối thủ" />
+<meta name="author" content="zhao" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Các công cụ kiểm thử tải (Load Testing Tool - LTT) đã trở nên rất phổ biến hiện nay, cả miễn phí và có phí, nguồn mở và nguồn đóng, và mỗi công cụ đều có điểm mạnh và yếu của riêng mình. Một số LTT được nhiều nhà phát triển sử dụng, có thể kể đến công cụ miễn phí như JMeter, Locus, fortio,… hay có tính phí như LoadNinja, Gatling,… Và Grafana k6 (hay k6) là một trong số ấy." />
+<meta property="og:description" content="Các công cụ kiểm thử tải (Load Testing Tool - LTT) đã trở nên rất phổ biến hiện nay, cả miễn phí và có phí, nguồn mở và nguồn đóng, và mỗi công cụ đều có điểm mạnh và yếu của riêng mình. Một số LTT được nhiều nhà phát triển sử dụng, có thể kể đến công cụ miễn phí như JMeter, Locus, fortio,… hay có tính phí như LoadNinja, Gatling,… Và Grafana k6 (hay k6) là một trong số ấy." />
+<link rel="canonical" href="https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter/" />
+<meta property="og:url" content="https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter/" />
+<meta property="og:site_name" content="Tuan-Dung Bui" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-05-01T00:00:00+07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Điểm mạnh/yếu công cụ kiểm thử chịu tải tự động k6 với các đối thủ" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"zhao"},"dateModified":"2023-05-01T00:00:00+07:00","datePublished":"2023-05-01T00:00:00+07:00","description":"Các công cụ kiểm thử tải (Load Testing Tool - LTT) đã trở nên rất phổ biến hiện nay, cả miễn phí và có phí, nguồn mở và nguồn đóng, và mỗi công cụ đều có điểm mạnh và yếu của riêng mình. Một số LTT được nhiều nhà phát triển sử dụng, có thể kể đến công cụ miễn phí như JMeter, Locus, fortio,… hay có tính phí như LoadNinja, Gatling,… Và Grafana k6 (hay k6) là một trong số ấy.","headline":"Điểm mạnh/yếu công cụ kiểm thử chịu tải tự động k6 với các đối thủ","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter/"},"url":"https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <div class="bg-gray-50 dark:bg-gray-900">
+      <div
+    class="hidden fixed w-full h-screen inset-0 bg-gray-200 dark:bg-gray-800 opacity-95 z-50 transition-transform transform ease-in-out duration-300 translate-x-0 mobile-menu">
+    <button type="button" aria-label="toggle modal"
+        class="cursor-pointer fixed right-4 top-4 h-8 w-8 cursor-auto focus:outline-none border-none mobile-menu-btn-close"><svg
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+            class="text-gray-900 dark:text-gray-100">
+            <path fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+        </svg></button>
+    <nav class="fixed mt-8 h-full">
+        
+        <div class="px-8 py-4"><a class="text-xl font-bold text-gray-900 dark:text-gray-100" href="/"> Home </a></div>
+        
+        <div class="px-8 py-4"><a class="text-xl font-bold text-gray-900 dark:text-gray-100" href="/works.html"> Works </a></div>
+        
+        <div class="px-8 py-4"><a class="text-xl font-bold text-gray-900 dark:text-gray-100" href="/blog.html"> Blog </a></div>
+        
+        <div class="px-8 py-4"><a class="text-xl font-bold text-gray-900 dark:text-gray-100" href="/assets/BuiTuanDung-Resume-1.pdf"> Resume </a></div>
+        
+        <div class="px-8 py-4"><a class="text-xl font-bold text-gray-900 dark:text-gray-100" href="/about/"> About </a></div>
+        
+
+    </nav>
+</div>
+
+<header class="flex flex-col justify-center w-full">
+    <nav
+        class="flex items-center justify-between w-full relative max-w-3xl border-gray-200 mx-auto pt-8 pb-8 text-gray-900 backdrop-blur-sm">
+        <div class="ml-[-0.60rem]">
+            
+            <a class="font-normal text-gray-800 dark:text-gray-200 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all"
+                 href="/"><span
+                    class="capsize">Home</span></a>
+            
+            <a class="font-normal text-gray-800 dark:text-gray-200 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all"
+                 href="/works.html"><span
+                    class="capsize">Works</span></a>
+            
+            <a class="font-normal text-gray-800 dark:text-gray-200 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all"
+                 href="/blog.html"><span
+                    class="capsize">Blog</span></a>
+            
+            <a class="font-normal text-gray-800 dark:text-gray-200 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all"
+                 href="/assets/BuiTuanDung-Resume-1.pdf"><span
+                    class="capsize">Resume</span></a>
+            
+            <a class="font-normal text-gray-800 dark:text-gray-200 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all"
+                 href="/about/"><span
+                    class="capsize">About</span></a>
+            
+        </div>
+        <button class="cursor-pointer mobile-menu-btn-open visible md:hidden fixed right-4 top-4 h-8 w-8 cursor-auto focus:outline-none border-none mobile-menu-btn" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                class="text-gray-900 dark:text-gray-100">
+                <path fill-rule="evenodd"
+                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </button>
+    </nav>
+</header>
+      <main class="flex flex-col justify-center px-8 bg-gray-50">
+          <style>
+    .reading-line {
+        position: fixed;
+        top: 0;
+        left: 0;
+        border-bottom: 4px solid #1c84d9;
+        z-index: 404;
+    }
+</style>
+
+<div class="reading-line">
+</div>
+<div class="post-container lg:pl-[19.5rem]">
+    <article
+        class="post-content-container flex flex-col items-start justify-center max-w-3xl mx-auto xl:max-w-none xl:ml-0 xl:mr-[15.5rem] xl:pr-24">
+        <h1 class="font-extrabold mb-1 text-5xl leading-tight">
+            Điểm mạnh/yếu công cụ kiểm thử chịu tải tự động k6 với các đối thủ
+        </h1>
+        <div class="flex flex-col items-start justify-between w-full mt-2 md:flex-row md:items-center">
+            <div class="flex items-center">
+                
+                
+                
+                <img class="object-cover w-[40px] h-[40px] rounded-full" src="/assets/media/author/zhao.jpg" alt="Tuan-Dung Bui">
+                
+                <p class="ml-2 text-sm text-gray-700">
+                    Tuan-Dung Bui / May 1, 2023
+                </p>
+                
+            </div>
+            <p class="mt-2 text-sm text-gray-600 min-w-32 md:mt-0">
+                
+
+21 min read
+
+            </p>
+        </div>
+        <div class="relative not-prose my-[2em] first:mt-0 last:mb-0 rounded-2xl overflow-hidden mx-auto">
+            
+            <img alt="Post image feature" src="/assets/media/feature/k6.png" loading="lazy" class="w-full">
+            
+        </div>
+        <div class="post-content w-full mt-4 prose max-w-none">
+            <p>Các công cụ kiểm thử tải (Load Testing Tool - LTT) đã trở nên rất phổ biến hiện nay, cả miễn phí và có phí, nguồn mở và nguồn đóng, và mỗi công cụ đều có điểm mạnh và yếu của riêng mình. Một số LTT được nhiều nhà phát triển sử dụng, có thể kể đến công cụ miễn phí như JMeter, Locus, fortio,… hay có tính phí như LoadNinja, Gatling,…  Và Grafana k6 (hay k6) là một trong số ấy.</p>
+
+<p>Được phát triển bới Grafana Labs, k6 là một LTT mã nguồn mở giúp kiểm tra hiệu suất dễ dàng và hiệu quả cho các nhà phát triển. Nó là công cụ mã nguồn mở, hướng đến nhà phát triển và dễ dàng mở rộng. Dù chỉ mới ra đời gần đây, bản release chính thức đầu tiên trên github vào ngày 27/02/2017, nhưng k6 đã nhanh chóng nổi lên trong cộng đồng nhà phát triển bởi hiệu suất và tính dễ sử dụng đáng bất ngờ của nó.  Tính đến thời điểm hiện tại (04/2023), k6 có 20.1k stars, 311 watching và 1.1k forks trên github. Nhờ cộng đồng phát triển hoạt động tích cực, k6 đang phát triển ngày càng lớn mạnh. Kho extensions phong phú, pull request và những bản releases thường xuyên là những lợi ích mà mã nguồn mở của k6 mang lại.</p>
+
+<p>Phần so sánh với các công cụ dưới đây không khẳng định công cụ nào là tốt hơn bởi vì không có điều kiện cụ thể nào để khẳng định công cụ nào là tốt nhất. Mọi thứ đều phụ thuộc vào vấn đề, tình huống mà nhóm phát triển đang gặp phải trả lời bởi các câu hỏi: cái gì (what), như thế nào (how), tại sao (why), khi nào (when) ca kiểm thử được thực hiện. Phần so sánh dưới đây của chúng tôi muốn trả lời ở đây là: “Mỗi công cụ vượt trội trong những tình huống nào?”.</p>
+
+<p>Do hạn chế của bài viết nên tôi lựa chọn công cụ kiểm thử tự động đặc trưng nhất là Jmeter - công cụ kiểm thử ra đời sớm, được sử dụng rộng rãi. Mặc dù vậy, bằng việc so sánh với công cụ JMeter cũng để khát quát toàn bộ những tính năng nổi bật ở k6 và một số hạn chế còn gặp phải của nó.</p>
+
+<p>JMeter[10] là một công cụ kiểm tra tải mã nguồn mở được xây dựng hoàn toàn bằng Java bởi Apache Foundation[11]. Nó được phát hành lần đầu tiên vào năm 1998 và nó đã tạo nên làn sóng vì sự táo bạo của nó trong việc sử dụng các công cụ kiểm tra chịu tải độc quyền nhưng biến nó thành miễn phí và trở nên phổ biến trong cộng đồng hơn. JMeter đã dùng thứ mà người dùng cần trả rất nhiều tiền để có thể sử dụng và phát hành nó công khai và miễn phí cho mọi người sử dụng. Mặc dù tập lệnh (scripts) cũng có thể được mở rộng bằng cách viết mã nhưng phần lớn tập lệnh trong JMeter được thực hiện bằng giao diện người dùng (GUI - Graphical User Interface). Tính đến thời điểm hiện tại (27/04/2023), phiên bản mới nhất của JMeter là 5.4.</p>
+
+<h1 id="1-khi-nào-jmeter-nổi-bật-hơn">1. Khi nào Jmeter nổi bật hơn?</h1>
+
+<h2 id="11-jmeter-có-giao-diện-người-dùng-gui---graphical-user-interface">1.1. Jmeter có giao diện người dùng (GUI - Graphical User Interface)</h2>
+<p>Nếu bạn ở trong tình huống mà mọi người chưa từng thực hiện kiểm tra chịu tải trước đó và cần tìm hiểu một công cụ mới, thì một công cụ điều khiển bằng GUI như JMeter đơn giản là lựa chọn dễ dàng nhất. Tuy nhiên, màn hình kế hoạch kiểm tra (Test Plan) chào đón bạn khi bạn khởi động JMeter lần đầu tiên không cung cấp bất kỳ hướng dẫn nào về cách tạo trình lấy mẫu HTTP. UI là chủ quan ở một mức độ nhất định. Tuy nhiên, chúng tôi cho rằng việc khám phá giao diện người dùng dễ dàng hơn đối với những người không phải là nhà phát triển hơn là một chút sử dụng mã lệnh như k6.</p>
+
+<p>k6 không có GUI được đóng gói trong công cụ, nhưng Trình tạo thử nghiệm k6(k6 Test Builder) có sẵn miễn phí. Đó là một cách để tạo các bài kiểm tra với giao diện GUI và mặc dù được đưa vào đám mây k6 nhưng nó không yêu cầu bất kỳ đăng ký nào để sử dụng. Tuy nhiên, nó không có đầy đủ tính năng như JMeter.</p>
+
+<h2 id="12-jmeter-hỗ-trợ-nhiều-giao-thức-và-tính-năng-vượt-trội">1.2. JMeter hỗ trợ nhiều giao thức và tính năng vượt trội</h2>
+<p>JMeter là công cụ kiểm thử tự động hỗ trợ nhiều giao thức nổi bật có thể kể đến như Web - HTTP, HTTPS (Java, NodeJS, PHP, ASP.NET, …), SOAP / REST Webservices, FTP, Database thông qua JDBC, Mail - SMTP(S), POP3(S) and IMAP(S), TCP, Java Objects, …
+JMeter cũng có hầu hết các tính năng mà bạn sẽ cần cho một bài kiểm tra tải cơ bản và bạn không phải tự mình viết mã cho bất kỳ tính năng nào. Cấu trúc phần tử cha-con của nó có nghĩa là bạn có thể sửa đổi một phần tử cụ thể, chẳng hạn như yêu cầu HTTP hoặc sửa đổi tất cả các yêu cầu HTTP một cách dễ dàng như nhau. Thêm thời gian suy nghĩ cho tất cả các yêu cầu cũng dễ dàng như thêm Đồng hồ bấm giờ ngẫu nhiên thống nhất vào nhóm luồng của bạn và tất cả các yêu cầu trong nhóm đó sẽ kế thừa nó. Với các công cụ kiểm thử chịu tải dựa trên mã lệnh như k6, có thể khó tìm ra những gì có thể thực hiện được nếu không có giao diện người dùng.</p>
+
+<h2 id="13-jmeter-có-cộng-đồng-người-dùng-kinh-nghiệm-với-nhiều-tài-liệu">1.3. JMeter có cộng đồng người dùng kinh nghiệm với nhiều tài liệu</h2>
+<p>JMeter đã xuất hiện từ rất lâu và điều đó giúp nó có được một số điểm mạnh so với các cộng cụ mới ra đời như k6. JMeter đã xuất hiện từ năm 1998, vì vậy tính đến thời điểm này, nó đã có 22 năm để cải thiện và xây dựng cộng đồng người sử dụng. JMeter hiện diện trên gần như mọi trang mạng cộng đồng và cho dù trường hợp sử dụng JMeter của bạn cụ thể đến đâu, thì rất có thể nó đã được thực hiện trước đó. Tìm kiếm “cách tải bài kiểm tra X bằng JMeter” chắc chắn sẽ mang lại hàng nghìn lượt truy cập và một số video chỉ cho bạn chính xác cách thực hiện.</p>
+
+<p>JMeter’s Component Reference[12]  là bằng chứng về tài liệu mở rộng và toàn diện của JMeter. Mọi phần tử, chức năng và thuộc tính đều được thảo luận chi tiết hơn hầu hết mọi người có thể mong muốn và đó chỉ là tài liệu chính thức trên trang web của Apache. Có hàng nghìn cuốn sách, hướng dẫn và khóa học về JMeter của những người dùng đam mê nó.</p>
+
+<h2 id="14-jmeter-có-thể-thực-hiện-các-kiểm-thử-chịu-tải-phân-tán-với-chi-phí-hợp-lý">1.4. JMeter có thể thực hiện các kiểm thử chịu tải phân tán với chi phí hợp lý</h2>
+<p>Một trong những tính năng tuyệt vời nhất của JMeter là nó cung cấp cho bạn một khung để chạy kiểm thử chịu tải phân tán với nó. Điều này khá đặc biệt đối với một công cụ mã nguồn mở và miễn phí.</p>
+
+<p>Kiểm thử phân tán có nghĩa là tăng lượng tải bạn đang tạo bằng các kiểm thử chịu tải của mình, thường bằng cách tăng số lượng VU và chạy nhiều phiên bản tập lệnh của bạn trên các trình tạo chịu tải khác. JMeter thực hiện điều này bằng cách chỉ định một nút điều khiển và cho phép bạn thiết lập các nút worker. Mỗi nút worker cần có một bản sao của jmeter-server, một tiện ích đi kèm với mọi cài đặt JMeter (trong jmeter/bin).</p>
+
+<p>k6 hỗ trợ chế độ kiểm thử chịu tải phân tán thông qua toán tử Kubernetes: Toán tử k6 cho phép bạn tạo đối tượng tài nguyên tùy chỉnh k6 trong cụm Kubernetes. Tuy nhiên, kiểm thử phân tán thông qua toán tử Kubernetes yêu cầu một mạng ổn định và tốc độ cao để đảm bảo rằng các nút kiểm thử có thể giao tiếp với nhau một cách hiệu quả. Nếu mạng không ổn định hoặc tốc độ mạng chậm, kiểm thử phân tán có thể gặp vấn đề về trễ hoặc thất bại.</p>
+
+<h1 id="2-khi-nào-k6-nổi-bật-hơn">2. Khi nào k6 nổi bật hơn?</h1>
+<h2 id="21-k6-có-thể-bắt-đầu-sử-dụng-nhanh-chóng">2.1. k6 có thể bắt đầu sử dụng nhanh chóng</h2>
+<p>Bản thân JMeter khá dễ cài đặt, nhưng trước khi cài đặt JMeter, bạn cần cài đặt Java. Đặc biệt nếu bạn đang sử dụng Windows, thì người dùng JMeter mới sẽ gặp phải các vấn đề khi thêm các biến môi trường(environment variables) cần thiết để Java hoạt động. Cũng có thể gây nhầm lẫn khi xác định phiên bản Java nào là phiên bản phù hợp. Trong khi đó k6, có thể cài đặt dễ dàng thông qua một một câu lệnh trên terminal hay một gói cài đặt có sẵn.</p>
+
+<p>Đối với JMeter, nơi mọi thứ đều là plugin… kể cả Trình quản lý plugin (Plugin Manager)! Hầu hết người dùng JMeter sẽ tranh luận rằng có một bộ plugin tiêu chuẩn mà bạn nên tải xuống trước khi bắt đầu sử dụng nó. Trong khi đó, tất cả các chức năng này đều có sẵn trong k6 ngay từ đầu.</p>
+
+<h2 id="22-k6-có-thể-tối-đa-hiệu-suất-và-hiệu-quả-của-ca-kiểm-thử">2.2. k6 có thể tối đa hiệu suất và hiệu quả của ca kiểm thử</h2>
+<p>k6 được viết bằng Go và Go được xây dựng có tính hiệu suất. Go là một ngôn ngữ được biên dịch và không cần phải thông dịch, không giống như Java hay Python. Không có lớp phức tạp nào được thêm vào.</p>
+
+<p>Cách đơn giản và phổ biến nhất để công cụ kiểm thử chịu tải tạo VU là chỉ định một VU cho một nhân hoặc luồng (thread) hệ điều hành. Tuy nhiên, mô hình 1 luồng (thread): 1 VU có một lỗ hổng nghiêm trọng: khi VU đang chờ phản hồi hoặc thực hiện hàm sleep(), luồng cũng bị chặn và không thể xử lý công việc khác.</p>
+
+<p>Trong k6, mỗi VU được chạy trên một goroutine chứ không phải một luồng. Điều đó tạo nên sự khác biệt gì? Goroutines có thể được điều khiển bởi Go Scheduler, hoạt động giống như một cảnh sát giao thông. Nó sử dụng lại các luồng nhàn rỗi và phân công công việc một cách thông minh, bằng cách cho phép “đánh cắp công việc” và chuyển giao công việc giữa các luồng. Điều này nghe có quen không? Đây cũng là nguyên tắc mà các bộ cân bằng tải được xây dựng dựa trên: Một màn hình bên ngoài giám sát luồng công việc giúp cải thiện hiệu suất chung. Bản thân Go về bản chất đã cân bằng tải theo cách mà nhiều ngôn ngữ lập trình không có, điều này làm cho nó trở thành nền tảng hoàn hảo cho một công cụ kiểm thử chịu tải.</p>
+
+<p>Việc có thể tận dụng khả năng tối ưu hóa hiệu suất vốn có của Go cũng đồng nghĩa với việc sử dụng bộ nhớ ít hơn đáng kể. Một luồng chạy k6 không vượt quá 100 kb, trong khi một luồng JVM như JMeter sử dụng, chẳng hạn, sử dụng mặc định là 1MB. Đó là hơn 1000% so với k6! Tất nhiên, Java cho phép người dùng điều chỉnh mức sử dụng bộ nhớ của ứng dụng, do đó, sự khác biệt thường không quá rõ ràng, nhưng vẫn thú vị khi lưu ý rằng Go có xuất phát điểm thấp hơn nhiều.</p>
+
+<h2 id="23-lợi-ích-về-hiệu-suất-trong-thực-tế">2.3. Lợi ích về hiệu suất trong thực tế</h2>
+<h3 id="231-k6-cần-ít-load-generator-hơn">2.3.1. k6 cần ít load generator hơn</h3>
+<p>Một load generator là một hệ thống mà chạy nhiều VU theo thứ tự để tạo một load trên hệ thống. Hiệu suất tương đối tốt hơn của k6 nằm ở chỗ nó cần ít load generator hơn để thực hiện một lượng tải nhất định. Kết quả chạy thực tế của hai công cụ kiểm thử k6 và JMeter có sự khác biệt đáng kể. JMeter cần tới 760MB bộ nhớ, trong khi đó, con số này là 256MB bộ nhớ ở k6.</p>
+
+<p><img src="/assets/media/post/waterfall-model.png" alt="Mô hình thác nước" /></p>
+
+<p>JMeter cần tới 760MB để thực hiện ca kiểm thử</p>
+
+<p><img src="/assets/media/post/waterfall-model.png" alt="Mô hình thác nước" /></p>
+
+<p>K6 chỉ sử dụng 256MB để thực hiện ca kiểm thử</p>
+
+<p>Dung lượng bộ nhớ thấp hơn của k6 là lý do nó có thể chạy nhiều VU hơn và tạo ra nhiều tải hơn mức trung bình. Cho dù bạn đang sử dụng load generator tại chỗ hay trên đám mây, bạn sẽ trả ít chi phí cung cấp hơn khi sử dụng k6. Tiết kiệm chi phí này làm cho k6 trở thành một công cụ tuyệt vời cho các nhóm có ngân sách hạn hẹp.</p>
+
+<h3 id="232-k6-xử-lý-lỗi-tràn-bộ-nhớ-out-of-memory-errors">2.3.2. k6 xử lý lỗi tràn bộ nhớ (Out of memory errors)</h3>
+<p>k6 cũng là lựa chọn tốt khi bạn đang thiếu thời gian để thực hiện ca kiểm thử. Sử dụng JMeter có nghĩa là làm quen với cách điều chỉnh hiệu suất Java và cách khắc phục các sự cố hiệu suất Java phổ biến nhất, bởi vì có một số vấn đề. Cái mà gặp phải nhiều nhất khi sử dụng JMeter là chính là lỗi out of memory errors (Tràn bộ nhớ). Vấn đề này bạn sẽ không bao giờ gặp phải khi sử dụng k6.</p>
+
+<h3 id="233-không-có-gui-có-nghĩa-là-không-cần-thêm-chi-phí-tài-nguyên-trong-quá-trình-kiểm-thử-chịu-tải">2.3.3. Không có GUI có nghĩa là không cần thêm chi phí tài nguyên trong quá trình kiểm thử chịu tải</h3>
+<p>GUI thường bổ sung thêm chi phí đáng kể cho một ứng dụng, đó là một trong những lý do tại sao k6 không có. Khi bạn đang chạy kiểm tra tải, cách tốt nhất vẫn là chạy nó từ dòng lệnh, vì nếu không, nó sẽ ảnh hưởng đến kết quả của bạn. Các công cụ kiểm thử chịu tải thực hiện trên dòng lệnh có hiệu suất ngay từ đầu.</p>
+
+<p>JMeter có rất nhiều cảnh báo về ảnh hưởng của GUI đối với hiệu suất. Đây là một từ “tài liệu JMeter”: Don’t run load test using GUI mode ! (Không chạy kiểm thử chịu tải sử dụng chế độ GUI) và đây là thông báo xuất hiện khi chạy JMeter.</p>
+
+<p>Không có GUI nghĩa là có ít vấn đề hơn. Bất kỳ tập lệnh kiểm thử chịu tải nào bạn tạo trong k6 đều sẵn sàng để thực thi vào thời gian hợp lý nhất bất cứ khi nào bạn sẵn sàng.</p>
+
+<h2 id="24-k6-có-thể-thực-hiện-kiểm-thử-hướng-mục-tiêu-goal-oriented-testing">2.4. k6 có thể thực hiện kiểm thử hướng mục tiêu (goal-oriented testing)</h2>
+<p>Câu hỏi quan trọng nhất mà người kiểm thử chịu tải có thể đặt ra khi bắt đầu một dự án kiểm thử chịu tải mới là “Tại sao”? Các kế hoạch kiểm tra nên được thiết lập để giải quyết trực tiếp các lý do của nhóm muốn thực hiện kiểm tra chịu tải và điều đó phải được phản ánh trong các yêu cầu phi chức năng. Các yêu cầu phi chức năng sẽ đưa ra một số điều khiển về các giới hạn của hiệu suất có thể chấp nhận được. Một ví dụ phổ biến cho các giới hạn hoặc ngưỡng này là thời gian phản hồi trung bình dưới 3 giây cho tất cả các giao dịch trong quá trình thử nghiệm. k6 thực hiện điều này một cách tự nhiên với các ngưỡng cục bộ được đưa vào tập lệnh và bạn cũng có thể tạo chỉ số của riêng mình để sử dụng trong một ngưỡng. JMeter vốn không hỗ trợ các ngưỡng ở cấp độ thử nghiệm. Chúng ta phải sử dụng một số công cụ bổ sung để thực hiện công việc này như Timers, Duration Assertion, Performance Plugin,..</p>
+
+<p>Vấn đề là mặc dù các tùy chọn này có thể thiết lập ngưỡng trong JMeter, nhưng chúng vẫn là giải pháp thay thế không đi kèm với JMeter hoặc không giải quyết thỏa đáng việc tạo các loại ngưỡng khác nhau (lỗi, thời gian phản hồi, thông lượng, CPU, bộ nhớ). Cuối cùng, mọi người thường làm là xuất dữ liệu thô từ JMeter và tự mình thực hiện phân tích bằng một công cụ khác.</p>
+
+<p>Ngoài ra, k6 còn có một số tính năng nổi bật khác như dễ dàng hợp tác giữa người phát triển và người kiểm thử. Đây là ý tưởng ban đầu xây dựng nên công cụ kiểm thử này đã được chúng tôi phân tích trong phần ý tưởng nên tôi không phân tích rõ ở đây nữa. K6 sử dụng các tập lệnh của bạn là mã thuần túy giúp giảm bớt sự mơ hồ ở chỗ bạn không bị giới hạn bởi thiết kế giao diện người dùng kém hoặc lỗi trong các phần bổ trợ của bên thứ ba.</p>
+
+<p>Tóm lại, qua một phép so sánh cơ bản với công cụ kiểm thử lâu đời như JMeter, chúng tôi rút ra một số trường hợp mà k6 thực hiện tốt và một số hạn chế của nó.</p>
+
+<p>Cụ thể, k6 phù hợp cho:</p>
+
+<ul>
+  <li>Việc hợp tác giữa các thành viên trong bộ phận phát triển phần mềm giúp cho ca kiểm thử chất lượng và bao hàm được nhiều thành phần hơn khi tất cả các thành viên cùng xây dựng bối cảnh kiểm thử.</li>
+  <li>Những người đang tìm kiếm một công cụ kiểm thử chịu tải nhẹ, đơn giản mà vẫn đầy đủ các tính năng<br />
+Các nhóm đang tìm cách tích hợp thử nghiệm vào quy trình phát triển hiện có và quy trình CI/CD (Continuous Integration và Continuous Delivery/Deployment - quy trình kiểu mới, kết hợp tự động hoá giúp đẩy nhanh tiến độ phát triển sản phẩm và đưa sản phẩm đến người dùng cuối cùng)</li>
+  <li>Đây là một công cụ mã nguồn mở, miễn phí vì vậy giúp cho đội ngũ phát triển của bạn không cần bận tâm nhiều đến các vấn đề pháp lý của phần mềm và việc mã nguồn mở nên k6 được cộng đồng người dùng đóng góp sửa đổi thường xuyên, giúp phần mềm ngày càng phát triển hoàn thiện.</li>
+</ul>
+
+<p>Và hạn chế trong một số trường hợp kể đến như:</p>
+
+<ul>
+  <li>Không có phân tích kết quả chi tiết. Người dùng cần tích hợp kết quả với cơ sở dữ liệu và phần mềm trực quan hoá dữ liệu.</li>
+  <li>Không phù hợp với các nhóm kiểm thử truyền thống khi mà các nhóm này thường sử dụng các phần mềm kiểm thử có GUI trong khi k6 lại không hỗ trợ vấn đề này.</li>
+  <li>K6 là một công cụ mới được phát hiện nên cộng đồng chưa được rộng lớn, phát triển như các công cụ kiểm thử lâu đời và không hỗ trợ chuyển giao với công cụ thương mại khác như LoadRunner hay NeoLoad.</li>
+</ul>
+
+<p>Các công cụ kiểm thử chịu tải bằng dòng lệnh không phải là yếu tố quan trọng nhất để cân nhắc thành công của kiểm tra tải. Biết lý do tại sao bạn đang kiểm thử, các yêu cầu là gì, hiểu và truyền đạt kết quả đều quan trọng hơn. Công cụ phù hợp sẽ cho phép bạn giải quyết những lo ngại đó trong khi cung cấp càng ít xung đột càng tốt. Không có công cụ “tốt nhất” rõ ràng; chỉ có công cụ phù hợp cho dự án và bối cảnh của bạn.</p>
+
+<h1 id="tài-liệu-liên-quan">Tài liệu liên quan</h1>
+<ul>
+  <li>[1] Phạm Ngọc Hùng, Trương Anh Hoàng, Đặng Văn Hưng. <em>Giáo trình kiểm thử phần mềm</em>, 2014.</li>
+  <li>[2] <em>k6 Documentation</em> <a href="https://k6.io/docs/">https://k6.io/docs/</a></li>
+  <li>[3] <em>Comparing k6 and</em> JMeter for load testing <a href="https://k6.io/blog/k6-vs-jmeter/">https://k6.io/blog/k6-vs-jmeter/</a></li>
+  <li>[4] <em>Jmeter</em> <a href="https://jmeter.apache.org/">https://jmeter.apache.org/</a></li>
+  <li>[5] <em>Apace Foundation</em> <a href="https://www.apache.org/">https://www.apache.org/</a></li>
+  <li>[6] <em>JMeter’s Component Reference</em> <a href="https://jmeter.apache.org/usermanual/component_reference.html">https://jmeter.apache.org/usermanual/component_reference.html</a></li>
+</ul>
+
+        </div>
+
+        <div class="ml-8 mt-8 mb-8 font-normal">
+            <b class="font-semibold text-xl"> Tags: </b>
+            
+            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400"
+                href="/tag/k6"> k6 </a>
+            
+            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400"
+                href="/tag/jmeter"> jmeter </a>
+            
+            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400"
+                href="/tag/testing"> testing </a>
+            
+        </div>
+
+        
+
+<style>
+    #share-container {
+        float: right;
+        padding-right: 24px;
+        margin-bottom: 80px;
+    }
+
+    #share-buttons {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    #share-buttons:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    #share-buttons>div {
+        position: relative;
+        text-align: left;
+        height: 32px;
+        width: 32px;
+        float: left;
+        text-align: center;
+        border-radius: 4px;
+        margin-left: 8px;
+        padding: 2px;
+    }
+
+    #share-buttons>div:hover {
+        background-color: rgb(239, 242, 251);
+    }
+
+    #share-buttons>div>svg {
+        height: 28px;
+        fill: #d5d5d5;
+        margin-top: 2px;
+    }
+
+    #share-buttons>div:hover {
+        cursor: pointer;
+    }
+
+    #share-buttons>div.facebook>svg {
+        fill: #3B5998;
+    }
+
+    #share-buttons>div.twitter>svg {
+        fill: #55ACEE;
+    }
+
+    #share-buttons>div.linkedin>svg {
+        fill: #0077b5;
+    }
+
+    #share-buttons>div.pinterest>svg {
+        fill: #CB2027;
+    }
+
+    #share-buttons>div.reddit>svg {
+        fill: #ff4500;
+    }
+
+    #share-buttons>div.mail>svg {
+        fill: #7D7D7D;
+    }
+
+    #share-buttons>div.instagram>svg {
+        fill: #C73B92;
+    }
+
+    #share-buttons>div.facebook>svg {
+        height: 24px;
+        margin-top: 4px;
+    }
+
+    /*
+    #share-buttons>div.twitter>svg {
+        height: 32px;
+        margin-top: 8px;
+    }
+
+    #share-buttons>div.reddit>svg {
+        height: 32px;
+        margin-top: 4px;
+    }
+
+    #share-buttons>div.linkedin>svg {
+        height: 19px;
+        margin-top: 7px;
+    }
+
+    #share-buttons>div.pinterest>svg {
+        height: 20px;
+        margin-top: 9px;
+    }
+    */
+    #share-buttons>div.mail>svg {
+        height: 28px;
+        margin-top: 11px;
+    }
+</style>
+<div>
+    <div id="share-container">
+        <span style="font-weight: 600; font-size: 18px;">Share on: </span>
+        <div id="share-buttons">
+            <div class="facebook" title="Share this on Facebook"
+                onclick="window.open('http://www.facebook.com/share.php?u=https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter/');"><svg
+                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z" />
+                </svg></div>
+            <div class="twitter" title="Share this on Twitter"
+                onclick="window.open('ttps://twitter.com/intent/tweet?text=https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter/');"><svg
+                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z" />
+                </svg></div>
+            <div class="reddit" title="Share this on Reddit"
+                onclick="window.open('http://www.reddit.com/submit?url=https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter/');">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <g>
+                        <path fill="none" d="M0 0h24v24H0z" />
+                        <path fill-rule="nonzero"
+                            d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm6.67-10a1.46 1.46 0 0 0-2.47-1 7.12 7.12 0 0 0-3.85-1.23L13 6.65l2.14.45a1 1 0 1 0 .13-.61L12.82 6a.31.31 0 0 0-.37.24l-.74 3.47a7.14 7.14 0 0 0-3.9 1.23 1.46 1.46 0 1 0-1.61 2.39 2.87 2.87 0 0 0 0 .44c0 2.24 2.61 4.06 5.83 4.06s5.83-1.82 5.83-4.06a2.87 2.87 0 0 0 0-.44 1.46 1.46 0 0 0 .81-1.33zm-10 1a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm5.81 2.75a3.84 3.84 0 0 1-2.47.77 3.84 3.84 0 0 1-2.47-.77.27.27 0 0 1 .38-.38A3.27 3.27 0 0 0 12 16a3.28 3.28 0 0 0 2.09-.61.28.28 0 1 1 .39.4v-.04zm-.18-1.71a1 1 0 1 1 1-1 1 1 0 0 1-1.01 1.04l.01-.04z" />
+                    </g>
+                </svg>
+            </div>
+            <div class="linkedin" title="Share this on Linkedin"
+                onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter/&title=&summary=&source=');">
+                <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z" />
+                </svg>
+            </div>
+            <!-- <div class="mail" title="Share this through Email"
+            onclick="window.open('mailto:?&body=https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter/');"><svg viewBox="0 0 1792 1792"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z" />
+            </svg></div> -->
+        </div>
+    </div>
+</div>
+
+        <style>
+    .page-navigation {
+        display: flex;
+        position: relative;
+        margin: 5em 0;
+        border-top: 1px solid #d4d4d4;
+        line-height: 1.4;
+    }
+
+    .page-navigation a {
+        border-bottom: 0;
+        font-weight: 700;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        text-decoration: none;
+        box-sizing: border-box;
+    }
+
+    .page-navigation .nav-arrow {
+        font-weight: 400;
+        font-size: 14px;
+        color: #6b7886;
+        margin-bottom: 3px;
+    }
+
+    .page-navigation .post-title {
+        font-weight: 700;
+    }
+
+    .page-navigation .next {
+        text-align: right;
+        padding-right: 0;
+        padding-left: 20px;
+    }
+</style>
+
+<nav class="page-navigation w-full flex-col md:flex-row">
+    
+    <a class="prev w-full md:w-2/4" href="/testing/2023/03/25/two-pairs-testing/">
+        <div class="nav-arrow"> Previous </div>
+        <span class="post-title">Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)</span>
+    </a>
+    
+    
+</nav>
+
+        <style>
+
+  .table-of-contents-container li a {
+    color: rgb(8, 27, 75);
+  }
+
+  .table-of-contents-container li.active>a {
+    color: #1c84d9;
+  }
+
+  .toc-h1>a {
+    font-weight: 600;
+  }
+
+  .toc-h2>a {
+    padding-left: 1em;
+    font-weight: 500;
+  }
+
+  .toc-h3>a {
+    padding-left: 2em;
+    font-weight: 400;
+  }
+
+
+  @media only screen and (max-width:720px) {
+    .table-of-contents-container {
+      display: none;
+    }
+  }
+</style>
+
+
+<div class="fixed z-20 top-[3.8125rem] bottom-0 right-[max(0px,calc(50%-45rem))] w-[19.5rem] py-10 overflow-y-auto hidden xl:block">
+    <div class="px-8">
+      <h5 class="text-slate-900 font-semibold mb-4 text-sm leading-6 "> On this page </h5>
+      <div class="table-of-contents-container scroll text-slate-700 text-sm leading-6">
+        <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#1-khi-nào-jmeter-nổi-bật-hơn">1. Khi nào Jmeter nổi bật hơn?</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#11-jmeter-có-giao-diện-người-dùng-gui---graphical-user-interface">1.1. Jmeter có giao diện người dùng (GUI - Graphical User Interface)</a></li>
+<li class="toc-entry toc-h2"><a href="#12-jmeter-hỗ-trợ-nhiều-giao-thức-và-tính-năng-vượt-trội">1.2. JMeter hỗ trợ nhiều giao thức và tính năng vượt trội</a></li>
+<li class="toc-entry toc-h2"><a href="#13-jmeter-có-cộng-đồng-người-dùng-kinh-nghiệm-với-nhiều-tài-liệu">1.3. JMeter có cộng đồng người dùng kinh nghiệm với nhiều tài liệu</a></li>
+<li class="toc-entry toc-h2"><a href="#14-jmeter-có-thể-thực-hiện-các-kiểm-thử-chịu-tải-phân-tán-với-chi-phí-hợp-lý">1.4. JMeter có thể thực hiện các kiểm thử chịu tải phân tán với chi phí hợp lý</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#2-khi-nào-k6-nổi-bật-hơn">2. Khi nào k6 nổi bật hơn?</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#21-k6-có-thể-bắt-đầu-sử-dụng-nhanh-chóng">2.1. k6 có thể bắt đầu sử dụng nhanh chóng</a></li>
+<li class="toc-entry toc-h2"><a href="#22-k6-có-thể-tối-đa-hiệu-suất-và-hiệu-quả-của-ca-kiểm-thử">2.2. k6 có thể tối đa hiệu suất và hiệu quả của ca kiểm thử</a></li>
+<li class="toc-entry toc-h2"><a href="#23-lợi-ích-về-hiệu-suất-trong-thực-tế">2.3. Lợi ích về hiệu suất trong thực tế</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#231-k6-cần-ít-load-generator-hơn">2.3.1. k6 cần ít load generator hơn</a></li>
+<li class="toc-entry toc-h3"><a href="#232-k6-xử-lý-lỗi-tràn-bộ-nhớ-out-of-memory-errors">2.3.2. k6 xử lý lỗi tràn bộ nhớ (Out of memory errors)</a></li>
+<li class="toc-entry toc-h3"><a href="#233-không-có-gui-có-nghĩa-là-không-cần-thêm-chi-phí-tài-nguyên-trong-quá-trình-kiểm-thử-chịu-tải">2.3.3. Không có GUI có nghĩa là không cần thêm chi phí tài nguyên trong quá trình kiểm thử chịu tải</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#24-k6-có-thể-thực-hiện-kiểm-thử-hướng-mục-tiêu-goal-oriented-testing">2.4. k6 có thể thực hiện kiểm thử hướng mục tiêu (goal-oriented testing)</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#tài-liệu-liên-quan">Tài liệu liên quan</a></li>
+</ul>
+      </div>
+    </div>  
+</div>
+
+    </article>
+</div>
+        <footer class="flex flex-col justify-center items-start max-w-2xl mx-auto w-full mb-8 pb-16">
+        <hr class="w-full border-t border-slate-50/25 mb-8">
+        <div class="w-full flex justify-center font-light text-gray-600">
+                <a class="inline-block px-3 hover:text-cyan-900" href="/sitemap.xml">sitemap</a>
+                <a class="inline-block px-3 hover:text-cyan-900" href="/feed.xml">rrs</a>
+                <a class="inline-block px-3 hover:text-cyan-900" href="/assets/BuiTuanDung-Resume-1.pdf">resume</a>
+                <a class="inline-block px-3 hover:text-cyan-900" href="https://github.com/zhaospei">github</a>
+        </div>
+        <div class="mx-auto font-semibold mt-8"> © 2023 - <span class="text-cyan-900">real</span> day, <span class="text-cyan-900">real</span> time.
+        </div>
+        <small class="mx-auto"> <a
+                        href="https://github.com/zhaospei/zhaospei.github.io" target="_blank"
+                        rel="noreferrer noopener">polygon</a> theme on <a href="https://jekyllrb.com" target="_blank"
+                        rel="noreferrer noopener">jekyll</a> </small>
+</footer>
+      </main>
+    </div>
+  </body>
+</html>
