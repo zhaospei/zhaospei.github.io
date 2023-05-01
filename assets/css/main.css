@@ -6,10 +6,15 @@
 @layer base {
     html {
       font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
     }
 
     a {
       @apply text-blue-600;
+    }
+
+    .prose a {
+      word-break: break-all;
     }
 
     .prose h1 {

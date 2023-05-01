@@ -1,0 +1,50 @@
+<style>
+    .page-navigation {
+        display: flex;
+        position: relative;
+        margin: 5em 0;
+        border-top: 1px solid #d4d4d4;
+        line-height: 1.4;
+    }
+
+    .page-navigation a {
+        border-bottom: 0;
+        font-weight: 700;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        text-decoration: none;
+        box-sizing: border-box;
+    }
+
+    .page-navigation .nav-arrow {
+        font-weight: 400;
+        font-size: 14px;
+        color: #6b7886;
+        margin-bottom: 3px;
+    }
+
+    .page-navigation .post-title {
+        font-weight: 700;
+    }
+
+    .page-navigation .next {
+        text-align: right;
+        padding-right: 0;
+        padding-left: 20px;
+    }
+</style>
+
+<nav class="page-navigation w-full flex-col md:flex-row">
+    {% if page.previous.url %}
+    <a class="prev w-full md:w-2/4" href="{{page.previous.url}}">
+        <div class="nav-arrow"> Previous </div>
+        <span class="post-title">{{page.previous.title}}</span>
+    </a>
+    {% endif %}
+    {% if page.next.url %}
+    <a class="next w-full md:w-2/4" href="{{page.next.url}}">
+        <div class="nav-arrow"> Next </div>
+        <span class="post-title">{{page.next.title}}</span>
+    </a>
+    {% endif %}
+</nav>
