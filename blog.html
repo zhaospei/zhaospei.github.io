@@ -7,69 +7,86 @@ description: I've written posts since March 2023. I like talking about web devel
 ---
 
 <div class="relative w-full mb-4">
-  <input type="text" id="search-input" class="w-full box-border px-4 py-2 text-gray-900 bg-white border border-solid border-slate-300	rounded-md" placeholder="Search articles">
-  <svg class="absolute w-5 h-5 text-gray-400 right-3 top-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+  <input type="text" id="search-input"
+    class="w-full box-border px-4 py-2 text-gray-900 bg-white border border-solid border-slate-300	rounded-md"
+    placeholder="Search articles">
+  <svg class="absolute w-5 h-5 text-gray-400 right-3 top-3" xmlns="http://www.w3.org/2000/svg" fill="none"
+    viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+  </svg>
   <ul id="results-container" class="hidden"></ul>
+</div>
+
+<div class="tags-cloud flex flex-wrap">
+  {% assign tags = site.tags | sort %}
+  {% for tag in tags%}
+  <span class="site-tag bg-slate-300 shadow text-white rounded-md text-xl border-y border-transparent py-2 font-semibold px-3 hover:bg-green-600 mx-2 my-2">
+    <a class="text-white" href="/tag/{{ tag | first | slugify }}/" style="font-size: {{ tag | last | size  |  times: 4 | plus: 80  }}%">
+      {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
+    </a>
+  </span>
+  {% endfor%}
 </div>
 
 <h3 class="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl"> Most Recent. </h3>
 {% for post in site.posts limit:3 %}
-  <a class="w-full" href="{{ post.url }}">
-    <div class="w-full mb-8">
-      <div class="flex flex-col md:flex-row">
-        <div class="flex-none mt-1.5 mr-5 mb-4 w-full md:w-48 md:h-full relative rounded-sm">
-          {% if post.img-feature %}
-            <img alt="Post image feature" src="{{ post.img-feature }}" loading="lazy" class="w-full">
-          {% else %}
-            <img alt="Post image feature" src="/assets/media/feature/default.jpg" loading="lazy" class="w-full">
-          {% endif %}
+<a class="w-full" href="{{ post.url }}">
+  <div class="w-full mb-8">
+    <div class="flex flex-col md:flex-row">
+      <div class="flex-none mt-1.5 mr-5 mb-4 w-full md:w-48 md:h-full relative rounded-sm ">
+        {% if post.img-feature %}
+        <img alt="Post image feature" src="{{ post.img-feature }}" loading="lazy" class="w-full rounded">
+        {% else %}
+        <img alt="Post image feature" src="/assets/media/feature/default.jpg" loading="lazy" class="w-full rounded">
+        {% endif %}
+      </div>
+      <div class="w-full">
+        <div class="flex flex-col justify-between md:flex-row">
+          <h4 class="w-full mb-2 text-lg font-semibold text-gray-900 md:text-xl">
+            {{ post.title }}
+          </h4>
+          <p class="font-bold w-32 mb-4 text-left text-sky-900 md:text-right md:mb-0">
+            {% for category in post.categories %}
+            {{ category | append: ' '}}
+            {% endfor %}
+          </p>
         </div>
-        <div class="w-full">
-          <div class="flex flex-col justify-between md:flex-row">
-            <h4 class="w-full mb-2 text-lg font-semibold text-gray-900 md:text-xl">
-              {{ post.title }}
-            </h4>
-            <p class="font-bold w-32 mb-4 text-left text-sky-900 md:text-right md:mb-0">
-              {% for category in post.categories %}
-                {{ category | append: ' '}}
-              {% endfor %}
-            </p>
-          </div>
-          <div class="text-gray-600"> {{ post.excerpt }} </div>
-        </div>
+        <div class="text-gray-600"> {{ post.excerpt }} </div>
       </div>
     </div>
-  </a>
+  </div>
+</a>
 {% endfor %}
 
 <h3 class="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl"> All Posts. </h3>
 {% for post in site.posts %}
-  <a class="w-full" href="{{ post.url }}">
-    <div class="w-full mb-8">
-      <div class="flex flex-col md:flex-row">
-        <div class="flex-none mt-1.5 mr-5 w-full mb-4 md:w-40 md:h-full relative rounded-sm">
-          {% if post.img-feature %}
-            <img alt="Post image feature" src="{{ post.img-feature }}" loading="lazy" class="w-full">
-          {% else %}
-            <img alt="Post image feature" src="/assets/media/feature/default.jpg" loading="lazy" class="w-full">
-          {% endif %}
+<a class="w-full" href="{{ post.url }}">
+  <div class="w-full mb-8">
+    <div class="flex flex-col md:flex-row">
+      <div class="flex-none mt-1.5 mr-5 w-full mb-4 md:w-40 md:h-full relative rounded-sm">
+        {% if post.img-feature %}
+        <img alt="Post image feature" src="{{ post.img-feature }}" loading="lazy" class="w-full rounded">
+        {% else %}
+        <img alt="Post image feature" src="/assets/media/feature/default.jpg" loading="lazy" class="w-full rounded">
+        {% endif %}
+      </div>
+      <div class="w-full">
+        <div class="flex flex-col justify-between md:flex-row">
+          <h4 class="w-full mb-2 text-lg font-semibold text-gray-900 md:text-xl">
+            {{ post.title }}
+          </h4>
+          <p class="font-bold w-32 mb-4 text-left text-sky-900 md:text-right md:mb-0">
+            {% for category in post.categories %}
+            {{ category | append: ' '}}
+            {% endfor %}
+          </p>
         </div>
-        <div class="w-full">
-          <div class="flex flex-col justify-between md:flex-row">
-            <h4 class="w-full mb-2 text-lg font-semibold text-gray-900 md:text-xl">
-              {{ post.title }}
-            </h4>
-            <p class="font-bold w-32 mb-4 text-left text-sky-900 md:text-right md:mb-0"> 
-              {% for category in post.categories %}
-                {{ category | append: ' '}}
-              {% endfor %}
-            </p>
-          </div>
-          <div class="text-gray-600"> {{ post.excerpt }} </div>
-        </div>
+        <div class="text-gray-600"> {{ post.excerpt }} </div>
       </div>
     </div>
-  </a>
+  </div>
+</a>
 {% endfor %}
 
 <script async src="{{site.cdn_baseurl}}/assets/js/simple-jekyll-search.min.js"></script>

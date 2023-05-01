@@ -40,6 +40,8 @@
         <div class="nav-arrow"> Previous </div>
         <span class="post-title">{{page.previous.title}}</span>
     </a>
+    {% else %}
+        <div class="md:w-2/4"></div>
     {% endif %}
     {% if page.next.url %}
     <a class="next w-full md:w-2/4" href="{{page.next.url}}">

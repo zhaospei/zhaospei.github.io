@@ -9,6 +9,18 @@
       scroll-behavior: smooth;
     }
 
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+     
+    ::-webkit-scrollbar-thumb {
+      background: #66aacb;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #ddd;
+    }
+
     a {
       @apply text-blue-600;
     }
