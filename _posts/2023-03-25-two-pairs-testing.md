@@ -4,7 +4,7 @@ title:  "Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwis
 categories: Testing
 author: zhao
 tags: ["pairwise", "all-pairs", "testing"]
-img-feature: /assets/media/feature/Software-Development-Life-Cycle.png
+img-feature: /assets/media/feature/testing.png
 ---
 
 Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp

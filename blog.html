@@ -16,8 +16,8 @@ description: I've written posts since March 2023. I like talking about web devel
 {% for post in site.posts limit:3 %}
   <a class="w-full" href="{{ post.url }}">
     <div class="w-full mb-8">
-      <div class="flex flex-row">
-        <div class="flex-none mt-1.5 mr-5 w-24 h-16 relative rounded-sm">
+      <div class="flex flex-col md:flex-row">
+        <div class="flex-none mt-1.5 mr-5 mb-4 w-full md:w-48 md:h-full relative rounded-sm">
           {% if post.img-feature %}
             <img alt="Post image feature" src="{{ post.img-feature }}" loading="lazy" class="w-full">
           {% else %}
@@ -26,7 +26,7 @@ description: I've written posts since March 2023. I like talking about web devel
         </div>
         <div class="w-full">
           <div class="flex flex-col justify-between md:flex-row">
-            <h4 class="w-full mb-2 text-lg font-medium text-gray-900 md:text-xl">
+            <h4 class="w-full mb-2 text-lg font-semibold text-gray-900 md:text-xl">
               {{ post.title }}
             </h4>
             <p class="font-bold w-32 mb-4 text-left text-sky-900 md:text-right md:mb-0">
@@ -46,8 +46,8 @@ description: I've written posts since March 2023. I like talking about web devel
 {% for post in site.posts %}
   <a class="w-full" href="{{ post.url }}">
     <div class="w-full mb-8">
-      <div class="flex flex-row">
-        <div class="flex-none mt-1.5 mr-5 w-24 h-16 relative rounded-sm">
+      <div class="flex flex-col md:flex-row">
+        <div class="flex-none mt-1.5 mr-5 w-full mb-4 md:w-40 md:h-full relative rounded-sm">
           {% if post.img-feature %}
             <img alt="Post image feature" src="{{ post.img-feature }}" loading="lazy" class="w-full">
           {% else %}
@@ -56,7 +56,7 @@ description: I've written posts since March 2023. I like talking about web devel
         </div>
         <div class="w-full">
           <div class="flex flex-col justify-between md:flex-row">
-            <h4 class="w-full mb-2 text-lg font-medium text-gray-900 md:text-xl">
+            <h4 class="w-full mb-2 text-lg font-semibold text-gray-900 md:text-xl">
               {{ post.title }}
             </h4>
             <p class="font-bold w-32 mb-4 text-left text-sky-900 md:text-right md:mb-0"> 
