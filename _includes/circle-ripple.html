@@ -1,0 +1,46 @@
+<style>
+    .circles {
+      height: 90vmin;
+      position: fixed;
+      width: 90vmin;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    .circles  > div {
+      animation: growAndFade 3s infinite ease-out;
+      background-color: dodgerblue;
+      border-radius: 50%;
+      height: 100%;
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+    }
+      
+    .circles  .circle1 {
+      animation-delay: 1s;    
+    }
+    .circles  .circle2 {
+      animation-delay: 2s; 
+    }
+    .circles  .circle3 {
+      animation-delay: 3s;
+    }
+    
+    @keyframes growAndFade {
+      0% {
+        opacity: .25;
+        transform: scale(0);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1);
+      }
+    }
+</style>
+
+<div class="circles">
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+    <div class="circle3"></div>
+</div>
