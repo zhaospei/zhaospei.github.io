@@ -56,17 +56,50 @@
 
     body {
         background: var(--bg-url) repeat 0 0;
-        -webkit-animation: bg-scrolling-reverse .92s infinite;
+        -webkit-animation: bg-scrolling-reverse 2s infinite;
         /* Safari 4+ */
-        -moz-animation: bg-scrolling-reverse .92s infinite;
+        -moz-animation: bg-scrolling-reverse 2s infinite;
         /* Fx 5+ */
-        -o-animation: bg-scrolling-reverse .92s infinite;
+        -o-animation: bg-scrolling-reverse 2s infinite;
         /* Opera 12+ */
-        animation: bg-scrolling-reverse .92s infinite;
+        animation: bg-scrolling-reverse 2s infinite;
         /* IE 10+ */
         -webkit-animation-timing-function: linear;
         -moz-animation-timing-function: linear;
         -o-animation-timing-function: linear;
         animation-timing-function: linear;
     }
+
+    /* .avatar {
+        background-image: url("/assets/media/author/zhao.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 50%;
+        position: relative;
+    }
+
+    .avatar::before,
+    .avatar::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: rgba(30, 143, 255, 0.475);
+        z-index: -1;
+        animation: bo 3s infinite ease;
+    }
+
+    .avatar::after {
+        z-index: -2;
+        animation-delay: 1s;
+        background: #1365df9f;
+    }
+
+    @keyframes bo {
+        to {
+            transform: scale(3);
+            opacity: 0;
+        }
+    } */
 </style>
