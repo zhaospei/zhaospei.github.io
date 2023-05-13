@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en-US" class="light" style="color-scheme: light;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Kiểm thử bằng phương pháp phân tích giá trị biên - Tuan-Dung Bui</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/github.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <link type="application/atom+xml" rel="alternate" href="https://zhaospei.github.io//feed.xml" title="Tuan-Dung Bui" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Kiểm thử bằng phương pháp phân tích giá trị biên | Tuan-Dung Bui</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Kiểm thử bằng phương pháp phân tích giá trị biên" />
+<meta name="author" content="zhao" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Trong quá trình phát triển phần mềm, kiểm thử là một bước không thể thiếu để đảm bảo chất lượng và độ tin cậy của sản phẩm. Trong số các phương pháp kiểm thử, kiểm thử phân tích giá trị biên (Boundary Value Analysis) đã được đánh giá cao vì tính hiệu quả và độ chính xác của nó. Phương pháp này giúp tập trung kiểm thử vào các giá trị biên của dữ liệu đầu vào, từ đó giảm thiểu thời gian và chi phí kiểm thử." />
+<meta property="og:description" content="Trong quá trình phát triển phần mềm, kiểm thử là một bước không thể thiếu để đảm bảo chất lượng và độ tin cậy của sản phẩm. Trong số các phương pháp kiểm thử, kiểm thử phân tích giá trị biên (Boundary Value Analysis) đã được đánh giá cao vì tính hiệu quả và độ chính xác của nó. Phương pháp này giúp tập trung kiểm thử vào các giá trị biên của dữ liệu đầu vào, từ đó giảm thiểu thời gian và chi phí kiểm thử." />
+<link rel="canonical" href="https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien/" />
+<meta property="og:url" content="https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien/" />
+<meta property="og:site_name" content="Tuan-Dung Bui" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-05-13T00:00:00+07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Kiểm thử bằng phương pháp phân tích giá trị biên" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"zhao"},"dateModified":"2023-05-13T00:00:00+07:00","datePublished":"2023-05-13T00:00:00+07:00","description":"Trong quá trình phát triển phần mềm, kiểm thử là một bước không thể thiếu để đảm bảo chất lượng và độ tin cậy của sản phẩm. Trong số các phương pháp kiểm thử, kiểm thử phân tích giá trị biên (Boundary Value Analysis) đã được đánh giá cao vì tính hiệu quả và độ chính xác của nó. Phương pháp này giúp tập trung kiểm thử vào các giá trị biên của dữ liệu đầu vào, từ đó giảm thiểu thời gian và chi phí kiểm thử.","headline":"Kiểm thử bằng phương pháp phân tích giá trị biên","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien/"},"url":"https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <div class="">
+      <div
+    class="hidden fixed w-full h-screen inset-0 bg-gray-200 opacity-95 z-50 transition-transform transform ease-in-out duration-300 translate-x-0 mobile-menu">
+    <button type="button" aria-label="toggle modal"
+        class="cursor-pointer fixed right-4 top-4 h-8 w-8 cursor-auto focus:outline-none border-none mobile-menu-btn-close"><svg
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+            class="text-gray-900">
+            <path fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+        </svg></button>
+    <nav class="fixed mt-8 h-full">
+        
+        <div class="px-8 py-4"><a class="text-xl font-bold text-gray-900" href="/"> Home </a></div>
+        
+        <div class="px-8 py-4"><a class="text-xl font-bold text-gray-900" href="/works.html"> Works </a></div>
+        
+        <div class="px-8 py-4"><a class="text-xl font-bold text-gray-900" href="/blog.html"> Blog </a></div>
+        
+        <div class="px-8 py-4"><a class="text-xl font-bold text-gray-900" href="/assets/BuiTuanDung-Resume-1.pdf"> Resume </a></div>
+        
+        <div class="px-8 py-4"><a class="text-xl font-bold text-gray-900" href="/about/"> About </a></div>
+        
+
+    </nav>
+</div>
+
+<header class="flex flex-col justify-center w-full">
+    <nav
+        class="flex items-center justify-between w-full relative max-w-3xl border-gray-200 mx-auto pt-8 pb-8 text-gray-900">
+        <div class="ml-[-0.60rem]">
+            
+            <a class="font-normal text-gray-800 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 transition-all"
+                 href="/"><span
+                    class="capsize">Home</span></a>
+            
+            <a class="font-normal text-gray-800 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 transition-all"
+                 href="/works.html"><span
+                    class="capsize">Works</span></a>
+            
+            <a class="font-normal text-gray-800 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 transition-all"
+                 href="/blog.html"><span
+                    class="capsize">Blog</span></a>
+            
+            <a class="font-normal text-gray-800 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 transition-all"
+                 href="/assets/BuiTuanDung-Resume-1.pdf"><span
+                    class="capsize">Resume</span></a>
+            
+            <a class="font-normal text-gray-800 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 transition-all"
+                 href="/about/"><span
+                    class="capsize">About</span></a>
+            
+        </div>
+        <button class="cursor-pointer bg-gray-200 bg-opacity-25	backdrop-blur-sm rounded-md text-sm border-y border-transparent mobile-menu-btn-open visible md:hidden fixed z-50 right-4 top-4 h-8 w-8 cursor-auto focus:outline-none border-none mobile-menu-btn" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                class="text-gray-900">
+                <path fill-rule="evenodd"
+                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </button>
+    </nav>
+</header>
+      <main class="flex flex-col justify-center px-8">
+          <style>
+    .reading-line {
+        position: fixed;
+        top: 0;
+        left: 0;
+        border-bottom: 4px solid #66aacb;
+        z-index: 404;
+    }
+</style>
+
+<div class="reading-line">
+</div>
+<div class="post-container xl:pl-[19.5rem] lg:">
+    <article
+        class="post-content-container flex flex-col items-start justify-center max-w-3xl mx-auto xl:max-w-none xl:ml-0 xl:mr-[15.5rem] xl:pr-24">
+        <style>
+
+  .table-of-contents-container li a {
+    color: rgb(8, 27, 75);
+  }
+
+  .table-of-contents-container li.active>a {
+    color: #1c84d9;
+  }
+
+  .toc-h1 {
+    margin-top: 1em;
+  }
+  .toc-h2 {
+    margin-top: 0.5em;
+  }
+
+  .toc-h1 {
+    font-weight: 600;
+  }
+
+  .toc-h2 {
+    padding-left: 1em;
+    font-weight: 500;
+  }
+
+  .toc-h3 {
+    padding-left: 2em;
+    font-weight: 400;
+  }
+
+
+  @media only screen and (max-width:1280px) {
+    .table-of-contents-container {
+      display: none;
+    }
+  }
+</style>
+
+
+<div class="fixed z-20 top-[3.8125rem] bottom-0 right-[max(0px,calc(50%-45rem))] w-[19.5rem] py-10 overflow-y-auto hidden xl:block">
+    <div class="px-8">
+      <h5 class="text-slate-900 font-semibold mb-4 text-xl leading-6 "> On this page </h5>
+      <div class="table-of-contents-container scroll text-slate-700 text-sm leading-6">
+        <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#bài-toán">Bài toán</a></li>
+<li class="toc-entry toc-h1"><a href="#phân-tích-yêu-cầu">Phân tích yêu cầu</a></li>
+<li class="toc-entry toc-h1"><a href="#phân-vùng-tương-đương">Phân vùng tương đương</a></li>
+<li class="toc-entry toc-h1"><a href="#xác-định-biên">Xác định biên</a></li>
+<li class="toc-entry toc-h1"><a href="#sinh-test-cho-kiểm-thử-biên-đơn-giản">Sinh test cho kiểm thử biên đơn giản</a></li>
+<li class="toc-entry toc-h1"><a href="#biên-và-cận-biên-trong-miền-hợp-lệ">Biên và cận biên trong miền hợp lệ</a></li>
+<li class="toc-entry toc-h1"><a href="#biên-và-cận-biên-trong-toàn-bộ-miền-giá-trị">Biên và cận biên trong toàn bộ miền giá trị.</a></li>
+<li class="toc-entry toc-h1"><a href="#kết-luận">Kết luận</a></li>
+</ul>
+      </div>
+    </div>  
+</div>
+
+        <h1 class="font-extrabold mb-1 text-5xl leading-tight">
+            Kiểm thử bằng phương pháp phân tích giá trị biên
+        </h1>
+        <div class="flex flex-col items-start justify-between w-full mt-2 md:flex-row md:items-center">
+            <div class="flex items-center">
+                
+                
+                
+                <img class="object-cover w-[40px] h-[40px] rounded-full" src="/assets/media/author/zhao.jpg" alt="Tuan-Dung Bui">
+                
+                <p class="ml-2 text-sm text-gray-700">
+                    Tuan-Dung Bui / May 13, 2023
+                </p>
+                
+            </div>
+            <p class="mt-2 text-sm text-gray-600 min-w-32 md:mt-0">
+                
+
+9 min read
+
+            </p>
+        </div>
+        <div class="relative not-prose my-[2em] first:mt-0 last:mb-0 rounded-2xl overflow-hidden mx-auto">
+            
+            <img alt="Post image feature" src="/assets/media/feature/kiem-thu-gia-tri-bien.jpg" loading="lazy" class="w-full">
+            
+        </div>
+        <div class="post-content w-full mt-4 prose max-w-none">
+            <p>Trong quá trình phát triển phần mềm, kiểm thử là một bước không thể thiếu để đảm bảo chất lượng và độ tin cậy của sản phẩm. Trong số các phương pháp kiểm thử, kiểm thử phân tích giá trị biên (Boundary Value Analysis) đã được đánh giá cao vì tính hiệu quả và độ chính xác của nó. Phương pháp này giúp tập trung kiểm thử vào các giá trị biên của dữ liệu đầu vào, từ đó giảm thiểu thời gian và chi phí kiểm thử.</p>
+
+<p>Bài viết này sẽ cách sinh test cho ca kiểm thử phân tích giá trị biên thông qua một bài toán kiểm thử nhỏ.</p>
+
+<h1 id="bài-toán">Bài toán</h1>
+
+<p><strong>DummyTel</strong> có cấu trúc tỷ lệ sau đây cho các cuộc gọi đường dài:</p>
+
+<ul>
+  <li>Bất kỳ cuộc gọi nào bắt đầu lúc hoặc sau 18:00 nhưng trước 08:00 được giảm 50%.</li>
+  <li>Bất kỳ cuộc gọi nào bắt đầu lúc hoặc sau 08:00 nhưng trước 18:00 được tính giá đầy đủ.</li>
+  <li>Bất kỳ cuộc gọi nào dài hơn 60 phút đều được giảm giá 15% trên chi phí (sau khi trừ đi bất kỳ khoản giảm giá nào khác).</li>
+</ul>
+
+<p>Chương trình đọc <strong>thời điểm bắt đầu cuộc gọi</strong> dựa trên đồng hồ 24 giờ và <strong>thời lượng của cuộc gọi</strong>. Thời gian cuộc gọi tối đa là 180 phút.</p>
+
+<p>Chương trả về:</p>
+<ul>
+  <li>-1 nếu đầu vào không hợp lệ.</li>
+  <li>0  nếu không được giảm giá.</li>
+  <li>1  nếu được giảm 15%.</li>
+  <li>2  nếu được giảm 50%.</li>
+  <li>3  nếu vừa được giảm 50% và 15%.</li>
+</ul>
+
+<p>Chương trình sẽ giả sử chỉ các giá trị số nguyên được nhập vào, thời lượng không âm và thời gian bắt đầu biểu thị thời gian đồng hồ thực.</p>
+
+<h1 id="phân-tích-yêu-cầu">Phân tích yêu cầu</h1>
+
+<p>Đầu vào của chương trình: Thời điểm bắt đầu, Thời lượng của cuộc gọi. 
+Đầu ra của chường trình: Chi phí của cuộc gọi 
+Điều kiện hợp lệ của đầu vào:</p>
+<ul>
+  <li>Thời điểm bắt đầu: Có giá trị nguyên trong khoảng từ 0 đến 23.</li>
+  <li>Thời lượng cuộc gọi: Từ 0 đến 180.
+Giá trị đầu ra: 0 (nếu không được giảm giá), 1 (nếu được giảm 15%), 2 (nếu được giảm 50%), 3 (nếu vừa được giảm 50% và 15%).</li>
+</ul>
+
+<h1 id="phân-vùng-tương-đương">Phân vùng tương đương</h1>
+<p>Ta chia thành các giá trị đầu vào thành các phân vùng tương đương sau:</p>
+
+<p>Gọi <strong>TĐBB</strong> là Thời điểm bắt đầu cuộc gọi, <strong>TLCG</strong> là Thời lượng cuộc gọi.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>TH</th>
+      <th>Inputs</th>
+      <th>Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>TĐBB ∉{0,…,23} hoặc TGCG ∉{0,…,180}</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Hợp lệ và (8 &lt;= TĐBB &lt; 18 và TGCG &lt;= 60)</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Hợp lệ và (8 &lt;= TĐBB &lt; 18 và TGCG &gt; 60)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Hợp lệ và (TGCG &lt;= 60 và (TĐBB &gt;= 18 hoặc TĐBB &lt; 8))</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Các TH còn lại</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Từ bảng trên ta sinh 5 test cho 5 phần vùng tương đương lần lượt là:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Testcase</th>
+      <th>Inputs</th>
+      <th>EO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>TĐBB = -2 và TGCG = 191</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>TĐBB = 12 và TGCG = 45</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>TĐBB = 14 và TGCG = 92</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>TĐBB = 20 và TGCG = 30</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>TĐBB = 21 và TGCG = 124</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="xác-định-biên">Xác định biên</h1>
+
+<p><strong>Biên của TĐBB:</strong></p>
+
+<p><img src="/assets/media/post/bien-1.png" alt="Biên của TĐBB" /></p>
+
+<ul>
+  <li>Giá trị biên của TĐBB lần lượt là 0, 8, 18, 23</li>
+  <li>Giá trị nom của TĐBB là 12 (Điểm giữa của miền hợp lệ)</li>
+</ul>
+
+<p><strong>Biên của TGCG:</strong></p>
+
+<p><img src="/assets/media/post/bien-2.png" alt="Biên của TĐBB" /></p>
+
+<ul>
+  <li>Giá trị biên của TGCG lần lượt là 0, 60, 180</li>
+  <li>Giá trị nom của TGCG là 90 (Điểm giữa của miền hợp lệ)</li>
+</ul>
+
+<h1 id="sinh-test-cho-kiểm-thử-biên-đơn-giản">Sinh test cho kiểm thử biên đơn giản</h1>
+<p>Mỗi giá trị biên của một input kết hợp với các giá trị nom của các input còn lại và một test bao gồm tất cả các giá trị nom của các input.</p>
+
+<p>Hay chúng ta có tổng cộng: 4 + 3 + 1 = 8 (Testcases)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Testcase</th>
+      <th>Inputs</th>
+      <th>EO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>TĐBB = 0 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>TĐBB = 8 và TGCG = 90</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>TĐBB = 18 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>TĐBB = 23 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>TĐBB = 12 và TGCG = 0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>TĐBB = 12 và TGCG = 60</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>TĐBB = 12 và TGCG = 180</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>TĐBB = 12 và TGCG = 90</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="biên-và-cận-biên-trong-miền-hợp-lệ">Biên và cận biên trong miền hợp lệ</h1>
+<p>Các test case tương tự như biên đơn giản và thêm các test case cận biên bằng cách kết hợp giá trị cận biên của một input với các giá trị nom của các input còn lại.</p>
+
+<p>Lấy các giá trị cận biên cách giá trị biên một khoảng là 1.</p>
+
+<p>TĐBB có 4 giá trị biên -&gt; 6 giá trị cận biên trong miền hợp lệ.</p>
+
+<p>TGCG có 3 giá trị biên -&gt; 4 giá trị cận biên trong miền hợp lệ.</p>
+
+<p>Vậy số test cases tất cả là 8 + 6 + 4 = 18 (Testcase)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Testcase</th>
+      <th>Inputs</th>
+      <th>EO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>TĐBB = 0 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>TĐBB = 8 và TGCG = 90</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>TĐBB = 18 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>TĐBB = 23 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>TĐBB = 12 và TGCG = 0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>TĐBB = 12 và TGCG = 60</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>TĐBB = 12 và TGCG = 180</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>TĐBB = 12 và TGCG = 90</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>TĐBB = 1 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>TĐBB = 7 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>TĐBB = 9 và TGCG = 90</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>TĐBB = 17 và TGCG = 90</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>TĐBB = 19 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>TĐBB = 22 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>TĐBB = 12 và TGCG = 1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>TĐBB = 12 và TGCG = 59</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>TĐBB = 12 và TGCG = 61</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>TĐBB = 12 và TGCG = 179</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="biên-và-cận-biên-trong-toàn-bộ-miền-giá-trị">Biên và cận biên trong toàn bộ miền giá trị.</h1>
+<p>Các test case tương tự như biên và cận biên trong miền hợp lệ và thêm các test case cận biên ngoài miền hợp lệ bằng cách kết hợp giá trị cận biên ngoài miền hợp lệ của một input với các giá trị nom của các input còn lại.</p>
+
+<p>Lấy các giá trị cận biên cách giá trị biên một khoảng là 1.</p>
+
+<p>Nhận thấy:</p>
+<ul>
+  <li>TĐBB có 2 giá trị cận biên ngoài miền hợp lệ.</li>
+  <li>TGCG có 2 giá trị cận biên ngoài miền hợp lệ.</li>
+</ul>
+
+<p>Vậy số test cases tất cả là 18 + 2 + 2 = 22 (Testcase)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Testcase</th>
+      <th>Inputs</th>
+      <th>EO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>TĐBB = 0 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>TĐBB = 8 và TGCG = 90</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>TĐBB = 18 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>TĐBB = 23 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>TĐBB = 12 và TGCG = 0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>TĐBB = 12 và TGCG = 60</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>TĐBB = 12 và TGCG = 180</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>TĐBB = 12 và TGCG = 90</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>TĐBB = 1 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>TĐBB = 7 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>TĐBB = 9 và TGCG = 90</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>TĐBB = 17 và TGCG = 90</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>TĐBB = 19 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>TĐBB = 22 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>TĐBB = 12 và TGCG = 1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>TĐBB = 12 và TGCG = 59</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>TĐBB = 12 và TGCG = 61</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>TĐBB = 12 và TGCG = 179</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>TĐBB = 12 và TGCG = -1</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>TĐBB = 12 và TGCG = 181</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>TĐBB = -1 và TGCG = 90</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>TĐBB = 24 và TGCG = 90</td>
+      <td>-1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="kết-luận">Kết luận</h1>
+<p>Nhận thấy toàn bộ test case trong kiểm thử giá trị biên trên đều không cho output nằm trong trường hợp số 2. Vì vậy, kiểm thử giá trị biên sẽ không thể bao hàm toàn bộ trường hợp và thường kết hợp với các loại kiểm thử khác như phân hoạch tương đương hoặc kiểm thử bằng quyết định,.. 
+Thường trong thực tế, các công ty thường sinh test kiểu này: Kết hợp phân hoạch tương đương (hoặc bảng quyết định) với phân tích giá trị biên thường cho kết quả tốt vì nó có chi phí, thời gian, công sức vừa phải và bao hàm hầu hết mọi trường hợp của giá trị đầu vào.</p>
+
+        </div>
+
+        <div class="ml-8 mt-8 mb-8 font-normal">
+            <b class="font-semibold text-xl"> Tags: </b>
+            
+            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400"
+                href="/tag/testing"> testing </a>
+            
+        </div>
+
+        
+
+<style>
+    #share-container {
+        float: right;
+        padding-right: 24px;
+        margin-bottom: 80px;
+    }
+
+    #share-buttons {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    #share-buttons:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    #share-buttons>div {
+        position: relative;
+        text-align: left;
+        height: 32px;
+        width: 32px;
+        float: left;
+        text-align: center;
+        border-radius: 4px;
+        margin-left: 8px;
+        padding: 2px;
+    }
+
+    #share-buttons>div:hover {
+        background-color: rgb(239, 242, 251);
+    }
+
+    #share-buttons>div>svg {
+        height: 28px;
+        fill: #d5d5d5;
+        margin-top: 2px;
+    }
+
+    #share-buttons>div:hover {
+        cursor: pointer;
+    }
+
+    #share-buttons>div.facebook>svg {
+        fill: #3B5998;
+    }
+
+    #share-buttons>div.twitter>svg {
+        fill: #55ACEE;
+    }
+
+    #share-buttons>div.linkedin>svg {
+        fill: #0077b5;
+    }
+
+    #share-buttons>div.pinterest>svg {
+        fill: #CB2027;
+    }
+
+    #share-buttons>div.reddit>svg {
+        fill: #ff4500;
+    }
+
+    #share-buttons>div.mail>svg {
+        fill: #7D7D7D;
+    }
+
+    #share-buttons>div.instagram>svg {
+        fill: #C73B92;
+    }
+
+    #share-buttons>div.facebook>svg {
+        height: 24px;
+        margin-top: 4px;
+    }
+
+    /*
+    #share-buttons>div.twitter>svg {
+        height: 32px;
+        margin-top: 8px;
+    }
+
+    #share-buttons>div.reddit>svg {
+        height: 32px;
+        margin-top: 4px;
+    }
+
+    #share-buttons>div.linkedin>svg {
+        height: 19px;
+        margin-top: 7px;
+    }
+
+    #share-buttons>div.pinterest>svg {
+        height: 20px;
+        margin-top: 9px;
+    }
+    */
+    #share-buttons>div.mail>svg {
+        height: 28px;
+        margin-top: 11px;
+    }
+</style>
+<div>
+    <div id="share-container">
+        <span style="font-weight: 600; font-size: 18px;">Share on: </span>
+        <div id="share-buttons">
+            <div class="facebook" title="Share this on Facebook"
+                onclick="window.open('http://www.facebook.com/share.php?u=https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien/');"><svg
+                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z" />
+                </svg></div>
+            <div class="twitter" title="Share this on Twitter"
+                onclick="window.open('ttps://twitter.com/intent/tweet?text=https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien/');"><svg
+                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z" />
+                </svg></div>
+            <div class="reddit" title="Share this on Reddit"
+                onclick="window.open('http://www.reddit.com/submit?url=https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien/');">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <g>
+                        <path fill="none" d="M0 0h24v24H0z" />
+                        <path fill-rule="nonzero"
+                            d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm6.67-10a1.46 1.46 0 0 0-2.47-1 7.12 7.12 0 0 0-3.85-1.23L13 6.65l2.14.45a1 1 0 1 0 .13-.61L12.82 6a.31.31 0 0 0-.37.24l-.74 3.47a7.14 7.14 0 0 0-3.9 1.23 1.46 1.46 0 1 0-1.61 2.39 2.87 2.87 0 0 0 0 .44c0 2.24 2.61 4.06 5.83 4.06s5.83-1.82 5.83-4.06a2.87 2.87 0 0 0 0-.44 1.46 1.46 0 0 0 .81-1.33zm-10 1a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm5.81 2.75a3.84 3.84 0 0 1-2.47.77 3.84 3.84 0 0 1-2.47-.77.27.27 0 0 1 .38-.38A3.27 3.27 0 0 0 12 16a3.28 3.28 0 0 0 2.09-.61.28.28 0 1 1 .39.4v-.04zm-.18-1.71a1 1 0 1 1 1-1 1 1 0 0 1-1.01 1.04l.01-.04z" />
+                    </g>
+                </svg>
+            </div>
+            <div class="linkedin" title="Share this on Linkedin"
+                onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien/&title=&summary=&source=');">
+                <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z" />
+                </svg>
+            </div>
+            <!-- <div class="mail" title="Share this through Email"
+            onclick="window.open('mailto:?&body=https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien/');"><svg viewBox="0 0 1792 1792"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z" />
+            </svg></div> -->
+        </div>
+    </div>
+</div>
+
+        <style>
+    .page-navigation {
+        display: flex;
+        position: relative;
+        margin: 5em 0;
+        border-top: 1px solid #d4d4d4;
+        line-height: 1.4;
+    }
+
+    .page-navigation a {
+        border-bottom: 0;
+        font-weight: 700;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        text-decoration: none;
+        box-sizing: border-box;
+    }
+
+    .page-navigation .nav-arrow {
+        font-weight: 400;
+        font-size: 14px;
+        color: #6b7886;
+        margin-bottom: 3px;
+    }
+
+    .page-navigation .post-title {
+        font-weight: 700;
+    }
+
+    .page-navigation .next {
+        text-align: right;
+        padding-right: 0;
+        padding-left: 20px;
+    }
+</style>
+
+<nav class="page-navigation w-full flex-col md:flex-row">
+    
+    <a class="prev w-full md:w-2/4" href="/testing/2023/05/01/k6-vs-jmeter/">
+        <div class="nav-arrow"> Previous </div>
+        <span class="post-title">Điểm mạnh/yếu công cụ kiểm thử chịu tải tự động k6 với các đối thủ</span>
+    </a>
+    
+    
+    <a class="next w-full md:w-2/4" href="/deep-learning/2023/05/13/tu-noron-sinh-hoc-den-noron-nhan-tao/">
+        <div class="nav-arrow"> Next </div>
+        <span class="post-title">Từ nơ-ron sinh học đến nơ-ron nhân tạo</span>
+    </a>
+    
+</nav>
+    </article>
+</div>
+
+<script async src="/assets/js/scroll.js"></script>
+        <footer class="flex flex-col justify-center items-start max-w-2xl mx-auto w-full mb-8 pb-16">
+        <hr class="w-full border-t border-slate-50/25 mb-8">
+        <section class="mx-auto py-16 border-t border-slate-200 ">
+                <h2 class="text-xl font-semibold text-slate-900 tracking-tight">Get all of our
+                        updates directly to your&nbsp;inbox.<br>Sign up for my newsletter.</h2>
+                <div class="mt-5 max-w-md">
+                        <form action="https://tinyletter.com/zhaospei" method="post"
+                                class="flex flex-wrap -mx-2">
+                                <div class="px-2 grow-[9999] mt-3">
+                                        <div class="group relative"><svg viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round" aria-hidden="true"
+                                                        class="w-6 h-full absolute inset-y-0 left-3 text-slate-400 pointer-events-none group-focus-within:text-sky-500">
+                                                        <path
+                                                                d="M5 7.92C5 6.86 5.865 6 6.931 6h10.138C18.135 6 19 6.86 19 7.92v8.16c0 1.06-.865 1.92-1.931 1.92H6.931A1.926 1.926 0 0 1 5 16.08V7.92Z">
+                                                        </path>
+                                                        <path d="m6 7 6 5 6-5"></path>
+                                                </svg>
+                                                <input id="email" name="email" type="email" required="required"
+                                                        autocomplete="email" aria-label="Email address"
+                                                        class="box-border appearance-none shadow rounded-md ring-1 ring-slate-900/5 leading-5 sm:text-sm border border-transparent py-2 placeholder:text-slate-400 pl-12 pr-3 block w-full text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 bg-white"
+                                                        placeholder="Subscribe via email">
+                                        </div>
+                                </div>
+                                <div class="px-2 mt-3"><button type="submit"
+                                                class="bg-sky-500 shadow text-white rounded-md text-sm border-y border-transparent py-2 font-semibold px-3 hover:bg-sky-600 ">Subscribe</button>
+                                </div>
+                        </form>
+                </div>
+        </section>
+
+        <div class="w-full flex justify-center font-normal text-gray-600">
+                <a class="inline-block px-3 text-gray-600 hover:text-sky-900" href="/sitemap.xml">sitemap</a>
+                <a class="inline-block px-3 text-gray-600 hover:text-sky-900" href="/feed.xml">rrs</a>
+                <a class="inline-block px-3 text-gray-600 hover:text-sky-900" href="/assets/BuiTuanDung-Resume-1.pdf">resume</a>
+                <a class="inline-block px-3 text-gray-600 hover:text-sky-900" href="https://github.com/zhaospei">github</a>
+        </div>
+
+
+        <div class="mx-auto font-semibold mt-8"> © 2023 - <span class="text-cyan-900">real</span> day, <span
+                        class="text-cyan-900">real</span> time.
+        </div>
+        <small class="mx-auto"> <a href="https://github.com/zhaospei/zhaospei.github.io" target="_blank"
+                        rel="noreferrer noopener">polygon</a> theme on <a href="https://jekyllrb.com" target="_blank"
+                        rel="noreferrer noopener">jekyll</a> </small>
+</footer>
+      </main>
+    </div>
+    <script src="/assets/js/vanilla-tilt.js"></script>
+  </body>
+</html>

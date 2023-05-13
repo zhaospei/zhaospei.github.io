@@ -1,4 +1,450 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://zhaospei.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhaospei.github.io//" rel="alternate" type="text/html" /><updated>2023-05-04T06:32:04+07:00</updated><id>https://zhaospei.github.io//feed.xml</id><title type="html">Tuan-Dung Bui</title><subtitle>A markdown blog made by Tuan-Dung Bui aka Zhao (zhaospei). Hosted on zhaospei.github.io. I'll write something i like maybe my study or life.</subtitle><author><name>Tuan-Dung Bui</name></author><entry><title type="html">Điểm mạnh/yếu công cụ kiểm thử chịu tải tự động k6 với các đối thủ</title><link href="https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter/" rel="alternate" type="text/html" title="Điểm mạnh/yếu công cụ kiểm thử chịu tải tự động k6 với các đối thủ" /><published>2023-05-01T00:00:00+07:00</published><updated>2023-05-01T00:00:00+07:00</updated><id>https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter</id><content type="html" xml:base="https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter/"><![CDATA[<p>Các công cụ kiểm thử tải (Load Testing Tool - LTT) đã trở nên rất phổ biến hiện nay, cả miễn phí và có phí, nguồn mở và nguồn đóng, và mỗi công cụ đều có điểm mạnh và yếu của riêng mình. Một số LTT được nhiều nhà phát triển sử dụng, có thể kể đến công cụ miễn phí như JMeter, Locus, fortio,… hay có tính phí như LoadNinja, Gatling,…  Và Grafana k6 (hay k6) là một trong số ấy.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://zhaospei.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhaospei.github.io//" rel="alternate" type="text/html" /><updated>2023-05-13T20:07:52+07:00</updated><id>https://zhaospei.github.io//feed.xml</id><title type="html">Tuan-Dung Bui</title><subtitle>A markdown blog made by Tuan-Dung Bui aka Zhao (zhaospei). Hosted on zhaospei.github.io. I'll write something i like maybe my study or life.</subtitle><author><name>Tuan-Dung Bui</name></author><entry><title type="html">Kiểm thử bằng phương pháp phân tích giá trị biên</title><link href="https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien/" rel="alternate" type="text/html" title="Kiểm thử bằng phương pháp phân tích giá trị biên" /><published>2023-05-13T00:00:00+07:00</published><updated>2023-05-13T00:00:00+07:00</updated><id>https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien</id><content type="html" xml:base="https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien/"><![CDATA[<p>Trong quá trình phát triển phần mềm, kiểm thử là một bước không thể thiếu để đảm bảo chất lượng và độ tin cậy của sản phẩm. Trong số các phương pháp kiểm thử, kiểm thử phân tích giá trị biên (Boundary Value Analysis) đã được đánh giá cao vì tính hiệu quả và độ chính xác của nó. Phương pháp này giúp tập trung kiểm thử vào các giá trị biên của dữ liệu đầu vào, từ đó giảm thiểu thời gian và chi phí kiểm thử.</p>
+
+<p>Bài viết này sẽ cách sinh test cho ca kiểm thử phân tích giá trị biên thông qua một bài toán kiểm thử nhỏ.</p>
+
+<h1 id="bài-toán">Bài toán</h1>
+
+<p><strong>DummyTel</strong> có cấu trúc tỷ lệ sau đây cho các cuộc gọi đường dài:</p>
+
+<ul>
+  <li>Bất kỳ cuộc gọi nào bắt đầu lúc hoặc sau 18:00 nhưng trước 08:00 được giảm 50%.</li>
+  <li>Bất kỳ cuộc gọi nào bắt đầu lúc hoặc sau 08:00 nhưng trước 18:00 được tính giá đầy đủ.</li>
+  <li>Bất kỳ cuộc gọi nào dài hơn 60 phút đều được giảm giá 15% trên chi phí (sau khi trừ đi bất kỳ khoản giảm giá nào khác).</li>
+</ul>
+
+<p>Chương trình đọc <strong>thời điểm bắt đầu cuộc gọi</strong> dựa trên đồng hồ 24 giờ và <strong>thời lượng của cuộc gọi</strong>. Thời gian cuộc gọi tối đa là 180 phút.</p>
+
+<p>Chương trả về:</p>
+<ul>
+  <li>-1 nếu đầu vào không hợp lệ.</li>
+  <li>0  nếu không được giảm giá.</li>
+  <li>1  nếu được giảm 15%.</li>
+  <li>2  nếu được giảm 50%.</li>
+  <li>3  nếu vừa được giảm 50% và 15%.</li>
+</ul>
+
+<p>Chương trình sẽ giả sử chỉ các giá trị số nguyên được nhập vào, thời lượng không âm và thời gian bắt đầu biểu thị thời gian đồng hồ thực.</p>
+
+<h1 id="phân-tích-yêu-cầu">Phân tích yêu cầu</h1>
+
+<p>Đầu vào của chương trình: Thời điểm bắt đầu, Thời lượng của cuộc gọi. 
+Đầu ra của chường trình: Chi phí của cuộc gọi 
+Điều kiện hợp lệ của đầu vào:</p>
+<ul>
+  <li>Thời điểm bắt đầu: Có giá trị nguyên trong khoảng từ 0 đến 23.</li>
+  <li>Thời lượng cuộc gọi: Từ 0 đến 180.
+Giá trị đầu ra: 0 (nếu không được giảm giá), 1 (nếu được giảm 15%), 2 (nếu được giảm 50%), 3 (nếu vừa được giảm 50% và 15%).</li>
+</ul>
+
+<h1 id="phân-vùng-tương-đương">Phân vùng tương đương</h1>
+<p>Ta chia thành các giá trị đầu vào thành các phân vùng tương đương sau:</p>
+
+<p>Gọi <strong>TĐBB</strong> là Thời điểm bắt đầu cuộc gọi, <strong>TLCG</strong> là Thời lượng cuộc gọi.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>TH</th>
+      <th>Inputs</th>
+      <th>Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>TĐBB ∉{0,…,23} hoặc TGCG ∉{0,…,180}</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Hợp lệ và (8 &lt;= TĐBB &lt; 18 và TGCG &lt;= 60)</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Hợp lệ và (8 &lt;= TĐBB &lt; 18 và TGCG &gt; 60)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Hợp lệ và (TGCG &lt;= 60 và (TĐBB &gt;= 18 hoặc TĐBB &lt; 8))</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Các TH còn lại</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Từ bảng trên ta sinh 5 test cho 5 phần vùng tương đương lần lượt là:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Testcase</th>
+      <th>Inputs</th>
+      <th>EO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>TĐBB = -2 và TGCG = 191</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>TĐBB = 12 và TGCG = 45</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>TĐBB = 14 và TGCG = 92</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>TĐBB = 20 và TGCG = 30</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>TĐBB = 21 và TGCG = 124</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="xác-định-biên">Xác định biên</h1>
+
+<p><strong>Biên của TĐBB:</strong></p>
+
+<p><img src="/assets/media/post/bien-1.png" alt="Biên của TĐBB" /></p>
+
+<ul>
+  <li>Giá trị biên của TĐBB lần lượt là 0, 8, 18, 23</li>
+  <li>Giá trị nom của TĐBB là 12 (Điểm giữa của miền hợp lệ)</li>
+</ul>
+
+<p><strong>Biên của TGCG:</strong></p>
+
+<p><img src="/assets/media/post/bien-2.png" alt="Biên của TĐBB" /></p>
+
+<ul>
+  <li>Giá trị biên của TGCG lần lượt là 0, 60, 180</li>
+  <li>Giá trị nom của TGCG là 90 (Điểm giữa của miền hợp lệ)</li>
+</ul>
+
+<h1 id="sinh-test-cho-kiểm-thử-biên-đơn-giản">Sinh test cho kiểm thử biên đơn giản</h1>
+<p>Mỗi giá trị biên của một input kết hợp với các giá trị nom của các input còn lại và một test bao gồm tất cả các giá trị nom của các input.</p>
+
+<p>Hay chúng ta có tổng cộng: 4 + 3 + 1 = 8 (Testcases)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Testcase</th>
+      <th>Inputs</th>
+      <th>EO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>TĐBB = 0 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>TĐBB = 8 và TGCG = 90</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>TĐBB = 18 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>TĐBB = 23 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>TĐBB = 12 và TGCG = 0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>TĐBB = 12 và TGCG = 60</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>TĐBB = 12 và TGCG = 180</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>TĐBB = 12 và TGCG = 90</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="biên-và-cận-biên-trong-miền-hợp-lệ">Biên và cận biên trong miền hợp lệ</h1>
+<p>Các test case tương tự như biên đơn giản và thêm các test case cận biên bằng cách kết hợp giá trị cận biên của một input với các giá trị nom của các input còn lại.</p>
+
+<p>Lấy các giá trị cận biên cách giá trị biên một khoảng là 1.</p>
+
+<p>TĐBB có 4 giá trị biên -&gt; 6 giá trị cận biên trong miền hợp lệ.</p>
+
+<p>TGCG có 3 giá trị biên -&gt; 4 giá trị cận biên trong miền hợp lệ.</p>
+
+<p>Vậy số test cases tất cả là 8 + 6 + 4 = 18 (Testcase)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Testcase</th>
+      <th>Inputs</th>
+      <th>EO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>TĐBB = 0 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>TĐBB = 8 và TGCG = 90</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>TĐBB = 18 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>TĐBB = 23 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>TĐBB = 12 và TGCG = 0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>TĐBB = 12 và TGCG = 60</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>TĐBB = 12 và TGCG = 180</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>TĐBB = 12 và TGCG = 90</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>TĐBB = 1 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>TĐBB = 7 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>TĐBB = 9 và TGCG = 90</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>TĐBB = 17 và TGCG = 90</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>TĐBB = 19 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>TĐBB = 22 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>TĐBB = 12 và TGCG = 1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>TĐBB = 12 và TGCG = 59</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>TĐBB = 12 và TGCG = 61</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>TĐBB = 12 và TGCG = 179</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="biên-và-cận-biên-trong-toàn-bộ-miền-giá-trị">Biên và cận biên trong toàn bộ miền giá trị.</h1>
+<p>Các test case tương tự như biên và cận biên trong miền hợp lệ và thêm các test case cận biên ngoài miền hợp lệ bằng cách kết hợp giá trị cận biên ngoài miền hợp lệ của một input với các giá trị nom của các input còn lại.</p>
+
+<p>Lấy các giá trị cận biên cách giá trị biên một khoảng là 1.</p>
+
+<p>Nhận thấy:</p>
+<ul>
+  <li>TĐBB có 2 giá trị cận biên ngoài miền hợp lệ.</li>
+  <li>TGCG có 2 giá trị cận biên ngoài miền hợp lệ.</li>
+</ul>
+
+<p>Vậy số test cases tất cả là 18 + 2 + 2 = 22 (Testcase)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Testcase</th>
+      <th>Inputs</th>
+      <th>EO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>TĐBB = 0 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>TĐBB = 8 và TGCG = 90</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>TĐBB = 18 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>TĐBB = 23 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>TĐBB = 12 và TGCG = 0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>TĐBB = 12 và TGCG = 60</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>TĐBB = 12 và TGCG = 180</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>TĐBB = 12 và TGCG = 90</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>TĐBB = 1 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>TĐBB = 7 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>TĐBB = 9 và TGCG = 90</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>TĐBB = 17 và TGCG = 90</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>TĐBB = 19 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>TĐBB = 22 và TGCG = 90</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>TĐBB = 12 và TGCG = 1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>TĐBB = 12 và TGCG = 59</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>TĐBB = 12 và TGCG = 61</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>TĐBB = 12 và TGCG = 179</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>TĐBB = 12 và TGCG = -1</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>TĐBB = 12 và TGCG = 181</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>TĐBB = -1 và TGCG = 90</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>TĐBB = 24 và TGCG = 90</td>
+      <td>-1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="kết-luận">Kết luận</h1>
+<p>Nhận thấy toàn bộ test case trong kiểm thử giá trị biên trên đều không cho output nằm trong trường hợp số 2. Vì vậy, kiểm thử giá trị biên sẽ không thể bao hàm toàn bộ trường hợp và thường kết hợp với các loại kiểm thử khác như phân hoạch tương đương hoặc kiểm thử bằng quyết định,.. 
+Thường trong thực tế, các công ty thường sinh test kiểu này: Kết hợp phân hoạch tương đương (hoặc bảng quyết định) với phân tích giá trị biên thường cho kết quả tốt vì nó có chi phí, thời gian, công sức vừa phải và bao hàm hầu hết mọi trường hợp của giá trị đầu vào.</p>]]></content><author><name>zhao</name></author><category term="Testing" /><category term="testing" /><summary type="html"><![CDATA[Trong quá trình phát triển phần mềm, kiểm thử là một bước không thể thiếu để đảm bảo chất lượng và độ tin cậy của sản phẩm. Trong số các phương pháp kiểm thử, kiểm thử phân tích giá trị biên (Boundary Value Analysis) đã được đánh giá cao vì tính hiệu quả và độ chính xác của nó. Phương pháp này giúp tập trung kiểm thử vào các giá trị biên của dữ liệu đầu vào, từ đó giảm thiểu thời gian và chi phí kiểm thử.]]></summary></entry><entry><title type="html">Từ nơ-ron sinh học đến nơ-ron nhân tạo</title><link href="https://zhaospei.github.io//deep-learning/2023/05/13/tu-noron-sinh-hoc-den-noron-nhan-tao/" rel="alternate" type="text/html" title="Từ nơ-ron sinh học đến nơ-ron nhân tạo" /><published>2023-05-13T00:00:00+07:00</published><updated>2023-05-13T00:00:00+07:00</updated><id>https://zhaospei.github.io//deep-learning/2023/05/13/tu-noron-sinh-hoc-den-noron-nhan-tao</id><content type="html" xml:base="https://zhaospei.github.io//deep-learning/2023/05/13/tu-noron-sinh-hoc-den-noron-nhan-tao/"><![CDATA[<p>Bài viết sẽ được viết trong khoảng thời gian sớm nhất bởi kẻ tập viết blog tập sự tại Zhao - @Tuan-Dung Bui. Bài viết sẽ mở đầu cho chương về học máy của tác giả, đồng thời chương về công nghệ phần mềm sẽ tạm thời ngừng viết.</p>]]></content><author><name>zhao</name></author><category term="Deep-Learning" /><category term="neuron" /><category term="deep-learning" /><summary type="html"><![CDATA[Bài viết sẽ được viết trong khoảng thời gian sớm nhất bởi kẻ tập viết blog tập sự tại Zhao - @Tuan-Dung Bui. Bài viết sẽ mở đầu cho chương về học máy của tác giả, đồng thời chương về công nghệ phần mềm sẽ tạm thời ngừng viết.]]></summary></entry><entry><title type="html">Điểm mạnh/yếu công cụ kiểm thử chịu tải tự động k6 với các đối thủ</title><link href="https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter/" rel="alternate" type="text/html" title="Điểm mạnh/yếu công cụ kiểm thử chịu tải tự động k6 với các đối thủ" /><published>2023-05-01T00:00:00+07:00</published><updated>2023-05-01T00:00:00+07:00</updated><id>https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter</id><content type="html" xml:base="https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter/"><![CDATA[<p>Các công cụ kiểm thử tải (Load Testing Tool - LTT) đã trở nên rất phổ biến hiện nay, cả miễn phí và có phí, nguồn mở và nguồn đóng, và mỗi công cụ đều có điểm mạnh và yếu của riêng mình. Một số LTT được nhiều nhà phát triển sử dụng, có thể kể đến công cụ miễn phí như JMeter, Locus, fortio,… hay có tính phí như LoadNinja, Gatling,…  Và Grafana k6 (hay k6) là một trong số ấy.</p>
 
 <p>Được phát triển bới Grafana Labs, k6 là một LTT mã nguồn mở giúp kiểm tra hiệu suất dễ dàng và hiệu quả cho các nhà phát triển. Nó là công cụ mã nguồn mở, hướng đến nhà phát triển và dễ dàng mở rộng. Dù chỉ mới ra đời gần đây, bản release chính thức đầu tiên trên github vào ngày 27/02/2017, nhưng k6 đã nhanh chóng nổi lên trong cộng đồng nhà phát triển bởi hiệu suất và tính dễ sử dụng đáng bất ngờ của nó.  Tính đến thời điểm hiện tại (04/2023), k6 có 20.1k stars, 311 watching và 1.1k forks trên github. Nhờ cộng đồng phát triển hoạt động tích cực, k6 đang phát triển ngày càng lớn mạnh. Kho extensions phong phú, pull request và những bản releases thường xuyên là những lợi ích mà mã nguồn mở của k6 mang lại.</p>
 
