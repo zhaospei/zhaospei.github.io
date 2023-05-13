@@ -19,10 +19,10 @@ description: I've written posts since March 2023. I like talking about web devel
 </div>
 
 <div class="tags-cloud flex flex-wrap">
-  {% assign tags = site.tags | sort %}
+  {% assign tags = site.categories | sort %}
   {% for tag in tags%}
   <span class="site-tag bg-slate-300 shadow text-white rounded-md text-xl border-y border-transparent py-2 font-semibold px-3 hover:bg-green-600 mx-2 my-2">
-    <a class="text-white" href="/tag/{{ tag | first | slugify }}/" style="font-size: {{ tag | last | size  |  times: 4 | plus: 80  }}%">
+    <a class="text-white" href="/category/{{ tag | first | slugify }}/" style="font-size: {{ tag | last | size  |  times: 4 | plus: 80  }}%">
       {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
     </a>
   </span>

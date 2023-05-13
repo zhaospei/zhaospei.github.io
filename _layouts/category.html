@@ -1,0 +1,37 @@
+---
+layout: default
+---
+<div class="flex flex-col justify-center items-start max-w-3xl border-gray-200 mx-auto pb-16">
+    <h3 class="mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl"> Category: #{{page.category}} </h3>
+    {% for post in site.posts %}
+    {% if post.categories contains page.category %}
+    <a class="w-full" href="{{ post.url }}">
+        <div class="w-full mb-8">
+            <div class="flex flex-col md:flex-row">
+                <div class="flex-none mt-1.5 mr-5 w-full mb-4 md:w-40 md:h-full relative rounded-sm">
+                    {% if post.img-feature %}
+                    <img alt="Post image feature" src="{{ post.img-feature }}" loading="lazy" class="w-full rounded">
+                    {% else %}
+                    <img alt="Post image feature" src="/assets/media/feature/default.jpg" loading="lazy"
+                        class="w-full rounded">
+                    {% endif %}
+                </div>
+                <div class="w-full">
+                    <div class="flex flex-col justify-between md:flex-row">
+                        <h4 class="w-full mb-2 text-lg font-semibold text-gray-900 md:text-xl">
+                            {{ post.title }}
+                        </h4>
+                        <p class="font-bold w-32 mb-4 text-left text-sky-900 md:text-right md:mb-0">
+                            {% for category in post.categories %}
+                            {{ category | append: ' '}}
+                            {% endfor %}
+                        </p>
+                    </div>
+                    <div class="text-gray-600"> {{ post.excerpt }} </div>
+                </div>
+            </div>
+        </div>
+    </a>
+    {% endif %}
+    {% endfor %}
+</div>

@@ -82,6 +82,7 @@
       @apply w-full py-2 text-lg font-medium text-gray-900 hover:text-green-800 md:text-xl;
     }
 
+    
   }
 
 @tailwind components;
