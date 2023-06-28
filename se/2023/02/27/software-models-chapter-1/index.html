@@ -12,6 +12,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="/assets/js/main.js"></script>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
     <link type="application/atom+xml" rel="alternate" href="https://zhaospei.github.io//feed.xml" title="Tuan-Dung Bui" />
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Một số mô hình phát triển phần mềm (Phần 1) | Tuan-Dung Bui</title>
@@ -530,6 +532,25 @@ Quá trình phát triển có thể được chia các phần nhỏ hơn và cá
     </div>
 </div>
 
+        <div id="vcomment"></div>
+        <script>
+            new Valine({
+                el: '#vcomment' ,
+                appId: 'AhQMGkyQM3cbFDcJNlid4Csg-MdYXbMMI',
+                appKey: 'dcsgbgYfySVXX0VmlNfaw1z8',
+                lang: 'en'
+            });
+        </script>
+
+        <style>
+            .comments {
+                background-color: rgb(255, 255, 0);;
+                box-shadow: 0px 0px 10px 0px rgb(255, 255, 255);;
+                margin: 50px -50px 20px -50px;
+                padding: 2rem;
+            }
+        </style>
+
         <style>
     .page-navigation {
         display: flex;
@@ -580,6 +601,8 @@ Quá trình phát triển có thể được chia các phần nhỏ hơn và cá
     </a>
     
 </nav>
+
+        
     </article>
 </div>
 
