@@ -6,6 +6,7 @@
     "tailwindcss": "^3.3.1"
   },
   "dependencies": {
-    "simple-jekyll-search": "^1.10.0"
+    "simple-jekyll-search": "^1.10.0",
+    "valine": "^1.5.1"
   }
 }
