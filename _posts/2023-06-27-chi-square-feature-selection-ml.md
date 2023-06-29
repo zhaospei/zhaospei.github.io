@@ -15,7 +15,7 @@ Một biến ngẫu nhiên $$ \chi $$ tuân theo phân phối chi-square nếu n
 $$ \chi^{2} = \sum_{}^{}Z_{i}^{2} $$
 
 
-Trong đó $$ Z_{1}, Z_{2}, ... $$ là các biển chuẩn chuẩn hoá.
+Trong đó $$ Z_{1}, Z_{2}, ... $$ là các biến chuẩn chuẩn hoá.
 
 # Bậc tự do (Degrees of freedom)
 Bậc tự do đề cập đến số lượng tối đa các giá trị độc lập logic, có quyền tự do thay đổi. Nói một cách đơn giản, nó có thể được định nghĩa là tổng số mẫu dữ liệu trừ đi số lượng ràng buộc độc lập áp đặt cho các mẫu dữ liệu.
