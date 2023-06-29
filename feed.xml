@@ -1,105 +1,384 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://zhaospei.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhaospei.github.io//" rel="alternate" type="text/html" /><updated>2023-06-28T19:07:04+07:00</updated><id>https://zhaospei.github.io//feed.xml</id><title type="html">Tuan-Dung Bui</title><subtitle>A markdown blog made by Tuan-Dung Bui aka Zhao (zhaospei). Hosted on zhaospei.github.io. I'll write something i like maybe my study or life.</subtitle><author><name>Tuan-Dung Bui</name></author><entry><title type="html">Lựa chọn đặc trưng trong học máy bằng Chi-Square</title><link href="https://zhaospei.github.io//machine-learning/2023/06/27/chi-square-feature-selection-ml/" rel="alternate" type="text/html" title="Lựa chọn đặc trưng trong học máy bằng Chi-Square" /><published>2023-06-27T00:00:00+07:00</published><updated>2023-06-27T00:00:00+07:00</updated><id>https://zhaospei.github.io//machine-learning/2023/06/27/chi-square-feature-selection-ml</id><content type="html" xml:base="https://zhaospei.github.io//machine-learning/2023/06/27/chi-square-feature-selection-ml/"><![CDATA[<p>We always wonder where the Chi-Square test is useful in machine learning and how this test makes a difference. Feature selection is an important problem in machine learning, where we will be having several features in line and have to select the best features to build the model. The chi-square test helps you to solve the problem in feature selection by testing the relationship between the features. In this article, I will guide through</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://zhaospei.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhaospei.github.io//" rel="alternate" type="text/html" /><updated>2023-06-29T17:26:34+07:00</updated><id>https://zhaospei.github.io//feed.xml</id><title type="html">Tuan-Dung Bui</title><subtitle>A markdown blog made by Tuan-Dung Bui aka Zhao (zhaospei). Hosted on zhaospei.github.io. I'll write something i like maybe my study or life.</subtitle><author><name>Tuan-Dung Bui</name></author><entry><title type="html">Lựa chọn đặc trưng trong học máy bằng kiểm tra Chi-Square</title><link href="https://zhaospei.github.io//machine-learning/2023/06/27/chi-square-feature-selection-ml/" rel="alternate" type="text/html" title="Lựa chọn đặc trưng trong học máy bằng kiểm tra Chi-Square" /><published>2023-06-27T00:00:00+07:00</published><updated>2023-06-27T00:00:00+07:00</updated><id>https://zhaospei.github.io//machine-learning/2023/06/27/chi-square-feature-selection-ml</id><content type="html" xml:base="https://zhaospei.github.io//machine-learning/2023/06/27/chi-square-feature-selection-ml/"><![CDATA[<p>Lựa chọn đặc trưng là một trong những vấn đề quan trọng trong học máy, khi chúng ta có một đống cái đặc trưng và quyết định xem những đặc trưng nào là tốt nhất để xây dựng mô hình. Có nhiều phương pháp để lựa chọn đặc trưng, trong bài viết này tôi sẽ đưa giải pháp thực hiện bằng <strong>Chi-Square</strong>.</p>
 
-<p>a. Chi-Square distribution.</p>
+<h1 id="phân-phối-chi-square">Phân phối Chi-Square</h1>
+<p>Một biến ngẫu nhiên \(\chi\) tuân theo phân phối chi-square nếu nó có thể viết được viết dưới dạng tổng bình phương các biến chuẩn chuẩn hoá.</p>
 
-<p>b. Chi-Square Test for Feature Selection</p>
+\[\chi^{2} = \sum_{}^{}Z_{i}^{2}\]
 
-<p>c. Chi-Square Test using Python</p>
+<p>Trong đó \(Z_{1}, Z_{2}, ...\) là các biển chuẩn chuẩn hoá.</p>
 
-<p>Chi-Square distribution
-A random variable ꭓ follows chi-square distribution if it can be written as a sum of squared standard normal variables.</p>
+<h1 id="bậc-tự-do-degrees-of-freedom">Bậc tự do (Degrees of freedom)</h1>
+<p>Bậc tự do đề cập đến số lượng tối đa các giá trị độc lập logic, có quyền tự do thay đổi. Nói một cách đơn giản, nó có thể được định nghĩa là tổng số mẫu dữ liệu trừ đi số lượng ràng buộc độc lập áp đặt cho các mẫu dữ liệu.</p>
 
-<p>Z1, Z2.. are standard normal variables
-Degrees of freedom:
-Degrees of freedom refers to the maximum number of logically independent values, which have the freedom to vary. In simple words, it can be defined as the total number of observations minus the number of independent constraints imposed on the observations.</p>
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/Chi-squared-distribution.png" alt="Phân phối Chi-Square" />
+    <figcaption style="font-style: italic;">Phân phối Chi-Square</figcaption>
+</figure>
 
-<p>In the above figure, we could see Chi-Square distribution for different degrees of freedom. We can also observe that as the degrees of freedom increase Chi-Square distribution approximates to normal distribution.</p>
+<p>Trong hình trên, chúng ta có thể thấy phân phối Chi-Square cho các bậc tự do khác nhau. Chúng ta cũng có thể quan sát thấy rằng khi bậc tự do tăng thì phân phối Chi-Square xấp xỉ với phân phối chuẩn.</p>
 
-<p>Chi-Square Test for Feature Selection
-A chi-square test is used in statistics to test the independence of two events. Given the data of two variables, we can get observed count O and expected count E. Chi-Square measures how expected count E and observed count O deviates each other.</p>
+<h1 id="kiểm-tra-tính-độc-lập-của-hai-biến-cố-bằng-chi-square">Kiểm tra tính độc lập của hai biến cố bằng Chi-Square</h1>
+<p>Chi-Square được sử dụng trong thống kê để kiểm tra tính độc lập của hai sự kiện. Với dữ liệu của hai biến, chúng ta có thể nhận được số lượng thực tế quan sát (observed) \(O\) và số lượng kỳ vọng (expected) \(​​E\). Chi-Square đo lường mức độ chênh lệch của hai đại lượng này.</p>
 
-<p>Let’s consider a scenario where we need to determine the relationship between the independent category feature (predictor) and dependent category feature(response). In feature selection, we aim to select the features which are highly dependent on the response.</p>
+\[\chi_{c}^{2} = \sum_{}^{}\frac{(O_{i} - E_{i})^{2}}{E_{i}}\]
 
-<p>When two features are independent, the observed count is close to the expected count, thus we will have smaller Chi-Square value. So high Chi-Square value indicates that the hypothesis of independence is incorrect. In simple words, higher the Chi-Square value the feature is more dependent on the response and it can be selected for model training.</p>
+<p>Trong đó:</p>
+<ul>
+  <li>\(c\) : Số bậc tự do</li>
+  <li>\(O\) : Số lượng thực tế quan sát</li>
+  <li>\(E\) : Số lượng kỳ vọng</li>
+</ul>
 
-<p>Steps for Chi-Square Test with an example:</p>
+<p>Khi hai sự kiện độc lập, số lượng được quan sát gần với số lượng dự kiến, do đó chúng ta sẽ có giá trị Chi-Square nhỏ hơn. Vì vậy, giá trị Chi-Square cao cho thấy giả thuyết về tính độc lập là không chính xác. Nói một cách đơn giản, giá trị Chi-Square càng cao thì các sự kiện này càng phụ thuộc vào nhau. Hay nếu ta xem một sự kiện là một đặc trưng của mô hình và sự kiện còn lại là phân loại mà mô hình cần dự đoán (Phản hồi). Khi đó nếu giá trị Chi-Square càng cao thì đặc trưng này càng phụ thuộc vào phản hồi và nó có thể được chọn để đào tạo mô hình.</p>
 
-<p>Consider a data-set where we have to determine why customers are leaving the bank, let’s perform a Chi-Square test for two variables. Gender of a customer with values as Male/Female as the predictor and Exited describes whether a customer is leaving the bank with values Yes/No as the response. In this test we will check is there any relationship between Gender and Exited.</p>
+<p>Đối với lựa chọn đặc trưng bằng Chi-Square, chúng ta mong đợi rằng trong tổng số các đặc trưng được chọn có một phần nhỏ trong chúng vẫn độc lập với lớp phân loại. Tuy nhiên, trong phân loại văn bản hiếm khi các đặc trưng này được thêm vào trong tập đặc trưng trích xuất cuối cùng. Tất nhiên là nó vẫn tốt miễn là phương pháp vẫn xếp hàng các đặc trưng theo tính hữu ích của nó đối với mô hình chứ không phải chỉ sử dụng để đưa ra tuyên bố về sự phụ thuộc hay tính độc lập của các biến trong thống kê.</p>
 
-<p>Steps to perform the Chi-Square Test:</p>
+<h2 id="các-bước-thực-hiện-kiểm-tra-chi-square">Các bước thực hiện kiểm tra Chi-Square</h2>
 
-<p>Define Hypothesis.
-Build a Contingency table.
-Find the expected values.
-Calculate the Chi-Square statistic.
-Accept or Reject the Null Hypothesis.
-1.Define Hypothesis
-Null Hypothesis (H0): Two variables are independent.</p>
+<p>Hãy xem xét một tập dữ liệu mà chúng ta phải xác định lý do tại sao khách hàng rời khỏi ngân hàng, hãy thực hiện kiểm tra Chi-Square cho hai biến. <strong>Giới tính</strong> của khách hàng với các giá trị là <strong>Nam/Nữ</strong> và <strong>Rời khỏi</strong> mô tả liệu khách hàng có rời ngân hàng hay không với các giá trị <strong>Có/Không</strong>. Trong thử nghiệm này, chúng tôi sẽ kiểm tra xem có mối quan hệ nào giữa <strong>Giới tính</strong> và <strong>Rời khỏi</strong>.</p>
 
-<p>Alternate Hypothesis (H1): Two variables are not independent.</p>
+<h3 id="1-xác-định-giả-thuyết">1. Xác định giả thuyết</h3>
+<p><strong>Giả thuyết rỗng</strong> (\(H_{0}\)): Hai biến đã cho độc lập</p>
 
-<ol>
-  <li>Contingency table
-A table showing the distribution of one variable in rows and another in columns. It is used to study the relation between two variables.</li>
-</ol>
+<p><strong>Giả thuyết thay thế</strong> (\(H_{1}\)): Hai biến đã cho phụ thuộc nhau</p>
 
-<p>Contingency table for observed values
-Degrees of freedom for contingency table is given as (r-1) * (c-1) where r,c are rows and columns. Here df = (2–1) * (2–1) = 1.</p>
+<h3 id="2-xây-dựng-bảng-tương-quan">2. Xây dựng bảng tương quan</h3>
+<p>Một bảng hiển thị phân phối của một biến trong hàng và biến khác trong cột. Nó được sử dụng để nghiên cứu mối quan hệ giữa hai biến.</p>
 
-<p>In the above table we have figured out all observed values and our next steps are to find expected values, get the Chi-Square value and check for relationship.</p>
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Giới tính</strong> \ <strong>Rời bỏ</strong></td>
+      <td><strong>Có</strong></td>
+      <td><strong>Không</strong></td>
+      <td><strong>Tổng</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Nam</strong></td>
+      <td>38</td>
+      <td>178</td>
+      <td>216</td>
+    </tr>
+    <tr>
+      <td><strong>Nữ</strong></td>
+      <td>44</td>
+      <td>140</td>
+      <td>184</td>
+    </tr>
+    <tr>
+      <td><strong>Tổng</strong></td>
+      <td>82</td>
+      <td>318</td>
+      <td>400</td>
+    </tr>
+  </tbody>
+</table>
 
-<ol>
-  <li>Find the Expected Value
-Based on the null hypothesis that the two variables are independent. We can say if A, B are two independent events</li>
-</ol>
+<p>Bậc tự do của bảng tương quan được tính bằng công thức: \((r-1) * (c-1)\) trong đó  \(r\), \(c\) là số hàng và số cột. 
+Như bảng trên, ta có:</p>
 
-<p>Let’s calculate the expected value for the first cell that is those who are Males and are Exited from the bank.</p>
+\[df = (2–1) * (2–1) = 1.\]
 
-<p>The calculation for the expected value
-In similar, we calculate E2, E3, E4 and get the following results.</p>
+<p>Trong bảng trên, chúng ta đã tìm ra tất cả các giá trị được quan sát và các bước tiếp theo của chúng tôi là tìm các giá trị kỳ vọng, tính giá trị Chi-Square và kiểm tra mối quan hệ giữa chúng.</p>
 
-<p>Expected values</p>
-<ol>
-  <li>Calculate Chi-Square value
-Summarizing the observed values and calculated expected values into a table and determine the Chi-Square value.</li>
-</ol>
+<h3 id="3-tìm-giá-trị-kỳ-vọng">3. Tìm giá trị kỳ vọng</h3>
+<p>Dựa trên giả thiết rỗng là hai biến đã cho độc lập lẫn nhau. Nếu hai biến A, B là biến cố độc lập ta có:</p>
 
-<p>We can see Chi-Square is calculated as 2.22 by using the Chi-Square statistic formula.</p>
+\[P(A \cap B) = P(A) * P(B)\]
 
-<ol>
-  <li>Accept or Reject the Null Hypothesis
-With 95% confidence that is alpha = 0.05, we will check the calculated Chi-Square value falls in the acceptance or rejection region.</li>
-</ol>
+<p>Hãy tính giá trị kỳ vọng cho ô đầu tiên là những người là <strong>Nam</strong> và <strong>Có</strong> rời khỏi ngân hàng.</p>
 
-<p>Having degrees of freedom =1(calculated with contingency table) and alpha =0.05 the Chi-Square value is 3.84.</p>
+\[p = p(Yes) * p(Male)\]
 
-<p>The Chi-Square values can be determined with the Chi-Square table.</p>
+\[p = (82/400) * (216/400)\]
 
-<p>The chi-square distribution is the right side since the difference in Observed and Expected is large.</p>
+\[p = 0.1107\]
 
-<p>In the above fig, we can see Chi-Square ranges from 0 to inf and alpha ranges from 0 to 1 in the opposite direction. We will reject the Null hypothesis if Chi-Square value falls in the error region (alpha from 0 to 0.05 ).</p>
+\[E_{1} = n * p = 400 * 0.1107 = 44\]
 
-<p>So here we are accepting the null hypothesis since the Chi-Square value is less than the critical Chi-Square value.</p>
+<p>Tương tự, ta tính toán được có giá trị \(E_{2}\),  \(E_{3}\), \(E_{4}\) và được kết quả như bên dưới.</p>
 
-<p>To conclude the two variables are independent, Gender variable cannot be selected for training the model.</p>
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Giới tính</strong> \ <strong>Rời bỏ</strong></td>
+      <td><strong>Có</strong></td>
+      <td><strong>Không</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Nam</strong></td>
+      <td>44</td>
+      <td>172</td>
+    </tr>
+    <tr>
+      <td><strong>Nữ</strong></td>
+      <td>38</td>
+      <td>146</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>Limitations
-Chi-Square is sensitive to small frequencies in cells of tables. Generally, when the expected value in a cell of a table is less than 5, chi-square can lead to errors in conclusions.</p>
+<h3 id="4-tính-toán-giá-trị-chi-square">4. Tính toán giá trị Chi-Square</h3>
 
-<p>ote: Here we considered samples with size 400 and for the larger samples the results may vary.</p>
+\[\chi_{c}^{2} = \sum_{}^{}\frac{(O_{i} - E_{i})^{2}}{E_{i}}\]
 
-<p>Chi-Square Test using Python
-Here is the below code, on how to perform the Chi-Square test using python.</p>
+<p>Sử dụng công thức đã cho ở trên và các giá trị đã tính toán được, ta dễ dàng có giá trị của <strong>Chi-Square</strong> bằng <strong>2.22</strong></p>
 
-<p>You can find the same on GitHub too.</p>
+<h3 id="5-bác-bỏ-giả-thuyết-rỗng">5. Bác bỏ Giả thuyết rỗng</h3>
+<p>Với độ tin cậy \(95\%\) là \(\alpha = 0,05\), chúng ta sẽ kiểm tra xem giá trị <strong>Chi-Square</strong> tính được có nằm trong vùng chấp nhận hay từ chối hay không.</p>
 
-<p>So far we learned about having the categorical response and categorical predictor but what if we have the continuous response and categorical predictor ??? We will use ANOVA. Please do check on my article ANOVA for Feature Selection in Machine Learning.</p>
+<p>Các giá trị <strong>Chi-Square</strong> chấp thuận có thể xác định bẳng <strong>Bảng Chi-Square</strong>. Bạn đọc có thể tham khảo tại <a href="https://people.richland.edu/james/lecture/m170/tbl-chi.html">https://people.richland.edu/james/lecture/m170/tbl-chi.html</a>. Dưới đây là phần của bảng trên.</p>
 
-<p>If you are curious to learn about feature selection methods. Here is the article in depth.</p>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">df</th>
+      <th style="text-align: right">0.995</th>
+      <th style="text-align: right">0.99</th>
+      <th style="text-align: right">0.975</th>
+      <th style="text-align: right">0.95</th>
+      <th style="text-align: right">0.90</th>
+      <th style="text-align: right">0.10</th>
+      <th style="text-align: right">0.05</th>
+      <th style="text-align: right">0.025</th>
+      <th style="text-align: right">0.01</th>
+      <th style="text-align: right">0.005</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right">1</td>
+      <td style="text-align: right">—</td>
+      <td style="text-align: right">—</td>
+      <td style="text-align: right">0.001</td>
+      <td style="text-align: right">0.004</td>
+      <td style="text-align: right">0.016</td>
+      <td style="text-align: right">2.706</td>
+      <td style="text-align: right">3.841</td>
+      <td style="text-align: right">5.024</td>
+      <td style="text-align: right">6.635</td>
+      <td style="text-align: right">7.879</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">0.010</td>
+      <td style="text-align: right">0.020</td>
+      <td style="text-align: right">0.051</td>
+      <td style="text-align: right">0.103</td>
+      <td style="text-align: right">0.211</td>
+      <td style="text-align: right">4.605</td>
+      <td style="text-align: right">5.991</td>
+      <td style="text-align: right">7.378</td>
+      <td style="text-align: right">9.210</td>
+      <td style="text-align: right">10.597</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">3</td>
+      <td style="text-align: right">0.072</td>
+      <td style="text-align: right">0.115</td>
+      <td style="text-align: right">0.216</td>
+      <td style="text-align: right">0.352</td>
+      <td style="text-align: right">0.584</td>
+      <td style="text-align: right">6.251</td>
+      <td style="text-align: right">7.815</td>
+      <td style="text-align: right">9.348</td>
+      <td style="text-align: right">11.345</td>
+      <td style="text-align: right">12.838</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">4</td>
+      <td style="text-align: right">0.207</td>
+      <td style="text-align: right">0.297</td>
+      <td style="text-align: right">0.484</td>
+      <td style="text-align: right">0.711</td>
+      <td style="text-align: right">1.064</td>
+      <td style="text-align: right">7.779</td>
+      <td style="text-align: right">9.488</td>
+      <td style="text-align: right">11.143</td>
+      <td style="text-align: right">13.277</td>
+      <td style="text-align: right">14.860</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">5</td>
+      <td style="text-align: right">0.412</td>
+      <td style="text-align: right">0.554</td>
+      <td style="text-align: right">0.831</td>
+      <td style="text-align: right">1.145</td>
+      <td style="text-align: right">1.610</td>
+      <td style="text-align: right">9.236</td>
+      <td style="text-align: right">11.070</td>
+      <td style="text-align: right">12.833</td>
+      <td style="text-align: right">15.086</td>
+      <td style="text-align: right">16.750</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">6</td>
+      <td style="text-align: right">0.676</td>
+      <td style="text-align: right">0.872</td>
+      <td style="text-align: right">1.237</td>
+      <td style="text-align: right">1.635</td>
+      <td style="text-align: right">2.204</td>
+      <td style="text-align: right">10.645</td>
+      <td style="text-align: right">12.592</td>
+      <td style="text-align: right">14.449</td>
+      <td style="text-align: right">16.812</td>
+      <td style="text-align: right">18.548</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">7</td>
+      <td style="text-align: right">0.989</td>
+      <td style="text-align: right">1.239</td>
+      <td style="text-align: right">1.690</td>
+      <td style="text-align: right">2.167</td>
+      <td style="text-align: right">2.833</td>
+      <td style="text-align: right">12.017</td>
+      <td style="text-align: right">14.067</td>
+      <td style="text-align: right">16.013</td>
+      <td style="text-align: right">18.475</td>
+      <td style="text-align: right">20.278</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">8</td>
+      <td style="text-align: right">1.344</td>
+      <td style="text-align: right">1.646</td>
+      <td style="text-align: right">2.180</td>
+      <td style="text-align: right">2.733</td>
+      <td style="text-align: right">3.490</td>
+      <td style="text-align: right">13.362</td>
+      <td style="text-align: right">15.507</td>
+      <td style="text-align: right">17.535</td>
+      <td style="text-align: right">20.090</td>
+      <td style="text-align: right">21.955</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">9</td>
+      <td style="text-align: right">1.735</td>
+      <td style="text-align: right">2.088</td>
+      <td style="text-align: right">2.700</td>
+      <td style="text-align: right">3.325</td>
+      <td style="text-align: right">4.168</td>
+      <td style="text-align: right">14.684</td>
+      <td style="text-align: right">16.919</td>
+      <td style="text-align: right">19.023</td>
+      <td style="text-align: right">21.666</td>
+      <td style="text-align: right">23.589</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">10</td>
+      <td style="text-align: right">2.156</td>
+      <td style="text-align: right">2.558</td>
+      <td style="text-align: right">3.247</td>
+      <td style="text-align: right">3.940</td>
+      <td style="text-align: right">4.865</td>
+      <td style="text-align: right">15.987</td>
+      <td style="text-align: right">18.307</td>
+      <td style="text-align: right">20.483</td>
+      <td style="text-align: right">23.209</td>
+      <td style="text-align: right">25.188</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">11</td>
+      <td style="text-align: right">2.603</td>
+      <td style="text-align: right">3.053</td>
+      <td style="text-align: right">3.816</td>
+      <td style="text-align: right">4.575</td>
+      <td style="text-align: right">5.578</td>
+      <td style="text-align: right">17.275</td>
+      <td style="text-align: right">19.675</td>
+      <td style="text-align: right">21.920</td>
+      <td style="text-align: right">24.725</td>
+      <td style="text-align: right">26.757</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">12</td>
+      <td style="text-align: right">3.074</td>
+      <td style="text-align: right">3.571</td>
+      <td style="text-align: right">4.404</td>
+      <td style="text-align: right">5.226</td>
+      <td style="text-align: right">6.304</td>
+      <td style="text-align: right">18.549</td>
+      <td style="text-align: right">21.026</td>
+      <td style="text-align: right">23.337</td>
+      <td style="text-align: right">26.217</td>
+      <td style="text-align: right">28.300</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">13</td>
+      <td style="text-align: right">3.565</td>
+      <td style="text-align: right">4.107</td>
+      <td style="text-align: right">5.009</td>
+      <td style="text-align: right">5.892</td>
+      <td style="text-align: right">7.042</td>
+      <td style="text-align: right">19.812</td>
+      <td style="text-align: right">22.362</td>
+      <td style="text-align: right">24.736</td>
+      <td style="text-align: right">27.688</td>
+      <td style="text-align: right">29.819</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">14</td>
+      <td style="text-align: right">4.075</td>
+      <td style="text-align: right">4.660</td>
+      <td style="text-align: right">5.629</td>
+      <td style="text-align: right">6.571</td>
+      <td style="text-align: right">7.790</td>
+      <td style="text-align: right">21.064</td>
+      <td style="text-align: right">23.685</td>
+      <td style="text-align: right">26.119</td>
+      <td style="text-align: right">29.141</td>
+      <td style="text-align: right">31.319</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">15</td>
+      <td style="text-align: right">4.601</td>
+      <td style="text-align: right">5.229</td>
+      <td style="text-align: right">6.262</td>
+      <td style="text-align: right">7.261</td>
+      <td style="text-align: right">8.547</td>
+      <td style="text-align: right">22.307</td>
+      <td style="text-align: right">24.996</td>
+      <td style="text-align: right">27.488</td>
+      <td style="text-align: right">30.578</td>
+      <td style="text-align: right">32.801</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">5.142</td>
+      <td style="text-align: right">5.812</td>
+      <td style="text-align: right">6.908</td>
+      <td style="text-align: right">7.962</td>
+      <td style="text-align: right">9.312</td>
+      <td style="text-align: right">23.542</td>
+      <td style="text-align: right">26.296</td>
+      <td style="text-align: right">28.845</td>
+      <td style="text-align: right">32.000</td>
+      <td style="text-align: right">34.267</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>https://neptune.ai/blog/feature-selection-methods</p>
+<p>Ta có <strong>bậc tự do (df)</strong> bằng <strong>1</strong> (được tính toán dựa vào bảng tương quan phía trên) và  \(\alpha = 0,05\) thì giá trị <strong>Chi-Square</strong> chấp nhận là <strong>3.84</strong>.</p>
 
-<p>Hope you enjoyed it !!! Please do comment on any queries or suggestions.</p>]]></content><author><name>zhao</name></author><category term="Machine-Learning" /><category term="feature" /><category term="machine-learning" /><category term="Data Science" /><category term="Statistics" /><category term="Machine Learning" /><category term="Feature Selection" /><category term="Python" /><summary type="html"><![CDATA[We always wonder where the Chi-Square test is useful in machine learning and how this test makes a difference. Feature selection is an important problem in machine learning, where we will be having several features in line and have to select the best features to build the model. The chi-square test helps you to solve the problem in feature selection by testing the relationship between the features. In this article, I will guide through]]></summary></entry><entry><title type="html">Kiểm thử bằng phương pháp phân tích giá trị biên</title><link href="https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien/" rel="alternate" type="text/html" title="Kiểm thử bằng phương pháp phân tích giá trị biên" /><published>2023-05-13T00:00:00+07:00</published><updated>2023-05-13T00:00:00+07:00</updated><id>https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien</id><content type="html" xml:base="https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien/"><![CDATA[<p>Trong quá trình phát triển phần mềm, kiểm thử là một bước không thể thiếu để đảm bảo chất lượng và độ tin cậy của sản phẩm. Trong số các phương pháp kiểm thử, kiểm thử phân tích giá trị biên (Boundary Value Analysis) đã được đánh giá cao vì tính hiệu quả và độ chính xác của nó. Phương pháp này giúp tập trung kiểm thử vào các giá trị biên của dữ liệu đầu vào, từ đó giảm thiểu thời gian và chi phí kiểm thử.</p>
+<p>Nhận thấy giá trị <strong>Chi-Square</strong> tính được thấp hơn giá trị <strong>Chi-Square</strong> chấp nhận thì ta chấp nhận giả thiết rỗng. Hay ta có thể kết luận được rằng hai biến cố đã cho độc lập nhau. Vậy nếu ta xem <strong>Giới tính</strong> là một đặc trưng cần xem xét của mô hình và <strong>Rời bỏ ngân hàng</strong> hay không là lớp giá trị mô hình cần phân loại, thì ta có thể kết luận, <strong>Giới tính</strong> không thể được sử dụng để huấn luyện mô hình vì hai biến cố này không có mối liên hệ lẫn nhau.</p>
+
+<h1 id="sử-dụng-chi-square-để-lựa-chọn-đặc-trưng-cho-mô-hình-phân-loại-văn-bản">Sử dụng Chi-Square để lựa chọn đặc trưng cho mô hình phân loại văn bản</h1>
+<p>Một phương pháp lựa chọn đặc trưng phổ biến được sử dụng với dữ liệu văn bản là lựa chọn đặc trưng với <strong>Chi-Square</strong>. \(\chi^{2}\) như chúng ta thấy ở trên có thể được sử dụng trong thống kê để kiểm tra tính độc lập của hai biến cố. Cụ thể hơn, trong lựa chọn đặc trưng cho mô hình, chúng ta sử dụng nó để kiểm tra một thuật ngữ cụ thể và một lớp phân loại cụ thể có độc lập hay không.</p>
+
+<p>Cho một văn bản \(D\), chúng tôi ước tính số lượng sau cho mỗi thuật ngữ và xếp hạng chúng theo điểm số của chúng:</p>
+
+\[\chi^2(D, t, c) = \sum_{e_t \in \{0, 1\}} \sum_{e_c \in \{0, 1\}}  \frac{ (O_{e_te_c} - E_{e_te_c} )^2 }{ E_{e_te_c} }\]
+
+<p>Trong đó:</p>
+<ul>
+  <li>\(O\) là tần số quan sát và \(E\) tần số kỳ vọng</li>
+  <li>\(e_{t}\) nhận giá trị \(1\) nếu văn bản có chứa thuật ngữ \(t\), \(0\) với trường hợp ngược lại.</li>
+  <li>\(e_{c}\) nhận giá trị \(1\) nếu văn bản thuộc lớp phân loại \(c\), \(0\) với trường hợp ngược lại.</li>
+</ul>
+
+<p>Với mỗi đặc trưng (thuật ngữ), một điểm  \(\chi^{2}\) tương ứng chỉ ra <strong>Giả thuyết rỗng</strong> \(H_{0}\) về tính độc lập của hai biến cố (có nghĩa là lớp của văn bản được phân loại không ảnh hưởng đến tần suất xuất hiện của thuật ngữ) nên bị bác bỏ hay sự xuất hiện của thuật ngữ và lớp của văn bản phụ thuộc lẫn nhau. Hay trong trường hợp này, chúng ta sẽ chọn thuật ngữ này làm đặc trưng cho mô hình phân loại văn bản.</p>
+
+<h1 id="kết-luận">Kết luận</h1>
+<p><strong>Chi-Square</strong> nhạy cảm với kích thước mẫu. Các mối quan hệ có thể có ý nghĩa khi chúng không chỉ đơn giản là do một mẫu rất lớn được sử dụng. Ngoài ra, <strong>Chi-Square</strong> không thể xác định liệu một biến cố có mối quan hệ nhân quả với biến khác hay không. Nó chỉ có thể xác định liệu hai biến cố có liên quan với nhau hay không.. Nói chung, khi giá trị kỳ vọng ​​trong một ô của bảng tương quan nhỏ hơn 5, <strong>Chi-Square</strong> có thể dẫn đến sai sót trong kết luận. Hy vọng bài viết có thể giúp bạn có cái nhìn tổng quan về phương pháp này và có thể áp dụng nó cho mô hình của bạn.</p>]]></content><author><name>zhao</name></author><category term="Machine-Learning" /><category term="feature" /><category term="machine-learning" /><category term="Data Science" /><category term="Statistics" /><category term="Machine Learning" /><category term="Feature Selection" /><summary type="html"><![CDATA[Lựa chọn đặc trưng là một trong những vấn đề quan trọng trong học máy, khi chúng ta có một đống cái đặc trưng và quyết định xem những đặc trưng nào là tốt nhất để xây dựng mô hình. Có nhiều phương pháp để lựa chọn đặc trưng, trong bài viết này tôi sẽ đưa giải pháp thực hiện bằng Chi-Square.]]></summary></entry><entry><title type="html">Kiểm thử bằng phương pháp phân tích giá trị biên</title><link href="https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien/" rel="alternate" type="text/html" title="Kiểm thử bằng phương pháp phân tích giá trị biên" /><published>2023-05-13T00:00:00+07:00</published><updated>2023-05-13T00:00:00+07:00</updated><id>https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien</id><content type="html" xml:base="https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien/"><![CDATA[<p>Trong quá trình phát triển phần mềm, kiểm thử là một bước không thể thiếu để đảm bảo chất lượng và độ tin cậy của sản phẩm. Trong số các phương pháp kiểm thử, kiểm thử phân tích giá trị biên (Boundary Value Analysis) đã được đánh giá cao vì tính hiệu quả và độ chính xác của nó. Phương pháp này giúp tập trung kiểm thử vào các giá trị biên của dữ liệu đầu vào, từ đó giảm thiểu thời gian và chi phí kiểm thử.</p>
 
 <p>Bài viết này sẽ cách sinh test cho ca kiểm thử phân tích giá trị biên thông qua một bài toán kiểm thử nhỏ.</p>
 
@@ -821,7 +1100,10 @@ Các nhóm đang tìm cách tích hợp thử nghiệm vào quy trình phát tri
 <h1 id="1-mô-hình-thác-nước">1. Mô hình thác nước</h1>
 <p>Mô hình thác nước được xem là mô hình đầu tiên được giới thiệu. Đây là mô hình SDLC (Software Development Life Cycle) lâu đời với đơn giản nhất. Mô hình thác nước là mô hình điển hình cho phát triển phần mềm đảm bảo bảo tốt.</p>
 
-<p><img src="/assets/media/post/waterfall-model.png" alt="Mô hình thác nước" /></p>
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/waterfall-model.png" alt="Mô hình thác nước" />
+    <figcaption style="font-style: italic;">Mô hình thác nước</figcaption>
+</figure>
 
 <h2 id="a-đặc-điểm">a. Đặc điểm</h2>
 <p>Trong mô hình thác nước, toàn bộ quá trình phát triển phần mềm được chia thành các giai đoạn riêng biệt. Trong mô hình thác nước, thông thường, kết quả của một pha/ giai đoạn đóng vai trò là đầu vào cho pha/ giai đoạn tiếp theo.</p>
@@ -855,7 +1137,10 @@ Các nhóm đang tìm cách tích hợp thử nghiệm vào quy trình phát tri
 <h1 id="2-mô-hình-chữ-v">2. Mô hình chữ V</h1>
 <p>Chất lượng kiểm thử phần mềm được đánh giá qua bộ test kiểm thử và quá trình thực hiện kiểm thử. Do vậy, chất lượng của bộ test kiểm thử là rất quan trọng. Tuy nhiên, mô hình thác nước đến giai đoạn kiểm thử mới được sinh test. Việc sinh test của mô hình thác nước khiến cho khả năng phát hiện ra lỗi của bộ test rất là thấp, dẫn đến việc kiểm thử, đánh giá chất lượng phần mềm không khách quan, chính xác. Và mô hình chữ V đã được cải tiến từ thác nước để giải quyết vấn đề sinh test muộn từ mô hình thấy nước.</p>
 
-<p><img src="/assets/media/post/v-model.png" alt="Mô hình chữ V" title="Mô hình chữ V" /></p>
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/v-model.png" alt="Mô hình chữ V" />
+    <figcaption style="font-style: italic;">Mô hình chữ V</figcaption>
+</figure>
 
 <h2 id="a-đặc-điểm-1">a. Đặc điểm</h2>
 <p>Cũng giống như mô hình thác nước, các giai đoạn trong mô hình chữ V được thực hiện một cách tuần tự theo hình chữ V. Tuy nhiên, cải tiến của mô hình chữ V đến từ việc sinh bộ test kiểm thử sớm bằng cách tích hợp liên kết giai đoạn kiểm thử cho từng giai đoạn phát triển tương ứng. Có nghĩa là, đối với mỗi giai đoạn trong chu kỳ phát triển sẽ có giai đoạn kiểm thử tương ứng. Mỗi giai đoạn bên trái model sẽ sinh bộ test cho giai đoạn kiểm thử bên phải của model:</p>
@@ -890,7 +1175,11 @@ Bù lại, chúng ta cần chi phí cao khi sử dụng bản mẫu do cần nhi
 <h1 id="4-xoắn-ốc">4. Xoắn ốc</h1>
 <p>Mô hình thác nước, chữ V chỉ phù hợp các dự án vừa và nhỏ, những dự án được xác định rõ yêu cầu từ đầu. Việc xác định những yêu cầu khó, phức tạp đã được giải quyết nhờ bản mẫu. Tuy nhiên, trong thực tế, đa số có dự án đều lớn, phức tạp. Vậy với các dự án lớn thì giải quyết như nào? Mô hình xoắn ốc là một lựa chọn mô hình để thực hiện các dự án lớn, phức tạp.</p>
 
-<p><img src="/assets/media/post/xoan-oc.png" alt="Mô hình xoắn ốc" /></p>
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/xoan-oc.png" alt="Mô hình xoắn ốc" />
+    <figcaption style="font-style: italic;">Mô hình xoắn ốc</figcaption>
+</figure>
+
 <h2 id="a-đặc-điểm-3">a. Đặc điểm</h2>
 
 <p>Mô hình xoắn ốc là mô hình phát triển phần mềm kết hợp ý tưởng phát triển lặp đi lặp lại với các giai đoạn có hệ thống, được kiểm soát của mô hình thác nước.</p>

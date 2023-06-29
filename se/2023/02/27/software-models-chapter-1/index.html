@@ -12,8 +12,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="/assets/js/main.js"></script>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
     <link type="application/atom+xml" rel="alternate" href="https://zhaospei.github.io//feed.xml" title="Tuan-Dung Bui" />
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Một số mô hình phát triển phần mềm (Phần 1) | Tuan-Dung Bui</title>
@@ -211,7 +209,7 @@
                 
                 
                 
-                <img class="object-cover w-[40px] h-[40px] rounded-full" src="/assets/media/author/zhao.jpg" alt="Tuan-Dung Bui">
+                <img class="object-cover w-[40px] h-[40px] rounded-full" src="/assets/media/author/zhao-img.png" alt="Tuan-Dung Bui">
                 
                 <p class="ml-2 text-sm text-gray-700">
                     Tuan-Dung Bui / February 27, 2023
@@ -247,7 +245,10 @@
 <h1 id="1-mô-hình-thác-nước">1. Mô hình thác nước</h1>
 <p>Mô hình thác nước được xem là mô hình đầu tiên được giới thiệu. Đây là mô hình SDLC (Software Development Life Cycle) lâu đời với đơn giản nhất. Mô hình thác nước là mô hình điển hình cho phát triển phần mềm đảm bảo bảo tốt.</p>
 
-<p><img src="/assets/media/post/waterfall-model.png" alt="Mô hình thác nước" /></p>
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/waterfall-model.png" alt="Mô hình thác nước" />
+    <figcaption style="font-style: italic;">Mô hình thác nước</figcaption>
+</figure>
 
 <h2 id="a-đặc-điểm">a. Đặc điểm</h2>
 <p>Trong mô hình thác nước, toàn bộ quá trình phát triển phần mềm được chia thành các giai đoạn riêng biệt. Trong mô hình thác nước, thông thường, kết quả của một pha/ giai đoạn đóng vai trò là đầu vào cho pha/ giai đoạn tiếp theo.</p>
@@ -281,7 +282,10 @@
 <h1 id="2-mô-hình-chữ-v">2. Mô hình chữ V</h1>
 <p>Chất lượng kiểm thử phần mềm được đánh giá qua bộ test kiểm thử và quá trình thực hiện kiểm thử. Do vậy, chất lượng của bộ test kiểm thử là rất quan trọng. Tuy nhiên, mô hình thác nước đến giai đoạn kiểm thử mới được sinh test. Việc sinh test của mô hình thác nước khiến cho khả năng phát hiện ra lỗi của bộ test rất là thấp, dẫn đến việc kiểm thử, đánh giá chất lượng phần mềm không khách quan, chính xác. Và mô hình chữ V đã được cải tiến từ thác nước để giải quyết vấn đề sinh test muộn từ mô hình thấy nước.</p>
 
-<p><img src="/assets/media/post/v-model.png" alt="Mô hình chữ V" title="Mô hình chữ V" /></p>
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/v-model.png" alt="Mô hình chữ V" />
+    <figcaption style="font-style: italic;">Mô hình chữ V</figcaption>
+</figure>
 
 <h2 id="a-đặc-điểm-1">a. Đặc điểm</h2>
 <p>Cũng giống như mô hình thác nước, các giai đoạn trong mô hình chữ V được thực hiện một cách tuần tự theo hình chữ V. Tuy nhiên, cải tiến của mô hình chữ V đến từ việc sinh bộ test kiểm thử sớm bằng cách tích hợp liên kết giai đoạn kiểm thử cho từng giai đoạn phát triển tương ứng. Có nghĩa là, đối với mỗi giai đoạn trong chu kỳ phát triển sẽ có giai đoạn kiểm thử tương ứng. Mỗi giai đoạn bên trái model sẽ sinh bộ test cho giai đoạn kiểm thử bên phải của model:</p>
@@ -316,7 +320,11 @@ Bù lại, chúng ta cần chi phí cao khi sử dụng bản mẫu do cần nhi
 <h1 id="4-xoắn-ốc">4. Xoắn ốc</h1>
 <p>Mô hình thác nước, chữ V chỉ phù hợp các dự án vừa và nhỏ, những dự án được xác định rõ yêu cầu từ đầu. Việc xác định những yêu cầu khó, phức tạp đã được giải quyết nhờ bản mẫu. Tuy nhiên, trong thực tế, đa số có dự án đều lớn, phức tạp. Vậy với các dự án lớn thì giải quyết như nào? Mô hình xoắn ốc là một lựa chọn mô hình để thực hiện các dự án lớn, phức tạp.</p>
 
-<p><img src="/assets/media/post/xoan-oc.png" alt="Mô hình xoắn ốc" /></p>
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/xoan-oc.png" alt="Mô hình xoắn ốc" />
+    <figcaption style="font-style: italic;">Mô hình xoắn ốc</figcaption>
+</figure>
+
 <h2 id="a-đặc-điểm-3">a. Đặc điểm</h2>
 
 <p>Mô hình xoắn ốc là mô hình phát triển phần mềm kết hợp ý tưởng phát triển lặp đi lặp lại với các giai đoạn có hệ thống, được kiểm soát của mô hình thác nước.</p>
@@ -532,25 +540,6 @@ Quá trình phát triển có thể được chia các phần nhỏ hơn và cá
     </div>
 </div>
 
-        <div id="vcomment"></div>
-        <script>
-            new Valine({
-                el: '#vcomment' ,
-                appId: 'AhQMGkyQM3cbFDcJNlid4Csg-MdYXbMMI',
-                appKey: 'dcsgbgYfySVXX0VmlNfaw1z8',
-                lang: 'en'
-            });
-        </script>
-
-        <style>
-            .comments {
-                background-color: rgb(255, 255, 0);;
-                box-shadow: 0px 0px 10px 0px rgb(255, 255, 255);;
-                margin: 50px -50px 20px -50px;
-                padding: 2rem;
-            }
-        </style>
-
         <style>
     .page-navigation {
         display: flex;
@@ -607,6 +596,7 @@ Quá trình phát triển có thể được chia các phần nhỏ hơn và cá
 </div>
 
 <script async src="/assets/js/scroll.js"></script>
+<script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
         <footer class="flex flex-col justify-center items-start max-w-2xl mx-auto w-full mb-8 pb-16">
         <hr class="w-full border-t border-slate-50/25 mb-8">
         <section class="mx-auto py-16 border-t border-slate-200 ">
