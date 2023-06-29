@@ -2,7 +2,7 @@
 short_name: zhao
 name: Tuan-Dung Bui
 position: Developer and author at Zhao.
-img: /assets/media/author/zhao.jpg
+img: /assets/media/author/zhao-img.png
 ---
 Xin chào, tớ tên là Dũng (Tên đầy đủ là của tớ là Bùi Tuấn Dũng, cậu cũng có thể gọi tớ là “Zhao”).
 
