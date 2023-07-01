@@ -3,8 +3,10 @@ layout: default
 ---
 <style>
 
+
     .table-of-contents-container li a {
       color: rgb(122,118,119);
+      font-weight: 500;
     }
   
     .table-of-contents-container li.active>a {
@@ -12,13 +14,12 @@ layout: default
     }
 
     .table-of-contents-container li a:hover {
-        filter: brightness(20%);
+        filter: brightness(60%);
     }
-
-
 
     .table-of-contents-container {
         font-size: 14px;
+        scrollbar-width: 6px;
     }
 
     .toc-h1 {
@@ -73,14 +74,14 @@ layout: default
             </div>
         </header>
         <div class="flex justify-center w-full flex-row-reverse"> 
-            <aside class="table-of-contents-container ml-24 sticky top-16 mt-16" style="max-height: calc(100vh - 16.5rem);">
+            <aside class="table-of-contents-container ml-16 sticky top-16 mt-16" style="max-height: calc(100vh - 16.5rem);">
                 <h2 class="uppercase tracking-widest text-base	font-extrabold mb-6"> Table of contents </h2>
-                <nav class="overflow-auto">
+                <nav class="overflow-auto pr-2" style="max-height: calc(100vh - 16.5rem);"> 
                     {% toc %}
                 </nav>
             </aside>
-            <div class="items-center" style="max-width: min(666px,100%);">
-                <div class="thumbnail relative not-prose my-[2em] rounded-2xl overflow-hidden mx-auto ml-[-2rem]">
+            <div class="items-center" style="max-width: min(720px,100%);">
+                <div class="thumbnail relative not-prose my-[2em] rounded-2xl overflow-hidden mx-auto sm:ml-[-2rem]">
                     {% if page.img-feature %}
                     <img alt="Post image feature" src="{{ page.img-feature }}" loading="lazy" class="w-full">
                     {% else %}
@@ -93,9 +94,20 @@ layout: default
             </div>
         </div>
         
+        <div class="ml-8 mt-8 mb-8 font-normal">
+            <b class="font-semibold text-xl"> Tags: </b>
+            {% for tag in page.tags %}
+            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400"
+                href="/tag/{{tag}}"> {{ tag }} </a>
+            {% endfor %}
+        </div>
+
+        {% include share-buttons.html %}
+
+        {% include post-buttom-nav.html %} 
         
     </article>
 </div>
 
-<!-- <script async src="{{site.cdn_baseurl}}/assets/js/scroll.js"></script> -->
+<script async src="{{site.cdn_baseurl}}/assets/js/scroll.js"></script>
 <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>

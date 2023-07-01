@@ -11,15 +11,21 @@
     }
 
     ::-webkit-scrollbar {
-      width: 10px;
+      width: 8px;
+      height: 8px;
     }
-     
-    ::-webkit-scrollbar-thumb {
-      background: #66aacb;
-    }
-    
+
     ::-webkit-scrollbar-track {
-      background: #ddd;
+      background: rgb(247, 241, 243);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgb(144, 144, 144);
+      border-radius: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgb(101, 101, 101);
     }
 
     a {
