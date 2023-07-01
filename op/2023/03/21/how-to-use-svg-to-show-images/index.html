@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en-US" class="light" style="color-scheme: light;">
+<html lang="en-US">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>Sử dụng SVG như một Placeholder - Tuan-Dung Bui</title>
+    <link rel="icon" type="image/x-icon" href="/assets/media/blog-icon.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -33,14 +34,13 @@
 <!-- End Jekyll SEO tag -->
 
   </head>
-  <body>
-    <div class="">
+  <body class="bg-gray-100 dark:bg-gray-800">
+    <div class="bg-gray-100 dark:bg-gray-800 opacity-95 max-w-5xl mx-auto p-8">
       <div
     class="hidden fixed w-full h-screen inset-0 bg-gray-200 opacity-95 z-50 transition-transform transform ease-in-out duration-300 translate-x-0 mobile-menu">
     <button type="button" aria-label="toggle modal"
         class="cursor-pointer fixed right-4 top-4 h-8 w-8 cursor-auto focus:outline-none border-none mobile-menu-btn-close"><svg
-            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-            class="text-gray-900">
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-gray-900">
             <path fill-rule="evenodd"
                 d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
                 clip-rule="evenodd"></path>
@@ -61,44 +61,153 @@
     </nav>
 </div>
 
-<header class="flex flex-col justify-center w-full">
+<header class="grid justify-center w-full relative" style="grid-template-columns: 1fr auto 1fr;">
+    <a style="max-width: 3rem;" href="/">
+        <span class="sr-only">home</span>
+        <img class="rounded-full" src="/assets/media/blog-icon.jpg">
+    </a>
     <nav
-        class="flex items-center justify-between w-full relative max-w-3xl border-gray-200 mx-auto pt-8 pb-8 text-gray-900">
-        <div class="ml-[-0.60rem]">
-            
-            <a class="font-normal text-gray-800 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 transition-all"
-                 href="/"><span
-                    class="capsize">Home</span></a>
-            
-            <a class="font-normal text-gray-800 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 transition-all"
-                 href="/works.html"><span
-                    class="capsize">Works</span></a>
-            
-            <a class="font-normal text-gray-800 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 transition-all"
-                 href="/blog.html"><span
-                    class="capsize">Blog</span></a>
-            
-            <a class="font-normal text-gray-800 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 transition-all"
-                 href="/assets/BuiTuanDung-Resume-1.pdf"><span
-                    class="capsize">Resume</span></a>
-            
-            <a class="font-normal text-gray-800 hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 transition-all"
-                 href="/about/"><span
-                    class="capsize">About</span></a>
-            
-        </div>
-        <button class="cursor-pointer bg-gray-200 bg-opacity-25	backdrop-blur-sm rounded-md text-sm border-y border-transparent mobile-menu-btn-open visible md:hidden fixed z-50 right-4 top-4 h-8 w-8 cursor-auto focus:outline-none border-none mobile-menu-btn" type="button">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                class="text-gray-900">
+        class="flex items-center justify-between relative max-w-3xl bg-gray-200 rounded-3xl border-gray-200 mx-auto md:px-2 text-gray-900">
+        
+        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-200 transition-all dark:text-gray-100 dark:hover:hover:bg-gray-700"
+             href="/"><span
+                class="capsize">Home</span></a>
+        
+        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-200 transition-all dark:text-gray-100 dark:hover:hover:bg-gray-700"
+             href="/works.html"><span
+                class="capsize">Works</span></a>
+        
+        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-200 transition-all dark:text-gray-100 dark:hover:hover:bg-gray-700"
+             href="/blog.html"><span
+                class="capsize">Blog</span></a>
+        
+        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-200 transition-all dark:text-gray-100 dark:hover:hover:bg-gray-700"
+             href="/assets/BuiTuanDung-Resume-1.pdf"><span
+                class="capsize">Resume</span></a>
+        
+        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-200 transition-all dark:text-gray-100 dark:hover:hover:bg-gray-700"
+             href="/about/"><span
+                class="capsize">About</span></a>
+        
+        <button
+            class="cursor-pointer bg-gray-200 bg-opacity-25	backdrop-blur-sm rounded-3xl text-sm border-y border-transparent mobile-menu-btn-open visible md:hidden fixed z-50 right-4 top-4 h-8 w-8 cursor-auto focus:outline-none border-none mobile-menu-btn"
+            type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-gray-900">
                 <path fill-rule="evenodd"
                     d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
                     clip-rule="evenodd"></path>
             </svg>
         </button>
     </nav>
+    <div class="flex justify-self-end items-center gap-8">
+        <label class="relative cursor-pointer">
+            <span class="sr-only">
+                "change theme to"
+                <!-- -->
+                "dark"
+            </span>
+            <div class="themeSwitchToggle w-12 h-6 bg-gray-200 rounded-3xl p-1">
+                <div class="themeSwitchIcon w-6 h-6 bg-white rounded-full flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-projection-id="1"
+                        class="sun cursor-pointer w-3 h-3">
+                        <circle cx="11.9998" cy="11.9998" r="5.75375" fill="#FFCE31" data-projection-id="2"
+                            transform-origin="11.999799728393555px 11.999799728393555px"
+                            style="transform: none; transform-origin: 11.9998px 11.9998px;"></circle>
+                        <g data-projection-id="3" transform-origin="11.999961078166962px 11.999765396118164px"
+                            style="transform: none; transform-origin: 12px 11.9998px;">
+                            <circle cx="3.08982" cy="6.85502" r="1.71143" transform="rotate(-60 3.08982 6.85502)"
+                                fill="#FFCE31"></circle>
+                            <circle cx="3.0903" cy="17.1436" r="1.71143" transform="rotate(-120 3.0903 17.1436)"
+                                fill="#FFCE31"></circle>
+                            <circle cx="12" cy="22.2881" r="1.71143" fill="#FFCE31"></circle>
+                            <circle cx="20.9101" cy="17.1436" r="1.71143" transform="rotate(-60 20.9101 17.1436)"
+                                fill="#FFCE31"></circle>
+                            <circle cx="20.9101" cy="6.8555" r="1.71143" transform="rotate(-120 20.9101 6.8555)"
+                                fill="#FFCE31"></circle>
+                            <circle cx="12" cy="1.71143" r="1.71143" fill="#FFCE31"></circle>
+                        </g>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" data-projection-id="17" class="moon cursor-pointer h-4 w-4">
+                        <path
+                            d="M 43.81 29.354 C 43.688 28.958 43.413 28.626 43.046 28.432 C 42.679 28.238 42.251 28.198 41.854 28.321 C 36.161 29.886 30.067 28.272 25.894 24.096 C 21.722 19.92 20.113 13.824 21.683 8.133 C 21.848 7.582 21.697 6.985 21.29 6.578 C 20.884 6.172 20.287 6.022 19.736 6.187 C 10.659 8.728 4.691 17.389 5.55 26.776 C 6.408 36.163 13.847 43.598 23.235 44.451 C 32.622 45.304 41.28 39.332 43.816 30.253 C 43.902 29.96 43.9 29.647 43.81 29.354 Z"
+                            fill="#F4DC9F" data-projection-id="18"
+                            transform-origin="24.673513412475586px 25.326481819152832px"
+                            style="transform: none; transform-origin: 24.6735px 25.3265px;"></path>
+                    </svg>
+                </div>
+            </div>
+        </label>
+        <a class="flex font-semibold items-center gap-2 text-black text-sm" href="/contact">
+            Contact
+            <svg viewBox="0 0 513 513" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:1.2rem;">
+                <path
+                    d="M440 6.5L24 246.4c-34.4 19.9-31.1 70.8 5.7 85.9L144 379.6V464c0 46.4 59.2 65.5 86.6 28.6l43.8-59.1 111.9 46.2c5.9 2.4 12.1 3.6 18.3 3.6 8.2 0 16.3-2.1 23.6-6.2 12.8-7.2 21.6-20 23.9-34.5l59.4-387.2c6.1-40.1-36.9-68.8-71.5-48.9zM192 464v-64.6l36.6 15.1L192 464zm212.6-28.7l-153.8-63.5L391 169.5c10.7-15.5-9.5-33.5-23.7-21.2L155.8 332.6 48 288 464 48l-59.4 387.3z"
+                    fill="#000"></path>
+            </svg>
+        </a>
+    </div>
 </header>
-      <main class="flex flex-col justify-center px-8">
+      <main class="flex flex-col justify-center my-16">
           <style>
+
+    .table-of-contents-container li a {
+      color: rgb(122,118,119);
+    }
+  
+    .table-of-contents-container li.active>a {
+      color: rgb(175,165,248);
+    }
+
+    .table-of-contents-container li a:hover {
+        filter: brightness(20%);
+    }
+
+
+
+    .table-of-contents-container {
+        font-size: 14px;
+    }
+
+    .toc-h1 {
+      margin-top: 1em;
+    }
+
+    .toc-h2 {
+      margin-top: 0.75em;
+    }
+
+    .toc-h3 {
+      margin-top: 0.5em;
+    }
+
+  
+    .toc-h1 {
+      font-weight: 600;
+    }
+  
+    .toc-h2 {
+      padding-left: 1em;
+      font-weight: 500;
+    }
+  
+    .toc-h3 {
+      padding-left: 2em;
+      font-weight: 400;
+    }
+  
+    .toc-h1:first-child {
+        margin-top: 0;
+    }
+
+
+    @media only screen and (max-width:1280px) {
+      .table-of-contents-container {
+        display: none;
+      }
+    }
+  </style>
+
+<style>
     .reading-line {
         position: fixed;
         top: 0;
@@ -110,91 +219,33 @@
 
 <div class="reading-line">
 </div>
-<!-- <div class="relative top-0 left-0 -z-50">
-    
-    <img alt="Post image feature" src="/assets/media/feature/default.jpg" loading="lazy" class="w-100">
-    
-</div> -->
-<div class="post-container xl:pl-[19.5rem] lg:">
+<div class="post-container">
     <article
-        class="post-content-container flex flex-col items-start justify-center max-w-3xl mx-auto xl:max-w-none xl:ml-0 xl:mr-[15.5rem] xl:pr-24">
-        <style>
-
-  .table-of-contents-container li a {
-    color: rgb(8, 27, 75);
-  }
-
-  .table-of-contents-container li.active>a {
-    color: #1c84d9;
-  }
-
-  .toc-h1 {
-    margin-top: 1em;
-  }
-  .toc-h2 {
-    margin-top: 0.5em;
-  }
-
-  .toc-h1 {
-    font-weight: 600;
-  }
-
-  .toc-h2 {
-    padding-left: 1em;
-    font-weight: 500;
-  }
-
-  .toc-h3 {
-    padding-left: 2em;
-    font-weight: 400;
-  }
-
-
-  @media only screen and (max-width:1280px) {
-    .table-of-contents-container {
-      display: none;
-    }
-  }
-</style>
-
-
-<div class="fixed z-20 top-[3.8125rem] bottom-0 right-[max(0px,calc(50%-45rem))] w-[19.5rem] py-10 overflow-y-auto hidden xl:block">
-    <div class="px-8">
-      <h5 class="text-slate-900 font-semibold mb-4 text-xl leading-6 "> On this page </h5>
-      <div class="table-of-contents-container scroll text-slate-700 text-sm leading-6">
-        <ul id="toc" class="section-nav">
-</ul>
-      </div>
-    </div>  
-</div>
-
-        <h1 class="font-extrabold mb-1 text-5xl leading-tight">
-            Sử dụng SVG như một Placeholder
-        </h1>
-        <div class="flex flex-col items-start justify-between w-full mt-2 md:flex-row md:items-center">
-            <div class="flex items-center">
-                
-                
-                
-                <img class="object-cover w-[40px] h-[40px] rounded-full" src="/assets/media/author/zhao-img.png" alt="Tuan-Dung Bui">
-                
-                <p class="ml-2 text-sm text-gray-700">
-                    Tuan-Dung Bui / March 21, 2023
+        class="post-content-container flex flex-col items-start justify-center">
+        <header class="flex flex-col gap-12 w-full max-w-full">
+            <div class="flex flex-col justify-center gap-4">
+                <h1 class="text-5xl font-extrabold max-w-2xl leading-tight"> Sử dụng SVG như một Placeholder </h1>
+                <p class="text-normal max-w-xl"> 
+                    
                 </p>
-                
             </div>
-            <p class="mt-2 text-sm text-gray-600 min-w-32 md:mt-0">
-                
-
-            </p>
-        </div>
-        <div class="relative not-prose my-[2em] first:mt-0 last:mb-0 rounded-2xl overflow-hidden mx-auto">
-            
-            <img alt="Post image feature" src="/assets/media/feature/default.jpg" loading="lazy" class="w-full">
-            
-        </div>
-        <div class="post-content w-full mt-4 prose max-w-none">
-            <p>Trong post này chúng ta sẽ nói về:</p>
+        </header>
+        <div class="flex justify-center w-full flex-row-reverse"> 
+            <aside class="table-of-contents-container ml-24 sticky top-16 mt-16" style="max-height: calc(100vh - 16.5rem);">
+                <h2 class="uppercase tracking-widest text-base	font-extrabold mb-6"> Table of contents </h2>
+                <nav class="overflow-auto">
+                    <ul id="toc" class="section-nav">
+</ul>
+                </nav>
+            </aside>
+            <div class="items-center" style="max-width: min(666px,100%);">
+                <div class="thumbnail relative not-prose my-[2em] rounded-2xl overflow-hidden mx-auto ml-[-2rem]">
+                    
+                    <img alt="Post image feature" src="/assets/media/feature/default.jpg" loading="lazy" class="w-full">
+                    
+                </div>
+                <div class="post-content prose">
+                    <p>Trong post này chúng ta sẽ nói về:</p>
 <ul>
   <li>Tổng quan về các loại placeholder</li>
   <li>SVG-based placeholders (edges, shapes and silhouettes)</li>
@@ -202,220 +253,15 @@
 </ul>
 
 
+                </div>
+            </div>
         </div>
-
-        <div class="ml-8 mt-8 mb-8 font-normal">
-            <b class="font-semibold text-xl"> Tags: </b>
-            
-            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400"
-                href="/tag/js"> js </a>
-            
-        </div>
-
         
-
-<style>
-    #share-container {
-        float: right;
-        padding-right: 24px;
-        margin-bottom: 80px;
-    }
-
-    #share-buttons {
-        display: inline-block;
-        vertical-align: middle;
-    }
-
-    #share-buttons:after {
-        content: "";
-        display: block;
-        clear: both;
-    }
-
-    #share-buttons>div {
-        position: relative;
-        text-align: left;
-        height: 32px;
-        width: 32px;
-        float: left;
-        text-align: center;
-        border-radius: 4px;
-        margin-left: 8px;
-        padding: 2px;
-    }
-
-    #share-buttons>div:hover {
-        background-color: rgb(239, 242, 251);
-    }
-
-    #share-buttons>div>svg {
-        height: 28px;
-        fill: #d5d5d5;
-        margin-top: 2px;
-    }
-
-    #share-buttons>div:hover {
-        cursor: pointer;
-    }
-
-    #share-buttons>div.facebook>svg {
-        fill: #3B5998;
-    }
-
-    #share-buttons>div.twitter>svg {
-        fill: #55ACEE;
-    }
-
-    #share-buttons>div.linkedin>svg {
-        fill: #0077b5;
-    }
-
-    #share-buttons>div.pinterest>svg {
-        fill: #CB2027;
-    }
-
-    #share-buttons>div.reddit>svg {
-        fill: #ff4500;
-    }
-
-    #share-buttons>div.mail>svg {
-        fill: #7D7D7D;
-    }
-
-    #share-buttons>div.instagram>svg {
-        fill: #C73B92;
-    }
-
-    #share-buttons>div.facebook>svg {
-        height: 24px;
-        margin-top: 4px;
-    }
-
-    /*
-    #share-buttons>div.twitter>svg {
-        height: 32px;
-        margin-top: 8px;
-    }
-
-    #share-buttons>div.reddit>svg {
-        height: 32px;
-        margin-top: 4px;
-    }
-
-    #share-buttons>div.linkedin>svg {
-        height: 19px;
-        margin-top: 7px;
-    }
-
-    #share-buttons>div.pinterest>svg {
-        height: 20px;
-        margin-top: 9px;
-    }
-    */
-    #share-buttons>div.mail>svg {
-        height: 28px;
-        margin-top: 11px;
-    }
-</style>
-<div>
-    <div id="share-container">
-        <span style="font-weight: 600; font-size: 18px;">Share on: </span>
-        <div id="share-buttons">
-            <div class="facebook" title="Share this on Facebook"
-                onclick="window.open('http://www.facebook.com/share.php?u=https://zhaospei.github.io//op/2023/03/21/how-to-use-svg-to-show-images/');"><svg
-                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z" />
-                </svg></div>
-            <div class="twitter" title="Share this on Twitter"
-                onclick="window.open('ttps://twitter.com/intent/tweet?text=https://zhaospei.github.io//op/2023/03/21/how-to-use-svg-to-show-images/');"><svg
-                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z" />
-                </svg></div>
-            <div class="reddit" title="Share this on Reddit"
-                onclick="window.open('http://www.reddit.com/submit?url=https://zhaospei.github.io//op/2023/03/21/how-to-use-svg-to-show-images/');">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <g>
-                        <path fill="none" d="M0 0h24v24H0z" />
-                        <path fill-rule="nonzero"
-                            d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm6.67-10a1.46 1.46 0 0 0-2.47-1 7.12 7.12 0 0 0-3.85-1.23L13 6.65l2.14.45a1 1 0 1 0 .13-.61L12.82 6a.31.31 0 0 0-.37.24l-.74 3.47a7.14 7.14 0 0 0-3.9 1.23 1.46 1.46 0 1 0-1.61 2.39 2.87 2.87 0 0 0 0 .44c0 2.24 2.61 4.06 5.83 4.06s5.83-1.82 5.83-4.06a2.87 2.87 0 0 0 0-.44 1.46 1.46 0 0 0 .81-1.33zm-10 1a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm5.81 2.75a3.84 3.84 0 0 1-2.47.77 3.84 3.84 0 0 1-2.47-.77.27.27 0 0 1 .38-.38A3.27 3.27 0 0 0 12 16a3.28 3.28 0 0 0 2.09-.61.28.28 0 1 1 .39.4v-.04zm-.18-1.71a1 1 0 1 1 1-1 1 1 0 0 1-1.01 1.04l.01-.04z" />
-                    </g>
-                </svg>
-            </div>
-            <div class="linkedin" title="Share this on Linkedin"
-                onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://zhaospei.github.io//op/2023/03/21/how-to-use-svg-to-show-images/&title=&summary=&source=');">
-                <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z" />
-                </svg>
-            </div>
-            <!-- <div class="mail" title="Share this through Email"
-            onclick="window.open('mailto:?&body=https://zhaospei.github.io//op/2023/03/21/how-to-use-svg-to-show-images/');"><svg viewBox="0 0 1792 1792"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z" />
-            </svg></div> -->
-        </div>
-    </div>
-</div>
-
-        <style>
-    .page-navigation {
-        display: flex;
-        position: relative;
-        margin: 5em 0;
-        border-top: 1px solid #d4d4d4;
-        line-height: 1.4;
-    }
-
-    .page-navigation a {
-        border-bottom: 0;
-        font-weight: 700;
-        padding-bottom: 10px;
-        padding-top: 10px;
-        text-decoration: none;
-        box-sizing: border-box;
-    }
-
-    .page-navigation .nav-arrow {
-        font-weight: 400;
-        font-size: 14px;
-        color: #6b7886;
-        margin-bottom: 3px;
-    }
-
-    .page-navigation .post-title {
-        font-weight: 700;
-    }
-
-    .page-navigation .next {
-        text-align: right;
-        padding-right: 0;
-        padding-left: 20px;
-    }
-</style>
-
-<nav class="page-navigation w-full flex-col md:flex-row">
-    
-    <a class="prev w-full md:w-2/4" href="/dummy/2023/03/20/chuyen-chi-chi/">
-        <div class="nav-arrow"> Previous </div>
-        <span class="post-title">Chuyện chi chi rằng rằng (Phần 1)</span>
-    </a>
-    
-    
-    <a class="next w-full md:w-2/4" href="/testing/2023/03/25/two-pairs-testing/">
-        <div class="nav-arrow"> Next </div>
-        <span class="post-title">Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)</span>
-    </a>
-    
-</nav>
-
         
     </article>
 </div>
 
-<script async src="/assets/js/scroll.js"></script>
+<!-- <script async src="/assets/js/scroll.js"></script> -->
 <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
         <footer class="flex flex-col justify-center items-start max-w-2xl mx-auto w-full mb-8 pb-16">
         <hr class="w-full border-t border-slate-50/25 mb-8">
@@ -466,5 +312,6 @@
       </main>
     </div>
     <script src="/assets/js/vanilla-tilt.js"></script>
+    <script src="/assets/js/app.js"></script>
   </body>
 </html>
