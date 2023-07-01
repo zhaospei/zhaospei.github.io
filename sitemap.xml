@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://zhaospei.github.io//authors/zhao/</loc>
-<lastmod>2023-07-01T19:04:34+07:00</lastmod>
+<lastmod>2023-07-01T19:18:42+07:00</lastmod>
 </url>
 <url>
 <loc>https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/</loc>
@@ -39,6 +39,10 @@
 <url>
 <loc>https://zhaospei.github.io//machine-learning/2023/06/27/chi-square-feature-selection-ml/</loc>
 <lastmod>2023-06-27T00:00:00+07:00</lastmod>
+</url>
+<url>
+<loc>https://zhaospei.github.io//backend/2023/07/01/use-gg-sheets-for-backend/</loc>
+<lastmod>2023-07-01T00:00:00+07:00</lastmod>
 </url>
 <url>
 <loc>https://zhaospei.github.io//about/</loc>
@@ -110,11 +114,17 @@
 <loc>https://zhaospei.github.io//tag/Feature%20Selection/</loc>
 </url>
 <url>
+<loc>https://zhaospei.github.io//tag/Backend/</loc>
+</url>
+<url>
+<loc>https://zhaospei.github.io//tag/Google%20Sheet/</loc>
+</url>
+<url>
 <loc>https://zhaospei.github.io//assets/BuiTuanDung-Resume-1.pdf</loc>
-<lastmod>2023-07-01T19:03:54+07:00</lastmod>
+<lastmod>2023-07-01T19:18:01+07:00</lastmod>
 </url>
 <url>
 <loc>https://zhaospei.github.io//assets/BuiTuanDung-Resume-old.pdf</loc>
-<lastmod>2023-07-01T19:03:54+07:00</lastmod>
+<lastmod>2023-07-01T19:18:01+07:00</lastmod>
 </url>
 </urlset>
