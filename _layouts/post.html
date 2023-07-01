@@ -19,7 +19,10 @@ layout: default
 
     .table-of-contents-container {
         font-size: 14px;
-        scrollbar-width: 6px;
+    }
+
+    .table-of-contents-container nav{
+        
     }
 
     .toc-h1 {
@@ -68,9 +71,24 @@ layout: default
         <header class="flex flex-col gap-12 w-full max-w-full">
             <div class="flex flex-col justify-center gap-4">
                 <h1 class="text-5xl font-extrabold max-w-2xl leading-tight"> {{ page.title }} </h1>
-                <p class="text-normal max-w-xl"> 
-                    {{ page.describe }}
-                </p>
+                <div class="flex flex-col items-start justify-between max-w-2xl mt-2 md:flex-row md:items-center">
+                    <div class="flex items-center">
+                        {% assign author = site.authors | where: 'short_name', page.author | first %}
+                        {% if author %}
+                        {% if author.img != nil %}
+                        <img class="object-cover w-[40px] h-[40px] rounded-full" src="{{ author.img }}" alt="{{ author.name }}">
+                        {% else %}
+                        <img src="/assets/media/author/default_img.jpeg" alt="{{ author.name }}">
+                        {% endif %}
+                        <p class="ml-2 text-sm text-gray-700">
+                            {{ author.name }} / {{ page.date | date: "%B %-d, %Y" }}
+                        </p>
+                        {% endif %}
+                    </div>
+                    <p class="mt-2 text-sm text-gray-600 min-w-32 md:mt-0">
+                        {% include reading-time.html %}
+                    </p>
+                </div>
             </div>
         </header>
         <div class="flex justify-center w-full flex-row-reverse"> 
