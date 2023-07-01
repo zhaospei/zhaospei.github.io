@@ -90,7 +90,7 @@
                 class="capsize">About</span></a>
         
         <button
-            class="cursor-pointer bg-gray-200 bg-opacity-25	backdrop-blur-sm rounded-3xl text-sm border-y border-transparent mobile-menu-btn-open visible md:hidden fixed z-50 right-4 top-4 h-8 w-8 cursor-auto focus:outline-none border-none mobile-menu-btn"
+            class="cursor-pointer bg-gray-200 bg-opacity-25	backdrop-blur-sm rounded-lg text-sm border-y border-transparent mobile-menu-btn-open visible md:hidden fixed z-50 right-4 top-4 h-8 w-8 cursor-auto focus:outline-none border-none mobile-menu-btn"
             type="button">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-gray-900">
                 <path fill-rule="evenodd"
@@ -106,7 +106,7 @@
                 <!-- -->
                 "dark"
             </span>
-            <div class="themeSwitchToggle w-12 h-6 bg-gray-200 rounded-3xl p-1">
+            <div class="themeSwitchToggle w-12 h-6 bg-gray-200 rounded-3xl p-1 ml-4">
                 <div class="themeSwitchIcon w-6 h-6 bg-white rounded-full flex items-center justify-center">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-projection-id="1"
                         class="sun cursor-pointer w-3 h-3">
@@ -150,8 +150,10 @@
       <main class="flex flex-col justify-center my-16">
           <style>
 
+
     .table-of-contents-container li a {
       color: rgb(122,118,119);
+      font-weight: 500;
     }
   
     .table-of-contents-container li.active>a {
@@ -159,13 +161,12 @@
     }
 
     .table-of-contents-container li a:hover {
-        filter: brightness(20%);
+        filter: brightness(60%);
     }
-
-
 
     .table-of-contents-container {
         font-size: 14px;
+        scrollbar-width: 6px;
     }
 
     .toc-h1 {
@@ -231,15 +232,15 @@
             </div>
         </header>
         <div class="flex justify-center w-full flex-row-reverse"> 
-            <aside class="table-of-contents-container ml-24 sticky top-16 mt-16" style="max-height: calc(100vh - 16.5rem);">
+            <aside class="table-of-contents-container ml-16 sticky top-16 mt-16" style="max-height: calc(100vh - 16.5rem);">
                 <h2 class="uppercase tracking-widest text-base	font-extrabold mb-6"> Table of contents </h2>
-                <nav class="overflow-auto">
+                <nav class="overflow-auto pr-2" style="max-height: calc(100vh - 16.5rem);"> 
                     <ul id="toc" class="section-nav">
 </ul>
                 </nav>
             </aside>
-            <div class="items-center" style="max-width: min(666px,100%);">
-                <div class="thumbnail relative not-prose my-[2em] rounded-2xl overflow-hidden mx-auto ml-[-2rem]">
+            <div class="items-center" style="max-width: min(720px,100%);">
+                <div class="thumbnail relative not-prose my-[2em] rounded-2xl overflow-hidden mx-auto sm:ml-[-2rem]">
                     
                     <img alt="Post image feature" src="/assets/media/feature/default.jpg" loading="lazy" class="w-full">
                     
@@ -257,11 +258,217 @@
             </div>
         </div>
         
+        <div class="ml-8 mt-8 mb-8 font-normal">
+            <b class="font-semibold text-xl"> Tags: </b>
+            
+            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400"
+                href="/tag/js"> js </a>
+            
+        </div>
+
+        
+
+<style>
+    #share-container {
+        float: right;
+        padding-right: 24px;
+        margin-bottom: 80px;
+    }
+
+    #share-buttons {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    #share-buttons:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    #share-buttons>div {
+        position: relative;
+        text-align: left;
+        height: 32px;
+        width: 32px;
+        float: left;
+        text-align: center;
+        border-radius: 4px;
+        margin-left: 8px;
+        padding: 2px;
+    }
+
+    #share-buttons>div:hover {
+        background-color: rgb(239, 242, 251);
+    }
+
+    #share-buttons>div>svg {
+        height: 28px;
+        fill: #d5d5d5;
+        margin-top: 2px;
+    }
+
+    #share-buttons>div:hover {
+        cursor: pointer;
+    }
+
+    #share-buttons>div.facebook>svg {
+        fill: #3B5998;
+    }
+
+    #share-buttons>div.twitter>svg {
+        fill: #55ACEE;
+    }
+
+    #share-buttons>div.linkedin>svg {
+        fill: #0077b5;
+    }
+
+    #share-buttons>div.pinterest>svg {
+        fill: #CB2027;
+    }
+
+    #share-buttons>div.reddit>svg {
+        fill: #ff4500;
+    }
+
+    #share-buttons>div.mail>svg {
+        fill: #7D7D7D;
+    }
+
+    #share-buttons>div.instagram>svg {
+        fill: #C73B92;
+    }
+
+    #share-buttons>div.facebook>svg {
+        height: 24px;
+        margin-top: 4px;
+    }
+
+    /*
+    #share-buttons>div.twitter>svg {
+        height: 32px;
+        margin-top: 8px;
+    }
+
+    #share-buttons>div.reddit>svg {
+        height: 32px;
+        margin-top: 4px;
+    }
+
+    #share-buttons>div.linkedin>svg {
+        height: 19px;
+        margin-top: 7px;
+    }
+
+    #share-buttons>div.pinterest>svg {
+        height: 20px;
+        margin-top: 9px;
+    }
+    */
+    #share-buttons>div.mail>svg {
+        height: 28px;
+        margin-top: 11px;
+    }
+</style>
+<div>
+    <div id="share-container">
+        <span style="font-weight: 600; font-size: 18px;">Share on: </span>
+        <div id="share-buttons">
+            <div class="facebook" title="Share this on Facebook"
+                onclick="window.open('http://www.facebook.com/share.php?u=https://zhaospei.github.io//op/2023/03/21/how-to-use-svg-to-show-images/');"><svg
+                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z" />
+                </svg></div>
+            <div class="twitter" title="Share this on Twitter"
+                onclick="window.open('ttps://twitter.com/intent/tweet?text=https://zhaospei.github.io//op/2023/03/21/how-to-use-svg-to-show-images/');"><svg
+                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z" />
+                </svg></div>
+            <div class="reddit" title="Share this on Reddit"
+                onclick="window.open('http://www.reddit.com/submit?url=https://zhaospei.github.io//op/2023/03/21/how-to-use-svg-to-show-images/');">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <g>
+                        <path fill="none" d="M0 0h24v24H0z" />
+                        <path fill-rule="nonzero"
+                            d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm6.67-10a1.46 1.46 0 0 0-2.47-1 7.12 7.12 0 0 0-3.85-1.23L13 6.65l2.14.45a1 1 0 1 0 .13-.61L12.82 6a.31.31 0 0 0-.37.24l-.74 3.47a7.14 7.14 0 0 0-3.9 1.23 1.46 1.46 0 1 0-1.61 2.39 2.87 2.87 0 0 0 0 .44c0 2.24 2.61 4.06 5.83 4.06s5.83-1.82 5.83-4.06a2.87 2.87 0 0 0 0-.44 1.46 1.46 0 0 0 .81-1.33zm-10 1a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm5.81 2.75a3.84 3.84 0 0 1-2.47.77 3.84 3.84 0 0 1-2.47-.77.27.27 0 0 1 .38-.38A3.27 3.27 0 0 0 12 16a3.28 3.28 0 0 0 2.09-.61.28.28 0 1 1 .39.4v-.04zm-.18-1.71a1 1 0 1 1 1-1 1 1 0 0 1-1.01 1.04l.01-.04z" />
+                    </g>
+                </svg>
+            </div>
+            <div class="linkedin" title="Share this on Linkedin"
+                onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://zhaospei.github.io//op/2023/03/21/how-to-use-svg-to-show-images/&title=&summary=&source=');">
+                <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z" />
+                </svg>
+            </div>
+            <!-- <div class="mail" title="Share this through Email"
+            onclick="window.open('mailto:?&body=https://zhaospei.github.io//op/2023/03/21/how-to-use-svg-to-show-images/');"><svg viewBox="0 0 1792 1792"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z" />
+            </svg></div> -->
+        </div>
+    </div>
+</div>
+
+        <style>
+    .page-navigation {
+        display: flex;
+        position: relative;
+        margin: 5em 0;
+        border-top: 1px solid #d4d4d4;
+        line-height: 1.4;
+    }
+
+    .page-navigation a {
+        border-bottom: 0;
+        font-weight: 700;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        text-decoration: none;
+        box-sizing: border-box;
+    }
+
+    .page-navigation .nav-arrow {
+        font-weight: 400;
+        font-size: 14px;
+        color: #6b7886;
+        margin-bottom: 3px;
+    }
+
+    .page-navigation .post-title {
+        font-weight: 700;
+    }
+
+    .page-navigation .next {
+        text-align: right;
+        padding-right: 0;
+        padding-left: 20px;
+    }
+</style>
+
+<nav class="page-navigation w-full flex-col md:flex-row">
+    
+    <a class="prev w-full md:w-2/4" href="/dummy/2023/03/20/chuyen-chi-chi/">
+        <div class="nav-arrow"> Previous </div>
+        <span class="post-title">Chuyện chi chi rằng rằng (Phần 1)</span>
+    </a>
+    
+    
+    <a class="next w-full md:w-2/4" href="/testing/2023/03/25/two-pairs-testing/">
+        <div class="nav-arrow"> Next </div>
+        <span class="post-title">Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)</span>
+    </a>
+    
+</nav> 
         
     </article>
 </div>
 
-<!-- <script async src="/assets/js/scroll.js"></script> -->
+<script async src="/assets/js/scroll.js"></script>
 <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
         <footer class="flex flex-col justify-center items-start max-w-2xl mx-auto w-full mb-8 pb-16">
         <hr class="w-full border-t border-slate-50/25 mb-8">
