@@ -3,8 +3,9 @@ layout: post
 title:  "Lựa chọn đặc trưng trong học máy bằng kiểm tra Chi-Square"
 categories: Machine-Learning
 author: zhao
-tags: ["feature", "machine-learning", "Data Science", "Statistics", "Machine Learning", "Feature Selection"]
+tags: ["Data Science", "Statistics", "Machine Learning", "Feature Selection"]
 img-feature: /assets/media/feature/Chi-Square.jpg
+describe: "Lựa chọn đặc trưng là một trong những vấn đề quan trọng trong học máy, khi chúng ta có một đống cái đặc trưng và quyết định xem những đặc trưng nào là tốt nhất để xây dựng mô hình."
 ---
 
 Lựa chọn đặc trưng là một trong những vấn đề quan trọng trong học máy, khi chúng ta có một đống cái đặc trưng và quyết định xem những đặc trưng nào là tốt nhất để xây dựng mô hình. Có nhiều phương pháp để lựa chọn đặc trưng, trong bài viết này tôi sẽ đưa giải pháp thực hiện bằng **Chi-Square**. 

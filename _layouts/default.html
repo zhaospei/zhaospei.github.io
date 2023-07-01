@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}" class="light" style="color-scheme: light;">
+<html lang="{{ site.lang | default: "en-US" }}">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="icon" type="image/x-icon" href="/assets/media/blog-icon.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,14 +16,15 @@
     {% feed_meta %}
     {% seo %}
   </head>
-  <body>
-    <div class="">
+  <body class="bg-gray-100 dark:bg-gray-800">
+    <div class="bg-gray-100 dark:bg-gray-800 opacity-95 max-w-5xl mx-auto p-8">
       {% include header.html %}
-      <main class="flex flex-col justify-center px-8">
+      <main class="flex flex-col justify-center my-16">
           {{ content }}
         {% include footer.html %}
       </main>
     </div>
     <script src="/assets/js/vanilla-tilt.js"></script>
+    <script src="/assets/js/app.js"></script>
   </body>
 </html>

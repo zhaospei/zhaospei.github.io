@@ -3,7 +3,7 @@ layout: post
 title:  "Từ nơ-ron sinh học đến nơ-ron nhân tạo"
 categories: Deep-Learning
 author: zhao
-tags: ["neuron", "deep-learning"]
+tags: ["Neuron", "Deep Learning"]
 img-feature: /assets/media/feature/no-ron-sinh-hoc.png
 ---
 
