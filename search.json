@@ -27,19 +27,6 @@
     } ,
   
     {
-      "title"    : "Mình đã sử dụng Google Sheet làm backend cho blog như thế nào?",
-      "title-lower"    : "mình đã sử dụng google sheet làm backend cho blog như thế nào?",
-      "sub-titile" : "",
-      "sub-titile-lower" : "",
-      "categories" : "Backend",
-      "tags"     : "Backend, Google Sheet",
-      "url"      : "/backend/2023/07/01/use-gg-sheets-for-backend/",
-      "date"     : "2023-07-01 00:00:00 +0700",
-      "img-feature": "/assets/media/feature/Google-Sheets-Logo.png",
-      "content": "Unpublished!Bài đăng sẽ được đăng sớm nhất bởi @Tuan-Dung Bui tại zhaospei."
-    } ,
-  
-    {
       "title"    : "Devlog: Phát triển phiên bản mới cho trang blog",
       "title-lower"    : "devlog: phát triển phiên bản mới cho trang blog",
       "sub-titile" : "",

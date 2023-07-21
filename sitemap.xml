@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://zhaospei.github.io//authors/zhao/</loc>
-<lastmod>2023-07-03T00:37:37+07:00</lastmod>
+<lastmod>2023-07-21T16:47:07+07:00</lastmod>
 </url>
 <url>
 <loc>https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/</loc>
@@ -42,10 +42,6 @@
 </url>
 <url>
 <loc>https://zhaospei.github.io//dummy/2023/07/01/dev-log-update-blog-version/</loc>
-<lastmod>2023-07-01T00:00:00+07:00</lastmod>
-</url>
-<url>
-<loc>https://zhaospei.github.io//backend/2023/07/01/use-gg-sheets-for-backend/</loc>
 <lastmod>2023-07-01T00:00:00+07:00</lastmod>
 </url>
 <url>
@@ -132,12 +128,6 @@
 <loc>https://zhaospei.github.io//tag/Dummy/</loc>
 </url>
 <url>
-<loc>https://zhaospei.github.io//tag/Backend/</loc>
-</url>
-<url>
-<loc>https://zhaospei.github.io//tag/Google%20Sheet/</loc>
-</url>
-<url>
 <loc>https://zhaospei.github.io//tag/Talk/</loc>
 </url>
 <url>
@@ -154,10 +144,10 @@
 </url>
 <url>
 <loc>https://zhaospei.github.io//assets/BuiTuanDung-Resume-1.pdf</loc>
-<lastmod>2023-07-03T00:36:59+07:00</lastmod>
+<lastmod>2023-07-21T16:46:05+07:00</lastmod>
 </url>
 <url>
 <loc>https://zhaospei.github.io//assets/BuiTuanDung-Resume-old.pdf</loc>
-<lastmod>2023-07-03T00:36:59+07:00</lastmod>
+<lastmod>2023-07-21T16:46:05+07:00</lastmod>
 </url>
 </urlset>
