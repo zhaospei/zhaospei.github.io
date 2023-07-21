@@ -27,19 +27,6 @@
     } ,
   
     {
-      "title"    : "Devlog: Phát triển phiên bản mới cho trang blog",
-      "title-lower"    : "devlog: phát triển phiên bản mới cho trang blog",
-      "sub-titile" : "",
-      "sub-titile-lower" : "",
-      "categories" : "Dummy",
-      "tags"     : "Devlog, Dummy",
-      "url"      : "/dummy/2023/07/01/dev-log-update-blog-version/",
-      "date"     : "2023-07-01 00:00:00 +0700",
-      "img-feature": "/assets/media/feature/Dev-log.jpg",
-      "content": "Unpublished!Bài đăng sẽ được đăng sớm nhất bởi @Tuan-Dung Bui tại zhaospei."
-    } ,
-  
-    {
       "title"    : "Lựa chọn đặc trưng trong học máy bằng kiểm tra Chi-Square",
       "title-lower"    : "lựa chọn đặc trưng trong học máy bằng kiểm tra chi-square",
       "sub-titile" : "",
@@ -115,19 +102,6 @@
       "date"     : "2023-03-21 00:00:00 +0700",
       "img-feature": "",
       "content": "Trong post này chúng ta sẽ nói về:  Tổng quan về các loại placeholder  SVG-based placeholders (edges, shapes and silhouettes)  Auto các process"
-    } ,
-  
-    {
-      "title"    : "Chuyện chi chi rằng rằng (Phần 1)",
-      "title-lower"    : "chuyện chi chi rằng rằng (phần 1)",
-      "sub-titile" : "",
-      "sub-titile-lower" : "",
-      "categories" : "Dummy",
-      "tags"     : "dummy",
-      "url"      : "/dummy/2023/03/20/chuyen-chi-chi/",
-      "date"     : "2023-03-20 00:00:00 +0700",
-      "img-feature": "/assets/media/feature/chi-chi-phan-1.png",
-      "content": "Bài này tớ sẽ chia sẻ về một ngày thứ bảy vô dụng của tớ khi mà tớ ngủ hơn 12 tiếng một ngày. Mục đích của bài viết này chỉ là một bài viết vui, không nhằm truyền bá tư tưởng cực đoạn, bạn đọc cân nhắc trước khi đọc để tránh ảnh hưởng tinh thần của bạn…(Còn tiếp)"
     } ,
   
     {

@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://zhaospei.github.io//authors/zhao/</loc>
-<lastmod>2023-07-21T16:47:07+07:00</lastmod>
+<lastmod>2023-07-21T16:47:32+07:00</lastmod>
 </url>
 <url>
 <loc>https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/</loc>
@@ -11,10 +11,6 @@
 <url>
 <loc>https://zhaospei.github.io//se/2023/02/27/software-models-chapter-1/</loc>
 <lastmod>2023-02-27T00:00:00+07:00</lastmod>
-</url>
-<url>
-<loc>https://zhaospei.github.io//dummy/2023/03/20/chuyen-chi-chi/</loc>
-<lastmod>2023-03-20T00:00:00+07:00</lastmod>
 </url>
 <url>
 <loc>https://zhaospei.github.io//op/2023/03/21/how-to-use-svg-to-show-images/</loc>
@@ -39,10 +35,6 @@
 <url>
 <loc>https://zhaospei.github.io//machine-learning/2023/06/27/chi-square-feature-selection-ml/</loc>
 <lastmod>2023-06-27T00:00:00+07:00</lastmod>
-</url>
-<url>
-<loc>https://zhaospei.github.io//dummy/2023/07/01/dev-log-update-blog-version/</loc>
-<lastmod>2023-07-01T00:00:00+07:00</lastmod>
 </url>
 <url>
 <loc>https://zhaospei.github.io//dummy/2023/07/02/one-week-on-school-lab/</loc>
@@ -83,9 +75,6 @@
 <loc>https://zhaospei.github.io//tag/model/</loc>
 </url>
 <url>
-<loc>https://zhaospei.github.io//tag/dummy/</loc>
-</url>
-<url>
 <loc>https://zhaospei.github.io//tag/js/</loc>
 </url>
 <url>
@@ -122,9 +111,6 @@
 <loc>https://zhaospei.github.io//tag/Feature%20Selection/</loc>
 </url>
 <url>
-<loc>https://zhaospei.github.io//tag/Devlog/</loc>
-</url>
-<url>
 <loc>https://zhaospei.github.io//tag/Dummy/</loc>
 </url>
 <url>
@@ -144,10 +130,10 @@
 </url>
 <url>
 <loc>https://zhaospei.github.io//assets/BuiTuanDung-Resume-1.pdf</loc>
-<lastmod>2023-07-21T16:46:05+07:00</lastmod>
+<lastmod>2023-07-21T16:46:32+07:00</lastmod>
 </url>
 <url>
 <loc>https://zhaospei.github.io//assets/BuiTuanDung-Resume-old.pdf</loc>
-<lastmod>2023-07-21T16:46:05+07:00</lastmod>
+<lastmod>2023-07-21T16:46:32+07:00</lastmod>
 </url>
 </urlset>
