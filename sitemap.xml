@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://zhaospei.github.io//authors/zhao/</loc>
-<lastmod>2023-08-19T12:11:33+07:00</lastmod>
+<lastmod>2023-08-19T15:09:17+07:00</lastmod>
 </url>
 <url>
 <loc>https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/</loc>
@@ -11,10 +11,6 @@
 <url>
 <loc>https://zhaospei.github.io//se/2023/02/27/software-models-chapter-1/</loc>
 <lastmod>2023-02-27T00:00:00+07:00</lastmod>
-</url>
-<url>
-<loc>https://zhaospei.github.io//op/2023/03/21/how-to-use-svg-to-show-images/</loc>
-<lastmod>2023-03-21T00:00:00+07:00</lastmod>
 </url>
 <url>
 <loc>https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/</loc>
@@ -67,9 +63,6 @@
 <loc>https://zhaospei.github.io//tag/model/</loc>
 </url>
 <url>
-<loc>https://zhaospei.github.io//tag/js/</loc>
-</url>
-<url>
 <loc>https://zhaospei.github.io//tag/pairwise/</loc>
 </url>
 <url>
@@ -104,10 +97,10 @@
 </url>
 <url>
 <loc>https://zhaospei.github.io//assets/BuiTuanDung-Resume-1.pdf</loc>
-<lastmod>2023-08-19T12:10:51+07:00</lastmod>
+<lastmod>2023-08-19T15:08:27+07:00</lastmod>
 </url>
 <url>
 <loc>https://zhaospei.github.io//assets/BuiTuanDung-Resume-old.pdf</loc>
-<lastmod>2023-08-19T12:10:51+07:00</lastmod>
+<lastmod>2023-08-19T15:08:27+07:00</lastmod>
 </url>
 </urlset>

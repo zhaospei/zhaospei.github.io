@@ -66,19 +66,6 @@
     } ,
   
     {
-      "title"    : "Sử dụng SVG như một Placeholder",
-      "title-lower"    : "sử dụng svg như một placeholder",
-      "sub-titile" : "",
-      "sub-titile-lower" : "",
-      "categories" : "OP",
-      "tags"     : "js",
-      "url"      : "/op/2023/03/21/how-to-use-svg-to-show-images/",
-      "date"     : "2023-03-21 00:00:00 +0700",
-      "img-feature": "",
-      "content": "Trong post này chúng ta sẽ nói về:  Tổng quan về các loại placeholder  SVG-based placeholders (edges, shapes and silhouettes)  Auto các process"
-    } ,
-  
-    {
       "title"    : "Một số mô hình phát triển phần mềm (Phần 1)",
       "title-lower"    : "một số mô hình phát triển phần mềm (phần 1)",
       "sub-titile" : "",

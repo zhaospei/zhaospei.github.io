@@ -34,7 +34,7 @@
 
   </head>
   <body class="bg-gray-100 dark:bg-gray-800">
-    <div class="bg-gray-100 dark:bg-gray-800 opacity-95 max-w-5xl mx-auto p-8">
+    <div class="bg-gray-100 dark:bg-gray-800 opacity-95 max-w-5xl mx-auto p-4">
       <div
     class="hidden fixed w-full h-screen inset-0 bg-gray-200 opacity-95 z-50 transition-transform transform ease-in-out duration-300 translate-x-0 mobile-menu">
     <button type="button" aria-label="toggle modal"
@@ -148,369 +148,421 @@
 </header>
       <main class="flex flex-col justify-center my-16">
           <div class="flex flex-col justify-center items-start border-gray-200 pb-16 dark:bg-slate-800">
-    <div class="flex flex-col-reverse sm:flex-row items-start w-full">
+    <div class="flex flex-col-reverse sm:flex-row items-start w-full pb-24">
         <div class="flex flex-col pr-8 justify-center items-center w-full">
             <h1
-                class="font-extrabold mb-1 text-5xl text-green-400 leading-tight">
+                class="font-extrabold mb-4 text-5xl text-teal-600 leading-tight">
                 Blog.
             </h1>
-            <p class="text-gray-600 indent-8 mb-4 max-w-2xl	text-center	">
+            <p class="text-gray-600 indent-8 max-w-2xl	text-center	">
                 I've written posts since March 2023. I like talking about web development, machine learning and others. Use the search below to filter by title or summary.
             </p>
         </div>
     </div>
 
-    <div class="relative w-full mb-4">
-  <input type="text" id="search-input"
-    class="w-full box-border px-4 py-2 text-gray-900 bg-white border border-solid border-slate-300	rounded-md"
-    placeholder="Search articles">
-  <svg class="absolute w-5 h-5 text-gray-400 right-3 top-3" xmlns="http://www.w3.org/2000/svg" fill="none"
-    viewBox="0 0 24 24" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-  </svg>
-  <ul id="results-container" class="hidden"></ul>
-</div>
+    <div class="w-full grid gap-x-8 gap-y-8 relative bloglayouts">
 
-<div class="tags-cloud flex flex-wrap">
-  
-  
-  <span class="site-tag bg-slate-300 shadow text-white rounded-md text-xl border-y border-transparent py-2 font-semibold px-3 hover:bg-green-600 mx-2 my-2">
-    <a class="text-white" href="/category/deep-learning/" style="font-size: 84%">
-      Deep Learning (1)
-    </a>
-  </span>
-  
-  <span class="site-tag bg-slate-300 shadow text-white rounded-md text-xl border-y border-transparent py-2 font-semibold px-3 hover:bg-green-600 mx-2 my-2">
-    <a class="text-white" href="/category/dummy/" style="font-size: 84%">
-      Dummy (1)
-    </a>
-  </span>
-  
-  <span class="site-tag bg-slate-300 shadow text-white rounded-md text-xl border-y border-transparent py-2 font-semibold px-3 hover:bg-green-600 mx-2 my-2">
-    <a class="text-white" href="/category/machine-learning/" style="font-size: 84%">
-      Machine Learning (1)
-    </a>
-  </span>
-  
-  <span class="site-tag bg-slate-300 shadow text-white rounded-md text-xl border-y border-transparent py-2 font-semibold px-3 hover:bg-green-600 mx-2 my-2">
-    <a class="text-white" href="/category/op/" style="font-size: 84%">
-      OP (1)
-    </a>
-  </span>
-  
-  <span class="site-tag bg-slate-300 shadow text-white rounded-md text-xl border-y border-transparent py-2 font-semibold px-3 hover:bg-green-600 mx-2 my-2">
-    <a class="text-white" href="/category/se/" style="font-size: 84%">
-      SE (1)
-    </a>
-  </span>
-  
-  <span class="site-tag bg-slate-300 shadow text-white rounded-md text-xl border-y border-transparent py-2 font-semibold px-3 hover:bg-green-600 mx-2 my-2">
-    <a class="text-white" href="/category/testing/" style="font-size: 92%">
-      Testing (3)
-    </a>
-  </span>
-  
-</div>
+  <section style="grid-area: categories">
+    <h3 class="mb-4 text-2xl font-bold tracking-tight text-black md:text-2xl"> Categories </h3>
+    <div class="tags-cloud flex flex-wrap">
+      
+    
+    <span 
+      class="site-tag bg-teal-600 text-white rounded-md  border-y border-transparent font-medium	py-1 px-3 hover:bg-teal-900 mx-2 my-2">
+      <a class="text-white" href="/category/deep-learning/">
+        Deep Learning 
+      </a>
+    </span>
+    
+    <span 
+      class="site-tag bg-teal-600 text-white rounded-md  border-y border-transparent font-medium	py-1 px-3 hover:bg-teal-900 mx-2 my-2">
+      <a class="text-white" href="/category/dummy/">
+        Dummy 
+      </a>
+    </span>
+    
+    <span 
+      class="site-tag bg-teal-600 text-white rounded-md  border-y border-transparent font-medium	py-1 px-3 hover:bg-teal-900 mx-2 my-2">
+      <a class="text-white" href="/category/machine-learning/">
+        Machine Learning 
+      </a>
+    </span>
+    
+    <span 
+      class="site-tag bg-teal-600 text-white rounded-md  border-y border-transparent font-medium	py-1 px-3 hover:bg-teal-900 mx-2 my-2">
+      <a class="text-white" href="/category/se/">
+        SE 
+      </a>
+    </span>
+    
+    <span 
+      class="site-tag bg-teal-600 text-white rounded-md  border-y border-transparent font-medium	py-1 px-3 hover:bg-teal-900 mx-2 my-2">
+      <a class="text-white" href="/category/testing/">
+        Testing 
+      </a>
+    </span>
+    
 
-<h3 class="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl"> Most Recent. </h3>
+    </div>
+    
+  </section>
 
-<a class="w-full" href="/machine-learning/2023/06/27/chi-square-feature-selection-ml/">
-  <div class="w-full mb-8">
-    <div class="flex flex-col md:flex-row">
-      <div class="flex-none mt-1.5 mr-5 mb-4 w-full md:w-48 md:h-full relative rounded-sm ">
-        
-        <img alt="Post image feature" src="/assets/media/feature/Chi-Square.jpg" loading="lazy" class="w-full rounded">
+  <section class="" style="grid-area: popular">
+    <h3 class="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-2xl"> Popular Posts </h3>
+    
+    <a class="w-full" href="/machine-learning/2023/06/27/chi-square-feature-selection-ml/">
+      <div class="w-full mb-4 flex justifty-start items-start">
+        <span class="w-4 h-4 mt-2 mr-4"><svg class="block w-full h-full" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg></span>
+        <h4 class="w-full text-lg font-bold text-gray-900 dark:text-gray-300	md:text-lg hover:text-blue-500">
+          Lựa chọn đặc trưng trong học máy bằng kiểm tra Chi-Square
+        </h4>
+      </div>
+    </a>
+    
+    <a class="w-full" href="/deep-learning/2023/05/13/tu-noron-sinh-hoc-den-noron-nhan-tao/">
+      <div class="w-full mb-4 flex justifty-start items-start">
+        <span class="w-4 h-4 mt-2 mr-4"><svg class="block w-full h-full" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg></span>
+        <h4 class="w-full text-lg font-bold text-gray-900 dark:text-gray-300	md:text-lg hover:text-blue-500">
+          Từ nơ-ron sinh học đến nơ-ron nhân tạo
+        </h4>
+      </div>
+    </a>
+    
+    <a class="w-full" href="/testing/2023/05/13/kiem-thu-gia-tri-bien/">
+      <div class="w-full mb-4 flex justifty-start items-start">
+        <span class="w-4 h-4 mt-2 mr-4"><svg class="block w-full h-full" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg></span>
+        <h4 class="w-full text-lg font-bold text-gray-900 dark:text-gray-300	md:text-lg hover:text-blue-500">
+          Kiểm thử bằng phương pháp phân tích giá trị biên
+        </h4>
+      </div>
+    </a>
+    
+    <a class="w-full" href="/testing/2023/05/01/k6-vs-jmeter/">
+      <div class="w-full mb-4 flex justifty-start items-start">
+        <span class="w-4 h-4 mt-2 mr-4"><svg class="block w-full h-full" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg></span>
+        <h4 class="w-full text-lg font-bold text-gray-900 dark:text-gray-300	md:text-lg hover:text-blue-500">
+          Điểm mạnh/yếu công cụ kiểm thử chịu tải tự động k6 với các đối thủ
+        </h4>
+      </div>
+    </a>
+    
+    <a class="w-full" href="/testing/2023/03/25/two-pairs-testing/">
+      <div class="w-full mb-4 flex justifty-start items-start">
+        <span class="w-4 h-4 mt-2 mr-4"><svg class="block w-full h-full" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg></span>
+        <h4 class="w-full text-lg font-bold text-gray-900 dark:text-gray-300	md:text-lg hover:text-blue-500">
+          Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)
+        </h4>
+      </div>
+    </a>
+    
+  </section>
+
+  <div class="" style="grid-area: posts;">
+    <div class="relative w-full mb-16">
+      <div class="w-full flex justify-center">
+        <div class="w-2/4 relative">
+          <svg class="absolute w-5 h-5 text-gray-400 left-3 top-3" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+          <input type="text" id="search-input"
+        class="w-full box-border pl-10 py-2 text-gray-900 bg-white border border-solid border-slate-300	rounded-2xl"
+        placeholder="Search...">
+        </div>
         
       </div>
-      <div class="w-full">
-        <div class="flex flex-col justify-between md:flex-row">
-          <h4 class="w-full mb-2 text-lg font-semibold text-gray-900 dark:text-gray-300	md:text-xl">
+      <ul id="results-container" class="hidden border border-solid border-gray-200 rounded-2xl shadow-lg shadow-gray-200"></ul>
+    </div>
+
+    
+    <a class="w-full text-black" href="/machine-learning/2023/06/27/chi-square-feature-selection-ml/">
+       <article class="p-6 w-full bg-white border border-solid border-gray-200 rounded-2xl shadow-lg shadow-gray-200 box-border mb-10">
+
+          <h2 class="w-full mb-4 text-3xl font-extrabold text-gray-900 hover:text-blue-500"> 
+
             Lựa chọn đặc trưng trong học máy bằng kiểm tra Chi-Square
-          </h4>
-          <p class="font-bold w-32 mb-4 text-left text-sky-900 md:text-right md:mb-0">
-            
-            Machine-Learning 
-            
-          </p>
-        </div>
-        <div class="text-gray-600"> <p>Lựa chọn đặc trưng là một trong những vấn đề quan trọng trong học máy, khi chúng ta có một đống cái đặc trưng và quyết định xem những đặc trưng nào là tốt nhất để xây dựng mô hình. Có nhiều phương pháp để lựa chọn đặc trưng, trong bài viết này tôi sẽ đưa giải pháp thực hiện bằng <strong>Chi-Square</strong>.</p>
- </div>
-      </div>
-    </div>
-  </div>
-</a>
+          </h2>
+          
+          <div class="mb-4 text-gray-600">
+            <p>Lựa chọn đặc trưng là một trong những vấn đề quan trọng trong học máy, khi chúng ta có một đống cái đặc trưng và quyết định xem những đặc trưng nào là tốt nhất để xây dựng mô hình. Có nhiều phương pháp để lựa chọn đặc trưng, trong bài viết này tôi sẽ đưa giải pháp thực hiện bằng <strong>Chi-Square</strong>.</p>
 
-<a class="w-full" href="/deep-learning/2023/05/13/tu-noron-sinh-hoc-den-noron-nhan-tao/">
-  <div class="w-full mb-8">
-    <div class="flex flex-col md:flex-row">
-      <div class="flex-none mt-1.5 mr-5 mb-4 w-full md:w-48 md:h-full relative rounded-sm ">
-        
-        <img alt="Post image feature" src="/assets/media/feature/no-ron-sinh-hoc.png" loading="lazy" class="w-full rounded">
-        
-      </div>
-      <div class="w-full">
-        <div class="flex flex-col justify-between md:flex-row">
-          <h4 class="w-full mb-2 text-lg font-semibold text-gray-900 dark:text-gray-300	md:text-xl">
+          </div>
+
+          <div class="flex justify-between items-center">
+            <div>
+              <span class="font-medium">
+                Machine Learning 
+                </span> •
+                <span>
+                  
+                  
+                  13 minutes
+                  
+                </span>
+            </div>
+
+            <div class="flex justify-center items-center border border-solid rounded-xl border-slate-300 px-4 py-1 gap-2">
+              Read more
+              <span class="inline-block w-3 h-3"><svg class="block w-full h-full" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 1L1 13M3 1h10v10" stroke="#000" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg></span>
+            </div>
+          </div>
+
+       </article>
+    </a>
+    
+    <a class="w-full text-black" href="/deep-learning/2023/05/13/tu-noron-sinh-hoc-den-noron-nhan-tao/">
+       <article class="p-6 w-full bg-white border border-solid border-gray-200 rounded-2xl shadow-lg shadow-gray-200 box-border mb-10">
+
+          <h2 class="w-full mb-4 text-3xl font-extrabold text-gray-900 hover:text-blue-500"> 
+
             Từ nơ-ron sinh học đến nơ-ron nhân tạo
-          </h4>
-          <p class="font-bold w-32 mb-4 text-left text-sky-900 md:text-right md:mb-0">
-            
-            Deep-Learning 
-            
-          </p>
-        </div>
-        <div class="text-gray-600"> <p>Con người lấy cảm hứng từ các loài chim để bay, loài sứa biển để điều trị ung thư, da cá mập để làm bề mặt vật liệu chống bám và còn rất nhiều phát minh khác lấy cảm hứng từ thiên nhiên. Vì thế, rất dễ hiểu khi ta xem xét cấu trúc bộ não sinh học để tìm cảm hứng cho việc xây dựng một bộ máy thông minh. Đây cũng chính là ý tưởng đằng sau của <strong>Mạng nơ-ron nhân tạo (artificial neural network - ANN)</strong>.</p>
- </div>
-      </div>
-    </div>
-  </div>
-</a>
+          </h2>
+          
+          <div class="mb-4 text-gray-600">
+            <p>Con người lấy cảm hứng từ các loài chim để bay, loài sứa biển để điều trị ung thư, da cá mập để làm bề mặt vật liệu chống bám và còn rất nhiều phát minh khác lấy cảm hứng từ thiên nhiên. Vì thế, rất dễ hiểu khi ta xem xét cấu trúc bộ não sinh học để tìm cảm hứng cho việc xây dựng một bộ máy thông minh. Đây cũng chính là ý tưởng đằng sau của <strong>Mạng nơ-ron nhân tạo (artificial neural network - ANN)</strong>.</p>
 
-<a class="w-full" href="/testing/2023/05/13/kiem-thu-gia-tri-bien/">
-  <div class="w-full mb-8">
-    <div class="flex flex-col md:flex-row">
-      <div class="flex-none mt-1.5 mr-5 mb-4 w-full md:w-48 md:h-full relative rounded-sm ">
-        
-        <img alt="Post image feature" src="/assets/media/feature/kiem-thu-gia-tri-bien.jpg" loading="lazy" class="w-full rounded">
-        
-      </div>
-      <div class="w-full">
-        <div class="flex flex-col justify-between md:flex-row">
-          <h4 class="w-full mb-2 text-lg font-semibold text-gray-900 dark:text-gray-300	md:text-xl">
+          </div>
+
+          <div class="flex justify-between items-center">
+            <div>
+              <span class="font-medium">
+                Deep Learning 
+                </span> •
+                <span>
+                  
+                  
+                  11 minutes
+                  
+                </span>
+            </div>
+
+            <div class="flex justify-center items-center border border-solid rounded-xl border-slate-300 px-4 py-1 gap-2">
+              Read more
+              <span class="inline-block w-3 h-3"><svg class="block w-full h-full" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 1L1 13M3 1h10v10" stroke="#000" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg></span>
+            </div>
+          </div>
+
+       </article>
+    </a>
+    
+    <a class="w-full text-black" href="/testing/2023/05/13/kiem-thu-gia-tri-bien/">
+       <article class="p-6 w-full bg-white border border-solid border-gray-200 rounded-2xl shadow-lg shadow-gray-200 box-border mb-10">
+
+          <h2 class="w-full mb-4 text-3xl font-extrabold text-gray-900 hover:text-blue-500"> 
+
             Kiểm thử bằng phương pháp phân tích giá trị biên
-          </h4>
-          <p class="font-bold w-32 mb-4 text-left text-sky-900 md:text-right md:mb-0">
-            
-            Testing 
-            
-          </p>
-        </div>
-        <div class="text-gray-600"> <p>Trong quá trình phát triển phần mềm, kiểm thử là một bước không thể thiếu để đảm bảo chất lượng và độ tin cậy của sản phẩm. Trong số các phương pháp kiểm thử, kiểm thử phân tích giá trị biên (Boundary Value Analysis) đã được đánh giá cao vì tính hiệu quả và độ chính xác của nó. Phương pháp này giúp tập trung kiểm thử vào các giá trị biên của dữ liệu đầu vào, từ đó giảm thiểu thời gian và chi phí kiểm thử.</p>
- </div>
-      </div>
-    </div>
-  </div>
-</a>
+          </h2>
+          
+          <div class="mb-4 text-gray-600">
+            <p>Trong quá trình phát triển phần mềm, kiểm thử là một bước không thể thiếu để đảm bảo chất lượng và độ tin cậy của sản phẩm. Trong số các phương pháp kiểm thử, kiểm thử phân tích giá trị biên (Boundary Value Analysis) đã được đánh giá cao vì tính hiệu quả và độ chính xác của nó. Phương pháp này giúp tập trung kiểm thử vào các giá trị biên của dữ liệu đầu vào, từ đó giảm thiểu thời gian và chi phí kiểm thử.</p>
 
+          </div>
 
-<h3 class="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl"> All Posts. </h3>
+          <div class="flex justify-between items-center">
+            <div>
+              <span class="font-medium">
+                Testing 
+                </span> •
+                <span>
+                  
+                  
+                  9 minutes
+                  
+                </span>
+            </div>
 
-<a class="w-full" href="/machine-learning/2023/06/27/chi-square-feature-selection-ml/">
-  <div class="w-full mb-8">
-    <div class="flex flex-col md:flex-row">
-      <div class="flex-none mt-1.5 mr-5 w-full mb-4 md:w-40 md:h-full relative rounded-sm">
-        
-        <img alt="Post image feature" src="/assets/media/feature/Chi-Square.jpg" loading="lazy" class="w-full rounded">
-        
-      </div>
-      <div class="w-full">
-        <div class="flex flex-col justify-between md:flex-row">
-          <h4 class="w-full mb-2 text-lg font-semibold text-gray-900 md:text-xl">
-            Lựa chọn đặc trưng trong học máy bằng kiểm tra Chi-Square
-          </h4>
-          <p class="font-bold w-32 mb-4 text-left text-sky-900 md:text-right md:mb-0">
-            
-            Machine-Learning 
-            
-          </p>
-        </div>
-        <div class="text-gray-600"> <p>Lựa chọn đặc trưng là một trong những vấn đề quan trọng trong học máy, khi chúng ta có một đống cái đặc trưng và quyết định xem những đặc trưng nào là tốt nhất để xây dựng mô hình. Có nhiều phương pháp để lựa chọn đặc trưng, trong bài viết này tôi sẽ đưa giải pháp thực hiện bằng <strong>Chi-Square</strong>.</p>
- </div>
-      </div>
-    </div>
-  </div>
-</a>
+            <div class="flex justify-center items-center border border-solid rounded-xl border-slate-300 px-4 py-1 gap-2">
+              Read more
+              <span class="inline-block w-3 h-3"><svg class="block w-full h-full" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 1L1 13M3 1h10v10" stroke="#000" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg></span>
+            </div>
+          </div>
 
-<a class="w-full" href="/deep-learning/2023/05/13/tu-noron-sinh-hoc-den-noron-nhan-tao/">
-  <div class="w-full mb-8">
-    <div class="flex flex-col md:flex-row">
-      <div class="flex-none mt-1.5 mr-5 w-full mb-4 md:w-40 md:h-full relative rounded-sm">
-        
-        <img alt="Post image feature" src="/assets/media/feature/no-ron-sinh-hoc.png" loading="lazy" class="w-full rounded">
-        
-      </div>
-      <div class="w-full">
-        <div class="flex flex-col justify-between md:flex-row">
-          <h4 class="w-full mb-2 text-lg font-semibold text-gray-900 md:text-xl">
-            Từ nơ-ron sinh học đến nơ-ron nhân tạo
-          </h4>
-          <p class="font-bold w-32 mb-4 text-left text-sky-900 md:text-right md:mb-0">
-            
-            Deep-Learning 
-            
-          </p>
-        </div>
-        <div class="text-gray-600"> <p>Con người lấy cảm hứng từ các loài chim để bay, loài sứa biển để điều trị ung thư, da cá mập để làm bề mặt vật liệu chống bám và còn rất nhiều phát minh khác lấy cảm hứng từ thiên nhiên. Vì thế, rất dễ hiểu khi ta xem xét cấu trúc bộ não sinh học để tìm cảm hứng cho việc xây dựng một bộ máy thông minh. Đây cũng chính là ý tưởng đằng sau của <strong>Mạng nơ-ron nhân tạo (artificial neural network - ANN)</strong>.</p>
- </div>
-      </div>
-    </div>
-  </div>
-</a>
+       </article>
+    </a>
+    
+    <a class="w-full text-black" href="/testing/2023/05/01/k6-vs-jmeter/">
+       <article class="p-6 w-full bg-white border border-solid border-gray-200 rounded-2xl shadow-lg shadow-gray-200 box-border mb-10">
 
-<a class="w-full" href="/testing/2023/05/13/kiem-thu-gia-tri-bien/">
-  <div class="w-full mb-8">
-    <div class="flex flex-col md:flex-row">
-      <div class="flex-none mt-1.5 mr-5 w-full mb-4 md:w-40 md:h-full relative rounded-sm">
-        
-        <img alt="Post image feature" src="/assets/media/feature/kiem-thu-gia-tri-bien.jpg" loading="lazy" class="w-full rounded">
-        
-      </div>
-      <div class="w-full">
-        <div class="flex flex-col justify-between md:flex-row">
-          <h4 class="w-full mb-2 text-lg font-semibold text-gray-900 md:text-xl">
-            Kiểm thử bằng phương pháp phân tích giá trị biên
-          </h4>
-          <p class="font-bold w-32 mb-4 text-left text-sky-900 md:text-right md:mb-0">
-            
-            Testing 
-            
-          </p>
-        </div>
-        <div class="text-gray-600"> <p>Trong quá trình phát triển phần mềm, kiểm thử là một bước không thể thiếu để đảm bảo chất lượng và độ tin cậy của sản phẩm. Trong số các phương pháp kiểm thử, kiểm thử phân tích giá trị biên (Boundary Value Analysis) đã được đánh giá cao vì tính hiệu quả và độ chính xác của nó. Phương pháp này giúp tập trung kiểm thử vào các giá trị biên của dữ liệu đầu vào, từ đó giảm thiểu thời gian và chi phí kiểm thử.</p>
- </div>
-      </div>
-    </div>
-  </div>
-</a>
+          <h2 class="w-full mb-4 text-3xl font-extrabold text-gray-900 hover:text-blue-500"> 
 
-<a class="w-full" href="/testing/2023/05/01/k6-vs-jmeter/">
-  <div class="w-full mb-8">
-    <div class="flex flex-col md:flex-row">
-      <div class="flex-none mt-1.5 mr-5 w-full mb-4 md:w-40 md:h-full relative rounded-sm">
-        
-        <img alt="Post image feature" src="/assets/media/feature/k6.png" loading="lazy" class="w-full rounded">
-        
-      </div>
-      <div class="w-full">
-        <div class="flex flex-col justify-between md:flex-row">
-          <h4 class="w-full mb-2 text-lg font-semibold text-gray-900 md:text-xl">
             Điểm mạnh/yếu công cụ kiểm thử chịu tải tự động k6 với các đối thủ
-          </h4>
-          <p class="font-bold w-32 mb-4 text-left text-sky-900 md:text-right md:mb-0">
-            
-            Testing 
-            
-          </p>
-        </div>
-        <div class="text-gray-600"> <p>Các công cụ kiểm thử tải (Load Testing Tool - LTT) đã trở nên rất phổ biến hiện nay, cả miễn phí và có phí, nguồn mở và nguồn đóng, và mỗi công cụ đều có điểm mạnh và yếu của riêng mình. Một số LTT được nhiều nhà phát triển sử dụng, có thể kể đến công cụ miễn phí như JMeter, Locus, fortio,… hay có tính phí như LoadNinja, Gatling,…  Và Grafana k6 (hay k6) là một trong số ấy.</p>
- </div>
-      </div>
-    </div>
-  </div>
-</a>
+          </h2>
+          
+          <div class="mb-4 text-gray-600">
+            <p>Các công cụ kiểm thử tải (Load Testing Tool - LTT) đã trở nên rất phổ biến hiện nay, cả miễn phí và có phí, nguồn mở và nguồn đóng, và mỗi công cụ đều có điểm mạnh và yếu của riêng mình. Một số LTT được nhiều nhà phát triển sử dụng, có thể kể đến công cụ miễn phí như JMeter, Locus, fortio,… hay có tính phí như LoadNinja, Gatling,…  Và Grafana k6 (hay k6) là một trong số ấy.</p>
 
-<a class="w-full" href="/testing/2023/03/25/two-pairs-testing/">
-  <div class="w-full mb-8">
-    <div class="flex flex-col md:flex-row">
-      <div class="flex-none mt-1.5 mr-5 w-full mb-4 md:w-40 md:h-full relative rounded-sm">
-        
-        <img alt="Post image feature" src="/assets/media/feature/testing.png" loading="lazy" class="w-full rounded">
-        
-      </div>
-      <div class="w-full">
-        <div class="flex flex-col justify-between md:flex-row">
-          <h4 class="w-full mb-2 text-lg font-semibold text-gray-900 md:text-xl">
+          </div>
+
+          <div class="flex justify-between items-center">
+            <div>
+              <span class="font-medium">
+                Testing 
+                </span> •
+                <span>
+                  
+                  
+                  20 minutes
+                  
+                </span>
+            </div>
+
+            <div class="flex justify-center items-center border border-solid rounded-xl border-slate-300 px-4 py-1 gap-2">
+              Read more
+              <span class="inline-block w-3 h-3"><svg class="block w-full h-full" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 1L1 13M3 1h10v10" stroke="#000" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg></span>
+            </div>
+          </div>
+
+       </article>
+    </a>
+    
+    <a class="w-full text-black" href="/testing/2023/03/25/two-pairs-testing/">
+       <article class="p-6 w-full bg-white border border-solid border-gray-200 rounded-2xl shadow-lg shadow-gray-200 box-border mb-10">
+
+          <h2 class="w-full mb-4 text-3xl font-extrabold text-gray-900 hover:text-blue-500"> 
+
             Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)
-          </h4>
-          <p class="font-bold w-32 mb-4 text-left text-sky-900 md:text-right md:mb-0">
-            
-            Testing 
-            
-          </p>
-        </div>
-        <div class="text-gray-600"> <p>Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp
+          </h2>
+          
+          <div class="mb-4 text-gray-600">
+            <p>Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp
 (Pairwise Testing hay All-Pairs Testing).</p>
- </div>
-      </div>
-    </div>
-  </div>
-</a>
 
-<a class="w-full" href="/op/2023/03/21/how-to-use-svg-to-show-images/">
-  <div class="w-full mb-8">
-    <div class="flex flex-col md:flex-row">
-      <div class="flex-none mt-1.5 mr-5 w-full mb-4 md:w-40 md:h-full relative rounded-sm">
-        
-        <img alt="Post image feature" src="/assets/media/feature/default.jpg" loading="lazy" class="w-full rounded">
-        
-      </div>
-      <div class="w-full">
-        <div class="flex flex-col justify-between md:flex-row">
-          <h4 class="w-full mb-2 text-lg font-semibold text-gray-900 md:text-xl">
-            Sử dụng SVG như một Placeholder
-          </h4>
-          <p class="font-bold w-32 mb-4 text-left text-sky-900 md:text-right md:mb-0">
-            
-            OP 
-            
-          </p>
-        </div>
-        <div class="text-gray-600"> <p>Trong post này chúng ta sẽ nói về:</p>
-<ul>
-  <li>Tổng quan về các loại placeholder</li>
-  <li>SVG-based placeholders (edges, shapes and silhouettes)</li>
-  <li>Auto các process</li>
-</ul>
- </div>
-      </div>
-    </div>
-  </div>
-</a>
+          </div>
 
-<a class="w-full" href="/se/2023/02/27/software-models-chapter-1/">
-  <div class="w-full mb-8">
-    <div class="flex flex-col md:flex-row">
-      <div class="flex-none mt-1.5 mr-5 w-full mb-4 md:w-40 md:h-full relative rounded-sm">
-        
-        <img alt="Post image feature" src="/assets/media/feature/Software-Development-Life-Cycle.png" loading="lazy" class="w-full rounded">
-        
-      </div>
-      <div class="w-full">
-        <div class="flex flex-col justify-between md:flex-row">
-          <h4 class="w-full mb-2 text-lg font-semibold text-gray-900 md:text-xl">
+          <div class="flex justify-between items-center">
+            <div>
+              <span class="font-medium">
+                Testing 
+                </span> •
+                <span>
+                  
+                  
+                  4 minutes
+                  
+                </span>
+            </div>
+
+            <div class="flex justify-center items-center border border-solid rounded-xl border-slate-300 px-4 py-1 gap-2">
+              Read more
+              <span class="inline-block w-3 h-3"><svg class="block w-full h-full" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 1L1 13M3 1h10v10" stroke="#000" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg></span>
+            </div>
+          </div>
+
+       </article>
+    </a>
+    
+    <a class="w-full text-black" href="/se/2023/02/27/software-models-chapter-1/">
+       <article class="p-6 w-full bg-white border border-solid border-gray-200 rounded-2xl shadow-lg shadow-gray-200 box-border mb-10">
+
+          <h2 class="w-full mb-4 text-3xl font-extrabold text-gray-900 hover:text-blue-500"> 
+
             Một số mô hình phát triển phần mềm (Phần 1)
-          </h4>
-          <p class="font-bold w-32 mb-4 text-left text-sky-900 md:text-right md:mb-0">
-            
-            SE 
-            
-          </p>
-        </div>
-        <div class="text-gray-600"> <p>Mô hình phát triển phần mềm là thể hiện trừu tượng của các tiến trình phát triển phần mềm. Nó xác định các pha/ giai đoạn trong phát triển phần mềm. Trong các dự án phát triển phần mềm, mô hình đóng vai trò rất quan trọng. Mô hình đóng vai trò là hướng đi và quyết định đến chất lượng đầu ra của sản phẩm.</p>
- </div>
-      </div>
-    </div>
-  </div>
-</a>
+          </h2>
+          
+          <div class="mb-4 text-gray-600">
+            <p>Mô hình phát triển phần mềm là thể hiện trừu tượng của các tiến trình phát triển phần mềm. Nó xác định các pha/ giai đoạn trong phát triển phần mềm. Trong các dự án phát triển phần mềm, mô hình đóng vai trò rất quan trọng. Mô hình đóng vai trò là hướng đi và quyết định đến chất lượng đầu ra của sản phẩm.</p>
 
-<a class="w-full" href="/dummy/2023/02/22/about-this-blog/">
-  <div class="w-full mb-8">
-    <div class="flex flex-col md:flex-row">
-      <div class="flex-none mt-1.5 mr-5 w-full mb-4 md:w-40 md:h-full relative rounded-sm">
-        
-        <img alt="Post image feature" src="/assets/media/feature/about-this-blog.jpg" loading="lazy" class="w-full rounded">
-        
-      </div>
-      <div class="w-full">
-        <div class="flex flex-col justify-between md:flex-row">
-          <h4 class="w-full mb-2 text-lg font-semibold text-gray-900 md:text-xl">
+          </div>
+
+          <div class="flex justify-between items-center">
+            <div>
+              <span class="font-medium">
+                SE 
+                </span> •
+                <span>
+                  
+                  
+                  18 minutes
+                  
+                </span>
+            </div>
+
+            <div class="flex justify-center items-center border border-solid rounded-xl border-slate-300 px-4 py-1 gap-2">
+              Read more
+              <span class="inline-block w-3 h-3"><svg class="block w-full h-full" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 1L1 13M3 1h10v10" stroke="#000" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg></span>
+            </div>
+          </div>
+
+       </article>
+    </a>
+    
+    <a class="w-full text-black" href="/dummy/2023/02/22/about-this-blog/">
+       <article class="p-6 w-full bg-white border border-solid border-gray-200 rounded-2xl shadow-lg shadow-gray-200 box-border mb-10">
+
+          <h2 class="w-full mb-4 text-3xl font-extrabold text-gray-900 hover:text-blue-500"> 
+
             Một bài giới thiệu về cái blog nho nhỏ này
-          </h4>
-          <p class="font-bold w-32 mb-4 text-left text-sky-900 md:text-right md:mb-0">
-            
-            Dummy 
-            
-          </p>
-        </div>
-        <div class="text-gray-600"> <p>Chào!
+          </h2>
+          
+          <div class="mb-4 text-gray-600">
+            <p>Chào!
 Hmm, đầu tiên phải giới thiệu đôi chút về bản thân nhỉ? À chắc không cần, vì mấy cái câu giới thiệu bản thân tớ 
 viết đi viết lại ở hầu hết mọi trang của blog rồi… LOL.</p>
- </div>
-      </div>
-    </div>
+
+          </div>
+
+          <div class="flex justify-between items-center">
+            <div>
+              <span class="font-medium">
+                Dummy 
+                </span> •
+                <span>
+                  
+                  
+                  3 minutes
+                  
+                </span>
+            </div>
+
+            <div class="flex justify-center items-center border border-solid rounded-xl border-slate-300 px-4 py-1 gap-2">
+              Read more
+              <span class="inline-block w-3 h-3"><svg class="block w-full h-full" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 1L1 13M3 1h10v10" stroke="#000" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg></span>
+            </div>
+          </div>
+
+       </article>
+    </a>
+    
   </div>
-</a>
+</div>
+
 
 
 <script async src="/assets/js/simple-jekyll-search.min.js"></script>
