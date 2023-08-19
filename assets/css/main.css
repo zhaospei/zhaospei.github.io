@@ -92,7 +92,10 @@
     .bloglayouts {
       grid-template-columns: 1fr; 
       grid-template-rows: auto; 
-      grid-template-areas: 'posts' 'categories' 'popular';
+      grid-template-areas: 
+        "posts" 
+        "categories" 
+        "popular";
     }
     
     @media only screen and (min-width: 778px) {
