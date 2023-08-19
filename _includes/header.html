@@ -24,7 +24,7 @@
     <nav
         class="flex items-center justify-between relative max-w-3xl bg-gray-200 rounded-3xl border-gray-200 mx-auto md:px-2 text-gray-900">
         {% for item in site.data.navigation %}
-        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-200 transition-all dark:text-gray-100 dark:hover:hover:bg-gray-700"
+        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-white transition-all dark:text-gray-100"
             {% if page.url==item.link %} style="background-color: white;" {% endif %} href="{{ item.link }}"><span
                 class="capsize">{{ item.name }}</span></a>
         {% endfor %}
