@@ -17,6 +17,7 @@
 
     ::-webkit-scrollbar-track {
       background: rgb(247, 241, 243);
+      @aplly dark:bg-zinc-800;
     }
 
     ::-webkit-scrollbar-thumb {
