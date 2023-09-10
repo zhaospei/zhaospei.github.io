@@ -80,12 +80,12 @@ layout: default
                         {% else %}
                         <img src="/assets/media/author/default_img.jpeg" alt="{{ author.name }}">
                         {% endif %}
-                        <p class="ml-2 text-sm text-gray-700">
+                        <p class="ml-2 text-sm text-gray-700 dark:text-gray-300">
                             {{ author.name }} / {{ page.date | date: "%B %-d, %Y" }}
                         </p>
                         {% endif %}
                     </div>
-                    <p class="mt-2 text-sm text-gray-600 min-w-32 md:mt-0">
+                    <p class="mt-2 text-sm text-gray-600 min-w-32 md:mt-0 dark:text-gray-300">
                         {% include reading-time.html %}
                     </p>
                 </div>
@@ -115,7 +115,7 @@ layout: default
         <div class="ml-8 mt-8 mb-8 font-normal">
             <b class="font-semibold text-xl"> Tags: </b>
             {% for tag in page.tags %}
-            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400"
+            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800"
                 href="/tag/{{tag}}"> {{ tag }} </a>
             {% endfor %}
         </div>
