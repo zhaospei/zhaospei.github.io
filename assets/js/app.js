@@ -4,7 +4,7 @@ const moonIcon = document.querySelector(".moon");
 const userTheme = localStorage.getItem("theme");
 const systemTheme = window.matchMedia("(prefers-color-scheme:dark)").matches;
 
-const svg = document.querySelector(".svg-change-color");
+const svg = document.querySelectorAll(".svg-change-color");
 
 function getCurrentURL () {
     return window.location.pathname
@@ -52,16 +52,28 @@ const iconToggle = () => {
     sunIcon.classList.toggle("hidden");
 };
 
+const svgDark = () => {
+    for (i = 0; i < svg.length; i++) {
+        svg[i].classList.add("fill-white");
+        svg[i].classList.remove("fill-black");
+    }
+}
+
+const svgLight = () => {
+    for (i = 0; i < svg.length; i++) {
+        svg[i].classList.remove("fill-white");
+        svg[i].classList.add("fill-black");
+    }
+}
+
 const themeCheck = () => {
     if (userTheme === "dark" || (!userTheme && systemTheme)) {
         document.documentElement.classList.add("dark");
         sunIcon.classList.add("hidden");
-        svg.classList.add("fill-white");
-        svg.classList.remove("fill-black");
+        svgDark();
         return;
     }
-    svg.classList.remove("fill-white");
-    svg.classList.add("fill-black");
+    svgLight();
     moonIcon.classList.add("hidden");
 };
 
@@ -70,17 +82,13 @@ const themeSwitch = () => {
     if (document.documentElement.classList.contains("dark")) {
         document.documentElement.classList.remove("dark");
         localStorage.setItem("theme", "light");
-        svg.classList.remove("fill-white");
-        svg.classList.add("fill-black");
-        console.log(svg);
+        svgLight();
         iconToggle();
         return;
     }
     document.documentElement.classList.add("dark");
     localStorage.setItem("theme", "dark");
-    svg.classList.add("fill-white");
-    svg.classList.remove("fill-black");
-    console.log(svg);
+    svgDark();
     iconToggle();
 }
 
