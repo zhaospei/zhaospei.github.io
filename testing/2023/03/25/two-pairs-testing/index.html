@@ -34,8 +34,8 @@
 <!-- End Jekyll SEO tag -->
 
   </head>
-  <body class="bg-gray-100 dark:bg-gray-800">
-    <div class="bg-gray-100 dark:bg-gray-800 opacity-95 max-w-5xl mx-auto p-4">
+  <body class="bg-gray-100 dark:bg-zinc-900 dark:text-white">
+    <div class="bg-gray-100 dark:bg-zinc-900 max-w-5xl mx-auto p-4">
       <div
     class="hidden fixed w-full h-screen inset-0 bg-gray-200 opacity-95 z-50 transition-transform transform ease-in-out duration-300 translate-x-0 mobile-menu">
     <button type="button" aria-label="toggle modal"
@@ -63,29 +63,31 @@
 
 <header class="grid justify-center w-full relative" style="grid-template-columns: 1fr auto 1fr;">
     <a style="max-width: 3rem;" href="/">
-        <span class="sr-only">home</span>
-        <img class="rounded-full" src="/assets/media/blog-icon.jpg">
+        <div class="text-dark dark:text-white flex items-center text-xl font-semibold" style="height: 48px;"> 
+            <span class="blog-link">~/</span>
+            <div class="Typewriter font-normal ml-1" data-testid="typewriter-wrapper"><span class="Typewriter__wrapper"></span><span class="Typewriter__cursor">|</span></div>
+        </div>
     </a>
     <nav
-        class="flex items-center justify-between relative max-w-3xl bg-gray-200 rounded-3xl border-gray-200 mx-auto md:px-2 text-gray-900">
+        class="flex items-center justify-between relative max-w-3xl bg-gray-200 rounded-3xl border-gray-200 mx-auto md:px-2 text-gray-900 dark:bg-zinc-800">
         
-        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-white transition-all dark:text-gray-100"
+        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-white transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
              href="/"><span
                 class="capsize">Home</span></a>
         
-        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-white transition-all dark:text-gray-100"
+        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-white transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
              href="/works.html"><span
                 class="capsize">Works</span></a>
         
-        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-white transition-all dark:text-gray-100"
+        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-white transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
              href="/blog.html"><span
                 class="capsize">Blog</span></a>
         
-        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-white transition-all dark:text-gray-100"
+        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-white transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
              href="/assets/BuiTuanDung-Resume-1.pdf"><span
                 class="capsize">Resume</span></a>
         
-        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-white transition-all dark:text-gray-100"
+        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-white transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
              href="/about/"><span
                 class="capsize">About</span></a>
         
@@ -106,8 +108,8 @@
                 <!-- -->
                 "dark"
             </span>
-            <div class="themeSwitchToggle w-12 h-6 bg-gray-200 rounded-3xl p-1 ml-4">
-                <div class="themeSwitchIcon w-6 h-6 bg-white rounded-full flex items-center justify-center">
+            <div class="themeSwitchToggle w-12 h-6 bg-gray-200 rounded-3xl p-1 ml-4 dark:bg-zinc-800">
+                <div class="themeSwitchIcon w-6 h-6 bg-white rounded-full flex items-center justify-center dark:bg-zinc-950">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-projection-id="1"
                         class="sun cursor-pointer w-3 h-3">
                         <circle cx="11.9998" cy="11.9998" r="5.75375" fill="#FFCE31" data-projection-id="2"
@@ -137,12 +139,12 @@
                 </div>
             </div>
         </label>
-        <a class="flex font-semibold items-center gap-2 text-black text-sm" href="/contact">
+        <a class="flex font-semibold items-center gap-2 text-black text-sm dark:text-white" href="/contact">
             Contact
-            <svg viewBox="0 0 513 513" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:1.2rem;">
+            <svg class="svg-change-color dark:text-white"viewBox="0 0 513 513" xmlns="http://www.w3.org/2000/svg" style="width:1.2rem;">
                 <path
                     d="M440 6.5L24 246.4c-34.4 19.9-31.1 70.8 5.7 85.9L144 379.6V464c0 46.4 59.2 65.5 86.6 28.6l43.8-59.1 111.9 46.2c5.9 2.4 12.1 3.6 18.3 3.6 8.2 0 16.3-2.1 23.6-6.2 12.8-7.2 21.6-20 23.9-34.5l59.4-387.2c6.1-40.1-36.9-68.8-71.5-48.9zM192 464v-64.6l36.6 15.1L192 464zm212.6-28.7l-153.8-63.5L391 169.5c10.7-15.5-9.5-33.5-23.7-21.2L155.8 332.6 48 288 464 48l-59.4 387.3z"
-                    fill="#000"></path>
+                    fill=""></path>
             </svg>
         </a>
     </div>
@@ -236,12 +238,12 @@
                         
                         <img class="object-cover w-[40px] h-[40px] rounded-full" src="/assets/media/author/zhao-img.png" alt="Tuan-Dung Bui">
                         
-                        <p class="ml-2 text-sm text-gray-700">
+                        <p class="ml-2 text-sm text-gray-700 dark:text-gray-300">
                             Tuan-Dung Bui / March 25, 2023
                         </p>
                         
                     </div>
-                    <p class="mt-2 text-sm text-gray-600 min-w-32 md:mt-0">
+                    <p class="mt-2 text-sm text-gray-600 min-w-32 md:mt-0 dark:text-gray-300">
                         
 
 4 min read
@@ -438,13 +440,13 @@
         <div class="ml-8 mt-8 mb-8 font-normal">
             <b class="font-semibold text-xl"> Tags: </b>
             
-            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400"
+            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800"
                 href="/tag/pairwise"> pairwise </a>
             
-            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400"
+            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800"
                 href="/tag/all-pairs"> all-pairs </a>
             
-            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400"
+            <a class="inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800"
                 href="/tag/testing"> testing </a>
             
         </div>
@@ -479,10 +481,6 @@
         border-radius: 4px;
         margin-left: 8px;
         padding: 2px;
-    }
-
-    #share-buttons>div:hover {
-        background-color: rgb(239, 242, 251);
     }
 
     #share-buttons>div>svg {
@@ -558,19 +556,19 @@
     <div id="share-container">
         <span style="font-weight: 600; font-size: 18px;">Share on: </span>
         <div id="share-buttons">
-            <div class="facebook" title="Share this on Facebook"
+            <div class="facebook hover:bg-gray-300 dark:hover:bg-zinc-800" title="Share this on Facebook"
                 onclick="window.open('http://www.facebook.com/share.php?u=https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/');"><svg
                     viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z" />
                 </svg></div>
-            <div class="twitter" title="Share this on Twitter"
+            <div class="twitter hover:bg-gray-300 dark:hover:bg-zinc-800" title="Share this on Twitter"
                 onclick="window.open('ttps://twitter.com/intent/tweet?text=https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/');"><svg
                     viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z" />
                 </svg></div>
-            <div class="reddit" title="Share this on Reddit"
+            <div class="reddit hover:bg-gray-300 dark:hover:bg-zinc-800" title="Share this on Reddit"
                 onclick="window.open('http://www.reddit.com/submit?url=https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/');">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <g>
@@ -580,7 +578,7 @@
                     </g>
                 </svg>
             </div>
-            <div class="linkedin" title="Share this on Linkedin"
+            <div class="linkedin hover:bg-gray-300 dark:hover:bg-zinc-800" title="Share this on Linkedin"
                 onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/&title=&summary=&source=');">
                 <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -602,7 +600,7 @@
         display: flex;
         position: relative;
         margin: 5em 0;
-        border-top: 1px solid #d4d4d4;
+        
         line-height: 1.4;
     }
 
@@ -618,7 +616,6 @@
     .page-navigation .nav-arrow {
         font-weight: 400;
         font-size: 14px;
-        color: #6b7886;
         margin-bottom: 3px;
     }
 
@@ -633,16 +630,16 @@
     }
 </style>
 
-<nav class="page-navigation w-full flex-col md:flex-row">
+<nav class="page-navigation w-full flex-col md:flex-row border-gray-300 dark:boder-gray-900 border-0 border-t border-solid ">
     
     <a class="prev w-full md:w-2/4" href="/se/2023/02/27/software-models-chapter-1/">
-        <div class="nav-arrow"> Previous </div>
+        <div class="nav-arrow text-gray-600 dark:text-gray-300"> Previous </div>
         <span class="post-title">Một số mô hình phát triển phần mềm (Phần 1)</span>
     </a>
     
     
     <a class="next w-full md:w-2/4" href="/testing/2023/05/01/k6-vs-jmeter/">
-        <div class="nav-arrow"> Next </div>
+        <div class="nav-arrow text-gray-600 dark:text-gray-300"> Next </div>
         <span class="post-title">Điểm mạnh/yếu công cụ kiểm thử chịu tải tự động k6 với các đối thủ</span>
     </a>
     
@@ -655,7 +652,7 @@
 <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
       </main>
     </div>
-    <footer class="flex flex-col justify-center items-center w-full bg-gray-200">
+    <footer class="flex flex-col justify-center items-center w-full bg-gray-200 dark:bg-zinc-800">
         <div
                 class="pt-8 pb-4 px-4 flex justify-center items-start w-full flex-col flex-wrap max-w-5xl box-border gap-4">
                 <h4 class="text-3xl font-extrabold"> Let's build something together!</h4>
@@ -673,7 +670,7 @@
                 <div class="flex justify-between items-center w-full mt-8">
                         <a style="max-width: 3rem;" href="/">
                                 <span class="sr-only">home</span>
-                                <img class="rounded-full" src="/assets/media/blog-icon.jpg">
+                                <img class="rounded-full" alt="blog-icon" src="/assets/media/blog-icon.jpg">
                         </a>
                         <div class="justify-center items-center gap-8 hidden md:flex">
                                 <a href="/sitemap.xml" rel="noreferrer noopener" target="_blank">
@@ -716,16 +713,18 @@
 
                 </div>
 
-                <span class="text-sm text-gray-700">
-                        © 2023 <span class="text-cyan-900">real</span> day, <span class="text-cyan-900">real</span>
+                <span class="text-sm text-gray-700 dark:text-gray-200">
+                        © 2023 <span class="text-cyan-900 dark:text-cyan-600">real</span> day, <span class="text-cyan-900 dark:text-cyan-600">real</span>
                         time. Dung BTuan. All rights reserved.
                 </span>
-                <small class="text-gray-600"> <a href="https://github.com/zhaospei/zhaospei.github.io" target="_blank"
+                <small class="text-gray-600 dark:text-gray-300"> <a href="https://github.com/zhaospei/zhaospei.github.io" target="_blank"
                                 rel="noreferrer noopener">polygon</a> theme on <a href="https://jekyllrb.com"
                                 target="_blank" rel="noreferrer noopener">jekyll</a> </small>
         </div>
 
 </footer>
+
+<div class="fill-dark fill-white"></div>
     <script src="/assets/js/vanilla-tilt.js"></script>
     <script src="/assets/js/app.js"></script>
   </body>
