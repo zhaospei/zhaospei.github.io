@@ -3,13 +3,13 @@ layout: page
 title: Works.
 permalink: /works.html
 color: "text-cyan-500"
-description: These are some personal projects I have been working on to learn more about different libraries and browser APIs. I like trying out “the last new thing” in a small project and publish it on my GitHub account, both as a personal reminder of what I did, and to help people looking for examples.
+description: Everything that I have built, alone or with someone 🔨
 ---
 <ul class="grid w-full grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-16 mb-10">
   {% for project in site.projects %}
   <li class="rounded w-full">
     <a href="{{ project.link }}">
-      <img src=" {{ project.img }}" alt="project-img" class="object-cover w-full md:h-36 lg:h-96 rounded-lg transition duration-300 hover:scale-105 " loading="lazy">
+      <img src=" {{ project.img }}" alt="project-img" class="object-cover w-full h-72 md:h-64 lg:h-96 rounded-lg transition duration-300 hover:scale-105 " loading="lazy">
     </a>
     <div class=" mt-4">
       

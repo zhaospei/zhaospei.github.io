@@ -98,6 +98,35 @@
         "categories" 
         "popular";
     }
+    .contact-header:hover svg {
+      transform: translate(5px,-7px) rotate(20deg);
+    }
+
+    .contact-header svg {
+      transition: transform .2s ease-out;
+    }
+    
+    .link-hover {
+      background-image: linear-gradient(currentColor,currentColor);
+      background-repeat: no-repeat;
+      background-position: 0 100%;
+      background-size: 0 1.7px;
+      transition: background-size .25s ease;
+    }
+
+    .container-hover:hover img{
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      -o-transform: scale(1.1);
+      transform: scale(1.1);
+      transition: all .25s;
+      
+    }
+
+    .link-hover:hover {
+      background-size: 100% 1.7px;
+    }
     
 
     @keyframes Typewriter-cursor {
