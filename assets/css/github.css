@@ -11,6 +11,10 @@ pre {
 
 pre, code {
     font-family: 'Azeret Mono', monospace;
+    padding: 2px 4px;
+    color: #4860b9;
+    font-size: .9em;
+    background: #d3dffc;
 }
 
 .highlight .hll { background-color: #ffffcc }

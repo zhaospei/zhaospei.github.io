@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<style>
+<!-- <style>
   .table-of-contents-container li a {
     color: rgb(122, 118, 119);
     font-weight: 500;
@@ -58,15 +58,15 @@ layout: default
       display: none;
     }
   }
-</style>
+</style> -->
 
-{% include reading-line.html %}
+<!-- {% include reading-line.html %} -->
 <div class="post-container">
   <article class="post-content-container flex flex-col items-start justify-center">
-    <header class="flex flex-col gap-12 w-full max-w-full">
+    <header class="flex flex-col gap-12 w-full max-w-full pb-8">
       <div class="flex flex-col justify-center gap-4">
-        <h1 class="text-5xl font-extrabold max-w-2xl leading-tight"> {{ page.title }} </h1>
-        <div class="flex flex-col items-start justify-between max-w-2xl mt-2 md:flex-row md:items-center">
+        <h1 class="text-5xl font-extrabold leading-tight"> {{ page.title }} </h1>
+        <div class="flex flex-col items-start justify-between mt-2 md:flex-row md:items-center">
           <div class="flex items-center">
             {% assign author = site.authors | where: 'short_name', page.author | first %}
             {% if author %}
@@ -87,14 +87,14 @@ layout: default
       </div>
     </header>
     <div class="flex justify-center w-full flex-row-reverse">
-      <aside class="table-of-contents-container ml-16 sticky top-16 mt-16" style="max-height: calc(100vh - 16.5rem);">
+      <!-- <aside class="table-of-contents-container ml-16 sticky top-16 mt-16" style="max-height: calc(100vh - 16.5rem);">
         <h2 class="uppercase tracking-widest text-base	font-extrabold mb-6"> Table of contents </h2>
         <nav class="overflow-auto pr-2" style="max-height: calc(100vh - 16.5rem);">
           {% toc %}
         </nav>
-      </aside>
-      <div class="items-center" style="max-width: min(720px,100%);">
-        <div class="thumbnail relative not-prose my-[2em] rounded-2xl overflow-hidden mx-auto sm:ml-[-2rem]">
+      </aside> -->
+      <div class="items-center pb-8" style="grid-template-rows: auto 1fr;">
+        <div class="thumbnail-image relative not-prose rounded-2xl overflow-hidden">
           {% if page.img-feature %}
           <img alt="Post image feature" src="{{ page.img-feature }}" loading="lazy" class="w-full">
           {% else %}
@@ -202,6 +202,6 @@ layout: default
   </article>
 </div>
 
-<script async src="{{site.cdn_baseurl}}/assets/js/scroll.js"></script>
+<!-- <script async src="{{site.cdn_baseurl}}/assets/js/scroll.js"></script> -->
 <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
   type="text/javascript"></script>
