@@ -43,9 +43,9 @@ switch (words[1]) {
         if (cc != undefined && cc.innerHTML == '404') {
             title.innerHTML = "~/404"
         } else {
-            wo = "~/" + words[1] + "/" + words[words.length - 2];
-            wo = wo.substring(0, 30) + '...';
-            title.innerHTML = wo;
+            // wo = "~/" + words[1] + "/" + words[words.length - 2];
+            // title.innerHTML = wo;
+            title.innerHTML = "~/post"
         }
 }
 
