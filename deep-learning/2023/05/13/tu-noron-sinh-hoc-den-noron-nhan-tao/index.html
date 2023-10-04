@@ -35,7 +35,7 @@
 
   </head>
   <body class="bg-gray-100 dark:bg-zinc-900 dark:text-white">
-    <div class="bg-gray-100 dark:bg-zinc-900 max-w-5xl mx-auto p-4">
+    <div class="bg-gray-100 dark:bg-zinc-900 mx-auto max-w-3xl px-3 sm:px-6 xl:max-w-5xl xl:px-0">
       <div
     class="hidden fixed w-full h-screen inset-0 bg-gray-200 opacity-95 z-50 transition-transform transform ease-in-out duration-300 translate-x-0 mobile-menu dark:bg-zinc-800">
     <button type="button" aria-label="toggle modal"
@@ -125,7 +125,7 @@
     </div>
 </header>
       <main class="flex flex-col justify-center py-16">
-          <style>
+          <!-- <style>
   .table-of-contents-container li a {
     color: rgb(122, 118, 119);
     font-weight: 500;
@@ -182,9 +182,9 @@
       display: none;
     }
   }
-</style>
+</style> -->
 
-<style>
+<!-- <style>
     .reading-line {
         position: fixed;
         top: 0;
@@ -195,13 +195,13 @@
 </style>
 
 <div class="reading-line">
-</div>
+</div> -->
 <div class="post-container">
   <article class="post-content-container flex flex-col items-start justify-center">
-    <header class="flex flex-col gap-12 w-full max-w-full">
+    <header class="flex flex-col gap-12 w-full max-w-full pb-8">
       <div class="flex flex-col justify-center gap-4">
-        <h1 class="text-5xl font-extrabold max-w-2xl leading-tight"> Từ nơ-ron sinh học đến nơ-ron nhân tạo </h1>
-        <div class="flex flex-col items-start justify-between max-w-2xl mt-2 md:flex-row md:items-center">
+        <h1 class="text-5xl font-extrabold leading-tight"> Từ nơ-ron sinh học đến nơ-ron nhân tạo </h1>
+        <div class="flex flex-col items-start justify-between mt-2 md:flex-row md:items-center">
           <div class="flex items-center">
             
             
@@ -223,7 +223,7 @@
       </div>
     </header>
     <div class="flex justify-center w-full flex-row-reverse">
-      <aside class="table-of-contents-container ml-16 sticky top-16 mt-16" style="max-height: calc(100vh - 16.5rem);">
+      <!-- <aside class="table-of-contents-container ml-16 sticky top-16 mt-16" style="max-height: calc(100vh - 16.5rem);">
         <h2 class="uppercase tracking-widest text-base	font-extrabold mb-6"> Table of contents </h2>
         <nav class="overflow-auto pr-2" style="max-height: calc(100vh - 16.5rem);">
           <ul id="toc" class="section-nav">
@@ -232,9 +232,9 @@
 <li class="toc-entry toc-h1"><a href="#từ-nơ-ron-sinh-học-đến-nơ-ron-nhân-tạo">Từ Nơ-ron Sinh học đến Nơ-ron Nhân tạo</a></li>
 </ul>
         </nav>
-      </aside>
-      <div class="items-center" style="max-width: min(720px,100%);">
-        <div class="thumbnail relative not-prose my-[2em] rounded-2xl overflow-hidden mx-auto sm:ml-[-2rem]">
+      </aside> -->
+      <div class="items-center pb-8" style="grid-template-rows: auto 1fr;">
+        <div class="thumbnail-image relative not-prose rounded-2xl overflow-hidden">
           
           <img alt="Post image feature" src="/assets/media/feature/no-ron-sinh-hoc.png" loading="lazy" class="w-full">
           
@@ -382,6 +382,46 @@
       <h2 class="mb-4 text-3xl max-w-3xl font-bold mb-8">Check my other posts 📚</h2>
       <div class="w-full items-start justify-center grid gap-8" style="grid-template-columns: 1fr 1fr 1fr; grid-gap: 3rem">
         
+        <a class="w-full container-hover" href="/nlp/2023/10/05/bert-pretrained-model/">
+          <div class="w-full">
+            <div class="mb-4 h-48 content-hover" style="transform: none;">
+              <div class="h-full relative">
+                <div data-loaded="true"><img class="transition-all" alt="" loading="lazy"
+                    decoding="async" data-nimg="fill" sizes="100vw"
+                    src="/assets/media/feature/bert.png"
+                    style="position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: cover; object-position: center center; color: transparent; border-radius: 1rem;">
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center justify-start text-gray-600 dark:text-gray-300 text-sm gap-2 px-2"><time>October 5, 2023</time>•
+              <span>
+              
+              2 min read
+              </span></div>
+            <h3 class="px-2 py-2 text-black dark:text-white text-2xl font-bold">[NLP] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</h3>
+          </div>
+        </a>
+        
+        <a class="w-full container-hover" href="/se/2023/07/02/what-is-bug/">
+          <div class="w-full">
+            <div class="mb-4 h-48 content-hover" style="transform: none;">
+              <div class="h-full relative">
+                <div data-loaded="true"><img class="transition-all" alt="" loading="lazy"
+                    decoding="async" data-nimg="fill" sizes="100vw"
+                    src="/assets/media/feature/Software-bugs.jpg"
+                    style="position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: cover; object-position: center center; color: transparent; border-radius: 1rem;">
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center justify-start text-gray-600 dark:text-gray-300 text-sm gap-2 px-2"><time>July 2, 2023</time>•
+              <span>
+              
+              4 min read
+              </span></div>
+            <h3 class="px-2 py-2 text-black dark:text-white text-2xl font-bold"> Bọ là gì? Defect, Fault, Error, Bug, Failure?</h3>
+          </div>
+        </a>
+        
         <a class="w-full container-hover" href="/machine-learning/2023/06/27/chi-square-feature-selection-ml/">
           <div class="w-full">
             <div class="mb-4 h-48 content-hover" style="transform: none;">
@@ -402,53 +442,13 @@
           </div>
         </a>
         
-        <a class="w-full container-hover" href="/deep-learning/2023/05/13/tu-noron-sinh-hoc-den-noron-nhan-tao/">
-          <div class="w-full">
-            <div class="mb-4 h-48 content-hover" style="transform: none;">
-              <div class="h-full relative">
-                <div data-loaded="true"><img class="transition-all" alt="" loading="lazy"
-                    decoding="async" data-nimg="fill" sizes="100vw"
-                    src="/assets/media/feature/no-ron-sinh-hoc.png"
-                    style="position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: cover; object-position: center center; color: transparent; border-radius: 1rem;">
-                </div>
-              </div>
-            </div>
-            <div class="flex items-center justify-start text-gray-600 dark:text-gray-300 text-sm gap-2 px-2"><time>May 13, 2023</time>•
-              <span>
-              
-              11 min read
-              </span></div>
-            <h3 class="px-2 py-2 text-black dark:text-white text-2xl font-bold">Từ nơ-ron sinh học đến nơ-ron nhân tạo</h3>
-          </div>
-        </a>
-        
-        <a class="w-full container-hover" href="/testing/2023/05/13/kiem-thu-gia-tri-bien/">
-          <div class="w-full">
-            <div class="mb-4 h-48 content-hover" style="transform: none;">
-              <div class="h-full relative">
-                <div data-loaded="true"><img class="transition-all" alt="" loading="lazy"
-                    decoding="async" data-nimg="fill" sizes="100vw"
-                    src="/assets/media/feature/kiem-thu-gia-tri-bien.jpg"
-                    style="position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: cover; object-position: center center; color: transparent; border-radius: 1rem;">
-                </div>
-              </div>
-            </div>
-            <div class="flex items-center justify-start text-gray-600 dark:text-gray-300 text-sm gap-2 px-2"><time>May 13, 2023</time>•
-              <span>
-              
-              9 min read
-              </span></div>
-            <h3 class="px-2 py-2 text-black dark:text-white text-2xl font-bold">Kiểm thử bằng phương pháp phân tích giá trị biên</h3>
-          </div>
-        </a>
-        
       </div>
     </section>
 
   </article>
 </div>
 
-<script async src="/assets/js/scroll.js"></script>
+<!-- <script async src="/assets/js/scroll.js"></script> -->
 <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
   type="text/javascript"></script>
       </main>

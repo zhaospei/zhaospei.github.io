@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <title>Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing) - Tuan-Dung Bui</title>
+    <title> Bọ là gì? Defect, Fault, Error, Bug, Failure? - Tuan-Dung Bui</title>
     <link rel="icon" type="image/x-icon" href="/assets/media/blog-icon.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,22 +15,22 @@
     <script src="/assets/js/main.js"></script>
     <link type="application/atom+xml" rel="alternate" href="https://zhaospei.github.io//feed.xml" title="Tuan-Dung Bui" />
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing) | Tuan-Dung Bui</title>
+<title>Bọ là gì? Defect, Fault, Error, Bug, Failure? | Tuan-Dung Bui</title>
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)" />
+<meta property="og:title" content="Bọ là gì? Defect, Fault, Error, Bug, Failure?" />
 <meta name="author" content="zhao" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp (Pairwise Testing hay All-Pairs Testing)." />
-<meta property="og:description" content="Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp (Pairwise Testing hay All-Pairs Testing)." />
-<link rel="canonical" href="https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/" />
-<meta property="og:url" content="https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/" />
+<meta name="description" content="Người đọc tự chịu trách nhiệm về tính xác thực của bài viết." />
+<meta property="og:description" content="Người đọc tự chịu trách nhiệm về tính xác thực của bài viết." />
+<link rel="canonical" href="https://zhaospei.github.io//se/2023/07/02/what-is-bug/" />
+<meta property="og:url" content="https://zhaospei.github.io//se/2023/07/02/what-is-bug/" />
 <meta property="og:site_name" content="Tuan-Dung Bui" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-03-25T00:00:00+07:00" />
+<meta property="article:published_time" content="2023-07-02T00:00:00+07:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)" />
+<meta property="twitter:title" content="Bọ là gì? Defect, Fault, Error, Bug, Failure?" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"zhao"},"dateModified":"2023-03-25T00:00:00+07:00","datePublished":"2023-03-25T00:00:00+07:00","description":"Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp (Pairwise Testing hay All-Pairs Testing).","headline":"Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/"},"url":"https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"zhao"},"dateModified":"2023-07-02T00:00:00+07:00","datePublished":"2023-07-02T00:00:00+07:00","description":"Người đọc tự chịu trách nhiệm về tính xác thực của bài viết.","headline":"Bọ là gì? Defect, Fault, Error, Bug, Failure?","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhaospei.github.io//se/2023/07/02/what-is-bug/"},"url":"https://zhaospei.github.io//se/2023/07/02/what-is-bug/"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -200,7 +200,7 @@
   <article class="post-content-container flex flex-col items-start justify-center">
     <header class="flex flex-col gap-12 w-full max-w-full pb-8">
       <div class="flex flex-col justify-center gap-4">
-        <h1 class="text-5xl font-extrabold leading-tight"> Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing) </h1>
+        <h1 class="text-5xl font-extrabold leading-tight">  Bọ là gì? Defect, Fault, Error, Bug, Failure? </h1>
         <div class="flex flex-col items-start justify-between mt-2 md:flex-row md:items-center">
           <div class="flex items-center">
             
@@ -209,7 +209,7 @@
             <img class="object-cover w-[40px] h-[40px] rounded-full" src="/assets/media/author/zhao-img.png" alt="Tuan-Dung Bui">
             
             <p class="ml-2 text-sm text-gray-700 dark:text-gray-300">
-              Tuan-Dung Bui / March 25, 2023
+              Tuan-Dung Bui / July 2, 2023
             </p>
             
           </div>
@@ -227,181 +227,49 @@
         <h2 class="uppercase tracking-widest text-base	font-extrabold mb-6"> Table of contents </h2>
         <nav class="overflow-auto pr-2" style="max-height: calc(100vh - 16.5rem);">
           <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h1"><a href="#định-nghĩa-thế-nào-là-all-pairs-testing">Định nghĩa: Thế nào là All-Pairs Testing?</a></li>
-<li class="toc-entry toc-h1"><a href="#số-test-cases-cần-sinh-cho-all-pairs-testing">Số test cases cần sinh cho All-Pairs Testing</a></li>
-<li class="toc-entry toc-h1"><a href="#cách-sinh-test-cho-all-pairs-testing">Cách sinh test cho All-Pairs Testing</a>
-<ul>
-<li class="toc-entry toc-h3"><a href="#bước-1-liệt-kê-các-giá-trị-của-các-tham-số-đầu-vào">Bước 1: Liệt kê các giá trị của các tham số đầu vào.</a></li>
-<li class="toc-entry toc-h3"><a href="#bước-2-đơn-giản-hóa-việc-sinh-test-cases-simplify">Bước 2: Đơn giản hóa việc sinh test cases (Simplify)</a></li>
-<li class="toc-entry toc-h3"><a href="#bước-3-sắp-xếp-các-biến-theo-miền-giá-trị">Bước 3: Sắp xếp các biến theo miền giá trị</a></li>
-<li class="toc-entry toc-h3"><a href="#bước-4-sắp-xếp-các-miền-giá-trị-của-các-biến-để-tạo-bộ-kiểm-thử">Bước 4: Sắp xếp các miền giá trị của các biến để tạo bộ kiểm thử</a></li>
-</ul>
-</li>
+<li class="toc-entry toc-h2"><a href="#người-đọc-tự-chịu-trách-nhiệm-về-tính-xác-thực-của-bài-viết">Người đọc tự chịu trách nhiệm về tính xác thực của bài viết.</a></li>
+<li class="toc-entry toc-h1"><a href="#một-cái-mở-bài-rất-là-ngắn">Một cái mở bài rất là ngắn</a></li>
+<li class="toc-entry toc-h1"><a href="#một-cái-thân-bài-rất-là-dài">Một cái thân bài rất là dài</a></li>
+<li class="toc-entry toc-h1"><a href="#một-cái-kết-bài-có-như-có">Một cái kết bài có như có</a></li>
 </ul>
         </nav>
       </aside> -->
       <div class="items-center pb-8" style="grid-template-rows: auto 1fr;">
         <div class="thumbnail-image relative not-prose rounded-2xl overflow-hidden">
           
-          <img alt="Post image feature" src="/assets/media/feature/testing.png" loading="lazy" class="w-full">
+          <img alt="Post image feature" src="/assets/media/feature/Software-bugs.jpg" loading="lazy" class="w-full">
           
         </div>
         <div class="post-content prose">
-          <p>Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp
-(Pairwise Testing hay All-Pairs Testing).</p>
+          <h2 id="người-đọc-tự-chịu-trách-nhiệm-về-tính-xác-thực-của-bài-viết">Người đọc tự chịu trách nhiệm về tính xác thực của bài viết.</h2>
 
-<h1 id="định-nghĩa-thế-nào-là-all-pairs-testing">Định nghĩa: Thế nào là All-Pairs Testing?</h1>
+<h1 id="một-cái-mở-bài-rất-là-ngắn">Một cái mở bài rất là ngắn</h1>
+<p>Chuyện là tuần vừa rồi tôi tham gia lab nghiên cứu ở trường và được giao đọc một bài báo khoa học. Nếu không nhầm thì mục đích của thầy khi bảo tôi đọc bài báo này là nắm được sơ qua “context” nghiên cứu của nhóm đang thực hiện.</p>
 
-<p>Theo <strong>ISTQB</strong>, <strong>All-Pairs Testing (hay Pairwise Testing)</strong> là một kỹ thuật kiểm thử hộp đen trong đó các test cases được thiết kế để thực hiện tất cả các tổ hợp có thể có của từng cặp tham số đầu vào. Tức là với mỗi cặp input đầu vào, tất cả các giá trị của cặp input đấy được phủ toàn bộ (Một test case có thể phủ được nhiều cặp input khác nhau).</p>
+<p>Do lần đầu tôi được giao đọc một bài báo khoa học (à trước đó có đọc, dịch gì đấy một bài rồi nhưng mà khi chú tâm thực hiện), thì tất nhiên chưa có kinh nghiệm nên là chỉ nghĩ đọc hiểu nghĩa, cái chung chung bài báo đang nói là gì, hiểu cách bài báo đang thực hiện, vân vân mây mây… Và rồi, sau một tuần được giao đọc bài báo thì mình lên gặp thầy trao đổi về hiểu biết của mình về bài báo. À thì mọi việc sẽ chả có gì nếu như cách đọc của mình là đúng.</p>
 
-<p>Kỹ thuật <strong>All-Pairs</strong> rất hữu ích để thiết kế các bài kiểm tra cho các ứng dụng liên quan đến nhiều tham số. Các thử nghiệm được thiết kế sao cho đối với mỗi cặp tham số đầu vào của một hệ thống, có tất cả các tổ hợp riêng biệt có thể có của các tham số đó. Do bộ thử nghiệm bao gồm tất cả các tổ hợp nên nó không toàn diện nhưng rất hiệu quả trong việc tìm lỗi.</p>
+<p>Nhưng <strong>KHÔNG</strong>, mình đã được khai sáng một đống tri thức mới. Thầy bảo mình không thể hiểu chung chung bài báo nói gì được mà phải nắm rõ và chính xác toàn bộ khái niệm mà bài báo đã đề cập như bài báo mình “được” đọc là <a href="https://ieeexplore.ieee.org/document/4408585?denied=">“Classifying Software Changes: Clean or Buggy?”</a> thì đầu tiên phải đặt câu hỏi <em>Software Changes</em> là gì? <em>Clean, Buggy</em> là gì? (Tất nhiên là trong “context” của bài báo).</p>
 
-<p>Kiểm thử <strong>All-Pairs</strong> được áp dụng phổ biến trong công nghiệp khi mà một số vấn đề chỉ được xảy ra bởi sự tương tác giữa các tham số đầu vào hoặc components. Kiểm thử <strong>All-Pairs</strong> có thể tìm được đến <strong>50 - 90%</strong> lỗi của phần mềm, hệ thống.</p>
+<p>Trong một đống thứ thầy nói và hỏi mình thì chắc thứ tồn đọng lại (khắc sâu mình nhất) là câu hỏi (cũng là câu hỏi đầu tiên) là: <strong>“Theo em, bug là gì?”</strong> (Vì tiêu đề bài báo có việc phân loại hai nhãn là Clean và Buggy mà). Lúc đấy, mình kiểu :))). Tại mình nghĩ là thầy sẽ vấn đề và hướng giải quyết của bài báo chứ không phải mấy câu hỏi lí thuyết như này. Và thầy doạ mình là không trả lời được sẽ hạ điểm (tất nhiên là đùa) môn mình kì trước (Do kì trước mình có tham gia lớp kiểm thử của thầy, không hiểu sao thầy vẫn còn nhớ mình :)).</p>
 
-<h1 id="số-test-cases-cần-sinh-cho-all-pairs-testing">Số test cases cần sinh cho All-Pairs Testing</h1>
-<p>Ta có công thức tính số lượng test cases cần sinh như sau:</p>
+<p>Và một đứa thường bỏ qua những thứ căn bản như mình thì tất nhiên chả bao giờ tìm hiểu định nghĩa nó là gì rồi và khi một từ thông dụng và được dùng rất nhiều trong cộng đồng lập trình như từ “bug” như thế thì mình trả lời đại khái là: <em>“Bug là lỗi phần mềm. Nó xảy ra khi phần mềm thực hiện sai và không đúng mong đợi đã được đề ra ban đầu”.</em> Và thầy nhìn mình, nhìn ánh mắt “trìu mến” mà thầy nhìn mình là mình biết chất lượng trả lời câu hỏi của mình như thế nào rồi. Xong thầy bảo, trong phát triển phần mềm, lỗi phần mềm không chỉ là bug, mà còn có <em>defect</em>, <em>fault</em>, <em>error</em>, <em>failure</em>. Lúc thầy nói mấy từ này mình chả nghe ra đâu (do trình nghe đọc tiếng anh mình hơi kém, thực ra là rất kém) đến lúc thầy viết ra mình và giải thích mình mới có thể hình dung ra những từ này. Và đấy là lí do mình viết bài viết này để “flex” (đùa chứ xem mình hiểu tới đâu và nhờ bạn đọc xác nhận lại giùm mình.).</p>
 
-<p><strong>Số lượng test case = Số lượng miền giá trị lớn nhất của các biến * Số lượng miền giá trị lớn nhất của các biến</strong></p>
+<h1 id="một-cái-thân-bài-rất-là-dài">Một cái thân bài rất là dài</h1>
+<p>Thực ra trên mạng có rất nhiều bài viết viết về vấn đề này rồi, bạn chỉ cần hỏi “ông Gu Gồ” là nó ra một đống cho bạn đọc nên là mình không đi sâu vào lắm mà chỉ sơ qua những gì mình hiểu được về nó và phân biệt những khái niệm đã nêu ở phần tiêu đề.</p>
 
-<p>Chứng minh tính đúng đắn của công thức:</p>
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/bug-vs-defect-vs-error-vs-fault-vs-failure.png" alt="" style="margin: auto;" />
+    <figcaption style="font-style: italic;"></figcaption>
+</figure>
 
-<h1 id="cách-sinh-test-cho-all-pairs-testing">Cách sinh test cho All-Pairs Testing</h1>
+<p><strong>Defects</strong>, like quality, can be defined in many different ways but are more commonly defined as deviations from specifications or expectations which might lead to <strong>failures</strong> in operation. <em>(Có thể dịch là: Defects, giống như Quality (Chất lượng phần mềm), có thể định nghĩa bằng nhiều cách khách nhau nhưng thường được định nghĩa là sai lệch so với thông số kỹ thuật hoặc mong đợi có thể dẫn đến failures khi vận hành.)</em></p>
 
-<p>Chúng ta sẽ lấy ví dụ cho <strong>Ứng dụng giao dịch xe</strong> với các yêu cầu sau:</p>
+<p>A software <strong>failure</strong> is <strong>observable</strong> software misbehavior; however, a <strong>defect</strong> may not always lead to a <strong>failure</strong>. <em>(Có thể dịch là: Failure là hành vi sai trái của phần mềm có thể quan sát được. Tuy nhiên, một defect không phải lúc nào cũng dẫn đến một failure.)</em></p>
 
-<ul>
-  <li>Ứng dụng giao dịch xe cho phép Mua và Bán xe.</li>
-  <li>Nó sẽ hỗ trợ giao dịch ở Delhi và Mumbai.</li>
-  <li>Ứng dụng phải có số đăng ký có thể hợp lệ hoặc không hợp lệ.</li>
-  <li>Nó sẽ cho phép giao dịch với các hãng xe: BMW, Audi và Mercedes.</li>
-  <li>Có thể thực hiện hai loại booking: E-booking và In-store.</li>
-  <li>Chỉ có thể đặt xe trong giờ giao dịch.</li>
-</ul>
+<p><strong>Defects</strong> colloquially called <strong>bugs</strong> in software artifacts, typically in the software source code. <em>(Có thể dịch là: Defects thường được gọi (một cách không chính thức) là bugs trong software artifacts (bất kỳ thứ gì tạo ra phần mềm), điển hình là mã nguồn.)</em></p>
 
-<p>Chúng ta sẽ thực hiện việc sinh test cho ca kiểm thử <strong>All-Pairs</strong> lần lượt theo các bước sau:</p>
-
-<h3 id="bước-1-liệt-kê-các-giá-trị-của-các-tham-số-đầu-vào">Bước 1: Liệt kê các giá trị của các tham số đầu vào.</h3>
-
-<p>Chúng ta có thể dễ dàng liêt kê các giá trị có thể có của các tham số đầu vào của ứng dụng như sau:</p>
-
-<ul>
-  <li><strong>Loại giao dịch</strong>: Mua, Bán.</li>
-  <li><strong>Vị trí</strong>: Delhi, Mumbai.</li>
-  <li><strong>Hãng xe</strong>: BMW, Audi, Mercedes.</li>
-  <li><strong>Số đăng ký xe</strong>: Valid (5000 giá trị), Invalid</li>
-  <li><strong>Cách thức giao dịch</strong>: E-Booking, In-store</li>
-  <li><strong>Thời gian giao dịch</strong>: Thời gian trong giờ làm việc, Thời gian ngoài giờ làm việc</li>
-</ul>
-
-<p>Nếu chúng ta sinh test cases cho toàn bộ các tổ hợp hợp lệ thì sẽ có đến:</p>
-<ul>
-  <li>2 . 2 . 3 . 5000 . 2 . 2 = <strong>24000</strong> test cases tổ hợp hợp lệ.</li>
-</ul>
-
-<p>Chưa kể chúng ta còn chưa tính đến các test cases không hợp lệ trong quá trình sinh test.</p>
-
-<h3 id="bước-2-đơn-giản-hóa-việc-sinh-test-cases-simplify">Bước 2: Đơn giản hóa việc sinh test cases (Simplify)</h3>
-<p>Chúng ta sẽ đơn giản việc sinh các test cases theo các cách:</p>
-<ul>
-  <li>Sử dụng một cách lẫy mẫu thông minh</li>
-  <li>Sử dụng các nhóm hay ranh giới, ngay cả khi dữ liệu không rời rạc.</li>
-</ul>
-
-<p>Theo đó chúng ta có thể giảm số đăng ký xuống còn hai loại: Valid và Invaild.</p>
-
-<p>Bây giờ, số test cases chúng ta sẽ phải sinh sẽ còn lại:</p>
-<ul>
-  <li>2 . 2 . 3 . 2 . 2 . 2  = <strong>96</strong> test cases.</li>
-</ul>
-
-<p>Woa Woa Woa! Chúng ta đã giảm số lượng các test case cần phải sinh một số rất lớn rồi đúng không? Nhưng đây vẫn chưa phải các sinh hợp lí để cho số lượng test cases nhỏ nhất có thể. Tiếp tục nào!</p>
-
-<h3 id="bước-3-sắp-xếp-các-biến-theo-miền-giá-trị">Bước 3: Sắp xếp các biến theo miền giá trị</h3>
-
-<p>Chúng ta tiến hành sắp xếp các biến theo thứ tự giảm dần số lượng miền giá trị: Tức biến có nhiều miền giá trị nhất sẽ được xếp đầu tiên  và biến có ít miền giá trị nhất được xếp cuối cùng. Sau khi sắp xếp, chúng ta sẽ có một bảng trông như thế này đây.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Hãng xe</th>
-      <th>Loại giao dịch</th>
-      <th>Vị trí</th>
-      <th>Số đăng ký xe</th>
-      <th>Cách thức giao dịch</th>
-      <th>Thời gian giao dịch</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="bước-4-sắp-xếp-các-miền-giá-trị-của-các-biến-để-tạo-bộ-kiểm-thử">Bước 4: Sắp xếp các miền giá trị của các biến để tạo bộ kiểm thử</h3>
-
-<p>Chúng ta sẽ lần lượt điền giá trị của bảng trống đã tạo phía trên theo từng cột một.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Hãng xe</th>
-      <th>Loại giao dịch</th>
-      <th>Vị trí</th>
-      <th>Số đăng ký xe</th>
-      <th>Cách thức giao dịch</th>
-      <th>Thời gian giao dịch</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>BMW</td>
-      <td>Mua</td>
-      <td>Delhi</td>
-      <td>Valid</td>
-      <td>E-booking</td>
-      <td>Trong giờ</td>
-    </tr>
-    <tr>
-      <td>Audi</td>
-      <td>Bán</td>
-      <td>Mumbai</td>
-      <td>Invalid</td>
-      <td>In-store</td>
-      <td>Ngoài giờ</td>
-    </tr>
-    <tr>
-      <td>Mercedes</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
-
+<h1 id="một-cái-kết-bài-có-như-có">Một cái kết bài có như có</h1>
+<p>Bài viết này khoảng một nửa là mình bịa, một nửa còn lại cũng bịa nốt.</p>
 
         </div>
 
@@ -409,18 +277,21 @@
           <b class="font-semibold text-lg"> Tags: </b>
           
           <a class="text-sm	inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800"
-            href="/tag/pairwise"> pairwise </a>
+            href="/tag/Bug"> Bug </a>
           
           <a class="text-sm	inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800"
-            href="/tag/all-pairs"> all-pairs </a>
+            href="/tag/Defect"> Defect </a>
           
           <a class="text-sm	inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800"
-            href="/tag/testing"> testing </a>
+            href="/tag/Fault"> Fault </a>
+          
+          <a class="text-sm	inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800"
+            href="/tag/Failure"> Failure </a>
           
         </div>
 
         <div class="flex justify-between items-center w-full flex-wrap gap-4 pb-4"><a class="" rel="noreferrer noopener"
-            target="_blank" href="https://github.com/zhaospei/zhaospei.github.io/tree/main/_posts/2023-03-25-two-pairs-testing.md"><span
+            target="_blank" href="https://github.com/zhaospei/zhaospei.github.io/tree/main/_posts/2023-07-02-what-is-bug.md"><span
               class="font-normal link-hover">Edit on Github</span><span class="inline-block w-3 h-3 ml-2 mt-1 mr-4"><svg
                 class="block w-full h-full" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round"
@@ -534,7 +405,7 @@
             <div class="flex items-center justify-start text-gray-600 dark:text-gray-300 text-sm gap-2 px-2"><time>June 27, 2023</time>•
               <span>
               
-              11 min read
+              13 min read
               </span></div>
             <h3 class="px-2 py-2 text-black dark:text-white text-2xl font-bold">Lựa chọn đặc trưng trong học máy bằng kiểm tra Chi-Square</h3>
           </div>
