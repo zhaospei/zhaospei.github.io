@@ -7,7 +7,9 @@ tags: ["Neuron", "Deep Learning"]
 img-feature: /assets/media/feature/no-ron-sinh-hoc.png
 ---
 
-Con người lấy cảm hứng từ các loài chim để bay, loài sứa biển để điều trị ung thư, da cá mập để làm bề mặt vật liệu chống bám và còn rất nhiều phát minh khác lấy cảm hứng từ thiên nhiên. Vì thế, rất dễ hiểu khi ta xem xét cấu trúc bộ não sinh học để tìm cảm hứng cho việc xây dựng một bộ máy thông minh. Đây cũng chính là ý tưởng đằng sau của **Mạng nơ-ron nhân tạo (artificial neural network - ANN)**. 
+Con người lấy cảm hứng từ các loài chim để bay, loài sứa biển để điều trị ung thư, da cá mập để làm bề mặt vật liệu chống bám và còn rất nhiều phát minh khác lấy cảm hứng từ thiên nhiên. 
+
+Vì thế, rất dễ hiểu khi ta xem xét cấu trúc bộ não sinh học để tìm cảm hứng cho việc xây dựng một bộ máy thông minh. Đây cũng chính là ý tưởng đằng sau của **Mạng nơ-ron nhân tạo (artificial neural network - ANN)**. 
 
 Tuy nhiên, dù máy bay lấy cảm hứng từ loài chim, chúng lại không cần phải vỗ cánh. Tương tự, ANN đã dần trở nên rất khác biệt so với phiên bản sinh học của nó. Một số nhà nghiên cứu còn cho rằng chúng ta nên ngừng sử dụng phép so sánh với sinh học (ví dụ như sử dụng từ "*đơn vị*" - "*unit*" - thay cho "*nơ-ron*"), vì lo rằng phép so sánh này sẽ giới hạn sự sáng tạo trong các hệ thống hợp lý về mặt sinh học.
 
