@@ -3,7 +3,7 @@
 
 @tailwind base;
 
-@layer base {
+@layer base {  
     html {
       font-family: 'Inter', sans-serif;
       scroll-behavior: smooth;
@@ -27,6 +27,11 @@
 
     ::-webkit-scrollbar-thumb:hover {
       background: rgb(101, 101, 101);
+    }
+
+    ul, ol {
+      list-style: revert;
+      margin-left: 2em;
     }
 
     a {

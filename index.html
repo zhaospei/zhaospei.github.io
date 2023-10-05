@@ -15,7 +15,7 @@ title: Home
                 <span class="clip-text"></span>
             </h2>
             <p class="text-gray-600 indent-8 mb-4 dark:text-gray-400">
-                I’m a second-year student, majoring in Information Technology. I'm pursuing Bachelor's Degree in
+                I’m a third-year student, majoring in Information Technology. I'm pursuing Bachelor's Degree in
                 Information Technology at University of Engineering and Technology (UET-VNU). Currently, I am
                 interested
                 in Machine Learning and hope to use artificial intelligence in medical sciences someday. I also love
@@ -132,6 +132,122 @@ title: Home
             </div>
         </div>
     </div>
+    <div class="max-w-3xl mx-auto">
+        <h3 class="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white"> Featured Posts. </h3>
+
+        <div class="flex gap-6 flex-col md:flex-row mx-auto">
+            {% for post in site.posts limit:1 %}
+            <a class="transform hover:scale-[1.05] transition-all rounded-xl w-full md:w-1/3 bg-gradient-to-r p-1 from-[#6EE7B7] via-[#3B82F6] to-[#9333EA] shadow-cyan-100 dark:shadow-cyan-900 shadow-lg"
+                href="{{ post.url }}">
+                <div class="box-border flex flex-col bg-white h-full rounded-lg dark:bg-zinc-800">
+                    <div class="flex-none mr-4 w-full mb-4 relative rounded-lg">
+                        {% if post.img-feature %}
+                        <img alt="Post image feature" src="{{ post.img-feature }}" loading="lazy"
+                            class="w-full rounded-t-lg">
+                        {% else %}
+                        <img alt="Post image feature" src="/assets/media/feature/default.jpg" loading="lazy"
+                            class="w-full rounded-t-lg">
+                        {% endif %}
+                    </div>
+                    <div class="flex flex-col justify-between p-4">
+                        <div class="flex flex-col md:flex-row justify-between">
+                            <h4 class="text-lg md:text-lg font-semibold mb-6 w-full text-gray-900 tracking-tight dark:text-white">
+                                {{ post.title }}
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+            {% for post in site.posts offset:1 limit:1 %}
+            <a class="transform hover:scale-[1.05] transition-all rounded-xl w-full md:w-1/3 bg-gradient-to-r p-1 from-[#FDE68A] via-[#FCA5A5] to-[#FECACA] shadow-[#FECACA] dark:shadow-yellow-700 shadow-lg"
+                href="{{ post.url }}">
+                <div class="box-border flex flex-col bg-white h-full rounded-lg dark:bg-zinc-800">
+                    <div class="flex-none mr-4 w-full mb-4 relative rounded-lg">
+                        {% if post.img-feature %}
+                        <img alt="Post image feature" src="{{ post.img-feature }}" loading="lazy"
+                            class="w-full rounded-t-lg">
+                        {% else %}
+                        <img alt="Post image feature" src="/assets/media/feature/default.jpg" loading="lazy"
+                            class="w-full rounded-t-lg">
+                        {% endif %}
+                    </div>
+                    <div class="flex flex-col justify-between p-4">
+                        <div class="flex flex-col md:flex-row justify-between">
+                            <h4 class="text-lg md:text-lg font-semibold mb-6 w-full text-gray-900 tracking-tight dark:text-white">
+                                {{ post.title }}
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+            {% for post in site.posts offset:2 limit:1 %}
+            <a class="transform hover:scale-[1.05] transition-all rounded-xl w-full md:w-1/3 bg-gradient-to-r p-1 from-[#D8B4FE] to-[#818CF8] shadow-[#818CF8] dark:shadow-sky-700	 shadow-lg"
+                href="{{ post.url }}">
+                <div class="box-border flex flex-col bg-white h-full rounded-lg dark:bg-zinc-800">
+                    <div class="flex-none mr-4 w-full mb-4 relative rounded-lg">
+                        {% if post.img-feature %}
+                        <img alt="Post image feature" src="{{ post.img-feature }}" loading="lazy"
+                            class="w-full rounded-t-lg">
+                        {% else %}
+                        <img alt="Post image feature" src="/assets/media/feature/default.jpg" loading="lazy"
+                            class="w-full rounded-t-lg">
+                        {% endif %}
+                    </div>
+                    <div class="flex flex-col justify-between p-4">
+                        <div class="flex flex-col md:flex-row justify-between">
+                            <h4 class="text-lg md:text-lg font-semibold mb-6 w-full text-gray-900 tracking-tight dark:text-white">
+                                {{ post.title }}
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+
+        <a class="flex mt-8 ml-4 text-gray-600 leading-7 rounded-lg hover:text-gray-800 transition-all h-6 dark:text-white dark:hover:text-gray-300"
+            href="/blog.html">
+            Read all posts
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="h-6 w-6 ml-1">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17.5 12h-15m11.667-4l3.333 4-3.333-4zm3.333 4l-3.333 4 3.333-4z"></path>
+            </svg>
+        </a>
+    </div>
 </div>
+
+<section class="mx-auto py-16 border-t border-slate-200 ">
+    <h2 class="text-xl font-semibold text-slate-900 tracking-tight dark:text-slate-300">Get all of our
+            updates directly to your&nbsp;inbox.<br>Sign up for my newsletter.</h2>
+    <div class="mt-5 max-w-md">
+            <form action="https://tinyletter.com/zhaospei" method="post"
+                    class="flex flex-wrap -mx-2">
+                    <div class="px-2 grow-[9999] mt-3">
+                            <div class="group relative"><svg viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" aria-hidden="true"
+                                            class="w-6 h-full absolute inset-y-0 left-3 text-slate-400 pointer-events-none group-focus-within:text-sky-500">
+                                            <path
+                                                    d="M5 7.92C5 6.86 5.865 6 6.931 6h10.138C18.135 6 19 6.86 19 7.92v8.16c0 1.06-.865 1.92-1.931 1.92H6.931A1.926 1.926 0 0 1 5 16.08V7.92Z">
+                                            </path>
+                                            <path d="m6 7 6 5 6-5"></path>
+                                    </svg>
+                                    <input id="email" name="email" type="email" required="required"
+                                            autocomplete="email" aria-label="Email address"
+                                            class="box-border appearance-none shadow rounded-md ring-1 ring-slate-900/5 leading-5 sm:text-sm border border-transparent py-2 placeholder:text-slate-400 pl-12 pr-3 block w-full text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 bg-white"
+                                            placeholder="Subscribe via email">
+                            </div>
+                    </div>
+                    <div class="px-2 mt-3"><button type="submit"
+                                    class="bg-sky-500 shadow text-white rounded-md text-sm border-y border-transparent py-2 font-semibold px-3 hover:bg-sky-600 ">Subscribe</button>
+                    </div>
+            </form>
+    </div>
+</section>
+</div>
+
+
 
 <script async src="/assets/js/clip-text.js"></script>
