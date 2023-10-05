@@ -194,6 +194,30 @@
   <section class="" style="grid-area: popular">
     <h3 class="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-2xl dark:text-white"> Popular Posts </h3>
     
+    <a class="w-full" href="/nlp/2023/10/06/seq2seq-pytorch/">
+      <div class="w-full mb-4 flex justifty-start items-start">
+        <span class="w-4 h-4 mt-2 mr-4"><svg class="block w-full h-full" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg></span>
+        <h4 class="w-full text-lg font-bold text-gray-900 dark:text-gray-300	md:text-lg hover:text-blue-500 dark:hover:text-blue-500">
+          Triển khai seq2seq với Pytorch
+        </h4>
+      </div>
+    </a>
+    
+    <a class="w-full" href="/nlp/2023/10/06/attention-is-all-you-need/">
+      <div class="w-full mb-4 flex justifty-start items-start">
+        <span class="w-4 h-4 mt-2 mr-4"><svg class="block w-full h-full" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg></span>
+        <h4 class="w-full text-lg font-bold text-gray-900 dark:text-gray-300	md:text-lg hover:text-blue-500 dark:hover:text-blue-500">
+          Attention is All You Need
+        </h4>
+      </div>
+    </a>
+    
     <a class="w-full" href="/nlp/2023/10/05/bert-pretrained-model/">
       <div class="w-full mb-4 flex justifty-start items-start">
         <span class="w-4 h-4 mt-2 mr-4"><svg class="block w-full h-full" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -230,30 +254,6 @@
       </div>
     </a>
     
-    <a class="w-full" href="/deep-learning/2023/05/13/tu-noron-sinh-hoc-den-noron-nhan-tao/">
-      <div class="w-full mb-4 flex justifty-start items-start">
-        <span class="w-4 h-4 mt-2 mr-4"><svg class="block w-full h-full" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round"></path>
-          </svg></span>
-        <h4 class="w-full text-lg font-bold text-gray-900 dark:text-gray-300	md:text-lg hover:text-blue-500 dark:hover:text-blue-500">
-          Từ nơ-ron sinh học đến nơ-ron nhân tạo
-        </h4>
-      </div>
-    </a>
-    
-    <a class="w-full" href="/testing/2023/05/13/kiem-thu-gia-tri-bien/">
-      <div class="w-full mb-4 flex justifty-start items-start">
-        <span class="w-4 h-4 mt-2 mr-4"><svg class="block w-full h-full" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round"></path>
-          </svg></span>
-        <h4 class="w-full text-lg font-bold text-gray-900 dark:text-gray-300	md:text-lg hover:text-blue-500 dark:hover:text-blue-500">
-          Kiểm thử bằng phương pháp phân tích giá trị biên
-        </h4>
-      </div>
-    </a>
-    
   </section>
 
   <div class="" style="grid-area: posts;">
@@ -274,6 +274,80 @@
       <ul id="results-container" class="hidden bg-white border border-solid border-gray-200 rounded-2xl shadow-lg shadow-gray-200 dark:bg-zinc-800 dark:border-gray-800 dark:shadow-gray-800"></ul>
     </div>
 
+    
+    <a class="w-full text-black" href="/nlp/2023/10/06/seq2seq-pytorch/">
+       <article class="p-6 w-full bg-white border border-solid border-gray-200 rounded-2xl shadow-lg shadow-gray-200 box-border mb-10 dark:bg-zinc-800 dark:shadow-gray-800 dark:border-gray-700">
+
+          <h2 class="w-full mb-4 text-3xl font-extrabold text-gray-900 hover:text-blue-500 dark:text-white dark:hover:text-blue-500"> 
+
+            Triển khai seq2seq với Pytorch
+          </h2>
+          
+          <div class="mb-4 text-gray-600 dark:text-gray-300">
+            <p>Bài viết này giới thiệu cách sử dụng <code class="language-plaintext highlighter-rouge">Pytorch</code> để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc ngắn ngọn bài báo sau trước, <a href="https://arxiv.org/pdf/1406.1078.pdf">Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014)</a>, để hiểu rõ cấu trúc seq2seq trong như thế nào, sau đó đọc bài viết này để đạt được kết quả gấp đôi với một nửa công sức.</p>
+
+          </div>
+
+          <div class="flex justify-between items-center dark:text-gray-200">
+            <div>
+              <span class="font-medium">
+                NLP 
+                </span> •
+                <span>
+                  
+                  
+                </span>
+            </div>
+
+            <div class="flex justify-center items-center border border-solid rounded-xl border-slate-300 px-4 py-1 gap-2 dark:border-gray-600">
+              Read more
+              <span class="inline-block w-3 h-3"><svg class="block w-full h-full" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 1L1 13M3 1h10v10" stroke="#000" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg></span>
+            </div>
+          </div>
+
+       </article>
+    </a>
+    
+    <a class="w-full text-black" href="/nlp/2023/10/06/attention-is-all-you-need/">
+       <article class="p-6 w-full bg-white border border-solid border-gray-200 rounded-2xl shadow-lg shadow-gray-200 box-border mb-10 dark:bg-zinc-800 dark:shadow-gray-800 dark:border-gray-700">
+
+          <h2 class="w-full mb-4 text-3xl font-extrabold text-gray-900 hover:text-blue-500 dark:text-white dark:hover:text-blue-500"> 
+
+            Attention is All You Need
+          </h2>
+          
+          <div class="mb-4 text-gray-600 dark:text-gray-300">
+            <p><code class="language-plaintext highlighter-rouge">Transformer</code> là mô hình seq2seq được Google Brain đề xuất trong một bài báo xuất bản vào cuối năm 2017. Giờ đây, nó đã đạt được nhiều ứng dụng và tiện ích mở rộng và <code class="language-plaintext highlighter-rouge">BERT</code> là mô hình ngôn ngữ được đào tạo trước có nguồn gốc từ Transformer.</p>
+
+          </div>
+
+          <div class="flex justify-between items-center dark:text-gray-200">
+            <div>
+              <span class="font-medium">
+                NLP 
+                </span> •
+                <span>
+                  
+                  
+                  11 minutes
+                  
+                </span>
+            </div>
+
+            <div class="flex justify-center items-center border border-solid rounded-xl border-slate-300 px-4 py-1 gap-2 dark:border-gray-600">
+              Read more
+              <span class="inline-block w-3 h-3"><svg class="block w-full h-full" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 1L1 13M3 1h10v10" stroke="#000" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg></span>
+            </div>
+          </div>
+
+       </article>
+    </a>
     
     <a class="w-full text-black" href="/nlp/2023/10/05/bert-pretrained-model/">
        <article class="p-6 w-full bg-white border border-solid border-gray-200 rounded-2xl shadow-lg shadow-gray-200 box-border mb-10 dark:bg-zinc-800 dark:shadow-gray-800 dark:border-gray-700">
@@ -360,7 +434,7 @@
           </h2>
           
           <div class="mb-4 text-gray-600 dark:text-gray-300">
-            <p>Lựa chọn đặc trưng là một trong những vấn đề quan trọng trong học máy, khi chúng ta có một đống cái đặc trưng và quyết định xem những đặc trưng nào là tốt nhất để xây dựng mô hình. Có nhiều phương pháp để lựa chọn đặc trưng, trong bài viết này tôi sẽ đưa giải pháp thực hiện bằng <strong>Chi-Square</strong>.</p>
+            <p>Lựa chọn đặc trưng là một trong những vấn đề quan trọng trong học máy, khi chúng ta có một đống cái đặc trưng và quyết định xem những đặc trưng nào là tốt nhất để xây dựng mô hình.</p>
 
           </div>
 
@@ -398,7 +472,7 @@
           </h2>
           
           <div class="mb-4 text-gray-600 dark:text-gray-300">
-            <p>Con người lấy cảm hứng từ các loài chim để bay, loài sứa biển để điều trị ung thư, da cá mập để làm bề mặt vật liệu chống bám và còn rất nhiều phát minh khác lấy cảm hứng từ thiên nhiên. Vì thế, rất dễ hiểu khi ta xem xét cấu trúc bộ não sinh học để tìm cảm hứng cho việc xây dựng một bộ máy thông minh. Đây cũng chính là ý tưởng đằng sau của <strong>Mạng nơ-ron nhân tạo (artificial neural network - ANN)</strong>.</p>
+            <p>Con người lấy cảm hứng từ các loài chim để bay, loài sứa biển để điều trị ung thư, da cá mập để làm bề mặt vật liệu chống bám và còn rất nhiều phát minh khác lấy cảm hứng từ thiên nhiên.</p>
 
           </div>
 
@@ -436,7 +510,7 @@
           </h2>
           
           <div class="mb-4 text-gray-600 dark:text-gray-300">
-            <p>Trong quá trình phát triển phần mềm, kiểm thử là một bước không thể thiếu để đảm bảo chất lượng và độ tin cậy của sản phẩm. Trong số các phương pháp kiểm thử, kiểm thử phân tích giá trị biên (Boundary Value Analysis) đã được đánh giá cao vì tính hiệu quả và độ chính xác của nó. Phương pháp này giúp tập trung kiểm thử vào các giá trị biên của dữ liệu đầu vào, từ đó giảm thiểu thời gian và chi phí kiểm thử.</p>
+            <p>Trong quá trình phát triển phần mềm, kiểm thử là một bước không thể thiếu để đảm bảo chất lượng và độ tin cậy của sản phẩm.</p>
 
           </div>
 
@@ -474,7 +548,7 @@
           </h2>
           
           <div class="mb-4 text-gray-600 dark:text-gray-300">
-            <p>Các công cụ kiểm thử tải (Load Testing Tool - LTT) đã trở nên rất phổ biến hiện nay, cả miễn phí và có phí, nguồn mở và nguồn đóng, và mỗi công cụ đều có điểm mạnh và yếu của riêng mình. Một số LTT được nhiều nhà phát triển sử dụng, có thể kể đến công cụ miễn phí như JMeter, Locus, fortio,… hay có tính phí như LoadNinja, Gatling,…  Và Grafana k6 (hay k6) là một trong số ấy.</p>
+            <p>Các công cụ kiểm thử tải (Load Testing Tool - LTT) đã trở nên rất phổ biến hiện nay, cả miễn phí và có phí, nguồn mở và nguồn đóng, và mỗi công cụ đều có điểm mạnh và yếu của riêng mình.</p>
 
           </div>
 
@@ -551,7 +625,7 @@
           </h2>
           
           <div class="mb-4 text-gray-600 dark:text-gray-300">
-            <p>Mô hình phát triển phần mềm là thể hiện trừu tượng của các tiến trình phát triển phần mềm. Nó xác định các pha/ giai đoạn trong phát triển phần mềm. Trong các dự án phát triển phần mềm, mô hình đóng vai trò rất quan trọng. Mô hình đóng vai trò là hướng đi và quyết định đến chất lượng đầu ra của sản phẩm.</p>
+            <p>Mô hình phát triển phần mềm là thể hiện trừu tượng của các tiến trình phát triển phần mềm. Nó xác định các pha/ giai đoạn trong phát triển phần mềm.</p>
 
           </div>
 

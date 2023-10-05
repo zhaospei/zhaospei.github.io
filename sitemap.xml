@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://zhaospei.github.io//authors/zhao/</loc>
-<lastmod>2023-10-05T05:42:33+07:00</lastmod>
+<lastmod>2023-10-06T02:49:57+07:00</lastmod>
 </url>
 <url>
 <loc>https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/</loc>
@@ -39,6 +39,14 @@
 <url>
 <loc>https://zhaospei.github.io//nlp/2023/10/05/bert-pretrained-model/</loc>
 <lastmod>2023-10-05T00:00:00+07:00</lastmod>
+</url>
+<url>
+<loc>https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need/</loc>
+<lastmod>2023-10-06T00:00:00+07:00</lastmod>
+</url>
+<url>
+<loc>https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/</loc>
+<lastmod>2023-10-06T00:00:00+07:00</lastmod>
 </url>
 <url>
 <loc>https://zhaospei.github.io//about/</loc>
@@ -125,7 +133,10 @@
 <loc>https://zhaospei.github.io//tag/paper/</loc>
 </url>
 <url>
+<loc>https://zhaospei.github.io//tag/pytorch/</loc>
+</url>
+<url>
 <loc>https://zhaospei.github.io//assets/BuiTuanDung-Resume-1.pdf</loc>
-<lastmod>2023-10-05T05:41:53+07:00</lastmod>
+<lastmod>2023-10-06T02:49:21+07:00</lastmod>
 </url>
 </urlset>

@@ -1,4 +1,148 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://zhaospei.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhaospei.github.io//" rel="alternate" type="text/html" /><updated>2023-10-05T05:42:33+07:00</updated><id>https://zhaospei.github.io//feed.xml</id><title type="html">Tuan-Dung Bui</title><subtitle>A markdown blog made by Tuan-Dung Bui aka Zhao (zhaospei). Hosted on zhaospei.github.io. I'll write something i like maybe my study or life.</subtitle><author><name>Tuan-Dung Bui</name></author><entry><title type="html">[NLP] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</title><link href="https://zhaospei.github.io//nlp/2023/10/05/bert-pretrained-model/" rel="alternate" type="text/html" title="[NLP] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding" /><published>2023-10-05T00:00:00+07:00</published><updated>2023-10-05T00:00:00+07:00</updated><id>https://zhaospei.github.io//nlp/2023/10/05/bert-pretrained-model</id><content type="html" xml:base="https://zhaospei.github.io//nlp/2023/10/05/bert-pretrained-model/"><![CDATA[<p>BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://zhaospei.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhaospei.github.io//" rel="alternate" type="text/html" /><updated>2023-10-06T02:49:57+07:00</updated><id>https://zhaospei.github.io//feed.xml</id><title type="html">Tuan-Dung Bui</title><subtitle>A markdown blog made by Tuan-Dung Bui aka Zhao (zhaospei). Hosted on zhaospei.github.io. I'll write something i like maybe my study or life.</subtitle><author><name>Tuan-Dung Bui</name></author><entry><title type="html">Attention is All You Need</title><link href="https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need/" rel="alternate" type="text/html" title="Attention is All You Need" /><published>2023-10-06T00:00:00+07:00</published><updated>2023-10-06T00:00:00+07:00</updated><id>https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need</id><content type="html" xml:base="https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need/"><![CDATA[<p><code class="language-plaintext highlighter-rouge">Transformer</code> là mô hình seq2seq được Google Brain đề xuất trong một bài báo xuất bản vào cuối năm 2017. Giờ đây, nó đã đạt được nhiều ứng dụng và tiện ích mở rộng và <code class="language-plaintext highlighter-rouge">BERT</code> là mô hình ngôn ngữ được đào tạo trước có nguồn gốc từ Transformer.</p>
+
+<p>Việc đào tạo <code class="language-plaintext highlighter-rouge">RNN</code> truyền thống là nối tiếp và nó phải đợi từ hiện tại được xử lý trước khi có thể xử lý từ tiếp theo. Transformer được huấn luyện song song, tức là tất cả các từ đều được huấn luyện cùng một lúc, điêu này làm tăng đáng kể hiệu quả tính toán.</p>
+
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/transformer-model-architecture.png" alt="Kiến trúc mô hình Transformer" style="margin: auto;" />
+    <figcaption style="font-style: italic;">Kiến trúc mô hình Transformer</figcaption>
+</figure>
+
+<h1 id="-self-attention"># Self-Attention</h1>
+<p><code class="language-plaintext highlighter-rouge">Scaled Dot-Product Attention</code> là tích chấm chuẩn hóa Attention, chi tiết cụ thể được thể hiện trong hình.</p>
+
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/attention.png" alt="" style="margin: auto;" />
+    <figcaption style="font-style: italic;"></figcaption>
+</figure>
+
+\[Attention(Q,K,V)=softmax(\frac{QK^T}{\sqrt{d_k}})V\]
+
+<p>Sự chú ý của nhiều đầu vào sử dụng nhiều bộ trọng số (<code class="language-plaintext highlighter-rouge">weights</code>) (\(W_q,W_k,W_v\)), ghép lại cho ra kết quả cuối cùng.</p>
+
+\[MultiHead(Q,K,V)=Concat(head_1,...,head_h)W^O\]
+
+<p>trong đó</p>
+
+\[head_i=Attention(QW^Q_i,KW^K_i,VW^V_i)\]
+
+<p>Trong đó \(h = 8\), \(d_q=d_k=d_v=d_{model}/4=64\).</p>
+
+<h1 id="-encoder"># Encoder</h1>
+<p>Bộ mã hóa được xếp chồng lên nhau bởi sáu lớp giống hệt nhau, mỗi lớp bao gồm hai lớp con - cơ chế tự chú ý nhiều đầu (<code class="language-plaintext highlighter-rouge">multi-head self-attention mechanism</code>) và mạng nơ ron vị trí chuyển tiếp được kết nối đầy đủ (<code class="language-plaintext highlighter-rouge">position-wise fully connected feed-forward network</code>). Mỗi lớp con sử dụng các kết nối dư (<code class="language-plaintext highlighter-rouge">residual connection</code>) và lớp chuẩn hóa (<code class="language-plaintext highlighter-rouge">layer normalization</code>). Kích thước đầu ra của các lớp con là \(d_{model} = 512\).</p>
+
+<p>Đầu ra của lớp con có thể được biểu diễn dưới dạng:</p>
+
+\[LayerNorm(x+Sublayer(x))\]
+
+<h2 id="position-wise-fully-connected-feed-forward-network">position-wise fully connected feed-forward network</h2>
+<p>Mạng nơ-ron chuyển tiếp được kết nối đầy đủ (<code class="language-plaintext highlighter-rouge">position-wise fully connected feed-forward network</code>) bao gồm hai phép biến đổi tuyến tính với kích hoạt <code class="language-plaintext highlighter-rouge">ReLU</code> ở giữa.</p>
+
+\[FFN(x)=ReLU(xW_1+b_1)W_2+b_2\]
+
+<p>Kích thước lớp bên trong (inner-layer) là 2048.</p>
+
+<h2 id="residual-connection">residual connection</h2>
+<p>Mạng dư (<code class="language-plaintext highlighter-rouge">Residual Network</code>), các kết nối tắt có khả năng bỏ qua một hoặc nhiều lớp, do sự tồn tại của kết nối tắt nên hiệu suất của mạng ít không kém hơn so với các mạng nông. Phương pháp này giải quyết vấn đề suy thoái do các lớp chập xếp chồng lên nhau gây ra, số lượng lớp của mạng nơ-ron tích chập đã được tăng lên rất nhiều lên hàng trăm lớp, và cải thiện đáng kể hiệu suất của mạng thần kinh tích chập (<code class="language-plaintext highlighter-rouge">resnet</code>).</p>
+
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/resnet.png" alt="" style="margin: auto;" />
+    <figcaption style="font-style: italic;"></figcaption>
+</figure>
+
+<h2 id="batch-norm-và-layer-norm">Batch Norm và Layer Norm</h2>
+
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/normalization.png" alt="" style="margin: auto;" />
+    <figcaption style="font-style: italic;"></figcaption>
+</figure>
+
+<p>Đặt kích thước hình ảnh đầu vào là \([N, C, H, W]\):</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Batch Norm</code>, chuẩn hóa theo từng batch NHW, là để chuẩn hóa đầu vào từng kênh đơn, đều này không hiệu quả đối với <code class="language-plaintext highlighter-rouge">batch-size</code> nhỏ.</li>
+  <li><code class="language-plaintext highlighter-rouge">Layer Norm</code>, chuẩn hóa theo từng layer CHW, là để chuẩn hóa đầu vào ở mỗi độ sâu, chủ yếu có tác dụng rõ ràng trên RNN.</li>
+</ul>
+
+<p>Sự hiểu biết cá nhân:</p>
+
+<ul>
+  <li>Dành cho CNN, nếu hạt nhân tích chập quét hình ảnh đầu vào, nó được tính là thao tác tích chập, cần có tổng thao tác batchsize. Do đó, chuẩn hóa cần được thực hiện theo batch.</li>
+  <li>Dành cho RNN, batchsize thường là 1, số vòng lặp là số độ dài đầu vào (số channel). Do đó, chuẩn hóa cần được thực hiện theo channel.</li>
+</ul>
+
+<h2 id="toàn-bộ-kiến-trúc-encoder">Toàn bộ kiến trúc Encoder</h2>
+<h3 id="input--positional-embedding">input &amp; positional embedding</h3>
+
+\[X=Embedding-Lookup(X)+Positional-Encoding\]
+
+<h3 id="multi-head-attention">multi-head attention</h3>
+
+\[Q=Linear_q(X)=XW_q\]
+
+\[K=Linear_q(X)=XW_k\]
+
+\[V=Linear_v(X)=XW_v\]
+
+\[X_{attention}=Self-Attention(Q,K,V)\]
+
+<h3 id="add--norm">add &amp; norm</h3>
+
+\[X_{attention}=LayerNorm(X+X_{attention})\]
+
+<h3 id="feed-forward">feed forward</h3>
+
+\[X_{hidden}=Linear(ReLU(Linear(X_{attention})))\]
+
+<h3 id="add--norm-1">add &amp; norm</h3>
+
+\[X_{hidden}=LayerNorm(X_{hidden}+X_{attention})\]
+
+<p><code class="language-plaintext highlighter-rouge">multi-head attention</code> trong <code class="language-plaintext highlighter-rouge">encoder</code> là một cơ chế tự chú ý (<code class="language-plaintext highlighter-rouge">self-attention mechanism</code>). \(k\), \(q\) và \(v\) trong cơ chế tự chú ý đều xuất phát từ cùng một vị trí, mỗi lớp của encoder có thể nhận được tất cả vị trí của lớp trước.</p>
+
+<h1 id="-decoder"># Decoder</h1>
+<p>Bộ giải mã bao gồm sáu lớp giống hệt xếp chồng lên nhau; trong Multi-head Attention, \(q\) được đến từ lớp trước đó của decoder, k và v đến từ đầu ra của encoder. Điều cho phép mỗi vị trí trong bộ giải mã nhận biết được tất cả các vị trí của chuỗi đầu vào.</p>
+
+<p>Ngoài hai lớp con trong bộ mã hóa, bộ giải mã thêm một lớp con mới xử lý đầu ra của bộ mã hóa - <code class="language-plaintext highlighter-rouge">masked multi-head self-attention mechanism</code>. Bộ mã hóa trong seq2seq truyền thống sử dụng mô hình RNN, vì vậy nếu các từ tại thời điểm t được nhập vào trong quá trình huấn luyện thì mô hình sẽ không thể nhìn thấy các từ trước đó vào các thời điểm trong tương lai, bởi vì RNN hoạt động theo thời gian và chỉ khi thao tác tại thời điểm t hoàn thành, chỉ khi đó ta mới có thể nhìn thấy các từ tại thời điểm t + 1. Và Transformer Decoder đã không sử dụng RNN, thay đổi sang Self-Attention, điều này tạo ra một vấn đề, trong quá trình huấn luyện, toàn bộ ground truth đã được hiển thị với Decoder, điều này rõ ràng là sai, chúng ta cần phải thực hiện một số xử lý trên đầu vào của Decoder, quá trình này được gọi là <code class="language-plaintext highlighter-rouge">Mask</code> - Đặt tất cả các giá trị sau postion thành \(-\infty\) trước khi vào softmax.</p>
+
+<p>Ví dụ, ground truth của Decoder là “<start> I am fine", chúng ta cho câu này vào bộ Decoder, sau khi Word Embedding và Positional Encoding, thực hiện phép biến đổi tuyến tính bậc 3 trên ma trận thu được $$(W_Q,W_K,W_V)$$ Sau đó thực hiện self-attention, trước tiên, nhận Scaled Scores thông qua $$\frac{Q×K^T}{\sqrt{d_k}}$$, bước tiếp theo rất quan trọng, chúng ta cần mask theo Scaled Scores, ví dụ, khi nhập "I", hiện tại mô hình chỉ biết thông tin của tất cả các từ trước đó của "I", tức thông tin của "<start>" và "I", không được phép biết được thông tin của các từ sau "I". Lý do rất đơn giản, khi dự đoán là chúng ta dự đoán theo thứ tự từng chữ, làm sao có thể biết được thông tin của những từ sau trước khi dự đoán xong từ này? Mask rất đơn giản, đầu tiên tạo một ma trận có tam giác hoàn toàn phía dưới bằng 0 và tam giác hoàn tòan phía trên bằng âm vô cùng, sau đó chỉ cần thêm nó vào Scaled Scores.</start></start></p>
+
+<h1 id="-word-embedding-và-positional-embedding"># Word Embedding và Positional Embedding</h1>
+<h2 id="word-embedding">Word Embedding</h2>
+<p>Phần nhúng từ sử dụng nhúng từ có thể học được, kích thước của nó là \(d_{model}\).
+Hình thức mã hóa <code class="language-plaintext highlighter-rouge">One-hot</code> ngắn gọn, nhưng quá thưa thớt, nó không phản ánh sự giống nhau về nghĩa của từ. Vì vậy hãy sử dụng <code class="language-plaintext highlighter-rouge">the Skip-Gram Model</code> hoặc <code class="language-plaintext highlighter-rouge">continuous bag of words model</code> hoặc các nhúng từ khác có thể học được khác.</p>
+
+<h2 id="positional-embedding">Positional Embedding</h2>
+<p>Bởi vì mô hình không bao gồm các cấu trúc tuần hoàn, vì vậy nắm bắt được các thông tin thứ tự tuần tự, ví dụ nếu \(K\) và \(V\) được xóa trộn theo từng hàng thì kết quả sau Attention sẽ giống nhau. Tuy nhiên, thông tin tuần tự rất quan trọng và thể hiện cấu trúc toàn cầu, do đó thông tin position tuyệt đối và tương đối của token tuần tự phải được sử dụng.</p>
+<h3 id="nhúng-vị-trí-tùy-chinh">Nhúng vị trí tùy chinh</h3>
+<p>Một ý tưởng là lấy một số trong khoảng \([0, 1]\) và gán nó cho mỗi từ, trong đó 0 được trao cho từ đầu tiên, 1 cho từ cuối cùng, công thức cụ thể là \(PE=\dfrac{pos}{T−1}\).</p>
+
+<p><strong>… (Phần này sẽ viết tiếp trong tương lai xa chứ giờ 2h sáng rồi đi ngủ).</strong></p>
+
+<h1 id="-q--a"># Q &amp; A</h1>
+<h2 id="tại-sao-transformer-cần-multi-head-attention-">Tại sao Transformer cần Multi-head Attention ?</h2>
+<p>Bài báo đề cập lý do việc tiến hành Multi-head Attention là để chia mô hình thành nhiều đầu để tạo thành nhiều không gian con, cho phép mô hình chú ý đến các khía cạnh khác nhau của thông tin và cuối cùng tổng hợp thông tin từ tất cả các khía cạnh. Trên thực tế, có thể hình dung bằng trực giác rằng nếu bạn tự thiết kế một mô hình như vậy, attention sẽ không chỉ được thực hiện một lần, kết quả tổng hợp của nhiều lần chú ý ít nhất có thể nâng cao mô hình và cũng có thể được so sánh với vai trò của việc sử dụng nhiều tích chập cùng lúc trong CNN, theo trực giác, sự chú ý của nhiều người đứng đầu giúp mạng nắm bắt được các tính năng/ thông tin phong phú hơn.</p>
+<h2 id="ưu-điểm-của-transformer-so-với-rnnlstm-là-gì-tại-sao">Ưu điểm của Transformer so với RNN/LSTM là gì? Tại sao?</h2>
+<ol>
+  <li>Các mô hình RNN không thể tính toán song song vì việc tính toán tại thời điểm T phụ thuộc vào kết quả tính toán của lớp ẩn tại thời điểm T - 1, còn việc tính toán tại thời điểm T - 1 lại phụ thuộc tính toán của lớp ẩn tại thời điểm T - 2.</li>
+  <li>Khả năng trích xuất đặc trưng của Transformer tốt hơn so với các mô hình RNN.</li>
+</ol>
+
+<h2 id="tại-sao-transformer-có-thể-thay-thế-seq2seq">Tại sao Transformer có thể thay thế seq2seq?</h2>
+<p>Từ thay thế ở đây hơi không phù hợp, seq2seq tuy cũ nhưng vẫn có chỗ đứng, vấn đề lớn nhất của seq2seq là ở chỗ <strong>Nén thông tin ở phía Encoder thành một vector có độ dài cố định</strong> và sử dụng nó làm đầu vào của trạng thái đầu tiên ở phía Decoder, để dự đoán trạng thái ẩn của từ đầu tiên (mã thông báo) ở phía Decoder. Khi chuỗi đầu vào tương đối dài, điều này rõ ràng sẽ mất rất nhiều thông tin ở phía Encoder và vector cố định sẽ được gửi đến phía Decoder cùng một lúc, <strong>bên Decoder không thể chú ý đến thông tin mà nó muốn chú ý</strong>. Mô hinh transformer không chỉ cải thiện đáng kể hai khuyết điểm này của mô hình seq2seq (Mô-đun attention tương tác nhiều đầu), và cũng giới thiệu mô-đun self-attention, trước tiên hãy để trình tự nguồn và trình tự đích được “tự liên kết”, trong trường hợp này, thông tin chứa trong embedding của trình tự nguồn và trình tự đích sẽ phong phú hơn và lớp FFN tiếp theo cũng nâng cao khả năng biểu đạt của mô hình, và tính toán song song của Transfomer vượt xa các model seq2seq.</p>
+
+<h1 id="tham-khảo">Tham khảo</h1>
+
+<p>[1] <a href="https://arxiv.org/abs/1706.03762">Attention is All You Need</a></p>]]></content><author><name>zhao</name></author><category term="NLP" /><category term="nlp" /><category term="paper" /><category term="model" /><summary type="html"><![CDATA[Transformer là mô hình seq2seq được Google Brain đề xuất trong một bài báo xuất bản vào cuối năm 2017. Giờ đây, nó đã đạt được nhiều ứng dụng và tiện ích mở rộng và BERT là mô hình ngôn ngữ được đào tạo trước có nguồn gốc từ Transformer.]]></summary></entry><entry><title type="html">Triển khai seq2seq với Pytorch</title><link href="https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/" rel="alternate" type="text/html" title="Triển khai seq2seq với Pytorch" /><published>2023-10-06T00:00:00+07:00</published><updated>2023-10-06T00:00:00+07:00</updated><id>https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch</id><content type="html" xml:base="https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/"><![CDATA[<p>Bài viết này giới thiệu cách sử dụng <code class="language-plaintext highlighter-rouge">Pytorch</code> để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc ngắn ngọn bài báo sau trước, <a href="https://arxiv.org/pdf/1406.1078.pdf">Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014)</a>, để hiểu rõ cấu trúc seq2seq trong như thế nào, sau đó đọc bài viết này để đạt được kết quả gấp đôi với một nửa công sức.</p>
+
+<p>(Có thể trong thời gian xa tôi sẽ viết một bài về seq2seq, hiện tại bạn có thể đọc tạm paper về nó)</p>
+
+<p>Tôi đã đọc rất nhiều sơ đồ cấu trúc mạng seq2seq và tôi cảm thấy sơ đồ này do Pytorch cung cấp là dễ hiểu nhất.</p>
+
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/seq2seq.png" alt="" style="margin: auto;" />
+    <figcaption style="font-style: italic;"></figcaption>
+</figure>
+
+<h1 id="thôi-viết-tiếp-trong-tương-lai-nhé-">…..Thôi viết tiếp trong tương lai nhé :))</h1>]]></content><author><name>zhao</name></author><category term="NLP" /><category term="nlp" /><category term="pytorch" /><category term="model" /><summary type="html"><![CDATA[Bài viết này giới thiệu cách sử dụng Pytorch để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc ngắn ngọn bài báo sau trước, Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014), để hiểu rõ cấu trúc seq2seq trong như thế nào, sau đó đọc bài viết này để đạt được kết quả gấp đôi với một nửa công sức.]]></summary></entry><entry><title type="html">[NLP] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</title><link href="https://zhaospei.github.io//nlp/2023/10/05/bert-pretrained-model/" rel="alternate" type="text/html" title="[NLP] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding" /><published>2023-10-05T00:00:00+07:00</published><updated>2023-10-05T00:00:00+07:00</updated><id>https://zhaospei.github.io//nlp/2023/10/05/bert-pretrained-model</id><content type="html" xml:base="https://zhaospei.github.io//nlp/2023/10/05/bert-pretrained-model/"><![CDATA[<p>BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</p>
 
 <h2 id="tiêu-đề">Tiêu đề</h2>
 <p><code class="language-plaintext highlighter-rouge">Pre-training (Đào tạo trước)</code>: Nếu một mô hình được đào tạo trên một tập dữ liệu lớn nhưng mục đích chính là sử dụng cho nhiệm vụ khác (được gọi là <code class="language-plaintext highlighter-rouge">Training</code>), thì nhiệm vụ đào tạo mô hình đó được gọi là <code class="language-plaintext highlighter-rouge">Pre-training</code>.</p>
@@ -55,7 +199,9 @@
 <p><strong>Defects</strong> colloquially called <strong>bugs</strong> in software artifacts, typically in the software source code. <em>(Có thể dịch là: Defects thường được gọi (một cách không chính thức) là bugs trong software artifacts (bất kỳ thứ gì tạo ra phần mềm), điển hình là mã nguồn.)</em></p>
 
 <h1 id="một-cái-kết-bài-có-như-có">Một cái kết bài có như có</h1>
-<p>Bài viết này khoảng một nửa là mình bịa, một nửa còn lại cũng bịa nốt.</p>]]></content><author><name>zhao</name></author><category term="SE" /><category term="Bug" /><category term="Defect" /><category term="Fault" /><category term="Failure" /><summary type="html"><![CDATA[Người đọc tự chịu trách nhiệm về tính xác thực của bài viết.]]></summary></entry><entry><title type="html">Lựa chọn đặc trưng trong học máy bằng kiểm tra Chi-Square</title><link href="https://zhaospei.github.io//machine-learning/2023/06/27/chi-square-feature-selection-ml/" rel="alternate" type="text/html" title="Lựa chọn đặc trưng trong học máy bằng kiểm tra Chi-Square" /><published>2023-06-27T00:00:00+07:00</published><updated>2023-06-27T00:00:00+07:00</updated><id>https://zhaospei.github.io//machine-learning/2023/06/27/chi-square-feature-selection-ml</id><content type="html" xml:base="https://zhaospei.github.io//machine-learning/2023/06/27/chi-square-feature-selection-ml/"><![CDATA[<p>Lựa chọn đặc trưng là một trong những vấn đề quan trọng trong học máy, khi chúng ta có một đống cái đặc trưng và quyết định xem những đặc trưng nào là tốt nhất để xây dựng mô hình. Có nhiều phương pháp để lựa chọn đặc trưng, trong bài viết này tôi sẽ đưa giải pháp thực hiện bằng <strong>Chi-Square</strong>.</p>
+<p>Bài viết này khoảng một nửa là mình bịa, một nửa còn lại cũng bịa nốt.</p>]]></content><author><name>zhao</name></author><category term="SE" /><category term="Bug" /><category term="Defect" /><category term="Fault" /><category term="Failure" /><summary type="html"><![CDATA[Người đọc tự chịu trách nhiệm về tính xác thực của bài viết.]]></summary></entry><entry><title type="html">Lựa chọn đặc trưng trong học máy bằng kiểm tra Chi-Square</title><link href="https://zhaospei.github.io//machine-learning/2023/06/27/chi-square-feature-selection-ml/" rel="alternate" type="text/html" title="Lựa chọn đặc trưng trong học máy bằng kiểm tra Chi-Square" /><published>2023-06-27T00:00:00+07:00</published><updated>2023-06-27T00:00:00+07:00</updated><id>https://zhaospei.github.io//machine-learning/2023/06/27/chi-square-feature-selection-ml</id><content type="html" xml:base="https://zhaospei.github.io//machine-learning/2023/06/27/chi-square-feature-selection-ml/"><![CDATA[<p>Lựa chọn đặc trưng là một trong những vấn đề quan trọng trong học máy, khi chúng ta có một đống cái đặc trưng và quyết định xem những đặc trưng nào là tốt nhất để xây dựng mô hình.</p>
+
+<p>Có nhiều phương pháp để lựa chọn đặc trưng, trong bài viết này tôi sẽ đưa giải pháp thực hiện bằng <strong>Chi-Square</strong>.</p>
 
 <h1 id="phân-phối-chi-square">Phân phối Chi-Square</h1>
 <p>Một biến ngẫu nhiên \(\chi\) tuân theo phân phối chi-square nếu nó có thể viết được viết dưới dạng tổng bình phương các biến chuẩn chuẩn hoá.</p>
@@ -435,7 +581,9 @@ Như bảng trên, ta có:</p>
 <p>Với mỗi đặc trưng (thuật ngữ), một điểm  \(\chi^{2}\) tương ứng chỉ ra <strong>Giả thuyết rỗng</strong> \(H_{0}\) về tính độc lập của hai biến cố (có nghĩa là lớp của văn bản được phân loại không ảnh hưởng đến tần suất xuất hiện của thuật ngữ) nên bị bác bỏ hay sự xuất hiện của thuật ngữ và lớp của văn bản phụ thuộc lẫn nhau. Hay trong trường hợp này, chúng ta sẽ chọn thuật ngữ này làm đặc trưng cho mô hình phân loại văn bản.</p>
 
 <h1 id="kết-luận">Kết luận</h1>
-<p><strong>Chi-Square</strong> nhạy cảm với kích thước mẫu. Các mối quan hệ có thể có ý nghĩa khi chúng không chỉ đơn giản là do một mẫu rất lớn được sử dụng. Ngoài ra, <strong>Chi-Square</strong> không thể xác định liệu một biến cố có mối quan hệ nhân quả với biến khác hay không. Nó chỉ có thể xác định liệu hai biến cố có liên quan với nhau hay không.. Nói chung, khi giá trị kỳ vọng ​​trong một ô của bảng tương quan nhỏ hơn 5, <strong>Chi-Square</strong> có thể dẫn đến sai sót trong kết luận. Hy vọng bài viết có thể giúp bạn có cái nhìn tổng quan về phương pháp này và có thể áp dụng nó cho mô hình của bạn.</p>]]></content><author><name>zhao</name></author><category term="Machine-Learning" /><category term="Data Science" /><category term="Statistics" /><category term="Machine Learning" /><category term="Feature Selection" /><summary type="html"><![CDATA[Lựa chọn đặc trưng là một trong những vấn đề quan trọng trong học máy, khi chúng ta có một đống cái đặc trưng và quyết định xem những đặc trưng nào là tốt nhất để xây dựng mô hình. Có nhiều phương pháp để lựa chọn đặc trưng, trong bài viết này tôi sẽ đưa giải pháp thực hiện bằng Chi-Square.]]></summary></entry><entry><title type="html">Kiểm thử bằng phương pháp phân tích giá trị biên</title><link href="https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien/" rel="alternate" type="text/html" title="Kiểm thử bằng phương pháp phân tích giá trị biên" /><published>2023-05-13T00:00:00+07:00</published><updated>2023-05-13T00:00:00+07:00</updated><id>https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien</id><content type="html" xml:base="https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien/"><![CDATA[<p>Trong quá trình phát triển phần mềm, kiểm thử là một bước không thể thiếu để đảm bảo chất lượng và độ tin cậy của sản phẩm. Trong số các phương pháp kiểm thử, kiểm thử phân tích giá trị biên (Boundary Value Analysis) đã được đánh giá cao vì tính hiệu quả và độ chính xác của nó. Phương pháp này giúp tập trung kiểm thử vào các giá trị biên của dữ liệu đầu vào, từ đó giảm thiểu thời gian và chi phí kiểm thử.</p>
+<p><strong>Chi-Square</strong> nhạy cảm với kích thước mẫu. Các mối quan hệ có thể có ý nghĩa khi chúng không chỉ đơn giản là do một mẫu rất lớn được sử dụng. Ngoài ra, <strong>Chi-Square</strong> không thể xác định liệu một biến cố có mối quan hệ nhân quả với biến khác hay không. Nó chỉ có thể xác định liệu hai biến cố có liên quan với nhau hay không.. Nói chung, khi giá trị kỳ vọng ​​trong một ô của bảng tương quan nhỏ hơn 5, <strong>Chi-Square</strong> có thể dẫn đến sai sót trong kết luận. Hy vọng bài viết có thể giúp bạn có cái nhìn tổng quan về phương pháp này và có thể áp dụng nó cho mô hình của bạn.</p>]]></content><author><name>zhao</name></author><category term="Machine-Learning" /><category term="Data Science" /><category term="Statistics" /><category term="Machine Learning" /><category term="Feature Selection" /><summary type="html"><![CDATA[Lựa chọn đặc trưng là một trong những vấn đề quan trọng trong học máy, khi chúng ta có một đống cái đặc trưng và quyết định xem những đặc trưng nào là tốt nhất để xây dựng mô hình.]]></summary></entry><entry><title type="html">Kiểm thử bằng phương pháp phân tích giá trị biên</title><link href="https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien/" rel="alternate" type="text/html" title="Kiểm thử bằng phương pháp phân tích giá trị biên" /><published>2023-05-13T00:00:00+07:00</published><updated>2023-05-13T00:00:00+07:00</updated><id>https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien</id><content type="html" xml:base="https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien/"><![CDATA[<p>Trong quá trình phát triển phần mềm, kiểm thử là một bước không thể thiếu để đảm bảo chất lượng và độ tin cậy của sản phẩm.</p>
+
+<p>Trong số các phương pháp kiểm thử, kiểm thử phân tích giá trị biên (Boundary Value Analysis) đã được đánh giá cao vì tính hiệu quả và độ chính xác của nó. Phương pháp này giúp tập trung kiểm thử vào các giá trị biên của dữ liệu đầu vào, từ đó giảm thiểu thời gian và chi phí kiểm thử.</p>
 
 <p>Bài viết này sẽ cách sinh test cho ca kiểm thử phân tích giá trị biên thông qua một bài toán kiểm thử nhỏ.</p>
 
@@ -881,7 +1029,9 @@ Giá trị đầu ra: 0 (nếu không được giảm giá), 1 (nếu được g
 
 <h1 id="kết-luận">Kết luận</h1>
 <p>Nhận thấy toàn bộ test case trong kiểm thử giá trị biên trên đều không cho output nằm trong trường hợp số 2. Vì vậy, kiểm thử giá trị biên sẽ không thể bao hàm toàn bộ trường hợp và thường kết hợp với các loại kiểm thử khác như phân hoạch tương đương hoặc kiểm thử bằng quyết định,.. 
-Thường trong thực tế, các công ty thường sinh test kiểu này: Kết hợp phân hoạch tương đương (hoặc bảng quyết định) với phân tích giá trị biên thường cho kết quả tốt vì nó có chi phí, thời gian, công sức vừa phải và bao hàm hầu hết mọi trường hợp của giá trị đầu vào.</p>]]></content><author><name>zhao</name></author><category term="Testing" /><category term="testing" /><summary type="html"><![CDATA[Trong quá trình phát triển phần mềm, kiểm thử là một bước không thể thiếu để đảm bảo chất lượng và độ tin cậy của sản phẩm. Trong số các phương pháp kiểm thử, kiểm thử phân tích giá trị biên (Boundary Value Analysis) đã được đánh giá cao vì tính hiệu quả và độ chính xác của nó. Phương pháp này giúp tập trung kiểm thử vào các giá trị biên của dữ liệu đầu vào, từ đó giảm thiểu thời gian và chi phí kiểm thử.]]></summary></entry><entry><title type="html">Từ nơ-ron sinh học đến nơ-ron nhân tạo</title><link href="https://zhaospei.github.io//deep-learning/2023/05/13/tu-noron-sinh-hoc-den-noron-nhan-tao/" rel="alternate" type="text/html" title="Từ nơ-ron sinh học đến nơ-ron nhân tạo" /><published>2023-05-13T00:00:00+07:00</published><updated>2023-05-13T00:00:00+07:00</updated><id>https://zhaospei.github.io//deep-learning/2023/05/13/tu-noron-sinh-hoc-den-noron-nhan-tao</id><content type="html" xml:base="https://zhaospei.github.io//deep-learning/2023/05/13/tu-noron-sinh-hoc-den-noron-nhan-tao/"><![CDATA[<p>Con người lấy cảm hứng từ các loài chim để bay, loài sứa biển để điều trị ung thư, da cá mập để làm bề mặt vật liệu chống bám và còn rất nhiều phát minh khác lấy cảm hứng từ thiên nhiên. Vì thế, rất dễ hiểu khi ta xem xét cấu trúc bộ não sinh học để tìm cảm hứng cho việc xây dựng một bộ máy thông minh. Đây cũng chính là ý tưởng đằng sau của <strong>Mạng nơ-ron nhân tạo (artificial neural network - ANN)</strong>.</p>
+Thường trong thực tế, các công ty thường sinh test kiểu này: Kết hợp phân hoạch tương đương (hoặc bảng quyết định) với phân tích giá trị biên thường cho kết quả tốt vì nó có chi phí, thời gian, công sức vừa phải và bao hàm hầu hết mọi trường hợp của giá trị đầu vào.</p>]]></content><author><name>zhao</name></author><category term="Testing" /><category term="testing" /><summary type="html"><![CDATA[Trong quá trình phát triển phần mềm, kiểm thử là một bước không thể thiếu để đảm bảo chất lượng và độ tin cậy của sản phẩm.]]></summary></entry><entry><title type="html">Từ nơ-ron sinh học đến nơ-ron nhân tạo</title><link href="https://zhaospei.github.io//deep-learning/2023/05/13/tu-noron-sinh-hoc-den-noron-nhan-tao/" rel="alternate" type="text/html" title="Từ nơ-ron sinh học đến nơ-ron nhân tạo" /><published>2023-05-13T00:00:00+07:00</published><updated>2023-05-13T00:00:00+07:00</updated><id>https://zhaospei.github.io//deep-learning/2023/05/13/tu-noron-sinh-hoc-den-noron-nhan-tao</id><content type="html" xml:base="https://zhaospei.github.io//deep-learning/2023/05/13/tu-noron-sinh-hoc-den-noron-nhan-tao/"><![CDATA[<p>Con người lấy cảm hứng từ các loài chim để bay, loài sứa biển để điều trị ung thư, da cá mập để làm bề mặt vật liệu chống bám và còn rất nhiều phát minh khác lấy cảm hứng từ thiên nhiên.</p>
+
+<p>Vì thế, rất dễ hiểu khi ta xem xét cấu trúc bộ não sinh học để tìm cảm hứng cho việc xây dựng một bộ máy thông minh. Đây cũng chính là ý tưởng đằng sau của <strong>Mạng nơ-ron nhân tạo (artificial neural network - ANN)</strong>.</p>
 
 <p>Tuy nhiên, dù máy bay lấy cảm hứng từ loài chim, chúng lại không cần phải vỗ cánh. Tương tự, ANN đã dần trở nên rất khác biệt so với phiên bản sinh học của nó. Một số nhà nghiên cứu còn cho rằng chúng ta nên ngừng sử dụng phép so sánh với sinh học (ví dụ như sử dụng từ “<em>đơn vị</em>” - “<em>unit</em>” - thay cho “<em>nơ-ron</em>”), vì lo rằng phép so sánh này sẽ giới hạn sự sáng tạo trong các hệ thống hợp lý về mặt sinh học.</p>
 
@@ -947,7 +1097,9 @@ Thường trong thực tế, các công ty thường sinh test kiểu này: Kế
 
 <p>Sự thành công sớm của ANN đã khiến nhiều người tin rằng họ sẽ sớm được nói chuyện với những cố máy thực sự thông minh. Vào thập niên 1960, khi rõ ràng là lời hứa này sẽ không được thực hiện (ít nhất là trong một khoảng thời gian dài), các nguồn tài trợ được chuyển sang lĩnh vực khác, và ANN bước vào một mùa đông dài. Vào thập niên 1980, các kiến trúc mới được phát minh và các kỹ thuật huấn luyện tốt hơn được phát triển, giúp cho <em>thuyết kết nối (connectionism - ngành nghiên cứu về mạng nơ-ron)</em> bắt đầu được quan tâm trở lại. Tuy nhiên, tiến độ trong ngành này khá chậm, vào vào thập niên 1990, các kỹ thuật Học Máy mạnh mẽ khác đã được phát minh, ví dụ <em>Máy Vector Hỗ trợ</em>,… Có vẻ những kỹ thuật này đem lại kết quả tốt hơn và nền tảng lý thuyết vững chắc hơn so với ANN, nên lần nữa việc nghiên cứu ANN lại bị trì hoãn.</p>
 
-<p>Giờ đây, khi lượng dữ liệu lớn bùng nổ và sự phát triển vượt bậc về năng lực tính toán từ thập niên 1990, chúng ta lại đang chứng kiến thêm một làn sống quan tâm khác tới ANN. Liệu xu hướng này sẽ lại lụi tàn như trước?</p>]]></content><author><name>zhao</name></author><category term="Deep-Learning" /><category term="Neuron" /><category term="Deep Learning" /><summary type="html"><![CDATA[Con người lấy cảm hứng từ các loài chim để bay, loài sứa biển để điều trị ung thư, da cá mập để làm bề mặt vật liệu chống bám và còn rất nhiều phát minh khác lấy cảm hứng từ thiên nhiên. Vì thế, rất dễ hiểu khi ta xem xét cấu trúc bộ não sinh học để tìm cảm hứng cho việc xây dựng một bộ máy thông minh. Đây cũng chính là ý tưởng đằng sau của Mạng nơ-ron nhân tạo (artificial neural network - ANN).]]></summary></entry><entry><title type="html">Điểm mạnh/yếu công cụ kiểm thử chịu tải tự động k6 với các đối thủ</title><link href="https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter/" rel="alternate" type="text/html" title="Điểm mạnh/yếu công cụ kiểm thử chịu tải tự động k6 với các đối thủ" /><published>2023-05-01T00:00:00+07:00</published><updated>2023-05-01T00:00:00+07:00</updated><id>https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter</id><content type="html" xml:base="https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter/"><![CDATA[<p>Các công cụ kiểm thử tải (Load Testing Tool - LTT) đã trở nên rất phổ biến hiện nay, cả miễn phí và có phí, nguồn mở và nguồn đóng, và mỗi công cụ đều có điểm mạnh và yếu của riêng mình. Một số LTT được nhiều nhà phát triển sử dụng, có thể kể đến công cụ miễn phí như JMeter, Locus, fortio,… hay có tính phí như LoadNinja, Gatling,…  Và Grafana k6 (hay k6) là một trong số ấy.</p>
+<p>Giờ đây, khi lượng dữ liệu lớn bùng nổ và sự phát triển vượt bậc về năng lực tính toán từ thập niên 1990, chúng ta lại đang chứng kiến thêm một làn sống quan tâm khác tới ANN. Liệu xu hướng này sẽ lại lụi tàn như trước?</p>]]></content><author><name>zhao</name></author><category term="Deep-Learning" /><category term="Neuron" /><category term="Deep Learning" /><summary type="html"><![CDATA[Con người lấy cảm hứng từ các loài chim để bay, loài sứa biển để điều trị ung thư, da cá mập để làm bề mặt vật liệu chống bám và còn rất nhiều phát minh khác lấy cảm hứng từ thiên nhiên.]]></summary></entry><entry><title type="html">Điểm mạnh/yếu công cụ kiểm thử chịu tải tự động k6 với các đối thủ</title><link href="https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter/" rel="alternate" type="text/html" title="Điểm mạnh/yếu công cụ kiểm thử chịu tải tự động k6 với các đối thủ" /><published>2023-05-01T00:00:00+07:00</published><updated>2023-05-01T00:00:00+07:00</updated><id>https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter</id><content type="html" xml:base="https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter/"><![CDATA[<p>Các công cụ kiểm thử tải (Load Testing Tool - LTT) đã trở nên rất phổ biến hiện nay, cả miễn phí và có phí, nguồn mở và nguồn đóng, và mỗi công cụ đều có điểm mạnh và yếu của riêng mình.</p>
+
+<p>Một số LTT được nhiều nhà phát triển sử dụng, có thể kể đến công cụ miễn phí như JMeter, Locus, fortio,… hay có tính phí như LoadNinja, Gatling,…  Và Grafana k6 (hay k6) là một trong số ấy.</p>
 
 <p>Được phát triển bới Grafana Labs, k6 là một LTT mã nguồn mở giúp kiểm tra hiệu suất dễ dàng và hiệu quả cho các nhà phát triển. Nó là công cụ mã nguồn mở, hướng đến nhà phát triển và dễ dàng mở rộng. Dù chỉ mới ra đời gần đây, bản release chính thức đầu tiên trên github vào ngày 27/02/2017, nhưng k6 đã nhanh chóng nổi lên trong cộng đồng nhà phát triển bởi hiệu suất và tính dễ sử dụng đáng bất ngờ của nó.  Tính đến thời điểm hiện tại (04/2023), k6 có 20.1k stars, 311 watching và 1.1k forks trên github. Nhờ cộng đồng phát triển hoạt động tích cực, k6 đang phát triển ngày càng lớn mạnh. Kho extensions phong phú, pull request và những bản releases thường xuyên là những lợi ích mà mã nguồn mở của k6 mang lại.</p>
 
@@ -1047,7 +1199,7 @@ Các nhóm đang tìm cách tích hợp thử nghiệm vào quy trình phát tri
   <li>[4] <em>Jmeter</em> <a href="https://jmeter.apache.org/">https://jmeter.apache.org/</a></li>
   <li>[5] <em>Apace Foundation</em> <a href="https://www.apache.org/">https://www.apache.org/</a></li>
   <li>[6] <em>JMeter’s Component Reference</em> <a href="https://jmeter.apache.org/usermanual/component_reference.html">https://jmeter.apache.org/usermanual/component_reference.html</a></li>
-</ul>]]></content><author><name>zhao</name></author><category term="Testing" /><category term="k6" /><category term="jmeter" /><category term="testing" /><summary type="html"><![CDATA[Các công cụ kiểm thử tải (Load Testing Tool - LTT) đã trở nên rất phổ biến hiện nay, cả miễn phí và có phí, nguồn mở và nguồn đóng, và mỗi công cụ đều có điểm mạnh và yếu của riêng mình. Một số LTT được nhiều nhà phát triển sử dụng, có thể kể đến công cụ miễn phí như JMeter, Locus, fortio,… hay có tính phí như LoadNinja, Gatling,… Và Grafana k6 (hay k6) là một trong số ấy.]]></summary></entry><entry><title type="html">Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)</title><link href="https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/" rel="alternate" type="text/html" title="Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)" /><published>2023-03-25T00:00:00+07:00</published><updated>2023-03-25T00:00:00+07:00</updated><id>https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing</id><content type="html" xml:base="https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/"><![CDATA[<p>Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp
+</ul>]]></content><author><name>zhao</name></author><category term="Testing" /><category term="k6" /><category term="jmeter" /><category term="testing" /><summary type="html"><![CDATA[Các công cụ kiểm thử tải (Load Testing Tool - LTT) đã trở nên rất phổ biến hiện nay, cả miễn phí và có phí, nguồn mở và nguồn đóng, và mỗi công cụ đều có điểm mạnh và yếu của riêng mình.]]></summary></entry><entry><title type="html">Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)</title><link href="https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/" rel="alternate" type="text/html" title="Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)" /><published>2023-03-25T00:00:00+07:00</published><updated>2023-03-25T00:00:00+07:00</updated><id>https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing</id><content type="html" xml:base="https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/"><![CDATA[<p>Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp
 (Pairwise Testing hay All-Pairs Testing).</p>
 
 <h1 id="định-nghĩa-thế-nào-là-all-pairs-testing">Định nghĩa: Thế nào là All-Pairs Testing?</h1>
@@ -1200,7 +1352,9 @@ Các nhóm đang tìm cách tích hợp thử nghiệm vào quy trình phát tri
       <td> </td>
     </tr>
   </tbody>
-</table>]]></content><author><name>zhao</name></author><category term="Testing" /><category term="pairwise" /><category term="all-pairs" /><category term="testing" /><summary type="html"><![CDATA[Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp (Pairwise Testing hay All-Pairs Testing).]]></summary></entry><entry><title type="html">Một số mô hình phát triển phần mềm (Phần 1)</title><link href="https://zhaospei.github.io//se/2023/02/27/software-models-chapter-1/" rel="alternate" type="text/html" title="Một số mô hình phát triển phần mềm (Phần 1)" /><published>2023-02-27T00:00:00+07:00</published><updated>2023-02-27T00:00:00+07:00</updated><id>https://zhaospei.github.io//se/2023/02/27/software-models-chapter-1</id><content type="html" xml:base="https://zhaospei.github.io//se/2023/02/27/software-models-chapter-1/"><![CDATA[<p>Mô hình phát triển phần mềm là thể hiện trừu tượng của các tiến trình phát triển phần mềm. Nó xác định các pha/ giai đoạn trong phát triển phần mềm. Trong các dự án phát triển phần mềm, mô hình đóng vai trò rất quan trọng. Mô hình đóng vai trò là hướng đi và quyết định đến chất lượng đầu ra của sản phẩm.</p>
+</table>]]></content><author><name>zhao</name></author><category term="Testing" /><category term="pairwise" /><category term="all-pairs" /><category term="testing" /><summary type="html"><![CDATA[Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp (Pairwise Testing hay All-Pairs Testing).]]></summary></entry><entry><title type="html">Một số mô hình phát triển phần mềm (Phần 1)</title><link href="https://zhaospei.github.io//se/2023/02/27/software-models-chapter-1/" rel="alternate" type="text/html" title="Một số mô hình phát triển phần mềm (Phần 1)" /><published>2023-02-27T00:00:00+07:00</published><updated>2023-02-27T00:00:00+07:00</updated><id>https://zhaospei.github.io//se/2023/02/27/software-models-chapter-1</id><content type="html" xml:base="https://zhaospei.github.io//se/2023/02/27/software-models-chapter-1/"><![CDATA[<p>Mô hình phát triển phần mềm là thể hiện trừu tượng của các tiến trình phát triển phần mềm. Nó xác định các pha/ giai đoạn trong phát triển phần mềm.</p>
+
+<p>Trong các dự án phát triển phần mềm, mô hình đóng vai trò rất quan trọng. Mô hình đóng vai trò là hướng đi và quyết định đến chất lượng đầu ra của sản phẩm.</p>
 
 <p>Có nhiều loại mô hình phát triển phần mềm khác nhau như:</p>
 <ul>
@@ -1348,50 +1502,4 @@ Quá trình phát triển có thể được chia các phần nhỏ hơn và cá
 <p>Tuy nhiên, việc quản lý, quy trình phát triển mô hình xoắn ốc sẽ phức tạp. Từ đó, mô hình xoắn ốc không phù hợp với các mô hình vừa và nhỏ hoặc rủi ro thấp. Ngoài ra, số lượng lớn các giai đoạn đòi hỏi cần một số lượng lớn tài liệu.</p>
 
 <h1 id="kết-luận">Kết luận</h1>
-<p>Mô hình đóng vai trò là hướng đi và quyết định đến chất lượng đầu ra của sản phẩm. Vì vậy, việc xác định đúng và chính xác mô hình cho phần mềm là rất quan trọng. Mỗi mô hình quy trình tuân theo một loạt các bước duy nhất đối với loại của nó để đảm bảo thành công trong quy trình phát triển phần mềm. Tùy vào cấu trúc phần mềm mà từ đó chọn đúng mô hình phần mềm để thực hiện. Trong thực tế, chúng ta không nhất thiết phải sử dụng đúng các mô hình phần mềm trên mà có thể “biến tấu”, thay đổi để phù hợp với dự án phần mềm.</p>]]></content><author><name>zhao</name></author><category term="SE" /><category term="software" /><category term="model" /><summary type="html"><![CDATA[Mô hình phát triển phần mềm là thể hiện trừu tượng của các tiến trình phát triển phần mềm. Nó xác định các pha/ giai đoạn trong phát triển phần mềm. Trong các dự án phát triển phần mềm, mô hình đóng vai trò rất quan trọng. Mô hình đóng vai trò là hướng đi và quyết định đến chất lượng đầu ra của sản phẩm.]]></summary></entry><entry><title type="html">Một bài giới thiệu về cái blog nho nhỏ này</title><link href="https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/" rel="alternate" type="text/html" title="Một bài giới thiệu về cái blog nho nhỏ này" /><published>2023-02-22T00:00:00+07:00</published><updated>2023-02-22T00:00:00+07:00</updated><id>https://zhaospei.github.io//dummy/2023/02/22/about-this-blog</id><content type="html" xml:base="https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/"><![CDATA[<p>Chào!
-Hmm, đầu tiên phải giới thiệu đôi chút về bản thân nhỉ? À chắc không cần, vì mấy cái câu giới thiệu bản thân tớ 
-viết đi viết lại ở hầu hết mọi trang của blog rồi… LOL.</p>
-
-<p>Lần đầu tiên viết bài, không biết viết như nào :)). Chắc tớ sẽ nói vì sao tớ lại tạo cái blog nào và cách tớ thực hiện nó.</p>
-
-<h2 id="tại-sao-tớ-lại-xây-dựng-cái-blog-này">Tại sao tớ lại xây dựng cái blog này?</h2>
-<p>À chắc cái blog này được tạo bởi vì các ý nghĩ vớ vẩn của tớ tại một thời điểm nào đấy.
-Tớ tạo blog này với mục đích ban đầu là tạo ra một chỗ lưu trữ những bài viết của tớ, nó có thể là các bài viết học thuật hay là 
-những bài viết vớ vẩn chia sẻ trải nghiệm của bản thân tớ. Nhưng mục đích cuối cùng tớ muốn hướng tới là cải thiện khả năng viết
-lách của bản thân và tìm một niềm vui khác khi rảnh.</p>
-
-<h2 id="cách-tớ-thực-hiện-cái-blog-này">Cách tớ thực hiện cái blog này…</h2>
-<p>Ban đầu, tớ định dùng <strong>Django</strong> để xây dựng blog nhưng nghĩ lại là dùng <strong>Django</strong> thì host kiểu gì vì tớ không có tiền để duy trì hosting. Tớ cũng đã nghĩ đến các hosting free nhưng mà nó khá là ba chấm và deloy <strong>Django</strong> rất rườm rà. Và rồi, tớ nghĩ sao tớ 
-không dùng chính <strong>Github Pages</strong> để host nhỉ? Cuối cùng, tớ đã quyết định dùng nó để host và sử dụng <strong>jekyll</strong> để xây dựng blog. 
-Và rồi, tớ đã bắt tay vào làm nó…</p>
-
-<p>Về giao diện của blog, tớ lấy cảm hứng từ <a href="https://reaganhenke.com/">Reaganhenke</a> và <a href="https://www.digitalocean.com/">Digital Ocean</a>.</p>
-
-<p>Tớ biết đến <a href="https://reaganhenke.com/">Reaganhenke</a> nhờ vào một hôm tìm cái trang web nghe nhạc lofi để học. Sau khi tìm hiểu, tớ có biết đến <a href="https://imissmycafe.com/">I Miss My Cafe</a>. Đây là một trang đối với tớ khá là hay, recommend cậu trang này nhé!(à cậu có thể vào để tìm hiểu về nó nhé :))). Tính tớ hay tò mò nên tớ đã lục lọi để tìm ra source của nó để clone lại một trang giống như vậy :)). Kết quả là tớ chỉ tìm được page của người làm ra nó. Và rồi, tớ bị thu hút bởi thiết kế của page, nhất là mấy cái card đầu của page. Haha, và rồi tớ lấy nó để làm giao diện.
- <em>(Reagan Henke, if you see this blog, please forgive me for using it without your permission!)</em>.</p>
-
-<p>Còn <a href="https://www.digitalocean.com/">Digital Ocean</a> thì một lần tớ tìm tutorial và tìm ra nó. Đây cũng một trang chất lượng, recommend cậu trang này nữa nhé! (À thực ra ai cũng biết đến trang này :))).</p>
-
-<p>Ngoài ra tớ còn sử dụng <a href="https://vincentgarreau.com/particles.js/">particles.js</a> để làm mấy cái lines nối nhau trông rườm rà ở background và <a href="https://talk.hyvor.com/">Hyvor</a> để làm phần comment (Tớ chỉ được dùng thử 15 ngày nên không biết 15 ngày sau nó có bị mất không :))).</p>
-
-<h2 id="mục-đích-hướng-đến-của-blog">Mục đích hướng đến của blog…</h2>
-<p>Blog này tớ dự định sẽ là chia sẻ những bài viết, chủ đề mà tớ tìm hiểu và nghiên cứu. Hiện tại, tớ đang theo Lab CNPM nên đa số bài viết sẽ liên quan đến chủ đề này. Nếu cậu cũng đang tìm hiểu về chủ đề này thì có thể đọc blog của tớ nhé để giúp tớ cản thiện bài viết của bản thân. Ngoài ra, tớ cũng đang tìm hiểu về AI/ML nữa. Cũng có thể sẽ là những bài viết chia sẻ những trải nghiệm của bản thân. Nhưng mà tớ rất là lười viết nên có thể rất lâu tớ mới viết một bài mới _D:.</p>
-
-<p>Cậu cũng có thể gửi bài tới blog nhé. Rất là khuyến khích ủng hộ luôn.</p>
-
-<h2 id="mong-muốn-của-tớ">Mong muốn của tớ…</h2>
-<p>Tớ tạo blog vì ý nghĩ nhất thời và mục đích cá nhân là nhiều nên tớ cũng không mong blog sẽ được biết đến rộng rãi. À được nhiều người biết thì cũng không sao. Mong rằng với những người biết đến blog của tớ sẽ nhận được điều gì đó mới mẻ khi đọc những bài viết vớ vẩn của tớ. Vậy thôi…</p>
-
-<p>Cậu có thể xem source code của blog tớ tại <a href="https://github.com/zhaospei/zhaospei.github.io">Github</a>.</p>
-
-<p>Cảm ơn cậu đã ghé thăm blog của tớ và đọc cái post mở đầu xàm này. 
-Nếu có gì góp ý cho blog thì cậu comment phía dưới nhé, tớ sẽ sớm khắc phục. (À comment sớm nhé chứ phần comment chỉ được dùng thử 15 ngày :)).</p>
-
-<p><br /></p>
-<div style="text-align: right"> 
-See yaaaaaaaaaaaaaaaaaaaaaaaaaaaa,
-</div>
-
-<div style="text-align: right"> 
-<strong>Zhao</strong>
-</div>]]></content><author><name>zhao</name></author><category term="Dummy" /><category term="doc" /><category term="talk" /><category term="zhao" /><summary type="html"><![CDATA[Chào! Hmm, đầu tiên phải giới thiệu đôi chút về bản thân nhỉ? À chắc không cần, vì mấy cái câu giới thiệu bản thân tớ viết đi viết lại ở hầu hết mọi trang của blog rồi… LOL.]]></summary></entry></feed>
+<p>Mô hình đóng vai trò là hướng đi và quyết định đến chất lượng đầu ra của sản phẩm. Vì vậy, việc xác định đúng và chính xác mô hình cho phần mềm là rất quan trọng. Mỗi mô hình quy trình tuân theo một loạt các bước duy nhất đối với loại của nó để đảm bảo thành công trong quy trình phát triển phần mềm. Tùy vào cấu trúc phần mềm mà từ đó chọn đúng mô hình phần mềm để thực hiện. Trong thực tế, chúng ta không nhất thiết phải sử dụng đúng các mô hình phần mềm trên mà có thể “biến tấu”, thay đổi để phù hợp với dự án phần mềm.</p>]]></content><author><name>zhao</name></author><category term="SE" /><category term="software" /><category term="model" /><summary type="html"><![CDATA[Mô hình phát triển phần mềm là thể hiện trừu tượng của các tiến trình phát triển phần mềm. Nó xác định các pha/ giai đoạn trong phát triển phần mềm.]]></summary></entry></feed>

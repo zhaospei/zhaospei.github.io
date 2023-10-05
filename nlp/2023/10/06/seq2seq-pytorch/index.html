@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <title> Bọ là gì? Defect, Fault, Error, Bug, Failure? - Tuan-Dung Bui</title>
+    <title>Triển khai seq2seq với Pytorch - Tuan-Dung Bui</title>
     <link rel="icon" type="image/x-icon" href="/assets/media/blog-icon.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,22 +15,22 @@
     <script src="/assets/js/main.js"></script>
     <link type="application/atom+xml" rel="alternate" href="https://zhaospei.github.io//feed.xml" title="Tuan-Dung Bui" />
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Bọ là gì? Defect, Fault, Error, Bug, Failure? | Tuan-Dung Bui</title>
+<title>Triển khai seq2seq với Pytorch | Tuan-Dung Bui</title>
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Bọ là gì? Defect, Fault, Error, Bug, Failure?" />
+<meta property="og:title" content="Triển khai seq2seq với Pytorch" />
 <meta name="author" content="zhao" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Người đọc tự chịu trách nhiệm về tính xác thực của bài viết." />
-<meta property="og:description" content="Người đọc tự chịu trách nhiệm về tính xác thực của bài viết." />
-<link rel="canonical" href="https://zhaospei.github.io//se/2023/07/02/what-is-bug/" />
-<meta property="og:url" content="https://zhaospei.github.io//se/2023/07/02/what-is-bug/" />
+<meta name="description" content="Bài viết này giới thiệu cách sử dụng Pytorch để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc ngắn ngọn bài báo sau trước, Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014), để hiểu rõ cấu trúc seq2seq trong như thế nào, sau đó đọc bài viết này để đạt được kết quả gấp đôi với một nửa công sức." />
+<meta property="og:description" content="Bài viết này giới thiệu cách sử dụng Pytorch để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc ngắn ngọn bài báo sau trước, Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014), để hiểu rõ cấu trúc seq2seq trong như thế nào, sau đó đọc bài viết này để đạt được kết quả gấp đôi với một nửa công sức." />
+<link rel="canonical" href="https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/" />
+<meta property="og:url" content="https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/" />
 <meta property="og:site_name" content="Tuan-Dung Bui" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-07-02T00:00:00+07:00" />
+<meta property="article:published_time" content="2023-10-06T00:00:00+07:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Bọ là gì? Defect, Fault, Error, Bug, Failure?" />
+<meta property="twitter:title" content="Triển khai seq2seq với Pytorch" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"zhao"},"dateModified":"2023-07-02T00:00:00+07:00","datePublished":"2023-07-02T00:00:00+07:00","description":"Người đọc tự chịu trách nhiệm về tính xác thực của bài viết.","headline":"Bọ là gì? Defect, Fault, Error, Bug, Failure?","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhaospei.github.io//se/2023/07/02/what-is-bug/"},"url":"https://zhaospei.github.io//se/2023/07/02/what-is-bug/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"zhao"},"dateModified":"2023-10-06T00:00:00+07:00","datePublished":"2023-10-06T00:00:00+07:00","description":"Bài viết này giới thiệu cách sử dụng Pytorch để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc ngắn ngọn bài báo sau trước, Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014), để hiểu rõ cấu trúc seq2seq trong như thế nào, sau đó đọc bài viết này để đạt được kết quả gấp đôi với một nửa công sức.","headline":"Triển khai seq2seq với Pytorch","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/"},"url":"https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -200,7 +200,7 @@
   <article class="post-content-container flex flex-col items-start justify-center">
     <header class="flex flex-col gap-12 w-full max-w-full pb-8">
       <div class="flex flex-col justify-center gap-4">
-        <h1 class="text-5xl font-extrabold leading-tight">  Bọ là gì? Defect, Fault, Error, Bug, Failure? </h1>
+        <h1 class="text-5xl font-extrabold leading-tight"> Triển khai seq2seq với Pytorch </h1>
         <div class="flex flex-col items-start justify-between mt-2 md:flex-row md:items-center">
           <div class="flex items-center">
             
@@ -209,14 +209,12 @@
             <img class="object-cover w-[40px] h-[40px] rounded-full" src="/assets/media/author/zhao-img.png" alt="Tuan-Dung Bui">
             
             <p class="ml-2 text-sm text-gray-700 dark:text-gray-300">
-              Tuan-Dung Bui / July 2, 2023
+              Tuan-Dung Bui / October 6, 2023
             </p>
             
           </div>
           <p class="mt-2 text-sm text-gray-600 min-w-32 md:mt-0 dark:text-gray-300">
             
-
-4 min read
 
           </p>
         </div>
@@ -227,49 +225,29 @@
         <h2 class="uppercase tracking-widest text-base	font-extrabold mb-6"> Table of contents </h2>
         <nav class="overflow-auto pr-2" style="max-height: calc(100vh - 16.5rem);">
           <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h2"><a href="#người-đọc-tự-chịu-trách-nhiệm-về-tính-xác-thực-của-bài-viết">Người đọc tự chịu trách nhiệm về tính xác thực của bài viết.</a></li>
-<li class="toc-entry toc-h1"><a href="#một-cái-mở-bài-rất-là-ngắn">Một cái mở bài rất là ngắn</a></li>
-<li class="toc-entry toc-h1"><a href="#một-cái-thân-bài-rất-là-dài">Một cái thân bài rất là dài</a></li>
-<li class="toc-entry toc-h1"><a href="#một-cái-kết-bài-có-như-có">Một cái kết bài có như có</a></li>
+<li class="toc-entry toc-h1"><a href="#thôi-viết-tiếp-trong-tương-lai-nhé-">…..Thôi viết tiếp trong tương lai nhé :))</a></li>
 </ul>
         </nav>
       </aside> -->
       <div class="items-center pb-8" style="grid-template-rows: auto 1fr;">
         <div class="thumbnail-image relative not-prose rounded-2xl overflow-hidden">
           
-          <img alt="Post image feature" src="/assets/media/feature/Software-bugs.jpg" loading="lazy" class="w-full">
+          <img alt="Post image feature" src="/assets/media/feature/pytorch.png" loading="lazy" class="w-full">
           
         </div>
         <div class="post-content prose">
-          <h2 id="người-đọc-tự-chịu-trách-nhiệm-về-tính-xác-thực-của-bài-viết">Người đọc tự chịu trách nhiệm về tính xác thực của bài viết.</h2>
+          <p>Bài viết này giới thiệu cách sử dụng <code class="language-plaintext highlighter-rouge">Pytorch</code> để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc ngắn ngọn bài báo sau trước, <a href="https://arxiv.org/pdf/1406.1078.pdf">Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014)</a>, để hiểu rõ cấu trúc seq2seq trong như thế nào, sau đó đọc bài viết này để đạt được kết quả gấp đôi với một nửa công sức.</p>
 
-<h1 id="một-cái-mở-bài-rất-là-ngắn">Một cái mở bài rất là ngắn</h1>
-<p>Chuyện là tuần vừa rồi tôi tham gia lab nghiên cứu ở trường và được giao đọc một bài báo khoa học. Nếu không nhầm thì mục đích của thầy khi bảo tôi đọc bài báo này là nắm được sơ qua “context” nghiên cứu của nhóm đang thực hiện.</p>
+<p>(Có thể trong thời gian xa tôi sẽ viết một bài về seq2seq, hiện tại bạn có thể đọc tạm paper về nó)</p>
 
-<p>Do lần đầu tôi được giao đọc một bài báo khoa học (à trước đó có đọc, dịch gì đấy một bài rồi nhưng mà khi chú tâm thực hiện), thì tất nhiên chưa có kinh nghiệm nên là chỉ nghĩ đọc hiểu nghĩa, cái chung chung bài báo đang nói là gì, hiểu cách bài báo đang thực hiện, vân vân mây mây… Và rồi, sau một tuần được giao đọc bài báo thì mình lên gặp thầy trao đổi về hiểu biết của mình về bài báo. À thì mọi việc sẽ chả có gì nếu như cách đọc của mình là đúng.</p>
-
-<p>Nhưng <strong>KHÔNG</strong>, mình đã được khai sáng một đống tri thức mới. Thầy bảo mình không thể hiểu chung chung bài báo nói gì được mà phải nắm rõ và chính xác toàn bộ khái niệm mà bài báo đã đề cập như bài báo mình “được” đọc là <a href="https://ieeexplore.ieee.org/document/4408585?denied=">“Classifying Software Changes: Clean or Buggy?”</a> thì đầu tiên phải đặt câu hỏi <em>Software Changes</em> là gì? <em>Clean, Buggy</em> là gì? (Tất nhiên là trong “context” của bài báo).</p>
-
-<p>Trong một đống thứ thầy nói và hỏi mình thì chắc thứ tồn đọng lại (khắc sâu mình nhất) là câu hỏi (cũng là câu hỏi đầu tiên) là: <strong>“Theo em, bug là gì?”</strong> (Vì tiêu đề bài báo có việc phân loại hai nhãn là Clean và Buggy mà). Lúc đấy, mình kiểu :))). Tại mình nghĩ là thầy sẽ vấn đề và hướng giải quyết của bài báo chứ không phải mấy câu hỏi lí thuyết như này. Và thầy doạ mình là không trả lời được sẽ hạ điểm (tất nhiên là đùa) môn mình kì trước (Do kì trước mình có tham gia lớp kiểm thử của thầy, không hiểu sao thầy vẫn còn nhớ mình :)).</p>
-
-<p>Và một đứa thường bỏ qua những thứ căn bản như mình thì tất nhiên chả bao giờ tìm hiểu định nghĩa nó là gì rồi và khi một từ thông dụng và được dùng rất nhiều trong cộng đồng lập trình như từ “bug” như thế thì mình trả lời đại khái là: <em>“Bug là lỗi phần mềm. Nó xảy ra khi phần mềm thực hiện sai và không đúng mong đợi đã được đề ra ban đầu”.</em> Và thầy nhìn mình, nhìn ánh mắt “trìu mến” mà thầy nhìn mình là mình biết chất lượng trả lời câu hỏi của mình như thế nào rồi. Xong thầy bảo, trong phát triển phần mềm, lỗi phần mềm không chỉ là bug, mà còn có <em>defect</em>, <em>fault</em>, <em>error</em>, <em>failure</em>. Lúc thầy nói mấy từ này mình chả nghe ra đâu (do trình nghe đọc tiếng anh mình hơi kém, thực ra là rất kém) đến lúc thầy viết ra mình và giải thích mình mới có thể hình dung ra những từ này. Và đấy là lí do mình viết bài viết này để “flex” (đùa chứ xem mình hiểu tới đâu và nhờ bạn đọc xác nhận lại giùm mình.).</p>
-
-<h1 id="một-cái-thân-bài-rất-là-dài">Một cái thân bài rất là dài</h1>
-<p>Thực ra trên mạng có rất nhiều bài viết viết về vấn đề này rồi, bạn chỉ cần hỏi “ông Gu Gồ” là nó ra một đống cho bạn đọc nên là mình không đi sâu vào lắm mà chỉ sơ qua những gì mình hiểu được về nó và phân biệt những khái niệm đã nêu ở phần tiêu đề.</p>
+<p>Tôi đã đọc rất nhiều sơ đồ cấu trúc mạng seq2seq và tôi cảm thấy sơ đồ này do Pytorch cung cấp là dễ hiểu nhất.</p>
 
 <figure class="image" style="text-align: center;">
-    <img src="/assets/media/post/bug-vs-defect-vs-error-vs-fault-vs-failure.png" alt="" style="margin: auto;" />
+    <img src="/assets/media/post/seq2seq.png" alt="" style="margin: auto;" />
     <figcaption style="font-style: italic;"></figcaption>
 </figure>
 
-<p><strong>Defects</strong>, like quality, can be defined in many different ways but are more commonly defined as deviations from specifications or expectations which might lead to <strong>failures</strong> in operation. <em>(Có thể dịch là: Defects, giống như Quality (Chất lượng phần mềm), có thể định nghĩa bằng nhiều cách khách nhau nhưng thường được định nghĩa là sai lệch so với thông số kỹ thuật hoặc mong đợi có thể dẫn đến failures khi vận hành.)</em></p>
-
-<p>A software <strong>failure</strong> is <strong>observable</strong> software misbehavior; however, a <strong>defect</strong> may not always lead to a <strong>failure</strong>. <em>(Có thể dịch là: Failure là hành vi sai trái của phần mềm có thể quan sát được. Tuy nhiên, một defect không phải lúc nào cũng dẫn đến một failure.)</em></p>
-
-<p><strong>Defects</strong> colloquially called <strong>bugs</strong> in software artifacts, typically in the software source code. <em>(Có thể dịch là: Defects thường được gọi (một cách không chính thức) là bugs trong software artifacts (bất kỳ thứ gì tạo ra phần mềm), điển hình là mã nguồn.)</em></p>
-
-<h1 id="một-cái-kết-bài-có-như-có">Một cái kết bài có như có</h1>
-<p>Bài viết này khoảng một nửa là mình bịa, một nửa còn lại cũng bịa nốt.</p>
+<h1 id="thôi-viết-tiếp-trong-tương-lai-nhé-">…..Thôi viết tiếp trong tương lai nhé :))</h1>
 
         </div>
 
@@ -277,21 +255,18 @@
           <b class="font-semibold text-lg"> Tags: </b>
           
           <a class="text-sm	inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800"
-            href="/tag/Bug"> Bug </a>
+            href="/tag/nlp"> nlp </a>
           
           <a class="text-sm	inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800"
-            href="/tag/Defect"> Defect </a>
+            href="/tag/pytorch"> pytorch </a>
           
           <a class="text-sm	inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800"
-            href="/tag/Fault"> Fault </a>
-          
-          <a class="text-sm	inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800"
-            href="/tag/Failure"> Failure </a>
+            href="/tag/model"> model </a>
           
         </div>
 
         <div class="flex justify-between items-center w-full flex-wrap gap-4 pb-4"><a class="" rel="noreferrer noopener"
-            target="_blank" href="https://github.com/zhaospei/zhaospei.github.io/tree/main/_posts/2023-07-02-what-is-bug.md"><span
+            target="_blank" href="https://github.com/zhaospei/zhaospei.github.io/tree/main/_posts/2023-10-06-seq2seq-pytorch.md"><span
               class="font-normal link-hover">Edit on Github</span><span class="inline-block w-3 h-3 ml-2 mt-1 mr-4"><svg
                 class="block w-full h-full" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round"
@@ -383,7 +358,7 @@
             <div class="flex items-center justify-start text-gray-600 dark:text-gray-300 text-sm gap-2 px-2"><time>October 6, 2023</time>•
               <span>
               
-              10 min read
+              11 min read
               </span></div>
             <h3 class="px-2 py-2 text-black dark:text-white text-2xl font-bold">Attention is All You Need</h3>
           </div>
