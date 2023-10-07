@@ -19,7 +19,7 @@ Việc đào tạo `RNN` truyền thống là nối tiếp và nó phải đợi
 
 {% include image.html url="/assets/media/post/attention.png" %}
 
-$$ Attention(Q,K,V)=softmax(\frac{QK^T}{\sqrt{d_k}})V $$
+$$ Attention(Q,K,V)=softmax(\dfrac{QK^T}{\sqrt{d_k}})V $$
 
 Sự chú ý của nhiều đầu vào sử dụng nhiều bộ trọng số (`weights`) ($$ W_q,W_k,W_v $$), ghép lại cho ra kết quả cuối cùng.
 
@@ -32,7 +32,7 @@ $$ head_i=Attention(QW^Q_i,KW^K_i,VW^V_i) $$
 Trong đó $$h = 8$$, $$ d_q=d_k=d_v=d_{model}/4=64 $$.
 
 # # Encoder
-Bộ mã hóa được xếp chồng lên nhau bởi sáu lớp giống hệt nhau, mỗi lớp bao gồm hai lớp con - cơ chế tự chú ý nhiều đầu (`multi-head self-attention mechanism`) và mạng nơ ron vị trí chuyển tiếp được kết nối đầy đủ (`position-wise fully connected feed-forward network`). Mỗi lớp con sử dụng các kết nối dư (`residual connection`) và lớp chuẩn hóa (`layer normalization`). Kích thước đầu ra của các lớp con là $$ d_{model} = 512 $$.
+Encoder được xếp chồng lên nhau bởi sáu lớp giống hệt nhau, mỗi lớp bao gồm hai lớp con - cơ chế tự chú ý nhiều đầu (`multi-head self-attention mechanism`) và mạng nơ ron vị trí chuyển tiếp được kết nối đầy đủ (`position-wise fully connected feed-forward network`). Mỗi lớp con sử dụng các kết nối dư (`residual connection`) và lớp chuẩn hóa (`layer normalization`). Kích thước đầu ra của các lớp con là $$ d_{model} = 512 $$.
 
 Đầu ra của lớp con có thể được biểu diễn dưới dạng: 
 
@@ -90,14 +90,14 @@ $$ X_{hidden}=Linear(ReLU(Linear(X_{attention}))) $$
 
 $$ X_{hidden}=LayerNorm(X_{hidden}+X_{attention}) $$
 
-`multi-head attention` trong `encoder` là một cơ chế tự chú ý (`self-attention mechanism`). $$k$$, $$q$$ và $$v$$ trong cơ chế tự chú ý đều xuất phát từ cùng một vị trí, mỗi lớp của encoder có thể nhận được tất cả vị trí của lớp trước.
+`multi-head attention` trong `Encoder` là một cơ chế tự chú ý (`self-attention mechanism`). $$k$$, $$q$$ và $$v$$ trong cơ chế tự chú ý đều xuất phát từ cùng một vị trí, mỗi lớp của Encoder có thể nhận được tất cả vị trí của lớp trước.
 
 # # Decoder
-Bộ giải mã bao gồm sáu lớp giống hệt xếp chồng lên nhau; trong Multi-head Attention, $$q$$ được đến từ lớp trước đó của decoder, k và v đến từ đầu ra của encoder. Điều cho phép mỗi vị trí trong bộ giải mã nhận biết được tất cả các vị trí của chuỗi đầu vào.
+Decoder bao gồm sáu lớp giống hệt xếp chồng lên nhau; trong Multi-head Attention, $$q$$ được đến từ lớp trước đó của Decoder, k và v đến từ đầu ra của Encoder. Điều cho phép mỗi vị trí trong Decoder nhận biết được tất cả các vị trí của chuỗi đầu vào.
 
-Ngoài hai lớp con trong bộ mã hóa, bộ giải mã thêm một lớp con mới xử lý đầu ra của bộ mã hóa - `masked multi-head self-attention mechanism`. Bộ mã hóa trong seq2seq truyền thống sử dụng mô hình RNN, vì vậy nếu các từ tại thời điểm t được nhập vào trong quá trình huấn luyện thì mô hình sẽ không thể nhìn thấy các từ trước đó vào các thời điểm trong tương lai, bởi vì RNN hoạt động theo thời gian và chỉ khi thao tác tại thời điểm t hoàn thành, chỉ khi đó ta mới có thể nhìn thấy các từ tại thời điểm t + 1. Và Transformer Decoder đã không sử dụng RNN, thay đổi sang Self-Attention, điều này tạo ra một vấn đề, trong quá trình huấn luyện, toàn bộ ground truth đã được hiển thị với Decoder, điều này rõ ràng là sai, chúng ta cần phải thực hiện một số xử lý trên đầu vào của Decoder, quá trình này được gọi là `Mask` - Đặt tất cả các giá trị sau postion thành $$-\infty $$ trước khi vào softmax.
+Ngoài hai lớp con trong Encoder, Decoder thêm một lớp con mới xử lý đầu ra của Encoder - `masked multi-head self-attention mechanism`. Encoder trong seq2seq truyền thống sử dụng mô hình RNN, vì vậy nếu các từ tại thời điểm t được nhập vào trong quá trình huấn luyện thì mô hình sẽ không thể nhìn thấy các từ trước đó vào các thời điểm trong tương lai, bởi vì RNN hoạt động theo thời gian và chỉ khi thao tác tại thời điểm t hoàn thành, chỉ khi đó ta mới có thể nhìn thấy các từ tại thời điểm t + 1. Và Transformer Decoder đã không sử dụng RNN, thay đổi sang Self-Attention, điều này tạo ra một vấn đề, trong quá trình huấn luyện, toàn bộ ground truth đã được hiển thị với Decoder, điều này rõ ràng là sai, chúng ta cần phải thực hiện một số xử lý trên đầu vào của Decoder, quá trình này được gọi là `Mask` - Đặt tất cả các giá trị sau postion thành $$-\infty $$ trước khi vào softmax.
 
-Ví dụ, ground truth của Decoder là "<start> I am fine", chúng ta cho câu này vào bộ Decoder, sau khi Word Embedding và Positional Encoding, thực hiện phép biến đổi tuyến tính bậc 3 trên ma trận thu được $$(W_Q,W_K,W_V)$$ Sau đó thực hiện self-attention, trước tiên, nhận Scaled Scores thông qua $$\frac{Q×K^T}{\sqrt{d_k}}$$, bước tiếp theo rất quan trọng, chúng ta cần mask theo Scaled Scores, ví dụ, khi nhập "I", hiện tại mô hình chỉ biết thông tin của tất cả các từ trước đó của "I", tức thông tin của "<start>" và "I", không được phép biết được thông tin của các từ sau "I". Lý do rất đơn giản, khi dự đoán là chúng ta dự đoán theo thứ tự từng chữ, làm sao có thể biết được thông tin của những từ sau trước khi dự đoán xong từ này? Mask rất đơn giản, đầu tiên tạo một ma trận có tam giác hoàn toàn phía dưới bằng 0 và tam giác hoàn tòan phía trên bằng âm vô cùng, sau đó chỉ cần thêm nó vào Scaled Scores.
+Ví dụ, ground truth của Decoder là "\<start\> I am fine", chúng ta cho câu này vào bộ Decoder, sau khi Word Embedding và Positional Encoding, thực hiện phép biến đổi tuyến tính bậc 3 trên ma trận thu được $$(W_Q,W_K,W_V)$$ Sau đó thực hiện self-attention, trước tiên, nhận Scaled Scores thông qua $$\dfrac{Q×K^T}{\sqrt{d_k}}$$, bước tiếp theo rất quan trọng, chúng ta cần mask theo Scaled Scores, ví dụ, khi nhập "I", hiện tại mô hình chỉ biết thông tin của tất cả các từ trước đó của "I", tức thông tin của "\<start\>" và "I", không được phép biết được thông tin của các từ sau "I". Lý do rất đơn giản, khi dự đoán là chúng ta dự đoán theo thứ tự từng chữ, làm sao có thể biết được thông tin của những từ sau trước khi dự đoán xong từ này? Mask rất đơn giản, đầu tiên tạo một ma trận có tam giác hoàn toàn phía dưới bằng 0 và tam giác hoàn tòan phía trên bằng âm vô cùng, sau đó chỉ cần thêm nó vào Scaled Scores.
 
 # # Word Embedding và Positional Embedding
 ## Word Embedding
@@ -107,9 +107,37 @@ Hình thức mã hóa `One-hot` ngắn gọn, nhưng quá thưa thớt, nó khô
 ## Positional Embedding
 Bởi vì mô hình không bao gồm các cấu trúc tuần hoàn, vì vậy nắm bắt được các thông tin thứ tự tuần tự, ví dụ nếu $$K$$ và $$V$$ được xóa trộn theo từng hàng thì kết quả sau Attention sẽ giống nhau. Tuy nhiên, thông tin tuần tự rất quan trọng và thể hiện cấu trúc toàn cầu, do đó thông tin position tuyệt đối và tương đối của token tuần tự phải được sử dụng.
 ### Nhúng vị trí tùy chinh
-Một ý tưởng là lấy một số trong khoảng $$[0, 1]$$ và gán nó cho mỗi từ, trong đó 0 được trao cho từ đầu tiên, 1 cho từ cuối cùng, công thức cụ thể là $$PE=\dfrac{pos}{T−1}$$.  
+Một ý tưởng là lấy một số trong khoảng $$[0, 1]$$ và gán nó cho mỗi từ, trong đó 0 được trao cho từ đầu tiên, 1 cho từ cuối cùng, công thức cụ thể là $$PE=\dfrac{pos}{T−1}$$. Vấn đề của việc gán theo công thức này là nó bị phụ thuộc và kích thước của văn bản. Tức
+là văn bản có số kí tự là 30. Khi đó theo công thức trên, thì khoảng cách giữa hai từ sẽ là 0.0333. Khi văn bản khác có số lượng kí từ < 30, thì con số 0.0333 vẫn mô tả đúng vị trí tương đối giữa chúng, tuy nhiên với văn bản > 30, ví dụ 90 thì 0.0333 đang gộp khoảng cách thực tế đang được phân tách bởi hai ký tự. Điều này rõ ràng là không phù hợp, vì sự khác biệt giống nhau không có nghĩa là giống nhau trong các câu khác nhau.
 
-**... (Phần này sẽ viết tiếp trong tương lai xa chứ giờ 2h sáng rồi đi ngủ).**
+Một ý tưởng khác là gắn tuyến tính mỗi bước theo thời gian, nghĩa là từ đầu tiên được gán là 1, từ thứ hai được gán là 2, ... Phương pháp này cũng có những vấn đề lớn: 1. Nó lớn hơn giá trị nhúng từ thông từ, có thể gây nhiễu cho mô hình; 2. Ký tự cuối cùng lớn hơn nhiều ký tự đầu tiên, sau khi hợp nhất với các từ nhúng, giá trị của các đặc trưng sẽ bị sai lệch.
+
+### Nhúng từ vị trí "lý tuởng"
+Một lý tưởng là thiết kế nhúng vị trí phải đáp ứng những tiêu chí sau:
+- Nó sẽ xuất ra mã hóa duy nhất cho mỗi từ.
+- Sự khác biệt giữa hai từ phải nhất quán giữa các câu có độ dài khác nhau.
+- Giá trị của nó phải được giới hạn.
+
+Do đó việc nhúng vị trí sin và cosin đã được sử dụng cho Transformer.
+
+Bây giờ hãy định nghĩa lại Positional Embedding, kích thước của việc nhúng vị trí là `[max_sequence_length, embedding_dimension]`, kích thước của phần nhúng vị trí giống với kích thước của vector từ, đều bằng `embedding_dimension`. `max_sequence_length` là một hyperparameter, đề cập đến số lượng tối đa mà một câu bao gồm.
+
+Kích thước của việc nhúng vị trí cũng giống như kích thước của việc nhúng từ, cùng là $$d_{model}$$. Công thước tính toán của nó là:
+
+$$ PE_{(pos,2i)}=sin(pos/10000^{2i/d_{model}}) $$
+
+$$ PE_{(pos,2i+1)}=cos(pos/10000^{2i/d_{model}}) $$
+
+Trong đó, $$pos$$ đại diện cho chỉ mục vị trí, $$i$$ đại diện cho chỉ số chiều. Nghĩa là mỗi chiều $$i$$ của positional embedding pos tương ứng với một sóng sin.
+
+Trong hình dưới này minh họa cho cách tính position embedding của tác giả với số chiều là 6. Giá trị của các vector tại mỗi vị trí được tính toán theo công thức ở hình dưới.
+{% include image.html url="/assets/media/post/pe.png" %}
+
+Bản thân việc nhúng vị trí là một thông tin vị trí tuyệt đối, nhưng trong ngôn ngữ, vị trí tương đối cũng rất quan trọng, bởi vì
+
+$$ sin(\alpha+\beta)=sin\alpha cos\beta+cos\alpha sin\beta\cos(\alpha+\beta)=cos\alpha cos\beta-sin\alpha sin\beta $$
+
+cho thấy vector tại vị trí $$p + k$$ có thể được biểu diễn dưới dạng phép biến đổi tuyến tính của vectơ tại vị trí $$p$$, điều này cung cấp khả năng thể hiện thông tin vị trí tương đối. Phiên bản hình sin cũng cho phép mô hình ngoại suy với độ dài chuỗi dài hơn so với độ dài chuỗi gặp phải trong quá trình huấn luyện.
 
 # # Q & A
 ## Tại sao Transformer cần Multi-head Attention ?
