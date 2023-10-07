@@ -28,6 +28,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-toc
   - jekyll-postcss
+  - jemoji
 
 postcss:
   cache: false

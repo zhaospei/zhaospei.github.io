@@ -4,6 +4,7 @@ gem 'jekyll'
 gem 'webrick'
 gem 'jekyll-postcss'
 gem "jekyll-toc"
+gem 'jemoji'
 
 group :jekyll_plugins do
     gem "jekyll-feed", "~> 0.12"

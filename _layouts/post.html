@@ -93,7 +93,7 @@ layout: default
           {% toc %}
         </nav>
       </aside> -->
-      <div class="items-center pb-8" style="grid-template-rows: auto 1fr;">
+      <div class="items-center pb-8 w-full" style="grid-template-rows: auto 1fr;">
         <div class="thumbnail-image relative not-prose rounded-2xl overflow-hidden">
           {% if page.img-feature %}
           <img alt="Post image feature" src="{{ page.img-feature }}" loading="lazy" class="w-full">
@@ -101,7 +101,7 @@ layout: default
           <img alt="Post image feature" src="/assets/media/feature/default.jpg" loading="lazy" class="w-full">
           {% endif %}
         </div>
-        <div class="post-content prose">
+        <div class="post-content prose w-full">
           {{ content }}
         </div>
 
