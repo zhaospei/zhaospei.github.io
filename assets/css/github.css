@@ -29,6 +29,21 @@ pre {
     border: 1px solid #dfe2e588;
 }
 
+.MathJax_Display {
+    background: transparent !important;
+    text-align: center;
+    display: block;
+    padding: 10px 0;
+    border-radius: 8px;
+    margin: 0;
+    display: inline-block;
+    clear: both;
+    min-width: 100%;
+    max-width: 100%;
+    overflow-x: auto !important;
+    text-align: center;
+}
+
 code {
     padding: 2px;
     border-radius: 8px;

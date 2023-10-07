@@ -21,8 +21,8 @@
     }
 
     ::-webkit-scrollbar-thumb {
-      background: rgb(144, 144, 144);
-      border-radius: 8px;
+      background: rgba(144, 144, 144, 0.692);
+      /* border-radius: 8px; */
     }
 
     ::-webkit-scrollbar-thumb:hover {

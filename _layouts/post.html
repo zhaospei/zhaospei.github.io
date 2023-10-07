@@ -138,7 +138,7 @@ layout: default
                 </svg></span></a></div>
           <div>
             <div
-              class="flex justify-between items-start w-full gap-16 flex-row flew-nowrap pt-16 pl-2 pr-2 border-gray-300 dark:boder-gray-900 border-0 border-t border-solid">
+              class="flex justify-between items-start w-full gap-16 flex-col md:flex-row flew-nowrap pt-16 pl-2 pr-2 border-gray-300 dark:boder-gray-900 border-0 border-t border-solid">
               <div class="relative w-36 h-36">
                 <div class="relative overflow-hidden h-full rounded-full">
                   <div class="">
@@ -172,7 +172,7 @@ layout: default
 
     <section class="page-navigation flex justify-center items-start flex-col flex-wrap w-full p-0 mt-16 mb-8">
       <h2 class="mb-4 text-3xl max-w-3xl font-bold mb-8">Check my other posts 📚</h2>
-      <div class="w-full items-start justify-center grid gap-8" style="grid-template-columns: 1fr 1fr 1fr; grid-gap: 3rem">
+      <div class="w-full items-start justify-center gap-8 flex flex-col md:flex-row">
         {% for post in site.posts limit:3 %}
         <a class="w-full container-hover" href="{{post.url}}">
           <div class="w-full">
