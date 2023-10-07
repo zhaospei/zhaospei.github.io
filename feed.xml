@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://zhaospei.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhaospei.github.io//" rel="alternate" type="text/html" /><updated>2023-10-06T03:22:48+07:00</updated><id>https://zhaospei.github.io//feed.xml</id><title type="html">Tuan-Dung Bui</title><subtitle>A markdown blog made by Tuan-Dung Bui aka Zhao (zhaospei). Hosted on zhaospei.github.io. I'll write something i like maybe my study or life.</subtitle><author><name>Tuan-Dung Bui</name></author><entry><title type="html">Attention is All You Need</title><link href="https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need/" rel="alternate" type="text/html" title="Attention is All You Need" /><published>2023-10-06T00:00:00+07:00</published><updated>2023-10-06T00:00:00+07:00</updated><id>https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need</id><content type="html" xml:base="https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need/"><![CDATA[<p><code class="language-plaintext highlighter-rouge">Transformer</code> là mô hình seq2seq được Google Brain đề xuất trong một bài báo xuất bản vào cuối năm 2017. Giờ đây, nó đã đạt được nhiều ứng dụng và tiện ích mở rộng và <code class="language-plaintext highlighter-rouge">BERT</code> là mô hình ngôn ngữ được đào tạo trước có nguồn gốc từ Transformer.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://zhaospei.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhaospei.github.io//" rel="alternate" type="text/html" /><updated>2023-10-07T20:12:51+07:00</updated><id>https://zhaospei.github.io//feed.xml</id><title type="html">Tuan-Dung Bui</title><subtitle>A markdown blog made by Tuan-Dung Bui aka Zhao (zhaospei). Hosted on zhaospei.github.io. I'll write something i like maybe my study or life.</subtitle><author><name>Tuan-Dung Bui</name></author><entry><title type="html">Attention is All You Need</title><link href="https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need/" rel="alternate" type="text/html" title="Attention is All You Need" /><published>2023-10-06T00:00:00+07:00</published><updated>2023-10-06T00:00:00+07:00</updated><id>https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need</id><content type="html" xml:base="https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need/"><![CDATA[<p><code class="language-plaintext highlighter-rouge">Transformer</code> là mô hình seq2seq được Google Brain đề xuất trong một bài báo xuất bản vào cuối năm 2017. Giờ đây, nó đã đạt được nhiều ứng dụng và tiện ích mở rộng và <code class="language-plaintext highlighter-rouge">BERT</code> là mô hình ngôn ngữ được đào tạo trước có nguồn gốc từ Transformer.</p>
 
 <p>Việc đào tạo <code class="language-plaintext highlighter-rouge">RNN</code> truyền thống là nối tiếp và nó phải đợi từ hiện tại được xử lý trước khi có thể xử lý từ tiếp theo. Transformer được huấn luyện song song, tức là tất cả các từ đều được huấn luyện cùng một lúc, điêu này làm tăng đáng kể hiệu quả tính toán.</p>
 
@@ -15,7 +15,7 @@
     <figcaption style="font-style: italic;"></figcaption>
 </figure>
 
-\[Attention(Q,K,V)=softmax(\frac{QK^T}{\sqrt{d_k}})V\]
+\[Attention(Q,K,V)=softmax(\dfrac{QK^T}{\sqrt{d_k}})V\]
 
 <p>Sự chú ý của nhiều đầu vào sử dụng nhiều bộ trọng số (<code class="language-plaintext highlighter-rouge">weights</code>) (\(W_q,W_k,W_v\)), ghép lại cho ra kết quả cuối cùng.</p>
 
@@ -28,7 +28,7 @@
 <p>Trong đó \(h = 8\), \(d_q=d_k=d_v=d_{model}/4=64\).</p>
 
 <h1 id="-encoder"># Encoder</h1>
-<p>Bộ mã hóa được xếp chồng lên nhau bởi sáu lớp giống hệt nhau, mỗi lớp bao gồm hai lớp con - cơ chế tự chú ý nhiều đầu (<code class="language-plaintext highlighter-rouge">multi-head self-attention mechanism</code>) và mạng nơ ron vị trí chuyển tiếp được kết nối đầy đủ (<code class="language-plaintext highlighter-rouge">position-wise fully connected feed-forward network</code>). Mỗi lớp con sử dụng các kết nối dư (<code class="language-plaintext highlighter-rouge">residual connection</code>) và lớp chuẩn hóa (<code class="language-plaintext highlighter-rouge">layer normalization</code>). Kích thước đầu ra của các lớp con là \(d_{model} = 512\).</p>
+<p>Encoder được xếp chồng lên nhau bởi sáu lớp giống hệt nhau, mỗi lớp bao gồm hai lớp con - cơ chế tự chú ý nhiều đầu (<code class="language-plaintext highlighter-rouge">multi-head self-attention mechanism</code>) và mạng nơ ron vị trí chuyển tiếp được kết nối đầy đủ (<code class="language-plaintext highlighter-rouge">position-wise fully connected feed-forward network</code>). Mỗi lớp con sử dụng các kết nối dư (<code class="language-plaintext highlighter-rouge">residual connection</code>) và lớp chuẩn hóa (<code class="language-plaintext highlighter-rouge">layer normalization</code>). Kích thước đầu ra của các lớp con là \(d_{model} = 512\).</p>
 
 <p>Đầu ra của lớp con có thể được biểu diễn dưới dạng:</p>
 
@@ -96,14 +96,14 @@
 
 \[X_{hidden}=LayerNorm(X_{hidden}+X_{attention})\]
 
-<p><code class="language-plaintext highlighter-rouge">multi-head attention</code> trong <code class="language-plaintext highlighter-rouge">encoder</code> là một cơ chế tự chú ý (<code class="language-plaintext highlighter-rouge">self-attention mechanism</code>). \(k\), \(q\) và \(v\) trong cơ chế tự chú ý đều xuất phát từ cùng một vị trí, mỗi lớp của encoder có thể nhận được tất cả vị trí của lớp trước.</p>
+<p><code class="language-plaintext highlighter-rouge">multi-head attention</code> trong <code class="language-plaintext highlighter-rouge">Encoder</code> là một cơ chế tự chú ý (<code class="language-plaintext highlighter-rouge">self-attention mechanism</code>). \(k\), \(q\) và \(v\) trong cơ chế tự chú ý đều xuất phát từ cùng một vị trí, mỗi lớp của Encoder có thể nhận được tất cả vị trí của lớp trước.</p>
 
 <h1 id="-decoder"># Decoder</h1>
-<p>Bộ giải mã bao gồm sáu lớp giống hệt xếp chồng lên nhau; trong Multi-head Attention, \(q\) được đến từ lớp trước đó của decoder, k và v đến từ đầu ra của encoder. Điều cho phép mỗi vị trí trong bộ giải mã nhận biết được tất cả các vị trí của chuỗi đầu vào.</p>
+<p>Decoder bao gồm sáu lớp giống hệt xếp chồng lên nhau; trong Multi-head Attention, \(q\) được đến từ lớp trước đó của Decoder, k và v đến từ đầu ra của Encoder. Điều cho phép mỗi vị trí trong Decoder nhận biết được tất cả các vị trí của chuỗi đầu vào.</p>
 
-<p>Ngoài hai lớp con trong bộ mã hóa, bộ giải mã thêm một lớp con mới xử lý đầu ra của bộ mã hóa - <code class="language-plaintext highlighter-rouge">masked multi-head self-attention mechanism</code>. Bộ mã hóa trong seq2seq truyền thống sử dụng mô hình RNN, vì vậy nếu các từ tại thời điểm t được nhập vào trong quá trình huấn luyện thì mô hình sẽ không thể nhìn thấy các từ trước đó vào các thời điểm trong tương lai, bởi vì RNN hoạt động theo thời gian và chỉ khi thao tác tại thời điểm t hoàn thành, chỉ khi đó ta mới có thể nhìn thấy các từ tại thời điểm t + 1. Và Transformer Decoder đã không sử dụng RNN, thay đổi sang Self-Attention, điều này tạo ra một vấn đề, trong quá trình huấn luyện, toàn bộ ground truth đã được hiển thị với Decoder, điều này rõ ràng là sai, chúng ta cần phải thực hiện một số xử lý trên đầu vào của Decoder, quá trình này được gọi là <code class="language-plaintext highlighter-rouge">Mask</code> - Đặt tất cả các giá trị sau postion thành \(-\infty\) trước khi vào softmax.</p>
+<p>Ngoài hai lớp con trong Encoder, Decoder thêm một lớp con mới xử lý đầu ra của Encoder - <code class="language-plaintext highlighter-rouge">masked multi-head self-attention mechanism</code>. Encoder trong seq2seq truyền thống sử dụng mô hình RNN, vì vậy nếu các từ tại thời điểm t được nhập vào trong quá trình huấn luyện thì mô hình sẽ không thể nhìn thấy các từ trước đó vào các thời điểm trong tương lai, bởi vì RNN hoạt động theo thời gian và chỉ khi thao tác tại thời điểm t hoàn thành, chỉ khi đó ta mới có thể nhìn thấy các từ tại thời điểm t + 1. Và Transformer Decoder đã không sử dụng RNN, thay đổi sang Self-Attention, điều này tạo ra một vấn đề, trong quá trình huấn luyện, toàn bộ ground truth đã được hiển thị với Decoder, điều này rõ ràng là sai, chúng ta cần phải thực hiện một số xử lý trên đầu vào của Decoder, quá trình này được gọi là <code class="language-plaintext highlighter-rouge">Mask</code> - Đặt tất cả các giá trị sau postion thành \(-\infty\) trước khi vào softmax.</p>
 
-<p>Ví dụ, ground truth của Decoder là “<start> I am fine", chúng ta cho câu này vào bộ Decoder, sau khi Word Embedding và Positional Encoding, thực hiện phép biến đổi tuyến tính bậc 3 trên ma trận thu được $$(W_Q,W_K,W_V)$$ Sau đó thực hiện self-attention, trước tiên, nhận Scaled Scores thông qua $$\frac{Q×K^T}{\sqrt{d_k}}$$, bước tiếp theo rất quan trọng, chúng ta cần mask theo Scaled Scores, ví dụ, khi nhập "I", hiện tại mô hình chỉ biết thông tin của tất cả các từ trước đó của "I", tức thông tin của "<start>" và "I", không được phép biết được thông tin của các từ sau "I". Lý do rất đơn giản, khi dự đoán là chúng ta dự đoán theo thứ tự từng chữ, làm sao có thể biết được thông tin của những từ sau trước khi dự đoán xong từ này? Mask rất đơn giản, đầu tiên tạo một ma trận có tam giác hoàn toàn phía dưới bằng 0 và tam giác hoàn tòan phía trên bằng âm vô cùng, sau đó chỉ cần thêm nó vào Scaled Scores.</start></start></p>
+<p>Ví dụ, ground truth của Decoder là “&lt;start&gt; I am fine”, chúng ta cho câu này vào bộ Decoder, sau khi Word Embedding và Positional Encoding, thực hiện phép biến đổi tuyến tính bậc 3 trên ma trận thu được \((W_Q,W_K,W_V)\) Sau đó thực hiện self-attention, trước tiên, nhận Scaled Scores thông qua \(\dfrac{Q×K^T}{\sqrt{d_k}}\), bước tiếp theo rất quan trọng, chúng ta cần mask theo Scaled Scores, ví dụ, khi nhập “I”, hiện tại mô hình chỉ biết thông tin của tất cả các từ trước đó của “I”, tức thông tin của “&lt;start&gt;” và “I”, không được phép biết được thông tin của các từ sau “I”. Lý do rất đơn giản, khi dự đoán là chúng ta dự đoán theo thứ tự từng chữ, làm sao có thể biết được thông tin của những từ sau trước khi dự đoán xong từ này? Mask rất đơn giản, đầu tiên tạo một ma trận có tam giác hoàn toàn phía dưới bằng 0 và tam giác hoàn tòan phía trên bằng âm vô cùng, sau đó chỉ cần thêm nó vào Scaled Scores.</p>
 
 <h1 id="-word-embedding-và-positional-embedding"># Word Embedding và Positional Embedding</h1>
 <h2 id="word-embedding">Word Embedding</h2>
@@ -113,9 +113,42 @@ Hình thức mã hóa <code class="language-plaintext highlighter-rouge">One-hot
 <h2 id="positional-embedding">Positional Embedding</h2>
 <p>Bởi vì mô hình không bao gồm các cấu trúc tuần hoàn, vì vậy nắm bắt được các thông tin thứ tự tuần tự, ví dụ nếu \(K\) và \(V\) được xóa trộn theo từng hàng thì kết quả sau Attention sẽ giống nhau. Tuy nhiên, thông tin tuần tự rất quan trọng và thể hiện cấu trúc toàn cầu, do đó thông tin position tuyệt đối và tương đối của token tuần tự phải được sử dụng.</p>
 <h3 id="nhúng-vị-trí-tùy-chinh">Nhúng vị trí tùy chinh</h3>
-<p>Một ý tưởng là lấy một số trong khoảng \([0, 1]\) và gán nó cho mỗi từ, trong đó 0 được trao cho từ đầu tiên, 1 cho từ cuối cùng, công thức cụ thể là \(PE=\dfrac{pos}{T−1}\).</p>
+<p>Một ý tưởng là lấy một số trong khoảng \([0, 1]\) và gán nó cho mỗi từ, trong đó 0 được trao cho từ đầu tiên, 1 cho từ cuối cùng, công thức cụ thể là \(PE=\dfrac{pos}{T−1}\). Vấn đề của việc gán theo công thức này là nó bị phụ thuộc và kích thước của văn bản. Tức
+là văn bản có số kí tự là 30. Khi đó theo công thức trên, thì khoảng cách giữa hai từ sẽ là 0.0333. Khi văn bản khác có số lượng kí từ &lt; 30, thì con số 0.0333 vẫn mô tả đúng vị trí tương đối giữa chúng, tuy nhiên với văn bản &gt; 30, ví dụ 90 thì 0.0333 đang gộp khoảng cách thực tế đang được phân tách bởi hai ký tự. Điều này rõ ràng là không phù hợp, vì sự khác biệt giống nhau không có nghĩa là giống nhau trong các câu khác nhau.</p>
 
-<p><strong>… (Phần này sẽ viết tiếp trong tương lai xa chứ giờ 2h sáng rồi đi ngủ).</strong></p>
+<p>Một ý tưởng khác là gắn tuyến tính mỗi bước theo thời gian, nghĩa là từ đầu tiên được gán là 1, từ thứ hai được gán là 2, … Phương pháp này cũng có những vấn đề lớn: 1. Nó lớn hơn giá trị nhúng từ thông từ, có thể gây nhiễu cho mô hình; 2. Ký tự cuối cùng lớn hơn nhiều ký tự đầu tiên, sau khi hợp nhất với các từ nhúng, giá trị của các đặc trưng sẽ bị sai lệch.</p>
+
+<h3 id="nhúng-từ-vị-trí-lý-tuởng">Nhúng từ vị trí “lý tuởng”</h3>
+<p>Một lý tưởng là thiết kế nhúng vị trí phải đáp ứng những tiêu chí sau:</p>
+<ul>
+  <li>Nó sẽ xuất ra mã hóa duy nhất cho mỗi từ.</li>
+  <li>Sự khác biệt giữa hai từ phải nhất quán giữa các câu có độ dài khác nhau.</li>
+  <li>Giá trị của nó phải được giới hạn.</li>
+</ul>
+
+<p>Do đó việc nhúng vị trí sin và cosin đã được sử dụng cho Transformer.</p>
+
+<p>Bây giờ hãy định nghĩa lại Positional Embedding, kích thước của việc nhúng vị trí là <code class="language-plaintext highlighter-rouge">[max_sequence_length, embedding_dimension]</code>, kích thước của phần nhúng vị trí giống với kích thước của vector từ, đều bằng <code class="language-plaintext highlighter-rouge">embedding_dimension</code>. <code class="language-plaintext highlighter-rouge">max_sequence_length</code> là một hyperparameter, đề cập đến số lượng tối đa mà một câu bao gồm.</p>
+
+<p>Kích thước của việc nhúng vị trí cũng giống như kích thước của việc nhúng từ, cùng là \(d_{model}\). Công thước tính toán của nó là:</p>
+
+\[PE_{(pos,2i)}=sin(pos/10000^{2i/d_{model}})\]
+
+\[PE_{(pos,2i+1)}=cos(pos/10000^{2i/d_{model}})\]
+
+<p>Trong đó, \(pos\) đại diện cho chỉ mục vị trí, \(i\) đại diện cho chỉ số chiều. Nghĩa là mỗi chiều \(i\) của positional embedding pos tương ứng với một sóng sin.</p>
+
+<p>Trong hình dưới này minh họa cho cách tính position embedding của tác giả với số chiều là 6. Giá trị của các vector tại mỗi vị trí được tính toán theo công thức ở hình dưới.</p>
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/pe.png" alt="" style="margin: auto;" />
+    <figcaption style="font-style: italic;"></figcaption>
+</figure>
+
+<p>Bản thân việc nhúng vị trí là một thông tin vị trí tuyệt đối, nhưng trong ngôn ngữ, vị trí tương đối cũng rất quan trọng, bởi vì</p>
+
+\[sin(\alpha+\beta)=sin\alpha cos\beta+cos\alpha sin\beta\cos(\alpha+\beta)=cos\alpha cos\beta-sin\alpha sin\beta\]
+
+<p>cho thấy vector tại vị trí \(p + k\) có thể được biểu diễn dưới dạng phép biến đổi tuyến tính của vectơ tại vị trí \(p\), điều này cung cấp khả năng thể hiện thông tin vị trí tương đối. Phiên bản hình sin cũng cho phép mô hình ngoại suy với độ dài chuỗi dài hơn so với độ dài chuỗi gặp phải trong quá trình huấn luyện.</p>
 
 <h1 id="-q--a"># Q &amp; A</h1>
 <h2 id="tại-sao-transformer-cần-multi-head-attention-">Tại sao Transformer cần Multi-head Attention ?</h2>
