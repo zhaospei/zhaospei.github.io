@@ -24,9 +24,9 @@ comments: false
 
 ## 1. Language Parsing
 
-### 1.1 Chinese Word Segmentation
+### 1.1 Vietnamese Word Segmentation
 
-1. **Chinese Word Segmentation: A Decade Review**. Changning Huang, Hai Zhao. JCIP 2007. [[paper](https://en.cnki.com.cn/Article_en/CJFDTotal-MESS200703001.htm)] 
+1. **State-of-the-Art Vietnamese Word Segmentation**. Song Nguyen Duc Cong, Quoc Hung Ngo, Rachsuda Jiamthapthaksin. IEEE 2019. [[paper](https://browse.arxiv.org/pdf/1906.07662.pdf)] 
 
 ### 1.2 Syntactic Parsing
 
