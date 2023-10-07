@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://zhaospei.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhaospei.github.io//" rel="alternate" type="text/html" /><updated>2023-10-07T20:17:36+07:00</updated><id>https://zhaospei.github.io//feed.xml</id><title type="html">Tuan-Dung Bui</title><subtitle>A markdown blog made by Tuan-Dung Bui aka Zhao (zhaospei). Hosted on zhaospei.github.io. I'll write something i like maybe my study or life.</subtitle><author><name>Tuan-Dung Bui</name></author><entry><title type="html">Attention is All You Need</title><link href="https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need/" rel="alternate" type="text/html" title="Attention is All You Need" /><published>2023-10-06T00:00:00+07:00</published><updated>2023-10-06T00:00:00+07:00</updated><id>https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need</id><content type="html" xml:base="https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need/"><![CDATA[<p><code class="language-plaintext highlighter-rouge">Transformer</code> là mô hình seq2seq được Google Brain đề xuất trong một bài báo xuất bản vào cuối năm 2017. Giờ đây, nó đã đạt được nhiều ứng dụng và tiện ích mở rộng và <code class="language-plaintext highlighter-rouge">BERT</code> là mô hình ngôn ngữ được đào tạo trước có nguồn gốc từ Transformer.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://zhaospei.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhaospei.github.io//" rel="alternate" type="text/html" /><updated>2023-10-07T22:26:33+07:00</updated><id>https://zhaospei.github.io//feed.xml</id><title type="html">Tuan-Dung Bui</title><subtitle>A markdown blog made by Tuan-Dung Bui aka Zhao (zhaospei). Hosted on zhaospei.github.io. I'll write something i like maybe my study or life.</subtitle><author><name>Tuan-Dung Bui</name></author><entry><title type="html">Attention is All You Need</title><link href="https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need/" rel="alternate" type="text/html" title="Attention is All You Need" /><published>2023-10-06T00:00:00+07:00</published><updated>2023-10-06T00:00:00+07:00</updated><id>https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need</id><content type="html" xml:base="https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need/"><![CDATA[<p><code class="language-plaintext highlighter-rouge">Transformer</code> là mô hình seq2seq được Google Brain đề xuất trong một bài báo xuất bản vào cuối năm 2017. Giờ đây, nó đã đạt được nhiều ứng dụng và tiện ích mở rộng và <code class="language-plaintext highlighter-rouge">BERT</code> là mô hình ngôn ngữ được đào tạo trước có nguồn gốc từ Transformer.</p>
 
 <p>Việc đào tạo <code class="language-plaintext highlighter-rouge">RNN</code> truyền thống là nối tiếp và nó phải đợi từ hiện tại được xử lý trước khi có thể xử lý từ tiếp theo. Transformer được huấn luyện song song, tức là tất cả các từ đều được huấn luyện cùng một lúc, điêu này làm tăng đáng kể hiệu quả tính toán.</p>
 
@@ -687,9 +687,7 @@ là văn bản có số kí tự là 30. Khi đó theo công thức trên, thì 
 <ol>
   <li><strong>From Symbols to Embeddings: A Tale of Two Representations in Computational Social Science</strong>.
 <em>Huimin Chen, Cheng Yang, Xuanming Zhang, Zhiyuan Liu, Maosong Sun, Jianbin Jin</em>. arXiv 2021. [<a href="https://arxiv.org/pdf/2106.14198">paper</a>].</li>
-</ol>]]></content><author><name>zhao</name></author><category term="NLP" /><category term="nlp" /><category term="paper" /><summary type="html"><![CDATA[0. Surveys of Natural Language Processing]]></summary></entry><entry><title type="html">Triển khai seq2seq với Pytorch</title><link href="https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/" rel="alternate" type="text/html" title="Triển khai seq2seq với Pytorch" /><published>2023-10-06T00:00:00+07:00</published><updated>2023-10-06T00:00:00+07:00</updated><id>https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch</id><content type="html" xml:base="https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/"><![CDATA[<p>Bài viết này giới thiệu cách sử dụng <code class="language-plaintext highlighter-rouge">Pytorch</code> để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc ngắn ngọn bài báo sau trước, <a href="https://arxiv.org/pdf/1406.1078.pdf">Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014)</a>, để hiểu rõ cấu trúc seq2seq trong như thế nào, sau đó đọc bài viết này để đạt được kết quả gấp đôi với một nửa công sức.</p>
-
-<p>(Có thể trong thời gian xa tôi sẽ viết một bài về seq2seq, hiện tại bạn có thể đọc tạm paper về nó)</p>
+</ol>]]></content><author><name>zhao</name></author><category term="NLP" /><category term="nlp" /><category term="paper" /><summary type="html"><![CDATA[0. Surveys of Natural Language Processing]]></summary></entry><entry><title type="html">Triển khai seq2seq với Pytorch</title><link href="https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/" rel="alternate" type="text/html" title="Triển khai seq2seq với Pytorch" /><published>2023-10-06T00:00:00+07:00</published><updated>2023-10-06T00:00:00+07:00</updated><id>https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch</id><content type="html" xml:base="https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/"><![CDATA[<p>Bài viết này giới thiệu cách sử dụng <code class="language-plaintext highlighter-rouge">Pytorch</code> để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc ngắn ngọn bài báo sau trước, <a href="https://arxiv.org/pdf/1406.1078.pdf">Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014)</a>, để hiểu rõ cấu trúc seq2seq trong như thế nào, sau đó đọc bài viết này để đạt được hiệu quả gấp đôi với một nửa công sức.</p>
 
 <p>Tôi đã đọc rất nhiều sơ đồ cấu trúc mạng seq2seq và tôi cảm thấy sơ đồ này do Pytorch cung cấp là dễ hiểu nhất.</p>
 
@@ -698,7 +696,362 @@ là văn bản có số kí tự là 30. Khi đó theo công thức trên, thì 
     <figcaption style="font-style: italic;"></figcaption>
 </figure>
 
-<h1 id="thôi-viết-tiếp-trong-tương-lai-nhé-">…..Thôi viết tiếp trong tương lai nhé :))</h1>]]></content><author><name>zhao</name></author><category term="NLP" /><category term="nlp" /><category term="pytorch" /><category term="model" /><summary type="html"><![CDATA[Bài viết này giới thiệu cách sử dụng Pytorch để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc ngắn ngọn bài báo sau trước, Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014), để hiểu rõ cấu trúc seq2seq trong như thế nào, sau đó đọc bài viết này để đạt được kết quả gấp đôi với một nửa công sức.]]></summary></entry><entry><title type="html">[NLP] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</title><link href="https://zhaospei.github.io//nlp/2023/10/05/bert-pretrained-model/" rel="alternate" type="text/html" title="[NLP] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding" /><published>2023-10-05T00:00:00+07:00</published><updated>2023-10-05T00:00:00+07:00</updated><id>https://zhaospei.github.io//nlp/2023/10/05/bert-pretrained-model</id><content type="html" xml:base="https://zhaospei.github.io//nlp/2023/10/05/bert-pretrained-model/"><![CDATA[<p>BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</p>
+<p>Trước hết, từ hình trên ta có thể thấy rõ ràng, seq2seq cần hoạt động trên ba “biến”, khác với tất cả các cấu trúc mạng mà tôi đã tiếp xúc trước đây. Chúng ta gọi đầu vào cho Encoder là <code class="language-plaintext highlighter-rouge">enc_input</code>, đầu vào cho Decoder là <code class="language-plaintext highlighter-rouge">dec_input</code> và đầu ra của Decoder là <code class="language-plaintext highlighter-rouge">dec_output</code>. Phần sau đây sử dụng một ví dụ cụ thể để minh họa cho toàn bộ quy trình thực hiện của seq2seq.</p>
+
+<p>Hình bên dưới là cấu trúc Encoder cấu tạo từ LTSM, đầu vào là từng chữ cái (bao gồm cả dấu cách) trong “go away”, chúng ta cần thông tin của <code class="language-plaintext highlighter-rouge">hidden state</code> ở thời điểm cuối cùng, bao gồm \(h_{t}\) và \(c_{t}\).</p>
+
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/LSTM_Encoder.png" alt="" style="margin: auto;" />
+    <figcaption style="font-style: italic;"></figcaption>
+</figure>
+
+<p>Sau đó sử dụng đầu ra gồm \(h_{t}\) và \(c_{t}\) làm đầu vào cho hidden state đầu tiên của Decoder là \(h_{0}, c_{0}\), như hình bên dưới. Đồng thời, lớp đầu vào (<code class="language-plaintext highlighter-rouge">input layer</code>) đầu của Decoder sẽ được nhập một ký tự đại diện cho phần đầu của câu (Do người dùng tự định nghĩa có thể là “&lt;SOS&gt;”, “\t”, “S”, …. đều được chấp nhận. Ở đây, tôi lấy “\t” làm ví dụ), và sau đó nhận đầu ra “m”, và một hidden state mới \(h_{1}\) và \(c_{1}\)</p>
+
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/gFRVkq.png" alt="" style="margin: auto;" />
+    <figcaption style="font-style: italic;"></figcaption>
+</figure>
+
+<p>Sau đó lấy \(h_{1}\), \(c_{1}\) và “m” làm đầu vào, nhận đầu ra là “a”, và một hidden state mới \(h_{2}\) và \(c_{2}\)</p>
+
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/gFR1B9.png" alt="" style="margin: auto;" />
+    <figcaption style="font-style: italic;"></figcaption>
+</figure>
+
+<p>Lặp lại các bước trên cho đến khi ký tự kết thúc của câu cuối cùng được xuất ra (do người dùng xác định, “&lt;EOS&gt;”, “\n”, “E”, … ở đây tôi lấy “\n” làm ví dụ).</p>
+
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/gFRGA1.png" alt="" style="margin: auto;" />
+    <figcaption style="font-style: italic;"></figcaption>
+</figure>
+
+<p>Trong phần Decoder, bạn sẽ có thể có những câu hỏi sau và tôi sẽ trả lời chúng theo hiểu biết cá nhân.</p>
+
+<ul>
+  <li>Tôi phài làm như thế nào nếu Decoder không thể dừng lại trong quá trình đào tạo? Tức là ký tự kết thúc của câu không bao giờ được đưa ra.
+    <ul>
+      <li>Đầu tiên, trong quá trình huấn luyện, <strong>độ dài của câu mà Decoder sẽ xuất ra sẽ được biết</strong>. Giả sử thời điểm hiện tại đã đến ký tự cuối cùng của độ dài câu và dự đoán không phải là ký tự kết thúc thì cũng không sao, chỉ dừng lại ở đây và tính toán tổn thất.</li>
+    </ul>
+  </li>
+  <li>Tôi phải làm như thế nào nếu Decocder không thể dừng lại trong quá trình kiểm tra? Ví dụ, dự đoán là “wasd s w \n sdsw \n …… (tiếp tục sinh từ)”
+    <ul>
+      <li>Nó sẽ không dừng lại, vì trong quá trình kiểm tra, Decoder cũng có đầu vào, nhưng đầu vào này có rất nhiều placeholder vô nghĩa, chẳng hạn rất nhiều “&lt;pad&gt;”. Vì Decoder phải có đầu ra có độ dài hữu hạn. Khi đó bạn chỉ lấy tất cả các ký tự trước ký tự kết thúc đầu tiên. Ví dụ trên kết quả dự đoán cuối cùng là “wasd s w”.</li>
+    </ul>
+  </li>
+  <li>Mối quan hệ giữa đầu vào và đầu ra của Decoder, tức là <code class="language-plaintext highlighter-rouge">dec_input</code> và <code class="language-plaintext highlighter-rouge">dec_output</code> là gì?
+    <ul>
+      <li>Trong quá trình huấn luyện, bất kể Decoder sinh ra kí tự nào tại thời điểm hiện tại, Decoder tại thời điểm tiếp theo sẽ nhập theo “kế hoạch” ban đầu. Ví dụ: giả sử <code class="language-plaintext highlighter-rouge">dec_input = "\twasted"</code>, sau khi nhập “\t” lần đầu, Decoder sẽ xuất ra chữ “m”, ghi lại thôi, nó sẽ không ảnh hưởng đến thời điểm tiếp theo khi Decoder tiếp tục nhập chữ “w”.</li>
+      <li>Trong quá trình valid và testing, đầu ra của Decoder tại mỗi thời điểm sẽ ảnh hưởng đến đầu vào, vì trong quá trình valid và testing, mạng không thể nhìn thấy kết quả nên chỉ tiến hành theo vòng lặp. Ví dụ, bây giờ tôi muốn dịch từ “wasted” trong tiếng anh sang tiếng “lãng phí” trong tiếng việt. Sau đó, Decoder bắt đầu với việc nhập ký tự “\t”, nhận kết quả đầu ra nếu là “m”, tại thời điểm tiếp theo, Decoder sẽ nhập “m”, nhận đầu ra, nếu là “a”, sau đó nhận “a” là đầu vào, nhận đầu ra, … và cứ thế cho đến khi gặp kí tự cuối cùng hoặc đạt độ dài tối đa. Mặc dù từ sinh ra không đúng nhưng mong đợi nhưng phải chấp nhận thôi :smiley:.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Như một sự lạc đề ở đây, cá nhân tôi nghĩ seq2seq rất giống với AutoEncoder.</p>
+
+<h2 id="hãy-bắt-đầu-giải-thích-mã">Hãy bắt đầu giải thích mã</h2>
+
+<p>Đầu tiên, import thư viện, ở đây tôi dùng ‘S’ làm ký tự bắt đầu và ‘E’ làm ký tự kết thúc, nếu đầu vào hoặc đầu ra quá ngắn, tôi sẽ padding nó bằng ký tự ‘?’.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># code by Tae Hwan Jung(Jeff Jung) @graykode, modify by zhaospei
+</span><span class="kn">import</span> <span class="n">torch</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">torch.nn</span> <span class="k">as</span> <span class="n">nn</span>
+<span class="kn">import</span> <span class="n">torch.utils.data</span> <span class="k">as</span> <span class="n">Data</span>
+
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">device</span><span class="p">(</span><span class="sh">'</span><span class="s">cuda</span><span class="sh">'</span> <span class="k">if</span> <span class="n">torch</span><span class="p">.</span><span class="n">cuda</span><span class="p">.</span><span class="nf">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="sh">'</span><span class="s">cpu</span><span class="sh">'</span><span class="p">)</span>
+<span class="c1"># S: Symbol that shows starting of decoding input
+# E: Symbol that shows starting of decoding output
+# ?: Symbol that will fill in blank sequence if current batch data size is short than n_step
+</span>
+</code></pre></div></div>
+
+<p>Xác định tập dữ liệu và các tham số tập dữ liệu ở đây rất đơn giản, có thể coi như một công việc dịch thuật, chỉ là dịch tiếng Anh sang tiếng Anh.
+<code class="language-plaintext highlighter-rouge">n_step</code>` là độ dài của từ dài nhất, tất cả các từ khác không đủ dài sẽ được padding bằng ‘?’.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">letter</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="sh">'</span><span class="s">SE?abcdefghijklmnopqrstuvwxyz</span><span class="sh">'</span><span class="p">]</span>
+<span class="n">letter2idx</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="n">letter</span><span class="p">)}</span>
+
+<span class="n">seq_data</span> <span class="o">=</span> <span class="p">[[</span><span class="sh">'</span><span class="s">man</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">women</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">black</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">white</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">king</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">queen</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">girl</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">boy</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">up</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">down</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">high</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">low</span><span class="sh">'</span><span class="p">]]</span>
+
+<span class="c1"># Seq2Seq Parameter
+</span><span class="n">n_step</span> <span class="o">=</span> <span class="nf">max</span><span class="p">([</span><span class="nf">max</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="nf">len</span><span class="p">(</span><span class="n">j</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">seq_data</span><span class="p">])</span> <span class="c1"># max_len(=5)
+</span><span class="n">n_hidden</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="n">n_class</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">letter2idx</span><span class="p">)</span> <span class="c1"># classfication problem
+</span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">3</span>
+</code></pre></div></div>
+
+<p>Sau đây là xử lý dữ liệu, trước tên là xử lý các từ không đủ độ dài, sử dụng ký tự ‘?’ để padding; Sau đó thêm flag kết thúc ‘E’ vào cuối dữ liệu đầu vào của Encoder, thêm flag bắt đầu ‘S’ vào đầu dữ liệu đầu vào của Decoder và flag kết thúc ‘E’ vào cuối dữ liệu đầu ra của Decoder. Xem hình phía dưới để hiểu rõ hơn.</p>
+
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/gFRU1O.png" alt="" style="margin: auto;" />
+    <figcaption style="font-style: italic;"></figcaption>
+</figure>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">make_data</span><span class="p">(</span><span class="n">seq_data</span><span class="p">):</span>
+    <span class="n">enc_input_all</span><span class="p">,</span> <span class="n">dec_input_all</span><span class="p">,</span> <span class="n">dec_output_all</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">seq</span> <span class="ow">in</span> <span class="n">seq_data</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+            <span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="sh">'</span><span class="s">?</span><span class="sh">'</span> <span class="o">*</span> <span class="p">(</span><span class="n">n_step</span> <span class="o">-</span> <span class="nf">len</span><span class="p">(</span><span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="c1"># 'man??', 'women'
+</span>
+        <span class="n">enc_input</span> <span class="o">=</span> <span class="p">[</span><span class="n">letter2idx</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">(</span><span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="p">)]</span> <span class="c1"># ['m', 'a', 'n', '?', '?', 'E']
+</span>        <span class="n">dec_input</span> <span class="o">=</span> <span class="p">[</span><span class="n">letter2idx</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">(</span><span class="sh">'</span><span class="s">S</span><span class="sh">'</span> <span class="o">+</span> <span class="n">seq</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span> <span class="c1"># ['S', 'w', 'o', 'm', 'e', 'n']
+</span>        <span class="n">dec_output</span> <span class="o">=</span> <span class="p">[</span><span class="n">letter2idx</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">(</span><span class="n">seq</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="p">)]</span> <span class="c1"># ['w', 'o', 'm', 'e', 'n', 'E']
+</span>
+        <span class="n">enc_input_all</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">eye</span><span class="p">(</span><span class="n">n_class</span><span class="p">)[</span><span class="n">enc_input</span><span class="p">])</span>
+        <span class="n">dec_input_all</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">eye</span><span class="p">(</span><span class="n">n_class</span><span class="p">)[</span><span class="n">dec_input</span><span class="p">])</span>
+        <span class="n">dec_output_all</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">dec_output</span><span class="p">)</span> <span class="c1"># not one-hot
+</span>
+    <span class="c1"># make tensor
+</span>    <span class="k">return</span> <span class="n">torch</span><span class="p">.</span><span class="nc">Tensor</span><span class="p">(</span><span class="n">enc_input_all</span><span class="p">),</span> <span class="n">torch</span><span class="p">.</span><span class="nc">Tensor</span><span class="p">(</span><span class="n">dec_input_all</span><span class="p">),</span> <span class="n">torch</span><span class="p">.</span><span class="nc">LongTensor</span><span class="p">(</span><span class="n">dec_output_all</span><span class="p">)</span>
+
+<span class="sh">'''</span><span class="s">
+enc_input_all: [6, n_step+1 (because of </span><span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="s">), n_class]
+dec_input_all: [6, n_step+1 (because of </span><span class="sh">'</span><span class="s">S</span><span class="sh">'</span><span class="s">), n_class]
+dec_output_all: [6, n_step+1 (because of </span><span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="s">)]
+</span><span class="sh">'''</span>
+<span class="n">enc_input_all</span><span class="p">,</span> <span class="n">dec_input_all</span><span class="p">,</span> <span class="n">dec_output_all</span> <span class="o">=</span> <span class="nf">make_data</span><span class="p">(</span><span class="n">seq_data</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Ví có ba dữ liệu trả về ở đây, vì vậy cần tùy chỉnh Dataset, cụ thể là kế thừa lớp <code class="language-plaintext highlighter-rouge">torch.utils.data.Dataset</code>, sau đó triển khai các phương thức <code class="language-plaintext highlighter-rouge">__len__</code> và <code class="language-plaintext highlighter-rouge">__getitem__</code> bên trong.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TranslateDataSet</span><span class="p">(</span><span class="n">Data</span><span class="p">.</span><span class="n">Dataset</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">enc_input_all</span><span class="p">,</span> <span class="n">dec_input_all</span><span class="p">,</span> <span class="n">dec_output_all</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">enc_input_all</span> <span class="o">=</span> <span class="n">enc_input_all</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">dec_input_all</span> <span class="o">=</span> <span class="n">dec_input_all</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">dec_output_all</span> <span class="o">=</span> <span class="n">dec_output_all</span>
+    
+    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span> <span class="c1"># return dataset size
+</span>        <span class="k">return</span> <span class="nf">len</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">enc_input_all</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">enc_input_all</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">self</span><span class="p">.</span><span class="n">dec_input_all</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">self</span><span class="p">.</span><span class="n">dec_output_all</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+
+<span class="n">loader</span> <span class="o">=</span> <span class="n">Data</span><span class="p">.</span><span class="nc">DataLoader</span><span class="p">(</span><span class="nc">TranslateDataSet</span><span class="p">(</span><span class="n">enc_input_all</span><span class="p">,</span> <span class="n">dec_input_all</span><span class="p">,</span> <span class="n">dec_output_all</span><span class="p">),</span> <span class="n">batch_size</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Xác định mô hình seq2seq bên dưới, tôi sử dụng RNN đơn giản làm Encoder và Decoder. Nếu bạn đã quen thuộc với RNN thì thực sự không có gì phải nói về việc xác định cấu trúc mạng, tôi cũng đã viết nhận xét rất rõ ràng, bao gồm cả những thay đổi về kích thước dữ liệu.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Model
+</span><span class="k">class</span> <span class="nc">Seq2Seq</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="nf">super</span><span class="p">(</span><span class="n">Seq2Seq</span><span class="p">,</span> <span class="n">self</span><span class="p">).</span><span class="nf">__init__</span><span class="p">()</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">encoder</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">RNN</span><span class="p">(</span><span class="n">input_size</span><span class="o">=</span><span class="n">n_class</span><span class="p">,</span> <span class="n">hidden_size</span><span class="o">=</span><span class="n">n_hidden</span><span class="p">,</span> <span class="n">dropout</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span> <span class="c1"># encoder
+</span>        <span class="n">self</span><span class="p">.</span><span class="n">decoder</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">RNN</span><span class="p">(</span><span class="n">input_size</span><span class="o">=</span><span class="n">n_class</span><span class="p">,</span> <span class="n">hidden_size</span><span class="o">=</span><span class="n">n_hidden</span><span class="p">,</span> <span class="n">dropout</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span> <span class="c1"># decoder
+</span>        <span class="n">self</span><span class="p">.</span><span class="n">fc</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="n">n_hidden</span><span class="p">,</span> <span class="n">n_class</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">enc_input</span><span class="p">,</span> <span class="n">enc_hidden</span><span class="p">,</span> <span class="n">dec_input</span><span class="p">):</span>
+        <span class="c1"># enc_input(=input_batch): [batch_size, n_step+1, n_class]
+</span>        <span class="c1"># dec_inpu(=output_batch): [batch_size, n_step+1, n_class]
+</span>        <span class="n">enc_input</span> <span class="o">=</span> <span class="n">enc_input</span><span class="p">.</span><span class="nf">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># enc_input: [n_step+1, batch_size, n_class]
+</span>        <span class="n">dec_input</span> <span class="o">=</span> <span class="n">dec_input</span><span class="p">.</span><span class="nf">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># dec_input: [n_step+1, batch_size, n_class]
+</span>
+        <span class="c1"># h_t : [num_layers(=1) * num_directions(=1), batch_size, n_hidden]
+</span>        <span class="n">_</span><span class="p">,</span> <span class="n">h_t</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">encoder</span><span class="p">(</span><span class="n">enc_input</span><span class="p">,</span> <span class="n">enc_hidden</span><span class="p">)</span>
+        <span class="c1"># outputs : [n_step+1, batch_size, num_directions(=1) * n_hidden(=128)]
+</span>        <span class="n">outputs</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">decoder</span><span class="p">(</span><span class="n">dec_input</span><span class="p">,</span> <span class="n">h_t</span><span class="p">)</span>
+
+        <span class="n">model</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">fc</span><span class="p">(</span><span class="n">outputs</span><span class="p">)</span> <span class="c1"># model : [n_step+1, batch_size, n_class]
+</span>        <span class="k">return</span> <span class="n">model</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="nc">Seq2Seq</span><span class="p">().</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">CrossEntropyLoss</span><span class="p">().</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">optim</span><span class="p">.</span><span class="nc">Adam</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="nf">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Sau đây là phần đào tạo. Vì giá trị đầu ra là dữ liệu ba chiều nên việc tính toán loss đòi hỏi phải tính toán từng mẫu riêng biệt, do đó có mã vòng for sau đây.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">5000</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">enc_input_batch</span><span class="p">,</span> <span class="n">dec_input_batch</span><span class="p">,</span> <span class="n">dec_output_batch</span> <span class="ow">in</span> <span class="n">loader</span><span class="p">:</span>
+      <span class="c1"># make hidden shape [num_layers * num_directions, batch_size, n_hidden]
+</span>      <span class="n">h_0</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">n_hidden</span><span class="p">).</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+      <span class="p">(</span><span class="n">enc_input_batch</span><span class="p">,</span> <span class="n">dec_intput_batch</span><span class="p">,</span> <span class="n">dec_output_batch</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">enc_input_batch</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">dec_input_batch</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">dec_output_batch</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">))</span>
+      <span class="c1"># enc_input_batch : [batch_size, n_step+1, n_class]
+</span>      <span class="c1"># dec_intput_batch : [batch_size, n_step+1, n_class]
+</span>      <span class="c1"># dec_output_batch : [batch_size, n_step+1], not one-hot
+</span>      <span class="n">pred</span> <span class="o">=</span> <span class="nf">model</span><span class="p">(</span><span class="n">enc_input_batch</span><span class="p">,</span> <span class="n">h_0</span><span class="p">,</span> <span class="n">dec_intput_batch</span><span class="p">)</span>
+      <span class="c1"># pred : [n_step+1, batch_size, n_class]
+</span>      <span class="n">pred</span> <span class="o">=</span> <span class="n">pred</span><span class="p">.</span><span class="nf">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># [batch_size, n_step+1(=6), n_class]
+</span>      <span class="n">loss</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">dec_output_batch</span><span class="p">)):</span>
+          <span class="c1"># pred[i] : [n_step+1, n_class]
+</span>          <span class="c1"># dec_output_batch[i] : [n_step+1]
+</span>          <span class="n">loss</span> <span class="o">+=</span> <span class="nf">criterion</span><span class="p">(</span><span class="n">pred</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dec_output_batch</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+      <span class="nf">if </span><span class="p">(</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+          <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Epoch:</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">%04d</span><span class="sh">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="sh">'</span><span class="s">cost =</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">{:.6f}</span><span class="sh">'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">loss</span><span class="p">))</span>
+          
+      <span class="n">optimizer</span><span class="p">.</span><span class="nf">zero_grad</span><span class="p">()</span>
+      <span class="n">loss</span><span class="p">.</span><span class="nf">backward</span><span class="p">()</span>
+      <span class="n">optimizer</span><span class="p">.</span><span class="nf">step</span><span class="p">()</span>
+</code></pre></div></div>
+<p>Như có thể thấy từ mã testing bên dưới, trong quá trình testing, đầu vào của Decoder là một phần giữ chỗ vô nghĩa và độ dài của vị trí bị chiếm giữ là độ dài tối đa <code class="language-plaintext highlighter-rouge">n_step</code>. Và tìm vị trí của dấu kết thúc đầu tiên ở đầu ra, chặn tất cả các ký tự trước nó.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Test
+</span><span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="n">enc_input</span><span class="p">,</span> <span class="n">dec_input</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="nf">make_data</span><span class="p">([[</span><span class="n">word</span><span class="p">,</span> <span class="sh">'</span><span class="s">?</span><span class="sh">'</span> <span class="o">*</span> <span class="n">n_step</span><span class="p">]])</span>
+    <span class="n">enc_input</span><span class="p">,</span> <span class="n">dec_input</span> <span class="o">=</span> <span class="n">enc_input</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">dec_input</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="c1"># make hidden shape [num_layers * num_directions, batch_size, n_hidden]
+</span>    <span class="n">hidden</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_hidden</span><span class="p">).</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="nf">model</span><span class="p">(</span><span class="n">enc_input</span><span class="p">,</span> <span class="n">hidden</span><span class="p">,</span> <span class="n">dec_input</span><span class="p">)</span>
+    <span class="c1"># output : [n_step+1, batch_size, n_class]
+</span>
+    <span class="n">predict</span> <span class="o">=</span> <span class="n">output</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="nf">max</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="bp">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># select n_class dimension
+</span>    <span class="n">decoded</span> <span class="o">=</span> <span class="p">[</span><span class="n">letter</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">predict</span><span class="p">]</span>
+    <span class="n">translated</span> <span class="o">=</span> <span class="sh">''</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">decoded</span><span class="p">[:</span><span class="n">decoded</span><span class="p">.</span><span class="nf">index</span><span class="p">(</span><span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="p">)])</span>
+
+    <span class="k">return</span> <span class="n">translated</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sh">'</span><span class="s">?</span><span class="sh">'</span><span class="p">,</span> <span class="sh">''</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">test</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">man -&gt;</span><span class="sh">'</span><span class="p">,</span> <span class="nf">translate</span><span class="p">(</span><span class="sh">'</span><span class="s">man</span><span class="sh">'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">mans -&gt;</span><span class="sh">'</span><span class="p">,</span> <span class="nf">translate</span><span class="p">(</span><span class="sh">'</span><span class="s">mans</span><span class="sh">'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">king -&gt;</span><span class="sh">'</span><span class="p">,</span> <span class="nf">translate</span><span class="p">(</span><span class="sh">'</span><span class="s">king</span><span class="sh">'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">black -&gt;</span><span class="sh">'</span><span class="p">,</span> <span class="nf">translate</span><span class="p">(</span><span class="sh">'</span><span class="s">black</span><span class="sh">'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">up -&gt;</span><span class="sh">'</span><span class="p">,</span> <span class="nf">translate</span><span class="p">(</span><span class="sh">'</span><span class="s">up</span><span class="sh">'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h2 id="mã-hoàn-chỉnh-như-sau">Mã hoàn chỉnh như sau</h2>
+
+<p>Phần thực thi bạn có thể xem tại notebook trên kaggle tại <a href="https://www.kaggle.com/code/overvisual/seq2seq-torch?scriptVersionId=145596925">https://www.kaggle.com/code/overvisual/seq2seq-torch?scriptVersionId=145596925</a></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># code by Tae Hwan Jung(Jeff Jung) @graykode, modify by zhaospei
+</span><span class="kn">import</span> <span class="n">torch</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">torch.nn</span> <span class="k">as</span> <span class="n">nn</span>
+<span class="kn">import</span> <span class="n">torch.utils.data</span> <span class="k">as</span> <span class="n">Data</span>
+
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">device</span><span class="p">(</span><span class="sh">'</span><span class="s">cuda</span><span class="sh">'</span> <span class="k">if</span> <span class="n">torch</span><span class="p">.</span><span class="n">cuda</span><span class="p">.</span><span class="nf">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="sh">'</span><span class="s">cpu</span><span class="sh">'</span><span class="p">)</span>
+<span class="c1"># S: Symbol that shows starting of decoding input
+# E: Symbol that shows starting of decoding output
+# ?: Symbol that will fill in blank sequence if current batch data size is short than n_step
+</span>
+<span class="n">letter</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="sh">'</span><span class="s">SE?abcdefghijklmnopqrstuvwxyz</span><span class="sh">'</span><span class="p">]</span>
+<span class="n">letter2idx</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="n">letter</span><span class="p">)}</span>
+
+<span class="n">seq_data</span> <span class="o">=</span> <span class="p">[[</span><span class="sh">'</span><span class="s">man</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">women</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">black</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">white</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">king</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">queen</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">girl</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">boy</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">up</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">down</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">high</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">low</span><span class="sh">'</span><span class="p">]]</span>
+
+<span class="c1"># Seq2Seq Parameter
+</span><span class="n">n_step</span> <span class="o">=</span> <span class="nf">max</span><span class="p">([</span><span class="nf">max</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="nf">len</span><span class="p">(</span><span class="n">j</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">seq_data</span><span class="p">])</span> <span class="c1"># max_len(=5)
+</span><span class="n">n_hidden</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="n">n_class</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">letter2idx</span><span class="p">)</span> <span class="c1"># classfication problem
+</span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="k">def</span> <span class="nf">make_data</span><span class="p">(</span><span class="n">seq_data</span><span class="p">):</span>
+    <span class="n">enc_input_all</span><span class="p">,</span> <span class="n">dec_input_all</span><span class="p">,</span> <span class="n">dec_output_all</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">seq</span> <span class="ow">in</span> <span class="n">seq_data</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+            <span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="sh">'</span><span class="s">?</span><span class="sh">'</span> <span class="o">*</span> <span class="p">(</span><span class="n">n_step</span> <span class="o">-</span> <span class="nf">len</span><span class="p">(</span><span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="c1"># 'man??', 'women'
+</span>
+        <span class="n">enc_input</span> <span class="o">=</span> <span class="p">[</span><span class="n">letter2idx</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">(</span><span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="p">)]</span> <span class="c1"># ['m', 'a', 'n', '?', '?', 'E']
+</span>        <span class="n">dec_input</span> <span class="o">=</span> <span class="p">[</span><span class="n">letter2idx</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">(</span><span class="sh">'</span><span class="s">S</span><span class="sh">'</span> <span class="o">+</span> <span class="n">seq</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span> <span class="c1"># ['S', 'w', 'o', 'm', 'e', 'n']
+</span>        <span class="n">dec_output</span> <span class="o">=</span> <span class="p">[</span><span class="n">letter2idx</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">(</span><span class="n">seq</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="p">)]</span> <span class="c1"># ['w', 'o', 'm', 'e', 'n', 'E']
+</span>
+        <span class="n">enc_input_all</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">eye</span><span class="p">(</span><span class="n">n_class</span><span class="p">)[</span><span class="n">enc_input</span><span class="p">])</span>
+        <span class="n">dec_input_all</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">eye</span><span class="p">(</span><span class="n">n_class</span><span class="p">)[</span><span class="n">dec_input</span><span class="p">])</span>
+        <span class="n">dec_output_all</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">dec_output</span><span class="p">)</span> <span class="c1"># not one-hot
+</span>
+    <span class="c1"># make tensor
+</span>    <span class="k">return</span> <span class="n">torch</span><span class="p">.</span><span class="nc">Tensor</span><span class="p">(</span><span class="n">enc_input_all</span><span class="p">),</span> <span class="n">torch</span><span class="p">.</span><span class="nc">Tensor</span><span class="p">(</span><span class="n">dec_input_all</span><span class="p">),</span> <span class="n">torch</span><span class="p">.</span><span class="nc">LongTensor</span><span class="p">(</span><span class="n">dec_output_all</span><span class="p">)</span>
+
+<span class="sh">'''</span><span class="s">
+enc_input_all: [6, n_step+1 (because of </span><span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="s">), n_class]
+dec_input_all: [6, n_step+1 (because of </span><span class="sh">'</span><span class="s">S</span><span class="sh">'</span><span class="s">), n_class]
+dec_output_all: [6, n_step+1 (because of </span><span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="s">)]
+</span><span class="sh">'''</span>
+<span class="n">enc_input_all</span><span class="p">,</span> <span class="n">dec_input_all</span><span class="p">,</span> <span class="n">dec_output_all</span> <span class="o">=</span> <span class="nf">make_data</span><span class="p">(</span><span class="n">seq_data</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">TranslateDataSet</span><span class="p">(</span><span class="n">Data</span><span class="p">.</span><span class="n">Dataset</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">enc_input_all</span><span class="p">,</span> <span class="n">dec_input_all</span><span class="p">,</span> <span class="n">dec_output_all</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">enc_input_all</span> <span class="o">=</span> <span class="n">enc_input_all</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">dec_input_all</span> <span class="o">=</span> <span class="n">dec_input_all</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">dec_output_all</span> <span class="o">=</span> <span class="n">dec_output_all</span>
+    
+    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span> <span class="c1"># return dataset size
+</span>        <span class="k">return</span> <span class="nf">len</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">enc_input_all</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">enc_input_all</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">self</span><span class="p">.</span><span class="n">dec_input_all</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">self</span><span class="p">.</span><span class="n">dec_output_all</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+
+<span class="n">loader</span> <span class="o">=</span> <span class="n">Data</span><span class="p">.</span><span class="nc">DataLoader</span><span class="p">(</span><span class="nc">TranslateDataSet</span><span class="p">(</span><span class="n">enc_input_all</span><span class="p">,</span> <span class="n">dec_input_all</span><span class="p">,</span> <span class="n">dec_output_all</span><span class="p">),</span> <span class="n">batch_size</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+
+<span class="c1"># Model
+</span><span class="k">class</span> <span class="nc">Seq2Seq</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="nf">super</span><span class="p">(</span><span class="n">Seq2Seq</span><span class="p">,</span> <span class="n">self</span><span class="p">).</span><span class="nf">__init__</span><span class="p">()</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">encoder</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">RNN</span><span class="p">(</span><span class="n">input_size</span><span class="o">=</span><span class="n">n_class</span><span class="p">,</span> <span class="n">hidden_size</span><span class="o">=</span><span class="n">n_hidden</span><span class="p">,</span> <span class="n">dropout</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span> <span class="c1"># encoder
+</span>        <span class="n">self</span><span class="p">.</span><span class="n">decoder</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">RNN</span><span class="p">(</span><span class="n">input_size</span><span class="o">=</span><span class="n">n_class</span><span class="p">,</span> <span class="n">hidden_size</span><span class="o">=</span><span class="n">n_hidden</span><span class="p">,</span> <span class="n">dropout</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span> <span class="c1"># decoder
+</span>        <span class="n">self</span><span class="p">.</span><span class="n">fc</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="n">n_hidden</span><span class="p">,</span> <span class="n">n_class</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">enc_input</span><span class="p">,</span> <span class="n">enc_hidden</span><span class="p">,</span> <span class="n">dec_input</span><span class="p">):</span>
+        <span class="c1"># enc_input(=input_batch): [batch_size, n_step+1, n_class]
+</span>        <span class="c1"># dec_inpu(=output_batch): [batch_size, n_step+1, n_class]
+</span>        <span class="n">enc_input</span> <span class="o">=</span> <span class="n">enc_input</span><span class="p">.</span><span class="nf">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># enc_input: [n_step+1, batch_size, n_class]
+</span>        <span class="n">dec_input</span> <span class="o">=</span> <span class="n">dec_input</span><span class="p">.</span><span class="nf">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># dec_input: [n_step+1, batch_size, n_class]
+</span>
+        <span class="c1"># h_t : [num_layers(=1) * num_directions(=1), batch_size, n_hidden]
+</span>        <span class="n">_</span><span class="p">,</span> <span class="n">h_t</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">encoder</span><span class="p">(</span><span class="n">enc_input</span><span class="p">,</span> <span class="n">enc_hidden</span><span class="p">)</span>
+        <span class="c1"># outputs : [n_step+1, batch_size, num_directions(=1) * n_hidden(=128)]
+</span>        <span class="n">outputs</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">decoder</span><span class="p">(</span><span class="n">dec_input</span><span class="p">,</span> <span class="n">h_t</span><span class="p">)</span>
+
+        <span class="n">model</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">fc</span><span class="p">(</span><span class="n">outputs</span><span class="p">)</span> <span class="c1"># model : [n_step+1, batch_size, n_class]
+</span>        <span class="k">return</span> <span class="n">model</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="nc">Seq2Seq</span><span class="p">().</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">CrossEntropyLoss</span><span class="p">().</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">optim</span><span class="p">.</span><span class="nc">Adam</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="nf">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">5000</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">enc_input_batch</span><span class="p">,</span> <span class="n">dec_input_batch</span><span class="p">,</span> <span class="n">dec_output_batch</span> <span class="ow">in</span> <span class="n">loader</span><span class="p">:</span>
+      <span class="c1"># make hidden shape [num_layers * num_directions, batch_size, n_hidden]
+</span>      <span class="n">h_0</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">n_hidden</span><span class="p">).</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+      <span class="p">(</span><span class="n">enc_input_batch</span><span class="p">,</span> <span class="n">dec_intput_batch</span><span class="p">,</span> <span class="n">dec_output_batch</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">enc_input_batch</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">dec_input_batch</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">dec_output_batch</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">))</span>
+      <span class="c1"># enc_input_batch : [batch_size, n_step+1, n_class]
+</span>      <span class="c1"># dec_intput_batch : [batch_size, n_step+1, n_class]
+</span>      <span class="c1"># dec_output_batch : [batch_size, n_step+1], not one-hot
+</span>      <span class="n">pred</span> <span class="o">=</span> <span class="nf">model</span><span class="p">(</span><span class="n">enc_input_batch</span><span class="p">,</span> <span class="n">h_0</span><span class="p">,</span> <span class="n">dec_intput_batch</span><span class="p">)</span>
+      <span class="c1"># pred : [n_step+1, batch_size, n_class]
+</span>      <span class="n">pred</span> <span class="o">=</span> <span class="n">pred</span><span class="p">.</span><span class="nf">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># [batch_size, n_step+1(=6), n_class]
+</span>      <span class="n">loss</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">dec_output_batch</span><span class="p">)):</span>
+          <span class="c1"># pred[i] : [n_step+1, n_class]
+</span>          <span class="c1"># dec_output_batch[i] : [n_step+1]
+</span>          <span class="n">loss</span> <span class="o">+=</span> <span class="nf">criterion</span><span class="p">(</span><span class="n">pred</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dec_output_batch</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+      <span class="nf">if </span><span class="p">(</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+          <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Epoch:</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">%04d</span><span class="sh">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="sh">'</span><span class="s">cost =</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">{:.6f}</span><span class="sh">'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">loss</span><span class="p">))</span>
+          
+      <span class="n">optimizer</span><span class="p">.</span><span class="nf">zero_grad</span><span class="p">()</span>
+      <span class="n">loss</span><span class="p">.</span><span class="nf">backward</span><span class="p">()</span>
+      <span class="n">optimizer</span><span class="p">.</span><span class="nf">step</span><span class="p">()</span>
+    
+<span class="c1"># Test
+</span><span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="n">enc_input</span><span class="p">,</span> <span class="n">dec_input</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="nf">make_data</span><span class="p">([[</span><span class="n">word</span><span class="p">,</span> <span class="sh">'</span><span class="s">?</span><span class="sh">'</span> <span class="o">*</span> <span class="n">n_step</span><span class="p">]])</span>
+    <span class="n">enc_input</span><span class="p">,</span> <span class="n">dec_input</span> <span class="o">=</span> <span class="n">enc_input</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">dec_input</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="c1"># make hidden shape [num_layers * num_directions, batch_size, n_hidden]
+</span>    <span class="n">hidden</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_hidden</span><span class="p">).</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="nf">model</span><span class="p">(</span><span class="n">enc_input</span><span class="p">,</span> <span class="n">hidden</span><span class="p">,</span> <span class="n">dec_input</span><span class="p">)</span>
+    <span class="c1"># output : [n_step+1, batch_size, n_class]
+</span>
+    <span class="n">predict</span> <span class="o">=</span> <span class="n">output</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="nf">max</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="bp">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># select n_class dimension
+</span>    <span class="n">decoded</span> <span class="o">=</span> <span class="p">[</span><span class="n">letter</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">predict</span><span class="p">]</span>
+    <span class="n">translated</span> <span class="o">=</span> <span class="sh">''</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">decoded</span><span class="p">[:</span><span class="n">decoded</span><span class="p">.</span><span class="nf">index</span><span class="p">(</span><span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="p">)])</span>
+
+    <span class="k">return</span> <span class="n">translated</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sh">'</span><span class="s">?</span><span class="sh">'</span><span class="p">,</span> <span class="sh">''</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">test</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">man -&gt;</span><span class="sh">'</span><span class="p">,</span> <span class="nf">translate</span><span class="p">(</span><span class="sh">'</span><span class="s">man</span><span class="sh">'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">mans -&gt;</span><span class="sh">'</span><span class="p">,</span> <span class="nf">translate</span><span class="p">(</span><span class="sh">'</span><span class="s">mans</span><span class="sh">'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">king -&gt;</span><span class="sh">'</span><span class="p">,</span> <span class="nf">translate</span><span class="p">(</span><span class="sh">'</span><span class="s">king</span><span class="sh">'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">black -&gt;</span><span class="sh">'</span><span class="p">,</span> <span class="nf">translate</span><span class="p">(</span><span class="sh">'</span><span class="s">black</span><span class="sh">'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">up -&gt;</span><span class="sh">'</span><span class="p">,</span> <span class="nf">translate</span><span class="p">(</span><span class="sh">'</span><span class="s">up</span><span class="sh">'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h1 id="tham-khảo">Tham khảo</h1>
+
+<p>[1] <a href="https://www.kaggle.com/code/overvisual/seq2seq-torch?scriptVersionId=145596925">https://www.kaggle.com/code/overvisual/seq2seq-torch?scriptVersionId=145596925</a></p>]]></content><author><name>zhao</name></author><category term="NLP" /><category term="nlp" /><category term="pytorch" /><category term="model" /><summary type="html"><![CDATA[Bài viết này giới thiệu cách sử dụng Pytorch để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc ngắn ngọn bài báo sau trước, Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014), để hiểu rõ cấu trúc seq2seq trong như thế nào, sau đó đọc bài viết này để đạt được hiệu quả gấp đôi với một nửa công sức.]]></summary></entry><entry><title type="html">[NLP] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</title><link href="https://zhaospei.github.io//nlp/2023/10/05/bert-pretrained-model/" rel="alternate" type="text/html" title="[NLP] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding" /><published>2023-10-05T00:00:00+07:00</published><updated>2023-10-05T00:00:00+07:00</updated><id>https://zhaospei.github.io//nlp/2023/10/05/bert-pretrained-model</id><content type="html" xml:base="https://zhaospei.github.io//nlp/2023/10/05/bert-pretrained-model/"><![CDATA[<p>BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</p>
 
 <h2 id="tiêu-đề">Tiêu đề</h2>
 <p><code class="language-plaintext highlighter-rouge">Pre-training (Đào tạo trước)</code>: Nếu một mô hình được đào tạo trên một tập dữ liệu lớn nhưng mục đích chính là sử dụng cho nhiệm vụ khác (được gọi là <code class="language-plaintext highlighter-rouge">Training</code>), thì nhiệm vụ đào tạo mô hình đó được gọi là <code class="language-plaintext highlighter-rouge">Pre-training</code>.</p>

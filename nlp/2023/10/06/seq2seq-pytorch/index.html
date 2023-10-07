@@ -20,8 +20,8 @@
 <meta property="og:title" content="Triển khai seq2seq với Pytorch" />
 <meta name="author" content="zhao" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Bài viết này giới thiệu cách sử dụng Pytorch để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc ngắn ngọn bài báo sau trước, Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014), để hiểu rõ cấu trúc seq2seq trong như thế nào, sau đó đọc bài viết này để đạt được kết quả gấp đôi với một nửa công sức." />
-<meta property="og:description" content="Bài viết này giới thiệu cách sử dụng Pytorch để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc ngắn ngọn bài báo sau trước, Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014), để hiểu rõ cấu trúc seq2seq trong như thế nào, sau đó đọc bài viết này để đạt được kết quả gấp đôi với một nửa công sức." />
+<meta name="description" content="Bài viết này giới thiệu cách sử dụng Pytorch để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc ngắn ngọn bài báo sau trước, Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014), để hiểu rõ cấu trúc seq2seq trong như thế nào, sau đó đọc bài viết này để đạt được hiệu quả gấp đôi với một nửa công sức." />
+<meta property="og:description" content="Bài viết này giới thiệu cách sử dụng Pytorch để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc ngắn ngọn bài báo sau trước, Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014), để hiểu rõ cấu trúc seq2seq trong như thế nào, sau đó đọc bài viết này để đạt được hiệu quả gấp đôi với một nửa công sức." />
 <link rel="canonical" href="https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/" />
 <meta property="og:url" content="https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/" />
 <meta property="og:site_name" content="Tuan-Dung Bui" />
@@ -30,20 +30,15 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Triển khai seq2seq với Pytorch" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"zhao"},"dateModified":"2023-10-06T00:00:00+07:00","datePublished":"2023-10-06T00:00:00+07:00","description":"Bài viết này giới thiệu cách sử dụng Pytorch để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc ngắn ngọn bài báo sau trước, Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014), để hiểu rõ cấu trúc seq2seq trong như thế nào, sau đó đọc bài viết này để đạt được kết quả gấp đôi với một nửa công sức.","headline":"Triển khai seq2seq với Pytorch","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/"},"url":"https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"zhao"},"dateModified":"2023-10-06T00:00:00+07:00","datePublished":"2023-10-06T00:00:00+07:00","description":"Bài viết này giới thiệu cách sử dụng Pytorch để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc ngắn ngọn bài báo sau trước, Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014), để hiểu rõ cấu trúc seq2seq trong như thế nào, sau đó đọc bài viết này để đạt được hiệu quả gấp đôi với một nửa công sức.","headline":"Triển khai seq2seq với Pytorch","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/"},"url":"https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
-  <body class="bg-gray-100 dark:bg-zinc-900 dark:text-white">
-    <div class="bg-gray-100 dark:bg-zinc-900 mx-auto max-w-3xl px-3 sm:px-6 xl:max-w-5xl xl:px-0">
-      <div
-    class="hidden fixed w-full h-screen inset-0 bg-gray-200 opacity-95 z-50 transition-transform transform ease-in-out duration-300 translate-x-0 mobile-menu dark:bg-zinc-800">
-    <button type="button" aria-label="toggle modal"
-        class="cursor-pointer fixed right-4 top-4 h-8 w-8 cursor-auto focus:outline-none border-none mobile-menu-btn-close"><svg
-            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-gray-900 svg-change-color">
-            <path fill-rule="evenodd"
-                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                clip-rule="evenodd"></path>
+  <body class="bg-white dark:bg-zinc-900 dark:text-white">
+    <div class="bg-white dark:bg-zinc-900 mx-auto max-w-3xl px-3 sm:px-6 xl:max-w-5xl xl:px-0">
+      <div class="hidden fixed w-full h-screen inset-0 bg-gray-200 opacity-95 z-50 transition-transform transform ease-in-out duration-300 translate-x-0 mobile-menu dark:bg-zinc-800">
+    <button type="button" aria-label="toggle modal" class="cursor-pointer fixed right-4 top-4 h-8 w-8 cursor-auto focus:outline-none border-none mobile-menu-btn-close"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="currentColor" class="text-gray-900 svg-change-color">
+            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
         </svg></button>
     <nav class="fixed mt-8 h-full">
         
@@ -65,39 +60,26 @@
     <a style="" href="/">
         <div class="text-dark dark:text-white flex items-center text-xl font-semibold" style="height: 48px;"> 
             <span class="blog-link">~/</span>
-            <div class="Typewriter font-normal ml-1" data-testid="typewriter-wrapper"><span class="Typewriter__wrapper"></span><span class="Typewriter__cursor">|</span></div>
+            <div class="Typewriter font-normal ml-1" data-testid="typewriter-wrapper">
+<span class="Typewriter__wrapper"></span><span class="Typewriter__cursor">|</span>
+</div>
         </div>
     </a>
-    <nav
-        class="flex items-center justify-between relative max-w-3xl mx-auto text-gray-900">
+    <nav class="flex items-center justify-between relative max-w-3xl mx-auto text-gray-900">
         
-        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-white transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
-             href="/"><span
-                class="capsize">Home</span></a>
+        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-white transition-all dark:text-gray-100 dark:hover:bg-zinc-950" href="/"><span class="capsize">Home</span></a>
         
-        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-white transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
-             href="/works.html"><span
-                class="capsize">Works</span></a>
+        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-white transition-all dark:text-gray-100 dark:hover:bg-zinc-950" href="/works.html"><span class="capsize">Works</span></a>
         
-        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-white transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
-             href="/blog.html"><span
-                class="capsize">Blog</span></a>
+        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-white transition-all dark:text-gray-100 dark:hover:bg-zinc-950" href="/blog.html"><span class="capsize">Blog</span></a>
         
-        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-white transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
-             href="/assets/BuiTuanDung-Resume-1.pdf"><span
-                class="capsize">Resume</span></a>
+        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-white transition-all dark:text-gray-100 dark:hover:bg-zinc-950" href="/assets/BuiTuanDung-Resume-1.pdf"><span class="capsize">Resume</span></a>
         
-        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-white transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
-             href="/about/"><span
-                class="capsize">About</span></a>
+        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-white transition-all dark:text-gray-100 dark:hover:bg-zinc-950" href="/about/"><span class="capsize">About</span></a>
         
-        <button
-            class="cursor-pointer bg-gray-200 bg-opacity-25	backdrop-blur-sm rounded-lg text-sm border-y border-transparent mobile-menu-btn-open visible md:hidden fixed z-50 right-4 bottom-4 h-8 w-8 cursor-auto focus:outline-none border-none mobile-menu-btn"
-            type="button">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-gray-900 svg-change-color">
-                <path fill-rule="evenodd"
-                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                    clip-rule="evenodd"></path>
+        <button class="cursor-pointer bg-gray-200 bg-opacity-25	backdrop-blur-sm rounded-lg text-sm border-y border-transparent mobile-menu-btn-open visible md:hidden fixed z-50 right-4 bottom-4 h-8 w-8 cursor-auto focus:outline-none border-none mobile-menu-btn" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="currentColor" class="text-gray-900 svg-change-color">
+                <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
             </svg>
         </button>
     </nav>
@@ -116,10 +98,8 @@
         </label>
         <a class="contact-header flex font-semibold items-center gap-2 text-black text-sm dark:text-white" href="/contact">
             Contact
-            <svg class="svg-change-color dark:text-white"viewBox="0 0 513 513" xmlns="http://www.w3.org/2000/svg" style="width:1.2rem;">
-                <path
-                    d="M440 6.5L24 246.4c-34.4 19.9-31.1 70.8 5.7 85.9L144 379.6V464c0 46.4 59.2 65.5 86.6 28.6l43.8-59.1 111.9 46.2c5.9 2.4 12.1 3.6 18.3 3.6 8.2 0 16.3-2.1 23.6-6.2 12.8-7.2 21.6-20 23.9-34.5l59.4-387.2c6.1-40.1-36.9-68.8-71.5-48.9zM192 464v-64.6l36.6 15.1L192 464zm212.6-28.7l-153.8-63.5L391 169.5c10.7-15.5-9.5-33.5-23.7-21.2L155.8 332.6 48 288 464 48l-59.4 387.3z"
-                    fill=""></path>
+            <svg class="svg-change-color dark:text-white" viewbox="0 0 513 513" xmlns="http://www.w3.org/2000/svg" style="width:1.2rem;">
+                <path d="M440 6.5L24 246.4c-34.4 19.9-31.1 70.8 5.7 85.9L144 379.6V464c0 46.4 59.2 65.5 86.6 28.6l43.8-59.1 111.9 46.2c5.9 2.4 12.1 3.6 18.3 3.6 8.2 0 16.3-2.1 23.6-6.2 12.8-7.2 21.6-20 23.9-34.5l59.4-387.2c6.1-40.1-36.9-68.8-71.5-48.9zM192 464v-64.6l36.6 15.1L192 464zm212.6-28.7l-153.8-63.5L391 169.5c10.7-15.5-9.5-33.5-23.7-21.2L155.8 332.6 48 288 464 48l-59.4 387.3z" fill=""></path>
             </svg>
         </a>
     </div>
@@ -216,6 +196,8 @@
           <p class="mt-2 text-gray-600 min-w-32 md:mt-0 dark:text-gray-300">
             
 
+28 min read
+
           </p>
         </div>
       </div>
@@ -225,80 +207,418 @@
         <h2 class="uppercase tracking-widest text-base	font-extrabold mb-6"> Table of contents </h2>
         <nav class="overflow-auto pr-2" style="max-height: calc(100vh - 16.5rem);">
           <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h1"><a href="#thôi-viết-tiếp-trong-tương-lai-nhé-">…..Thôi viết tiếp trong tương lai nhé :))</a></li>
+<li class="toc-entry toc-h2"><a href="#hãy-bắt-đầu-giải-thích-mã">Hãy bắt đầu giải thích mã</a></li>
+<li class="toc-entry toc-h2"><a href="#mã-hoàn-chỉnh-như-sau">Mã hoàn chỉnh như sau</a></li>
+<li class="toc-entry toc-h1"><a href="#tham-khảo">Tham khảo</a></li>
 </ul>
         </nav>
       </aside> -->
-      <div class="items-center pb-8" style="grid-template-rows: auto 1fr;">
+      <div class="items-center pb-8 w-full" style="grid-template-rows: auto 1fr;">
         <div class="thumbnail-image relative not-prose rounded-2xl overflow-hidden">
           
           <img alt="Post image feature" src="/assets/media/feature/pytorch.png" loading="lazy" class="w-full">
           
         </div>
-        <div class="post-content prose">
-          <p>Bài viết này giới thiệu cách sử dụng <code class="language-plaintext highlighter-rouge">Pytorch</code> để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc ngắn ngọn bài báo sau trước, <a href="https://arxiv.org/pdf/1406.1078.pdf">Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014)</a>, để hiểu rõ cấu trúc seq2seq trong như thế nào, sau đó đọc bài viết này để đạt được kết quả gấp đôi với một nửa công sức.</p>
-
-<p>(Có thể trong thời gian xa tôi sẽ viết một bài về seq2seq, hiện tại bạn có thể đọc tạm paper về nó)</p>
+        <div class="post-content prose w-full">
+          <p>Bài viết này giới thiệu cách sử dụng <code class="language-plaintext highlighter-rouge">Pytorch</code> để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc ngắn ngọn bài báo sau trước, <a href="https://arxiv.org/pdf/1406.1078.pdf">Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014)</a>, để hiểu rõ cấu trúc seq2seq trong như thế nào, sau đó đọc bài viết này để đạt được hiệu quả gấp đôi với một nửa công sức.</p>
 
 <p>Tôi đã đọc rất nhiều sơ đồ cấu trúc mạng seq2seq và tôi cảm thấy sơ đồ này do Pytorch cung cấp là dễ hiểu nhất.</p>
 
 <figure class="image" style="text-align: center;">
-    <img src="/assets/media/post/seq2seq.png" alt="" style="margin: auto;" />
+    <img src="/assets/media/post/seq2seq.png" alt="" style="margin: auto;">
     <figcaption style="font-style: italic;"></figcaption>
 </figure>
 
-<h1 id="thôi-viết-tiếp-trong-tương-lai-nhé-">…..Thôi viết tiếp trong tương lai nhé :))</h1>
+<p>Trước hết, từ hình trên ta có thể thấy rõ ràng, seq2seq cần hoạt động trên ba “biến”, khác với tất cả các cấu trúc mạng mà tôi đã tiếp xúc trước đây. Chúng ta gọi đầu vào cho Encoder là <code class="language-plaintext highlighter-rouge">enc_input</code>, đầu vào cho Decoder là <code class="language-plaintext highlighter-rouge">dec_input</code> và đầu ra của Decoder là <code class="language-plaintext highlighter-rouge">dec_output</code>. Phần sau đây sử dụng một ví dụ cụ thể để minh họa cho toàn bộ quy trình thực hiện của seq2seq.</p>
+
+<p>Hình bên dưới là cấu trúc Encoder cấu tạo từ LTSM, đầu vào là từng chữ cái (bao gồm cả dấu cách) trong “go away”, chúng ta cần thông tin của <code class="language-plaintext highlighter-rouge">hidden state</code> ở thời điểm cuối cùng, bao gồm \(h_{t}\) và \(c_{t}\).</p>
+
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/LSTM_Encoder.png" alt="" style="margin: auto;">
+    <figcaption style="font-style: italic;"></figcaption>
+</figure>
+
+<p>Sau đó sử dụng đầu ra gồm \(h_{t}\) và \(c_{t}\) làm đầu vào cho hidden state đầu tiên của Decoder là \(h_{0}, c_{0}\), như hình bên dưới. Đồng thời, lớp đầu vào (<code class="language-plaintext highlighter-rouge">input layer</code>) đầu của Decoder sẽ được nhập một ký tự đại diện cho phần đầu của câu (Do người dùng tự định nghĩa có thể là “&lt;SOS&gt;”, “\t”, “S”, …. đều được chấp nhận. Ở đây, tôi lấy “\t” làm ví dụ), và sau đó nhận đầu ra “m”, và một hidden state mới \(h_{1}\) và \(c_{1}\)</p>
+
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/gFRVkq.png" alt="" style="margin: auto;">
+    <figcaption style="font-style: italic;"></figcaption>
+</figure>
+
+<p>Sau đó lấy \(h_{1}\), \(c_{1}\) và “m” làm đầu vào, nhận đầu ra là “a”, và một hidden state mới \(h_{2}\) và \(c_{2}\)</p>
+
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/gFR1B9.png" alt="" style="margin: auto;">
+    <figcaption style="font-style: italic;"></figcaption>
+</figure>
+
+<p>Lặp lại các bước trên cho đến khi ký tự kết thúc của câu cuối cùng được xuất ra (do người dùng xác định, “&lt;EOS&gt;”, “\n”, “E”, … ở đây tôi lấy “\n” làm ví dụ).</p>
+
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/gFRGA1.png" alt="" style="margin: auto;">
+    <figcaption style="font-style: italic;"></figcaption>
+</figure>
+
+<p>Trong phần Decoder, bạn sẽ có thể có những câu hỏi sau và tôi sẽ trả lời chúng theo hiểu biết cá nhân.</p>
+
+<ul>
+  <li>Tôi phài làm như thế nào nếu Decoder không thể dừng lại trong quá trình đào tạo? Tức là ký tự kết thúc của câu không bao giờ được đưa ra.
+    <ul>
+      <li>Đầu tiên, trong quá trình huấn luyện, <strong>độ dài của câu mà Decoder sẽ xuất ra sẽ được biết</strong>. Giả sử thời điểm hiện tại đã đến ký tự cuối cùng của độ dài câu và dự đoán không phải là ký tự kết thúc thì cũng không sao, chỉ dừng lại ở đây và tính toán tổn thất.</li>
+    </ul>
+  </li>
+  <li>Tôi phải làm như thế nào nếu Decocder không thể dừng lại trong quá trình kiểm tra? Ví dụ, dự đoán là “wasd s w \n sdsw \n …… (tiếp tục sinh từ)”
+    <ul>
+      <li>Nó sẽ không dừng lại, vì trong quá trình kiểm tra, Decoder cũng có đầu vào, nhưng đầu vào này có rất nhiều placeholder vô nghĩa, chẳng hạn rất nhiều “&lt;pad&gt;”. Vì Decoder phải có đầu ra có độ dài hữu hạn. Khi đó bạn chỉ lấy tất cả các ký tự trước ký tự kết thúc đầu tiên. Ví dụ trên kết quả dự đoán cuối cùng là “wasd s w”.</li>
+    </ul>
+  </li>
+  <li>Mối quan hệ giữa đầu vào và đầu ra của Decoder, tức là <code class="language-plaintext highlighter-rouge">dec_input</code> và <code class="language-plaintext highlighter-rouge">dec_output</code> là gì?
+    <ul>
+      <li>Trong quá trình huấn luyện, bất kể Decoder sinh ra kí tự nào tại thời điểm hiện tại, Decoder tại thời điểm tiếp theo sẽ nhập theo “kế hoạch” ban đầu. Ví dụ: giả sử <code class="language-plaintext highlighter-rouge">dec_input = "\twasted"</code>, sau khi nhập “\t” lần đầu, Decoder sẽ xuất ra chữ “m”, ghi lại thôi, nó sẽ không ảnh hưởng đến thời điểm tiếp theo khi Decoder tiếp tục nhập chữ “w”.</li>
+      <li>Trong quá trình valid và testing, đầu ra của Decoder tại mỗi thời điểm sẽ ảnh hưởng đến đầu vào, vì trong quá trình valid và testing, mạng không thể nhìn thấy kết quả nên chỉ tiến hành theo vòng lặp. Ví dụ, bây giờ tôi muốn dịch từ “wasted” trong tiếng anh sang tiếng “lãng phí” trong tiếng việt. Sau đó, Decoder bắt đầu với việc nhập ký tự “\t”, nhận kết quả đầu ra nếu là “m”, tại thời điểm tiếp theo, Decoder sẽ nhập “m”, nhận đầu ra, nếu là “a”, sau đó nhận “a” là đầu vào, nhận đầu ra, … và cứ thế cho đến khi gặp kí tự cuối cùng hoặc đạt độ dài tối đa. Mặc dù từ sinh ra không đúng nhưng mong đợi nhưng phải chấp nhận thôi <img class="emoji" title=":smiley:" alt=":smiley:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f603.png" height="20" width="20">.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Như một sự lạc đề ở đây, cá nhân tôi nghĩ seq2seq rất giống với AutoEncoder.</p>
+
+<h2 id="hãy-bắt-đầu-giải-thích-mã">Hãy bắt đầu giải thích mã</h2>
+
+<p>Đầu tiên, import thư viện, ở đây tôi dùng ‘S’ làm ký tự bắt đầu và ‘E’ làm ký tự kết thúc, nếu đầu vào hoặc đầu ra quá ngắn, tôi sẽ padding nó bằng ký tự ‘?’.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># code by Tae Hwan Jung(Jeff Jung) @graykode, modify by zhaospei
+</span><span class="kn">import</span> <span class="n">torch</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">torch.nn</span> <span class="k">as</span> <span class="n">nn</span>
+<span class="kn">import</span> <span class="n">torch.utils.data</span> <span class="k">as</span> <span class="n">Data</span>
+
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">device</span><span class="p">(</span><span class="sh">'</span><span class="s">cuda</span><span class="sh">'</span> <span class="k">if</span> <span class="n">torch</span><span class="p">.</span><span class="n">cuda</span><span class="p">.</span><span class="nf">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="sh">'</span><span class="s">cpu</span><span class="sh">'</span><span class="p">)</span>
+<span class="c1"># S: Symbol that shows starting of decoding input
+# E: Symbol that shows starting of decoding output
+# ?: Symbol that will fill in blank sequence if current batch data size is short than n_step
+</span>
+</code></pre></div></div>
+
+<p>Xác định tập dữ liệu và các tham số tập dữ liệu ở đây rất đơn giản, có thể coi như một công việc dịch thuật, chỉ là dịch tiếng Anh sang tiếng Anh.
+<code class="language-plaintext highlighter-rouge">n_step</code>` là độ dài của từ dài nhất, tất cả các từ khác không đủ dài sẽ được padding bằng ‘?’.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">letter</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="sh">'</span><span class="s">SE?abcdefghijklmnopqrstuvwxyz</span><span class="sh">'</span><span class="p">]</span>
+<span class="n">letter2idx</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="n">letter</span><span class="p">)}</span>
+
+<span class="n">seq_data</span> <span class="o">=</span> <span class="p">[[</span><span class="sh">'</span><span class="s">man</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">women</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">black</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">white</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">king</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">queen</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">girl</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">boy</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">up</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">down</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">high</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">low</span><span class="sh">'</span><span class="p">]]</span>
+
+<span class="c1"># Seq2Seq Parameter
+</span><span class="n">n_step</span> <span class="o">=</span> <span class="nf">max</span><span class="p">([</span><span class="nf">max</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="nf">len</span><span class="p">(</span><span class="n">j</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">seq_data</span><span class="p">])</span> <span class="c1"># max_len(=5)
+</span><span class="n">n_hidden</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="n">n_class</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">letter2idx</span><span class="p">)</span> <span class="c1"># classfication problem
+</span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">3</span>
+</code></pre></div></div>
+
+<p>Sau đây là xử lý dữ liệu, trước tên là xử lý các từ không đủ độ dài, sử dụng ký tự ‘?’ để padding; Sau đó thêm flag kết thúc ‘E’ vào cuối dữ liệu đầu vào của Encoder, thêm flag bắt đầu ‘S’ vào đầu dữ liệu đầu vào của Decoder và flag kết thúc ‘E’ vào cuối dữ liệu đầu ra của Decoder. Xem hình phía dưới để hiểu rõ hơn.</p>
+
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/gFRU1O.png" alt="" style="margin: auto;">
+    <figcaption style="font-style: italic;"></figcaption>
+</figure>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">make_data</span><span class="p">(</span><span class="n">seq_data</span><span class="p">):</span>
+    <span class="n">enc_input_all</span><span class="p">,</span> <span class="n">dec_input_all</span><span class="p">,</span> <span class="n">dec_output_all</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">seq</span> <span class="ow">in</span> <span class="n">seq_data</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+            <span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="sh">'</span><span class="s">?</span><span class="sh">'</span> <span class="o">*</span> <span class="p">(</span><span class="n">n_step</span> <span class="o">-</span> <span class="nf">len</span><span class="p">(</span><span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="c1"># 'man??', 'women'
+</span>
+        <span class="n">enc_input</span> <span class="o">=</span> <span class="p">[</span><span class="n">letter2idx</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">(</span><span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="p">)]</span> <span class="c1"># ['m', 'a', 'n', '?', '?', 'E']
+</span>        <span class="n">dec_input</span> <span class="o">=</span> <span class="p">[</span><span class="n">letter2idx</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">(</span><span class="sh">'</span><span class="s">S</span><span class="sh">'</span> <span class="o">+</span> <span class="n">seq</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span> <span class="c1"># ['S', 'w', 'o', 'm', 'e', 'n']
+</span>        <span class="n">dec_output</span> <span class="o">=</span> <span class="p">[</span><span class="n">letter2idx</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">(</span><span class="n">seq</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="p">)]</span> <span class="c1"># ['w', 'o', 'm', 'e', 'n', 'E']
+</span>
+        <span class="n">enc_input_all</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">eye</span><span class="p">(</span><span class="n">n_class</span><span class="p">)[</span><span class="n">enc_input</span><span class="p">])</span>
+        <span class="n">dec_input_all</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">eye</span><span class="p">(</span><span class="n">n_class</span><span class="p">)[</span><span class="n">dec_input</span><span class="p">])</span>
+        <span class="n">dec_output_all</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">dec_output</span><span class="p">)</span> <span class="c1"># not one-hot
+</span>
+    <span class="c1"># make tensor
+</span>    <span class="k">return</span> <span class="n">torch</span><span class="p">.</span><span class="nc">Tensor</span><span class="p">(</span><span class="n">enc_input_all</span><span class="p">),</span> <span class="n">torch</span><span class="p">.</span><span class="nc">Tensor</span><span class="p">(</span><span class="n">dec_input_all</span><span class="p">),</span> <span class="n">torch</span><span class="p">.</span><span class="nc">LongTensor</span><span class="p">(</span><span class="n">dec_output_all</span><span class="p">)</span>
+
+<span class="sh">'''</span><span class="s">
+enc_input_all: [6, n_step+1 (because of </span><span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="s">), n_class]
+dec_input_all: [6, n_step+1 (because of </span><span class="sh">'</span><span class="s">S</span><span class="sh">'</span><span class="s">), n_class]
+dec_output_all: [6, n_step+1 (because of </span><span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="s">)]
+</span><span class="sh">'''</span>
+<span class="n">enc_input_all</span><span class="p">,</span> <span class="n">dec_input_all</span><span class="p">,</span> <span class="n">dec_output_all</span> <span class="o">=</span> <span class="nf">make_data</span><span class="p">(</span><span class="n">seq_data</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Ví có ba dữ liệu trả về ở đây, vì vậy cần tùy chỉnh Dataset, cụ thể là kế thừa lớp <code class="language-plaintext highlighter-rouge">torch.utils.data.Dataset</code>, sau đó triển khai các phương thức <code class="language-plaintext highlighter-rouge">__len__</code> và <code class="language-plaintext highlighter-rouge">__getitem__</code> bên trong.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TranslateDataSet</span><span class="p">(</span><span class="n">Data</span><span class="p">.</span><span class="n">Dataset</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">enc_input_all</span><span class="p">,</span> <span class="n">dec_input_all</span><span class="p">,</span> <span class="n">dec_output_all</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">enc_input_all</span> <span class="o">=</span> <span class="n">enc_input_all</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">dec_input_all</span> <span class="o">=</span> <span class="n">dec_input_all</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">dec_output_all</span> <span class="o">=</span> <span class="n">dec_output_all</span>
+    
+    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span> <span class="c1"># return dataset size
+</span>        <span class="k">return</span> <span class="nf">len</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">enc_input_all</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">enc_input_all</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">self</span><span class="p">.</span><span class="n">dec_input_all</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">self</span><span class="p">.</span><span class="n">dec_output_all</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+
+<span class="n">loader</span> <span class="o">=</span> <span class="n">Data</span><span class="p">.</span><span class="nc">DataLoader</span><span class="p">(</span><span class="nc">TranslateDataSet</span><span class="p">(</span><span class="n">enc_input_all</span><span class="p">,</span> <span class="n">dec_input_all</span><span class="p">,</span> <span class="n">dec_output_all</span><span class="p">),</span> <span class="n">batch_size</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Xác định mô hình seq2seq bên dưới, tôi sử dụng RNN đơn giản làm Encoder và Decoder. Nếu bạn đã quen thuộc với RNN thì thực sự không có gì phải nói về việc xác định cấu trúc mạng, tôi cũng đã viết nhận xét rất rõ ràng, bao gồm cả những thay đổi về kích thước dữ liệu.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Model
+</span><span class="k">class</span> <span class="nc">Seq2Seq</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="nf">super</span><span class="p">(</span><span class="n">Seq2Seq</span><span class="p">,</span> <span class="n">self</span><span class="p">).</span><span class="nf">__init__</span><span class="p">()</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">encoder</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">RNN</span><span class="p">(</span><span class="n">input_size</span><span class="o">=</span><span class="n">n_class</span><span class="p">,</span> <span class="n">hidden_size</span><span class="o">=</span><span class="n">n_hidden</span><span class="p">,</span> <span class="n">dropout</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span> <span class="c1"># encoder
+</span>        <span class="n">self</span><span class="p">.</span><span class="n">decoder</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">RNN</span><span class="p">(</span><span class="n">input_size</span><span class="o">=</span><span class="n">n_class</span><span class="p">,</span> <span class="n">hidden_size</span><span class="o">=</span><span class="n">n_hidden</span><span class="p">,</span> <span class="n">dropout</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span> <span class="c1"># decoder
+</span>        <span class="n">self</span><span class="p">.</span><span class="n">fc</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="n">n_hidden</span><span class="p">,</span> <span class="n">n_class</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">enc_input</span><span class="p">,</span> <span class="n">enc_hidden</span><span class="p">,</span> <span class="n">dec_input</span><span class="p">):</span>
+        <span class="c1"># enc_input(=input_batch): [batch_size, n_step+1, n_class]
+</span>        <span class="c1"># dec_inpu(=output_batch): [batch_size, n_step+1, n_class]
+</span>        <span class="n">enc_input</span> <span class="o">=</span> <span class="n">enc_input</span><span class="p">.</span><span class="nf">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># enc_input: [n_step+1, batch_size, n_class]
+</span>        <span class="n">dec_input</span> <span class="o">=</span> <span class="n">dec_input</span><span class="p">.</span><span class="nf">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># dec_input: [n_step+1, batch_size, n_class]
+</span>
+        <span class="c1"># h_t : [num_layers(=1) * num_directions(=1), batch_size, n_hidden]
+</span>        <span class="n">_</span><span class="p">,</span> <span class="n">h_t</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">encoder</span><span class="p">(</span><span class="n">enc_input</span><span class="p">,</span> <span class="n">enc_hidden</span><span class="p">)</span>
+        <span class="c1"># outputs : [n_step+1, batch_size, num_directions(=1) * n_hidden(=128)]
+</span>        <span class="n">outputs</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">decoder</span><span class="p">(</span><span class="n">dec_input</span><span class="p">,</span> <span class="n">h_t</span><span class="p">)</span>
+
+        <span class="n">model</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">fc</span><span class="p">(</span><span class="n">outputs</span><span class="p">)</span> <span class="c1"># model : [n_step+1, batch_size, n_class]
+</span>        <span class="k">return</span> <span class="n">model</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="nc">Seq2Seq</span><span class="p">().</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">CrossEntropyLoss</span><span class="p">().</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">optim</span><span class="p">.</span><span class="nc">Adam</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="nf">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Sau đây là phần đào tạo. Vì giá trị đầu ra là dữ liệu ba chiều nên việc tính toán loss đòi hỏi phải tính toán từng mẫu riêng biệt, do đó có mã vòng for sau đây.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">5000</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">enc_input_batch</span><span class="p">,</span> <span class="n">dec_input_batch</span><span class="p">,</span> <span class="n">dec_output_batch</span> <span class="ow">in</span> <span class="n">loader</span><span class="p">:</span>
+      <span class="c1"># make hidden shape [num_layers * num_directions, batch_size, n_hidden]
+</span>      <span class="n">h_0</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">n_hidden</span><span class="p">).</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+      <span class="p">(</span><span class="n">enc_input_batch</span><span class="p">,</span> <span class="n">dec_intput_batch</span><span class="p">,</span> <span class="n">dec_output_batch</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">enc_input_batch</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">dec_input_batch</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">dec_output_batch</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">))</span>
+      <span class="c1"># enc_input_batch : [batch_size, n_step+1, n_class]
+</span>      <span class="c1"># dec_intput_batch : [batch_size, n_step+1, n_class]
+</span>      <span class="c1"># dec_output_batch : [batch_size, n_step+1], not one-hot
+</span>      <span class="n">pred</span> <span class="o">=</span> <span class="nf">model</span><span class="p">(</span><span class="n">enc_input_batch</span><span class="p">,</span> <span class="n">h_0</span><span class="p">,</span> <span class="n">dec_intput_batch</span><span class="p">)</span>
+      <span class="c1"># pred : [n_step+1, batch_size, n_class]
+</span>      <span class="n">pred</span> <span class="o">=</span> <span class="n">pred</span><span class="p">.</span><span class="nf">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># [batch_size, n_step+1(=6), n_class]
+</span>      <span class="n">loss</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">dec_output_batch</span><span class="p">)):</span>
+          <span class="c1"># pred[i] : [n_step+1, n_class]
+</span>          <span class="c1"># dec_output_batch[i] : [n_step+1]
+</span>          <span class="n">loss</span> <span class="o">+=</span> <span class="nf">criterion</span><span class="p">(</span><span class="n">pred</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dec_output_batch</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+      <span class="nf">if </span><span class="p">(</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+          <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Epoch:</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">%04d</span><span class="sh">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="sh">'</span><span class="s">cost =</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">{:.6f}</span><span class="sh">'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">loss</span><span class="p">))</span>
+          
+      <span class="n">optimizer</span><span class="p">.</span><span class="nf">zero_grad</span><span class="p">()</span>
+      <span class="n">loss</span><span class="p">.</span><span class="nf">backward</span><span class="p">()</span>
+      <span class="n">optimizer</span><span class="p">.</span><span class="nf">step</span><span class="p">()</span>
+</code></pre></div></div>
+<p>Như có thể thấy từ mã testing bên dưới, trong quá trình testing, đầu vào của Decoder là một phần giữ chỗ vô nghĩa và độ dài của vị trí bị chiếm giữ là độ dài tối đa <code class="language-plaintext highlighter-rouge">n_step</code>. Và tìm vị trí của dấu kết thúc đầu tiên ở đầu ra, chặn tất cả các ký tự trước nó.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Test
+</span><span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="n">enc_input</span><span class="p">,</span> <span class="n">dec_input</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="nf">make_data</span><span class="p">([[</span><span class="n">word</span><span class="p">,</span> <span class="sh">'</span><span class="s">?</span><span class="sh">'</span> <span class="o">*</span> <span class="n">n_step</span><span class="p">]])</span>
+    <span class="n">enc_input</span><span class="p">,</span> <span class="n">dec_input</span> <span class="o">=</span> <span class="n">enc_input</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">dec_input</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="c1"># make hidden shape [num_layers * num_directions, batch_size, n_hidden]
+</span>    <span class="n">hidden</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_hidden</span><span class="p">).</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="nf">model</span><span class="p">(</span><span class="n">enc_input</span><span class="p">,</span> <span class="n">hidden</span><span class="p">,</span> <span class="n">dec_input</span><span class="p">)</span>
+    <span class="c1"># output : [n_step+1, batch_size, n_class]
+</span>
+    <span class="n">predict</span> <span class="o">=</span> <span class="n">output</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="nf">max</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="bp">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># select n_class dimension
+</span>    <span class="n">decoded</span> <span class="o">=</span> <span class="p">[</span><span class="n">letter</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">predict</span><span class="p">]</span>
+    <span class="n">translated</span> <span class="o">=</span> <span class="sh">''</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">decoded</span><span class="p">[:</span><span class="n">decoded</span><span class="p">.</span><span class="nf">index</span><span class="p">(</span><span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="p">)])</span>
+
+    <span class="k">return</span> <span class="n">translated</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sh">'</span><span class="s">?</span><span class="sh">'</span><span class="p">,</span> <span class="sh">''</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">test</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">man -&gt;</span><span class="sh">'</span><span class="p">,</span> <span class="nf">translate</span><span class="p">(</span><span class="sh">'</span><span class="s">man</span><span class="sh">'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">mans -&gt;</span><span class="sh">'</span><span class="p">,</span> <span class="nf">translate</span><span class="p">(</span><span class="sh">'</span><span class="s">mans</span><span class="sh">'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">king -&gt;</span><span class="sh">'</span><span class="p">,</span> <span class="nf">translate</span><span class="p">(</span><span class="sh">'</span><span class="s">king</span><span class="sh">'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">black -&gt;</span><span class="sh">'</span><span class="p">,</span> <span class="nf">translate</span><span class="p">(</span><span class="sh">'</span><span class="s">black</span><span class="sh">'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">up -&gt;</span><span class="sh">'</span><span class="p">,</span> <span class="nf">translate</span><span class="p">(</span><span class="sh">'</span><span class="s">up</span><span class="sh">'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h2 id="mã-hoàn-chỉnh-như-sau">Mã hoàn chỉnh như sau</h2>
+
+<p>Phần thực thi bạn có thể xem tại notebook trên kaggle tại <a href="https://www.kaggle.com/code/overvisual/seq2seq-torch?scriptVersionId=145596925">https://www.kaggle.com/code/overvisual/seq2seq-torch?scriptVersionId=145596925</a></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># code by Tae Hwan Jung(Jeff Jung) @graykode, modify by zhaospei
+</span><span class="kn">import</span> <span class="n">torch</span>
+<span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">torch.nn</span> <span class="k">as</span> <span class="n">nn</span>
+<span class="kn">import</span> <span class="n">torch.utils.data</span> <span class="k">as</span> <span class="n">Data</span>
+
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">device</span><span class="p">(</span><span class="sh">'</span><span class="s">cuda</span><span class="sh">'</span> <span class="k">if</span> <span class="n">torch</span><span class="p">.</span><span class="n">cuda</span><span class="p">.</span><span class="nf">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="sh">'</span><span class="s">cpu</span><span class="sh">'</span><span class="p">)</span>
+<span class="c1"># S: Symbol that shows starting of decoding input
+# E: Symbol that shows starting of decoding output
+# ?: Symbol that will fill in blank sequence if current batch data size is short than n_step
+</span>
+<span class="n">letter</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="sh">'</span><span class="s">SE?abcdefghijklmnopqrstuvwxyz</span><span class="sh">'</span><span class="p">]</span>
+<span class="n">letter2idx</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="n">letter</span><span class="p">)}</span>
+
+<span class="n">seq_data</span> <span class="o">=</span> <span class="p">[[</span><span class="sh">'</span><span class="s">man</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">women</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">black</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">white</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">king</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">queen</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">girl</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">boy</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">up</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">down</span><span class="sh">'</span><span class="p">],</span> <span class="p">[</span><span class="sh">'</span><span class="s">high</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">low</span><span class="sh">'</span><span class="p">]]</span>
+
+<span class="c1"># Seq2Seq Parameter
+</span><span class="n">n_step</span> <span class="o">=</span> <span class="nf">max</span><span class="p">([</span><span class="nf">max</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="nf">len</span><span class="p">(</span><span class="n">j</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">seq_data</span><span class="p">])</span> <span class="c1"># max_len(=5)
+</span><span class="n">n_hidden</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="n">n_class</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">letter2idx</span><span class="p">)</span> <span class="c1"># classfication problem
+</span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="k">def</span> <span class="nf">make_data</span><span class="p">(</span><span class="n">seq_data</span><span class="p">):</span>
+    <span class="n">enc_input_all</span><span class="p">,</span> <span class="n">dec_input_all</span><span class="p">,</span> <span class="n">dec_output_all</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">seq</span> <span class="ow">in</span> <span class="n">seq_data</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+            <span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="sh">'</span><span class="s">?</span><span class="sh">'</span> <span class="o">*</span> <span class="p">(</span><span class="n">n_step</span> <span class="o">-</span> <span class="nf">len</span><span class="p">(</span><span class="n">seq</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="c1"># 'man??', 'women'
+</span>
+        <span class="n">enc_input</span> <span class="o">=</span> <span class="p">[</span><span class="n">letter2idx</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">(</span><span class="n">seq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="p">)]</span> <span class="c1"># ['m', 'a', 'n', '?', '?', 'E']
+</span>        <span class="n">dec_input</span> <span class="o">=</span> <span class="p">[</span><span class="n">letter2idx</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">(</span><span class="sh">'</span><span class="s">S</span><span class="sh">'</span> <span class="o">+</span> <span class="n">seq</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span> <span class="c1"># ['S', 'w', 'o', 'm', 'e', 'n']
+</span>        <span class="n">dec_output</span> <span class="o">=</span> <span class="p">[</span><span class="n">letter2idx</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">(</span><span class="n">seq</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="p">)]</span> <span class="c1"># ['w', 'o', 'm', 'e', 'n', 'E']
+</span>
+        <span class="n">enc_input_all</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">eye</span><span class="p">(</span><span class="n">n_class</span><span class="p">)[</span><span class="n">enc_input</span><span class="p">])</span>
+        <span class="n">dec_input_all</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nf">eye</span><span class="p">(</span><span class="n">n_class</span><span class="p">)[</span><span class="n">dec_input</span><span class="p">])</span>
+        <span class="n">dec_output_all</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">dec_output</span><span class="p">)</span> <span class="c1"># not one-hot
+</span>
+    <span class="c1"># make tensor
+</span>    <span class="k">return</span> <span class="n">torch</span><span class="p">.</span><span class="nc">Tensor</span><span class="p">(</span><span class="n">enc_input_all</span><span class="p">),</span> <span class="n">torch</span><span class="p">.</span><span class="nc">Tensor</span><span class="p">(</span><span class="n">dec_input_all</span><span class="p">),</span> <span class="n">torch</span><span class="p">.</span><span class="nc">LongTensor</span><span class="p">(</span><span class="n">dec_output_all</span><span class="p">)</span>
+
+<span class="sh">'''</span><span class="s">
+enc_input_all: [6, n_step+1 (because of </span><span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="s">), n_class]
+dec_input_all: [6, n_step+1 (because of </span><span class="sh">'</span><span class="s">S</span><span class="sh">'</span><span class="s">), n_class]
+dec_output_all: [6, n_step+1 (because of </span><span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="s">)]
+</span><span class="sh">'''</span>
+<span class="n">enc_input_all</span><span class="p">,</span> <span class="n">dec_input_all</span><span class="p">,</span> <span class="n">dec_output_all</span> <span class="o">=</span> <span class="nf">make_data</span><span class="p">(</span><span class="n">seq_data</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">TranslateDataSet</span><span class="p">(</span><span class="n">Data</span><span class="p">.</span><span class="n">Dataset</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">enc_input_all</span><span class="p">,</span> <span class="n">dec_input_all</span><span class="p">,</span> <span class="n">dec_output_all</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">enc_input_all</span> <span class="o">=</span> <span class="n">enc_input_all</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">dec_input_all</span> <span class="o">=</span> <span class="n">dec_input_all</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">dec_output_all</span> <span class="o">=</span> <span class="n">dec_output_all</span>
+    
+    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span> <span class="c1"># return dataset size
+</span>        <span class="k">return</span> <span class="nf">len</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">enc_input_all</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">enc_input_all</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">self</span><span class="p">.</span><span class="n">dec_input_all</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">self</span><span class="p">.</span><span class="n">dec_output_all</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+
+<span class="n">loader</span> <span class="o">=</span> <span class="n">Data</span><span class="p">.</span><span class="nc">DataLoader</span><span class="p">(</span><span class="nc">TranslateDataSet</span><span class="p">(</span><span class="n">enc_input_all</span><span class="p">,</span> <span class="n">dec_input_all</span><span class="p">,</span> <span class="n">dec_output_all</span><span class="p">),</span> <span class="n">batch_size</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+
+<span class="c1"># Model
+</span><span class="k">class</span> <span class="nc">Seq2Seq</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="nf">super</span><span class="p">(</span><span class="n">Seq2Seq</span><span class="p">,</span> <span class="n">self</span><span class="p">).</span><span class="nf">__init__</span><span class="p">()</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">encoder</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">RNN</span><span class="p">(</span><span class="n">input_size</span><span class="o">=</span><span class="n">n_class</span><span class="p">,</span> <span class="n">hidden_size</span><span class="o">=</span><span class="n">n_hidden</span><span class="p">,</span> <span class="n">dropout</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span> <span class="c1"># encoder
+</span>        <span class="n">self</span><span class="p">.</span><span class="n">decoder</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">RNN</span><span class="p">(</span><span class="n">input_size</span><span class="o">=</span><span class="n">n_class</span><span class="p">,</span> <span class="n">hidden_size</span><span class="o">=</span><span class="n">n_hidden</span><span class="p">,</span> <span class="n">dropout</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span> <span class="c1"># decoder
+</span>        <span class="n">self</span><span class="p">.</span><span class="n">fc</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="n">n_hidden</span><span class="p">,</span> <span class="n">n_class</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">enc_input</span><span class="p">,</span> <span class="n">enc_hidden</span><span class="p">,</span> <span class="n">dec_input</span><span class="p">):</span>
+        <span class="c1"># enc_input(=input_batch): [batch_size, n_step+1, n_class]
+</span>        <span class="c1"># dec_inpu(=output_batch): [batch_size, n_step+1, n_class]
+</span>        <span class="n">enc_input</span> <span class="o">=</span> <span class="n">enc_input</span><span class="p">.</span><span class="nf">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># enc_input: [n_step+1, batch_size, n_class]
+</span>        <span class="n">dec_input</span> <span class="o">=</span> <span class="n">dec_input</span><span class="p">.</span><span class="nf">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># dec_input: [n_step+1, batch_size, n_class]
+</span>
+        <span class="c1"># h_t : [num_layers(=1) * num_directions(=1), batch_size, n_hidden]
+</span>        <span class="n">_</span><span class="p">,</span> <span class="n">h_t</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">encoder</span><span class="p">(</span><span class="n">enc_input</span><span class="p">,</span> <span class="n">enc_hidden</span><span class="p">)</span>
+        <span class="c1"># outputs : [n_step+1, batch_size, num_directions(=1) * n_hidden(=128)]
+</span>        <span class="n">outputs</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">decoder</span><span class="p">(</span><span class="n">dec_input</span><span class="p">,</span> <span class="n">h_t</span><span class="p">)</span>
+
+        <span class="n">model</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">fc</span><span class="p">(</span><span class="n">outputs</span><span class="p">)</span> <span class="c1"># model : [n_step+1, batch_size, n_class]
+</span>        <span class="k">return</span> <span class="n">model</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="nc">Seq2Seq</span><span class="p">().</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">CrossEntropyLoss</span><span class="p">().</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">optim</span><span class="p">.</span><span class="nc">Adam</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="nf">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">5000</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">enc_input_batch</span><span class="p">,</span> <span class="n">dec_input_batch</span><span class="p">,</span> <span class="n">dec_output_batch</span> <span class="ow">in</span> <span class="n">loader</span><span class="p">:</span>
+      <span class="c1"># make hidden shape [num_layers * num_directions, batch_size, n_hidden]
+</span>      <span class="n">h_0</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">n_hidden</span><span class="p">).</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+      <span class="p">(</span><span class="n">enc_input_batch</span><span class="p">,</span> <span class="n">dec_intput_batch</span><span class="p">,</span> <span class="n">dec_output_batch</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">enc_input_batch</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">dec_input_batch</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">dec_output_batch</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">))</span>
+      <span class="c1"># enc_input_batch : [batch_size, n_step+1, n_class]
+</span>      <span class="c1"># dec_intput_batch : [batch_size, n_step+1, n_class]
+</span>      <span class="c1"># dec_output_batch : [batch_size, n_step+1], not one-hot
+</span>      <span class="n">pred</span> <span class="o">=</span> <span class="nf">model</span><span class="p">(</span><span class="n">enc_input_batch</span><span class="p">,</span> <span class="n">h_0</span><span class="p">,</span> <span class="n">dec_intput_batch</span><span class="p">)</span>
+      <span class="c1"># pred : [n_step+1, batch_size, n_class]
+</span>      <span class="n">pred</span> <span class="o">=</span> <span class="n">pred</span><span class="p">.</span><span class="nf">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># [batch_size, n_step+1(=6), n_class]
+</span>      <span class="n">loss</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">dec_output_batch</span><span class="p">)):</span>
+          <span class="c1"># pred[i] : [n_step+1, n_class]
+</span>          <span class="c1"># dec_output_batch[i] : [n_step+1]
+</span>          <span class="n">loss</span> <span class="o">+=</span> <span class="nf">criterion</span><span class="p">(</span><span class="n">pred</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dec_output_batch</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+      <span class="nf">if </span><span class="p">(</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+          <span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Epoch:</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">%04d</span><span class="sh">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="sh">'</span><span class="s">cost =</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">{:.6f}</span><span class="sh">'</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">loss</span><span class="p">))</span>
+          
+      <span class="n">optimizer</span><span class="p">.</span><span class="nf">zero_grad</span><span class="p">()</span>
+      <span class="n">loss</span><span class="p">.</span><span class="nf">backward</span><span class="p">()</span>
+      <span class="n">optimizer</span><span class="p">.</span><span class="nf">step</span><span class="p">()</span>
+    
+<span class="c1"># Test
+</span><span class="k">def</span> <span class="nf">translate</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+    <span class="n">enc_input</span><span class="p">,</span> <span class="n">dec_input</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="nf">make_data</span><span class="p">([[</span><span class="n">word</span><span class="p">,</span> <span class="sh">'</span><span class="s">?</span><span class="sh">'</span> <span class="o">*</span> <span class="n">n_step</span><span class="p">]])</span>
+    <span class="n">enc_input</span><span class="p">,</span> <span class="n">dec_input</span> <span class="o">=</span> <span class="n">enc_input</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">dec_input</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="c1"># make hidden shape [num_layers * num_directions, batch_size, n_hidden]
+</span>    <span class="n">hidden</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_hidden</span><span class="p">).</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="nf">model</span><span class="p">(</span><span class="n">enc_input</span><span class="p">,</span> <span class="n">hidden</span><span class="p">,</span> <span class="n">dec_input</span><span class="p">)</span>
+    <span class="c1"># output : [n_step+1, batch_size, n_class]
+</span>
+    <span class="n">predict</span> <span class="o">=</span> <span class="n">output</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="nf">max</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="bp">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># select n_class dimension
+</span>    <span class="n">decoded</span> <span class="o">=</span> <span class="p">[</span><span class="n">letter</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">predict</span><span class="p">]</span>
+    <span class="n">translated</span> <span class="o">=</span> <span class="sh">''</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">decoded</span><span class="p">[:</span><span class="n">decoded</span><span class="p">.</span><span class="nf">index</span><span class="p">(</span><span class="sh">'</span><span class="s">E</span><span class="sh">'</span><span class="p">)])</span>
+
+    <span class="k">return</span> <span class="n">translated</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sh">'</span><span class="s">?</span><span class="sh">'</span><span class="p">,</span> <span class="sh">''</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">test</span><span class="sh">'</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">man -&gt;</span><span class="sh">'</span><span class="p">,</span> <span class="nf">translate</span><span class="p">(</span><span class="sh">'</span><span class="s">man</span><span class="sh">'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">mans -&gt;</span><span class="sh">'</span><span class="p">,</span> <span class="nf">translate</span><span class="p">(</span><span class="sh">'</span><span class="s">mans</span><span class="sh">'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">king -&gt;</span><span class="sh">'</span><span class="p">,</span> <span class="nf">translate</span><span class="p">(</span><span class="sh">'</span><span class="s">king</span><span class="sh">'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">black -&gt;</span><span class="sh">'</span><span class="p">,</span> <span class="nf">translate</span><span class="p">(</span><span class="sh">'</span><span class="s">black</span><span class="sh">'</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">up -&gt;</span><span class="sh">'</span><span class="p">,</span> <span class="nf">translate</span><span class="p">(</span><span class="sh">'</span><span class="s">up</span><span class="sh">'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h1 id="tham-khảo">Tham khảo</h1>
+
+<p>[1] <a href="https://www.kaggle.com/code/overvisual/seq2seq-torch?scriptVersionId=145596925">https://www.kaggle.com/code/overvisual/seq2seq-torch?scriptVersionId=145596925</a></p>
 
         </div>
 
         <div class="ml-8 mt-8 mb-8 font-normal">
           <b class="font-semibold text-lg"> Tags: </b>
           
-          <a class="text-sm	inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800"
-            href="/tag/nlp"> nlp </a>
+          <a class="text-sm	inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800" href="/tag/nlp"> nlp </a>
           
-          <a class="text-sm	inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800"
-            href="/tag/pytorch"> pytorch </a>
+          <a class="text-sm	inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800" href="/tag/pytorch"> pytorch </a>
           
-          <a class="text-sm	inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800"
-            href="/tag/model"> model </a>
+          <a class="text-sm	inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800" href="/tag/model"> model </a>
           
         </div>
 
-        <div class="flex justify-between items-center w-full flex-wrap gap-4 pb-4"><a class="" rel="noreferrer noopener"
-            target="_blank" href="https://github.com/zhaospei/zhaospei.github.io/tree/main/_posts/2023-10-06-seq2seq-pytorch.md"><span
-              class="font-normal link-hover">Edit on Github</span><span class="inline-block w-3 h-3 ml-2 mt-1 mr-4"><svg
-                class="block w-full h-full" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round"></path>
+        <div class="flex justify-between items-center w-full flex-wrap gap-4 pb-4">
+<a class="" rel="noreferrer noopener" target="_blank" href="https://github.com/zhaospei/zhaospei.github.io/tree/main/_posts/2023-10-06-seq2seq-pytorch.md"><span class="font-normal link-hover">Edit on Github</span><span class="inline-block w-3 h-3 ml-2 mt-1 mr-4"><svg class="block w-full h-full" viewbox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
               </svg></span></a>
-          <div class="flex justify-between items-center flex-wrap gap-8"><a class="cursor-pointer"
-              rel="noreferrer noopener" target="_blank"
-              onclick="window.open('ttps://twitter.com/intent/tweet?text=https://zhaospei.github.io/');"><span
-                class="font-normal link-hover">Tweet this article</span><span
-                class="inline-block w-3 h-3 ml-2 mt-1 mr-4"><svg class="block w-full h-full" viewBox="0 0 14 14"
-                  fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round"></path>
-                </svg></span></a><a class="cursor-pointer" rel="noreferrer noopener" target="_blank"
-              onclick="window.open('http://www.facebook.com/share.php?u=https://zhaospei.github.io/');"><span
-                class="font-normal link-hover">Share on Facebook</span><span
-                class="inline-block w-3 h-3 ml-2 mt-1 mr-4"><svg class="block w-full h-full" viewBox="0 0 14 14"
-                  fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round"></path>
-                </svg></span></a></div>
+          <div class="flex justify-between items-center flex-wrap gap-8">
+<a class="cursor-pointer" rel="noreferrer noopener" target="_blank" onclick="window.open('ttps://twitter.com/intent/tweet?text=https://zhaospei.github.io/');"><span class="font-normal link-hover">Tweet this article</span><span class="inline-block w-3 h-3 ml-2 mt-1 mr-4"><svg class="block w-full h-full" viewbox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg></span></a><a class="cursor-pointer" rel="noreferrer noopener" target="_blank" onclick="window.open('http://www.facebook.com/share.php?u=https://zhaospei.github.io/');"><span class="font-normal link-hover">Share on Facebook</span><span class="inline-block w-3 h-3 ml-2 mt-1 mr-4"><svg class="block w-full h-full" viewbox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg></span></a>
+</div>
           <div>
-            <div
-              class="flex justify-between items-start w-full gap-16 flex-row flew-nowrap pt-16 pl-2 pr-2 border-gray-300 dark:boder-gray-900 border-0 border-t border-solid">
+            <div class="flex justify-between items-start w-full gap-16 flex-row flew-nowrap pt-16 pl-2 pr-2 border-gray-300 dark:boder-gray-900 border-0 border-t border-solid">
               <div class="relative w-36 h-36">
                 <div class="relative overflow-hidden h-full rounded-full">
                   <div class="">
                     <div class="skeleton_skeleton__w5sWr" style="max-width: 100%; height: 100%;"></div>
                   </div>
-                  <div class="rounded-full" data-loaded="true"><img alt="Bartosz Zagrodzki" loading="lazy"
-                      decoding="async" data-nimg="fill" sizes="100vw" src="/assets/media/author/zhao-img.png"
-                      style="position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: cover; object-position: center center; color: transparent;">
+                  <div class="rounded-full" data-loaded="true">
+<img alt="Bartosz Zagrodzki" loading="lazy" decoding="async" data-nimg="fill" sizes="100vw" src="/assets/media/author/zhao-img.png" style="position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: cover; object-position: center center; color: transparent;">
                   </div>
                 </div>
               </div>
@@ -307,12 +627,9 @@
                 <p class="text-gray-700 dark:text-gray-200">Tuan-Dung Bui is a blogger, software engineer and the main
                   coordinator of this blog, he has lots of ideas and won't hesitate to use them! He lives in Vietnam.
                 </p>
-                <div class="mt-4"><a class="" rel="noreferrer noopener" target="_blank"
-                    href="/about"><span class="font-normal link-hover">Learn more about
-                      Tuan-Dung Bui</span><span class="inline-block w-3 h-3 ml-2 mt-1 mr-4"><svg viewBox="0 0 14 14"
-                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round"></path>
+                <div class="mt-4"><a class="" rel="noreferrer noopener" target="_blank" href="/about"><span class="font-normal link-hover">Learn more about
+                      Tuan-Dung Bui</span><span class="inline-block w-3 h-3 ml-2 mt-1 mr-4"><svg viewbox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                       </svg></span></a></div>
               </div>
             </div>
@@ -330,16 +647,18 @@
           <div class="w-full">
             <div class="mb-4 h-48 content-hover" style="transform: none;">
               <div class="h-full relative">
-                <div data-loaded="true"><img class="transition-all" alt="" loading="lazy"
-                    decoding="async" data-nimg="fill" sizes="100vw"
-                    src="/assets/media/feature/pytorch.png"
-                    style="position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: cover; object-position: center center; color: transparent; border-radius: 1rem;">
+                <div data-loaded="true">
+<img class="transition-all" alt="" loading="lazy" decoding="async" data-nimg="fill" sizes="100vw" src="/assets/media/feature/pytorch.png" style="position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: cover; object-position: center center; color: transparent; border-radius: 1rem;">
                 </div>
               </div>
             </div>
-            <div class="flex items-center justify-start text-gray-600 dark:text-gray-300 text-sm gap-2 px-2"><time>October 6, 2023</time>•
+            <div class="flex items-center justify-start text-gray-600 dark:text-gray-300 text-sm gap-2 px-2">
+<time>October 6, 2023</time>•
               <span>
-              </span></div>
+              
+              28 min read
+              </span>
+</div>
             <h3 class="px-2 py-2 text-black dark:text-white text-2xl font-bold">Triển khai seq2seq với Pytorch</h3>
           </div>
         </a>
@@ -348,18 +667,18 @@
           <div class="w-full">
             <div class="mb-4 h-48 content-hover" style="transform: none;">
               <div class="h-full relative">
-                <div data-loaded="true"><img class="transition-all" alt="" loading="lazy"
-                    decoding="async" data-nimg="fill" sizes="100vw"
-                    src="/assets/media/feature/nlp.png"
-                    style="position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: cover; object-position: center center; color: transparent; border-radius: 1rem;">
+                <div data-loaded="true">
+<img class="transition-all" alt="" loading="lazy" decoding="async" data-nimg="fill" sizes="100vw" src="/assets/media/feature/nlp.png" style="position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: cover; object-position: center center; color: transparent; border-radius: 1rem;">
                 </div>
               </div>
             </div>
-            <div class="flex items-center justify-start text-gray-600 dark:text-gray-300 text-sm gap-2 px-2"><time>October 6, 2023</time>•
+            <div class="flex items-center justify-start text-gray-600 dark:text-gray-300 text-sm gap-2 px-2">
+<time>October 6, 2023</time>•
               <span>
               
               14 min read
-              </span></div>
+              </span>
+</div>
             <h3 class="px-2 py-2 text-black dark:text-white text-2xl font-bold">NLP Papers to be Read</h3>
           </div>
         </a>
@@ -368,18 +687,18 @@
           <div class="w-full">
             <div class="mb-4 h-48 content-hover" style="transform: none;">
               <div class="h-full relative">
-                <div data-loaded="true"><img class="transition-all" alt="" loading="lazy"
-                    decoding="async" data-nimg="fill" sizes="100vw"
-                    src="/assets/media/feature/transformers.jpg"
-                    style="position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: cover; object-position: center center; color: transparent; border-radius: 1rem;">
+                <div data-loaded="true">
+<img class="transition-all" alt="" loading="lazy" decoding="async" data-nimg="fill" sizes="100vw" src="/assets/media/feature/transformers.jpg" style="position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: cover; object-position: center center; color: transparent; border-radius: 1rem;">
                 </div>
               </div>
             </div>
-            <div class="flex items-center justify-start text-gray-600 dark:text-gray-300 text-sm gap-2 px-2"><time>October 6, 2023</time>•
+            <div class="flex items-center justify-start text-gray-600 dark:text-gray-300 text-sm gap-2 px-2">
+<time>October 6, 2023</time>•
               <span>
               
               14 min read
-              </span></div>
+              </span>
+</div>
             <h3 class="px-2 py-2 text-black dark:text-white text-2xl font-bold">Attention is All You Need</h3>
           </div>
         </a>
@@ -408,25 +727,22 @@
     (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
 
 <!-- <script async src="/assets/js/scroll.js"></script> -->
-<script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-  type="text/javascript"></script>
+<script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
       </main>
     </div>
-    <footer class="flex flex-col justify-center items-center w-full bg-gray-200 dark:bg-zinc-800">
-        <div
-                class="pt-8 pb-4 px-4 flex justify-center items-start w-full flex-col flex-wrap max-w-5xl box-border gap-4">
+    <footer class="flex flex-col justify-center items-center w-full bg-gray-100 dark:bg-zinc-800">
+        <div class="pt-8 pb-4 px-4 flex justify-center items-start w-full flex-col flex-wrap max-w-5xl box-border gap-4">
                 <h4 class="text-3xl font-extrabold"> Let's build something together!</h4>
                 <p class="max-w-xl">Feel free to reach out if you're looking for a developer, have a question or just
                         want to connect 📭</p>
                 <a rel="noreferrer noopener" target="_blank" href="mailto:dungbuit1k28@gmail.com">
                         <span>dungbuit1k28@gmail.com</span>
-                        <span class="inline-block w-3 h-3 mt-2 ml-1"><svg class="block w-full h-full"
-                                        viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                        <span class="inline-block w-3 h-3 mt-2 ml-1"><svg class="block w-full h-full" viewbox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                                 </svg></span>
                 </a>
 
@@ -438,38 +754,26 @@
                         <div class="justify-center items-center gap-8 hidden md:flex">
                                 <a href="/sitemap.xml" rel="noreferrer noopener" target="_blank">
                                         <span> sitemap</span>
-                                        <span class="inline-block w-3 h-3 mt-2 ml-1"><svg class="block w-full h-full"
-                                                        viewBox="0 0 14 14" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <span class="inline-block w-3 h-3 mt-2 ml-1"><svg class="block w-full h-full" viewbox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                                                 </svg></span>
                                 </a>
                                 <a href="/feed.xml" rel="noreferrer noopener" target="_blank">
                                         <span> rss</span>
-                                        <span class="inline-block w-3 h-3 mt-2 ml-1"><svg class="block w-full h-full"
-                                                        viewBox="0 0 14 14" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <span class="inline-block w-3 h-3 mt-2 ml-1"><svg class="block w-full h-full" viewbox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                                                 </svg></span>
                                 </a>
                                 <a href="/assets/BuiTuanDung-Resume-1.pdf" rel="noreferrer noopener" target="_blank">
                                         <span> resume</span>
-                                        <span class="inline-block w-3 h-3 mt-2 ml-1"><svg class="block w-full h-full"
-                                                        viewBox="0 0 14 14" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <span class="inline-block w-3 h-3 mt-2 ml-1"><svg class="block w-full h-full" viewbox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                                                 </svg></span>
                                 </a>
                                 <a href="https://github.com/zhaospei" rel="noreferrer noopener" target="_blank">
                                         <span> github</span>
-                                        <span class="inline-block w-3 h-3 mt-2 ml-1"><svg class="block w-full h-full"
-                                                        viewBox="0 0 14 14" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2"
-                                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <span class="inline-block w-3 h-3 mt-2 ml-1"><svg class="block w-full h-full" viewbox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                                                 </svg></span>
                                 </a>
                         </div>
@@ -480,9 +784,7 @@
                         © 2023 <span class="text-cyan-900 dark:text-cyan-600">real</span> day, <span class="text-cyan-900 dark:text-cyan-600">real</span>
                         time. Dung BTuan. All rights reserved.
                 </span>
-                <small class="text-gray-600 dark:text-gray-300"> <a href="https://github.com/zhaospei/zhaospei.github.io" target="_blank"
-                                rel="noreferrer noopener">polygon</a> theme on <a href="https://jekyllrb.com"
-                                target="_blank" rel="noreferrer noopener">jekyll</a> </small>
+                <small class="text-gray-600 dark:text-gray-300"> <a href="https://github.com/zhaospei/zhaospei.github.io" target="_blank" rel="noreferrer noopener">polygon</a> theme on <a href="https://jekyllrb.com" target="_blank" rel="noreferrer noopener">jekyll</a> </small>
         </div>
 
 </footer>
