@@ -8,9 +8,9 @@ up_date: 2023-10-05
 img-feature: /assets/media/feature/pytorch.png
 comments: false
 ---
-Bài viết này giới thiệu cách sử dụng `Pytorch` để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc ngắn ngọn bài báo sau trước, [Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014)](https://arxiv.org/pdf/1406.1078.pdf), để hiểu rõ cấu trúc seq2seq trong như thế nào, sau đó đọc bài viết này để đạt được hiệu quả gấp đôi với một nửa công sức.
+Bài viết này giới thiệu cách sử dụng `Pytorch` để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc sơ qua bài báo sau trước, [Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014)](https://arxiv.org/pdf/1406.1078.pdf), để hiểu rõ cấu trúc seq2seq hoạt động như thế nào, sau đó đọc bài viết này để đạt được hiệu quả gấp đôi chỉ với một nửa công sức.
 
-Tôi đã đọc rất nhiều sơ đồ cấu trúc mạng seq2seq và tôi cảm thấy sơ đồ này do Pytorch cung cấp là dễ hiểu nhất.
+Tôi đã thấy rất nhiều sơ đồ cấu trúc mạng seq2seq và tôi cảm thấy sơ đồ này do Pytorch cung cấp là dễ hiểu nhất.
 
 {% include image.html url="/assets/media/post/seq2seq.png" %}
 
@@ -42,7 +42,7 @@ Trong phần Decoder, bạn sẽ có thể có những câu hỏi sau và tôi s
     - Trong quá trình huấn luyện, bất kể Decoder sinh ra kí tự nào tại thời điểm hiện tại, Decoder tại thời điểm tiếp theo sẽ nhập theo "kế hoạch" ban đầu. Ví dụ: giả sử `dec_input = "\twasted"`, sau khi nhập "\t" lần đầu, Decoder sẽ xuất ra chữ "m", ghi lại thôi, nó sẽ không ảnh hưởng đến thời điểm tiếp theo khi Decoder tiếp tục nhập chữ "w".
     - Trong quá trình valid và testing, đầu ra của Decoder tại mỗi thời điểm sẽ ảnh hưởng đến đầu vào, vì trong quá trình valid và testing, mạng không thể nhìn thấy kết quả nên chỉ tiến hành theo vòng lặp. Ví dụ, bây giờ tôi muốn dịch từ "wasted" trong tiếng anh sang tiếng "lãng phí" trong tiếng việt. Sau đó, Decoder bắt đầu với việc nhập ký tự "\t", nhận kết quả đầu ra nếu là "m", tại thời điểm tiếp theo, Decoder sẽ nhập "m", nhận đầu ra, nếu là "a", sau đó nhận "a" là đầu vào, nhận đầu ra, ... và cứ thế cho đến khi gặp kí tự cuối cùng hoặc đạt độ dài tối đa. Mặc dù từ sinh ra không đúng nhưng mong đợi nhưng phải chấp nhận thôi :smiley:.
 
-Như một sự lạc đề ở đây, cá nhân tôi nghĩ seq2seq rất giống với AutoEncoder.
+Hơi lạc đề một chút, cá nhân tôi nghĩ seq2seq rất giống với AutoEncoder.
 
 ## Hãy bắt đầu giải thích mã
 
@@ -157,7 +157,7 @@ criterion = nn.CrossEntropyLoss().to(device)
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 ```
 
-Sau đây là phần đào tạo. Vì giá trị đầu ra là dữ liệu ba chiều nên việc tính toán loss đòi hỏi phải tính toán từng mẫu riêng biệt, do đó có mã vòng for sau đây.
+Sau đây là phần training. Vì giá trị đầu ra là dữ liệu ba chiều nên việc tính toán loss đòi hỏi phải tính toán từng mẫu riêng biệt, do đó có mã vòng for sau đây.
 
 ```python
 for epoch in range(5000):
