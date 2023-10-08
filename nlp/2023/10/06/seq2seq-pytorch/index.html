@@ -20,8 +20,8 @@
 <meta property="og:title" content="Triển khai seq2seq với Pytorch" />
 <meta name="author" content="zhao" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Bài viết này giới thiệu cách sử dụng Pytorch để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc ngắn ngọn bài báo sau trước, Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014), để hiểu rõ cấu trúc seq2seq trong như thế nào, sau đó đọc bài viết này để đạt được hiệu quả gấp đôi với một nửa công sức." />
-<meta property="og:description" content="Bài viết này giới thiệu cách sử dụng Pytorch để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc ngắn ngọn bài báo sau trước, Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014), để hiểu rõ cấu trúc seq2seq trong như thế nào, sau đó đọc bài viết này để đạt được hiệu quả gấp đôi với một nửa công sức." />
+<meta name="description" content="Bài viết này giới thiệu cách sử dụng Pytorch để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc sơ qua bài báo sau trước, Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014), để hiểu rõ cấu trúc seq2seq hoạt động như thế nào, sau đó đọc bài viết này để đạt được hiệu quả gấp đôi chỉ với một nửa công sức." />
+<meta property="og:description" content="Bài viết này giới thiệu cách sử dụng Pytorch để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc sơ qua bài báo sau trước, Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014), để hiểu rõ cấu trúc seq2seq hoạt động như thế nào, sau đó đọc bài viết này để đạt được hiệu quả gấp đôi chỉ với một nửa công sức." />
 <link rel="canonical" href="https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/" />
 <meta property="og:url" content="https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/" />
 <meta property="og:site_name" content="Tuan-Dung Bui" />
@@ -30,7 +30,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Triển khai seq2seq với Pytorch" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"zhao"},"dateModified":"2023-10-06T00:00:00+07:00","datePublished":"2023-10-06T00:00:00+07:00","description":"Bài viết này giới thiệu cách sử dụng Pytorch để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc ngắn ngọn bài báo sau trước, Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014), để hiểu rõ cấu trúc seq2seq trong như thế nào, sau đó đọc bài viết này để đạt được hiệu quả gấp đôi với một nửa công sức.","headline":"Triển khai seq2seq với Pytorch","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/"},"url":"https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"zhao"},"dateModified":"2023-10-06T00:00:00+07:00","datePublished":"2023-10-06T00:00:00+07:00","description":"Bài viết này giới thiệu cách sử dụng Pytorch để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc sơ qua bài báo sau trước, Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014), để hiểu rõ cấu trúc seq2seq hoạt động như thế nào, sau đó đọc bài viết này để đạt được hiệu quả gấp đôi chỉ với một nửa công sức.","headline":"Triển khai seq2seq với Pytorch","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/"},"url":"https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -220,9 +220,9 @@
           
         </div>
         <div class="post-content prose w-full">
-          <p>Bài viết này giới thiệu cách sử dụng <code class="language-plaintext highlighter-rouge">Pytorch</code> để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc ngắn ngọn bài báo sau trước, <a href="https://arxiv.org/pdf/1406.1078.pdf">Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014)</a>, để hiểu rõ cấu trúc seq2seq trong như thế nào, sau đó đọc bài viết này để đạt được hiệu quả gấp đôi với một nửa công sức.</p>
+          <p>Bài viết này giới thiệu cách sử dụng <code class="language-plaintext highlighter-rouge">Pytorch</code> để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc sơ qua bài báo sau trước, <a href="https://arxiv.org/pdf/1406.1078.pdf">Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014)</a>, để hiểu rõ cấu trúc seq2seq hoạt động như thế nào, sau đó đọc bài viết này để đạt được hiệu quả gấp đôi chỉ với một nửa công sức.</p>
 
-<p>Tôi đã đọc rất nhiều sơ đồ cấu trúc mạng seq2seq và tôi cảm thấy sơ đồ này do Pytorch cung cấp là dễ hiểu nhất.</p>
+<p>Tôi đã thấy rất nhiều sơ đồ cấu trúc mạng seq2seq và tôi cảm thấy sơ đồ này do Pytorch cung cấp là dễ hiểu nhất.</p>
 
 <figure class="image" style="text-align: center;">
     <img src="/assets/media/post/seq2seq.png" alt="" style="margin: auto;">
@@ -280,7 +280,7 @@
   </li>
 </ul>
 
-<p>Như một sự lạc đề ở đây, cá nhân tôi nghĩ seq2seq rất giống với AutoEncoder.</p>
+<p>Hơi lạc đề một chút, cá nhân tôi nghĩ seq2seq rất giống với AutoEncoder.</p>
 
 <h2 id="hãy-bắt-đầu-giải-thích-mã">Hãy bắt đầu giải thích mã</h2>
 
@@ -393,7 +393,7 @@ dec_output_all: [6, n_step+1 (because of </span><span class="sh">'</span><span c
 <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">optim</span><span class="p">.</span><span class="nc">Adam</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="nf">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Sau đây là phần đào tạo. Vì giá trị đầu ra là dữ liệu ba chiều nên việc tính toán loss đòi hỏi phải tính toán từng mẫu riêng biệt, do đó có mã vòng for sau đây.</p>
+<p>Sau đây là phần training. Vì giá trị đầu ra là dữ liệu ba chiều nên việc tính toán loss đòi hỏi phải tính toán từng mẫu riêng biệt, do đó có mã vòng for sau đây.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">5000</span><span class="p">):</span>
   <span class="k">for</span> <span class="n">enc_input_batch</span><span class="p">,</span> <span class="n">dec_input_batch</span><span class="p">,</span> <span class="n">dec_output_batch</span> <span class="ow">in</span> <span class="n">loader</span><span class="p">:</span>
