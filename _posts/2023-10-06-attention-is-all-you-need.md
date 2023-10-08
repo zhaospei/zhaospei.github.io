@@ -4,7 +4,7 @@ title:  "Attention is All You Need"
 categories: NLP
 author: zhao
 tags: ["nlp", "paper", "model"]
-up_date: 2023-10-05
+up_date: 2023-10-08
 img-feature: /assets/media/feature/transformers.jpg
 comments: false
 ---
@@ -46,7 +46,7 @@ $$ FFN(x)=ReLU(xW_1+b_1)W_2+b_2 $$
 Kích thước lớp bên trong (inner-layer) là 2048.
 
 ## residual connection
-Mạng dư (`Residual Network`), các kết nối tắt có khả năng bỏ qua một hoặc nhiều lớp, do sự tồn tại của kết nối tắt nên hiệu suất của mạng ít không kém hơn so với các mạng nông. Phương pháp này giải quyết vấn đề suy thoái do các lớp chập xếp chồng lên nhau gây ra, số lượng lớp của mạng nơ-ron tích chập đã được tăng lên rất nhiều lên hàng trăm lớp, và cải thiện đáng kể hiệu suất của mạng thần kinh tích chập (`resnet`).
+Mạng dư (`Residual Network`), các kết nối tắt có khả năng bỏ qua một hoặc nhiều lớp, do sự tồn tại của kết nối tắt nên hiệu suất của mạng sâu (có nhiều lớp) không kém hơn so với các mạng nông (mạng có ít lớp). Phương pháp này giải quyết vấn đề suy thoái do các lớp chập xếp chồng lên nhau gây ra, số lượng lớp của mạng nơ-ron tích chập đã được tăng lên rất nhiều lên hàng trăm lớp, và cải thiện đáng kể hiệu suất của mạng thần kinh tích chập (`resnet`).
 
 {% include image.html url="/assets/media/post/resnet.png" %}
 
