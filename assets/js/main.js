@@ -14,3 +14,31 @@ $(document).ready(function () {
     });
 
 });
+
+// window.onscroll = function() {scrollFunction()};
+
+// function scrollFunction() {
+//   if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+//     document.getElementById("navbar").style.top = "0";
+//   } else {
+//     document.getElementById("navbar").style.top = "-100px";
+//   }
+// }
+
+var lastScrollTop = 0;
+
+// element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
+document.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
+   var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+   if (document.documentElement.scrollTop < 100) {
+    document.getElementById("navbar").style.top = "-100px";
+   } else {
+        if (st > lastScrollTop) {
+            document.getElementById("navbar").style.top = "-100px";
+
+        } else if (st < lastScrollTop) {
+            document.getElementById("navbar").style.top = "0";
+        } // else was horizontal scroll
+    }
+   lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+}, false);

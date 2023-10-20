@@ -7,7 +7,9 @@
     <link rel="icon" type="image/x-icon" href="/assets/media/blog-icon.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Product+Sans&family=Google+Sans+Display:ital@0;1&family=Google+Sans_old:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=Google+Sans+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,700&display=swap"
+          rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/github.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -35,12 +37,64 @@
 
   </head>
   <body class="bg-white dark:bg-zinc-900 dark:text-white">
-    <div class="bg-white dark:bg-zinc-900 mx-auto max-w-3xl px-3 sm:px-6 xl:max-w-5xl xl:px-0">
-      <div
+    <div class="bg-white  dark:bg-zinc-900 mx-auto max-w-3xl px-3 sm:px-6 xl:max-w-5xl xl:px-0">
+      <div id="navbar" class="hidden md:block fixed left-0 top-[-100px] w-full z-50 will-change-transform mt-8" 
+style="transition: transform .4s ease-in, -webkit-transform .4s ease-in; transition: top 0.4s;" data-comp="JumplinksV2" aria-hidden="true">
+    <ul class="bg-white rounded-full flex justify-center mx-auto p-2 w-fit" style="box-shadow: 0 1px 2px rgba(32,33,36,.15), 0 1px 8px rgba(32,33,36,.08);">
+        
+        
+            <li class="shrink-0 px-1">
+                <a href="/" class="text-[#5f6368] rounded-full px-4 py-2 leading-6 inline-block font-medium hover:bg-[#f8f9fa]"
+                    data-ga-config="{&quot;click&quot;: {&quot;event&quot;: &quot;anchor_link_click&quot;, &quot;link_url&quot;: &quot;fast&quot;, &quot;link_text&quot;: true, &quot;link_type&quot;: true, &quot;module_name&quot;: true, &quot;section_header&quot;: true}}"
+                    tabindex="-1">
+                    Home </a>
+            </li>
+        
+        
+        
+            <li class="shrink-0 px-1">
+                <a href="/works.html" class="text-[#5f6368] rounded-full px-4 py-2 leading-6 inline-block font-medium hover:bg-[#f8f9fa]"
+                    data-ga-config="{&quot;click&quot;: {&quot;event&quot;: &quot;anchor_link_click&quot;, &quot;link_url&quot;: &quot;fast&quot;, &quot;link_text&quot;: true, &quot;link_type&quot;: true, &quot;module_name&quot;: true, &quot;section_header&quot;: true}}"
+                    tabindex="-1">
+                    Works </a>
+            </li>
+        
+        
+        
+            <li class="shrink-0 px-1">
+                <a href="/blog.html" class="text-[#5f6368] rounded-full px-4 py-2 leading-6 inline-block font-medium hover:bg-[#f8f9fa]"
+                    data-ga-config="{&quot;click&quot;: {&quot;event&quot;: &quot;anchor_link_click&quot;, &quot;link_url&quot;: &quot;fast&quot;, &quot;link_text&quot;: true, &quot;link_type&quot;: true, &quot;module_name&quot;: true, &quot;section_header&quot;: true}}"
+                    tabindex="-1">
+                    Blog </a>
+            </li>
+        
+        
+        
+            <li class="shrink-0 px-1">
+                <a href="/assets/BuiTuanDung-Resume-1.pdf" class="text-[#5f6368] rounded-full px-4 py-2 leading-6 inline-block font-medium hover:bg-[#f8f9fa]"
+                    data-ga-config="{&quot;click&quot;: {&quot;event&quot;: &quot;anchor_link_click&quot;, &quot;link_url&quot;: &quot;fast&quot;, &quot;link_text&quot;: true, &quot;link_type&quot;: true, &quot;module_name&quot;: true, &quot;section_header&quot;: true}}"
+                    tabindex="-1">
+                    Resume </a>
+            </li>
+        
+        
+        
+            <li class="shrink-0 px-1">
+                <a href="/about/" class="text-[#5f6368] rounded-full px-4 py-2 leading-6 inline-block font-medium hover:bg-[#f8f9fa]"
+                    data-ga-config="{&quot;click&quot;: {&quot;event&quot;: &quot;anchor_link_click&quot;, &quot;link_url&quot;: &quot;fast&quot;, &quot;link_text&quot;: true, &quot;link_type&quot;: true, &quot;module_name&quot;: true, &quot;section_header&quot;: true}}"
+                    tabindex="-1">
+                    About </a>
+            </li>
+        
+        
+    </ul>
+</div>
+<div
     class="hidden fixed w-full h-screen inset-0 bg-gray-200 opacity-95 z-50 transition-transform transform ease-in-out duration-300 translate-x-0 mobile-menu dark:bg-zinc-800">
     <button type="button" aria-label="toggle modal"
         class="cursor-pointer fixed right-4 top-4 h-8 w-8 cursor-auto focus:outline-none border-none mobile-menu-btn-close"><svg
-            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-gray-900 svg-change-color">
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+            class="text-gray-900 svg-change-color">
             <path fill-rule="evenodd"
                 d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
                 clip-rule="evenodd"></path>
@@ -63,38 +117,34 @@
 
 <header class="grid justify-center w-full relative pt-4" style="grid-template-columns: 2fr auto 1fr;">
     <a style="" href="/">
-        <div class="text-dark dark:text-white flex items-center text-xl font-semibold" style="height: 48px;"> 
+        <div class="text-dark dark:text-white flex items-center text-xl font-semibold" style="height: 48px;">
             <span class="blog-link">~/</span>
-            <div class="Typewriter font-normal ml-1" data-testid="typewriter-wrapper"><span class="Typewriter__wrapper"></span><span class="Typewriter__cursor">|</span></div>
+            <div class="Typewriter font-normal ml-1" data-testid="typewriter-wrapper"><span
+                    class="Typewriter__wrapper"></span><span class="Typewriter__cursor">|</span></div>
         </div>
     </a>
-    <nav
-        class="flex items-center justify-between relative max-w-3xl mx-auto text-gray-900">
+    <nav class="flex items-center justify-between relative max-w-3xl mx-auto text-gray-900">
         
-        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-100 transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
-             href="/"><span
-                class="capsize">Home</span></a>
+        <a class="text-lg font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-100 transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
+            href="/"><span class="capsize">Home</span></a>
         
-        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-100 transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
-             href="/works.html"><span
-                class="capsize">Works</span></a>
+        <a class="text-lg font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-100 transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
+            href="/works.html"><span class="capsize">Works</span></a>
         
-        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-100 transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
-             href="/blog.html"><span
-                class="capsize">Blog</span></a>
+        <a class="text-lg font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-100 transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
+            href="/blog.html"><span class="capsize">Blog</span></a>
         
-        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-100 transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
-             href="/assets/BuiTuanDung-Resume-1.pdf"><span
-                class="capsize">Resume</span></a>
+        <a class="text-lg font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-100 transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
+            href="/assets/BuiTuanDung-Resume-1.pdf"><span class="capsize">Resume</span></a>
         
-        <a class="font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-100 transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
-             href="/about/"><span
-                class="capsize">About</span></a>
+        <a class="text-lg font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-100 transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
+            href="/about/"><span class="capsize">About</span></a>
         
         <button
             class="cursor-pointer bg-gray-200 bg-opacity-25	backdrop-blur-sm rounded-lg text-sm border-y border-transparent mobile-menu-btn-open visible md:hidden fixed z-50 right-4 bottom-4 h-8 w-8 cursor-auto focus:outline-none border-none mobile-menu-btn"
             type="button">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-gray-900 svg-change-color">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                class="text-gray-900 svg-change-color">
                 <path fill-rule="evenodd"
                     d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
                     clip-rule="evenodd"></path>
@@ -109,14 +159,17 @@
                 "dark"
             </span>
             <div class="themeSwitchToggle w-12 h-6 bg-gray-200 rounded-3xl p-1 ml-4 dark:bg-zinc-800">
-                <div class="themeSwitchIcon w-6 h-6 bg-white rounded-full flex items-center justify-center dark:bg-zinc-950" style="transition: transform .2s ease-in-out;">
-                    
+                <div class="themeSwitchIcon w-6 h-6 bg-white rounded-full flex items-center justify-center dark:bg-zinc-950"
+                    style="transition: transform .2s ease-in-out;">
+
                 </div>
             </div>
         </label>
-        <a class="contact-header flex font-semibold items-center gap-2 text-black text-sm dark:text-white" href="/contact">
+        <a class="contact-header flex font-semibold items-center gap-2 text-black text-sm dark:text-white"
+            href="/contact">
             Contact
-            <svg class="svg-change-color dark:text-white"viewBox="0 0 513 513" xmlns="http://www.w3.org/2000/svg" style="width:1.2rem;">
+            <svg class="svg-change-color dark:text-white" viewBox="0 0 513 513" xmlns="http://www.w3.org/2000/svg"
+                style="width:1.2rem;">
                 <path
                     d="M440 6.5L24 246.4c-34.4 19.9-31.1 70.8 5.7 85.9L144 379.6V464c0 46.4 59.2 65.5 86.6 28.6l43.8-59.1 111.9 46.2c5.9 2.4 12.1 3.6 18.3 3.6 8.2 0 16.3-2.1 23.6-6.2 12.8-7.2 21.6-20 23.9-34.5l59.4-387.2c6.1-40.1-36.9-68.8-71.5-48.9zM192 464v-64.6l36.6 15.1L192 464zm212.6-28.7l-153.8-63.5L391 169.5c10.7-15.5-9.5-33.5-23.7-21.2L155.8 332.6 48 288 464 48l-59.4 387.3z"
                     fill=""></path>
@@ -198,27 +251,82 @@
 </div> -->
 <div class="post-container">
   <article class="post-content-container flex flex-col items-start justify-center">
-    <header class="flex flex-col gap-12 w-full max-w-full pb-8">
+    <header class="flex flex-col gap-12 w-full max-w-full pb-8 mb-4">
       <div class="flex flex-col justify-center gap-4">
-        <h1 class="text-5xl font-extrabold leading-tight"> [NLP] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding </h1>
-        <div class="flex flex-col items-start justify-between mt-2 md:flex-row md:items-center">
-          <div class="flex items-center">
-            
-            
-            
-            <img class="object-cover w-[40px] h-[40px] rounded-full" src="/assets/media/author/zhao-img.png" alt="Tuan-Dung Bui">
-            
-            <p class="ml-2 text-gray-700 dark:text-gray-300">
-              Tuan-Dung Bui / October 5, 2023
-            </p>
-            
-          </div>
-          <p class="mt-2 text-gray-600 min-w-32 md:mt-0 dark:text-gray-300">
-            
+        <div class="text-lg">
+          
+          <a class="text-xl	inline-block px-4 py-1 mr-4 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800"
+            href="/tag/nlp"> nlp </a>
+          
+          <a class="text-xl	inline-block px-4 py-1 mr-4 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800"
+            href="/tag/paper"> paper </a>
+          
+          <a class="text-xl	inline-block px-4 py-1 mr-4 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800"
+            href="/tag/model"> model </a>
+          
+        </div>
+        <h1 class="text-6xl font-bold leading-tight"> [NLP] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding </h1>
+        <div class="flex flex-row items-baseline mb-8">
+          <div class="article-meta__abstract-container">
+            <div class="flex w-max flex-col pr-4" style="border-right: 2px solid #dadce0">
+              <p class="text-gray-500">October 5, 2023</p>
+
+              <p class="text-gray-500" data-reading-time-render="">
+                
 
 2 min read
 
+              </p>
+
+            </div>
+          </div>
+          <p class="text-gray-700 pl-4">
+            BERT dùng thiết kể để đào tạo sâu, biểu diễn hai chiều, dữ liệu không gán nhãn được sử dụng và thông tin ngữ cảnh song phương trái và phải được kết hợp (Tức context được xác định ở cả hai phía của từ)
           </p>
+
+        </div>
+        <div class="flex justify-between">
+          <div class="flex">
+            
+            
+
+            <div class="mr-4" data-component="uni-monogram" data-author="Tuan-Dung Bui">
+              <img class="object-cover w-[48px] h-[48px] rounded-full" src="/assets/media/author/zhao-img.png" alt="Tuan-Dung Bui">
+              
+            </div>
+
+            <div class="article-meta__author-info">
+              <div class="font-extrabold text-gray-900 text-lg">Tuan-Dung Bui</div>
+
+              <div class="text-sm font-medium text-gray-600">
+                Developer and author at Zhao.
+              </div>
+
+
+            </div>
+            
+          </div>
+            <div class="uni-social-share uni-social-share--desktop" data-component="uni-social-share-dropdowm">
+              <a aria-label="Share" class="flex gap-2 text-black" role="button" tabindex="0" aria-expanded="false"
+                data-analytics="{
+                &quot;event&quot;: &quot;page interaction&quot;,
+                &quot;category&quot;: &quot;social&quot;,
+                &quot;action&quot;: &quot;menu&quot;,
+                &quot;label&quot;: &quot;label&quot;
+              }" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-share inline-block" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M6 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                <path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                <path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                <path d="M8.7 10.7l6.6 -3.4"></path>
+                <path d="M8.7 13.3l6.6 3.4"></path>
+             </svg>
+                <div class="uni-social-share__button">Share</div>
+              </a>
+
+            </div>
+
         </div>
       </div>
     </header>
@@ -239,7 +347,7 @@
           <img alt="Post image feature" src="/assets/media/feature/bert.png" loading="lazy" class="w-full">
           
         </div>
-        <div class="post-content prose w-full">
+        <div class="post-content prose w-full mb-16">
           <p>BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</p>
 
 <h2 id="tiêu-đề">Tiêu đề</h2>
@@ -272,19 +380,9 @@
 <p>(Tiếp tục viết trong tương lai xa…)</p>
 
 
-        </div>
 
-        <div class="ml-8 mt-8 mb-8 font-normal">
-          <b class="font-semibold text-lg"> Tags: </b>
-          
-          <a class="text-sm	inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800"
-            href="/tag/nlp"> nlp </a>
-          
-          <a class="text-sm	inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800"
-            href="/tag/paper"> paper </a>
-          
-          <a class="text-sm	inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800"
-            href="/tag/model"> model </a>
+           
+            <p class="text-right italic">Last Update: October 5, 2023 </p>
           
         </div>
 
@@ -313,7 +411,7 @@
                 </svg></span></a></div>
           <div>
             <div
-              class="flex justify-between items-start w-full gap-16 flex-col md:flex-row flew-nowrap pt-16 pl-2 pr-2 border-gray-300 dark:boder-gray-900 border-0 border-t border-solid">
+              class="flex justify-between items-start w-full gap-16 flex-col md:flex-row flew-nowrap pt-4 pl-2 pr-2 border-gray-300 dark:boder-gray-900 border-0 border-t border-solid">
               <div class="relative w-36 h-36">
                 <div class="relative overflow-hidden h-full rounded-full">
                   <div class="">
@@ -330,8 +428,8 @@
                 <p class="text-gray-700 dark:text-gray-200">Tuan-Dung Bui is a blogger, software engineer and the main
                   coordinator of this blog, he has lots of ideas and won't hesitate to use them! He lives in Vietnam.
                 </p>
-                <div class="mt-4"><a class="" rel="noreferrer noopener" target="_blank"
-                    href="/about"><span class="font-normal link-hover">Learn more about
+                <div class="mt-4"><a class="" rel="noreferrer noopener" target="_blank" href="/about"><span
+                      class="font-normal link-hover">Learn more about
                       Tuan-Dung Bui</span><span class="inline-block w-3 h-3 ml-2 mt-1 mr-4"><svg viewBox="0 0 14 14"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round"
@@ -349,22 +447,40 @@
       <h2 class="mb-4 text-3xl max-w-3xl font-bold mb-8">Check my other posts 📚</h2>
       <div class="w-full items-start justify-center gap-8 flex flex-col md:flex-row">
         
+        <a class="w-full container-hover" href="/nlp/2023/10/20/word2vec/">
+          <div class="w-full">
+            <div class="mb-4 h-48 content-hover" style="transform: none;">
+              <div class="h-full relative">
+                <div data-loaded="true"><img class="transition-all" alt="" loading="lazy" decoding="async"
+                    data-nimg="fill" sizes="100vw" src="/assets/media/feature/pytorch.png"
+                    style="position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: cover; object-position: center center; color: transparent; border-radius: 1rem;">
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center justify-start text-gray-600 dark:text-gray-300 text-sm gap-2 px-2"><time>October 20, 2023</time>•
+              <span>
+                </span>
+            </div>
+            <h3 class="px-2 py-2 text-black dark:text-white text-2xl font-bold">Phép thuật tuyệt vời của việc đếm tần số Word2Vec, Glove, Fasttext</h3>
+          </div>
+        </a>
+        
         <a class="w-full container-hover" href="/nlp/2023/10/06/seq2seq-pytorch/">
           <div class="w-full">
             <div class="mb-4 h-48 content-hover" style="transform: none;">
               <div class="h-full relative">
-                <div data-loaded="true"><img class="transition-all" alt="" loading="lazy"
-                    decoding="async" data-nimg="fill" sizes="100vw"
-                    src="/assets/media/feature/pytorch.png"
+                <div data-loaded="true"><img class="transition-all" alt="" loading="lazy" decoding="async"
+                    data-nimg="fill" sizes="100vw" src="/assets/media/feature/pytorch.png"
                     style="position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: cover; object-position: center center; color: transparent; border-radius: 1rem;">
                 </div>
               </div>
             </div>
             <div class="flex items-center justify-start text-gray-600 dark:text-gray-300 text-sm gap-2 px-2"><time>October 6, 2023</time>•
               <span>
-              
-              14 min read
-              </span></div>
+                
+                14 min read
+                </span>
+            </div>
             <h3 class="px-2 py-2 text-black dark:text-white text-2xl font-bold">Triển khai seq2seq với Pytorch</h3>
           </div>
         </a>
@@ -373,39 +489,19 @@
           <div class="w-full">
             <div class="mb-4 h-48 content-hover" style="transform: none;">
               <div class="h-full relative">
-                <div data-loaded="true"><img class="transition-all" alt="" loading="lazy"
-                    decoding="async" data-nimg="fill" sizes="100vw"
-                    src="/assets/media/feature/nlp.png"
+                <div data-loaded="true"><img class="transition-all" alt="" loading="lazy" decoding="async"
+                    data-nimg="fill" sizes="100vw" src="/assets/media/feature/nlp.png"
                     style="position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: cover; object-position: center center; color: transparent; border-radius: 1rem;">
                 </div>
               </div>
             </div>
             <div class="flex items-center justify-start text-gray-600 dark:text-gray-300 text-sm gap-2 px-2"><time>October 6, 2023</time>•
               <span>
-              
-              12 min read
-              </span></div>
+                
+                12 min read
+                </span>
+            </div>
             <h3 class="px-2 py-2 text-black dark:text-white text-2xl font-bold">NLP Papers to be Read</h3>
-          </div>
-        </a>
-        
-        <a class="w-full container-hover" href="/nlp/2023/10/06/attention-is-all-you-need/">
-          <div class="w-full">
-            <div class="mb-4 h-48 content-hover" style="transform: none;">
-              <div class="h-full relative">
-                <div data-loaded="true"><img class="transition-all" alt="" loading="lazy"
-                    decoding="async" data-nimg="fill" sizes="100vw"
-                    src="/assets/media/feature/transformers.jpg"
-                    style="position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: cover; object-position: center center; color: transparent; border-radius: 1rem;">
-                </div>
-              </div>
-            </div>
-            <div class="flex items-center justify-start text-gray-600 dark:text-gray-300 text-sm gap-2 px-2"><time>October 6, 2023</time>•
-              <span>
-              
-              14 min read
-              </span></div>
-            <h3 class="px-2 py-2 text-black dark:text-white text-2xl font-bold">Attention is All You Need</h3>
           </div>
         </a>
         
@@ -417,23 +513,24 @@
 
 <div id="disqus_thread"></div>
 <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function () { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');
     s.src = 'https://zhaospei.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
-    })();
+  })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+    Disqus.</a></noscript>
 
 <!-- <script async src="/assets/js/scroll.js"></script> -->
 <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
@@ -447,7 +544,7 @@
                 <p class="max-w-xl">Feel free to reach out if you're looking for a developer, have a question or just
                         want to connect 📭</p>
                 <a rel="noreferrer noopener" target="_blank" href="mailto:dungbuit1k28@gmail.com">
-                        <span>dungbuit1k28@gmail.com</span>
+                        <span class="link-hover">dungbuit1k28@gmail.com</span>
                         <span class="inline-block w-3 h-3 mt-2 ml-1"><svg class="block w-full h-full"
                                         viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2"
@@ -462,7 +559,7 @@
                         </a>
                         <div class="justify-center items-center gap-8 hidden md:flex">
                                 <a href="/sitemap.xml" rel="noreferrer noopener" target="_blank">
-                                        <span> sitemap</span>
+                                        <span class="link-hover"> sitemap</span>
                                         <span class="inline-block w-3 h-3 mt-2 ml-1"><svg class="block w-full h-full"
                                                         viewBox="0 0 14 14" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -471,7 +568,7 @@
                                                 </svg></span>
                                 </a>
                                 <a href="/feed.xml" rel="noreferrer noopener" target="_blank">
-                                        <span> rss</span>
+                                        <span class="link-hover"> rss</span>
                                         <span class="inline-block w-3 h-3 mt-2 ml-1"><svg class="block w-full h-full"
                                                         viewBox="0 0 14 14" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -480,7 +577,7 @@
                                                 </svg></span>
                                 </a>
                                 <a href="/assets/BuiTuanDung-Resume-1.pdf" rel="noreferrer noopener" target="_blank">
-                                        <span> resume</span>
+                                        <span class="link-hover"> resume</span>
                                         <span class="inline-block w-3 h-3 mt-2 ml-1"><svg class="block w-full h-full"
                                                         viewBox="0 0 14 14" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
@@ -489,7 +586,7 @@
                                                 </svg></span>
                                 </a>
                                 <a href="https://github.com/zhaospei" rel="noreferrer noopener" target="_blank">
-                                        <span> github</span>
+                                        <span class="link-hover"> github</span>
                                         <span class="inline-block w-3 h-3 mt-2 ml-1"><svg class="block w-full h-full"
                                                         viewBox="0 0 14 14" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">

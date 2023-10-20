@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://zhaospei.github.io//authors/zhao/</loc>
-<lastmod>2023-10-08T15:21:24+07:00</lastmod>
+<lastmod>2023-10-21T01:34:38+07:00</lastmod>
 </url>
 <url>
 <loc>https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/</loc>
@@ -51,6 +51,10 @@
 <url>
 <loc>https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/</loc>
 <lastmod>2023-10-06T00:00:00+07:00</lastmod>
+</url>
+<url>
+<loc>https://zhaospei.github.io//nlp/2023/10/20/word2vec/</loc>
+<lastmod>2023-10-20T00:00:00+07:00</lastmod>
 </url>
 <url>
 <loc>https://zhaospei.github.io//about/</loc>
@@ -140,7 +144,10 @@
 <loc>https://zhaospei.github.io//tag/pytorch/</loc>
 </url>
 <url>
+<loc>https://zhaospei.github.io//tag/embedding/</loc>
+</url>
+<url>
 <loc>https://zhaospei.github.io//assets/BuiTuanDung-Resume-1.pdf</loc>
-<lastmod>2023-10-08T15:20:48+07:00</lastmod>
+<lastmod>2023-10-21T01:33:52+07:00</lastmod>
 </url>
 </urlset>
