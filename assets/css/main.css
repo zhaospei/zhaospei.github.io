@@ -3,9 +3,9 @@
 
 @tailwind base;
 
-@layer base {
+@layer base {  
     html {
-      font-family: 'Google Sans', sans-serif;
+      font-family: "Google Sans", sans-serif;
       scroll-behavior: smooth;
       @apply dark:text-white;
     }
@@ -29,7 +29,7 @@
       background: rgb(101, 101, 101);
     }
 
-    .prose ul, ol {
+    ul, ol {
       list-style: revert;
       margin-left: 2em;
     }
@@ -163,31 +163,7 @@
             "posts popular";
       }
     }
-
-    /* @media only screen and (min-width: 640px){
-      .thumbnail-image {
-          margin: 0 -20px;
-      }
-    }
-    @media only screen and (min-width: 768px){
-      .thumbnail-image {
-          margin: 0 -40px;
-      }
-    }
-    
-    @media only screen and (min-width: 1024px){
-      .thumbnail-image {
-          margin: 0 -130px;
-      }
-    }
-    @media only screen and (min-width: 1366px){
-      .thumbnail-image {
-          margin: 0 -150px;
-      }
-    } */
-    
-    
-    
+        
     
 
     
