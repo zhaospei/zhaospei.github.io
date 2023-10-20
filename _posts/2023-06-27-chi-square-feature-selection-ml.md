@@ -5,7 +5,7 @@ categories: Machine-Learning
 author: zhao
 tags: ["Data Science", "Statistics", "Machine Learning", "Feature Selection"]
 img-feature: /assets/media/feature/Chi-Square.jpg
-describe: "Lựa chọn đặc trưng là một trong những vấn đề quan trọng trong học máy, khi chúng ta có một đống cái đặc trưng và quyết định xem những đặc trưng nào là tốt nhất để xây dựng mô hình."
+des: "Lựa chọn đặc trưng là một trong những vấn đề quan trọng trong học máy, khi chúng ta có một đống cái đặc trưng và quyết định xem những đặc trưng nào là tốt nhất để xây dựng mô hình."
 ---
 
 Lựa chọn đặc trưng là một trong những vấn đề quan trọng trong học máy, khi chúng ta có một đống cái đặc trưng và quyết định xem những đặc trưng nào là tốt nhất để xây dựng mô hình. 

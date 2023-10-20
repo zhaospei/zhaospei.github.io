@@ -5,6 +5,7 @@ categories: Testing
 author: zhao
 tags: ["pairwise", "all-pairs", "testing"]
 img-feature: /assets/media/feature/testing.png
+des: Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp (Pairwise Testing hay All-Pairs Testing).
 ---
 
 Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp

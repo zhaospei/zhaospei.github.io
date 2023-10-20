@@ -3,9 +3,9 @@
 
 @tailwind base;
 
-@layer base {  
+@layer base {
     html {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Google Sans', sans-serif;
       scroll-behavior: smooth;
       @apply dark:text-white;
     }
@@ -29,7 +29,7 @@
       background: rgb(101, 101, 101);
     }
 
-    ul, ol {
+    .prose ul, ol {
       list-style: revert;
       margin-left: 2em;
     }
@@ -164,7 +164,7 @@
       }
     }
 
-    @media only screen and (min-width: 640px){
+    /* @media only screen and (min-width: 640px){
       .thumbnail-image {
           margin: 0 -20px;
       }
@@ -184,7 +184,7 @@
       .thumbnail-image {
           margin: 0 -150px;
       }
-    }
+    } */
     
     
     

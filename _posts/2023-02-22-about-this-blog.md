@@ -7,6 +7,7 @@ tags: ["doc", "talk", "zhao"]
 up_date: 2023-02-24
 comments: true
 img-feature: /assets/media/feature/about-this-blog.jpg
+des: Blog này tớ dự định sẽ là chia sẻ những bài viết, chủ đề mà tớ tìm hiểu và nghiên cứu. Hiện tại, tớ đang theo Lab CNPM nên đa số bài viết sẽ liên quan đến chủ đề này. Nếu cậu cũng đang tìm hiểu về chủ đề này thì có thể đọc blog của tớ nhé để giúp tớ cản thiện bài viết của bản thân.
 ---
 
 Chào!

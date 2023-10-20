@@ -7,6 +7,7 @@ tags: ["nlp", "paper", "model"]
 up_date: 2023-10-08
 img-feature: /assets/media/feature/transformers.jpg
 comments: false
+des: Transformer là mô hình seq2seq được Google Brain đề xuất trong một bài báo xuất bản vào cuối năm 2017. Giờ đây, nó đã đạt được nhiều ứng dụng và tiện ích mở rộng và BERT là mô hình ngôn ngữ được đào tạo trước có nguồn gốc từ Transformer.
 ---
 `Transformer` là mô hình seq2seq được Google Brain đề xuất trong một bài báo xuất bản vào cuối năm 2017. Giờ đây, nó đã đạt được nhiều ứng dụng và tiện ích mở rộng và `BERT` là mô hình ngôn ngữ được đào tạo trước có nguồn gốc từ Transformer.
 

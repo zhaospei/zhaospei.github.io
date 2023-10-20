@@ -7,6 +7,7 @@ tags: ["nlp", "paper"]
 img-feature: /assets/media/feature/nlp.png
 up_date: 2023-10-06
 comments: false
+des: Some NLP Papers to be Read.
 ---
 
 ## 0. Surveys of Natural Language Processing

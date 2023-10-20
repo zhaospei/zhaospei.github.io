@@ -8,16 +8,19 @@
         text-align: center;
         cursor: pointer;
         /* color: #0f2126; */
-        color: #0f2126;
+        /* color: #0f2126; */
         font-weight: 500;
         padding: 3px;
-        border-radius: 2px;
-        box-shadow: 2px 4px 9px 2px rgba(0, 0, 0, .2)
+        /* font-weight: bold; */
+        /* border: none !important; */
+        /* border-radius: 6px; */
+        /* border: 2px solid; */
+        /* box-shadow: 2px 4px 9px 2px rgba(0, 0, 0, .2) */
     }
 
-    .magnet:hover {
+    /* .magnet:hover {
         box-shadow: rgba(0, 0, 0, .4) 5px 5px 10px 0px, rgba(0, 0, 0, .3) -5px -5px 10px 0px;
-    }
+    } */
 
     .word-board {
         width: 80%;
@@ -28,10 +31,10 @@
 
     .help-text {
         position: absolute;
-        bottom: 0;
-        right: 5%;
+        bottom: -20px;
+        right: 0;
         font-size: 14px;
-        color: #87949a
+        color: #a9acad;
     }
 
     @media only screen and (max-width:728px) {
@@ -81,54 +84,54 @@
 
 <div class="word-board-container">
     <div class="word-board">
-        <div class="magnet bg-green-600" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
+        <div class="magnet bg-green-200 border-2 rounded-lg border-solid border-green-500 text-green-900" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
             onTouchEnd="touchEnd(event)" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
             onTouchEnd="touchEnd(event)" style="top: 10%; left: 23%; width: 80px; transform: rotate(9deg);">
             AI</div>
-        <div class="magnet bg-sky-500" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
+        <div class="magnet bg-sky-200 border-2 rounded-lg border-solid border-sky-500 text-sky-900" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
             onTouchEnd="touchEnd(event)" style="top: 13%; right: 19%; width: 110px; transform: rotate(-8deg);">
             programmer</div>
-        <div class="magnet bg-slate-300" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
+        <div class="magnet bg-slate-200 border-2 rounded-lg border-solid border-slate-500 text-slate-900" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
             onTouchEnd="touchEnd(event)" style="top: 12%; right: -2%; width: 80px; transform: rotate(6deg);">
             django</div>
-        <div class="magnet bg-indigo-200" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
+        <div class="magnet bg-indigo-200 border-2 rounded-lg border-solid border-indigo-500 text-indigo-900" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
             onTouchEnd="touchEnd(event)" style="top: 38%; left: 11%; width: 80px; transform: rotate(-6deg);">
             code</div>
-        <div class="magnet bg-orange-400" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
+        <div class="magnet bg-orange-200 border-2 rounded-lg border-solid border-orange-500 text-orange-900" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
             onTouchEnd="touchEnd(event)" style="top: 12%; left: -1%; width: 90px; transform: rotate(5deg);">
             developer</div>
-        <div class="magnet bg-amber-400" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
+        <div class="magnet bg-amber-200 border-2 rounded-lg border-solid border-amber-500 text-amber-900" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
             onTouchEnd="touchEnd(event)" style="top: 39%; left: 31%; width: 80px; transform: rotate(-10deg);">
             AcCepted</div>
-        <div class="magnet bg-lime-400" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
+        <div class="magnet bg-lime-200 border-2 rounded-lg border-solid border-lime-500 text-lime-900" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
             onTouchEnd="touchEnd(event)" style="top: 25%; left: 43%; width: 80px; transform: rotate(-10deg);">
             create</div>
-        <div class="magnet bg-emerald-400" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
+        <div class="magnet bg-emerald-200 border-2 rounded-lg border-solid border-emerald-500 text-emerald-900" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
             onTouchEnd="touchEnd(event)" style="top: 43%; right: 33%; width: 80px; transform: rotate(3deg);">
             build</div>
-        <div class="magnet bg-yellow-300" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
+        <div class="magnet bg-yellow-200 border-2 rounded-lg border-solid border-yellow-500 text-yellow-900" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
             onTouchEnd="touchEnd(event)" style="top: 39%; right: 13%; width: 80px; transform: rotate(-9deg);">
             love</div>
-        <div class="magnet bg-fuchsia-600" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
-            onTouchEnd="touchEnd(event)" style="top: 59%; left: -1%; width: 80px; transform: rotate(3deg);">html
+        <div class="magnet bg-fuchsia-200 border-2 rounded-lg border-solid border-fuchsia-500 text-fuchsia-900" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
+            onTouchEnd="touchEnd(event)" style="top: 59%; left: -1%; width: 80px; transform: rotate(3deg);">NLP
         </div>
-        <div class="magnet bg-rose-400" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
+        <div class="magnet bg-rose-200 border-2 rounded-lg border-solid border-rose-500 text-rose-900" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
             onTouchEnd="touchEnd(event)" style="top: 73%; left: 20%; width: 80px; transform: rotate(5deg);">
             javascript</div>
-        <div class="magnet bg-indigo-200" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
+        <div class="magnet bg-teal-200 border-2 rounded-lg border-solid border-teal-500 text-teal-900" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
             onTouchEnd="touchEnd(event)" style="top: 65%; left: 39%; width: 80px; transform: rotate(-9deg);">
             python</div>
-        <div class="magnet bg-purple-500" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
+        <div class="magnet bg-purple-200 border-2 rounded-lg border-solid border-purple-500 text-purple-900" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
             onTouchEnd="touchEnd(event)" style="top: 71%; left: 58%; width: 80px; transform: rotate(-6deg);">c++
         </div>
-        <div class="magnet bg-violet-300" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
+        <div class="magnet bg-violet-200 border-2 rounded-lg border-solid border-violet-500 text-violet-900" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
             onTouchEnd="touchEnd(event)" style="top: 72%; right: 12%; width: 80px; transform: rotate(-9deg);">
-            java</div>
-        <div class="magnet bg-pink-400" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
-            onTouchEnd="touchEnd(event)" style="top: 60%; right: -2%; width: 80px; transform: rotate(6deg);">css
-        </div>
+            ISE</div>
+        <div class="magnet bg-pink-200 border-2 rounded-lg border-solid border-pink-500 text-pink-900" draggable="true" ondragend="dragEnd(event)" onTouchMove="touchMove(event)"
+            onTouchEnd="touchEnd(event)" style="top: 60%; right: -2%; width: 80px; transform: rotate(6deg);">AOT
+            </div>
         <div class="help-text">
-            Tips: The above cards can be moved!
+            <span style="font-weight: bold;">Tips:</span> The above cards can be moved!
         </div>
     </div>
 

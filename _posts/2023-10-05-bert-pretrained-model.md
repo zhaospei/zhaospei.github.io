@@ -7,6 +7,7 @@ tags: ["nlp", "paper", "model"]
 up_date: 2023-10-05
 img-feature: /assets/media/feature/bert.png
 comments: false
+des: BERT dùng thiết kể để đào tạo sâu, biểu diễn hai chiều, dữ liệu không gán nhãn được sử dụng và thông tin ngữ cảnh song phương trái và phải được kết hợp (Tức context được xác định ở cả hai phía của từ)
 ---
 
 BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding

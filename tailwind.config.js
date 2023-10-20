@@ -11,6 +11,9 @@ module.exports = {
   theme: {
     theme: {
       extend: {},
+      color: {
+        "PRIMARY": '#f6ecc9' ,
+      }
     },
   },
   plugins: []

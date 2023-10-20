@@ -6,6 +6,7 @@ author: zhao
 tags: ["software", "model"]
 up_date: 2023-03-05
 img-feature: /assets/media/feature/Software-Development-Life-Cycle.png
+des: Mô hình phát triển phần mềm là thể hiện trừu tượng của các tiến trình phát triển phần mềm. Nó xác định các pha/ giai đoạn trong phát triển phần mềm. 
 ---
 
 Mô hình phát triển phần mềm là thể hiện trừu tượng của các tiến trình phát triển phần mềm. Nó xác định các pha/ giai đoạn trong phát triển phần mềm. 

@@ -63,26 +63,75 @@ layout: default
 <!-- {% include reading-line.html %} -->
 <div class="post-container">
   <article class="post-content-container flex flex-col items-start justify-center">
-    <header class="flex flex-col gap-12 w-full max-w-full pb-8">
+    <header class="flex flex-col gap-12 w-full max-w-full pb-8 mb-4">
       <div class="flex flex-col justify-center gap-4">
-        <h1 class="text-5xl font-extrabold leading-tight"> {{ page.title }} </h1>
-        <div class="flex flex-col items-start justify-between mt-2 md:flex-row md:items-center">
-          <div class="flex items-center">
+        <div class="text-lg">
+          {% for tag in page.tags %}
+          <a class="text-xl	inline-block px-4 py-1 mr-4 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800"
+            href="/tag/{{tag}}"> {{ tag }} </a>
+          {% endfor %}
+        </div>
+        <h1 class="text-6xl font-bold leading-tight"> {{ page.title }} </h1>
+        <div class="flex flex-row items-baseline mb-8">
+          <div class="article-meta__abstract-container">
+            <div class="flex w-max flex-col pr-4" style="border-right: 2px solid #dadce0">
+              <p class="text-gray-500">{{ page.date | date: "%B %-d, %Y" }}</p>
+
+              <p class="text-gray-500" data-reading-time-render="">
+                {% include reading-time.html %}
+              </p>
+
+            </div>
+          </div>
+          <p class="text-gray-700 pl-4">
+            {{ page.des }}
+          </p>
+
+        </div>
+        <div class="flex justify-between">
+          <div class="flex">
             {% assign author = site.authors | where: 'short_name', page.author | first %}
             {% if author %}
-            {% if author.img != nil %}
-            <img class="object-cover w-[40px] h-[40px] rounded-full" src="{{ author.img }}" alt="{{ author.name }}">
-            {% else %}
-            <img src="/assets/media/author/default_img.jpeg" alt="{{ author.name }}">
-            {% endif %}
-            <p class="ml-2 text-gray-700 dark:text-gray-300">
-              {{ author.name }} / {{ page.date | date: "%B %-d, %Y" }}
-            </p>
+
+            <div class="mr-4" data-component="uni-monogram" data-author="{{ author.name }}">{% if author.img != nil %}
+              <img class="object-cover w-[48px] h-[48px] rounded-full" src="{{ author.img }}" alt="{{ author.name }}">
+              {% else %}
+              <img src="/assets/media/author/default_img.jpeg" alt="{{ author.name }}">
+              {% endif %}
+            </div>
+
+            <div class="article-meta__author-info">
+              <div class="font-extrabold text-gray-900 text-lg">{{ author.name }}</div>
+
+              <div class="text-sm font-medium text-gray-600">
+                {{ author.position}}
+              </div>
+
+
+            </div>
             {% endif %}
           </div>
-          <p class="mt-2 text-gray-600 min-w-32 md:mt-0 dark:text-gray-300">
-            {% include reading-time.html %}
-          </p>
+            <div class="uni-social-share uni-social-share--desktop" data-component="uni-social-share-dropdowm">
+              <a aria-label="Share" class="flex gap-2 text-black" role="button" tabindex="0" aria-expanded="false"
+                data-analytics="{
+                &quot;event&quot;: &quot;page interaction&quot;,
+                &quot;category&quot;: &quot;social&quot;,
+                &quot;action&quot;: &quot;menu&quot;,
+                &quot;label&quot;: &quot;label&quot;
+              }" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-share inline-block" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M6 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                <path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                <path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                <path d="M8.7 10.7l6.6 -3.4"></path>
+                <path d="M8.7 13.3l6.6 3.4"></path>
+             </svg>
+                <div class="uni-social-share__button">Share</div>
+              </a>
+
+            </div>
+
         </div>
       </div>
     </header>
@@ -101,16 +150,12 @@ layout: default
           <img alt="Post image feature" src="/assets/media/feature/default.jpg" loading="lazy" class="w-full">
           {% endif %}
         </div>
-        <div class="post-content prose w-full">
+        <div class="post-content prose w-full mb-16">
           {{ content }}
-        </div>
 
-        <div class="ml-8 mt-8 mb-8 font-normal">
-          <b class="font-semibold text-lg"> Tags: </b>
-          {% for tag in page.tags %}
-          <a class="text-sm	inline-block px-4 py-1 mx-2 my-2 border border-solid rounded-lg bg-gray-100 border-slate-400 dark:text-white dark:bg-zinc-800"
-            href="/tag/{{tag}}"> {{ tag }} </a>
-          {% endfor %}
+          {% if page.up_date %} 
+            <p class="text-right italic">Last Update: {{ page.up_date | date: "%B %-d, %Y" }} </p>
+          {% endif %}
         </div>
 
         <div class="flex justify-between items-center w-full flex-wrap gap-4 pb-4"><a class="" rel="noreferrer noopener"
@@ -138,7 +183,7 @@ layout: default
                 </svg></span></a></div>
           <div>
             <div
-              class="flex justify-between items-start w-full gap-16 flex-col md:flex-row flew-nowrap pt-16 pl-2 pr-2 border-gray-300 dark:boder-gray-900 border-0 border-t border-solid">
+              class="flex justify-between items-start w-full gap-16 flex-col md:flex-row flew-nowrap pt-4 pl-2 pr-2 border-gray-300 dark:boder-gray-900 border-0 border-t border-solid">
               <div class="relative w-36 h-36">
                 <div class="relative overflow-hidden h-full rounded-full">
                   <div class="">
@@ -155,8 +200,8 @@ layout: default
                 <p class="text-gray-700 dark:text-gray-200">Tuan-Dung Bui is a blogger, software engineer and the main
                   coordinator of this blog, he has lots of ideas and won't hesitate to use them! He lives in Vietnam.
                 </p>
-                <div class="mt-4"><a class="" rel="noreferrer noopener" target="_blank"
-                    href="/about"><span class="font-normal link-hover">Learn more about
+                <div class="mt-4"><a class="" rel="noreferrer noopener" target="_blank" href="/about"><span
+                      class="font-normal link-hover">Learn more about
                       Tuan-Dung Bui</span><span class="inline-block w-3 h-3 ml-2 mt-1 mr-4"><svg viewBox="0 0 14 14"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round"
@@ -178,20 +223,21 @@ layout: default
           <div class="w-full">
             <div class="mb-4 h-48 content-hover" style="transform: none;">
               <div class="h-full relative">
-                <div data-loaded="true"><img class="transition-all" alt="" loading="lazy"
-                    decoding="async" data-nimg="fill" sizes="100vw"
-                    src="{{post.img-feature}}"
+                <div data-loaded="true"><img class="transition-all" alt="" loading="lazy" decoding="async"
+                    data-nimg="fill" sizes="100vw" src="{{post.img-feature}}"
                     style="position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: cover; object-position: center center; color: transparent; border-radius: 1rem;">
                 </div>
               </div>
             </div>
-            <div class="flex items-center justify-start text-gray-600 dark:text-gray-300 text-sm gap-2 px-2"><time>{{ post.date | date: "%B %-d, %Y" }}</time>•
+            <div class="flex items-center justify-start text-gray-600 dark:text-gray-300 text-sm gap-2 px-2"><time>{{
+                post.date | date: "%B %-d, %Y" }}</time>•
               <span>{% capture words %}
-              {{ post.content | number_of_words | minus: 200 }}
-              {% endcapture %}
-              {% unless words contains '-' %}
-              {{ words | plus: 0 | divided_by: 150 | append: ' min read'}}
-              {% endunless %}</span></div>
+                {{ post.content | number_of_words | minus: 200 }}
+                {% endcapture %}
+                {% unless words contains '-' %}
+                {{ words | plus: 0 | divided_by: 150 | append: ' min read'}}
+                {% endunless %}</span>
+            </div>
             <h3 class="px-2 py-2 text-black dark:text-white text-2xl font-bold">{{post.title}}</h3>
           </div>
         </a>
@@ -204,23 +250,24 @@ layout: default
 
 <div id="disqus_thread"></div>
 <script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function () { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');
     s.src = 'https://zhaospei.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
-    })();
+  })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+    Disqus.</a></noscript>
 
 <!-- <script async src="{{site.cdn_baseurl}}/assets/js/scroll.js"></script> -->
 <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"

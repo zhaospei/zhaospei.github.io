@@ -5,6 +5,7 @@ categories: Deep-Learning
 author: zhao
 tags: ["Neuron", "Deep Learning"]
 img-feature: /assets/media/feature/no-ron-sinh-hoc.png
+des: Con người lấy cảm hứng từ các loài chim để bay, loài sứa biển để điều trị ung thư, da cá mập để làm bề mặt vật liệu chống bám và còn rất nhiều phát minh khác lấy cảm hứng từ thiên nhiên. 
 ---
 
 Con người lấy cảm hứng từ các loài chim để bay, loài sứa biển để điều trị ung thư, da cá mập để làm bề mặt vật liệu chống bám và còn rất nhiều phát minh khác lấy cảm hứng từ thiên nhiên. 
