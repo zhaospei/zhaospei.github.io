@@ -21,31 +21,31 @@ words = url.split('/')
 
 switch (words[1]) {
     case 'works.html':
-        title.innerHTML = "~/works";
+        title.innerHTML = "~/ works";
         break;
     case 'blog.html':
-        title.innerHTML = "~/blog";
+        title.innerHTML = "~/ blog";
         break;
     
     case 'about':
-        title.innerHTML = "~/about";
+        title.innerHTML = "~/ about";
         break;
     
     case '':
         break;
 
     case 'tag':
-        title.innerHTML = "~/tag/" + words[2].replace('%20', ' ');
+        title.innerHTML = "~/ tag/" + words[2].replace('%20', ' ');
         break;
 
     default:
         var cc = document.querySelector(".container h1");
         if (cc != undefined && cc.innerHTML == '404') {
-            title.innerHTML = "~/404"
+            title.innerHTML = "~/ 404"
         } else {
             // wo = "~/" + words[1] + "/" + words[words.length - 2];
             // title.innerHTML = wo;
-            title.innerHTML = "~/post"
+            title.innerHTML = "~/ post"
         }
 }
 

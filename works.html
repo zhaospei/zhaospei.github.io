@@ -36,7 +36,7 @@
 
   </head>
   <body class="bg-white dark:bg-zinc-900 dark:text-white">
-    <div class="bg-white  dark:bg-zinc-900 mx-auto max-w-3xl px-3 sm:px-6 xl:max-w-5xl xl:px-0">
+    <div class="mx-auto max-w-3xl px-3 sm:px-6 xl:max-w-5xl xl:px-0">
       <div id="navbar" class="hidden md:block fixed left-0 top-[-100px] w-full z-50 will-change-transform mt-8" 
 style="transition: transform .4s ease-in, -webkit-transform .4s ease-in; transition: top 0.4s;" data-comp="JumplinksV2" aria-hidden="true">
     <ul class="bg-white rounded-full flex justify-center mx-auto p-2 w-fit" style="box-shadow: 0 1px 2px rgba(32,33,36,.15), 0 1px 8px rgba(32,33,36,.08);">
@@ -115,28 +115,28 @@ style="transition: transform .4s ease-in, -webkit-transform .4s ease-in; transit
 </div>
 
 <header class="grid justify-center w-full relative pt-4" style="grid-template-columns: 2fr auto 1fr;">
-    <a style="" href="/">
+    <a class="border-2 border-solid rounded-xl px-4 border-black w-1/2 text-white bg-black" href="/">
         <div class="text-dark dark:text-white flex items-center text-xl font-semibold" style="height: 48px;">
-            <span class="blog-link">~/</span>
+            <span class="blog-link">~/ </span>
             <div class="Typewriter font-normal ml-1" data-testid="typewriter-wrapper"><span
                     class="Typewriter__wrapper"></span><span class="Typewriter__cursor">|</span></div>
         </div>
     </a>
     <nav class="flex items-center justify-between relative max-w-3xl mx-auto text-gray-900">
         
-        <a class="text-lg font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-100 transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
+        <a class="text-lg font-semibold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-100 transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
             href="/"><span class="capsize">Home</span></a>
         
-        <a class="text-lg font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-100 transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
+        <a class="text-lg font-semibold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-100 transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
             href="/works.html"><span class="capsize">Works</span></a>
         
-        <a class="text-lg font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-100 transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
+        <a class="text-lg font-semibold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-100 transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
             href="/blog.html"><span class="capsize">Blog</span></a>
         
-        <a class="text-lg font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-100 transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
+        <a class="text-lg font-semibold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-100 transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
             href="/assets/BuiTuanDung-Resume-1.pdf"><span class="capsize">Resume</span></a>
         
-        <a class="text-lg font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-100 transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
+        <a class="text-lg font-semibold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-100 transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
             href="/about/"><span class="capsize">About</span></a>
         
         <button
@@ -182,35 +182,37 @@ style="transition: transform .4s ease-in, -webkit-transform .4s ease-in; transit
         <div class="box-border flex flex-col pr-8 justify-center items-center w-full">
             <h1
                 class="font-extrabold mb-4 text-7xl text-cyan-500 tracking-tighter leading-tight">
-                Works.
+                <span class="text-black">zhao's </span>Works.
             </h1>
-            <p class="text-gray-800 indent-8 text-lg max-w-md	text-center	dark:text-gray-300">
+            <p class="text-gray-800 indent-8 text-xl max-w-md text-center	dark:text-gray-300">
                 Everything that I have built, alone or with someone 🔨
             </p>
         </div>
     </div>
 
-    <ul class="grid w-full grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-16 mb-10">
+    <ul class="grid w-full grid-cols-1 gap-0 md:gap-x-16 md:gap-y-16 mb-10">
   
-  <li class="rounded w-full">
+  <li class="rounded w-full grid md:grid-cols-2 gap-8">
     <a href="https://github.com/zhaospei/bomberman-game">
       <img src=" /assets/media/project/bomberman.png" alt="project-img" class="object-cover w-full h-72 md:h-64 lg:h-96 rounded-lg transition duration-300 hover:scale-105 " loading="lazy">
     </a>
-    <div class=" mt-4">
-      
-      <div class="text-4xl font-bold text-left text-gray-900 dark:text-white"> Bomberman Game</div>
+    <div class=" my-auto">
 
-      <div class="flex flex-row-reverse flex-wrap w-full">
+      <div class="flex flex-wrap w-full mb-2">
         
-          <span class="inline-block items-center text-sm  bg-slate-500	 text-white font-semibold px-4 py-1 mt-2 mr-2 rounded-full">
+          <span class="tech inline-block items-center text-lg text-yellow-900 font-semibold mr-4 mr-2 rounded-full">
             Java
           </span>
         
-          <span class="inline-block items-center text-sm  bg-slate-500	 text-white font-semibold px-4 py-1 mt-2 mr-2 rounded-full">
+          <span class="tech inline-block items-center text-lg text-emerald-900 font-semibold mr-4 mr-2 rounded-full">
             JavaFx
           </span>
         
       </div>
+      
+      <div class="text-6xl font-bold text-left text-gray-900 dark:text-white leading-tight"> Bomberman <span class="text-orange-900"> Game </span></div>
+
+      
 
       <div class="mt-1 text-gray-500 mt-4 dark:text-gray-300">
         <p>These are some personal projects I have been working on to learn more about different libraries and browser APIs. I like trying out “the last new thing” in a small project and publish it on my GitHub account, both as a personal reminder of what I did, and to help people looking for examples.</p>
@@ -229,37 +231,39 @@ style="transition: transform .4s ease-in, -webkit-transform .4s ease-in; transit
     </div>
   </li>
   
-  <li class="rounded w-full">
+  <li class="rounded w-full grid md:grid-cols-2 gap-8">
     <a href="https://oj.codedream.edu.vn/">
       <img src=" /assets/media/project/code-dream.png" alt="project-img" class="object-cover w-full h-72 md:h-64 lg:h-96 rounded-lg transition duration-300 hover:scale-105 " loading="lazy">
     </a>
-    <div class=" mt-4">
-      
-      <div class="text-4xl font-bold text-left text-gray-900 dark:text-white"> CodeDream Online Judge</div>
+    <div class=" my-auto">
 
-      <div class="flex flex-row-reverse flex-wrap w-full">
+      <div class="flex flex-wrap w-full mb-2">
         
-          <span class="inline-block items-center text-sm  bg-slate-500	 text-white font-semibold px-4 py-1 mt-2 mr-2 rounded-full">
+          <span class="tech inline-block items-center text-lg text-sky-900 font-semibold mr-4 mr-2 rounded-full">
             Python
           </span>
         
-          <span class="inline-block items-center text-sm  bg-slate-500	 text-white font-semibold px-4 py-1 mt-2 mr-2 rounded-full">
+          <span class="tech inline-block items-center text-lg text-orange-900 font-semibold mr-4 mr-2 rounded-full">
             Django
           </span>
         
-          <span class="inline-block items-center text-sm  bg-slate-500	 text-white font-semibold px-4 py-1 mt-2 mr-2 rounded-full">
+          <span class="tech inline-block items-center text-lg text-rose-900 font-semibold mr-4 mr-2 rounded-full">
             jQuery
           </span>
         
-          <span class="inline-block items-center text-sm  bg-slate-500	 text-white font-semibold px-4 py-1 mt-2 mr-2 rounded-full">
+          <span class="tech inline-block items-center text-lg text-indigo-900 font-semibold mr-4 mr-2 rounded-full">
             MariaDB
           </span>
         
-          <span class="inline-block items-center text-sm  bg-slate-500	 text-white font-semibold px-4 py-1 mt-2 mr-2 rounded-full">
+          <span class="tech inline-block items-center text-lg text-purple-900 font-semibold mr-4 mr-2 rounded-full">
             NodeJS
           </span>
         
       </div>
+      
+      <div class="text-6xl font-bold text-left text-gray-900 dark:text-white leading-tight"> CodeDream <span class="text-sky-900"> Online Judge </span></div>
+
+      
 
       <div class="mt-1 text-gray-500 mt-4 dark:text-gray-300">
         <p>These are some personal projects I have been working on to learn more about different libraries and browser APIs. I like trying out “the last new thing” in a small project and publish it on my GitHub account, both as a personal reminder of what I did, and to help people looking for examples.</p>
@@ -283,21 +287,23 @@ style="transition: transform .4s ease-in, -webkit-transform .4s ease-in; transit
     </div>
   </li>
   
-  <li class="rounded w-full">
+  <li class="rounded w-full grid md:grid-cols-2 gap-8">
     <a href="https://zhaospei.github.io/Memory-Card/">
       <img src=" /assets/media/project/memory-card.png" alt="project-img" class="object-cover w-full h-72 md:h-64 lg:h-96 rounded-lg transition duration-300 hover:scale-105 " loading="lazy">
     </a>
-    <div class=" mt-4">
-      
-      <div class="text-4xl font-bold text-left text-gray-900 dark:text-white"> Memory Card</div>
+    <div class=" my-auto">
 
-      <div class="flex flex-row-reverse flex-wrap w-full">
+      <div class="flex flex-wrap w-full mb-2">
         
-          <span class="inline-block items-center text-sm  bg-slate-500	 text-white font-semibold px-4 py-1 mt-2 mr-2 rounded-full">
-            JavaScript
+          <span class="tech inline-block items-center text-lg text-fuchsia-900 font-semibold mr-4 mr-2 rounded-full">
+            javascript
           </span>
         
       </div>
+      
+      <div class="text-6xl font-bold text-left text-gray-900 dark:text-white leading-tight"> Memory <span class="text-lime-900"> Card </span></div>
+
+      
 
       <div class="mt-1 text-gray-500 mt-4 dark:text-gray-300">
         <p>These are some personal projects I have been working on to learn more about different libraries and browser APIs. I like trying out “the last new thing” in a small project and publish it on my GitHub account, both as a personal reminder of what I did, and to help people looking for examples.</p>
@@ -321,29 +327,31 @@ style="transition: transform .4s ease-in, -webkit-transform .4s ease-in; transit
     </div>
   </li>
   
-  <li class="rounded w-full">
+  <li class="rounded w-full grid md:grid-cols-2 gap-8">
     <a href="https://www.youtube.com/watch?v=kpw9D7_Dofk">
       <img src=" /assets/media/project/mystery-guy.png" alt="project-img" class="object-cover w-full h-72 md:h-64 lg:h-96 rounded-lg transition duration-300 hover:scale-105 " loading="lazy">
     </a>
-    <div class=" mt-4">
-      
-      <div class="text-4xl font-bold text-left text-gray-900 dark:text-white"> Mystery Guy</div>
+    <div class=" my-auto">
 
-      <div class="flex flex-row-reverse flex-wrap w-full">
+      <div class="flex flex-wrap w-full mb-2">
         
-          <span class="inline-block items-center text-sm  bg-slate-500	 text-white font-semibold px-4 py-1 mt-2 mr-2 rounded-full">
+          <span class="tech inline-block items-center text-lg text-orange-900 font-semibold mr-4 mr-2 rounded-full">
             C++
           </span>
         
-          <span class="inline-block items-center text-sm  bg-slate-500	 text-white font-semibold px-4 py-1 mt-2 mr-2 rounded-full">
+          <span class="tech inline-block items-center text-lg text-teal-900 font-semibold mr-4 mr-2 rounded-full">
             SDL2
           </span>
         
-          <span class="inline-block items-center text-sm  bg-slate-500	 text-white font-semibold px-4 py-1 mt-2 mr-2 rounded-full">
+          <span class="tech inline-block items-center text-lg text-pink-900 font-semibold mr-4 mr-2 rounded-full">
             Makefile
           </span>
         
       </div>
+      
+      <div class="text-6xl font-bold text-left text-gray-900 dark:text-white leading-tight"> Mystery <span class="text-violet-900"> Guy </span></div>
+
+      
 
       <div class="mt-1 text-gray-500 mt-4 dark:text-gray-300">
         <p>A small platform game made with SDL2 C++. That project i made for Advance Programing Subject.
