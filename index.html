@@ -4,12 +4,17 @@ title: Home
 ---
 {% include magnet.html %}
 
-<div class="flex flex-col justify-center items-start max-w-5xl border-gray-200 mx-auto pb-16">
+<div class="flex flex-col justify-center items-start max-w-5xl border-gray-200 mx-auto pb-16 relative">
+    <div class="absolute will-change-transform z-[-1] block left-1/4 -top-1/5"
+    data-environment="win|mac|linux,ALL,ALL" style=" animation: 10s linear full-rotate-left infinite;">
+
+    <img data-comp="LazyLoader" class="js-lazy-load  js-lazy-async"
+        src="/assets/media/index/hero-anim-top-right.png"
+        aria-hidden="true" width="1080px" height="1080px">
+</div>
     <div class="max-w-5xl xl:grid xl:grid-cols-3 md:pr-8">
         <div class="md:pr-8 xl:col-span-2">
-            <h1
-                class="font-black text-6xl text-[#2d9da6] tracking-tighter inline py-2" 
-                style="background-image: url(https://quizizz.com/wf/assets/63238ed8d35df36e5007cef6_420px.png);
+            <h1 class="font-black text-6xl text-[#2d9da6] tracking-tighter inline py-2" style="background-image: url(https://quizizz.com/wf/assets/63238ed8d35df36e5007cef6_420px.png);
                 background-position: 50% 100%;
                 background-repeat: no-repeat;
                 background-size: contain;

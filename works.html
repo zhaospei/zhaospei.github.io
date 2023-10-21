@@ -5,23 +5,25 @@ permalink: /works.html
 color: "text-cyan-500"
 description: Everything that I have built, alone or with someone 🔨
 ---
-<ul class="grid w-full grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-16 mb-10">
+<ul class="grid w-full grid-cols-1 gap-0 md:gap-x-16 md:gap-y-16 mb-10">
   {% for project in site.projects %}
-  <li class="rounded w-full">
+  <li class="rounded w-full grid md:grid-cols-2 gap-8">
     <a href="{{ project.link }}">
       <img src=" {{ project.img }}" alt="project-img" class="object-cover w-full h-72 md:h-64 lg:h-96 rounded-lg transition duration-300 hover:scale-105 " loading="lazy">
     </a>
-    <div class=" mt-4">
-      
-      <div class="text-4xl font-bold text-left text-gray-900 dark:text-white"> {{ project.name }}</div>
+    <div class=" my-auto">
 
-      <div class="flex flex-row-reverse flex-wrap w-full">
+      <div class="flex flex-wrap w-full mb-2">
         {% for tech in project.techs %}
-          <span class="inline-block items-center text-sm  bg-slate-500	 text-white font-semibold px-4 py-1 mt-2 mr-2 rounded-full">
-            {{ tech }}
+          <span class="tech inline-block items-center text-lg {{tech.color}} font-semibold mr-4 mr-2 rounded-full">
+            {{ tech.name }}
           </span>
         {% endfor %}
       </div>
+      
+      <div class="text-6xl font-bold text-left text-gray-900 dark:text-white leading-tight"> {{ project.name }} <span class="{{ project.color}}"> {{project.colorname}} </span></div>
+
+      
 
       <div class="mt-1 text-gray-500 mt-4 dark:text-gray-300">
         {{ project.content }}

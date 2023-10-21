@@ -1,8 +1,19 @@
 ---
-name: Mystery Guy
+name: Mystery 
+colorname: Guy
+color: text-violet-900
 img: /assets/media/project/mystery-guy.png
 link: https://www.youtube.com/watch?v=kpw9D7_Dofk
-techs: [C++, SDL2, Makefile]
+techs:
+    - 
+        name: C++
+        color: text-orange-900
+    -
+        name: SDL2
+        color: text-teal-900
+    -   
+        name: Makefile
+        color: text-pink-900
 ref:
     Demo : "https://www.youtube.com/watch?v=kpw9D7_Dofk"
     Code on GitHub: "https://github.com/zhaospei/Mystery-Guy"

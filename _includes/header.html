@@ -40,16 +40,16 @@ style="transition: transform .4s ease-in, -webkit-transform .4s ease-in; transit
 </div>
 
 <header class="grid justify-center w-full relative pt-4" style="grid-template-columns: 2fr auto 1fr;">
-    <a style="" href="/">
+    <a class="border-2 border-solid rounded-xl px-4 border-black w-1/2 text-white bg-black" href="/">
         <div class="text-dark dark:text-white flex items-center text-xl font-semibold" style="height: 48px;">
-            <span class="blog-link">~/</span>
+            <span class="blog-link">~/ </span>
             <div class="Typewriter font-normal ml-1" data-testid="typewriter-wrapper"><span
                     class="Typewriter__wrapper"></span><span class="Typewriter__cursor">|</span></div>
         </div>
     </a>
     <nav class="flex items-center justify-between relative max-w-3xl mx-auto text-gray-900">
         {% for item in site.data.navigation %}
-        <a class="text-lg font-bold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-100 transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
+        <a class="text-lg font-semibold text-gray-800 hidden md:inline-block mx-1 p-1 sm:px-3 rounded-3xl hover:bg-gray-100 transition-all dark:text-gray-100 dark:hover:bg-zinc-950"
             href="{{ item.link }}"><span class="capsize">{{ item.name }}</span></a>
         {% endfor %}
         <button

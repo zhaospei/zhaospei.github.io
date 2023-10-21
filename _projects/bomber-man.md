@@ -1,8 +1,16 @@
 ---
-name: Bomberman Game
+name: Bomberman
+colorname: Game
+color: text-orange-900
 img: /assets/media/project/bomberman.png
 link: https://github.com/zhaospei/bomberman-game
-techs: [Java, JavaFx]
+techs: 
+    -
+        name: Java
+        color: text-yellow-900
+    -  
+        name: JavaFx
+        color: text-emerald-900
 ref:
     Code on GitHub: "https://github.com/zhaospei/bomberman-game"
 ---

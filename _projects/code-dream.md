@@ -1,8 +1,25 @@
 ---
-name: CodeDream Online Judge 
+name: CodeDream 
+colorname: Online Judge 
+color: text-sky-900
 img: /assets/media/project/code-dream.png
 link: https://oj.codedream.edu.vn/
-techs: [Python, Django, jQuery, MariaDB, NodeJS]
+techs: 
+    -
+        name: Python
+        color: text-sky-900
+    -
+        name: Django
+        color: text-orange-900
+    -  
+        name: jQuery
+        color: text-rose-900
+    -
+        name: MariaDB 
+        color: text-indigo-900
+    -   
+        name: NodeJS
+        color: text-purple-900
 ref:
     Website: https://oj.codedream.edu.vn/
     Code on GitHub: "https://github.com/zhaospei/codedream-oj"

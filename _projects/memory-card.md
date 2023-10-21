@@ -1,8 +1,14 @@
 ---
-name: Memory Card
+name: Memory
+colorname: Card
+color: text-lime-900
 img: /assets/media/project/memory-card.png
 link: https://zhaospei.github.io/Memory-Card/
-techs: [JavaScript]
+techs: 
+    -
+        name: javascript
+        color: text-fuchsia-900
+
 ref:
     Website: "https://zhaospei.github.io/Memory-Card/"
     Code on GitHub: "https://github.com/zhaospei/Memory-Card"

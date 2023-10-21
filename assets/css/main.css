@@ -30,7 +30,6 @@
     }
 
     ul, ol {
-      list-style: revert;
       margin-left: 2em;
     }
 
@@ -73,6 +72,10 @@
       max-width: 100%;
       overflow: auto;
       @apply my-8;
+    }
+
+    .prose ul, ol {
+      list-style: revert;
     }
 
     .prose thead, tr, th, td {
@@ -131,6 +134,17 @@
 
     .link-hover:hover {
       background-size: 100% 1.7px;
+    }
+
+    @keyframes full-rotate-left {
+      0% {
+          -webkit-transform: rotate(0);
+          transform: rotate(0);
+      }
+      100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+      } 
     }
     
 
