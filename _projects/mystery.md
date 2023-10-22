@@ -1,8 +1,15 @@
 ---
-name: Mystery 
-colorname: Guy
-color: text-violet-900
+names: 
+    - 
+        name: Mystery
+        color: text-orange-900
+        bg-color: bg-transparent
+    -   
+        name: Guy
+        color: text-violet-900
+        bg-color: bg-transparent
 img: /assets/media/project/mystery-guy.png
+pos: 5
 link: https://www.youtube.com/watch?v=kpw9D7_Dofk
 techs:
     - 

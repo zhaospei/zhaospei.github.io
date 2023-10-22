@@ -1,8 +1,15 @@
 ---
-name: Bomberman
-colorname: Game
-color: text-orange-900
+names: 
+    - 
+        name: Bomberman
+        color: text-orange-900
+        bg-color: bg-transparent
+    -   
+        name: Game
+        color: text-pink-900
+        bg-color: bg-orange-200
 img: /assets/media/project/bomberman.png
+pos: 1
 link: https://github.com/zhaospei/bomberman-game
 techs: 
     -

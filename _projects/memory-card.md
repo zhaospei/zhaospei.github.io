@@ -1,8 +1,15 @@
 ---
-name: Memory
-colorname: Card
-color: text-lime-900
+names: 
+    - 
+        name: Memory
+        color: text-sky-900
+        bg-color: bg-transparent
+    -   
+        name: Card
+        color: text-gray-900
+        bg-color: bg-transparent
 img: /assets/media/project/memory-card.png
+pos: 4
 link: https://zhaospei.github.io/Memory-Card/
 techs: 
     -

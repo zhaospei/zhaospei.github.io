@@ -2,7 +2,7 @@
 layout: page
 title: Works.
 permalink: /works.html
-color: "text-cyan-500"
+color: "text-[#4285f4]"
 description: Everything that I have built, alone or with someone 🔨
 ---
 <ul class="grid w-full grid-cols-1 gap-0 md:gap-x-16 md:gap-y-16 mb-10">
@@ -11,8 +11,16 @@ description: Everything that I have built, alone or with someone 🔨
     <a href="{{ project.link }}">
       <img src=" {{ project.img }}" alt="project-img" class="object-cover w-full h-72 md:h-64 lg:h-96 rounded-lg transition duration-300 hover:scale-105 " loading="lazy">
     </a>
-    <div class=" my-auto">
-
+    <div class=" my-auto relative">
+      <span class="step__number" aria-hidden="true" role="presentation" style="left: auto;
+      right: 0;
+      transform: translate(0, -70px); font-size: 17.1875rem; color: #e5e5e5;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateY(-30px);
+    font-weight: 900;
+    z-index: -1;">{{project.pos}}</span>
       <div class="flex flex-wrap w-full mb-2">
         {% for tech in project.techs %}
           <span class="tech inline-block items-center text-lg {{tech.color}} font-semibold mr-4 mr-2 rounded-full">
@@ -21,7 +29,13 @@ description: Everything that I have built, alone or with someone 🔨
         {% endfor %}
       </div>
       
-      <div class="text-6xl font-bold text-left text-gray-900 dark:text-white leading-tight"> {{ project.name }} <span class="{{ project.color}}"> {{project.colorname}} </span></div>
+      <div class="text-6xl font-bold text-left text-gray-900 dark:text-white leading-tight"> 
+        {% for proj in project.names %}
+          <span class="{{proj.color}} {{proj.bg-color}} rounded-2xl px-2">
+            {{ proj.name }}
+          </span>
+        {% endfor %}
+      </div>
 
       
 

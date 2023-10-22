@@ -1,21 +1,25 @@
-<div id="navbar" class="hidden md:block fixed left-0 top-[-100px] w-full z-50 will-change-transform mt-8" 
-style="transition: transform .4s ease-in, -webkit-transform .4s ease-in; transition: top 0.4s;" data-comp="JumplinksV2" aria-hidden="true">
-    <ul class="bg-white rounded-full flex justify-center mx-auto p-2 w-fit" style="box-shadow: 0 1px 2px rgba(32,33,36,.15), 0 1px 8px rgba(32,33,36,.08);">
+<div id="navbar" class="hidden md:block fixed left-0 top-[-100px] w-full z-50 will-change-transform mt-8"
+    style="transition: transform .4s ease-in, -webkit-transform .4s ease-in; transition: top 0.4s;"
+    data-comp="JumplinksV2" aria-hidden="true">
+    <ul class="bg-white rounded-full flex justify-center mx-auto p-2 w-fit"
+        style="box-shadow: 0 1px 2px rgba(32,33,36,.15), 0 1px 8px rgba(32,33,36,.08);">
         {% for item in site.data.navigation %}
         {% if item.link == page.url%}
-            <li class="shrink-0 px-1">
-                <a href="{{ item.link }}" class="bg-[#f1f3f4] text-[#202124] rounded-full px-4 py-2 leading-6 inline-block font-medium"
-                    data-ga-config="{&quot;click&quot;: {&quot;event&quot;: &quot;anchor_link_click&quot;, &quot;link_url&quot;: &quot;fast&quot;, &quot;link_text&quot;: true, &quot;link_type&quot;: true, &quot;module_name&quot;: true, &quot;section_header&quot;: true}}"
-                    tabindex="-1">
-                    {{ item.name }} </a>
-            </li>
+        <li class="shrink-0 px-1">
+            <a href="{{ item.link }}"
+                class="bg-[#f1f3f4] text-[#202124] rounded-full px-4 py-2 leading-6 inline-block font-medium"
+                data-ga-config="{&quot;click&quot;: {&quot;event&quot;: &quot;anchor_link_click&quot;, &quot;link_url&quot;: &quot;fast&quot;, &quot;link_text&quot;: true, &quot;link_type&quot;: true, &quot;module_name&quot;: true, &quot;section_header&quot;: true}}"
+                tabindex="-1">
+                {{ item.name }} </a>
+        </li>
         {% else %}
-            <li class="shrink-0 px-1">
-                <a href="{{ item.link }}" class="text-[#5f6368] rounded-full px-4 py-2 leading-6 inline-block font-medium hover:bg-[#f8f9fa]"
-                    data-ga-config="{&quot;click&quot;: {&quot;event&quot;: &quot;anchor_link_click&quot;, &quot;link_url&quot;: &quot;fast&quot;, &quot;link_text&quot;: true, &quot;link_type&quot;: true, &quot;module_name&quot;: true, &quot;section_header&quot;: true}}"
-                    tabindex="-1">
-                    {{ item.name }} </a>
-            </li>
+        <li class="shrink-0 px-1">
+            <a href="{{ item.link }}"
+                class="text-[#5f6368] rounded-full px-4 py-2 leading-6 inline-block font-medium hover:bg-[#f8f9fa]"
+                data-ga-config="{&quot;click&quot;: {&quot;event&quot;: &quot;anchor_link_click&quot;, &quot;link_url&quot;: &quot;fast&quot;, &quot;link_text&quot;: true, &quot;link_type&quot;: true, &quot;module_name&quot;: true, &quot;section_header&quot;: true}}"
+                tabindex="-1">
+                {{ item.name }} </a>
+        </li>
         {% endif %}
         {% endfor %}
     </ul>

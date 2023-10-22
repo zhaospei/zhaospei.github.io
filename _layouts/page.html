@@ -1,11 +1,15 @@
 ---
 layout: default
 ---
-<div class="flex flex-col justify-center items-start border-gray-200 pb-16 dark:bg-zinc-900">
-    <div class="flex flex-col-reverse sm:flex-row items-start w-full pb-24">
-        <div class="box-border flex flex-col pr-8 justify-center items-center w-full">
-            <h1
-                class="font-extrabold mb-4 text-7xl {{ page.color }} tracking-tighter leading-tight">
+<div class="flex flex-col justify-center items-start border-gray-200 pb-16 dark:bg-zinc-900 relative">
+
+    <div class="flex flex-col-reverse sm:flex-row items-start w-full pb-8 mb-24 relative">
+        <img src="/assets/media/index/blue-square-diamond.svg" class="absolute bottom-0 left-[100px] z-[-1]">
+        <img src="/assets/media/index/green-triangle-square.svg" class="absolute top-0 left-0 z-[-1]">
+        <img src="/assets/media/index/red-circle-half-pink.svg" class="absolute bottom-[20px] right-[100px] z-[-1]">
+        <img src="/assets/media/index/yellow-rectangle-small-rectangle.svg" class="absolute top-0 right-0 z-[-1]">
+        <div class="box-border flex flex-col justify-center items-center w-full">
+            <h1 class="font-extrabold mb-4 text-7xl {{ page.color }} tracking-tighter leading-tight">
                 <span class="text-black">zhao's </span>{{ page.title }}
             </h1>
             <p class="text-gray-800 indent-8 text-xl max-w-md text-center	dark:text-gray-300">

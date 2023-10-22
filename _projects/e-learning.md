@@ -1,32 +1,23 @@
 ---
 names: 
     - 
-        name: CodeDream 
-        color: text-sky-900
-        bg-color: bg-sky-200
+        name: E-Learning 
+        color: text-amber-900
+        bg-color: bg-transparent
     -   
-        name: Online Judge
+        name: MobileApp
         color: text-gray-900
-        bg-color: bg-transparent	
-img: /assets/media/project/code-dream.png
-pos: 2
+        bg-color: bg-amber-200	
+img: /assets/media/project/e-learning.png
+pos: 3
 link: https://oj.codedream.edu.vn/
 techs: 
     -
-        name: Python
-        color: text-sky-900
-    -
-        name: Django
-        color: text-orange-900
-    -  
-        name: jQuery
+        name: Java
         color: text-rose-900
     -
-        name: MariaDB 
-        color: text-indigo-900
-    -   
-        name: NodeJS
-        color: text-purple-900
+        name: Android Studio
+        color: text-pink-900
 ref:
     Website: https://oj.codedream.edu.vn/
     Code on GitHub: "https://github.com/zhaospei/codedream-oj"
