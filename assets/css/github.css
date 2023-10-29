@@ -53,6 +53,12 @@ code {
     font-size: 15px
 }
 
+.language-plaintext {
+    background-color: #4286f44f;
+    padding: 4px 4px;
+    /* border: 1px solid #dfe2e588; */
+}
+
 .emoji {
     display: inline-block;
 }
