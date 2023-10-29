@@ -31,13 +31,13 @@ var lastScrollTop = 0;
 document.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
    var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
    if (document.documentElement.scrollTop < 100) {
-    document.getElementById("navbar").style.top = "-100px";
+    document.getElementById("navbar").style.bottom = "-100px";
    } else {
         if (st > lastScrollTop) {
-            document.getElementById("navbar").style.top = "-100px";
+            document.getElementById("navbar").style.bottom = "-100px";
 
         } else if (st < lastScrollTop) {
-            document.getElementById("navbar").style.top = "0";
+            document.getElementById("navbar").style.bottom = "30px";
         } // else was horizontal scroll
     }
    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling

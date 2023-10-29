@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<div class="flex flex-col justify-center items-start max-w-3xl border-gray-200 mx-auto pb-16">
+<div class="flex flex-col justify-center items-start border-gray-200 mx-auto pb-16">
     <h3 class="mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white"> Tag: #{{page.tag}} </h3>
     {% for post in site.posts %}
     {% if post.tags contains page.tag %}
@@ -27,7 +27,7 @@ layout: default
                             {% endfor %}
                         </p>
                     </div>
-                    <div class="text-gray-600 dark:text-gray-500"> {{ post.excerpt }} </div>
+                    <div class="text-gray-600 dark:text-gray-500"> {{ post.des }} </div>
                 </div>
             </div>
         </div>
