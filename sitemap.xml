@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://zhaospei.github.io//authors/zhao/</loc>
-<lastmod>2023-10-29T07:16:38+07:00</lastmod>
+<lastmod>2024-06-12T20:11:46+07:00</lastmod>
 </url>
 <url>
 <loc>https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/</loc>
@@ -55,6 +55,10 @@
 <url>
 <loc>https://zhaospei.github.io//nlp/2023/10/20/word2vec/</loc>
 <lastmod>2023-10-20T00:00:00+07:00</lastmod>
+</url>
+<url>
+<loc>https://zhaospei.github.io//op/2024/03/21/how-to-use-svg-to-show-images/</loc>
+<lastmod>2024-03-21T00:00:00+07:00</lastmod>
 </url>
 <url>
 <loc>https://zhaospei.github.io//about/</loc>
@@ -147,7 +151,6 @@
 <loc>https://zhaospei.github.io//tag/embedding/</loc>
 </url>
 <url>
-<loc>https://zhaospei.github.io//assets/BuiTuanDung-Resume-1.pdf</loc>
-<lastmod>2023-10-29T07:13:47+07:00</lastmod>
+<loc>https://zhaospei.github.io//tag/js/</loc>
 </url>
 </urlset>
