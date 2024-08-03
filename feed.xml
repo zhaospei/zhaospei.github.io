@@ -1,9 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://zhaospei.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhaospei.github.io//" rel="alternate" type="text/html" /><updated>2024-06-12T20:11:46+07:00</updated><id>https://zhaospei.github.io//feed.xml</id><title type="html">Tuan-Dung Bui</title><subtitle>A markdown blog made by Tuan-Dung Bui aka Zhao (zhaospei). Hosted on zhaospei.github.io. I'll write something i like maybe my study or life.</subtitle><author><name>Tuan-Dung Bui</name></author><entry><title type="html">Sử dụng SVG như một Placeholder</title><link href="https://zhaospei.github.io//op/2024/03/21/how-to-use-svg-to-show-images/" rel="alternate" type="text/html" title="Sử dụng SVG như một Placeholder" /><published>2024-03-21T00:00:00+07:00</published><updated>2024-03-21T00:00:00+07:00</updated><id>https://zhaospei.github.io//op/2024/03/21/how-to-use-svg-to-show-images</id><content type="html" xml:base="https://zhaospei.github.io//op/2024/03/21/how-to-use-svg-to-show-images/"><![CDATA[<p>Trong post này chúng ta sẽ nói về:</p>
-<ul>
-  <li>Tổng quan về các loại placeholder</li>
-  <li>SVG-based placeholders (edges, shapes and silhouettes)</li>
-  <li>Auto các process</li>
-</ul>]]></content><author><name>zhao</name></author><category term="OP" /><category term="js" /><summary type="html"><![CDATA[Trong post này chúng ta sẽ nói về: Tổng quan về các loại placeholder SVG-based placeholders (edges, shapes and silhouettes) Auto các process]]></summary></entry><entry><title type="html">Phép thuật tuyệt vời của việc đếm tần số Word2Vec, Glove, Fasttext</title><link href="https://zhaospei.github.io//nlp/2023/10/20/word2vec/" rel="alternate" type="text/html" title="Phép thuật tuyệt vời của việc đếm tần số Word2Vec, Glove, Fasttext" /><published>2023-10-20T00:00:00+07:00</published><updated>2023-10-20T00:00:00+07:00</updated><id>https://zhaospei.github.io//nlp/2023/10/20/word2vec</id><content type="html" xml:base="https://zhaospei.github.io//nlp/2023/10/20/word2vec/"><![CDATA[<p>Hello, xin chào các bạn lại là mình đây. Trong bài đăng này, chúng ta sẽ tìm hiểu về Word2Vec, Glove và Fast</p>]]></content><author><name>zhao</name></author><category term="NLP" /><category term="nlp" /><category term="embedding" /><summary type="html"><![CDATA[Hello, xin chào các bạn lại là mình đây. Trong bài đăng này, chúng ta sẽ tìm hiểu về Word2Vec, Glove và Fast]]></summary></entry><entry><title type="html">Attention is All You Need</title><link href="https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need/" rel="alternate" type="text/html" title="Attention is All You Need" /><published>2023-10-06T00:00:00+07:00</published><updated>2023-10-06T00:00:00+07:00</updated><id>https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need</id><content type="html" xml:base="https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need/"><![CDATA[<p><code class="language-plaintext highlighter-rouge">Transformer</code> là mô hình seq2seq được Google Brain đề xuất trong một bài báo xuất bản vào cuối năm 2017. Giờ đây, nó đã đạt được nhiều ứng dụng và tiện ích mở rộng và <code class="language-plaintext highlighter-rouge">BERT</code> là mô hình ngôn ngữ được đào tạo trước có nguồn gốc từ Transformer.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://zhaospei.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhaospei.github.io//" rel="alternate" type="text/html" /><updated>2024-08-03T13:08:12+07:00</updated><id>https://zhaospei.github.io//feed.xml</id><title type="html">Tuan-Dung Bui</title><subtitle>A markdown blog made by Tuan-Dung Bui aka Zhao (zhaospei). Hosted on zhaospei.github.io. I'll write something i like maybe my study or life.</subtitle><author><name>Tuan-Dung Bui</name></author><entry><title type="html">Attention is All You Need</title><link href="https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need/" rel="alternate" type="text/html" title="Attention is All You Need" /><published>2023-10-06T00:00:00+07:00</published><updated>2023-10-06T00:00:00+07:00</updated><id>https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need</id><content type="html" xml:base="https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need/"><![CDATA[<p><code class="language-plaintext highlighter-rouge">Transformer</code> là mô hình seq2seq được Google Brain đề xuất trong một bài báo xuất bản vào cuối năm 2017. Giờ đây, nó đã đạt được nhiều ứng dụng và tiện ích mở rộng và <code class="language-plaintext highlighter-rouge">BERT</code> là mô hình ngôn ngữ được đào tạo trước có nguồn gốc từ Transformer.</p>
 
 <p>Việc đào tạo <code class="language-plaintext highlighter-rouge">RNN</code> truyền thống là nối tiếp và nó phải đợi từ hiện tại được xử lý trước khi có thể xử lý từ tiếp theo. Transformer được huấn luyện song song, tức là tất cả các từ đều được huấn luyện cùng một lúc, điêu này làm tăng đáng kể hiệu quả tính toán.</p>
 
@@ -169,530 +164,7 @@ là văn bản có số kí tự là 30. Khi đó theo công thức trên, thì 
 
 <h1 id="tham-khảo">Tham khảo</h1>
 
-<p>[1] <a href="https://arxiv.org/abs/1706.03762">Attention is All You Need</a></p>]]></content><author><name>zhao</name></author><category term="NLP" /><category term="nlp" /><category term="paper" /><category term="model" /><summary type="html"><![CDATA[Transformer là mô hình seq2seq được Google Brain đề xuất trong một bài báo xuất bản vào cuối năm 2017. Giờ đây, nó đã đạt được nhiều ứng dụng và tiện ích mở rộng và BERT là mô hình ngôn ngữ được đào tạo trước có nguồn gốc từ Transformer.]]></summary></entry><entry><title type="html">NLP Papers to be Read</title><link href="https://zhaospei.github.io//nlp/2023/10/06/nlp-papers-to-be-read/" rel="alternate" type="text/html" title="NLP Papers to be Read" /><published>2023-10-06T00:00:00+07:00</published><updated>2023-10-06T00:00:00+07:00</updated><id>https://zhaospei.github.io//nlp/2023/10/06/nlp-papers-to-be-read</id><content type="html" xml:base="https://zhaospei.github.io//nlp/2023/10/06/nlp-papers-to-be-read/"><![CDATA[<h2 id="0-surveys-of-natural-language-processing">0. Surveys of Natural Language Processing</h2>
-
-<ol>
-  <li>
-    <p><strong>Neural Network Methods for Natural Language Processing</strong>. <em>Yoav Goldberg</em>. SLHLT 2017. [<a href="">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Advances in natural language processing</strong>. <em>Julia Hirschberg, Christopher D Manning</em>. Science 2015. [<a href="https://nlp.stanford.edu/~manning/xyzzy/Hirschberg-Manning-Science-2015.pdf">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Jumping NLP Curves: A Review of Natural Language Processing Research</strong>.
-<em>Erik Cambria, Bebo White</em>. CIM 2014. [<a href="https://www.gwern.net/docs/ai/2014-cambria.pdf">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Natural Language Processing: An Introduction</strong>.
-<em>Prakash M Nadkarni,  Lucila Ohno-Machado,  Wendy W Chapman</em>. JAMIA 2011. [<a href="https://watermark.silverchair.com/18-5-544.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAAskwggLFBgkqhkiG9w0BBwagggK2MIICsgIBADCCAqsGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMTbW0kBdq70u31A2pAgEQgIICfB9c_mxn3VbFBsTi1npJDFQeVGcPm4ColBNSaoe_IQi7mxDJx5DwD9mmYvdhOQf3CIcds_yDPpLJFP_9bvkf0mfQkKb3U9TSm-KMl_xwLjhkIi090ceKWUhQqcbihY4IWKJmapv0kADF73tPUl9yGhmjFe6Bn7wAKhBC0_XE_A1qpqgscRoyQ3rocVi6dklbHjFKBbIKO5790l6gJXijbVqwAJF3WBGWhP9v0uvXlRun--BG8BZYk2CA6aleWw4T_pCh0fh4ZA1zXNnkr3MiE3Z3YtSdNvDuNA19kekWt8WtRDJd33KRqqWIzk_t-Tekk87SpMLR3O59In65vBSUIBiuFB6xPXJu4-HkU6m5hb9NybU8iYT2oQNQQXdh3Xep4c8OfzCkhLO-CVGhIEOLmNgfKuOnxZW9KAQeZrauNHd-binadf6b5MKrtecCOvrdNgAZNSIyTlGUC_knXbGmMbI3ELTDvARIulZykTF0ZfPCFDDxCrWlpy2FzS_9yBwNc_h7qRC0MxINmxHlADF7efxm3L9XoM7v2bul5tqInTjmjGDZX8ZjSlBs0E2Nvq8YaBxaGJkYV7L-KSY81qgRVMfekEha7eRZFPAn6bFbfO3WulUpfD1veDasuwyIlRsql3EGx4VGmkSE7SpYPrMEVSdHU0Wo8LKKj1xCTzmIv_0Por_y4uAnjB7J3IToavjoanU6iOkg-rFyYw5Y8guFBDPJ9CyKLeBf3RjU1_KEOXW2IGaVIcKvQqFIL_Xnb8sBUSZfFJ3bpNpT4aqHyAKun8Ec6yYGd1hVuGg57nHbuDODtxoe-RB0f3BK3K-Lu698fCh-fpWhAAcziNHZhQ">paper</a>]</p>
-  </li>
-</ol>
-
-<h2 id="1-language-parsing">1. Language Parsing</h2>
-
-<h3 id="11-vietnamese-word-segmentation">1.1 Vietnamese Word Segmentation</h3>
-
-<ol>
-  <li><strong>State-of-the-Art Vietnamese Word Segmentation</strong>. Song Nguyen Duc Cong, Quoc Hung Ngo, Rachsuda Jiamthapthaksin. IEEE 2019. [<a href="https://browse.arxiv.org/pdf/1906.07662.pdf">paper</a>]</li>
-</ol>
-
-<h3 id="12-syntactic-parsing">1.2 Syntactic Parsing</h3>
-
-<ol>
-  <li><strong>Syntactic Parsing: A Survey</strong>.
-<em>Alton F. Sanders and Ruth H. Sanders</em>. Computers and the Humanities 1989. [<a href="https://www.academia.edu/download/46281305/bf0005876620160606-13840-7rn8pc.pdf">paper</a>]</li>
-</ol>
-
-<h3 id="13-dependency-parsing">1.3 Dependency Parsing</h3>
-
-<ol>
-  <li><strong>Dependency Parsing</strong>.
-<em>Sandra Kubler, Ryan McDonald, Joakim Nivre</em>. SLHLT 2009. [<a href="https://www.linguisticsociety.org/sites/default/files/e-learning/dependencies.pdf">paper</a>]</li>
-</ol>
-
-<h3 id="14-semantic-parsing">1.4 Semantic Parsing</h3>
-
-<ol>
-  <li><strong>A Survey on Semantic Parsing</strong>.
-<em>Aishwarya Kamath, Rajarshi Das</em>. AKBC 2018. [<a href="https://arxiv.org/pdf/1812.00978">paper</a>]</li>
-</ol>
-
-<h3 id="15-part-of-speech-tagging">1.5 Part of Speech Tagging</h3>
-
-<ol>
-  <li><strong>Part‐of‐speech Tagging</strong>.
-<em>Angel R Martinez</em>. WIREs Comp Stats 2012. [<a href="https://wires.onlinelibrary.wiley.com/doi/epdf/10.1002/wics.195">paper</a>]</li>
-</ol>
-
-<h3 id="16-word-sense-disambiguation">1.6 Word Sense Disambiguation</h3>
-
-<ol>
-  <li>
-    <p><strong>Word Sense Disambiguation: A Survey</strong>.
-<em>Alok Ranjan Pal</em>. arXiv 2015. [<a href="https://arxiv.org/pdf/1508.01346">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Word Sense Disambiguation: A Survey</strong>.
-<em>Roberto Navigli</em>. CSUR 2009. [<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.153.8457&amp;rep=rep1&amp;type=pdf">paper</a>]</p>
-  </li>
-</ol>
-
-<h3 id="17-named-entity-recognization">1.7 Named Entity Recognization</h3>
-
-<ol>
-  <li>
-    <p><strong>A Survey on Deep Learning for Named Entity Recognition</strong>.
-<em>Jing Li, Aixin Sun, Jianglei Han, Chenliang Li</em>. TKDE 2020. [<a href="https://arxiv.org/pdf/1812.09449">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>A Survey of Named Entity Recognition and Classification</strong>.
-<em>David Nadeau, Satoshi Sekine</em>. Lingvisticae Investigationes 2007. [<a href="https://www.time.mk/trajkovski/thesis/li07.pdf">paper</a>]</p>
-  </li>
-</ol>
-
-<h3 id="18-coreference-resolution">1.8 Coreference Resolution</h3>
-
-<ol>
-  <li><strong>Coreference Resolution: A Survey</strong>.
-<em>Pradheep Elango</em>. University of Wisconsin, Madison, WI 2005. [<a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.102.1565&amp;rep=rep1&amp;type=pdf">paper</a>]</li>
-</ol>
-
-<h2 id="2-natural-language-understanding-and-generation">2. Natural Language Understanding and Generation</h2>
-
-<h3 id="21-text-classification">2.1 Text Classification</h3>
-
-<ol>
-  <li>
-    <p><strong>Text Classification Algorithms: A Survey</strong>. 
-<em>Kamran Kowsari, Kiana Jafari Meimandi, Mojtaba Heidarysafa, Sanjana Mendu, Laura Barnes, Donald Brown</em>. Information 2019. [<a href="https://www.mdpi.com/2078-2489/10/4/150/pdf">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Semantic Text Classification: A Survey of Past and Recent Advances</strong>.
-<em>Berna Altinel, Murat Can Ganiz</em>. IP\&amp;M 2018. [<a href="https://www.sciencedirect.com/science/article/abs/pii/S0306457317305757">paper</a>]</p>
-  </li>
-</ol>
-
-<h3 id="22-sentiment-analysis">2.2 Sentiment Analysis</h3>
-
-<ol>
-  <li>
-    <p><strong>A Survey of Sentiment Analysis in Social Media</strong>. 
-<em>Lin Yue, Weitong Chen, Xue Li, Wanli Zuo, Minghao Yin</em>. KAIS 2019. [<a href="http://cse.iitkgp.ac.in/~saptarshi/courses/socomp2020a/sentiment-analysis-survey-yue2019.pdf">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Sentiment Analysis Algorithms and Applications: A Survey</strong>.
-<em>Walaa Medhat, Ahmed Hassan, Hoda Korashy</em>. ASEJ 2014. [<a href="https://www.sciencedirect.com/science/article/pii/S2090447914000550">paper</a>]</p>
-  </li>
-</ol>
-
-<h3 id="23-natural-language-inference">2.3 Natural Language Inference</h3>
-
-<ol>
-  <li><strong>Recent Advances in Natural Language Inference: A Survey of Benchmarks, Resources, and Approaches</strong>. 
-<em>Shane Storks, Qiaozi Gao, Joyce Y Chai</em>. arXiv 2019. [<a href="https://arxiv.org/pdf/1904.01172">paper</a>]</li>
-</ol>
-
-<h3 id="24-reading-comprehension">2.4 Reading Comprehension</h3>
-
-<ol>
-  <li>
-    <p><strong>A Survey on Machine Reading Comprehension—Tasks, Evaluation Metrics and Benchmark Datasets</strong>. 
-<em>Changchang Zeng, Shaobo Li, Qin Li, Jie Hu, Jianjun Hu</em>. AS 2020. [<a href="https://www.mdpi.com/2076-3417/10/21/7640/pdf">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Neural Machine Reading Comprehension: Methods and Trends</strong>.
-<em>Shanshan Liu, Xin Zhang, Sheng Zhang, Hui Wang, Weiming Zhang</em>. AS 2019. [<a href="https://www.mdpi.com/2076-3417/9/18/3698/pdf">paper</a>]</p>
-  </li>
-</ol>
-
-<h3 id="25-text-generation">2.5 Text Generation</h3>
-
-<ol>
-  <li>
-    <p><strong>Pretrained Language Models for Text Generation: A Survey</strong>.
-<em>Junyi Li, Tianyi Tang, Wayne Xin Zhao, Ji-Rong Wen</em>. arXiv 2021. [<a href="https://arxiv.org/pdf/2105.10311.pdf">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Survey of the State of the Art in Natural Language Generation: Core Tasks, Applications and Evaluation</strong>. 
-<em>Albert Gatt, Emiel Krahmer</em>. JAIR 2018. [<a href="https://www.jair.org/index.php/jair/article/download/11173/26378">paper</a>]</p>
-  </li>
-</ol>
-
-<h3 id="26-machine-translation">2.6 Machine Translation</h3>
-
-<ol>
-  <li><strong>Neural Machine Translation: A Review of Methods, Resources, and Tools</strong>.
-<em>Zhixing Tan, Shuo Wang, Zonghan Yang, Gang Chen, Xuancheng Huang, Maosong Sun, YangLiu</em>. AI Open 2020. [<a href="https://pdf.sciencedirectassets.com/777606/1-s2.0-S2666651020X00027/1-s2.0-S2666651020300024/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIEI%2Fd%2BRJ29itBNaq4DDn72X5y%2BvR4sUPQVYGkvCaOxSlAiBb9Jk8gNj2eRv5XzqU3MDZLcM9cNVYMk3bApmgOuKo5SqDBAjh%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAQaDDA1OTAwMzU0Njg2NSIMGBZpbHJaLTbA2IKlKtcDlKl3M%2FKoev68AxfA1LPWWUNURJZeL4opVifdAsIMyGUSQ0PEtmApxPZUw7VrdigGDkvaShDCCYh0Y0RJWXF9GXX%2BpJBuuv8eae1mGQ1OjjBgT2rmIVCx%2BcCpyBeTkz2BWEzf36ZBqIs96pGUGptZOruWn03TkrTIk9u7reHlD1dP3WAhEynkyAFu6ZYxhJ4i54R%2FDDPUvKhvHRe54QvYHciX%2BDUQr%2B8LqkhGPLs3%2F1fKkpbtbYKPaEd2Il2rJAG26xNhj2b6%2FZnHoA6cn%2B%2F3CszEXb6QhQHDB8g4ZhmJTivtVtRmWXexmpFo0%2FUpMXLLlojv9SoCME80T1skNCRqOWzWjN7T%2F4exLLxIHVn9YXDKHczyKkAY0F%2B8gcICr36m0y9joAsGo8cSj5afhzA1GalxsYdOiSV0rfZApSZ3giU74snMygiXsmYtI7o6G%2FpRGC%2FNuJfP0%2BZgviIhCXY2OtOcujYyj3dixk6AFMkAHmbJEG2XyqE6HdOxsv7pcBDe%2BBtkbMMriBdlARwyP13qdS%2BaP8NOuTwdF3ykM8dwsQXC7Bg1soovygfTiBYPr%2FBBewCVXlY%2BEWo1XTCF2rBh93od29atHRiaFnH16zU%2FeBHqFR%2FwIueOMMups4cGOqYBUMp8kSHbPS7itMjQoLFtUow0nDP1jtAKu7aZ0pc2575N2vF3ljE%2BOb4EOjRX38EC9s%2BoKu62gEeZPpIHXOuAlmMopPwkPOmAhgsS6SBm8GkkbUOsqiZYrkMMCaxBXLof7Hb0J%2FO%2BP5X0pfoxehoAhhA5kAsxgmYc%2BfOvhKaScNacloAs3j1fIq5yPXSz97%2B98GxPDNKE1%2BZ349rpPxYdOHMWLomZNw%3D%3D&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20210713T011505Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=300&amp;X-Amz-Credential=ASIAQ3PHCVTYXAOF4ABF%2F20210713%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Signature=e7ed2a8e3a1864f8e8501ab7267e8fccb4063f50bede5feafa0b70ccab5b2521&amp;hash=da1e8d310c84ee9994d7353a0f8bd6819053d8d02889f652f94641cbcfea9a19&amp;host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&amp;pii=S2666651020300024&amp;tid=spdf-def16018-cee7-4413-938c-6b22e9f94fdc&amp;sid=27eca1f72344884dbe7913d4b18b564d6a85gxrqa&amp;type=client">paper</a>]</li>
-</ol>
-
-<h3 id="27-text-summarization">2.7 Text Summarization</h3>
-
-<ol>
-  <li>
-    <p><strong>A Survey on Dialogue Summarization: Recent Advances and New Frontiers</strong>.
- <em>Xiachong Feng, Xiaocheng Feng, Bing Qin</em>. arXiv 2021. [<a href="https://arxiv.org/pdf/2107.03175">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>The Factual Inconsistency Problem in Abstractive Text Summarization: A Survey</strong>. <em>Yichong Huang, Xiachong Feng, Xiaocheng Feng, Bing Qin</em>. arXiv 2021. [<a href="https://arxiv.org/pdf/2104.14839">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>What Have We Achieved on Text Summarization?</strong>
- <em>Dandan Huang, Leyang Cui, Sen Yang, Guangsheng Bao, Kun Wang, Jun Xie, Yue Zhang</em>. EMNLP 2020. [<a href="https://aclanthology.org/2020.emnlp-main.33.pdf">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Recent Automatic Text Summarization Techniques: A Survey</strong>. 
- <em>Mahak Gambhir, Vishal Gupta</em>. AIR 2017. [<a href="https://link.springer.com/content/pdf/10.1007/s10462-016-9475-9.pdf">paper</a>]</p>
-  </li>
-</ol>
-
-<h2 id="3-information-extraction">3. Information Extraction</h2>
-
-<h3 id="31-relation-extraction">3.1 Relation Extraction</h3>
-
-<ol>
-  <li>
-    <p><strong>More Data, More Relations, More Context and More Openness: A Review and Outlook for Relation Extraction</strong>.
-<em>Xu Han, Tianyu Gao, Yankai Lin, Hao Peng, Yaoliang Yang, Chaojun Xiao, Zhiyuan Liu, Peng Li, Maosong Sun, Jie Zhou</em>. AACL 2020. [<a href="https://aclanthology.org/2020.aacl-main.75.pdf">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Relation Extraction: A Survey</strong>.
-<em>Sachin Pawar, Girish K. Palshikara, Pushpak Bhattacharyyab</em>. arXiv 2017. [<a href="https://arxiv.org/pdf/1712.05191.pdf">paper</a>]</p>
-  </li>
-</ol>
-
-<h3 id="32-event-extraction">3.2 Event Extraction</h3>
-
-<ol>
-  <li><strong>Extracting Events and Their Relations from Texts: A Survey on Recent Research Progress and Challenges</strong>.
-<em>Kang Liu, Yubo Chen, Jian Liu, Xinyu Zuo, Jun Zhao</em>. AI Open 2020. [<a href="https://www.sciencedirect.com/science/article/pii/S266665102100005X/pdfft?md5=3983861e9ae91ce7b45f0c5533071077&amp;pid=1-s2.0-S266665102100005X-main.pdf">paper</a>]</li>
-</ol>
-
-<h3 id="33-open-information-extraction">3.3 Open Information Extraction</h3>
-
-<ol>
-  <li><strong>A Survey on Open Information Extraction</strong>. 
-<em>Christina Niklaus, Matthias Cetto, Andre Freitas, Siegfried Handschuh</em>. COLING 2018. [<a href="https://arxiv.org/pdf/1806.05599">paper</a>]</li>
-</ol>
-
-<h2 id="4-information-retrieval">4. Information Retrieval</h2>
-
-<ol>
-  <li>
-    <p><strong>Pretrained Transformers for Text Ranking: BERT and Beyond</strong>. <em>Andrew Yates, Rodrigo Nogueira, Jimmy Lin</em>. WSDM 2021. [<a href="https://dl.acm.org/doi/pdf/10.1145/3437963.3441667">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Data Mining and Information Retrieval in the 21st Century: A Bibliographic Review</strong>. <em>Jiaying Liu, Xiangjie, Kong, Xinyu Zhou, Lei Wang, Da Zhang, Ivan Lee, Bo Xu, Feng Xia</em>. Science Review 2019. [<a href="https://pdf.sciencedirectassets.com/276226/1-s2.0-S1574013719X00040/1-s2.0-S1574013719301297/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCICq5IyB56s6Und0UJRNRuwZ8moPqdExErZ0TtRQQLGUNAiAFqh%2FtINYbe%2BmWQnEo%2B4GbKrlum0q8IMz0DkqT4sB%2B1CqDBAjN%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAQaDDA1OTAwMzU0Njg2NSIM5WDlAL%2BoE9iRKE4WKtcDlh9uPvVVjUQ9h8KwcYFwpbaEfF6xvjLl%2Fyzn4gGE3ARgGVsEJbi2kVc83hDhw03g%2BaKxGWSQr10OLGqG0nYTUrJdQZY6WcZpJRBDcdjfMe%2FVlGlQuG0Mu%2BZYZRO%2F96h%2BAiAXwDIuZyLRAftKyIrBLgqnZ0PBsC6lyOFdPH0RFW%2B19YFKHoNuof%2Fx%2BrmpL63bLK6EBPzjI6ZOQ7f3Hc%2Fo%2FiZGoAH2AAMsidgyBIBk%2FZx56S%2B%2FWv6hvkmZh%2BbUj%2FK9ElXqnIDgyokzOX4%2FR9SVPFP5lXslzU3BJmpS2LsMv9SI4xY92ISOdXGTw2eCgMnqvY4huM92tSJoNkaKuipZPU8Em61WcrCcjP2v%2Bubxaz0LCTwrnbB2jQYLf9%2BzIZf7DWrIaWVu8XuoPwMfj%2FY7IELkNdidCHErVp94D3%2Fcv%2FIHGcHIUxVuK2pvElHB85xF0hgsWRWbX9RusDU2S7KryloCMjkedsgSfiNh0uAaiuiL40S5olbAVuK00LgXEq9o1H3%2B%2BQekDo%2Bn0kzIolfMBPAWpf2Anmvfa0vGEIrtXqS7tqIGHvDNNpmE8gg9lB63QlKJu2Yt3jiUbcQJbuWhEz8OCqcngVgRVtQRT7Nstb8V1yMc43QcMNPzrocGOqYB3b0JzWmueBzXIGbAdfLifUj%2BGQm2Kx0Qi4LsuBnJEYaX0GfcWxtT%2BaIk%2By3PCP2H3vABGfO0bInuXflJBhpkW4pZ5i7d51ysfp%2FKXu4yEiZT2JhDFgi70p0roesXyHrD5z5pi2nYWXptCTD6oe6JWR02QtCr5IsQVMBTRa3RUwOjAf3VP58zT2dNSwLjUTOjNdAC3e2j1FA2cQn9f0C94pIrKjPt4g%3D%3D&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20210712T045217Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=300&amp;X-Amz-Credential=ASIAQ3PHCVTY74QVIXG7%2F20210712%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Signature=f2f453778540f3e5bf0883461f74ac8314f34bee23d998cb46403e9eee9c23c2&amp;hash=6e521d2013bcd4ebe81b93a081d055b01acebb5dbd35d82f8502f2de73ce799e&amp;host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&amp;pii=S1574013719301297&amp;tid=spdf-35941364-0392-4be0-b75e-20e00a183bf2&amp;sid=27eca1f72344884dbe7913d4b18b564d6a85gxrqa&amp;type=client">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Deep Learning for Matching in Search and Recommendation</strong>. <em>Jun Xu, Xiangnan He, Hang Li</em>. SIGIR tutorial 2018. [<a href="http://staff.ustc.edu.cn/~hexn/papers/www18-tutorial-deep-matching-paper.pdf">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Neural Models for Information Retrieval</strong>.
-<em>Bhaskar Mitra, Nick Craswell</em>. arXiv 2017. [<a href="https://arxiv.org/pdf/1705.01509.pdf">paper</a>]</p>
-  </li>
-</ol>
-
-<h2 id="5-dialogue-and-question-answering">5. Dialogue and Question Answering</h2>
-
-<h3 id="51-dialogue">5.1 Dialogue</h3>
-
-<ol>
-  <li><strong>A Survey on Dialogue Systems: Recent Advances and New Frontiers</strong>.
-<em>Hongshen Chen, Xiaorui Liu, Dawei Yin, Jiliang Tang</em>. Acm SIGKDD Explorations Newsletter 2017. [<a href="https://arxiv.org/pdf/1711.01731">paper</a>]</li>
-</ol>
-
-<h3 id="52-question-answering">5.2 Question Answering</h3>
-
-<ol>
-  <li>
-    <p><strong>Retrieving and Reading: A Comprehensive Survey on Open-domain Question Answering</strong>. <em>Fengbin Zhu, Wenqiang Lei, Chao Wang, Jianming Zheng, Soujanya Poria, Tat-Seng Chua</em>. arXiv 2021. [<a href="https://arxiv.org/pdf/2101.00774">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Core Techniques of Question Answering Systems over Knowledge Bases: A Survey</strong>. <em>Dennis Diefenbach, Vanessa Lopez, Kamal Singh, Pierre Maret</em>. KAIS 2018. [<a href="https://hal.archives-ouvertes.fr/hal-01637143/document">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Question Answering Systems: Survey and Trends</strong>. <em>Abdelghani Bouziane, Djelloul Bouchiha, Noureddine Doumi, Mimoun Malki</em>. Procedia Computer Science 2015. [<a href="https://www.sciencedirect.com/science/article/pii/S1877050915034663/pdf?md5=e483aabf699b13dd1fdb74c8e95b5100&amp;pid=1-s2.0-S1877050915034663-main.pdf&amp;_valck=1">paper</a>]</p>
-  </li>
-</ol>
-
-<h2 id="6-representation-learning">6. Representation Learning</h2>
-
-<h3 id="61-representation-learning">6.1 Representation Learning</h3>
-
-<ol>
-  <li><strong>Representation Learning: A Review and New Perspectives.</strong> 
-<em>Yoshua Bengio, Aaron Courville, and Pascal Vincent.</em> TPAMI 2013. [<a href="https://arxiv.org/pdf/1206.5538">paper</a>]</li>
-</ol>
-
-<h3 id="62-word-representation-learning">6.2 Word Representation Learning</h3>
-
-<ol>
-  <li><strong>From Word to Sense Embeddings: A Survey on Vector Representations of Meaning</strong>.
-<em>Jose Camacho-Collados, Mohammad Taher Pilehvar</em>. JAIR 2018. [<a href="https://www.jair.org/index.php/jair/article/download/11259/26454/">paper</a>]</li>
-</ol>
-
-<h3 id="63-network-representation-learning">6.3 Network Representation Learning</h3>
-
-<ol>
-  <li>
-    <p><strong>Network Representation Learning: A Macro and Micro View</strong>.
-<em>Xueyi Liu, Jie Tang</em>. AI Open 2021. [<a href="https://pdf.sciencedirectassets.com/777606/1-s2.0-S2666651021X00022/1-s2.0-S2666651021000024/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQDF4AZ3X%2BNSkwIYrQFjT5J2NmWQoHmxcdnZ%2FcUedLywSgIhAII%2FNrzVTGMN1PMuzFJn%2FSKD4UfyWdV3w2K6wuGU8GSJKoMECOH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQBBoMMDU5MDAzNTQ2ODY1Igx4dtx3R0qAisPhSuAq1wO%2FfY2wuQ6oZ9%2FyuJoq4P7j2zbMRSxFWEdIFt%2BInUKHuKOR6Z2QolCfx10s7ool05vvnLgkwesm4G5TIbFdq9AyaKtnGB2fIkRL872m94O9RRUYvWONG6UxFcMCmEbXhvQPWBsz1ypEsJkTeZ7S9oVZaWXaJeNr90BrHWxSdoOQ2U%2Fy%2Bo7OCY4cExwbBzRGVpQQ%2BhwEjUpzBmhHRa3ITiZJZrIedCZE7tL%2FuQ2AxM963t9GOX0dl3fx2aF4u89FLnXjSUwS8kSII37OmEoOoqU8GalrGQSqbLfVX3jCh4LJucC76fZNXB7Ueu%2Bn%2FY%2BpYSn71iAFnSpsVYoxL2zx%2BqyTq8twGK70%2BU9bRtCHoAV26Z8Z7IRqiMZm5wLdvuaUDt%2B79izGneQ4dfPymy5Z50RWxhHDupoYYuCcl53EwHS5DJ8eOoQ6mjOszngrVwZsnohHIw0v1kOwH8zAmwUFuYvar543JI1HfXIPLndTFsKXhxnN%2BppqrW5Myxf06NvQgZ9QJPYcnFlcgCn3pN0QbjgZx%2FNkwqYvp3qFe6ASVZzON694ufdsBnzCfKK4W7kczivEsmd83%2Fd5nC8P18I3EMeGK%2FqI34SpBpJqGB0Me3Fc6nhQQM8eW3Yw6a%2BzhwY6pAGtEmsONGDApmnuJDw06%2FP5MqunMCAPmOCm5j4p%2BqWbtDyaACe9vPmBt4RPgRA4B7Axxi05VzhjJ525wrThobJ86%2BFIHHyfXcipLDY3Z5wz1wIdv%2FL6qvXR%2B1A05XULV2BMQVEEGzFrFTr%2BFSLx%2BStedvTrwlS8s22mBg6Y4U6yoH7XrI28KcIpMaIfbTscy34E3aqKqCE%2FLcdl19JYgwg46dUebw%3D%3D&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20210713T011759Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=300&amp;X-Amz-Credential=ASIAQ3PHCVTY4MKE7SXL%2F20210713%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Signature=b475442910cb1cbe2893d7a57cb204012ba3fb1c4038481a79775f88eaf78ec9&amp;hash=b0aee28209890c3e40e3b1fca16a70a0d6f7c8ed6c36846912b65f7811a8d480&amp;host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&amp;pii=S2666651021000024&amp;tid=spdf-69cab0cb-463d-46df-b673-08b0dc37a6fa&amp;sid=27eca1f72344884dbe7913d4b18b564d6a85gxrqa&amp;type=client">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>A Survey on Network Embedding</strong>.
-<em>Peng Cui, Xiao Wang, Jian Pei, Wenwu Zhu</em>. TKDE 2018. [<a href="https://arxiv.org/pdf/1711.08752">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Network Representation Learning: A Survey</strong>.
-<em>Daokun Zhang, Jie Yin, Xingquan Zhu, Chengqi Zhang</em>. TBD 2018. [<a href="https://arxiv.org/pdf/1801.05852.pdf">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Network Representation Learning: An Overview</strong>.
-<em>Cunchao Tu, Cheng Yang, Zhiyuan Liu, Maosong Sun</em>. SSI 2017. [<a href="http://engine.scichina.com/publisher/scp/journal/SSI/47/8/10.1360/N112017-00145">paper</a>]</p>
-  </li>
-</ol>
-
-<h2 id="7-knowledge-graph">7. Knowledge Graph</h2>
-
-<h3 id="71-knowledge-graph">7.1 Knowledge Graph</h3>
-
-<ol>
-  <li><strong>Neural, Symbolic and Neural-symbolic Reasoning on Knowledge Graphs</strong>.</li>
-</ol>
-
-<p><em>Jing Zhang, Bo Chen, Lingxi Zhang, Xirui Ke, Haipeng Ding</em>. AI Open 2021. [<a href="https://www.sciencedirect.com/science/article/pii/S2666651021000061/pdfft?md5=41dae412c5802b063f8ff0615ba12622&amp;pid=1-s2.0-S2666651021000061-main.pdf">paper</a>]</p>
-
-<ol>
-  <li>
-    <p><strong>Knowledge Graph Embedding: A Survey of Approaches and Applications</strong>.
-<em>Quan Wang, Zhendong Mao, Bin Wang, Li Guo</em>. TKDE 2017. [<a href="http://ieeexplore.ieee.org/abstract/document/8047276/">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Knowledge Graph Refinement: A Survey of Approaches and Evaluation Methods</strong>. <em>Heiko Paulheim</em>. Semantic Web 2017. [<a href="http://www.semantic-web-journal.net/system/files/swj1167.pdf">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Knowledge Representation Learning: A Review</strong>.
-<em>Zhiyuan Liu, Maosong Sun, Yankai Lin, Ruobing Xie</em>. JCRD 2016. [<a href="https://crad.ict.ac.cn/EN/article/downloadArticleFile.do?attachType=PDF&amp;id=3099">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>A Review of Relational Machine Learning for Knowledge Graphs</strong>.
-<em>Maximilian Nickel, Kevin Murphy, Volker Tresp, Evgeniy Gabrilovich</em>. Proceedings of the IEEE 2015. [<a href="https://arxiv.org/pdf/1503.00759">paper</a>]</p>
-  </li>
-</ol>
-
-<h3 id="72-common-sense-knowledge-graph">7.2 Common Sense Knowledge Graph</h3>
-
-<ol>
-  <li><strong>Sememe Knowledge Computation: A Review of Recent Advances in Application and Expansion of Sememe Knowledge Bases</strong>.
-<em>Fanchao Qi, Ruobing Xie, Yuan Zang, Zhiyuan Liu, Maosong Sun</em>. FCS 2021. [<a href="https://link.springer.com/article/10.1007/s11704-020-0002-4">paper</a>]</li>
-</ol>
-
-<h2 id="8-machine-learning-for-natural-language-processing">8. Machine Learning for Natural Language Processing</h2>
-
-<h3 id="81-deep-learning-for-natural-language-processing">8.1 Deep Learning for Natural Language Processing</h3>
-
-<ol>
-  <li>
-    <p><strong>A Survey of the Usages of Deep Learning for Natural Language Processing</strong>.
-<em>Daniel W. Otter, Julian R. Medina, Jugal K. Kalita</em>. TNNLS 2021. [<a href="https://arxiv.org/pdf/1807.10854">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Recent Trends in Deep Learning Based Natural Language Processing</strong>.
-<em>Tom Young, Devamanyu Hazarika, Soujanya Poria, Erik Cambria</em>. CIM 2018. [<a href="https://arxiv.org/pdf/1708.02709.pdf%C2%A0">paper</a>]</p>
-  </li>
-</ol>
-
-<h3 id="82-transformers-and-pre-trained-language-models">8.2 Transformers and Pre-trained Language Models</h3>
-
-<ol>
-  <li>
-    <p><strong>A Survey of Transformers</strong>.
-<em>Tianyang Lin, Yuxin Wang, Xiangyang Liu, Xipeng Qiu</em>. arXiv 2021. [<a href="https://arxiv.org/pdf/2106.04554">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Pre-Trained Models: Past, Present and Future</strong>.
-<em>Xu Han, Zhengyan Zhang, Ning Ding, Yuxian Gu, Xiao Liu, Yuqi Huo, Jiezhong Qiu, Liang Zhang, Wentao Han, Minlie Huang, Qin Jin, Yanyan Lan, Yang Liu, Zhiyuan Liu, Zhiwu Lu, Xipeng Qiu, Ruihua Song, Jie Tang, Ji-Rong Wen, Jinhui Yuan, Wayne Xin Zhao, Jun Zhu</em>. arXiv 2021. [<a href="https://arxiv.org/abs/2106.07139">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Pre-trained models for natural language processing: A survey</strong>.
-<em>XiPeng Qiu, TianXiang Sun, YiGe Xu, YunFan Shao, Ning Dai, XuanJing Huang</em>. Science China Technological Sciences 2020. [<a href="https://link.springer.com/content/pdf/10.1007/s11431-020-1647-3.pdf">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Efficient Transformers: A Survey</strong>.
-<em>Yi Tay, Mostafa Dehghani, Dara Bahri, Donald Metzler</em>. arXiv 2020. [<a href="https://arxiv.org/pdf/2009.06732">paper</a>]</p>
-  </li>
-</ol>
-
-<h3 id="83-graph-neural-networks">8.3 Graph Neural Networks</h3>
-
-<ol>
-  <li>
-    <p><strong>Graph Neural Networks for Natural Language Processing: A Survey</strong>.
-<em>Lingfei Wu, Yu Chen, Kai Shen, Xiaojie Guo, Hanning Gao, Shucheng Li, Jian Pei, Bo Long</em>. arXiv 2021. [<a href="https://arxiv.org/pdf/2106.04554">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Robustness of Deep Learning Models on Graphs: A Survey</strong>.
-<em>Jiarong Xu, Junru Chen, Siqi You, Zhiqing Xiao, Yang Yang, Jiangang Lu</em>. AI Open 2021. [<a href="https://pdf.sciencedirectassets.com/777606/1-s2.0-S2666651021X00022/1-s2.0-S2666651021000139/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBEaCXVzLWVhc3QtMSJHMEUCIQDmcB9h7dKn3wvTXbv0mGpCRs2zxb7v0oNAoEYfK65lXAIgWbqRSd0Dcxz1EoKSYxbMQb0Iazt1HZAUteMHhXvc2F0qgwQI%2Bf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAEGgwwNTkwMDM1NDY4NjUiDMMC3gpvzxTpfbscwyrXAzesgUHaJWjNaP29to2qfBQFPC6lwNAHbcRwVgCWfdvccX%2BQi%2BX0hgSkVMDLB3F5nfKwG05JfDE3ZsfVttAZ2djvytUk3%2F8R9UszAqjBWKFeNsuWKK0Ogh3N6acYe7w7bBkMJ9vdFgf%2BjAPnIvsDCX6hmDeZQQe4RokCv1oCM4M01T5%2FTmVzZS2f9AukdAZ%2BvwXH2ATXMB27n9vhN01kTbcci9IK2F2wpbRr2%2Bbuebs1yYHE0SP3EuAsyuDdbSCpZxxB%2BnEGBt%2FBnVm7LHR%2ByHDHgXtY1K7co6oHwM0AQHK8b5IjSd7OjRFnHBYjuOGWe3hCE0N7MixhK7kh4rV1DPb8FgOYxTZgwZ8f0upRvdK9cOGx3aoyxXVGpMO%2B5ScgkXn3i6wDbwX5FLFb%2FbHtBIvEWj1MQ9KbhYzfrc2kTfqTacN9uRxGw8wc8NS%2BsBus9U7oyjvvpgknJ5je7guaCXgotoXmvOdeIlXEywP7XnBzMz1oxvdeIXteNc8k%2Fq9kKLe6EMiGz0dKwu3lSxS0N9jBvDAup8yoT%2BnHE6zWxyGFiOy720aKS%2FH0HS8TFpX648TTjG2Kv6bcE9%2FHsHD9Fea3ydeGLRscRAx02asRcerDARdGjCuzWzC91biHBjqlAenPBD5BQFVYcnENsDGaZCqFDGVju%2BLTSvkglhMraDbXEKEGNiOMcDNt321b%2FEbsNFjB7r7sfJYAp8PizoFiR9mVds2oM2KQYW5YKrq252dWYS7SP%2BNi6nvnmKRBBLs%2F4r59bk3SHemKj%2FxbLucRMzd9qB9mPSIzzfOudBeACQ%2BEHQ1Fmc6CaY109NGRayIkfOtE6iM0XOW%2BQX07crvRWo%2FHlw%2F%2FvQ%3D%3D&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20210714T020215Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=300&amp;X-Amz-Credential=ASIAQ3PHCVTYV7YMI542%2F20210714%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Signature=dcaf351d4a7f1c1818f4d436fd3c522460839dd98c69809aecf7466c4c9debed&amp;hash=c51537b014f1d20d25cd8553fa5586fab12f731df76eee3dabbcc0b342f0048a&amp;host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&amp;pii=S2666651021000139&amp;tid=spdf-90eddceb-73c9-4b80-878d-65985d4a175a&amp;sid=80948377662c7948732be96-54885b4a3c51gxrqa&amp;type=client">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Graph Neural Networks: A Review of Methods and Applications</strong>.
-<em>Jie Zhou, Ganqu Cui, Shengding Hu, Zhengyan Zhang, Cheng Yang, Zhiyuan Liu, Lifeng Wang, Changcheng Li, Maosong Sun</em>. AI Open 2020. [<a href="https://www.sciencedirect.com/science/article/pii/S2666651021000012">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>A Comprehensive Survey on Graph Neural Networks</strong>.
-<em>Zonghan Wu, Shirui Pan, Fengwen Chen, Guodong Long, Chengqi Zhang, Philip S. Yu</em>. TNNLS 2020. [<a href="https://arxiv.org/pdf/1901.00596.pdf">paper</a>]</p>
-  </li>
-</ol>
-
-<h3 id="84-reinforcement-learning">8.4 Reinforcement Learning</h3>
-
-<ol>
-  <li><strong>A Survey of Reinforcement Learning Informed by Natural Language</strong>.
-<em>Jelena Luketina, Nantas Nardelli, Gregory Farquhar, Jakob Foerster, Jacob Andreas, Edward Grefenstette, Shimon Whiteson, Tim Rocktäschel</em>. IJCAI 2019. [<a href="https://arxiv.org/pdf/1906.03926">paper</a>]</li>
-</ol>
-
-<h3 id="85-data-augmentation">8.5 Data Augmentation</h3>
-
-<ol>
-  <li>
-    <p><strong>A Survey of Data Augmentation Approaches for NLP</strong>.
- <em>Steven Y. Feng, Varun Gangal, Jason Wei, Sarath Chandar, Soroush Vosoughi, Teruko Mitamura, Eduard Hovy</em>. ACL Findings 2021. [<a href="https://arxiv.org/pdf/2105.03075">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>An Empirical Survey of Data Augmentation for Limited Data Learning in NLP</strong>. 
- <em>Jiaao Chen, Derek Tam, Colin Raffel, Mohit Bansal, Diyi Yang</em>. arXiv 2021. [<a href="https://arxiv.org/pdf/2106.07499">paper</a>]</p>
-  </li>
-</ol>
-
-<h3 id="86-few-and-zero-shot-learning">8.6 Few and Zero Shot Learning</h3>
-
-<ol>
-  <li>
-    <p><strong>A Survey on Recent Approaches for Natural Language Processing in Low-Resource Scenarios</strong>.
-<em>Michael A. Hedderich, Lukas Lange, Heike Adel, Jannik Strötgen, Dietrich Klakow</em>. NAACL 2021. [<a href="https://aclanthology.org/2021.naacl-main.201.pdf">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>A Survey of Zero-Shot Learning: Settings, Methods, and Applications</strong>.
-<em>Wei Wang, Vincent W. Zheng, Han Yu, Chunyan Miao</em>. ACM TIST 2019. [<a href="https://www.ntulily.org/wp-content/uploads/journal/A_Survey_of_Zero-Shot_Learning_Settings_Methods_and_Applications_accepted.pdf">paper</a>]</p>
-  </li>
-</ol>
-
-<h3 id="87-meta-learning">8.7 Meta Learning</h3>
-
-<ol>
-  <li>
-    <p><strong>Meta-learning in Neural Networks: A Survey</strong>.
-<em>Timothy Hospedales, Antreas Antoniou, Paul Micaelli, Amos Storkey</em>. PAMI 2020. [<a href="https://arxiv.org/pdf/2004.05439">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>A Survey of Deep Meta‐learning</strong>. <em>Mike Huisman, Jan N. van Rijn, Aske Plaat</em>. AIR 2021. [<a href="https://link.springer.com/content/pdf/10.1007/s10462-021-10004-4.pdf">paper</a>]</p>
-  </li>
-</ol>
-
-<h3 id="88-continual-learning">8.8 Continual Learning</h3>
-
-<ol>
-  <li><strong>A Continual Learning Survey: Defying Forgetting in Classification Tasks</strong>.
-<em>Matthias Delange, Rahaf Aljundi, Marc Masana, Sarah Parisot, Xu Jia, Ales Leonardis, Greg Slabaugh, Tinne Tuytelaars</em>. PAMI 2021. [<a href="https://arxiv.org/pdf/1909.08383">paper</a>]</li>
-</ol>
-
-<h3 id="89-contrastive-learning">8.9 Contrastive Learning</h3>
-
-<ol>
-  <li><strong>A Survey on Contrastive Self-Supervised Learning</strong>. <em>Ashish Jaiswal, Ashwin Ramesh Babu, Mohammad Zaki Zadeh, Debapriya Banerjee, Fillia Makedon</em>. Technologies 2021. [<a href="https://www.mdpi.com/2227-7080/9/1/2/pdf">paper</a>]</li>
-</ol>
-
-<h3 id="810-multi-task-learning">8.10 Multi-Task Learning</h3>
-
-<ol>
-  <li>
-    <p><strong>Multi-task learning for natural language processing in the 2020s: Where are we going?</strong>
-<em>Joseph Worsham, Jugal Kalita</em>. Pattern Recognition Letters 2020. [<a href="https://arxiv.org/pdf/2007.16008">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>An Overview of Multi-Task Learning in Deep Neural Networks</strong>.
-<em>Sebastian Ruder</em>. arXiv 2017. [<a href="https://arxiv.org/pdf/1706.05098">paper</a>]</p>
-  </li>
-</ol>
-
-<h3 id="811-intepretability-and-analysis">8.11 Intepretability and Analysis</h3>
-
-<ol>
-  <li>
-    <p><strong>On Interpretability of Artificial Neural Networks: A Survey</strong>.
-<em>Feng-Lei Fan, Jinjun Xiong, Mengzhou Li, Ge Wang</em>. TRPMS 2021. [<a href="https://arxiv.org/pdf/2001.02522">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>A Survey of the State of Explainable AI for Natural Language Processing</strong>.
-<em>Marina Danilevsky, Kun Qian, Ranit Aharonov, Yannis Katsis, Ban Kawas, Prithviraj Sen</em>. AACL 2020. [<a href="https://arxiv.org/pdf/2010.00711">paper</a>].</p>
-  </li>
-  <li>
-    <p><strong>Machine Learning Interpretability: A Survey on Methods and Metrics</strong>.
-<em>Diogo V. Carvalho, Eduardo M. Pereira, Jaime S. Cardoso</em>. Electronics 2019. [<a href="https://www.mdpi.com/2079-9292/8/8/832/pdf">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Analysis Methods in Neural Language Processing: A Survey</strong>.
-<em>Yonatan Belinkov, James Glass</em>. TACL 2019. [<a href="https://direct.mit.edu/tacl/article-pdf/doi/10.1162/tacl_a_00254/1923061/tacl_a_00254.pdf">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Teach Me to Explain: A Review of Datasets for Explainable NLP</strong>. 
- <em>Sarah Wiegreffe, Ana Marasović</em>. arXiv 2021. [<a href="https://arxiv.org/pdf/2102.12060">paper</a>]</p>
-  </li>
-</ol>
-
-<h3 id="812-security-threats-and-defense">8.12 Security Threats and Defense</h3>
-
-<ol>
-  <li>
-    <p><strong>Adversarial Attacks on Deep Learning Models in Natural Language Processing: A Survey</strong>. 
-<em>Wei Emma Zhang, Quan Z. Sheng, Ahoud Alhazmi, Chenliang Li</em>. ACM TIST 2020. [<a href="https://dl.acm.org/doi/pdf/10.1145/3374217">paper</a>]</p>
-  </li>
-  <li>
-    <p><strong>Backdoor Learning: A Survey</strong>.
-<em>Yiming Li, Baoyuan Wu, Yong Jiang, Zhifeng Li, Shu-Tao Xia</em>. arXiv 2020. [<a href="https://arxiv.org/pdf/2007.08745.pdf">paper</a>].</p>
-  </li>
-  <li>
-    <p><strong>A Survey of Privacy Attacks in Machine Learning</strong>.
-<em>Maria Rigaki, Sebastian Garcia</em>. arXiv 2020. [<a href="https://arxiv.org/pdf/2007.07646">paper</a>]</p>
-  </li>
-</ol>
-
-<h2 id="9-natural-language-processing-applications">9. Natural language Processing Applications</h2>
-
-<h3 id="91-legal-intelligence">9.1 Legal Intelligence</h3>
-
-<ol>
-  <li><strong>How Does NLP Benefit Legal System: A Summary of Legal Artificial Intelligence</strong>.
-<em>Haoxi Zhong, Chaojun Xiao, Cunchao Tu, Tianyang Zhang, Zhiyuan Liu, Maosong Sun</em>. ACL 2020. [<a href="https://arxiv.org/pdf/2004.12158">paper</a>]</li>
-</ol>
-
-<h3 id="92-bioinformatics">9.2 Bioinformatics</h3>
-
-<ol>
-  <li><strong>Survey of Natural Language Processing Techniques in Bioinformatics</strong>.
-<em>Zhiqiang Zeng, Hua Shi, Yun Wu, Zhiling Hong</em>. CMMM 2015. [<a href="https://pdfs.semanticscholar.org/7013/479be7dda124750aa22fb6231eea2671f630.pdf">paper</a>].</li>
-</ol>
-
-<h3 id="93-financial-intelligence">9.3 Financial Intelligence</h3>
-
-<ol>
-  <li><strong>Natural Language Based Financial Forecasting: A Survey</strong>.
-<em>Frank Z. Xing, Erik Cambria, Roy E. Welsch</em>. AIR 2018. [<a href="https://dspace.mit.edu/bitstream/handle/1721.1/116314/10462_2017_9588_ReferencePDF.pdf?sequence=2&amp;isAllowed=y">paper</a>].</li>
-</ol>
-
-<h3 id="94-recommendation">9.4 Recommendation</h3>
-
-<ol>
-  <li><strong>Knowledge Transfer via Pre-training for Recommendation: A Review and Prospect</strong>.
-<em>Zheni Zeng, Chaojun Xiao, Yuan Yao, Ruobing Xie, Zhiyuan Liu, Fen Lin, Leyu Lin, Maosong Sun</em>. Frontiers in Big Data 2021. [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8013982/">paper</a>].</li>
-</ol>
-
-<h3 id="95-computational-social-science">9.5 Computational Social Science</h3>
-
-<ol>
-  <li><strong>From Symbols to Embeddings: A Tale of Two Representations in Computational Social Science</strong>.
-<em>Huimin Chen, Cheng Yang, Xuanming Zhang, Zhiyuan Liu, Maosong Sun, Jianbin Jin</em>. arXiv 2021. [<a href="https://arxiv.org/pdf/2106.14198">paper</a>].</li>
-</ol>]]></content><author><name>zhao</name></author><category term="NLP" /><category term="nlp" /><category term="paper" /><summary type="html"><![CDATA[0. Surveys of Natural Language Processing]]></summary></entry><entry><title type="html">Triển khai seq2seq với Pytorch</title><link href="https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/" rel="alternate" type="text/html" title="Triển khai seq2seq với Pytorch" /><published>2023-10-06T00:00:00+07:00</published><updated>2023-10-06T00:00:00+07:00</updated><id>https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch</id><content type="html" xml:base="https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/"><![CDATA[<p>Bài viết này giới thiệu cách sử dụng <code class="language-plaintext highlighter-rouge">Pytorch</code> để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc sơ qua bài báo sau trước, <a href="https://arxiv.org/pdf/1406.1078.pdf">Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014)</a>, để hiểu rõ cấu trúc seq2seq hoạt động như thế nào, sau đó đọc bài viết này để đạt được hiệu quả gấp đôi chỉ với một nửa công sức.</p>
+<p>[1] <a href="https://arxiv.org/abs/1706.03762">Attention is All You Need</a></p>]]></content><author><name>zhao</name></author><category term="NLP" /><category term="nlp" /><category term="paper" /><category term="model" /><summary type="html"><![CDATA[Transformer là mô hình seq2seq được Google Brain đề xuất trong một bài báo xuất bản vào cuối năm 2017. Giờ đây, nó đã đạt được nhiều ứng dụng và tiện ích mở rộng và BERT là mô hình ngôn ngữ được đào tạo trước có nguồn gốc từ Transformer.]]></summary></entry><entry><title type="html">Triển khai seq2seq với Pytorch</title><link href="https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/" rel="alternate" type="text/html" title="Triển khai seq2seq với Pytorch" /><published>2023-10-06T00:00:00+07:00</published><updated>2023-10-06T00:00:00+07:00</updated><id>https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch</id><content type="html" xml:base="https://zhaospei.github.io//nlp/2023/10/06/seq2seq-pytorch/"><![CDATA[<p>Bài viết này giới thiệu cách sử dụng <code class="language-plaintext highlighter-rouge">Pytorch</code> để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc sơ qua bài báo sau trước, <a href="https://arxiv.org/pdf/1406.1078.pdf">Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014)</a>, để hiểu rõ cấu trúc seq2seq hoạt động như thế nào, sau đó đọc bài viết này để đạt được hiệu quả gấp đôi chỉ với một nửa công sức.</p>
 
 <p>Tôi đã thấy rất nhiều sơ đồ cấu trúc mạng seq2seq và tôi cảm thấy sơ đồ này do Pytorch cung cấp là dễ hiểu nhất.</p>
 
@@ -1056,36 +528,7 @@ dec_output_all: [6, n_step+1 (because of </span><span class="sh">'</span><span c
 
 <h1 id="tham-khảo">Tham khảo</h1>
 
-<p>[1] <a href="https://www.kaggle.com/code/overvisual/seq2seq-torch?scriptVersionId=145596925">https://www.kaggle.com/code/overvisual/seq2seq-torch?scriptVersionId=145596925</a></p>]]></content><author><name>zhao</name></author><category term="NLP" /><category term="nlp" /><category term="pytorch" /><category term="model" /><summary type="html"><![CDATA[Bài viết này giới thiệu cách sử dụng Pytorch để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc sơ qua bài báo sau trước, Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014), để hiểu rõ cấu trúc seq2seq hoạt động như thế nào, sau đó đọc bài viết này để đạt được hiệu quả gấp đôi chỉ với một nửa công sức.]]></summary></entry><entry><title type="html">[NLP] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</title><link href="https://zhaospei.github.io//nlp/2023/10/05/bert-pretrained-model/" rel="alternate" type="text/html" title="[NLP] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding" /><published>2023-10-05T00:00:00+07:00</published><updated>2023-10-05T00:00:00+07:00</updated><id>https://zhaospei.github.io//nlp/2023/10/05/bert-pretrained-model</id><content type="html" xml:base="https://zhaospei.github.io//nlp/2023/10/05/bert-pretrained-model/"><![CDATA[<p>BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</p>
-
-<h2 id="tiêu-đề">Tiêu đề</h2>
-<p><code class="language-plaintext highlighter-rouge">Pre-training (Đào tạo trước)</code>: Nếu một mô hình được đào tạo trên một tập dữ liệu lớn nhưng mục đích chính là sử dụng cho nhiệm vụ khác (được gọi là <code class="language-plaintext highlighter-rouge">Training</code>), thì nhiệm vụ đào tạo mô hình đó được gọi là <code class="language-plaintext highlighter-rouge">Pre-training</code>.</p>
-
-<p><code class="language-plaintext highlighter-rouge">Deep</code>: rất dễ hiểu, chỉ là sâu thôi.</p>
-
-<p><code class="language-plaintext highlighter-rouge">Bidirectional</code>: nghĩa là có 2 chiều, được giải thích ở cuối bài viết.</p>
-
-<p><code class="language-plaintext highlighter-rouge">Transformers</code>: Mô hình học sâu được thiết kế dùng để phục vụ giải quyết nhiều bài toán trong xử lý ngôn ngữ tự nhiên và tiếng nói. Vui lòng <a href="">xem thêm</a></p>
-
-<p>Tóm lại, mô hình BERT là một mô hình Transfomers sâu 2 chiều, được sử dụng làm mô hình đào tạo trước để hiểu ngôn ngữ.</p>
-
-<h2 id="abstract">Abstract</h2>
-<p>BERT viết tắt của Bidirectional Encoder Representations from Transformers.</p>
-
-<p>Như đã nói ở đoạn đầu, BERT dùng thiết kể để đào tạo sâu, biểu diễn hai chiều, dữ liệu không gán nhãn được sử dụng và thông tin ngữ cảnh song phương trái và phải được kết hợp (Tức context được xác định ở cả hai phía của từ). Do thiết kế tinh tế của BERT, nó chỉ cần thêm một lớp đầu ra bổ sung và thực hiện tinh chỉnh tương ứng, và nó có thể được áp dụng cho nhiểu tác vụ mà không cần thực hiên nhiều sửa đổi đối với các tác vụ cụ thể.</p>
-
-<h2 id="introduction">Introduction</h2>
-<p>Đào tạo trước đã trở nên phổ biến trong NLP. Ví dụ, trong bài toán nhận dạng thực thể có tên (<code class="language-plaintext highlighter-rouge">NER</code>), BERT không phải là mô hình đầu tiên được đề xuất, xét cho cùng chúng ta có thể dùng BERT ứng dụng trong <code class="language-plaintext highlighter-rouge">CV - Compution Vision</code>, nhưng BERT ứng dụng tốt nhất trong các bài toán NLP.</p>
-
-<p>Khi sử dụng mô hình đào tạo trước để biểu diễn đặc trưng cho các tác vụ tiếp theo, thường có hai chiến lược, một chiến lược dựa trên các đặc trưng (<code class="language-plaintext highlighter-rouge">feature-based</code>) và chiến lược còn lại dựa trên tinh chỉnh (<code class="language-plaintext highlighter-rouge">fine-tuning</code>). Cả hai phương pháp đều sử dụng cùng một hàm mục tiêu trong quá trình đào tạo trước, đây là mô hình ngôn ngữ một chiều.</p>
-
-<p>Dựa trên tính năng, cách làm tiêu biểu [ELMo], sử dụng kiến trúc RRN, đối với mỗi tác vụ xuôi dòng, xây dựng mạng thần kinh liên quan đến tác vụ hiện tại, biểu diễn đặc trưng được đào tạo trước, như một tính năng bổ sung, đưa nó vào mạng cùng với đầu vào ban đầu.</p>
-
-<p>Dựa trên sự tinh chỉnh, cách làm tiêu biểu [GPT], giảm tham số cho một tác vụ cụ thể, khi đưa các tham số mô hình được huấn luyện trước vào dữ liệu xuôi dòng, tất cả các thông số sẽ được tinh chinh.</p>
-
-<p>Sau đó tác giả thảo luận về những hạn chế của các phương pháp này, đặc biêt với phương pháp tinh chỉnh, do mô hình ngôn ngữ là một chiều nên có một số hạn chế trong việc lựa chọn kiến trúc. Ví dụ: trong GPT sử dụng kiến trúc từ trái sang phải. Theo cách nói của con người, khi đọc một câu, chúng ta chỉ có thể đọc từ trái sang phải. Trong một số nhiệm vụ, chẳng hạn như đánh giá cảm xúc của một câu (QA), … việc đọc từ phải sang trái hay trái sang phải được hợp pháp. Tác giả tin rằng việc đưa thông tin từ cả hai hướng vào cùng một lúc sẽ giúp nâng cao hiệu quả thực hiện.</p>
-
-<p>(Tiếp tục viết trong tương lai xa…)</p>]]></content><author><name>zhao</name></author><category term="NLP" /><category term="nlp" /><category term="paper" /><category term="model" /><summary type="html"><![CDATA[BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding]]></summary></entry><entry><title type="html">Bọ là gì? Defect, Fault, Error, Bug, Failure?</title><link href="https://zhaospei.github.io//se/2023/07/02/what-is-bug/" rel="alternate" type="text/html" title="Bọ là gì? Defect, Fault, Error, Bug, Failure?" /><published>2023-07-02T00:00:00+07:00</published><updated>2023-07-02T00:00:00+07:00</updated><id>https://zhaospei.github.io//se/2023/07/02/what-is-bug</id><content type="html" xml:base="https://zhaospei.github.io//se/2023/07/02/what-is-bug/"><![CDATA[<h2 id="người-đọc-tự-chịu-trách-nhiệm-về-tính-xác-thực-của-bài-viết">Người đọc tự chịu trách nhiệm về tính xác thực của bài viết.</h2>
+<p>[1] <a href="https://www.kaggle.com/code/overvisual/seq2seq-torch?scriptVersionId=145596925">https://www.kaggle.com/code/overvisual/seq2seq-torch?scriptVersionId=145596925</a></p>]]></content><author><name>zhao</name></author><category term="NLP" /><category term="nlp" /><category term="pytorch" /><category term="model" /><summary type="html"><![CDATA[Bài viết này giới thiệu cách sử dụng Pytorch để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc sơ qua bài báo sau trước, Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014), để hiểu rõ cấu trúc seq2seq hoạt động như thế nào, sau đó đọc bài viết này để đạt được hiệu quả gấp đôi chỉ với một nửa công sức.]]></summary></entry><entry><title type="html">Bọ là gì? Defect, Fault, Error, Bug, Failure?</title><link href="https://zhaospei.github.io//se/2023/07/02/what-is-bug/" rel="alternate" type="text/html" title="Bọ là gì? Defect, Fault, Error, Bug, Failure?" /><published>2023-07-02T00:00:00+07:00</published><updated>2023-07-02T00:00:00+07:00</updated><id>https://zhaospei.github.io//se/2023/07/02/what-is-bug</id><content type="html" xml:base="https://zhaospei.github.io//se/2023/07/02/what-is-bug/"><![CDATA[<h2 id="người-đọc-tự-chịu-trách-nhiệm-về-tính-xác-thực-của-bài-viết">Người đọc tự chịu trách nhiệm về tính xác thực của bài viết.</h2>
 
 <h1 id="context">Context</h1>
 <p>Chuyện là tuần vừa rồi tôi tham gia lab nghiên cứu ở trường và được giao đọc một bài báo khoa học. Nếu không nhầm thì mục đích của thầy khi bảo tôi đọc bài báo này là nắm được sơ qua “context” nghiên cứu của nhóm đang thực hiện.</p>
@@ -2011,4 +1454,455 @@ Thường trong thực tế, các công ty thường sinh test kiểu này: Kế
 
 <p>Sự thành công sớm của ANN đã khiến nhiều người tin rằng họ sẽ sớm được nói chuyện với những cố máy thực sự thông minh. Vào thập niên 1960, khi rõ ràng là lời hứa này sẽ không được thực hiện (ít nhất là trong một khoảng thời gian dài), các nguồn tài trợ được chuyển sang lĩnh vực khác, và ANN bước vào một mùa đông dài. Vào thập niên 1980, các kiến trúc mới được phát minh và các kỹ thuật huấn luyện tốt hơn được phát triển, giúp cho <em>thuyết kết nối (connectionism - ngành nghiên cứu về mạng nơ-ron)</em> bắt đầu được quan tâm trở lại. Tuy nhiên, tiến độ trong ngành này khá chậm, vào vào thập niên 1990, các kỹ thuật Học Máy mạnh mẽ khác đã được phát minh, ví dụ <em>Máy Vector Hỗ trợ</em>,… Có vẻ những kỹ thuật này đem lại kết quả tốt hơn và nền tảng lý thuyết vững chắc hơn so với ANN, nên lần nữa việc nghiên cứu ANN lại bị trì hoãn.</p>
 
-<p>Giờ đây, khi lượng dữ liệu lớn bùng nổ và sự phát triển vượt bậc về năng lực tính toán từ thập niên 1990, chúng ta lại đang chứng kiến thêm một làn sống quan tâm khác tới ANN. Liệu xu hướng này sẽ lại lụi tàn như trước?</p>]]></content><author><name>zhao</name></author><category term="Deep-Learning" /><category term="Neuron" /><category term="Deep Learning" /><summary type="html"><![CDATA[Con người lấy cảm hứng từ các loài chim để bay, loài sứa biển để điều trị ung thư, da cá mập để làm bề mặt vật liệu chống bám và còn rất nhiều phát minh khác lấy cảm hứng từ thiên nhiên.]]></summary></entry></feed>
+<p>Giờ đây, khi lượng dữ liệu lớn bùng nổ và sự phát triển vượt bậc về năng lực tính toán từ thập niên 1990, chúng ta lại đang chứng kiến thêm một làn sống quan tâm khác tới ANN. Liệu xu hướng này sẽ lại lụi tàn như trước?</p>]]></content><author><name>zhao</name></author><category term="Deep-Learning" /><category term="Neuron" /><category term="Deep Learning" /><summary type="html"><![CDATA[Con người lấy cảm hứng từ các loài chim để bay, loài sứa biển để điều trị ung thư, da cá mập để làm bề mặt vật liệu chống bám và còn rất nhiều phát minh khác lấy cảm hứng từ thiên nhiên.]]></summary></entry><entry><title type="html">Điểm mạnh/yếu công cụ kiểm thử chịu tải tự động k6 với các đối thủ</title><link href="https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter/" rel="alternate" type="text/html" title="Điểm mạnh/yếu công cụ kiểm thử chịu tải tự động k6 với các đối thủ" /><published>2023-05-01T00:00:00+07:00</published><updated>2023-05-01T00:00:00+07:00</updated><id>https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter</id><content type="html" xml:base="https://zhaospei.github.io//testing/2023/05/01/k6-vs-jmeter/"><![CDATA[<p>Các công cụ kiểm thử tải (Load Testing Tool - LTT) đã trở nên rất phổ biến hiện nay, cả miễn phí và có phí, nguồn mở và nguồn đóng, và mỗi công cụ đều có điểm mạnh và yếu của riêng mình.</p>
+
+<p>Một số LTT được nhiều nhà phát triển sử dụng, có thể kể đến công cụ miễn phí như JMeter, Locus, fortio,… hay có tính phí như LoadNinja, Gatling,…  Và Grafana k6 (hay k6) là một trong số ấy.</p>
+
+<p>Được phát triển bới Grafana Labs, k6 là một LTT mã nguồn mở giúp kiểm tra hiệu suất dễ dàng và hiệu quả cho các nhà phát triển. Nó là công cụ mã nguồn mở, hướng đến nhà phát triển và dễ dàng mở rộng. Dù chỉ mới ra đời gần đây, bản release chính thức đầu tiên trên github vào ngày 27/02/2017, nhưng k6 đã nhanh chóng nổi lên trong cộng đồng nhà phát triển bởi hiệu suất và tính dễ sử dụng đáng bất ngờ của nó.  Tính đến thời điểm hiện tại (04/2023), k6 có 20.1k stars, 311 watching và 1.1k forks trên github. Nhờ cộng đồng phát triển hoạt động tích cực, k6 đang phát triển ngày càng lớn mạnh. Kho extensions phong phú, pull request và những bản releases thường xuyên là những lợi ích mà mã nguồn mở của k6 mang lại.</p>
+
+<p>Phần so sánh với các công cụ dưới đây không khẳng định công cụ nào là tốt hơn bởi vì không có điều kiện cụ thể nào để khẳng định công cụ nào là tốt nhất. Mọi thứ đều phụ thuộc vào vấn đề, tình huống mà nhóm phát triển đang gặp phải trả lời bởi các câu hỏi: cái gì (what), như thế nào (how), tại sao (why), khi nào (when) ca kiểm thử được thực hiện. Phần so sánh dưới đây của chúng tôi muốn trả lời ở đây là: “Mỗi công cụ vượt trội trong những tình huống nào?”.</p>
+
+<p>Do hạn chế của bài viết nên tôi lựa chọn công cụ kiểm thử tự động đặc trưng nhất là Jmeter - công cụ kiểm thử ra đời sớm, được sử dụng rộng rãi. Mặc dù vậy, bằng việc so sánh với công cụ JMeter cũng để khát quát toàn bộ những tính năng nổi bật ở k6 và một số hạn chế còn gặp phải của nó.</p>
+
+<p>JMeter[10] là một công cụ kiểm tra tải mã nguồn mở được xây dựng hoàn toàn bằng Java bởi Apache Foundation[11]. Nó được phát hành lần đầu tiên vào năm 1998 và nó đã tạo nên làn sóng vì sự táo bạo của nó trong việc sử dụng các công cụ kiểm tra chịu tải độc quyền nhưng biến nó thành miễn phí và trở nên phổ biến trong cộng đồng hơn. JMeter đã dùng thứ mà người dùng cần trả rất nhiều tiền để có thể sử dụng và phát hành nó công khai và miễn phí cho mọi người sử dụng. Mặc dù tập lệnh (scripts) cũng có thể được mở rộng bằng cách viết mã nhưng phần lớn tập lệnh trong JMeter được thực hiện bằng giao diện người dùng (GUI - Graphical User Interface). Tính đến thời điểm hiện tại (27/04/2023), phiên bản mới nhất của JMeter là 5.4.</p>
+
+<h1 id="1-khi-nào-jmeter-nổi-bật-hơn">1. Khi nào Jmeter nổi bật hơn?</h1>
+
+<h2 id="11-jmeter-có-giao-diện-người-dùng-gui---graphical-user-interface">1.1. Jmeter có giao diện người dùng (GUI - Graphical User Interface)</h2>
+<p>Nếu bạn ở trong tình huống mà mọi người chưa từng thực hiện kiểm tra chịu tải trước đó và cần tìm hiểu một công cụ mới, thì một công cụ điều khiển bằng GUI như JMeter đơn giản là lựa chọn dễ dàng nhất. Tuy nhiên, màn hình kế hoạch kiểm tra (Test Plan) chào đón bạn khi bạn khởi động JMeter lần đầu tiên không cung cấp bất kỳ hướng dẫn nào về cách tạo trình lấy mẫu HTTP. UI là chủ quan ở một mức độ nhất định. Tuy nhiên, chúng tôi cho rằng việc khám phá giao diện người dùng dễ dàng hơn đối với những người không phải là nhà phát triển hơn là một chút sử dụng mã lệnh như k6.</p>
+
+<p>k6 không có GUI được đóng gói trong công cụ, nhưng Trình tạo thử nghiệm k6(k6 Test Builder) có sẵn miễn phí. Đó là một cách để tạo các bài kiểm tra với giao diện GUI và mặc dù được đưa vào đám mây k6 nhưng nó không yêu cầu bất kỳ đăng ký nào để sử dụng. Tuy nhiên, nó không có đầy đủ tính năng như JMeter.</p>
+
+<h2 id="12-jmeter-hỗ-trợ-nhiều-giao-thức-và-tính-năng-vượt-trội">1.2. JMeter hỗ trợ nhiều giao thức và tính năng vượt trội</h2>
+<p>JMeter là công cụ kiểm thử tự động hỗ trợ nhiều giao thức nổi bật có thể kể đến như Web - HTTP, HTTPS (Java, NodeJS, PHP, ASP.NET, …), SOAP / REST Webservices, FTP, Database thông qua JDBC, Mail - SMTP(S), POP3(S) and IMAP(S), TCP, Java Objects, …
+JMeter cũng có hầu hết các tính năng mà bạn sẽ cần cho một bài kiểm tra tải cơ bản và bạn không phải tự mình viết mã cho bất kỳ tính năng nào. Cấu trúc phần tử cha-con của nó có nghĩa là bạn có thể sửa đổi một phần tử cụ thể, chẳng hạn như yêu cầu HTTP hoặc sửa đổi tất cả các yêu cầu HTTP một cách dễ dàng như nhau. Thêm thời gian suy nghĩ cho tất cả các yêu cầu cũng dễ dàng như thêm Đồng hồ bấm giờ ngẫu nhiên thống nhất vào nhóm luồng của bạn và tất cả các yêu cầu trong nhóm đó sẽ kế thừa nó. Với các công cụ kiểm thử chịu tải dựa trên mã lệnh như k6, có thể khó tìm ra những gì có thể thực hiện được nếu không có giao diện người dùng.</p>
+
+<h2 id="13-jmeter-có-cộng-đồng-người-dùng-kinh-nghiệm-với-nhiều-tài-liệu">1.3. JMeter có cộng đồng người dùng kinh nghiệm với nhiều tài liệu</h2>
+<p>JMeter đã xuất hiện từ rất lâu và điều đó giúp nó có được một số điểm mạnh so với các cộng cụ mới ra đời như k6. JMeter đã xuất hiện từ năm 1998, vì vậy tính đến thời điểm này, nó đã có 22 năm để cải thiện và xây dựng cộng đồng người sử dụng. JMeter hiện diện trên gần như mọi trang mạng cộng đồng và cho dù trường hợp sử dụng JMeter của bạn cụ thể đến đâu, thì rất có thể nó đã được thực hiện trước đó. Tìm kiếm “cách tải bài kiểm tra X bằng JMeter” chắc chắn sẽ mang lại hàng nghìn lượt truy cập và một số video chỉ cho bạn chính xác cách thực hiện.</p>
+
+<p>JMeter’s Component Reference[12]  là bằng chứng về tài liệu mở rộng và toàn diện của JMeter. Mọi phần tử, chức năng và thuộc tính đều được thảo luận chi tiết hơn hầu hết mọi người có thể mong muốn và đó chỉ là tài liệu chính thức trên trang web của Apache. Có hàng nghìn cuốn sách, hướng dẫn và khóa học về JMeter của những người dùng đam mê nó.</p>
+
+<h2 id="14-jmeter-có-thể-thực-hiện-các-kiểm-thử-chịu-tải-phân-tán-với-chi-phí-hợp-lý">1.4. JMeter có thể thực hiện các kiểm thử chịu tải phân tán với chi phí hợp lý</h2>
+<p>Một trong những tính năng tuyệt vời nhất của JMeter là nó cung cấp cho bạn một khung để chạy kiểm thử chịu tải phân tán với nó. Điều này khá đặc biệt đối với một công cụ mã nguồn mở và miễn phí.</p>
+
+<p>Kiểm thử phân tán có nghĩa là tăng lượng tải bạn đang tạo bằng các kiểm thử chịu tải của mình, thường bằng cách tăng số lượng VU và chạy nhiều phiên bản tập lệnh của bạn trên các trình tạo chịu tải khác. JMeter thực hiện điều này bằng cách chỉ định một nút điều khiển và cho phép bạn thiết lập các nút worker. Mỗi nút worker cần có một bản sao của jmeter-server, một tiện ích đi kèm với mọi cài đặt JMeter (trong jmeter/bin).</p>
+
+<p>k6 hỗ trợ chế độ kiểm thử chịu tải phân tán thông qua toán tử Kubernetes: Toán tử k6 cho phép bạn tạo đối tượng tài nguyên tùy chỉnh k6 trong cụm Kubernetes. Tuy nhiên, kiểm thử phân tán thông qua toán tử Kubernetes yêu cầu một mạng ổn định và tốc độ cao để đảm bảo rằng các nút kiểm thử có thể giao tiếp với nhau một cách hiệu quả. Nếu mạng không ổn định hoặc tốc độ mạng chậm, kiểm thử phân tán có thể gặp vấn đề về trễ hoặc thất bại.</p>
+
+<h1 id="2-khi-nào-k6-nổi-bật-hơn">2. Khi nào k6 nổi bật hơn?</h1>
+<h2 id="21-k6-có-thể-bắt-đầu-sử-dụng-nhanh-chóng">2.1. k6 có thể bắt đầu sử dụng nhanh chóng</h2>
+<p>Bản thân JMeter khá dễ cài đặt, nhưng trước khi cài đặt JMeter, bạn cần cài đặt Java. Đặc biệt nếu bạn đang sử dụng Windows, thì người dùng JMeter mới sẽ gặp phải các vấn đề khi thêm các biến môi trường(environment variables) cần thiết để Java hoạt động. Cũng có thể gây nhầm lẫn khi xác định phiên bản Java nào là phiên bản phù hợp. Trong khi đó k6, có thể cài đặt dễ dàng thông qua một một câu lệnh trên terminal hay một gói cài đặt có sẵn.</p>
+
+<p>Đối với JMeter, nơi mọi thứ đều là plugin… kể cả Trình quản lý plugin (Plugin Manager)! Hầu hết người dùng JMeter sẽ tranh luận rằng có một bộ plugin tiêu chuẩn mà bạn nên tải xuống trước khi bắt đầu sử dụng nó. Trong khi đó, tất cả các chức năng này đều có sẵn trong k6 ngay từ đầu.</p>
+
+<h2 id="22-k6-có-thể-tối-đa-hiệu-suất-và-hiệu-quả-của-ca-kiểm-thử">2.2. k6 có thể tối đa hiệu suất và hiệu quả của ca kiểm thử</h2>
+<p>k6 được viết bằng Go và Go được xây dựng có tính hiệu suất. Go là một ngôn ngữ được biên dịch và không cần phải thông dịch, không giống như Java hay Python. Không có lớp phức tạp nào được thêm vào.</p>
+
+<p>Cách đơn giản và phổ biến nhất để công cụ kiểm thử chịu tải tạo VU là chỉ định một VU cho một nhân hoặc luồng (thread) hệ điều hành. Tuy nhiên, mô hình 1 luồng (thread): 1 VU có một lỗ hổng nghiêm trọng: khi VU đang chờ phản hồi hoặc thực hiện hàm sleep(), luồng cũng bị chặn và không thể xử lý công việc khác.</p>
+
+<p>Trong k6, mỗi VU được chạy trên một goroutine chứ không phải một luồng. Điều đó tạo nên sự khác biệt gì? Goroutines có thể được điều khiển bởi Go Scheduler, hoạt động giống như một cảnh sát giao thông. Nó sử dụng lại các luồng nhàn rỗi và phân công công việc một cách thông minh, bằng cách cho phép “đánh cắp công việc” và chuyển giao công việc giữa các luồng. Điều này nghe có quen không? Đây cũng là nguyên tắc mà các bộ cân bằng tải được xây dựng dựa trên: Một màn hình bên ngoài giám sát luồng công việc giúp cải thiện hiệu suất chung. Bản thân Go về bản chất đã cân bằng tải theo cách mà nhiều ngôn ngữ lập trình không có, điều này làm cho nó trở thành nền tảng hoàn hảo cho một công cụ kiểm thử chịu tải.</p>
+
+<p>Việc có thể tận dụng khả năng tối ưu hóa hiệu suất vốn có của Go cũng đồng nghĩa với việc sử dụng bộ nhớ ít hơn đáng kể. Một luồng chạy k6 không vượt quá 100 kb, trong khi một luồng JVM như JMeter sử dụng, chẳng hạn, sử dụng mặc định là 1MB. Đó là hơn 1000% so với k6! Tất nhiên, Java cho phép người dùng điều chỉnh mức sử dụng bộ nhớ của ứng dụng, do đó, sự khác biệt thường không quá rõ ràng, nhưng vẫn thú vị khi lưu ý rằng Go có xuất phát điểm thấp hơn nhiều.</p>
+
+<h2 id="23-lợi-ích-về-hiệu-suất-trong-thực-tế">2.3. Lợi ích về hiệu suất trong thực tế</h2>
+<h3 id="231-k6-cần-ít-load-generator-hơn">2.3.1. k6 cần ít load generator hơn</h3>
+<p>Một load generator là một hệ thống mà chạy nhiều VU theo thứ tự để tạo một load trên hệ thống. Hiệu suất tương đối tốt hơn của k6 nằm ở chỗ nó cần ít load generator hơn để thực hiện một lượng tải nhất định. Kết quả chạy thực tế của hai công cụ kiểm thử k6 và JMeter có sự khác biệt đáng kể. JMeter cần tới 760MB bộ nhớ, trong khi đó, con số này là 256MB bộ nhớ ở k6.</p>
+
+<p>Dung lượng bộ nhớ thấp hơn của k6 là lý do nó có thể chạy nhiều VU hơn và tạo ra nhiều tải hơn mức trung bình. Cho dù bạn đang sử dụng load generator tại chỗ hay trên đám mây, bạn sẽ trả ít chi phí cung cấp hơn khi sử dụng k6. Tiết kiệm chi phí này làm cho k6 trở thành một công cụ tuyệt vời cho các nhóm có ngân sách hạn hẹp.</p>
+
+<h3 id="232-k6-xử-lý-lỗi-tràn-bộ-nhớ-out-of-memory-errors">2.3.2. k6 xử lý lỗi tràn bộ nhớ (Out of memory errors)</h3>
+<p>k6 cũng là lựa chọn tốt khi bạn đang thiếu thời gian để thực hiện ca kiểm thử. Sử dụng JMeter có nghĩa là làm quen với cách điều chỉnh hiệu suất Java và cách khắc phục các sự cố hiệu suất Java phổ biến nhất, bởi vì có một số vấn đề. Cái mà gặp phải nhiều nhất khi sử dụng JMeter là chính là lỗi out of memory errors (Tràn bộ nhớ). Vấn đề này bạn sẽ không bao giờ gặp phải khi sử dụng k6.</p>
+
+<h3 id="233-không-có-gui-có-nghĩa-là-không-cần-thêm-chi-phí-tài-nguyên-trong-quá-trình-kiểm-thử-chịu-tải">2.3.3. Không có GUI có nghĩa là không cần thêm chi phí tài nguyên trong quá trình kiểm thử chịu tải</h3>
+<p>GUI thường bổ sung thêm chi phí đáng kể cho một ứng dụng, đó là một trong những lý do tại sao k6 không có. Khi bạn đang chạy kiểm tra tải, cách tốt nhất vẫn là chạy nó từ dòng lệnh, vì nếu không, nó sẽ ảnh hưởng đến kết quả của bạn. Các công cụ kiểm thử chịu tải thực hiện trên dòng lệnh có hiệu suất ngay từ đầu.</p>
+
+<p>JMeter có rất nhiều cảnh báo về ảnh hưởng của GUI đối với hiệu suất. Đây là một từ “tài liệu JMeter”: Don’t run load test using GUI mode ! (Không chạy kiểm thử chịu tải sử dụng chế độ GUI) và đây là thông báo xuất hiện khi chạy JMeter.</p>
+
+<p>Không có GUI nghĩa là có ít vấn đề hơn. Bất kỳ tập lệnh kiểm thử chịu tải nào bạn tạo trong k6 đều sẵn sàng để thực thi vào thời gian hợp lý nhất bất cứ khi nào bạn sẵn sàng.</p>
+
+<h2 id="24-k6-có-thể-thực-hiện-kiểm-thử-hướng-mục-tiêu-goal-oriented-testing">2.4. k6 có thể thực hiện kiểm thử hướng mục tiêu (goal-oriented testing)</h2>
+<p>Câu hỏi quan trọng nhất mà người kiểm thử chịu tải có thể đặt ra khi bắt đầu một dự án kiểm thử chịu tải mới là “Tại sao”? Các kế hoạch kiểm tra nên được thiết lập để giải quyết trực tiếp các lý do của nhóm muốn thực hiện kiểm tra chịu tải và điều đó phải được phản ánh trong các yêu cầu phi chức năng. Các yêu cầu phi chức năng sẽ đưa ra một số điều khiển về các giới hạn của hiệu suất có thể chấp nhận được. Một ví dụ phổ biến cho các giới hạn hoặc ngưỡng này là thời gian phản hồi trung bình dưới 3 giây cho tất cả các giao dịch trong quá trình thử nghiệm. k6 thực hiện điều này một cách tự nhiên với các ngưỡng cục bộ được đưa vào tập lệnh và bạn cũng có thể tạo chỉ số của riêng mình để sử dụng trong một ngưỡng. JMeter vốn không hỗ trợ các ngưỡng ở cấp độ thử nghiệm. Chúng ta phải sử dụng một số công cụ bổ sung để thực hiện công việc này như Timers, Duration Assertion, Performance Plugin,..</p>
+
+<p>Vấn đề là mặc dù các tùy chọn này có thể thiết lập ngưỡng trong JMeter, nhưng chúng vẫn là giải pháp thay thế không đi kèm với JMeter hoặc không giải quyết thỏa đáng việc tạo các loại ngưỡng khác nhau (lỗi, thời gian phản hồi, thông lượng, CPU, bộ nhớ). Cuối cùng, mọi người thường làm là xuất dữ liệu thô từ JMeter và tự mình thực hiện phân tích bằng một công cụ khác.</p>
+
+<p>Ngoài ra, k6 còn có một số tính năng nổi bật khác như dễ dàng hợp tác giữa người phát triển và người kiểm thử. Đây là ý tưởng ban đầu xây dựng nên công cụ kiểm thử này đã được chúng tôi phân tích trong phần ý tưởng nên tôi không phân tích rõ ở đây nữa. K6 sử dụng các tập lệnh của bạn là mã thuần túy giúp giảm bớt sự mơ hồ ở chỗ bạn không bị giới hạn bởi thiết kế giao diện người dùng kém hoặc lỗi trong các phần bổ trợ của bên thứ ba.</p>
+
+<p>Tóm lại, qua một phép so sánh cơ bản với công cụ kiểm thử lâu đời như JMeter, chúng tôi rút ra một số trường hợp mà k6 thực hiện tốt và một số hạn chế của nó.</p>
+
+<p>Cụ thể, k6 phù hợp cho:</p>
+
+<ul>
+  <li>Việc hợp tác giữa các thành viên trong bộ phận phát triển phần mềm giúp cho ca kiểm thử chất lượng và bao hàm được nhiều thành phần hơn khi tất cả các thành viên cùng xây dựng bối cảnh kiểm thử.</li>
+  <li>Những người đang tìm kiếm một công cụ kiểm thử chịu tải nhẹ, đơn giản mà vẫn đầy đủ các tính năng<br />
+Các nhóm đang tìm cách tích hợp thử nghiệm vào quy trình phát triển hiện có và quy trình CI/CD (Continuous Integration và Continuous Delivery/Deployment - quy trình kiểu mới, kết hợp tự động hoá giúp đẩy nhanh tiến độ phát triển sản phẩm và đưa sản phẩm đến người dùng cuối cùng)</li>
+  <li>Đây là một công cụ mã nguồn mở, miễn phí vì vậy giúp cho đội ngũ phát triển của bạn không cần bận tâm nhiều đến các vấn đề pháp lý của phần mềm và việc mã nguồn mở nên k6 được cộng đồng người dùng đóng góp sửa đổi thường xuyên, giúp phần mềm ngày càng phát triển hoàn thiện.</li>
+</ul>
+
+<p>Và hạn chế trong một số trường hợp kể đến như:</p>
+
+<ul>
+  <li>Không có phân tích kết quả chi tiết. Người dùng cần tích hợp kết quả với cơ sở dữ liệu và phần mềm trực quan hoá dữ liệu.</li>
+  <li>Không phù hợp với các nhóm kiểm thử truyền thống khi mà các nhóm này thường sử dụng các phần mềm kiểm thử có GUI trong khi k6 lại không hỗ trợ vấn đề này.</li>
+  <li>K6 là một công cụ mới được phát hiện nên cộng đồng chưa được rộng lớn, phát triển như các công cụ kiểm thử lâu đời và không hỗ trợ chuyển giao với công cụ thương mại khác như LoadRunner hay NeoLoad.</li>
+</ul>
+
+<p>Các công cụ kiểm thử chịu tải bằng dòng lệnh không phải là yếu tố quan trọng nhất để cân nhắc thành công của kiểm tra tải. Biết lý do tại sao bạn đang kiểm thử, các yêu cầu là gì, hiểu và truyền đạt kết quả đều quan trọng hơn. Công cụ phù hợp sẽ cho phép bạn giải quyết những lo ngại đó trong khi cung cấp càng ít xung đột càng tốt. Không có công cụ “tốt nhất” rõ ràng; chỉ có công cụ phù hợp cho dự án và bối cảnh của bạn.</p>
+
+<h1 id="tài-liệu-liên-quan">Tài liệu liên quan</h1>
+<ul>
+  <li>[1] Phạm Ngọc Hùng, Trương Anh Hoàng, Đặng Văn Hưng. <em>Giáo trình kiểm thử phần mềm</em>, 2014.</li>
+  <li>[2] <em>k6 Documentation</em> <a href="https://k6.io/docs/">https://k6.io/docs/</a></li>
+  <li>[3] <em>Comparing k6 and</em> JMeter for load testing <a href="https://k6.io/blog/k6-vs-jmeter/">https://k6.io/blog/k6-vs-jmeter/</a></li>
+  <li>[4] <em>Jmeter</em> <a href="https://jmeter.apache.org/">https://jmeter.apache.org/</a></li>
+  <li>[5] <em>Apace Foundation</em> <a href="https://www.apache.org/">https://www.apache.org/</a></li>
+  <li>[6] <em>JMeter’s Component Reference</em> <a href="https://jmeter.apache.org/usermanual/component_reference.html">https://jmeter.apache.org/usermanual/component_reference.html</a></li>
+</ul>]]></content><author><name>zhao</name></author><category term="Testing" /><category term="k6" /><category term="jmeter" /><category term="testing" /><summary type="html"><![CDATA[Các công cụ kiểm thử tải (Load Testing Tool - LTT) đã trở nên rất phổ biến hiện nay, cả miễn phí và có phí, nguồn mở và nguồn đóng, và mỗi công cụ đều có điểm mạnh và yếu của riêng mình.]]></summary></entry><entry><title type="html">Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)</title><link href="https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/" rel="alternate" type="text/html" title="Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)" /><published>2023-03-25T00:00:00+07:00</published><updated>2023-03-25T00:00:00+07:00</updated><id>https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing</id><content type="html" xml:base="https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/"><![CDATA[<p>Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp
+(Pairwise Testing hay All-Pairs Testing).</p>
+
+<h1 id="định-nghĩa-thế-nào-là-all-pairs-testing">Định nghĩa: Thế nào là All-Pairs Testing?</h1>
+
+<p>Theo <strong>ISTQB</strong>, <strong>All-Pairs Testing (hay Pairwise Testing)</strong> là một kỹ thuật kiểm thử hộp đen trong đó các test cases được thiết kế để thực hiện tất cả các tổ hợp có thể có của từng cặp tham số đầu vào. Tức là với mỗi cặp input đầu vào, tất cả các giá trị của cặp input đấy được phủ toàn bộ (Một test case có thể phủ được nhiều cặp input khác nhau).</p>
+
+<p>Kỹ thuật <strong>All-Pairs</strong> rất hữu ích để thiết kế các bài kiểm tra cho các ứng dụng liên quan đến nhiều tham số. Các thử nghiệm được thiết kế sao cho đối với mỗi cặp tham số đầu vào của một hệ thống, có tất cả các tổ hợp riêng biệt có thể có của các tham số đó. Do bộ thử nghiệm bao gồm tất cả các tổ hợp nên nó không toàn diện nhưng rất hiệu quả trong việc tìm lỗi.</p>
+
+<p>Kiểm thử <strong>All-Pairs</strong> được áp dụng phổ biến trong công nghiệp khi mà một số vấn đề chỉ được xảy ra bởi sự tương tác giữa các tham số đầu vào hoặc components. Kiểm thử <strong>All-Pairs</strong> có thể tìm được đến <strong>50 - 90%</strong> lỗi của phần mềm, hệ thống.</p>
+
+<h1 id="số-test-cases-cần-sinh-cho-all-pairs-testing">Số test cases cần sinh cho All-Pairs Testing</h1>
+<p>Ta có công thức tính số lượng test cases cần sinh như sau:</p>
+
+<p><strong>Số lượng test case = Số lượng miền giá trị lớn nhất của các biến * Số lượng miền giá trị lớn nhất của các biến</strong></p>
+
+<p>Chứng minh tính đúng đắn của công thức:</p>
+
+<h1 id="cách-sinh-test-cho-all-pairs-testing">Cách sinh test cho All-Pairs Testing</h1>
+
+<p>Chúng ta sẽ lấy ví dụ cho <strong>Ứng dụng giao dịch xe</strong> với các yêu cầu sau:</p>
+
+<ul>
+  <li>Ứng dụng giao dịch xe cho phép Mua và Bán xe.</li>
+  <li>Nó sẽ hỗ trợ giao dịch ở Delhi và Mumbai.</li>
+  <li>Ứng dụng phải có số đăng ký có thể hợp lệ hoặc không hợp lệ.</li>
+  <li>Nó sẽ cho phép giao dịch với các hãng xe: BMW, Audi và Mercedes.</li>
+  <li>Có thể thực hiện hai loại booking: E-booking và In-store.</li>
+  <li>Chỉ có thể đặt xe trong giờ giao dịch.</li>
+</ul>
+
+<p>Chúng ta sẽ thực hiện việc sinh test cho ca kiểm thử <strong>All-Pairs</strong> lần lượt theo các bước sau:</p>
+
+<h3 id="bước-1-liệt-kê-các-giá-trị-của-các-tham-số-đầu-vào">Bước 1: Liệt kê các giá trị của các tham số đầu vào.</h3>
+
+<p>Chúng ta có thể dễ dàng liêt kê các giá trị có thể có của các tham số đầu vào của ứng dụng như sau:</p>
+
+<ul>
+  <li><strong>Loại giao dịch</strong>: Mua, Bán.</li>
+  <li><strong>Vị trí</strong>: Delhi, Mumbai.</li>
+  <li><strong>Hãng xe</strong>: BMW, Audi, Mercedes.</li>
+  <li><strong>Số đăng ký xe</strong>: Valid (5000 giá trị), Invalid</li>
+  <li><strong>Cách thức giao dịch</strong>: E-Booking, In-store</li>
+  <li><strong>Thời gian giao dịch</strong>: Thời gian trong giờ làm việc, Thời gian ngoài giờ làm việc</li>
+</ul>
+
+<p>Nếu chúng ta sinh test cases cho toàn bộ các tổ hợp hợp lệ thì sẽ có đến:</p>
+<ul>
+  <li>2 . 2 . 3 . 5000 . 2 . 2 = <strong>24000</strong> test cases tổ hợp hợp lệ.</li>
+</ul>
+
+<p>Chưa kể chúng ta còn chưa tính đến các test cases không hợp lệ trong quá trình sinh test.</p>
+
+<h3 id="bước-2-đơn-giản-hóa-việc-sinh-test-cases-simplify">Bước 2: Đơn giản hóa việc sinh test cases (Simplify)</h3>
+<p>Chúng ta sẽ đơn giản việc sinh các test cases theo các cách:</p>
+<ul>
+  <li>Sử dụng một cách lẫy mẫu thông minh</li>
+  <li>Sử dụng các nhóm hay ranh giới, ngay cả khi dữ liệu không rời rạc.</li>
+</ul>
+
+<p>Theo đó chúng ta có thể giảm số đăng ký xuống còn hai loại: Valid và Invaild.</p>
+
+<p>Bây giờ, số test cases chúng ta sẽ phải sinh sẽ còn lại:</p>
+<ul>
+  <li>2 . 2 . 3 . 2 . 2 . 2  = <strong>96</strong> test cases.</li>
+</ul>
+
+<p>Woa Woa Woa! Chúng ta đã giảm số lượng các test case cần phải sinh một số rất lớn rồi đúng không? Nhưng đây vẫn chưa phải các sinh hợp lí để cho số lượng test cases nhỏ nhất có thể. Tiếp tục nào!</p>
+
+<h3 id="bước-3-sắp-xếp-các-biến-theo-miền-giá-trị">Bước 3: Sắp xếp các biến theo miền giá trị</h3>
+
+<p>Chúng ta tiến hành sắp xếp các biến theo thứ tự giảm dần số lượng miền giá trị: Tức biến có nhiều miền giá trị nhất sẽ được xếp đầu tiên  và biến có ít miền giá trị nhất được xếp cuối cùng. Sau khi sắp xếp, chúng ta sẽ có một bảng trông như thế này đây.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hãng xe</th>
+      <th>Loại giao dịch</th>
+      <th>Vị trí</th>
+      <th>Số đăng ký xe</th>
+      <th>Cách thức giao dịch</th>
+      <th>Thời gian giao dịch</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="bước-4-sắp-xếp-các-miền-giá-trị-của-các-biến-để-tạo-bộ-kiểm-thử">Bước 4: Sắp xếp các miền giá trị của các biến để tạo bộ kiểm thử</h3>
+
+<p>Chúng ta sẽ lần lượt điền giá trị của bảng trống đã tạo phía trên theo từng cột một.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hãng xe</th>
+      <th>Loại giao dịch</th>
+      <th>Vị trí</th>
+      <th>Số đăng ký xe</th>
+      <th>Cách thức giao dịch</th>
+      <th>Thời gian giao dịch</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>BMW</td>
+      <td>Mua</td>
+      <td>Delhi</td>
+      <td>Valid</td>
+      <td>E-booking</td>
+      <td>Trong giờ</td>
+    </tr>
+    <tr>
+      <td>Audi</td>
+      <td>Bán</td>
+      <td>Mumbai</td>
+      <td>Invalid</td>
+      <td>In-store</td>
+      <td>Ngoài giờ</td>
+    </tr>
+    <tr>
+      <td>Mercedes</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>]]></content><author><name>zhao</name></author><category term="Testing" /><category term="pairwise" /><category term="all-pairs" /><category term="testing" /><summary type="html"><![CDATA[Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp (Pairwise Testing hay All-Pairs Testing).]]></summary></entry><entry><title type="html">Một số mô hình phát triển phần mềm (Phần 1)</title><link href="https://zhaospei.github.io//se/2023/02/27/software-models-chapter-1/" rel="alternate" type="text/html" title="Một số mô hình phát triển phần mềm (Phần 1)" /><published>2023-02-27T00:00:00+07:00</published><updated>2023-02-27T00:00:00+07:00</updated><id>https://zhaospei.github.io//se/2023/02/27/software-models-chapter-1</id><content type="html" xml:base="https://zhaospei.github.io//se/2023/02/27/software-models-chapter-1/"><![CDATA[<p>Mô hình phát triển phần mềm là thể hiện trừu tượng của các tiến trình phát triển phần mềm. Nó xác định các pha/ giai đoạn trong phát triển phần mềm.</p>
+
+<p>Trong các dự án phát triển phần mềm, mô hình đóng vai trò rất quan trọng. Mô hình đóng vai trò là hướng đi và quyết định đến chất lượng đầu ra của sản phẩm.</p>
+
+<p>Có nhiều loại mô hình phát triển phần mềm khác nhau như:</p>
+<ul>
+  <li>Mô hình thác nước</li>
+  <li>Mô hình xoắn ốc</li>
+  <li>Mô hình tăng trưởng</li>
+  <li>Mô hình Scrum
+…</li>
+</ul>
+
+<p>Trong bài viết này, tôi sẽ mô tả và phân tích chi tiết bốn loại mô hình phát triển phần mềm cơ bản nhất bao gồm: Mô hình thác nước (Waterfall model), Mô hình chữ V (V-Shaped Model), Bản mẫu và Mô hình xoắn ốc.</p>
+
+<h1 id="1-mô-hình-thác-nước">1. Mô hình thác nước</h1>
+<p>Mô hình thác nước được xem là mô hình đầu tiên được giới thiệu. Đây là mô hình SDLC (Software Development Life Cycle) lâu đời với đơn giản nhất. Mô hình thác nước là mô hình điển hình cho phát triển phần mềm đảm bảo bảo tốt.</p>
+
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/waterfall-model.png" alt="Mô hình thác nước" style="margin: auto;" />
+    <figcaption style="font-style: italic;">Mô hình thác nước</figcaption>
+</figure>
+
+<h2 id="a-đặc-điểm">a. Đặc điểm</h2>
+<p>Trong mô hình thác nước, toàn bộ quá trình phát triển phần mềm được chia thành các giai đoạn riêng biệt. Trong mô hình thác nước, thông thường, kết quả của một pha/ giai đoạn đóng vai trò là đầu vào cho pha/ giai đoạn tiếp theo.</p>
+
+<p>Đặc điểm quan trọng nhất của mô hình thác nước là phát triển tuần tự tuyến tính (Vì vậy, nó còn có tên gọi khác là linear - sequential life cycle model). Tức trong mô hình thác nước, giai đoạn tiếp theo chỉ được bắt đầu sau khi các mục tiêu đã được xác định của giai đoạn trước được hoàn thành. Trong mô hình này, các giai đoạn phát triển một cách độc lập mà không xếp chồng lẫn nhau.</p>
+
+<p>Tuy nhiên, trong thực tế việc thực hiện tốt một pha không phải dễ và việc xảy ra vấn đề ở là điều hiển nhiên. Vậy nếu trong quá trình phát triển gặp vấn đề có liên quan đến giai đoạn đã hoàn thành trước đó thì phải giải quyết như nào? Câu trả lời là chúng ta vẫn có thể quay lại giai đoạn trước đó sau khi đã thực hiện xong giai đoạn đấy. Tuy nhiên, sau khi quay lại, chúng ta vẫn phải tuân theo tính tuần tự của model.</p>
+
+<h3 id="các-giai-đoạn-tuần-tự-trong-mô-hình-thác-nước">Các giai đoạn tuần tự trong mô hình thác nước</h3>
+<ul>
+  <li><strong>Thu thập và phân tích yêu cầu</strong>: Tất cả mọi yêu cầu có thể của hệ thống được xác định trong giai đoạn này và được ghi lại đầy đủ trong tài liệu đặc tả yêu cầu.</li>
+  <li><strong>Thiết kế</strong>: Các thông số kỹ thuật trong giai đoạn đầu tiên được nghiên cứu trong giai đoạn này. Thiết kế giúp ta xác định những yêu cầu về phần cứng hệ thống, giúp ta xác định được kiến thức tổng thể của hệ thống.</li>
+  <li><strong>Triển khai và kiểm thử đơn vị:</strong> Với số liệu đầu vào từ giai đoạn thiết kế, chúng ta phát triển các chương trình nhỏ gọi là Unit, sẽ được tích hợp trong giai đoạn tiếp theo. Mỗi đơn vị được triển khai và kiểm thử chức năng của nó được gọi là Unit Testing.</li>
+  <li><strong>Tích hợp và kiểm thử hệ thống:</strong> Tất cả các đơn vị được thực hiện trong giai đoạn trước được tích hợp vào một hệ thống xác định. Sau khi tích hợp, toàn bộ hệ thống sẽ được kiểm tra chức năng và phi chức năng.</li>
+  <li><strong>Vận hành và bảo trì:</strong>  Sản phẩm được triển khai trong môi trường của khách hàng hoặc được tung ra thị trường. Có thể có một số lỗi xảy ra trong môi trường của khách hàng, bảo trì được thực hiện để khắc phục những vấn đề trong môi trường khách hàng. Hoặc khi cần nâng cấp sản phẩm, thêm tính năng mới, bảo trì sẽ được sẽ được thực hiện.</li>
+</ul>
+
+<h2 id="b-ưu-nhược-điểm">b. Ưu, nhược điểm</h2>
+<p>Mô hình thác nước được thực hiện tuần tự tuyến tính, do vậy ưu điểm lớn nhất của nó là đơn giản, dễ dàng để học và thực hiện. Mô hình đảm bảo chất lượng cao cho sản phẩm.</p>
+
+<p>Mỗi pha của mô hình được thực hiện khi pha trước đấy đã được hoàn thiện. Vì vậy, cần làm mỗi pha phải tốt, chất lượng, khi đó mới thực hiện pha tiếp theo do nếu xảy ra lỗi việc quay lại pha trước đáy sẽ mất rất nhiều thời gian.</p>
+
+<p>Do đó, công việc thực thiện của người phát triển nhiều hơn. Mỗi giai đoạn không chỉ thực thi mà còn viết docs và giảng giải cho những người giai đoạn tiếp theo. Dẫn đến người phát triển cần bỏ ra nhiều thời gian hơn làm cho sản phẩm thực hiện theo mô hình này thường thực hiện lâu, chi phí cao.</p>
+
+<p>Đây là nhược điểm rõ ràng nhất của mô hình này. Bù lại, sản phẩm sẽ đảm bảo chất lượng cao do mỗi pha được thực hiện một cách hoàn chỉnh, đầy đủ, chính xác.</p>
+
+<p>Chính vì vậy, mô hình thác nước chỉ phù hợp với các dự án vừa và nhỏ do những dự án này có thể xác định rõ yêu cầu từ đầu. Ngược lại, đối với những dự án lớn, việc xác định yêu cầu rõ ràng từ ban đầu là rất khó. Ngoài ra, việc làm tuần tự với dự án lớn là rất tốn thời gian khi mà khách hàng luôn mong muốn có sản phẩm chất lượng càng sớm càng tốt.</p>
+
+<p>Mô hình thác nước là mô hình đầu tiên, mọi mô hình cơ bản hiện nay đều xuất phát, phát triển từ mô hình thác nước.</p>
+
+<h1 id="2-mô-hình-chữ-v">2. Mô hình chữ V</h1>
+<p>Chất lượng kiểm thử phần mềm được đánh giá qua bộ test kiểm thử và quá trình thực hiện kiểm thử. Do vậy, chất lượng của bộ test kiểm thử là rất quan trọng. Tuy nhiên, mô hình thác nước đến giai đoạn kiểm thử mới được sinh test. Việc sinh test của mô hình thác nước khiến cho khả năng phát hiện ra lỗi của bộ test rất là thấp, dẫn đến việc kiểm thử, đánh giá chất lượng phần mềm không khách quan, chính xác. Và mô hình chữ V đã được cải tiến từ thác nước để giải quyết vấn đề sinh test muộn từ mô hình thấy nước.</p>
+
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/v-model.png" alt="Mô hình chữ V" style="margin: auto;" />
+    <figcaption style="font-style: italic;">Mô hình chữ V</figcaption>
+</figure>
+
+<h2 id="a-đặc-điểm-1">a. Đặc điểm</h2>
+<p>Cũng giống như mô hình thác nước, các giai đoạn trong mô hình chữ V được thực hiện một cách tuần tự theo hình chữ V. Tuy nhiên, cải tiến của mô hình chữ V đến từ việc sinh bộ test kiểm thử sớm bằng cách tích hợp liên kết giai đoạn kiểm thử cho từng giai đoạn phát triển tương ứng. Có nghĩa là, đối với mỗi giai đoạn trong chu kỳ phát triển sẽ có giai đoạn kiểm thử tương ứng. Mỗi giai đoạn bên trái model sẽ sinh bộ test cho giai đoạn kiểm thử bên phải của model:</p>
+<ul>
+  <li>Giai đoạn phân tích đặc tả yêu cầu sinh bộ test cho giai đoạn kiểm thử hệ thống, giai đoạn kiểm thử chấp nhận</li>
+  <li>Giai đoạn thiết kế sinh bộ test cho giai đoạn kiểm thử tích hợp.</li>
+  <li>Quá trình implementing thực hiện luôn giai đoạn kiểm thử unit.</li>
+</ul>
+
+<h2 id="b-ưu-nhược-điểm-1">b. Ưu, nhược điểm</h2>
+<p>Do V Model kế thừa hầu hết từ Waterfall Model nên mọi ưu, nhược điểm đa số đều giống Waterfall Model. Tuy nhiên, ưu điểm nổi bật nhất so với Waterfall Model là giai đoạn kiểm thử được thực hiện ngay từ đầu qua công việc sinh bộ test sớm cho giai đoạn kiểm thử tương ứng nên bộ test trong V Model chính xác hơn. Nhờ vậy, việc kiểm thử được thực hiện nhanh chóng, chính xác và đánh giá phần mềm một cách khách quan nhất.</p>
+
+<h1 id="3-bản-mẫu">3. Bản mẫu</h1>
+<p>Đặc điểm của mô hình thác nước là cần xác định rõ yêu cầu từ đầu. Nhưng trong thực tế rất ít dự án xác định được rõ yêu cầu từ đầu. Vậy cần phải làm sao? Bản mẫu chính là giải pháp giải quyết vấn đề này.</p>
+
+<h2 id="a-đặc-điểm-2">a. Đặc điểm</h2>
+<p>Bản mẫu là mô hình phát triển phần mềm được phát triển dựa trên các yêu cầu của hệ thống. Dựa vào bản mẫu, khách hàng có cái nhìn tổng quan về hệ thống thực tế.</p>
+
+<p>Bản mẫu cho phép hiểu các yêu cầu của khách hàng ở giai đoạn phát triển ban đầu ngay cả những yêu cầu khó xác định. Nhờ nhận được những phản hồi có giá trị từ khách hàng, từ đó giúp các nhà thiết kế và phát triển phần mềm hiểu chính xác những gì được mong đợi từ sản phẩm đang được phát triển.</p>
+
+<p>Chúng ta cần dồn chi phí và nguồn lực nhiều cho làm bản mẫu, dẫn tới các công đoạn còn lại sẽ thiếu thời gian và chi phí, … Kết quả là chất lượng sản phẩm nhất là tài liệu và chất lượng code dễ có vấn đề. Ngoài ra, việc chú trọng đến bản mẫu (thường cho yêu cầu chức năng) dẫn đến dễ bỏ qua các yêu cầu phi chức năng và đa số các dự án không đạt các yêu cầu phi chức năng. Chính vì vậy, thực tế nó không được dùng phổ biến như một mô hình phát triển phần mềm. Tuy nhiên, tư tưởng của bản mẫu rất quan trọng. Nó là mấu chốt để chúng ta lôi kéo khách hàng, giải quyết những yêu cầu không được rõ ràng. Do đó, người ta thường dùng bản mẫu như là một phương pháp thu thập yêu cầu cho các mô hình khác. 
+Bây giờ, người ta dùng bản mẫu như là một kỹ thuật thu thập yêu cầu.</p>
+
+<h2 id="b-ưu-nhược-điểm-2">b. Ưu, nhược điểm</h2>
+<p>Ưu điểm lớn nhất của bản mẫu giúp ta giải quyết việc xác định các yêu cầu khó của mô hình thác nước. Nhờ bản mẫu, việc xác định yêu cầu được diễn ra thuận chính xác nhờ đó việc thực hiện phần mềm dựa trên mô hình thác nước được diễn ra một cách thuận lợi. 
+Bù lại, chúng ta cần chi phí cao khi sử dụng bản mẫu do cần nhiều nguồn lực cho việc làm bản mẫu. Ngoài ra, sự tham gia của khách hàng vào bản mẫu là rất quan trọng.</p>
+
+<p>Tuy nhiên trong thực tế, việc nhiệt tình tham gia của khách hàng là khó, dẫn tới xây dựng bản mẫu khó chính xác. Từ đó, yêu cầu xác định không được rõ ràng.</p>
+
+<p>Mặc dù vậy, chúng ta vẫn có cách làm được nhưng không phải là điều dễ dàng.</p>
+
+<h1 id="4-xoắn-ốc">4. Xoắn ốc</h1>
+<p>Mô hình thác nước, chữ V chỉ phù hợp các dự án vừa và nhỏ, những dự án được xác định rõ yêu cầu từ đầu. Việc xác định những yêu cầu khó, phức tạp đã được giải quyết nhờ bản mẫu. Tuy nhiên, trong thực tế, đa số có dự án đều lớn, phức tạp. Vậy với các dự án lớn thì giải quyết như nào? Mô hình xoắn ốc là một lựa chọn mô hình để thực hiện các dự án lớn, phức tạp.</p>
+
+<figure class="image" style="text-align: center;">
+    <img src="/assets/media/post/xoan-oc.png" alt="Mô hình xoắn ốc" style="margin: auto;" />
+    <figcaption style="font-style: italic;">Mô hình xoắn ốc</figcaption>
+</figure>
+
+<h2 id="a-đặc-điểm-3">a. Đặc điểm</h2>
+
+<p>Mô hình xoắn ốc là mô hình phát triển phần mềm kết hợp ý tưởng phát triển lặp đi lặp lại với các giai đoạn có hệ thống, được kiểm soát của mô hình thác nước.</p>
+
+<p>Mô hình xoắn ốc này là sự kết hợp giữa mô hình quy trình phát triển lặp và mô hình phát triển tuyến tính tuần tự, tức là mô hình thác nước với sự nhấn mạnh rất cao vào phân tích rủi ro. Nó cho phép phát hành sản phẩm qua mỗi lần lặp xung quanh hình xoắn ốc.
+Thực chất, mô hình xoắn ốc được kết hợp từ mô hình thác nước sử dụng bản mẫu để giải quyết những yêu cầu khó. Ngoài ra nó còn có quá trình phân tích rủi ro của dự án.</p>
+
+<p>Mô hình xoắn ốc là quy trình phát triển định hướng rủi ro cho các dự án phần mềm, nghĩa là trọng tâm dự án quản lý rủi ro thông qua nhiều lần lặp lại quy trình phát triển phần mềm.</p>
+
+<p>Mặc dù, các quá trình được lặp đi lặp lại nhưng mô hình vẫn theo tư tưởng phát triển tăng dần.</p>
+
+<h3 id="các-giai-đoạn-trong-phát-triển-phần-mềm-theo-mô-hình-xoắn-ốc">Các giai đoạn trong phát triển phần mềm theo mô hình xoắn ốc</h3>
+<ul>
+  <li><strong>Planning</strong>: Lập kế hoạch, trong đó phạm vi của dự án được xác định. Một kế hoạch được tạo ra cho lần lần lặp tiếp theo của mô hình xoắn ốc.</li>
+  <li><strong>Risk Analysis</strong>: Trong giai đoạn này, các rủi ro liên quan đến dự án được xác định và đánh giá.</li>
+  <li><strong>Engineering</strong>: Trong giai đoạn này, phần mềm được phát triển dựa trên lần thu thập yêu cầu trước đó.</li>
+  <li><strong>Evaluation</strong>: Phần mềm được đánh giá để xác định xem nó có đáp ứng các yêu cầu của khách hàng hay không và liệu nó có chất lượng cao hay không?</li>
+  <li><strong>Planning</strong>: Vòng lặp tiếp theo của vòng xoắn ốc bắt đầu bằng một giai đoạn lập kế hoạch mới, dựa trên kết quả đánh giá.</li>
+</ul>
+
+<p>Trong thực tế, chúng ta không thể bê bản mẫu hay mô hình thác nước vào dự án lớn do đối với những dự án càng lớn, tỉ lệ thất bại càng cao. 
+Vậy chúng ta thực hiện nó như thế nào? Chúng ta có hai chiến lược để thực hiện quá trình phát triển:</p>
+<ul>
+  <li><strong>Quá trình Implementing</strong></li>
+</ul>
+
+<p>Theo thống kê tính năng khách hàng sử dụng, nhận thấy có 20% tính năng bắt buộc phải có của phần mềm (core), 40 % tính năng thường xuyên được sử dụng và 40% tính năng hiếm khi sử dụng.</p>
+
+<p>Chúng ta có thể thực hiện quá trình implementing một cách tuần tự, tức là thực hiện xong 20% tính năng bắt buộc, sau khi quá trình kiểm thử được diễn ra xong thành công, mới tiếp tục thực hiện 40% tính năng thường xuyên sử dụng. Tiếp tục với 40% tính năng hiếm khi sử dụng. 
+Nhờ vậy, giúp chúng ta giảm thiểu khi thực hiện. Đây gọi là chống rủi ro.</p>
+
+<ul>
+  <li><strong>Phân tích rủi ro</strong></li>
+</ul>
+
+<p>Nhận thấy, khi chúng ta muốn xây một căn nhà cao 5 tầng, chúng ta có thể xây 3 tầng đầu tiên. Sau một thời gian, chúng ta có thể xây 2 tầng còn lại. Tuy nhiên, cái móng để xây nhà phải làm chắc có thể trụ được 5 tầng, không phải chỉ cho 3 tầng của tòa nhà được. 
+Chính vì vậy, khi chúng ta thực hiện 20% tính năng core của phần mềm thì base không chỉ đủ 20% core đấy mà phải làm base cho cả hệ thống. Nhờ vậy, giảm thiểu rủi ro cho hệ thống.</p>
+
+<p>Chúng ta, cần phải phát hiện rủi ro có thể xảy ra với dự án. Từ đó, xây dựng phương án giảm thiểu thiệt hại.</p>
+
+<p>Tuy nhiên, mô hình xoắn ốc lại không được dùng trong thực tế do tính khả thi của phân tích rủi ro. Để phân tích được rủi ro, chúng ta cần những người có kinh nghiệm lớn, trải qua nhiều số người như này rất hiếm.
+Tuy nhiên, mô hình xoắn lại có giá trị cao về học thuật.</p>
+
+<h2 id="b-ưu-nhược-điểm-3">b. Ưu, nhược điểm</h2>
+<p>Ưu điểm của mô hình xoắn ốc là nó cho phép các yếu tố, tính năng của sản phẩm được thêm vào ngay cả khi chúng đã được thực thi. Điều này đảm bảo rằng không có xung đột với các yêu cầu và thiết kế trước đó của phần mềm.</p>
+
+<p>Mô hình xoắn ốc giải quyết được các hạn chế của mô hình thác nước. Các yêu cầu trong mô hình xoắn ốc có thể được thay đổi. Nhờ đó, các yêu cầu được xác định rõ ràng, chính xác hơn. Việc phát triển phần theo mô hình xoắn ốc giúp cho khách hàng có thể thấy toàn bộ hệ thống sớm hơn. 
+Quá trình phát triển có thể được chia các phần nhỏ hơn và các phần rủi ro có thể được phát triển sớm hơn giúp quản lý rủi ro tốt hơn.</p>
+
+<p>Tuy nhiên, việc quản lý, quy trình phát triển mô hình xoắn ốc sẽ phức tạp. Từ đó, mô hình xoắn ốc không phù hợp với các mô hình vừa và nhỏ hoặc rủi ro thấp. Ngoài ra, số lượng lớn các giai đoạn đòi hỏi cần một số lượng lớn tài liệu.</p>
+
+<h1 id="kết-luận">Kết luận</h1>
+<p>Mô hình đóng vai trò là hướng đi và quyết định đến chất lượng đầu ra của sản phẩm. Vì vậy, việc xác định đúng và chính xác mô hình cho phần mềm là rất quan trọng. Mỗi mô hình quy trình tuân theo một loạt các bước duy nhất đối với loại của nó để đảm bảo thành công trong quy trình phát triển phần mềm. Tùy vào cấu trúc phần mềm mà từ đó chọn đúng mô hình phần mềm để thực hiện. Trong thực tế, chúng ta không nhất thiết phải sử dụng đúng các mô hình phần mềm trên mà có thể “biến tấu”, thay đổi để phù hợp với dự án phần mềm.</p>]]></content><author><name>zhao</name></author><category term="SE" /><category term="software" /><category term="model" /><summary type="html"><![CDATA[Mô hình phát triển phần mềm là thể hiện trừu tượng của các tiến trình phát triển phần mềm. Nó xác định các pha/ giai đoạn trong phát triển phần mềm.]]></summary></entry><entry><title type="html">Một bài giới thiệu về cái blog nho nhỏ này</title><link href="https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/" rel="alternate" type="text/html" title="Một bài giới thiệu về cái blog nho nhỏ này" /><published>2023-02-22T00:00:00+07:00</published><updated>2023-02-22T00:00:00+07:00</updated><id>https://zhaospei.github.io//dummy/2023/02/22/about-this-blog</id><content type="html" xml:base="https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/"><![CDATA[<p>Chào!
+Hmm, đầu tiên phải giới thiệu đôi chút về bản thân nhỉ? À chắc không cần, vì mấy cái câu giới thiệu bản thân tớ 
+viết đi viết lại ở hầu hết mọi trang của blog rồi… LOL.</p>
+
+<p>Lần đầu tiên viết bài, không biết viết như nào :)). Chắc tớ sẽ nói vì sao tớ lại tạo cái blog nào và cách tớ thực hiện nó.</p>
+
+<h2 id="tại-sao-tớ-lại-xây-dựng-cái-blog-này">Tại sao tớ lại xây dựng cái blog này?</h2>
+<p>À chắc cái blog này được tạo bởi vì các ý nghĩ vớ vẩn của tớ tại một thời điểm nào đấy.
+Tớ tạo blog này với mục đích ban đầu là tạo ra một chỗ lưu trữ những bài viết của tớ, nó có thể là các bài viết học thuật hay là 
+những bài viết vớ vẩn chia sẻ trải nghiệm của bản thân tớ. Nhưng mục đích cuối cùng tớ muốn hướng tới là cải thiện khả năng viết
+lách của bản thân và tìm một niềm vui khác khi rảnh.</p>
+
+<h2 id="cách-tớ-thực-hiện-cái-blog-này">Cách tớ thực hiện cái blog này…</h2>
+<p>Ban đầu, tớ định dùng <strong>Django</strong> để xây dựng blog nhưng nghĩ lại là dùng <strong>Django</strong> thì host kiểu gì vì tớ không có tiền để duy trì hosting. Tớ cũng đã nghĩ đến các hosting free nhưng mà nó khá là ba chấm và deloy <strong>Django</strong> rất rườm rà. Và rồi, tớ nghĩ sao tớ 
+không dùng chính <strong>Github Pages</strong> để host nhỉ? Cuối cùng, tớ đã quyết định dùng nó để host và sử dụng <strong>jekyll</strong> để xây dựng blog. 
+Và rồi, tớ đã bắt tay vào làm nó…</p>
+
+<p>Về giao diện của blog, tớ lấy cảm hứng từ <a href="https://reaganhenke.com/">Reaganhenke</a> và <a href="https://www.digitalocean.com/">Digital Ocean</a>.</p>
+
+<p>Tớ biết đến <a href="https://reaganhenke.com/">Reaganhenke</a> nhờ vào một hôm tìm cái trang web nghe nhạc lofi để học. Sau khi tìm hiểu, tớ có biết đến <a href="https://imissmycafe.com/">I Miss My Cafe</a>. Đây là một trang đối với tớ khá là hay, recommend cậu trang này nhé!(à cậu có thể vào để tìm hiểu về nó nhé :))). Tính tớ hay tò mò nên tớ đã lục lọi để tìm ra source của nó để clone lại một trang giống như vậy :)). Kết quả là tớ chỉ tìm được page của người làm ra nó. Và rồi, tớ bị thu hút bởi thiết kế của page, nhất là mấy cái card đầu của page. Haha, và rồi tớ lấy nó để làm giao diện.
+ <em>(Reagan Henke, if you see this blog, please forgive me for using it without your permission!)</em>.</p>
+
+<p>Còn <a href="https://www.digitalocean.com/">Digital Ocean</a> thì một lần tớ tìm tutorial và tìm ra nó. Đây cũng một trang chất lượng, recommend cậu trang này nữa nhé! (À thực ra ai cũng biết đến trang này :))).</p>
+
+<p>Ngoài ra tớ còn sử dụng <a href="https://vincentgarreau.com/particles.js/">particles.js</a> để làm mấy cái lines nối nhau trông rườm rà ở background và <a href="https://talk.hyvor.com/">Hyvor</a> để làm phần comment (Tớ chỉ được dùng thử 15 ngày nên không biết 15 ngày sau nó có bị mất không :))).</p>
+
+<h2 id="mục-đích-hướng-đến-của-blog">Mục đích hướng đến của blog…</h2>
+<p>Blog này tớ dự định sẽ là chia sẻ những bài viết, chủ đề mà tớ tìm hiểu và nghiên cứu. Hiện tại, tớ đang theo Lab CNPM nên đa số bài viết sẽ liên quan đến chủ đề này. Nếu cậu cũng đang tìm hiểu về chủ đề này thì có thể đọc blog của tớ nhé để giúp tớ cản thiện bài viết của bản thân. Ngoài ra, tớ cũng đang tìm hiểu về AI/ML nữa. Cũng có thể sẽ là những bài viết chia sẻ những trải nghiệm của bản thân. Nhưng mà tớ rất là lười viết nên có thể rất lâu tớ mới viết một bài mới _D:.</p>
+
+<p>Cậu cũng có thể gửi bài tới blog nhé. Rất là khuyến khích ủng hộ luôn.</p>
+
+<h2 id="mong-muốn-của-tớ">Mong muốn của tớ…</h2>
+<p>Tớ tạo blog vì ý nghĩ nhất thời và mục đích cá nhân là nhiều nên tớ cũng không mong blog sẽ được biết đến rộng rãi. À được nhiều người biết thì cũng không sao. Mong rằng với những người biết đến blog của tớ sẽ nhận được điều gì đó mới mẻ khi đọc những bài viết vớ vẩn của tớ. Vậy thôi…</p>
+
+<p>Cậu có thể xem source code của blog tớ tại <a href="https://github.com/zhaospei/zhaospei.github.io">Github</a>.</p>
+
+<p>Cảm ơn cậu đã ghé thăm blog của tớ và đọc cái post mở đầu xàm này. 
+Nếu có gì góp ý cho blog thì cậu comment phía dưới nhé, tớ sẽ sớm khắc phục. (À comment sớm nhé chứ phần comment chỉ được dùng thử 15 ngày :)).</p>
+
+<p><br /></p>
+<div style="text-align: right"> 
+See yaaaaaaaaaaaaaaaaaaaaaaaaaaaa,
+</div>
+
+<div style="text-align: right"> 
+<strong>Zhao</strong>
+</div>]]></content><author><name>zhao</name></author><category term="Dummy" /><category term="doc" /><category term="talk" /><category term="zhao" /><summary type="html"><![CDATA[Chào! Hmm, đầu tiên phải giới thiệu đôi chút về bản thân nhỉ? À chắc không cần, vì mấy cái câu giới thiệu bản thân tớ viết đi viết lại ở hầu hết mọi trang của blog rồi… LOL.]]></summary></entry></feed>
