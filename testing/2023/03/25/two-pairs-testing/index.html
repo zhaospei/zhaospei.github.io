@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta name="google-site-verification" content="pO3QI7LuxPEWOOJ2Be7QSkgX_hkw6dHUPx0IlrrPLJY" />
-    <title>Kiểm thử bằng phương pháp phân tích giá trị biên - Tuan-Dung Bui</title>
+    <title>Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing) - Tuan-Dung Bui</title>
     <link rel="icon" type="image/x-icon" href="/assets/media/blog-icon.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,22 +19,22 @@
     <script src="/assets/js/main.js"></script>
     <link type="application/atom+xml" rel="alternate" href="https://zhaospei.github.io//feed.xml" title="Tuan-Dung Bui" />
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Kiểm thử bằng phương pháp phân tích giá trị biên | Tuan-Dung Bui</title>
+<title>Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing) | Tuan-Dung Bui</title>
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="Kiểm thử bằng phương pháp phân tích giá trị biên" />
+<meta property="og:title" content="Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)" />
 <meta name="author" content="zhao" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Trong quá trình phát triển phần mềm, kiểm thử là một bước không thể thiếu để đảm bảo chất lượng và độ tin cậy của sản phẩm." />
-<meta property="og:description" content="Trong quá trình phát triển phần mềm, kiểm thử là một bước không thể thiếu để đảm bảo chất lượng và độ tin cậy của sản phẩm." />
-<link rel="canonical" href="https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien/" />
-<meta property="og:url" content="https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien/" />
+<meta name="description" content="Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp (Pairwise Testing hay All-Pairs Testing)." />
+<meta property="og:description" content="Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp (Pairwise Testing hay All-Pairs Testing)." />
+<link rel="canonical" href="https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/" />
+<meta property="og:url" content="https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/" />
 <meta property="og:site_name" content="Tuan-Dung Bui" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-05-13T00:00:00+07:00" />
+<meta property="article:published_time" content="2023-03-25T00:00:00+07:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Kiểm thử bằng phương pháp phân tích giá trị biên" />
+<meta property="twitter:title" content="Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"zhao"},"dateModified":"2023-05-13T00:00:00+07:00","datePublished":"2023-05-13T00:00:00+07:00","description":"Trong quá trình phát triển phần mềm, kiểm thử là một bước không thể thiếu để đảm bảo chất lượng và độ tin cậy của sản phẩm.","headline":"Kiểm thử bằng phương pháp phân tích giá trị biên","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien/"},"url":"https://zhaospei.github.io//testing/2023/05/13/kiem-thu-gia-tri-bien/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"zhao"},"dateModified":"2023-03-25T00:00:00+07:00","datePublished":"2023-03-25T00:00:00+07:00","description":"Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp (Pairwise Testing hay All-Pairs Testing).","headline":"Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing)","mainEntityOfPage":{"@type":"WebPage","@id":"https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/"},"url":"https://zhaospei.github.io//testing/2023/03/25/two-pairs-testing/"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -266,26 +266,32 @@
         <div class="text-lg">
           
           <a class="inline-block px-4 py-1 mb-4 mr-4 border border-solid rounded-full bg-gray-100 border-slate-200 dark:text-white dark:bg-zinc-800"
+            href="/tag/pairwise"> pairwise </a>
+          
+          <a class="inline-block px-4 py-1 mb-4 mr-4 border border-solid rounded-full bg-gray-100 border-slate-200 dark:text-white dark:bg-zinc-800"
+            href="/tag/all-pairs"> all-pairs </a>
+          
+          <a class="inline-block px-4 py-1 mb-4 mr-4 border border-solid rounded-full bg-gray-100 border-slate-200 dark:text-white dark:bg-zinc-800"
             href="/tag/testing"> testing </a>
           
         </div>
-        <h1 class="text-6xl font-bold leading-tight"> Kiểm thử bằng phương pháp phân tích giá trị biên </h1>
+        <h1 class="text-6xl font-bold leading-tight"> Bài toán sinh test cho kỹ thuật kiểm thử theo cặp - Pairwise Testing (All-Pairs Testing) </h1>
         <div class="flex flex-row items-baseline mb-8">
           <div class="article-meta__abstract-container">
             <div class="flex w-max flex-col pr-4" style="border-right: 2px solid #dadce0">
-              <p class="text-gray-500 dark:text-gray-400">May 13, 2023</p>
+              <p class="text-gray-500 dark:text-gray-400">March 25, 2023</p>
 
               <p class="text-gray-500 dark:text-gray-400" data-reading-time-render="">
                 
 
-9 min read
+4 min read
 
               </p>
 
             </div>
           </div>
           <p class="text-gray-700 pl-4 dark:text-gray-300">
-            Trong số các phương pháp kiểm thử, kiểm thử phân tích giá trị biên (Boundary Value Analysis) đã được đánh giá cao vì tính hiệu quả và độ chính xác của nó. Phương pháp này giúp tập trung kiểm thử vào các giá trị biên của dữ liệu đầu vào, từ đó giảm thiểu thời gian và chi phí kiểm thử.
+            Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp (Pairwise Testing hay All-Pairs Testing).
           </p>
 
         </div>
@@ -339,480 +345,188 @@
         <h2 class="uppercase tracking-widest text-base	font-extrabold mb-6"> Table of contents </h2>
         <nav class="overflow-auto pr-2" style="max-height: calc(100vh - 16.5rem);">
           <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h1"><a href="#bài-toán">Bài toán</a></li>
-<li class="toc-entry toc-h1"><a href="#phân-tích-yêu-cầu">Phân tích yêu cầu</a></li>
-<li class="toc-entry toc-h1"><a href="#phân-vùng-tương-đương">Phân vùng tương đương</a></li>
-<li class="toc-entry toc-h1"><a href="#xác-định-biên">Xác định biên</a></li>
-<li class="toc-entry toc-h1"><a href="#sinh-test-cho-kiểm-thử-biên-đơn-giản">Sinh test cho kiểm thử biên đơn giản</a></li>
-<li class="toc-entry toc-h1"><a href="#biên-và-cận-biên-trong-miền-hợp-lệ">Biên và cận biên trong miền hợp lệ</a></li>
-<li class="toc-entry toc-h1"><a href="#biên-và-cận-biên-trong-toàn-bộ-miền-giá-trị">Biên và cận biên trong toàn bộ miền giá trị.</a></li>
-<li class="toc-entry toc-h1"><a href="#kết-luận">Kết luận</a></li>
+<li class="toc-entry toc-h1"><a href="#định-nghĩa-thế-nào-là-all-pairs-testing">Định nghĩa: Thế nào là All-Pairs Testing?</a></li>
+<li class="toc-entry toc-h1"><a href="#số-test-cases-cần-sinh-cho-all-pairs-testing">Số test cases cần sinh cho All-Pairs Testing</a></li>
+<li class="toc-entry toc-h1"><a href="#cách-sinh-test-cho-all-pairs-testing">Cách sinh test cho All-Pairs Testing</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#bước-1-liệt-kê-các-giá-trị-của-các-tham-số-đầu-vào">Bước 1: Liệt kê các giá trị của các tham số đầu vào.</a></li>
+<li class="toc-entry toc-h3"><a href="#bước-2-đơn-giản-hóa-việc-sinh-test-cases-simplify">Bước 2: Đơn giản hóa việc sinh test cases (Simplify)</a></li>
+<li class="toc-entry toc-h3"><a href="#bước-3-sắp-xếp-các-biến-theo-miền-giá-trị">Bước 3: Sắp xếp các biến theo miền giá trị</a></li>
+<li class="toc-entry toc-h3"><a href="#bước-4-sắp-xếp-các-miền-giá-trị-của-các-biến-để-tạo-bộ-kiểm-thử">Bước 4: Sắp xếp các miền giá trị của các biến để tạo bộ kiểm thử</a></li>
+</ul>
+</li>
 </ul>
         </nav>
       </aside> -->
       <div class="items-center pb-8 w-full" style="grid-template-rows: auto 1fr;">
         <div class="thumbnail-image relative not-prose rounded-2xl overflow-hidden">
           
-          <img alt="Post image feature" src="/assets/media/feature/kiem-thu-gia-tri-bien.jpg" loading="lazy" class="w-full">
+          <img alt="Post image feature" src="/assets/media/feature/testing.png" loading="lazy" class="w-full">
           
         </div>
         <div class="post-content prose w-full mb-16">
-          <p>Trong quá trình phát triển phần mềm, kiểm thử là một bước không thể thiếu để đảm bảo chất lượng và độ tin cậy của sản phẩm.</p>
+          <p>Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp
+(Pairwise Testing hay All-Pairs Testing).</p>
 
-<p>Trong số các phương pháp kiểm thử, kiểm thử phân tích giá trị biên (Boundary Value Analysis) đã được đánh giá cao vì tính hiệu quả và độ chính xác của nó. Phương pháp này giúp tập trung kiểm thử vào các giá trị biên của dữ liệu đầu vào, từ đó giảm thiểu thời gian và chi phí kiểm thử.</p>
+<h1 id="định-nghĩa-thế-nào-là-all-pairs-testing">Định nghĩa: Thế nào là All-Pairs Testing?</h1>
 
-<p>Bài viết này sẽ cách sinh test cho ca kiểm thử phân tích giá trị biên thông qua một bài toán kiểm thử nhỏ.</p>
+<p>Theo <strong>ISTQB</strong>, <strong>All-Pairs Testing (hay Pairwise Testing)</strong> là một kỹ thuật kiểm thử hộp đen trong đó các test cases được thiết kế để thực hiện tất cả các tổ hợp có thể có của từng cặp tham số đầu vào. Tức là với mỗi cặp input đầu vào, tất cả các giá trị của cặp input đấy được phủ toàn bộ (Một test case có thể phủ được nhiều cặp input khác nhau).</p>
 
-<h1 id="bài-toán">Bài toán</h1>
+<p>Kỹ thuật <strong>All-Pairs</strong> rất hữu ích để thiết kế các bài kiểm tra cho các ứng dụng liên quan đến nhiều tham số. Các thử nghiệm được thiết kế sao cho đối với mỗi cặp tham số đầu vào của một hệ thống, có tất cả các tổ hợp riêng biệt có thể có của các tham số đó. Do bộ thử nghiệm bao gồm tất cả các tổ hợp nên nó không toàn diện nhưng rất hiệu quả trong việc tìm lỗi.</p>
 
-<p><strong>DummyTel</strong> có cấu trúc tỷ lệ sau đây cho các cuộc gọi đường dài:</p>
+<p>Kiểm thử <strong>All-Pairs</strong> được áp dụng phổ biến trong công nghiệp khi mà một số vấn đề chỉ được xảy ra bởi sự tương tác giữa các tham số đầu vào hoặc components. Kiểm thử <strong>All-Pairs</strong> có thể tìm được đến <strong>50 - 90%</strong> lỗi của phần mềm, hệ thống.</p>
+
+<h1 id="số-test-cases-cần-sinh-cho-all-pairs-testing">Số test cases cần sinh cho All-Pairs Testing</h1>
+<p>Ta có công thức tính số lượng test cases cần sinh như sau:</p>
+
+<p><strong>Số lượng test case = Số lượng miền giá trị lớn nhất của các biến * Số lượng miền giá trị lớn nhất của các biến</strong></p>
+
+<p>Chứng minh tính đúng đắn của công thức:</p>
+
+<h1 id="cách-sinh-test-cho-all-pairs-testing">Cách sinh test cho All-Pairs Testing</h1>
+
+<p>Chúng ta sẽ lấy ví dụ cho <strong>Ứng dụng giao dịch xe</strong> với các yêu cầu sau:</p>
 
 <ul>
-  <li>Bất kỳ cuộc gọi nào bắt đầu lúc hoặc sau 18:00 nhưng trước 08:00 được giảm 50%.</li>
-  <li>Bất kỳ cuộc gọi nào bắt đầu lúc hoặc sau 08:00 nhưng trước 18:00 được tính giá đầy đủ.</li>
-  <li>Bất kỳ cuộc gọi nào dài hơn 60 phút đều được giảm giá 15% trên chi phí (sau khi trừ đi bất kỳ khoản giảm giá nào khác).</li>
+  <li>Ứng dụng giao dịch xe cho phép Mua và Bán xe.</li>
+  <li>Nó sẽ hỗ trợ giao dịch ở Delhi và Mumbai.</li>
+  <li>Ứng dụng phải có số đăng ký có thể hợp lệ hoặc không hợp lệ.</li>
+  <li>Nó sẽ cho phép giao dịch với các hãng xe: BMW, Audi và Mercedes.</li>
+  <li>Có thể thực hiện hai loại booking: E-booking và In-store.</li>
+  <li>Chỉ có thể đặt xe trong giờ giao dịch.</li>
 </ul>
 
-<p>Chương trình đọc <strong>thời điểm bắt đầu cuộc gọi</strong> dựa trên đồng hồ 24 giờ và <strong>thời lượng của cuộc gọi</strong>. Thời gian cuộc gọi tối đa là 180 phút.</p>
+<p>Chúng ta sẽ thực hiện việc sinh test cho ca kiểm thử <strong>All-Pairs</strong> lần lượt theo các bước sau:</p>
 
-<p>Chương trả về:</p>
+<h3 id="bước-1-liệt-kê-các-giá-trị-của-các-tham-số-đầu-vào">Bước 1: Liệt kê các giá trị của các tham số đầu vào.</h3>
+
+<p>Chúng ta có thể dễ dàng liêt kê các giá trị có thể có của các tham số đầu vào của ứng dụng như sau:</p>
+
 <ul>
-  <li>-1 nếu đầu vào không hợp lệ.</li>
-  <li>0  nếu không được giảm giá.</li>
-  <li>1  nếu được giảm 15%.</li>
-  <li>2  nếu được giảm 50%.</li>
-  <li>3  nếu vừa được giảm 50% và 15%.</li>
+  <li><strong>Loại giao dịch</strong>: Mua, Bán.</li>
+  <li><strong>Vị trí</strong>: Delhi, Mumbai.</li>
+  <li><strong>Hãng xe</strong>: BMW, Audi, Mercedes.</li>
+  <li><strong>Số đăng ký xe</strong>: Valid (5000 giá trị), Invalid</li>
+  <li><strong>Cách thức giao dịch</strong>: E-Booking, In-store</li>
+  <li><strong>Thời gian giao dịch</strong>: Thời gian trong giờ làm việc, Thời gian ngoài giờ làm việc</li>
 </ul>
 
-<p>Chương trình sẽ giả sử chỉ các giá trị số nguyên được nhập vào, thời lượng không âm và thời gian bắt đầu biểu thị thời gian đồng hồ thực.</p>
-
-<h1 id="phân-tích-yêu-cầu">Phân tích yêu cầu</h1>
-
-<p>Đầu vào của chương trình: Thời điểm bắt đầu, Thời lượng của cuộc gọi. 
-Đầu ra của chường trình: Chi phí của cuộc gọi 
-Điều kiện hợp lệ của đầu vào:</p>
+<p>Nếu chúng ta sinh test cases cho toàn bộ các tổ hợp hợp lệ thì sẽ có đến:</p>
 <ul>
-  <li>Thời điểm bắt đầu: Có giá trị nguyên trong khoảng từ 0 đến 23.</li>
-  <li>Thời lượng cuộc gọi: Từ 0 đến 180.
-Giá trị đầu ra: 0 (nếu không được giảm giá), 1 (nếu được giảm 15%), 2 (nếu được giảm 50%), 3 (nếu vừa được giảm 50% và 15%).</li>
+  <li>2 . 2 . 3 . 5000 . 2 . 2 = <strong>24000</strong> test cases tổ hợp hợp lệ.</li>
 </ul>
 
-<h1 id="phân-vùng-tương-đương">Phân vùng tương đương</h1>
-<p>Ta chia thành các giá trị đầu vào thành các phân vùng tương đương sau:</p>
+<p>Chưa kể chúng ta còn chưa tính đến các test cases không hợp lệ trong quá trình sinh test.</p>
 
-<p>Gọi <strong>TĐBB</strong> là Thời điểm bắt đầu cuộc gọi, <strong>TLCG</strong> là Thời lượng cuộc gọi.</p>
+<h3 id="bước-2-đơn-giản-hóa-việc-sinh-test-cases-simplify">Bước 2: Đơn giản hóa việc sinh test cases (Simplify)</h3>
+<p>Chúng ta sẽ đơn giản việc sinh các test cases theo các cách:</p>
+<ul>
+  <li>Sử dụng một cách lẫy mẫu thông minh</li>
+  <li>Sử dụng các nhóm hay ranh giới, ngay cả khi dữ liệu không rời rạc.</li>
+</ul>
+
+<p>Theo đó chúng ta có thể giảm số đăng ký xuống còn hai loại: Valid và Invaild.</p>
+
+<p>Bây giờ, số test cases chúng ta sẽ phải sinh sẽ còn lại:</p>
+<ul>
+  <li>2 . 2 . 3 . 2 . 2 . 2  = <strong>96</strong> test cases.</li>
+</ul>
+
+<p>Woa Woa Woa! Chúng ta đã giảm số lượng các test case cần phải sinh một số rất lớn rồi đúng không? Nhưng đây vẫn chưa phải các sinh hợp lí để cho số lượng test cases nhỏ nhất có thể. Tiếp tục nào!</p>
+
+<h3 id="bước-3-sắp-xếp-các-biến-theo-miền-giá-trị">Bước 3: Sắp xếp các biến theo miền giá trị</h3>
+
+<p>Chúng ta tiến hành sắp xếp các biến theo thứ tự giảm dần số lượng miền giá trị: Tức biến có nhiều miền giá trị nhất sẽ được xếp đầu tiên  và biến có ít miền giá trị nhất được xếp cuối cùng. Sau khi sắp xếp, chúng ta sẽ có một bảng trông như thế này đây.</p>
 
 <table>
   <thead>
     <tr>
-      <th>TH</th>
-      <th>Inputs</th>
-      <th>Output</th>
+      <th>Hãng xe</th>
+      <th>Loại giao dịch</th>
+      <th>Vị trí</th>
+      <th>Số đăng ký xe</th>
+      <th>Cách thức giao dịch</th>
+      <th>Thời gian giao dịch</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>1</td>
-      <td>TĐBB ∉{0,…,23} hoặc TGCG ∉{0,…,180}</td>
-      <td>-1</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
-      <td>2</td>
-      <td>Hợp lệ và (8 &lt;= TĐBB &lt; 18 và TGCG &lt;= 60)</td>
-      <td>0</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
     <tr>
-      <td>3</td>
-      <td>Hợp lệ và (8 &lt;= TĐBB &lt; 18 và TGCG &gt; 60)</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>Hợp lệ và (TGCG &lt;= 60 và (TĐBB &gt;= 18 hoặc TĐBB &lt; 8))</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>Các TH còn lại</td>
-      <td>3</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
   </tbody>
 </table>
 
-<p>Từ bảng trên ta sinh 5 test cho 5 phần vùng tương đương lần lượt là:</p>
+<h3 id="bước-4-sắp-xếp-các-miền-giá-trị-của-các-biến-để-tạo-bộ-kiểm-thử">Bước 4: Sắp xếp các miền giá trị của các biến để tạo bộ kiểm thử</h3>
+
+<p>Chúng ta sẽ lần lượt điền giá trị của bảng trống đã tạo phía trên theo từng cột một.</p>
 
 <table>
   <thead>
     <tr>
-      <th>Testcase</th>
-      <th>Inputs</th>
-      <th>EO</th>
+      <th>Hãng xe</th>
+      <th>Loại giao dịch</th>
+      <th>Vị trí</th>
+      <th>Số đăng ký xe</th>
+      <th>Cách thức giao dịch</th>
+      <th>Thời gian giao dịch</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>1</td>
-      <td>TĐBB = -2 và TGCG = 191</td>
-      <td>-1</td>
+      <td>BMW</td>
+      <td>Mua</td>
+      <td>Delhi</td>
+      <td>Valid</td>
+      <td>E-booking</td>
+      <td>Trong giờ</td>
     </tr>
     <tr>
-      <td>2</td>
-      <td>TĐBB = 12 và TGCG = 45</td>
-      <td>0</td>
+      <td>Audi</td>
+      <td>Bán</td>
+      <td>Mumbai</td>
+      <td>Invalid</td>
+      <td>In-store</td>
+      <td>Ngoài giờ</td>
     </tr>
     <tr>
-      <td>3</td>
-      <td>TĐBB = 14 và TGCG = 92</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>TĐBB = 20 và TGCG = 30</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>TĐBB = 21 và TGCG = 124</td>
-      <td>3</td>
+      <td>Mercedes</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
     </tr>
   </tbody>
 </table>
 
-<h1 id="xác-định-biên">Xác định biên</h1>
-
-<p><strong>Biên của TĐBB:</strong></p>
-
-<p><img src="/assets/media/post/bien-1.png" alt="Biên của TĐBB" /></p>
-
-<ul>
-  <li>Giá trị biên của TĐBB lần lượt là 0, 8, 18, 23</li>
-  <li>Giá trị nom của TĐBB là 12 (Điểm giữa của miền hợp lệ)</li>
-</ul>
-
-<p><strong>Biên của TGCG:</strong></p>
-
-<p><img src="/assets/media/post/bien-2.png" alt="Biên của TĐBB" /></p>
-
-<ul>
-  <li>Giá trị biên của TGCG lần lượt là 0, 60, 180</li>
-  <li>Giá trị nom của TGCG là 90 (Điểm giữa của miền hợp lệ)</li>
-</ul>
-
-<h1 id="sinh-test-cho-kiểm-thử-biên-đơn-giản">Sinh test cho kiểm thử biên đơn giản</h1>
-<p>Mỗi giá trị biên của một input kết hợp với các giá trị nom của các input còn lại và một test bao gồm tất cả các giá trị nom của các input.</p>
-
-<p>Hay chúng ta có tổng cộng: 4 + 3 + 1 = 8 (Testcases)</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Testcase</th>
-      <th>Inputs</th>
-      <th>EO</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>TĐBB = 0 và TGCG = 90</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>TĐBB = 8 và TGCG = 90</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>TĐBB = 18 và TGCG = 90</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>TĐBB = 23 và TGCG = 90</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>TĐBB = 12 và TGCG = 0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>TĐBB = 12 và TGCG = 60</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>TĐBB = 12 và TGCG = 180</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>TĐBB = 12 và TGCG = 90</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-
-<h1 id="biên-và-cận-biên-trong-miền-hợp-lệ">Biên và cận biên trong miền hợp lệ</h1>
-<p>Các test case tương tự như biên đơn giản và thêm các test case cận biên bằng cách kết hợp giá trị cận biên của một input với các giá trị nom của các input còn lại.</p>
-
-<p>Lấy các giá trị cận biên cách giá trị biên một khoảng là 1.</p>
-
-<p>TĐBB có 4 giá trị biên -&gt; 6 giá trị cận biên trong miền hợp lệ.</p>
-
-<p>TGCG có 3 giá trị biên -&gt; 4 giá trị cận biên trong miền hợp lệ.</p>
-
-<p>Vậy số test cases tất cả là 8 + 6 + 4 = 18 (Testcase)</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Testcase</th>
-      <th>Inputs</th>
-      <th>EO</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>TĐBB = 0 và TGCG = 90</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>TĐBB = 8 và TGCG = 90</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>TĐBB = 18 và TGCG = 90</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>TĐBB = 23 và TGCG = 90</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>TĐBB = 12 và TGCG = 0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>TĐBB = 12 và TGCG = 60</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>TĐBB = 12 và TGCG = 180</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>TĐBB = 12 và TGCG = 90</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td>TĐBB = 1 và TGCG = 90</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>TĐBB = 7 và TGCG = 90</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>11</td>
-      <td>TĐBB = 9 và TGCG = 90</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>12</td>
-      <td>TĐBB = 17 và TGCG = 90</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>13</td>
-      <td>TĐBB = 19 và TGCG = 90</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>14</td>
-      <td>TĐBB = 22 và TGCG = 90</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>15</td>
-      <td>TĐBB = 12 và TGCG = 1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>16</td>
-      <td>TĐBB = 12 và TGCG = 59</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>17</td>
-      <td>TĐBB = 12 và TGCG = 61</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>18</td>
-      <td>TĐBB = 12 và TGCG = 179</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-
-<h1 id="biên-và-cận-biên-trong-toàn-bộ-miền-giá-trị">Biên và cận biên trong toàn bộ miền giá trị.</h1>
-<p>Các test case tương tự như biên và cận biên trong miền hợp lệ và thêm các test case cận biên ngoài miền hợp lệ bằng cách kết hợp giá trị cận biên ngoài miền hợp lệ của một input với các giá trị nom của các input còn lại.</p>
-
-<p>Lấy các giá trị cận biên cách giá trị biên một khoảng là 1.</p>
-
-<p>Nhận thấy:</p>
-<ul>
-  <li>TĐBB có 2 giá trị cận biên ngoài miền hợp lệ.</li>
-  <li>TGCG có 2 giá trị cận biên ngoài miền hợp lệ.</li>
-</ul>
-
-<p>Vậy số test cases tất cả là 18 + 2 + 2 = 22 (Testcase)</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Testcase</th>
-      <th>Inputs</th>
-      <th>EO</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>TĐBB = 0 và TGCG = 90</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>TĐBB = 8 và TGCG = 90</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>TĐBB = 18 và TGCG = 90</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>TĐBB = 23 và TGCG = 90</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>TĐBB = 12 và TGCG = 0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>TĐBB = 12 và TGCG = 60</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>TĐBB = 12 và TGCG = 180</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>TĐBB = 12 và TGCG = 90</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td>TĐBB = 1 và TGCG = 90</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>TĐBB = 7 và TGCG = 90</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>11</td>
-      <td>TĐBB = 9 và TGCG = 90</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>12</td>
-      <td>TĐBB = 17 và TGCG = 90</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>13</td>
-      <td>TĐBB = 19 và TGCG = 90</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>14</td>
-      <td>TĐBB = 22 và TGCG = 90</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>15</td>
-      <td>TĐBB = 12 và TGCG = 1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>16</td>
-      <td>TĐBB = 12 và TGCG = 59</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>17</td>
-      <td>TĐBB = 12 và TGCG = 61</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>18</td>
-      <td>TĐBB = 12 và TGCG = 179</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>19</td>
-      <td>TĐBB = 12 và TGCG = -1</td>
-      <td>-1</td>
-    </tr>
-    <tr>
-      <td>20</td>
-      <td>TĐBB = 12 và TGCG = 181</td>
-      <td>-1</td>
-    </tr>
-    <tr>
-      <td>21</td>
-      <td>TĐBB = -1 và TGCG = 90</td>
-      <td>-1</td>
-    </tr>
-    <tr>
-      <td>22</td>
-      <td>TĐBB = 24 và TGCG = 90</td>
-      <td>-1</td>
-    </tr>
-  </tbody>
-</table>
-
-<h1 id="kết-luận">Kết luận</h1>
-<p>Nhận thấy toàn bộ test case trong kiểm thử giá trị biên trên đều không cho output nằm trong trường hợp số 2. Vì vậy, kiểm thử giá trị biên sẽ không thể bao hàm toàn bộ trường hợp và thường kết hợp với các loại kiểm thử khác như phân hoạch tương đương hoặc kiểm thử bằng quyết định,.. 
-Thường trong thực tế, các công ty thường sinh test kiểu này: Kết hợp phân hoạch tương đương (hoặc bảng quyết định) với phân tích giá trị biên thường cho kết quả tốt vì nó có chi phí, thời gian, công sức vừa phải và bao hàm hầu hết mọi trường hợp của giá trị đầu vào.</p>
 
 
           
         </div>
 
         <div class="flex justify-between items-center w-full flex-wrap gap-4 pb-4"><a class="" rel="noreferrer noopener"
-            target="_blank" href="https://github.com/zhaospei/zhaospei.github.io/tree/main/_posts/2023-05-13-kiem-thu-gia-tri-bien.md"><span
+            target="_blank" href="https://github.com/zhaospei/zhaospei.github.io/tree/main/_posts/2023-03-25-two-pairs-testing.md"><span
               class="font-normal link-hover">Edit on Github</span><span class="inline-block w-3 h-3 ml-2 mt-1 mr-4"><svg
                 class="block w-full h-full" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13 1L1 13M3 1h10v10" stroke="#448af6" stroke-width="2" stroke-linecap="round"
