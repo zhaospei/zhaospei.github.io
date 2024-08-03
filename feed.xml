@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://zhaospei.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhaospei.github.io//" rel="alternate" type="text/html" /><updated>2024-08-03T13:08:33+07:00</updated><id>https://zhaospei.github.io//feed.xml</id><title type="html">Tuan-Dung Bui</title><subtitle>A markdown blog made by Tuan-Dung Bui aka Zhao (zhaospei). Hosted on zhaospei.github.io. I'll write something i like maybe my study or life.</subtitle><author><name>Tuan-Dung Bui</name></author><entry><title type="html">Attention is All You Need</title><link href="https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need/" rel="alternate" type="text/html" title="Attention is All You Need" /><published>2023-10-06T00:00:00+07:00</published><updated>2023-10-06T00:00:00+07:00</updated><id>https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need</id><content type="html" xml:base="https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need/"><![CDATA[<p><code class="language-plaintext highlighter-rouge">Transformer</code> là mô hình seq2seq được Google Brain đề xuất trong một bài báo xuất bản vào cuối năm 2017. Giờ đây, nó đã đạt được nhiều ứng dụng và tiện ích mở rộng và <code class="language-plaintext highlighter-rouge">BERT</code> là mô hình ngôn ngữ được đào tạo trước có nguồn gốc từ Transformer.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://zhaospei.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://zhaospei.github.io//" rel="alternate" type="text/html" /><updated>2024-08-03T13:08:41+07:00</updated><id>https://zhaospei.github.io//feed.xml</id><title type="html">Tuan-Dung Bui</title><subtitle>A markdown blog made by Tuan-Dung Bui aka Zhao (zhaospei). Hosted on zhaospei.github.io. I'll write something i like maybe my study or life.</subtitle><author><name>Tuan-Dung Bui</name></author><entry><title type="html">Attention is All You Need</title><link href="https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need/" rel="alternate" type="text/html" title="Attention is All You Need" /><published>2023-10-06T00:00:00+07:00</published><updated>2023-10-06T00:00:00+07:00</updated><id>https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need</id><content type="html" xml:base="https://zhaospei.github.io//nlp/2023/10/06/attention-is-all-you-need/"><![CDATA[<p><code class="language-plaintext highlighter-rouge">Transformer</code> là mô hình seq2seq được Google Brain đề xuất trong một bài báo xuất bản vào cuối năm 2017. Giờ đây, nó đã đạt được nhiều ứng dụng và tiện ích mở rộng và <code class="language-plaintext highlighter-rouge">BERT</code> là mô hình ngôn ngữ được đào tạo trước có nguồn gốc từ Transformer.</p>
 
 <p>Việc đào tạo <code class="language-plaintext highlighter-rouge">RNN</code> truyền thống là nối tiếp và nó phải đợi từ hiện tại được xử lý trước khi có thể xử lý từ tiếp theo. Transformer được huấn luyện song song, tức là tất cả các từ đều được huấn luyện cùng một lúc, điêu này làm tăng đáng kể hiệu quả tính toán.</p>
 
@@ -528,64 +528,7 @@ dec_output_all: [6, n_step+1 (because of </span><span class="sh">'</span><span c
 
 <h1 id="tham-khảo">Tham khảo</h1>
 
-<p>[1] <a href="https://www.kaggle.com/code/overvisual/seq2seq-torch?scriptVersionId=145596925">https://www.kaggle.com/code/overvisual/seq2seq-torch?scriptVersionId=145596925</a></p>]]></content><author><name>zhao</name></author><category term="NLP" /><category term="nlp" /><category term="pytorch" /><category term="model" /><summary type="html"><![CDATA[Bài viết này giới thiệu cách sử dụng Pytorch để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc sơ qua bài báo sau trước, Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014), để hiểu rõ cấu trúc seq2seq hoạt động như thế nào, sau đó đọc bài viết này để đạt được hiệu quả gấp đôi chỉ với một nửa công sức.]]></summary></entry><entry><title type="html">[NLP] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</title><link href="https://zhaospei.github.io//nlp/2023/10/05/bert-pretrained-model/" rel="alternate" type="text/html" title="[NLP] BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding" /><published>2023-10-05T00:00:00+07:00</published><updated>2023-10-05T00:00:00+07:00</updated><id>https://zhaospei.github.io//nlp/2023/10/05/bert-pretrained-model</id><content type="html" xml:base="https://zhaospei.github.io//nlp/2023/10/05/bert-pretrained-model/"><![CDATA[<p>BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</p>
-
-<h2 id="tiêu-đề">Tiêu đề</h2>
-<p><code class="language-plaintext highlighter-rouge">Pre-training (Đào tạo trước)</code>: Nếu một mô hình được đào tạo trên một tập dữ liệu lớn nhưng mục đích chính là sử dụng cho nhiệm vụ khác (được gọi là <code class="language-plaintext highlighter-rouge">Training</code>), thì nhiệm vụ đào tạo mô hình đó được gọi là <code class="language-plaintext highlighter-rouge">Pre-training</code>.</p>
-
-<p><code class="language-plaintext highlighter-rouge">Deep</code>: rất dễ hiểu, chỉ là sâu thôi.</p>
-
-<p><code class="language-plaintext highlighter-rouge">Bidirectional</code>: nghĩa là có 2 chiều, được giải thích ở cuối bài viết.</p>
-
-<p><code class="language-plaintext highlighter-rouge">Transformers</code>: Mô hình học sâu được thiết kế dùng để phục vụ giải quyết nhiều bài toán trong xử lý ngôn ngữ tự nhiên và tiếng nói. Vui lòng <a href="">xem thêm</a></p>
-
-<p>Tóm lại, mô hình BERT là một mô hình Transfomers sâu 2 chiều, được sử dụng làm mô hình đào tạo trước để hiểu ngôn ngữ.</p>
-
-<h2 id="abstract">Abstract</h2>
-<p>BERT viết tắt của Bidirectional Encoder Representations from Transformers.</p>
-
-<p>Như đã nói ở đoạn đầu, BERT dùng thiết kể để đào tạo sâu, biểu diễn hai chiều, dữ liệu không gán nhãn được sử dụng và thông tin ngữ cảnh song phương trái và phải được kết hợp (Tức context được xác định ở cả hai phía của từ). Do thiết kế tinh tế của BERT, nó chỉ cần thêm một lớp đầu ra bổ sung và thực hiện tinh chỉnh tương ứng, và nó có thể được áp dụng cho nhiểu tác vụ mà không cần thực hiên nhiều sửa đổi đối với các tác vụ cụ thể.</p>
-
-<h2 id="introduction">Introduction</h2>
-<p>Đào tạo trước đã trở nên phổ biến trong NLP. Ví dụ, trong bài toán nhận dạng thực thể có tên (<code class="language-plaintext highlighter-rouge">NER</code>), BERT không phải là mô hình đầu tiên được đề xuất, xét cho cùng chúng ta có thể dùng BERT ứng dụng trong <code class="language-plaintext highlighter-rouge">CV - Compution Vision</code>, nhưng BERT ứng dụng tốt nhất trong các bài toán NLP.</p>
-
-<p>Khi sử dụng mô hình đào tạo trước để biểu diễn đặc trưng cho các tác vụ tiếp theo, thường có hai chiến lược, một chiến lược dựa trên các đặc trưng (<code class="language-plaintext highlighter-rouge">feature-based</code>) và chiến lược còn lại dựa trên tinh chỉnh (<code class="language-plaintext highlighter-rouge">fine-tuning</code>). Cả hai phương pháp đều sử dụng cùng một hàm mục tiêu trong quá trình đào tạo trước, đây là mô hình ngôn ngữ một chiều.</p>
-
-<p>Dựa trên tính năng, cách làm tiêu biểu [ELMo], sử dụng kiến trúc RRN, đối với mỗi tác vụ xuôi dòng, xây dựng mạng thần kinh liên quan đến tác vụ hiện tại, biểu diễn đặc trưng được đào tạo trước, như một tính năng bổ sung, đưa nó vào mạng cùng với đầu vào ban đầu.</p>
-
-<p>Dựa trên sự tinh chỉnh, cách làm tiêu biểu [GPT], giảm tham số cho một tác vụ cụ thể, khi đưa các tham số mô hình được huấn luyện trước vào dữ liệu xuôi dòng, tất cả các thông số sẽ được tinh chinh.</p>
-
-<p>Sau đó tác giả thảo luận về những hạn chế của các phương pháp này, đặc biêt với phương pháp tinh chỉnh, do mô hình ngôn ngữ là một chiều nên có một số hạn chế trong việc lựa chọn kiến trúc. Ví dụ: trong GPT sử dụng kiến trúc từ trái sang phải. Theo cách nói của con người, khi đọc một câu, chúng ta chỉ có thể đọc từ trái sang phải. Trong một số nhiệm vụ, chẳng hạn như đánh giá cảm xúc của một câu (QA), … việc đọc từ phải sang trái hay trái sang phải được hợp pháp. Tác giả tin rằng việc đưa thông tin từ cả hai hướng vào cùng một lúc sẽ giúp nâng cao hiệu quả thực hiện.</p>
-
-<p>(Tiếp tục viết trong tương lai xa…)</p>]]></content><author><name>zhao</name></author><category term="NLP" /><category term="nlp" /><category term="paper" /><category term="model" /><summary type="html"><![CDATA[BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding]]></summary></entry><entry><title type="html">Bọ là gì? Defect, Fault, Error, Bug, Failure?</title><link href="https://zhaospei.github.io//se/2023/07/02/what-is-bug/" rel="alternate" type="text/html" title="Bọ là gì? Defect, Fault, Error, Bug, Failure?" /><published>2023-07-02T00:00:00+07:00</published><updated>2023-07-02T00:00:00+07:00</updated><id>https://zhaospei.github.io//se/2023/07/02/what-is-bug</id><content type="html" xml:base="https://zhaospei.github.io//se/2023/07/02/what-is-bug/"><![CDATA[<h2 id="người-đọc-tự-chịu-trách-nhiệm-về-tính-xác-thực-của-bài-viết">Người đọc tự chịu trách nhiệm về tính xác thực của bài viết.</h2>
-
-<h1 id="context">Context</h1>
-<p>Chuyện là tuần vừa rồi tôi tham gia lab nghiên cứu ở trường và được giao đọc một bài báo khoa học. Nếu không nhầm thì mục đích của thầy khi bảo tôi đọc bài báo này là nắm được sơ qua “context” nghiên cứu của nhóm đang thực hiện.</p>
-
-<p>Do lần đầu tôi được giao đọc một bài báo khoa học (à trước đó có đọc, dịch gì đấy một bài rồi nhưng mà khi chú tâm thực hiện), thì tất nhiên chưa có kinh nghiệm nên là chỉ nghĩ đọc hiểu nghĩa, cái chung chung bài báo đang nói là gì, hiểu cách bài báo đang thực hiện, vân vân mây mây… Và rồi, sau một tuần được giao đọc bài báo thì mình lên gặp thầy trao đổi về hiểu biết của mình về bài báo. À thì mọi việc sẽ chả có gì nếu như cách đọc của mình là đúng.</p>
-
-<p>Nhưng <strong>KHÔNG</strong>, mình đã được khai sáng một đống tri thức mới. Thầy bảo mình không thể hiểu chung chung bài báo nói gì được mà phải nắm rõ và chính xác toàn bộ khái niệm mà bài báo đã đề cập như bài báo mình “được” đọc là <a href="https://ieeexplore.ieee.org/document/4408585?denied=">“Classifying Software Changes: Clean or Buggy?”</a> thì đầu tiên phải đặt câu hỏi <em>Software Changes</em> là gì? <em>Clean, Buggy</em> là gì? (Tất nhiên là trong “context” của bài báo).</p>
-
-<p>Trong một đống thứ thầy nói và hỏi mình thì chắc thứ tồn đọng lại (khắc sâu mình nhất) là câu hỏi (cũng là câu hỏi đầu tiên) là: <strong>“Theo em, bug là gì?”</strong> (Vì tiêu đề bài báo có việc phân loại hai nhãn là Clean và Buggy mà). Lúc đấy, mình kiểu :))). Tại mình nghĩ là thầy sẽ vấn đề và hướng giải quyết của bài báo chứ không phải mấy câu hỏi lí thuyết như này. Và thầy doạ mình là không trả lời được sẽ hạ điểm (tất nhiên là đùa) môn mình kì trước (Do kì trước mình có tham gia lớp kiểm thử của thầy, không hiểu sao thầy vẫn còn nhớ mình :)).</p>
-
-<p>Và một đứa thường bỏ qua những thứ căn bản như mình thì tất nhiên chả bao giờ tìm hiểu định nghĩa nó là gì rồi và khi một từ thông dụng và được dùng rất nhiều trong cộng đồng lập trình như từ “bug” như thế thì mình trả lời đại khái là: <em>“Bug là lỗi phần mềm. Nó xảy ra khi phần mềm thực hiện sai và không đúng mong đợi đã được đề ra ban đầu”.</em> Và thầy nhìn mình, nhìn ánh mắt “trìu mến” mà thầy nhìn mình là mình biết chất lượng trả lời câu hỏi của mình như thế nào rồi. Xong thầy bảo, trong phát triển phần mềm, lỗi phần mềm không chỉ là bug, mà còn có <em>defect</em>, <em>fault</em>, <em>error</em>, <em>failure</em>. Lúc thầy nói mấy từ này mình chả nghe ra đâu (do trình nghe đọc tiếng anh mình hơi kém, thực ra là rất kém) đến lúc thầy viết ra mình và giải thích mình mới có thể hình dung ra những từ này. Và đấy là lí do mình viết bài viết này để “flex” (đùa chứ xem mình hiểu tới đâu và nhờ bạn đọc xác nhận lại giùm mình.).</p>
-
-<h1 id="main">Main</h1>
-<p>Thực ra trên mạng có rất nhiều bài viết viết về vấn đề này rồi, bạn chỉ cần hỏi “ông Gu Gồ” là nó ra một đống cho bạn đọc nên là mình không đi sâu vào lắm mà chỉ sơ qua những gì mình hiểu được về nó và phân biệt những khái niệm đã nêu ở phần tiêu đề.</p>
-
-<figure class="image" style="text-align: center;">
-    <img src="/assets/media/post/bug-vs-defect-vs-error-vs-fault-vs-failure.png" alt="" style="margin: auto;" />
-    <figcaption style="font-style: italic;"></figcaption>
-</figure>
-
-<p><strong>Defects</strong>, like quality, can be defined in many different ways but are more commonly defined as deviations from specifications or expectations which might lead to <strong>failures</strong> in operation. <em>(Có thể dịch là: Defects, giống như Quality (Chất lượng phần mềm), có thể định nghĩa bằng nhiều cách khách nhau nhưng thường được định nghĩa là sai lệch so với thông số kỹ thuật hoặc mong đợi có thể dẫn đến failures khi vận hành.)</em></p>
-
-<p>A software <strong>failure</strong> is <strong>observable</strong> software misbehavior; however, a <strong>defect</strong> may not always lead to a <strong>failure</strong>. <em>(Có thể dịch là: Failure là hành vi sai trái của phần mềm có thể quan sát được. Tuy nhiên, một defect không phải lúc nào cũng dẫn đến một failure.)</em></p>
-
-<p><strong>Defects</strong> colloquially called <strong>bugs</strong> in software artifacts, typically in the software source code. <em>(Có thể dịch là: Defects thường được gọi (một cách không chính thức) là bugs trong software artifacts (bất kỳ thứ gì tạo ra phần mềm), điển hình là mã nguồn.)</em></p>
-
-<h1 id="exit">Exit</h1>
-<p>Bài viết này khoảng một nửa là mình bịa, một nửa còn lại cũng bịa nốt.</p>]]></content><author><name>zhao</name></author><category term="SE" /><category term="Bug" /><category term="Defect" /><category term="Fault" /><category term="Failure" /><summary type="html"><![CDATA[Người đọc tự chịu trách nhiệm về tính xác thực của bài viết.]]></summary></entry><entry><title type="html">Lựa chọn đặc trưng trong học máy bằng kiểm tra Chi-Square</title><link href="https://zhaospei.github.io//machine-learning/2023/06/27/chi-square-feature-selection-ml/" rel="alternate" type="text/html" title="Lựa chọn đặc trưng trong học máy bằng kiểm tra Chi-Square" /><published>2023-06-27T00:00:00+07:00</published><updated>2023-06-27T00:00:00+07:00</updated><id>https://zhaospei.github.io//machine-learning/2023/06/27/chi-square-feature-selection-ml</id><content type="html" xml:base="https://zhaospei.github.io//machine-learning/2023/06/27/chi-square-feature-selection-ml/"><![CDATA[<p>Lựa chọn đặc trưng là một trong những vấn đề quan trọng trong học máy, khi chúng ta có một đống cái đặc trưng và quyết định xem những đặc trưng nào là tốt nhất để xây dựng mô hình.</p>
+<p>[1] <a href="https://www.kaggle.com/code/overvisual/seq2seq-torch?scriptVersionId=145596925">https://www.kaggle.com/code/overvisual/seq2seq-torch?scriptVersionId=145596925</a></p>]]></content><author><name>zhao</name></author><category term="NLP" /><category term="nlp" /><category term="pytorch" /><category term="model" /><summary type="html"><![CDATA[Bài viết này giới thiệu cách sử dụng Pytorch để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc sơ qua bài báo sau trước, Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014), để hiểu rõ cấu trúc seq2seq hoạt động như thế nào, sau đó đọc bài viết này để đạt được hiệu quả gấp đôi chỉ với một nửa công sức.]]></summary></entry><entry><title type="html">Lựa chọn đặc trưng trong học máy bằng kiểm tra Chi-Square</title><link href="https://zhaospei.github.io//machine-learning/2023/06/27/chi-square-feature-selection-ml/" rel="alternate" type="text/html" title="Lựa chọn đặc trưng trong học máy bằng kiểm tra Chi-Square" /><published>2023-06-27T00:00:00+07:00</published><updated>2023-06-27T00:00:00+07:00</updated><id>https://zhaospei.github.io//machine-learning/2023/06/27/chi-square-feature-selection-ml</id><content type="html" xml:base="https://zhaospei.github.io//machine-learning/2023/06/27/chi-square-feature-selection-ml/"><![CDATA[<p>Lựa chọn đặc trưng là một trong những vấn đề quan trọng trong học máy, khi chúng ta có một đống cái đặc trưng và quyết định xem những đặc trưng nào là tốt nhất để xây dựng mô hình.</p>
 
 <p>Có nhiều phương pháp để lựa chọn đặc trưng, trong bài viết này tôi sẽ đưa giải pháp thực hiện bằng <strong>Chi-Square</strong>.</p>
 
@@ -1888,4 +1831,50 @@ Quá trình phát triển có thể được chia các phần nhỏ hơn và cá
 <p>Tuy nhiên, việc quản lý, quy trình phát triển mô hình xoắn ốc sẽ phức tạp. Từ đó, mô hình xoắn ốc không phù hợp với các mô hình vừa và nhỏ hoặc rủi ro thấp. Ngoài ra, số lượng lớn các giai đoạn đòi hỏi cần một số lượng lớn tài liệu.</p>
 
 <h1 id="kết-luận">Kết luận</h1>
-<p>Mô hình đóng vai trò là hướng đi và quyết định đến chất lượng đầu ra của sản phẩm. Vì vậy, việc xác định đúng và chính xác mô hình cho phần mềm là rất quan trọng. Mỗi mô hình quy trình tuân theo một loạt các bước duy nhất đối với loại của nó để đảm bảo thành công trong quy trình phát triển phần mềm. Tùy vào cấu trúc phần mềm mà từ đó chọn đúng mô hình phần mềm để thực hiện. Trong thực tế, chúng ta không nhất thiết phải sử dụng đúng các mô hình phần mềm trên mà có thể “biến tấu”, thay đổi để phù hợp với dự án phần mềm.</p>]]></content><author><name>zhao</name></author><category term="SE" /><category term="software" /><category term="model" /><summary type="html"><![CDATA[Mô hình phát triển phần mềm là thể hiện trừu tượng của các tiến trình phát triển phần mềm. Nó xác định các pha/ giai đoạn trong phát triển phần mềm.]]></summary></entry></feed>
+<p>Mô hình đóng vai trò là hướng đi và quyết định đến chất lượng đầu ra của sản phẩm. Vì vậy, việc xác định đúng và chính xác mô hình cho phần mềm là rất quan trọng. Mỗi mô hình quy trình tuân theo một loạt các bước duy nhất đối với loại của nó để đảm bảo thành công trong quy trình phát triển phần mềm. Tùy vào cấu trúc phần mềm mà từ đó chọn đúng mô hình phần mềm để thực hiện. Trong thực tế, chúng ta không nhất thiết phải sử dụng đúng các mô hình phần mềm trên mà có thể “biến tấu”, thay đổi để phù hợp với dự án phần mềm.</p>]]></content><author><name>zhao</name></author><category term="SE" /><category term="software" /><category term="model" /><summary type="html"><![CDATA[Mô hình phát triển phần mềm là thể hiện trừu tượng của các tiến trình phát triển phần mềm. Nó xác định các pha/ giai đoạn trong phát triển phần mềm.]]></summary></entry><entry><title type="html">Một bài giới thiệu về cái blog nho nhỏ này</title><link href="https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/" rel="alternate" type="text/html" title="Một bài giới thiệu về cái blog nho nhỏ này" /><published>2023-02-22T00:00:00+07:00</published><updated>2023-02-22T00:00:00+07:00</updated><id>https://zhaospei.github.io//dummy/2023/02/22/about-this-blog</id><content type="html" xml:base="https://zhaospei.github.io//dummy/2023/02/22/about-this-blog/"><![CDATA[<p>Chào!
+Hmm, đầu tiên phải giới thiệu đôi chút về bản thân nhỉ? À chắc không cần, vì mấy cái câu giới thiệu bản thân tớ 
+viết đi viết lại ở hầu hết mọi trang của blog rồi… LOL.</p>
+
+<p>Lần đầu tiên viết bài, không biết viết như nào :)). Chắc tớ sẽ nói vì sao tớ lại tạo cái blog nào và cách tớ thực hiện nó.</p>
+
+<h2 id="tại-sao-tớ-lại-xây-dựng-cái-blog-này">Tại sao tớ lại xây dựng cái blog này?</h2>
+<p>À chắc cái blog này được tạo bởi vì các ý nghĩ vớ vẩn của tớ tại một thời điểm nào đấy.
+Tớ tạo blog này với mục đích ban đầu là tạo ra một chỗ lưu trữ những bài viết của tớ, nó có thể là các bài viết học thuật hay là 
+những bài viết vớ vẩn chia sẻ trải nghiệm của bản thân tớ. Nhưng mục đích cuối cùng tớ muốn hướng tới là cải thiện khả năng viết
+lách của bản thân và tìm một niềm vui khác khi rảnh.</p>
+
+<h2 id="cách-tớ-thực-hiện-cái-blog-này">Cách tớ thực hiện cái blog này…</h2>
+<p>Ban đầu, tớ định dùng <strong>Django</strong> để xây dựng blog nhưng nghĩ lại là dùng <strong>Django</strong> thì host kiểu gì vì tớ không có tiền để duy trì hosting. Tớ cũng đã nghĩ đến các hosting free nhưng mà nó khá là ba chấm và deloy <strong>Django</strong> rất rườm rà. Và rồi, tớ nghĩ sao tớ 
+không dùng chính <strong>Github Pages</strong> để host nhỉ? Cuối cùng, tớ đã quyết định dùng nó để host và sử dụng <strong>jekyll</strong> để xây dựng blog. 
+Và rồi, tớ đã bắt tay vào làm nó…</p>
+
+<p>Về giao diện của blog, tớ lấy cảm hứng từ <a href="https://reaganhenke.com/">Reaganhenke</a> và <a href="https://www.digitalocean.com/">Digital Ocean</a>.</p>
+
+<p>Tớ biết đến <a href="https://reaganhenke.com/">Reaganhenke</a> nhờ vào một hôm tìm cái trang web nghe nhạc lofi để học. Sau khi tìm hiểu, tớ có biết đến <a href="https://imissmycafe.com/">I Miss My Cafe</a>. Đây là một trang đối với tớ khá là hay, recommend cậu trang này nhé!(à cậu có thể vào để tìm hiểu về nó nhé :))). Tính tớ hay tò mò nên tớ đã lục lọi để tìm ra source của nó để clone lại một trang giống như vậy :)). Kết quả là tớ chỉ tìm được page của người làm ra nó. Và rồi, tớ bị thu hút bởi thiết kế của page, nhất là mấy cái card đầu của page. Haha, và rồi tớ lấy nó để làm giao diện.
+ <em>(Reagan Henke, if you see this blog, please forgive me for using it without your permission!)</em>.</p>
+
+<p>Còn <a href="https://www.digitalocean.com/">Digital Ocean</a> thì một lần tớ tìm tutorial và tìm ra nó. Đây cũng một trang chất lượng, recommend cậu trang này nữa nhé! (À thực ra ai cũng biết đến trang này :))).</p>
+
+<p>Ngoài ra tớ còn sử dụng <a href="https://vincentgarreau.com/particles.js/">particles.js</a> để làm mấy cái lines nối nhau trông rườm rà ở background và <a href="https://talk.hyvor.com/">Hyvor</a> để làm phần comment (Tớ chỉ được dùng thử 15 ngày nên không biết 15 ngày sau nó có bị mất không :))).</p>
+
+<h2 id="mục-đích-hướng-đến-của-blog">Mục đích hướng đến của blog…</h2>
+<p>Blog này tớ dự định sẽ là chia sẻ những bài viết, chủ đề mà tớ tìm hiểu và nghiên cứu. Hiện tại, tớ đang theo Lab CNPM nên đa số bài viết sẽ liên quan đến chủ đề này. Nếu cậu cũng đang tìm hiểu về chủ đề này thì có thể đọc blog của tớ nhé để giúp tớ cản thiện bài viết của bản thân. Ngoài ra, tớ cũng đang tìm hiểu về AI/ML nữa. Cũng có thể sẽ là những bài viết chia sẻ những trải nghiệm của bản thân. Nhưng mà tớ rất là lười viết nên có thể rất lâu tớ mới viết một bài mới _D:.</p>
+
+<p>Cậu cũng có thể gửi bài tới blog nhé. Rất là khuyến khích ủng hộ luôn.</p>
+
+<h2 id="mong-muốn-của-tớ">Mong muốn của tớ…</h2>
+<p>Tớ tạo blog vì ý nghĩ nhất thời và mục đích cá nhân là nhiều nên tớ cũng không mong blog sẽ được biết đến rộng rãi. À được nhiều người biết thì cũng không sao. Mong rằng với những người biết đến blog của tớ sẽ nhận được điều gì đó mới mẻ khi đọc những bài viết vớ vẩn của tớ. Vậy thôi…</p>
+
+<p>Cậu có thể xem source code của blog tớ tại <a href="https://github.com/zhaospei/zhaospei.github.io">Github</a>.</p>
+
+<p>Cảm ơn cậu đã ghé thăm blog của tớ và đọc cái post mở đầu xàm này. 
+Nếu có gì góp ý cho blog thì cậu comment phía dưới nhé, tớ sẽ sớm khắc phục. (À comment sớm nhé chứ phần comment chỉ được dùng thử 15 ngày :)).</p>
+
+<p><br /></p>
+<div style="text-align: right"> 
+See yaaaaaaaaaaaaaaaaaaaaaaaaaaaa,
+</div>
+
+<div style="text-align: right"> 
+<strong>Zhao</strong>
+</div>]]></content><author><name>zhao</name></author><category term="Dummy" /><category term="doc" /><category term="talk" /><category term="zhao" /><summary type="html"><![CDATA[Chào! Hmm, đầu tiên phải giới thiệu đôi chút về bản thân nhỉ? À chắc không cần, vì mấy cái câu giới thiệu bản thân tớ viết đi viết lại ở hầu hết mọi trang của blog rồi… LOL.]]></summary></entry></feed>
