@@ -170,12 +170,11 @@
     }
 
     #twikoo .tk-content {
-      /* background: #E8EEF6; */
-      border: 1px dashed #afafaf !important;
-      padding: 10px 15px !important;
-      border-radius: 8px !important;
+      border: 1px dashed #afafaf ;
+      padding: 10px 15px;
+      border-radius: 8px;
     }
-    /* 展开按钮 */
+
     .twikoo .tk-comments .tk-comments-container .tk-comment .tk-main .tk-expand {
       font-weight: bold;
       border-radius: 0 0 20px 20px;
@@ -196,7 +195,6 @@
     hr {
       position: relative;
       margin: 2rem auto;
-      /* border: 2px dashed #d2ebfd; */
       width: calc(100% - 4px);
     }
     hr {
@@ -214,14 +212,13 @@
       font-weight: 600;
       font-style: normal;
       font-variant: normal;
-      font-family: 'Font Awesome 5 Free';
+      font-family: "Font Awesome 5 Free";
       text-rendering: auto;
       -webkit-font-smoothing: antialiased;
       position: absolute;
       top: -10px;
       left: 5%;
       z-index: 1;
-      /* color: #bfe4fb; */
       content: '\f0c4';
       font-size: 20px;
       line-height: 1;
@@ -242,6 +239,7 @@
       font-weight: 700;
       font-size: 1.43em;
     }
+
     .fa-solid, .fas {
       font-family: "Font Awesome 6 Free";
       font-weight: 900;
@@ -302,9 +300,6 @@
             "posts popular";
       }
     }
-        
-    
-
     
   }
 
