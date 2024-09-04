@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet href="/scripts/pretty-feed-v3.xsl" type="text/xsl"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:h="http://www.w3.org/TR/html4/"><channel><title>TDung&apos;s Site</title><description>Stay hungry, stay foolish</description><link>https://zhaospei.github.io</link><item><title>个人定制化指南</title><link>https://zhaospei.github.io/blog/customize-zh</link><guid isPermaLink="true">https://zhaospei.github.io/blog/customize-zh</guid><description>astro-theme-pure 个人定制化指南</description><pubDate>Sat, 27 Jul 2024 08:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;站点配置&lt;/h2&gt;
+&lt;p&gt;客制化本主题需要调整较多的源代码。&lt;/p&gt;
+&lt;p&gt;我们已经尽力将配置项集中在 &lt;code&gt;src/site.config.ts&lt;/code&gt; 文件中，以方便用户进行修改，并集成了较多常见的社交媒体/工具 icon，如果你想要添加新的 icon，你需要自行修改源代码。&lt;/p&gt;
+&lt;p&gt;你可以在全局搜索如下关键字来找到需要替换的文本：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Lorem ipsum&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;astro-theme-pure&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cworld&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;接下来我们逐一展开介绍。&lt;/p&gt;
+&lt;h3&gt;主配置文件 &lt;code&gt;src/site.config.ts&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;请根据现有 &lt;code&gt;src/site.config.ts&lt;/code&gt; 模板修改对应配置。&lt;/p&gt;
+&lt;p&gt;一些特殊配置项的说明如下：&lt;/p&gt;
+&lt;h4&gt;Waline 评论系统&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!NOTE]&lt;/p&gt;
+&lt;p&gt;对应 &lt;code&gt;src/site.config.ts&lt;/code&gt; 中的 &lt;code&gt;siteConfig.walineServerUrl&lt;/code&gt; 配置项。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;主题的评论、阅读统计、点赞等功能均由 &lt;a href=&quot;https://waline.js.org/&quot;&gt;Waline&lt;/a&gt; 提供。&lt;/p&gt;
+&lt;p&gt;你可以参照其文档进行配置，推荐使用 &lt;a href=&quot;https://vercel.com/&quot;&gt;Vercel&lt;/a&gt; + &lt;a href=&quot;https://supabase.com/&quot;&gt;Supabase&lt;/a&gt; 的组合。&lt;/p&gt;
+&lt;p&gt;本主题只需要在 &lt;code&gt;src/site.config.ts&lt;/code&gt; 中的 &lt;code&gt;siteConfig.walineServerUrl&lt;/code&gt; 提供最终的后端域名即可。&lt;/p&gt;
+&lt;h4&gt;Footer&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!NOTE]&lt;/p&gt;
+&lt;p&gt;对应 &lt;code&gt;src/site.config.ts&lt;/code&gt; 中的 &lt;code&gt;socialLinks&lt;/code&gt; 配置项。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;目前支持的社交媒体包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;coolapk&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;telegram&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;github&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bilibili&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;twitter&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;zhihu&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;steam&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;netease_music&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果你想要添加新的社交媒体，你需要修改如下文件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;src/types.ts&lt;/code&gt;：添加新的 &lt;code&gt;SocialLink.name&lt;/code&gt; 枚举值以及 &lt;code&gt;SocialMediaIconId&lt;/code&gt; 的 icon 映射关系&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;public/icons/social.svg&lt;/code&gt;：遵循现有格式，以 symbol 方式添加新的 icon&lt;/p&gt;
+&lt;p&gt;推荐在如下网站寻找社交媒体的 icon，以保持一致性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://remixicon.com/&quot;&gt;remixicon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.mingcute.com/&quot;&gt;mingcute&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;其他需要替换的文件&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;public/favicon&lt;/code&gt;：网站的 favicon，你可以在 &lt;a href=&quot;https://favicon.io/favicon-converter/&quot;&gt;favicon.io&lt;/a&gt; 生成 favicon&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;public/images/social-card.png&lt;/code&gt;：网站的社交卡片&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;src/assets/&lt;/code&gt;：此目录下包含客户端渲染的头像、赞助二维码等图片，请替换为你自己的图片&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;其他页面&lt;/h2&gt;
+&lt;h3&gt;About&lt;/h3&gt;
+&lt;p&gt;目前支持的 icon 可在 &lt;code&gt;src/icons&lt;/code&gt; 目录下找到。&lt;/p&gt;
+&lt;p&gt;如果你想要添加新的 Tools 图标，你需要在 &lt;code&gt;src/icons&lt;/code&gt; 目录下添加新的 icon。&lt;/p&gt;
+&lt;p&gt;推荐在如下网站寻找新的 icon，以保持一致性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://icon-sets.iconify.design/&quot;&gt;iconify&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://icones.js.org/&quot;&gt;icones&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;部署模式&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!NOTE]&lt;/p&gt;
+&lt;p&gt;对应 &lt;code&gt;astro.config.ts&lt;/code&gt; 中的 &lt;code&gt;export default defineConfig&lt;/code&gt; 配置项。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果你采用 Vercel 部署，你无需修改。&lt;/p&gt;
+&lt;p&gt;如果你采用 Node.js 本地部署，你需要依照 &lt;code&gt;astro.config.ts&lt;/code&gt; 中的注释，修改&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import vercel from &apos;@astrojs/vercel/serverless&apos;
+...
+export default defineConfig({
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true
+    }
+  }),
+  ...
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;为&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import node from &apos;@astrojs/node&apos;
+...
+export default defineConfig({
+  adapter: node({
+    mode: &apos;standalone&apos;
+  }),
+  ...
+})
+&lt;/code&gt;&lt;/pre&gt;
+</content:encoded><h:img src="/_astro/thumbnail.H3t_xmcX.jpg"/><enclosure url="/_astro/thumbnail.H3t_xmcX.jpg"/></item><item><title>Personalized Customization Guide</title><link>https://zhaospei.github.io/blog/customize</link><guid isPermaLink="true">https://zhaospei.github.io/blog/customize</guid><description>astro-theme-pure Personalized Customization Guide</description><pubDate>Sat, 27 Jul 2024 08:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Site Configuration&lt;/h2&gt;
+&lt;p&gt;Customizing this theme requires adjusting a significant amount of source code.&lt;/p&gt;
+&lt;p&gt;We have made efforts to centralize the configuration options in the &lt;code&gt;src/site.config.ts&lt;/code&gt; file for user convenience and have integrated a variety of common social media/tools icons. If you want to add new icons, you will need to modify the source code yourself.&lt;/p&gt;
+&lt;p&gt;You can globally search for the following keywords to find the text that needs to be replaced:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Lorem ipsum&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;astro-theme-pure&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cworld&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Next, we will introduce each aspect in detail.&lt;/p&gt;
+&lt;h3&gt;Main Configuration File &lt;code&gt;src/site.config.ts&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Please modify the corresponding configuration according to the existing &lt;code&gt;src/site.config.ts&lt;/code&gt; template.&lt;/p&gt;
+&lt;p&gt;Some special configuration items are explained as follows:&lt;/p&gt;
+&lt;h4&gt;Waline Comment System&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!NOTE]&lt;/p&gt;
+&lt;p&gt;Corresponds to the &lt;code&gt;siteConfig.walineServerUrl&lt;/code&gt; configuration item in &lt;code&gt;src/site.config.ts&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The theme&apos;s comment, read statistics, likes, and other functionalities are all provided by &lt;a href=&quot;https://waline.js.org/&quot;&gt;Waline&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can refer to its documentation for configuration, and it is recommended to use the &lt;a href=&quot;https://vercel.com/&quot;&gt;Vercel&lt;/a&gt; + &lt;a href=&quot;https://supabase.com/&quot;&gt;Supabase&lt;/a&gt; combination.&lt;/p&gt;
+&lt;p&gt;This theme only requires providing the final backend domain name in the &lt;code&gt;siteConfig.walineServerUrl&lt;/code&gt; of &lt;code&gt;src/site.config.ts&lt;/code&gt;.&lt;/p&gt;
+&lt;h4&gt;Footer&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!NOTE]&lt;/p&gt;
+&lt;p&gt;Corresponds to the &lt;code&gt;socialLinks&lt;/code&gt; configuration item in &lt;code&gt;src/site.config.ts&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Currently supported social media include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;coolapk&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;telegram&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;github&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bilibili&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;twitter&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;zhihu&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;steam&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;netease_music&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you want to add new social media, you need to modify the following files:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;src/types.ts&lt;/code&gt;: Add a new &lt;code&gt;SocialLink.name&lt;/code&gt; enum value and the icon mapping relationship for &lt;code&gt;SocialMediaIconId&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;public/icons/social.svg&lt;/code&gt;: Follow the existing format and add a new icon as a symbol&lt;/p&gt;
+&lt;p&gt;It is recommended to find social media icons on the following websites to maintain consistency:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://remixicon.com/&quot;&gt;remixicon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.mingcute.com/&quot;&gt;mingcute&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Other Files to Replace&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;public/favicon&lt;/code&gt;: The site&apos;s favicon. You can generate a favicon at &lt;a href=&quot;https://favicon.io/favicon-converter/&quot;&gt;favicon.io&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;public/images/social-card.png&lt;/code&gt;: The site&apos;s social card&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;src/assets/&lt;/code&gt;: This directory contains client-rendered avatars, sponsorship QR codes, and other images. Please replace them with your own images&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Other Pages&lt;/h2&gt;
+&lt;h3&gt;About&lt;/h3&gt;
+&lt;p&gt;Currently supported icons can be found in the &lt;code&gt;src/icons&lt;/code&gt; directory.&lt;/p&gt;
+&lt;p&gt;If you want to add new Tools icons, you need to add a new icon in the &lt;code&gt;src/icons&lt;/code&gt; directory.&lt;/p&gt;
+&lt;p&gt;It is recommended to find new icons on the following websites to maintain consistency:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://icon-sets.iconify.design/&quot;&gt;iconify&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://icones.js.org/&quot;&gt;icones&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Deployment Mode&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!NOTE]&lt;/p&gt;
+&lt;p&gt;Corresponds to the &lt;code&gt;export default defineConfig&lt;/code&gt; configuration item in &lt;code&gt;astro.config.ts&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;If you are deploying with Vercel, no modification is needed.&lt;/p&gt;
+&lt;p&gt;If you are deploying with Node.js locally, you need to follow the comments in &lt;code&gt;astro.config.ts&lt;/code&gt; and modify&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import vercel from &apos;@astrojs/vercel/serverless&apos;
+...
+export default defineConfig({
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true
+    }
+  }),
+  ...
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;to&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import node from &apos;@astrojs/node&apos;
+...
+export default defineConfig({
+  adapter: node({
+    mode: &apos;standalone&apos;
+  }),
+  ...
+})
+&lt;/code&gt;&lt;/pre&gt;
+</content:encoded><h:img src="/_astro/thumbnail.H3t_xmcX.jpg"/><enclosure url="/_astro/thumbnail.H3t_xmcX.jpg"/></item><item><title>Markdown 语法支持</title><link>https://zhaospei.github.io/blog/markdown-zh</link><guid isPermaLink="true">https://zhaospei.github.io/blog/markdown-zh</guid><description>Markdown 是一种轻量级的「标记语言」。</description><pubDate>Fri, 26 Jul 2024 08:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;基本语法&lt;/h2&gt;
+&lt;p&gt;Markdown 是一种轻量级且易于使用的语法，用于为您的写作设计风格。&lt;/p&gt;
+&lt;h3&gt;标题&lt;/h3&gt;
+&lt;p&gt;文章内容较多时，可以用标题分段：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 标题 1
+
+## 标题 2
+
+## 大标题
+
+### 小标题
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;标题预览会打乱文章的结构，所以在此不展示。&lt;/p&gt;
+&lt;h3&gt;粗斜体&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;_斜体文本_
+
+**粗体文本**
+
+**_粗斜体文本_**
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;预览：&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;斜体文本&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;粗体文本&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;粗斜体文本&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;链接&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;文字链接 [链接名称](http://链接网址)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;预览：&lt;/p&gt;
+&lt;p&gt;文字链接 &lt;a href=&quot;http://xn--ses510ahtve0t&quot;&gt;链接名称&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;行内代码&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;这是一条 `单行代码`
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;预览：&lt;/p&gt;
+&lt;p&gt;这是一条 &lt;code&gt;行内代码&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;代码块&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;```js
+// calculate fibonacci
+function fibonacci(n) {
+  if (n &amp;lt;= 1) return 1
+  return fibonacci(n - 1) + fibonacci(n - 2)
+}
+```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;预览：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// calculate fibonacci
+function fibonacci(n) {
+  if (n &amp;lt;= 1) return 1
+  return fibonacci(n - 1) + fibonacci(n - 2)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;当前使用 shiki 作为代码高亮插件，支持的语言请参考 &lt;a href=&quot;https://shiki.matsu.io/languages.html&quot;&gt;shiki / languages&lt;/a&gt;。&lt;/p&gt;
+&lt;h3&gt;行内公式&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;这是一条行内公式 $e^{i\pi} + 1 = 0$
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;预览：&lt;/p&gt;
+&lt;p&gt;这是一条行内公式 $e^{i\pi} + 1 = 0$&lt;/p&gt;
+&lt;h3&gt;公式块&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;$$
+\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} \, dx
+$$
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;预览：&lt;/p&gt;
+&lt;p&gt;$$
+\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} , dx
+$$&lt;/p&gt;
+&lt;p&gt;当前使用 KaTeX 作为数学公式插件，支持的语法请参考 &lt;a href=&quot;https://katex.org/docs/supported.html&quot;&gt;KaTeX Supported Functions&lt;/a&gt;。&lt;/p&gt;
+&lt;h4&gt;图片&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;![CWorld](https://cravatar.cn/avatar/1ffe42aa45a6b1444a786b1f32dfa8aa?s=200)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;预览：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cravatar.cn/avatar/1ffe42aa45a6b1444a786b1f32dfa8aa?s=200&quot; alt=&quot;CWorld&quot; /&gt;&lt;/p&gt;
+&lt;h4&gt;删除线&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;~~删除线~~
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;预览：&lt;/p&gt;
+&lt;p&gt;&lt;s&gt;删除线&lt;/s&gt;&lt;/p&gt;
+&lt;h3&gt;列表&lt;/h3&gt;
+&lt;p&gt;普通无序列表&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- 1
+- 2
+- 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;预览：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1&lt;/li&gt;
+&lt;li&gt;2&lt;/li&gt;
+&lt;li&gt;3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;普通有序列表&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1. GPT-4
+2. Claude Opus
+3. LLaMa
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;预览：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;GPT-4&lt;/li&gt;
+&lt;li&gt;Claude Opus&lt;/li&gt;
+&lt;li&gt;LLaMa&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;列表里可以继续嵌套语法&lt;/p&gt;
+&lt;h3&gt;引用&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; 枪响，雷鸣，剑起。繁花血景。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;预览：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;枪响，雷鸣，剑起。繁花血景。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;引用里也可以继续嵌套语法。&lt;/p&gt;
+&lt;h3&gt;换行&lt;/h3&gt;
+&lt;p&gt;markdown 分段落是需要空一行的。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;如果不空行
+就会在一段
+
+第一段
+
+第二段
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;预览：&lt;/p&gt;
+&lt;p&gt;如果不空行
+就会在一段&lt;/p&gt;
+&lt;p&gt;第一段&lt;/p&gt;
+&lt;p&gt;第二段&lt;/p&gt;
+&lt;h3&gt;分隔符&lt;/h3&gt;
+&lt;p&gt;如果你有写分割线的习惯，可以新起一行输入三个减号&lt;code&gt;---&lt;/code&gt; 或者星号 &lt;code&gt;***&lt;/code&gt;。当前后都有段落时，请空出一行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;---
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;预览：&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;高级技巧&lt;/h2&gt;
+&lt;h3&gt;行内 HTML 元素&lt;/h3&gt;
+&lt;p&gt;目前只支持部分段内 HTML 元素效果，包括 &lt;code&gt;&amp;lt;kdb&amp;gt; &amp;lt;b&amp;gt; &amp;lt;i&amp;gt; &amp;lt;em&amp;gt; &amp;lt;sup&amp;gt; &amp;lt;sub&amp;gt; &amp;lt;br&amp;gt;&lt;/code&gt; ，如&lt;/p&gt;
+&lt;h4&gt;键位显示&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;使用 &amp;lt;kbd&amp;gt;Ctrl&amp;lt;/kbd&amp;gt; + &amp;lt;kbd&amp;gt;Alt&amp;lt;/kbd&amp;gt; + &amp;lt;kbd&amp;gt;Del&amp;lt;/kbd&amp;gt; 重启电脑
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;预览：&lt;/p&gt;
+&lt;p&gt;使用 &amp;lt;kbd&amp;gt;Ctrl&amp;lt;/kbd&amp;gt; + &amp;lt;kbd&amp;gt;Alt&amp;lt;/kbd&amp;gt; + &amp;lt;kbd&amp;gt;Del&amp;lt;/kbd&amp;gt; 重启电脑&lt;/p&gt;
+&lt;h4&gt;粗斜体&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;b&amp;gt; Markdown 在此处同样适用，如 _加粗_ &amp;lt;/b&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;预览：&lt;/p&gt;
+&lt;p&gt;&amp;lt;b&amp;gt; Markdown 在此处同样适用，如 &lt;em&gt;加粗&lt;/em&gt; &amp;lt;/b&amp;gt;&lt;/p&gt;
+&lt;h3&gt;其他 HTML 写法&lt;/h3&gt;
+&lt;h4&gt;折叠块&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;details&amp;gt;&amp;lt;summary&amp;gt;点击展开&amp;lt;/summary&amp;gt;它被隐藏了&amp;lt;/details&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;预览：&lt;/p&gt;
+&lt;p&gt;&amp;lt;details&amp;gt;&amp;lt;summary&amp;gt;点击展开&amp;lt;/summary&amp;gt;它被隐藏了&amp;lt;/details&amp;gt;&lt;/p&gt;
+&lt;h3&gt;表格&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;| 表头1 | 表头2 |
+| ----- | ----- |
+| 内容1 | 内容2 |
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;预览：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;表头1&lt;/th&gt;
+&lt;th&gt;表头2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;内容1&lt;/td&gt;
+&lt;td&gt;内容2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;注释&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;在引用的地方使用 [^注释] 来添加注释。
+
+然后在文档的结尾，添加注释的内容（会默认于文章结尾渲染之）。
+
+[^注释]: 这里是注释的内容
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;预览：&lt;/p&gt;
+&lt;p&gt;在引用的地方使用 &lt;a href=&quot;%E8%BF%99%E9%87%8C%E6%98%AF%E6%B3%A8%E9%87%8A%E7%9A%84%E5%86%85%E5%AE%B9&quot;&gt;^注释&lt;/a&gt; 来添加注释。&lt;/p&gt;
+&lt;p&gt;然后在文档的结尾，添加注释的内容（会默认于文章结尾渲染之）。&lt;/p&gt;
+&lt;h3&gt;To-Do 列表&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;- [ ] 未完成的任务
+- [x] 已完成的任务
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;预览：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[ ] 未完成的任务&lt;/li&gt;
+&lt;li&gt;[x] 已完成的任务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;特别引用块&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; [!NOTE]
+&amp;gt; 在浏览内容时，用户也应该知道的有用信息。
+
+&amp;gt; [!TIP]
+&amp;gt; 可以更好或更容易地完成事情的有用建议。
+
+&amp;gt; [!IMPORTANT]
+&amp;gt; 用户需要知道的关键信息。
+
+&amp;gt; [!WARNING]
+&amp;gt; 需要用户立即关注以避免问题的紧急信息。
+
+&amp;gt; [!CAUTION]
+&amp;gt; 就某些行为的风险或负面结果提供建议。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;预览：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!NOTE]
+在浏览内容时，用户也应该知道的有用信息。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!TIP]
+可以更好或更容易地完成事情的有用建议。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!IMPORTANT]
+用户需要知道的关键信息。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!WARNING]
+需要用户立即关注以避免问题的紧急信息。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!CAUTION]
+就某些行为的风险或负面结果提供建议。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;符号转义&lt;/h3&gt;
+&lt;p&gt;如果你的描述中需要用到 markdown 的符号，比如 _ # * 等，但又不想它被转义，这时候可以在这些符号前加反斜杠，如 &lt;code&gt;\_&lt;/code&gt; &lt;code&gt;\#&lt;/code&gt; &lt;code&gt;\*&lt;/code&gt; 进行避免。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;\_不想这里的文本变斜体\_
+
+\*\*不想这里的文本被加粗\*\*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;预览：&lt;/p&gt;
+&lt;p&gt;_不想这里的文本变斜体_&lt;/p&gt;
+&lt;p&gt;**不想这里的文本被加粗**&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;内嵌 Astro 组件&lt;/h2&gt;
+&lt;p&gt;源代码位于 &lt;code&gt;src/components&lt;/code&gt; 目录下，一般不用于写作，而是用于页面的客制化。&lt;/p&gt;
+&lt;p&gt;你可以仿照现有组件的写法，自行添加新的组件。&lt;/p&gt;
+</content:encoded><h:img src="/_astro/thumbnail.HAXFr_hw.jpg"/><enclosure url="/_astro/thumbnail.HAXFr_hw.jpg"/></item><item><title>Markdown Syntax Support</title><link>https://zhaospei.github.io/blog/markdown</link><guid isPermaLink="true">https://zhaospei.github.io/blog/markdown</guid><description>Markdown is a lightweight &quot;markup language.&quot;</description><pubDate>Fri, 26 Jul 2024 08:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Basic Syntax&lt;/h2&gt;
+&lt;p&gt;Markdown is a lightweight and easy-to-use syntax for styling your writing.&lt;/p&gt;
+&lt;h3&gt;Headers&lt;/h3&gt;
+&lt;p&gt;When the content of the article is extensive, you can use headers to segment:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Header 1
+
+## Header 2
+
+## Large Header
+
+### Small Header
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Header previews would disrupt the structure of the article, so they are not displayed here.&lt;/p&gt;
+&lt;h3&gt;Bold and Italics&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;_Italic text_
+
+**Bold text**
+
+**_Bold Italic text_**
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Italic text&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Bold text&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Bold Italic text&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;Links&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;Text link [Link Name](http://link-url)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;Text link &lt;a href=&quot;http://link-url&quot;&gt;Link Name&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Inline Code&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;This is an `inline code`
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;This is an &lt;code&gt;inline code&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;Code Blocks&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;```js
+// calculate fibonacci
+function fibonacci(n) {
+  if (n &amp;lt;= 1) return 1
+  return fibonacci(n - 1) + fibonacci(n - 2)
+}
+```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Preview:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// calculate fibonacci
+function fibonacci(n) {
+  if (n &amp;lt;= 1) return 1
+  return fibonacci(n - 1) + fibonacci(n - 2)
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Currently using shiki as the code highlighting plugin. For supported languages, refer to &lt;a href=&quot;https://shiki.matsu.io/languages.html&quot;&gt;shiki / languages&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Inline Formula&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;This is an inline formula $e^{i\pi} + 1 = 0$
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;This is an inline formula $e^{i\pi} + 1 = 0$&lt;/p&gt;
+&lt;h3&gt;Formula Blocks&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;$$
+\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} \, dx
+$$
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;$$
+\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} , dx
+$$&lt;/p&gt;
+&lt;p&gt;Currently using KaTeX as the math formula plugin. For supported syntax, refer to &lt;a href=&quot;https://katex.org/docs/supported.html&quot;&gt;KaTeX Supported Functions&lt;/a&gt;.&lt;/p&gt;
+&lt;h4&gt;Images&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;![CWorld](https://cravatar.cn/avatar/1ffe42aa45a6b1444a786b1f32dfa8aa?s=200)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cravatar.cn/avatar/1ffe42aa45a6b1444a786b1f32dfa8aa?s=200&quot; alt=&quot;CWorld&quot; /&gt;&lt;/p&gt;
+&lt;h4&gt;Strikethrough&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;~~Strikethrough~~
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;&lt;s&gt;Strikethrough&lt;/s&gt;&lt;/p&gt;
+&lt;h3&gt;Lists&lt;/h3&gt;
+&lt;p&gt;Regular unordered list&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- 1
+- 2
+- 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Preview:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1&lt;/li&gt;
+&lt;li&gt;2&lt;/li&gt;
+&lt;li&gt;3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Regular ordered list&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1. GPT-4
+2. Claude Opus
+3. LLaMa
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Preview:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;GPT-4&lt;/li&gt;
+&lt;li&gt;Claude Opus&lt;/li&gt;
+&lt;li&gt;LLaMa&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You can continue to nest syntax within lists.&lt;/p&gt;
+&lt;h3&gt;Blockquotes&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; Gunshot, thunder, sword rise. A scene of flowers and blood.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Preview:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Gunshot, thunder, sword rise. A scene of flowers and blood.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;You can continue to nest syntax within blockquotes.&lt;/p&gt;
+&lt;h3&gt;Line Breaks&lt;/h3&gt;
+&lt;p&gt;Markdown needs a blank line to separate paragraphs.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;If you don&apos;t leave a blank line
+it will be in one paragraph
+
+First paragraph
+
+Second paragraph
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;If you don&apos;t leave a blank line
+it will be in one paragraph&lt;/p&gt;
+&lt;p&gt;First paragraph&lt;/p&gt;
+&lt;p&gt;Second paragraph&lt;/p&gt;
+&lt;h3&gt;Separators&lt;/h3&gt;
+&lt;p&gt;If you have the habit of writing separators, you can start a new line and enter three dashes &lt;code&gt;---&lt;/code&gt; or asterisks &lt;code&gt;***&lt;/code&gt;. Leave a blank line before and after when there are paragraphs:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;---
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Preview:&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;Advanced Techniques&lt;/h2&gt;
+&lt;h3&gt;Inline HTML Elements&lt;/h3&gt;
+&lt;p&gt;Currently, only some inline HTML elements are supported, including &lt;code&gt;&amp;lt;kdb&amp;gt; &amp;lt;b&amp;gt; &amp;lt;i&amp;gt; &amp;lt;em&amp;gt; &amp;lt;sup&amp;gt; &amp;lt;sub&amp;gt; &amp;lt;br&amp;gt;&lt;/code&gt;, such as&lt;/p&gt;
+&lt;h4&gt;Key Display&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;Use &amp;lt;kbd&amp;gt;Ctrl&amp;lt;/kbd&amp;gt; + &amp;lt;kbd&amp;gt;Alt&amp;lt;/kbd&amp;gt; + &amp;lt;kbd&amp;gt;Del&amp;lt;/kbd&amp;gt; to reboot the computer
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;Use &amp;lt;kbd&amp;gt;Ctrl&amp;lt;/kbd&amp;gt; + &amp;lt;kbd&amp;gt;Alt&amp;lt;/kbd&amp;gt; + &amp;lt;kbd&amp;gt;Del&amp;lt;/kbd&amp;gt; to reboot the computer&lt;/p&gt;
+&lt;h4&gt;Bold Italics&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;b&amp;gt; Markdown also applies here, such as _bold_ &amp;lt;/b&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;&amp;lt;b&amp;gt; Markdown also applies here, such as &lt;em&gt;bold&lt;/em&gt; &amp;lt;/b&amp;gt;&lt;/p&gt;
+&lt;h3&gt;Other HTML Writing&lt;/h3&gt;
+&lt;h4&gt;Foldable Blocks&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;details&amp;gt;&amp;lt;summary&amp;gt;Click to expand&amp;lt;/summary&amp;gt;It is hidden&amp;lt;/details&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;&amp;lt;details&amp;gt;&amp;lt;summary&amp;gt;Click to expand&amp;lt;/summary&amp;gt;It is hidden&amp;lt;/details&amp;gt;&lt;/p&gt;
+&lt;h3&gt;Tables&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;| Header1  | Header2  |
+| -------- | -------- |
+| Content1 | Content2 |
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Preview:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Header1&lt;/th&gt;
+&lt;th&gt;Header2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Content1&lt;/td&gt;
+&lt;td&gt;Content2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;Footnotes&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;Use [^footnote] to add a footnote at the point of reference.
+
+Then, at the end of the document, add the content of the footnote (it will be rendered at the end of the article by default).
+
+[^footnote]: Here is the content of the footnote
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;Use [^footnote] to add a footnote at the point of reference.&lt;/p&gt;
+&lt;p&gt;Then, at the end of the document, add the content of the footnote (it will be rendered at the end of the article by default).&lt;/p&gt;
+&lt;p&gt;[^footnote]: Here is the content of the footnote&lt;/p&gt;
+&lt;h3&gt;To-Do Lists&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;- [ ] Incomplete task
+- [x] Completed task
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Preview:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[ ] Incomplete task&lt;/li&gt;
+&lt;li&gt;[x] Completed task&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Special Blockquotes&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; [!NOTE]
+&amp;gt; Useful information that users should also know when browsing the content.
+
+&amp;gt; [!TIP]
+&amp;gt; Useful tips for doing things better or easier.
+
+&amp;gt; [!IMPORTANT]
+&amp;gt; Key information that users need to know.
+
+&amp;gt; [!WARNING]
+&amp;gt; Urgent information that requires users&apos; immediate attention to avoid problems.
+
+&amp;gt; [!CAUTION]
+&amp;gt; Provides advice on the risks or negative consequences of certain actions.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Preview:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!NOTE]
+Useful information that users should also know when browsing the content.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!TIP]
+Useful tips for doing things better or easier.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!IMPORTANT]
+Key information that users need to know.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!WARNING]
+Urgent information that requires users&apos; immediate attention to avoid problems.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[!CAUTION]
+Provides advice on the risks or negative consequences of certain actions.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Symbol Escaping&lt;/h3&gt;
+&lt;p&gt;If you need to use markdown symbols like _ # * in your description but don&apos;t want them to be escaped, you can add a backslash before these symbols, such as &lt;code&gt;\_&lt;/code&gt; &lt;code&gt;\#&lt;/code&gt; &lt;code&gt;\*&lt;/code&gt; to avoid it.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;\_Don&apos;t want the text here to be italic\_
+
+\*\*Don&apos;t want the text here to be bold\*\*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;_Don&apos;t want the text here to be italic_&lt;/p&gt;
+&lt;p&gt;**Don&apos;t want the text here to be bold**&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;Embedding Astro Components&lt;/h2&gt;
+&lt;p&gt;The source code is located in the &lt;code&gt;src/components&lt;/code&gt; directory, generally not for writing, but for page customization.&lt;/p&gt;
+&lt;p&gt;You can add new components by following the writing style of existing components.&lt;/p&gt;
+</content:encoded><h:img src="/_astro/thumbnail.HAXFr_hw.jpg"/><enclosure url="/_astro/thumbnail.HAXFr_hw.jpg"/></item></channel></rss>
