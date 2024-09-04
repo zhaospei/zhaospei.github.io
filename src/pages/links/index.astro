@@ -13,17 +13,17 @@ const headings = [
   {
     depth: 2,
     slug: 'common-links',
-    text: '常规友链'
+    text: 'Liên kết bạn bè thường xuyên'
   },
   {
     depth: 2,
     slug: 'special-links',
-    text: '特殊友链'
+    text: 'Liên kết bạn bè đặc biệt'
   },
   {
     depth: 2,
     slug: 'apply-links',
-    text: '申请友链'
+    text: 'Đăng ký liên kết bạn bè'
   }
 ]
 
@@ -31,13 +31,13 @@ const friendlist = links.friends
 ---
 
 <PageLayout title='Links' headings={headings} info='/links'>
-  <p>怎么可能有顺序呢，当然是随机的~</p>
-  <h2 id='common-links'>常规友链</h2>
+  <p>Làm sao có thể có mệnh lệnh? Tất nhiên là ngẫu nhiên rồi ~ </p>
+  <h2 id='common-links'>Liên kết bạn bè thường xuyên</h2>
   <FriendList list={friendlist[0]} />
-  <Collapse title='不太活跃的博客'>
+  <Collapse title='Blog không hoạt động nhiều'>
     <FriendList list={friendlist[1]} />
   </Collapse>
-  <Collapse title='友链记录册'>
+  <Collapse title='Sổ ghi chép dây chuyền thân thiện'>
     <Timeline
       events={[
         { date: '2024-07-01', content: 'Lorem ipsum dolor sit amet.' },
@@ -46,28 +46,28 @@ const friendlist = links.friends
       ]}
     />
   </Collapse>
-  <FriendList list={friendlist[2]} title='特殊友链' />
+  <FriendList list={friendlist[2]} title='Liên kết người bạn đặc biệt' />
 
   <!-- apply-links -->
-  <h2 id='apply-links'>申请友链</h2>
-  <p>本站信息如下：</p>
+  <h2 id='apply-links'>Đăng ký liên kết bạn bè  </h2>
+  <p>Mẫu đăng ký:</p>
   <blockquote class='not-prose border-s-4 ps-4'>
-    <p>名称：<code>{siteConfig.applyFriendTip.name}</code></p>
-    <p>简介：<code>{siteConfig.applyFriendTip.slogan}</code></p>
-    <p>链接：<code>{siteConfig.applyFriendTip.url}</code></p>
-    <p>图标：<code>{siteConfig.applyFriendTip.avatar}</code></p>
+    <p>Tên：<code>{siteConfig.applyFriendTip.name}</code></p>
+    <p>Slogan：<code>{siteConfig.applyFriendTip.slogan}</code></p>
+    <p>URL：<code>{siteConfig.applyFriendTip.url}</code></p>
+    <p>Avatar：<code>{siteConfig.applyFriendTip.avatar}</code></p>
   </blockquote>
 
   <p>
-    申请时还请按照这个模板留言（<a
+    Khi ứng tuyển vui lòng để lại lời nhắn theo mẫu <a
       href='https://github.com/cworld1/theme-astro-pure/blob/main/public/links.json'
-      target='_blank'>提交 PR</a
-    > 或许也是个更快的办法）。此外有关申请说明：
+      target='_blank'>PR</a
+    > này. Có lẽ đó cũng là một cách nhanh hơn). Ngoài ra, hướng dẫn ứng dụng:
   </p>
   <ul>
-    <li>在你的友链上添加了本站；</li>
-    <li>请确保你的站点活着；</li>
-    <li>博客内容不违反国家法律。</li>
+    <li>Đã thêm trang web này vào liên kết bạn bè của bạn;    </li>
+    <li>Hãy chắc chắn rằng trang web của bạn vẫn còn sống;</li>
+    <li>Nội dung blog không vi phạm luật pháp quốc gia.</li>
   </ul>
   <Comment slot='bottom' />
 </PageLayout>
