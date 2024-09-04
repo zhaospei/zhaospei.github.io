@@ -1,0 +1,160 @@
+---
+import SpeedInsights from '@vercel/speed-insights/astro'
+import type { SiteMeta } from '@/types'
+import { siteConfig } from '@/site-config'
+const isProd = import.meta.env.PROD
+
+type Props = SiteMeta
+
+const { articleDate, description, ogImage, title } = Astro.props
+
+const titleSeparator = '•'
+const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const socialImageURL = new URL(ogImage ? ogImage : '/images/social-card.png', Astro.url).href
+const { walineServerUrl } = siteConfig
+---
+
+<meta charset='utf-8' />
+<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+<meta content='IE=edge' http-equiv='X-UA-Compatible' />
+<title>{siteTitle}</title>
+
+{/* Icons / Favicon */}
+<link rel='apple-touch-icon' sizes='180x180' href='/favicon/apple-touch-icon.png' />
+<link rel='icon' type='image/png' sizes='32x32' href='/favicon/favicon-32x32.png' />
+<link rel='icon' type='image/png' sizes='16x16' href='/favicon/favicon-16x16.png' />
+<link rel='manifest' href='/favicon/site.webmanifest' />
+
+{/* Font preloads */}
+<link rel='preload' href='/fonts/Satoshi-Variable.ttf' as='font' type='font/ttf' crossorigin />
+<link
+  rel='preload'
+  href='/fonts/Satoshi-VariableItalic.ttf'
+  as='font'
+  type='font/ttf'
+  crossorigin
+/>
+
+{/* Canonical URL */}
+<link rel='canonical' href={canonicalURL} />
+
+{/* Primary Meta Tags */}
+<meta content={siteTitle} name='title' />
+<meta content={description} name='description' />
+<meta content={siteConfig.author} name='author' />
+
+{/* Theme Color */}
+<meta content='' name='theme-color' />
+
+{/* Open Graph / Facebook */}
+<meta content={articleDate ? 'article' : 'website'} property='og:type' />
+<meta content={title} property='og:title' />
+<meta content={description} property='og:description' />
+<meta content={canonicalURL} property='og:url' />
+<meta content={siteConfig.title} property='og:site_name' />
+<meta content={siteConfig.ogLocale} property='og:locale' />
+<meta content={socialImageURL} property='og:image' />
+<meta content='1200' property='og:image:width' />
+<meta content='630' property='og:image:height' />
+{
+  articleDate && (
+    <>
+      <meta content={siteConfig.author} property='article:author' />
+      <meta content={articleDate} property='article:published_time' />
+    </>
+  )
+}
+
+{/* Twitter */}
+<meta content='summary_large_image' property='twitter:card' />
+<meta content={canonicalURL} property='twitter:url' />
+<meta content={title} property='twitter:title' />
+<meta content={description} property='twitter:description' />
+<meta content={socialImageURL} property='twitter:image' />
+
+{/* Telegram */}
+<meta name='telegram:channel' content='@cworld0_cn' />
+
+{/* Sitemap */}
+<link href='/sitemap-index.xml' rel='sitemap' />
+
+{/* RSS auto-discovery */}
+<link
+  rel='alternate'
+  type='application/rss+xml'
+  title={siteConfig.title}
+  href={`${Astro.site}rss.xml`}
+/>
+
+<meta content={Astro.generator} name='generator' />
+
+{/* Waline */}
+<meta content={walineServerUrl} name='waline-server-url' />
+
+{/* Styles */}
+<link rel='stylesheet' href='/styles/global.css' />
+
+{/* Transitions */}
+<script>
+  import type { TransitionBeforeSwapEvent } from 'astro:transitions/client'
+  document.addEventListener('astro:before-swap', (e) =>
+    [
+      ...(e as TransitionBeforeSwapEvent).newDocument.head.querySelectorAll('link[as="font"]')
+    ].forEach((link) => link.remove())
+  )
+
+  function animate() {
+    document.querySelectorAll('.animate').forEach((el, i) => {
+      setTimeout(() => {
+        el.classList.add('show')
+      }, i * 150)
+    })
+  }
+  document.addEventListener('DOMContentLoaded', animate)
+  document.addEventListener('astro:after-swap', animate)
+
+  function addCodePreStyle() {
+    // line number
+    let codeBlocks = Array.from(document.querySelectorAll('pre'))
+
+    if (codeBlocks.length > 0) {
+      let styleSheet = document.createElement('style')
+      document.head.appendChild(styleSheet)
+
+      let block = codeBlocks[0]
+      let style = block.getAttribute('style')
+      if (style) {
+        console.log(style)
+        let backgroundColorMatch = style.match(/background-color:\s*([^;]+)/)
+        let shikiDarkBgMatch = style.match(/--shiki-dark-bg:\s*([^;]+)/)
+        if (backgroundColorMatch && shikiDarkBgMatch) {
+          let backgroundColor = backgroundColorMatch[1]
+          let shikiDarkBg = shikiDarkBgMatch[1]
+
+          styleSheet.innerHTML = `
+          pre .line::before {
+            background-color: ${backgroundColor};
+            --shiki-dark-bg: ${shikiDarkBg};
+          }
+        `
+        }
+      }
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addCodePreStyle)
+</script>
+
+{/* Vercel speed insights */}
+{isProd && <SpeedInsights />}
+
+{/* user script */}
+{
+  isProd && (
+    <script>
+      console.log( '%c Astro-theme-pure %c https://github.com/cworld1/theme-astro-pure/',
+      'color:#fff;background:linear-gradient(90deg,#448bff,#44e9ff);padding:5px 0;',
+      'color:#000;background:linear-gradient(90deg,#44e9ff,#ffffff);padding:5px 10px 5px 0px;' )
+    </script>
+  )
+}

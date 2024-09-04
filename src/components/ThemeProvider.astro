@@ -1,0 +1,45 @@
+---
+
+---
+
+<!-- Use inline mode to quick load color, which can avoid splash -->
+<script is:inline>
+  const lightModePref = window.matchMedia('(prefers-color-scheme: light)')
+
+  // Get user preference from local storage or from browser preference
+  function getUserPref() {
+    return localStorage.getItem('theme') || (lightModePref.matches ? 'light' : 'dark')
+  }
+
+  function setTheme(theme, save = false) {
+    if (!['light', 'dark'].includes(theme)) {
+      console.log(`Invalid theme value '${theme}' received. Expected 'light' or 'dark'.`)
+      return
+    }
+
+    if (save) localStorage.setItem('theme', theme)
+    document.documentElement.classList.toggle('dark', theme === 'dark')
+
+    // Set window theme-color
+    const metaColor = theme === 'dark' ? '#0B0B10' : '#FCFCFD'
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', metaColor)
+  }
+
+  // Initial Setup
+  setTheme(getUserPref())
+
+  // View transitions hook to restore theme
+  document.addEventListener('astro:after-swap', () => setTheme(getUserPref()))
+
+  // Listen for theme-change custom event
+  document.addEventListener('theme-change', (e) => {
+    const theme = e.detail.theme
+    localStorage.setItem('theme', theme)
+    setTheme(e.detail.theme, true)
+  })
+
+  // Listen for prefers-color-scheme change
+  lightModePref.addEventListener('change', (e) => {
+    setTheme(e.matches ? 'light' : 'dark')
+  })
+</script>

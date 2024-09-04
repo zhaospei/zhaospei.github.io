@@ -1,0 +1,223 @@
+---
+import Button from '@/components/Button.astro'
+import Collapse from '@/components/Collapse.astro'
+import Sponsors from '@/components/projects/Sponsors.astro'
+import ProjectSection from '@/components/projects/ProjectSection.astro'
+import PageLayout from '@/layouts/CommonPage.astro'
+import { Image } from 'astro:assets'
+import wechat from '@/assets/wechat-qrcode.jpg'
+import alipay from '@/assets/alipay-qrcode.jpg'
+
+const headings = [
+  {
+    depth: 2,
+    slug: 'theme',
+    text: 'Theme'
+  },
+  {
+    depth: 2,
+    slug: 'programs',
+    text: 'Programs'
+  },
+  {
+    depth: 2,
+    slug: 'learnings',
+    text: 'Learnings'
+  },
+  {
+    depth: 2,
+    slug: 'others',
+    text: 'Others'
+  },
+  {
+    depth: 2,
+    slug: 'gpg-signature',
+    text: 'GPG Signature'
+  },
+  {
+    depth: 2,
+    slug: 'sponsorship',
+    text: 'Sponsorship'
+  }
+]
+---
+
+<PageLayout title='Projects' headings={headings} info={{ slug: '/projects', hideComment: true }}>
+  <p>Github Activities:</p>
+  <p>
+    <Image
+      src='https://ghchart.rshah.org/659eb9/cworld1'
+      alt='github activities'
+      inferSize
+      loading='eager'
+      decoding='async'
+    />
+  </p>
+  <p>
+    If you think it would be useful or interesting to collaborate on a project, you can donate to
+    support my work or contact me to discuss a project.
+  </p>
+  <Button title='Checkout sponsorship' class='w-fit' href='#sponsorship'>
+    <svg class='size-5' slot='before'>
+      <use href='/icons/copyright-sponsor.svg#mingcute-receive-money-line'></use>
+    </svg>
+  </Button>
+
+  <h2 id='theme'>Themes</h2>
+  <ProjectSection
+    project={[
+      {
+        name: '🍭 Astro-theme-pure',
+        description: 'A simple, clean but powerful blog theme build by astro.',
+        links: [
+          { type: 'github', href: 'https://github.com/cworld1/theme-astro-pure' },
+          { type: 'site', href: 'https://github.com/cworld1/theme-astro-pure' },
+          {
+            type: 'doc',
+            href: 'https://github.com/cworld1/theme-astro-pure/blob/main/src/content/post/customize/index.md'
+          }
+        ]
+      }
+    ]}
+  />
+
+  <h2 id='programs'>Programs</h2>
+  <ProjectSection
+    project={[
+      {
+        name: '🤖 Arknights Telegram Bot',
+        description: 'Telegram Bot for Arknights',
+        links: [
+          { type: 'github', href: 'https://github.com/IJNKAWAKAZE/arknights_bot' },
+          { type: 'site', href: 'https://t.me/PtiIopsis_bot' },
+          {
+            type: 'doc',
+            href: 'https://github.com/IJNKAWAKAZE/arknights_bot/blob/main/docs/Development.md'
+          }
+        ]
+      },
+      {
+        name: '💄 PKU Art',
+        description: 'A script to beautify pku course website',
+        links: [
+          { type: 'github', href: 'https://github.com/zhuozhiyongde/pku-art' },
+          { type: 'site', href: 'https://github.com/zhuozhiyongde/pku-art' },
+          { type: 'doc', href: 'https://docs.arthals.ink/docs/pku-art' }
+        ]
+      }
+    ]}
+  />
+  <Collapse title='Some old projects'>
+    <ProjectSection
+      project={[
+        {
+          name: 'Search Switcher',
+          description: 'Add links to each other in search engines',
+          links: [{ type: 'github', href: 'https://github.com/cworld1/search-switcher' }]
+        },
+        {
+          name: 'Pure Baidu',
+          description: 'Baidu search page beautification module',
+          links: [
+            { type: 'doc', href: 'https://cworld.top/blog/pure-baidu' },
+            { type: 'site', href: 'https://userstyles.org/styles/173673/pure' }
+          ]
+        }
+      ]}
+    />
+  </Collapse>
+
+  <h2 id='learnings'>Learnings</h2>
+  <ProjectSection
+    class='my-2'
+    project={[
+      {
+        name: 'Rust Learning',
+        description: 'Some notes and code about CWorld learning Rust',
+        links: [{ type: 'github', href: 'https://github.com/cworld1/rust-learning' }]
+      },
+      {
+        name: 'CS 213 Learning',
+        description: 'Notes, code and experiences for Introduction to Computer Systems course',
+        links: [
+          {
+            type: 'github',
+            href: 'https://github.com/zhuozhiyongde/Introduction-To-Computer-System-2023Fall-PKU'
+          }
+        ]
+      }
+    ]}
+  />
+
+  <h2 id='others'>Others</h2>
+  <ProjectSection
+    project={[
+      {
+        name: 'CWorld',
+        description: "CWorld's Github",
+        links: [{ type: 'github', href: 'https://github.com/cworld1' }]
+      },
+      {
+        name: 'Arthals',
+        description: 'Arthals Github',
+        links: [{ type: 'github', href: 'https://github.com/zhuozhiyongde' }]
+      }
+    ]}
+  />
+
+  <!-- gpg signature -->
+  <h2 id='gpg-signature'>GPG Signature</h2>
+  <p>
+    You can verify the authenticity of the files I signed by checking the GPG signature. My GPG key
+    is <code>APTX4869</code>, and you can find it on the opengpg key servers or download from it.
+  </p>
+  <Button href='https://keys.openpgp.org/search?q=APTX4869' title='Checkout my key' target='_blank'>
+    <svg class='size-5' slot='before'>
+      <use href='/icons/project.svg#mingcute-key-2-line'></use>
+    </svg>
+  </Button>
+
+  <!-- sponsorship -->
+  <h2 id='sponsorship'>Sponsorship</h2>
+  <p>Please leave a message or contact me proactively after sponsorship.</p>
+  <div class='flex flex-col justify-center gap-4 sm:flex-row'>
+    {
+      [
+        { name: 'WeChat', icon: 'mingcute-wechat-pay-line', image: wechat },
+        { name: 'Alipay', icon: 'mingcute-alipay-line', image: alipay }
+      ].map((item) => (
+        <div class='group relative justify-center overflow-hidden rounded-xl border bg-white'>
+          <div class='absolute bottom-0 end-0 start-0 top-0 flex items-center justify-center transition-opacity group-hover:opacity-0'>
+            <svg class='size-20'>
+              <use href={`/icons/copyright-sponsor.svg#${item.icon}`} />
+            </svg>
+          </div>
+          <Image
+            class='mx-auto my-0 max-w-72 opacity-30 blur-sm transition-opacity group-hover:opacity-100 group-hover:blur-none'
+            src={item.image}
+            alt={item.name}
+            loading='eager'
+          />
+        </div>
+      ))
+    }
+  </div>
+  <p>Thanks to the following sponsors:</p>
+  <Sponsors
+    sponsors={[
+      { name: 'C*a（酷安@暴走の蜗牛）', amount: '2.00', date: '2019-07-02' },
+      { name: '华雄(QQ：1300****71)', amount: '5.00', date: '2019-12-30' },
+      { name: '◌(QQ：1934****45)', amount: '3.00', date: '2019-12-30' },
+      { name: 'Anonymous', amount: '20.00', date: '2022-04-06' }
+    ]}
+  />
+</PageLayout>
+
+<script is:inline type='module' data-astro-rerun>
+  import { pageviewCount } from 'https://unpkg.com/@waline/client@v3/dist/pageview.js'
+
+  pageviewCount({
+    serverURL: document.querySelector('meta[name="waline-server-url"]').getAttribute('content'),
+    path: window.location.pathname
+  })
+</script>

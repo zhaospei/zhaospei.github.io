@@ -1,0 +1,31 @@
+---
+export const prerender = true
+
+import Button from '@/components/Button.astro'
+import Search from '@/components/search/Search.astro'
+import PageLayout from '@/layouts/BaseLayout.astro'
+import { getAllPosts } from '@/utils'
+
+const allPosts = await getAllPosts()
+
+const meta = {
+  description: 'Search relative posts of the whole blog',
+  title: 'Search'
+}
+---
+
+<PageLayout meta={meta}>
+  <div class='w-full'>
+    <Button title='Back' href='/blog' style='back' />
+    <h1 class='mb-6 mt-6 text-3xl font-medium sm:mt-10'>Search</h1>
+
+    <p class='animate'>
+      Enter a search term or phrase to search the blog. If you cannot find what you want, try <a
+        class='underline'
+        href='https://cse.google.com.hk/cse?cx=220579155cae140a0'
+        target='_blank'>Google Powered</a
+      > one.
+    </p>
+    <Search posts={allPosts} class='animate' />
+  </div>
+</PageLayout>
