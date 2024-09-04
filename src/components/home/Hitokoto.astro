@@ -18,7 +18,8 @@
         .then((data) => {
           let hitokotoElement = this.querySelector('#hitokoto') as HTMLElement
           if (!hitokotoElement) return
-          hitokotoElement.innerText = data.hitokoto
+          // hitokotoElement.innerText = data.hitokoto
+          hitokotoElement.innerHTML = "Have Hope, Not Expectations."
         })
     }
   }
