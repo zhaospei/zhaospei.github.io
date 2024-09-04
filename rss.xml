@@ -1,662 +1,501 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet href="/scripts/pretty-feed-v3.xsl" type="text/xsl"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:h="http://www.w3.org/TR/html4/"><channel><title>TDung&apos;s Site</title><description>Stay hungry, stay foolish</description><link>https://zhaospei.github.io</link><item><title>个人定制化指南</title><link>https://zhaospei.github.io/blog/customize-zh</link><guid isPermaLink="true">https://zhaospei.github.io/blog/customize-zh</guid><description>astro-theme-pure 个人定制化指南</description><pubDate>Sat, 27 Jul 2024 08:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;站点配置&lt;/h2&gt;
-&lt;p&gt;客制化本主题需要调整较多的源代码。&lt;/p&gt;
-&lt;p&gt;我们已经尽力将配置项集中在 &lt;code&gt;src/site.config.ts&lt;/code&gt; 文件中，以方便用户进行修改，并集成了较多常见的社交媒体/工具 icon，如果你想要添加新的 icon，你需要自行修改源代码。&lt;/p&gt;
-&lt;p&gt;你可以在全局搜索如下关键字来找到需要替换的文本：&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet href="/scripts/pretty-feed-v3.xsl" type="text/xsl"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:h="http://www.w3.org/TR/html4/"><channel><title>TDung&apos;s Site</title><description>Stay hungry, stay foolish</description><link>https://zhaospei.github.io</link><item><title>Triển khai seq2seq với Pytorch</title><link>https://zhaospei.github.io/blog/seq2seq-pytorch</link><guid isPermaLink="true">https://zhaospei.github.io/blog/seq2seq-pytorch</guid><description>Bài viết này giới thiệu cách sử dụng Pytorch để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản</description><pubDate>Fri, 20 Oct 2023 08:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Bài viết này giới thiệu cách sử dụng &lt;code&gt;Pytorch&lt;/code&gt; để xây dựng mô hình seq2seq và triển khai một ứng dụng dịch máy đơn giản, vui lòng đọc sơ qua bài báo sau trước, &lt;a href=&quot;https://arxiv.org/pdf/1406.1078.pdf&quot;&gt;Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation(2014)&lt;/a&gt;, để hiểu rõ cấu trúc seq2seq hoạt động như thế nào, sau đó đọc bài viết này để đạt được hiệu quả gấp đôi chỉ với một nửa công sức.&lt;/p&gt;
+&lt;p&gt;Tôi đã thấy rất nhiều sơ đồ cấu trúc mạng seq2seq và tôi cảm thấy sơ đồ này do Pytorch cung cấp là dễ hiểu nhất.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;src/assets/media/post/seq2seq.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Trước hết, từ hình trên ta có thể thấy rõ ràng, seq2seq cần hoạt động trên ba &quot;biến&quot;, khác với tất cả các cấu trúc mạng mà tôi đã tiếp xúc trước đây. Chúng ta gọi đầu vào cho Encoder là &lt;code&gt;enc_input&lt;/code&gt;, đầu vào cho Decoder là &lt;code&gt;dec_input&lt;/code&gt; và đầu ra của Decoder là &lt;code&gt;dec_output&lt;/code&gt;. Phần sau đây sử dụng một ví dụ cụ thể để minh họa cho toàn bộ quy trình thực hiện của seq2seq.&lt;/p&gt;
+&lt;p&gt;Hình bên dưới là cấu trúc Encoder cấu tạo từ LTSM, đầu vào là từng chữ cái (bao gồm cả dấu cách) trong &quot;go away&quot;, chúng ta cần thông tin của &lt;code&gt;hidden state&lt;/code&gt; ở thời điểm cuối cùng, bao gồm $$h_{t}$$ và $$c_{t}$$.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;src/assets/media/post/LSTM_Encoder.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Sau đó sử dụng đầu ra gồm $$h_{t}$$ và $$c_{t}$$ làm đầu vào cho hidden state đầu tiên của Decoder là $$h_{0}, c_{0}$$, như hình bên dưới. Đồng thời, lớp đầu vào (&lt;code&gt;input layer&lt;/code&gt;) đầu của Decoder sẽ được nhập một ký tự đại diện cho phần đầu của câu (Do người dùng tự định nghĩa có thể là &quot;&amp;lt;SOS&amp;gt;&quot;, &quot;\t&quot;, &quot;S&quot;, .... đều được chấp nhận. Ở đây, tôi lấy &quot;\t&quot; làm ví dụ), và sau đó nhận đầu ra &quot;m&quot;, và một hidden state mới $$h_{1}$$ và $$c_{1}$$&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;src/assets/media/post/gFRVkq.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Sau đó lấy $$h_{1}$$, $$c_{1}$$ và &quot;m&quot; làm đầu vào, nhận đầu ra là &quot;a&quot;, và một hidden state mới $$h_{2}$$ và $$c_{2}$$&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;src/assets/media/post/gFR1B9.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Lặp lại các bước trên cho đến khi ký tự kết thúc của câu cuối cùng được xuất ra (do người dùng xác định, &quot;&amp;lt;EOS&amp;gt;&quot;, &quot;\n&quot;, &quot;E&quot;, ... ở đây tôi lấy &quot;\n&quot; làm ví dụ).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;src/assets/media/post/gFRGA1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Trong phần Decoder, bạn sẽ có thể có những câu hỏi sau và tôi sẽ trả lời chúng theo hiểu biết cá nhân.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Lorem ipsum&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;astro-theme-pure&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;cworld&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Tôi phài làm như thế nào nếu Decoder không thể dừng lại trong quá trình đào tạo? Tức là ký tự kết thúc của câu không bao giờ được đưa ra.
+&lt;ul&gt;
+&lt;li&gt;Đầu tiên, trong quá trình huấn luyện, &lt;strong&gt;độ dài của câu mà Decoder sẽ xuất ra sẽ được biết&lt;/strong&gt;. Giả sử thời điểm hiện tại đã đến ký tự cuối cùng của độ dài câu và dự đoán không phải là ký tự kết thúc thì cũng không sao, chỉ dừng lại ở đây và tính toán tổn thất.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;接下来我们逐一展开介绍。&lt;/p&gt;
-&lt;h3&gt;主配置文件 &lt;code&gt;src/site.config.ts&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;请根据现有 &lt;code&gt;src/site.config.ts&lt;/code&gt; 模板修改对应配置。&lt;/p&gt;
-&lt;p&gt;一些特殊配置项的说明如下：&lt;/p&gt;
-&lt;h4&gt;Waline 评论系统&lt;/h4&gt;
-&lt;blockquote&gt;
-&lt;p&gt;[!NOTE]&lt;/p&gt;
-&lt;p&gt;对应 &lt;code&gt;src/site.config.ts&lt;/code&gt; 中的 &lt;code&gt;siteConfig.walineServerUrl&lt;/code&gt; 配置项。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;主题的评论、阅读统计、点赞等功能均由 &lt;a href=&quot;https://waline.js.org/&quot;&gt;Waline&lt;/a&gt; 提供。&lt;/p&gt;
-&lt;p&gt;你可以参照其文档进行配置，推荐使用 &lt;a href=&quot;https://vercel.com/&quot;&gt;Vercel&lt;/a&gt; + &lt;a href=&quot;https://supabase.com/&quot;&gt;Supabase&lt;/a&gt; 的组合。&lt;/p&gt;
-&lt;p&gt;本主题只需要在 &lt;code&gt;src/site.config.ts&lt;/code&gt; 中的 &lt;code&gt;siteConfig.walineServerUrl&lt;/code&gt; 提供最终的后端域名即可。&lt;/p&gt;
-&lt;h4&gt;Footer&lt;/h4&gt;
-&lt;blockquote&gt;
-&lt;p&gt;[!NOTE]&lt;/p&gt;
-&lt;p&gt;对应 &lt;code&gt;src/site.config.ts&lt;/code&gt; 中的 &lt;code&gt;socialLinks&lt;/code&gt; 配置项。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;目前支持的社交媒体包括：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;coolapk&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;telegram&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;github&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;bilibili&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;twitter&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;zhihu&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;steam&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;netease_music&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;如果你想要添加新的社交媒体，你需要修改如下文件：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;src/types.ts&lt;/code&gt;：添加新的 &lt;code&gt;SocialLink.name&lt;/code&gt; 枚举值以及 &lt;code&gt;SocialMediaIconId&lt;/code&gt; 的 icon 映射关系&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;public/icons/social.svg&lt;/code&gt;：遵循现有格式，以 symbol 方式添加新的 icon&lt;/p&gt;
-&lt;p&gt;推荐在如下网站寻找社交媒体的 icon，以保持一致性：&lt;/p&gt;
+&lt;li&gt;Tôi phải làm như thế nào nếu Decocder không thể dừng lại trong quá trình kiểm tra? Ví dụ, dự đoán là &quot;wasd s w \n sdsw \n ...... (tiếp tục sinh từ)&quot;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://remixicon.com/&quot;&gt;remixicon&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.mingcute.com/&quot;&gt;mingcute&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Nó sẽ không dừng lại, vì trong quá trình kiểm tra, Decoder cũng có đầu vào, nhưng đầu vào này có rất nhiều placeholder vô nghĩa, chẳng hạn rất nhiều &quot;&amp;lt;pad&amp;gt;&quot;. Vì Decoder phải có đầu ra có độ dài hữu hạn. Khi đó bạn chỉ lấy tất cả các ký tự trước ký tự kết thúc đầu tiên. Ví dụ trên kết quả dự đoán cuối cùng là &quot;wasd s w&quot;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Mối quan hệ giữa đầu vào và đầu ra của Decoder, tức là &lt;code&gt;dec_input&lt;/code&gt; và &lt;code&gt;dec_output&lt;/code&gt; là gì?
+&lt;ul&gt;
+&lt;li&gt;Trong quá trình huấn luyện, bất kể Decoder sinh ra kí tự nào tại thời điểm hiện tại, Decoder tại thời điểm tiếp theo sẽ nhập theo &quot;kế hoạch&quot; ban đầu. Ví dụ: giả sử &lt;code&gt;dec_input = &quot;\twasted&quot;&lt;/code&gt;, sau khi nhập &quot;\t&quot; lần đầu, Decoder sẽ xuất ra chữ &quot;m&quot;, ghi lại thôi, nó sẽ không ảnh hưởng đến thời điểm tiếp theo khi Decoder tiếp tục nhập chữ &quot;w&quot;.&lt;/li&gt;
+&lt;li&gt;Trong quá trình valid và testing, đầu ra của Decoder tại mỗi thời điểm sẽ ảnh hưởng đến đầu vào, vì trong quá trình valid và testing, mạng không thể nhìn thấy kết quả nên chỉ tiến hành theo vòng lặp. Ví dụ, bây giờ tôi muốn dịch từ &quot;wasted&quot; trong tiếng anh sang tiếng &quot;lãng phí&quot; trong tiếng việt. Sau đó, Decoder bắt đầu với việc nhập ký tự &quot;\t&quot;, nhận kết quả đầu ra nếu là &quot;m&quot;, tại thời điểm tiếp theo, Decoder sẽ nhập &quot;m&quot;, nhận đầu ra, nếu là &quot;a&quot;, sau đó nhận &quot;a&quot; là đầu vào, nhận đầu ra, ... và cứ thế cho đến khi gặp kí tự cuối cùng hoặc đạt độ dài tối đa. Mặc dù từ sinh ra không đúng nhưng mong đợi nhưng phải chấp nhận thôi :smiley:.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;其他需要替换的文件&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;public/favicon&lt;/code&gt;：网站的 favicon，你可以在 &lt;a href=&quot;https://favicon.io/favicon-converter/&quot;&gt;favicon.io&lt;/a&gt; 生成 favicon&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;public/images/social-card.png&lt;/code&gt;：网站的社交卡片&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;src/assets/&lt;/code&gt;：此目录下包含客户端渲染的头像、赞助二维码等图片，请替换为你自己的图片&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;其他页面&lt;/h2&gt;
-&lt;h3&gt;About&lt;/h3&gt;
-&lt;p&gt;目前支持的 icon 可在 &lt;code&gt;src/icons&lt;/code&gt; 目录下找到。&lt;/p&gt;
-&lt;p&gt;如果你想要添加新的 Tools 图标，你需要在 &lt;code&gt;src/icons&lt;/code&gt; 目录下添加新的 icon。&lt;/p&gt;
-&lt;p&gt;推荐在如下网站寻找新的 icon，以保持一致性：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://icon-sets.iconify.design/&quot;&gt;iconify&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://icones.js.org/&quot;&gt;icones&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;部署模式&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;[!NOTE]&lt;/p&gt;
-&lt;p&gt;对应 &lt;code&gt;astro.config.ts&lt;/code&gt; 中的 &lt;code&gt;export default defineConfig&lt;/code&gt; 配置项。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;如果你采用 Vercel 部署，你无需修改。&lt;/p&gt;
-&lt;p&gt;如果你采用 Node.js 本地部署，你需要依照 &lt;code&gt;astro.config.ts&lt;/code&gt; 中的注释，修改&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import vercel from &apos;@astrojs/vercel/serverless&apos;
-...
-export default defineConfig({
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true
-    }
-  }),
-  ...
-})
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;为&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import node from &apos;@astrojs/node&apos;
-...
-export default defineConfig({
-  adapter: node({
-    mode: &apos;standalone&apos;
-  }),
-  ...
-})
-&lt;/code&gt;&lt;/pre&gt;
-</content:encoded><h:img src="/_astro/thumbnail.H3t_xmcX.jpg"/><enclosure url="/_astro/thumbnail.H3t_xmcX.jpg"/></item><item><title>Personalized Customization Guide</title><link>https://zhaospei.github.io/blog/customize</link><guid isPermaLink="true">https://zhaospei.github.io/blog/customize</guid><description>astro-theme-pure Personalized Customization Guide</description><pubDate>Sat, 27 Jul 2024 08:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Site Configuration&lt;/h2&gt;
-&lt;p&gt;Customizing this theme requires adjusting a significant amount of source code.&lt;/p&gt;
-&lt;p&gt;We have made efforts to centralize the configuration options in the &lt;code&gt;src/site.config.ts&lt;/code&gt; file for user convenience and have integrated a variety of common social media/tools icons. If you want to add new icons, you will need to modify the source code yourself.&lt;/p&gt;
-&lt;p&gt;You can globally search for the following keywords to find the text that needs to be replaced:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Lorem ipsum&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;astro-theme-pure&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;cworld&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Next, we will introduce each aspect in detail.&lt;/p&gt;
-&lt;h3&gt;Main Configuration File &lt;code&gt;src/site.config.ts&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;Please modify the corresponding configuration according to the existing &lt;code&gt;src/site.config.ts&lt;/code&gt; template.&lt;/p&gt;
-&lt;p&gt;Some special configuration items are explained as follows:&lt;/p&gt;
-&lt;h4&gt;Waline Comment System&lt;/h4&gt;
-&lt;blockquote&gt;
-&lt;p&gt;[!NOTE]&lt;/p&gt;
-&lt;p&gt;Corresponds to the &lt;code&gt;siteConfig.walineServerUrl&lt;/code&gt; configuration item in &lt;code&gt;src/site.config.ts&lt;/code&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;The theme&apos;s comment, read statistics, likes, and other functionalities are all provided by &lt;a href=&quot;https://waline.js.org/&quot;&gt;Waline&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;You can refer to its documentation for configuration, and it is recommended to use the &lt;a href=&quot;https://vercel.com/&quot;&gt;Vercel&lt;/a&gt; + &lt;a href=&quot;https://supabase.com/&quot;&gt;Supabase&lt;/a&gt; combination.&lt;/p&gt;
-&lt;p&gt;This theme only requires providing the final backend domain name in the &lt;code&gt;siteConfig.walineServerUrl&lt;/code&gt; of &lt;code&gt;src/site.config.ts&lt;/code&gt;.&lt;/p&gt;
-&lt;h4&gt;Footer&lt;/h4&gt;
-&lt;blockquote&gt;
-&lt;p&gt;[!NOTE]&lt;/p&gt;
-&lt;p&gt;Corresponds to the &lt;code&gt;socialLinks&lt;/code&gt; configuration item in &lt;code&gt;src/site.config.ts&lt;/code&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Currently supported social media include:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;coolapk&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;telegram&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;github&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;bilibili&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;twitter&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;zhihu&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;steam&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;netease_music&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;If you want to add new social media, you need to modify the following files:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;src/types.ts&lt;/code&gt;: Add a new &lt;code&gt;SocialLink.name&lt;/code&gt; enum value and the icon mapping relationship for &lt;code&gt;SocialMediaIconId&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;public/icons/social.svg&lt;/code&gt;: Follow the existing format and add a new icon as a symbol&lt;/p&gt;
-&lt;p&gt;It is recommended to find social media icons on the following websites to maintain consistency:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://remixicon.com/&quot;&gt;remixicon&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.mingcute.com/&quot;&gt;mingcute&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Other Files to Replace&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;public/favicon&lt;/code&gt;: The site&apos;s favicon. You can generate a favicon at &lt;a href=&quot;https://favicon.io/favicon-converter/&quot;&gt;favicon.io&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;public/images/social-card.png&lt;/code&gt;: The site&apos;s social card&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;src/assets/&lt;/code&gt;: This directory contains client-rendered avatars, sponsorship QR codes, and other images. Please replace them with your own images&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Other Pages&lt;/h2&gt;
-&lt;h3&gt;About&lt;/h3&gt;
-&lt;p&gt;Currently supported icons can be found in the &lt;code&gt;src/icons&lt;/code&gt; directory.&lt;/p&gt;
-&lt;p&gt;If you want to add new Tools icons, you need to add a new icon in the &lt;code&gt;src/icons&lt;/code&gt; directory.&lt;/p&gt;
-&lt;p&gt;It is recommended to find new icons on the following websites to maintain consistency:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://icon-sets.iconify.design/&quot;&gt;iconify&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://icones.js.org/&quot;&gt;icones&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Deployment Mode&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;[!NOTE]&lt;/p&gt;
-&lt;p&gt;Corresponds to the &lt;code&gt;export default defineConfig&lt;/code&gt; configuration item in &lt;code&gt;astro.config.ts&lt;/code&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;If you are deploying with Vercel, no modification is needed.&lt;/p&gt;
-&lt;p&gt;If you are deploying with Node.js locally, you need to follow the comments in &lt;code&gt;astro.config.ts&lt;/code&gt; and modify&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import vercel from &apos;@astrojs/vercel/serverless&apos;
-...
-export default defineConfig({
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true
-    }
-  }),
-  ...
-})
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;to&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import node from &apos;@astrojs/node&apos;
-...
-export default defineConfig({
-  adapter: node({
-    mode: &apos;standalone&apos;
-  }),
-  ...
-})
-&lt;/code&gt;&lt;/pre&gt;
-</content:encoded><h:img src="/_astro/thumbnail.H3t_xmcX.jpg"/><enclosure url="/_astro/thumbnail.H3t_xmcX.jpg"/></item><item><title>Markdown 语法支持</title><link>https://zhaospei.github.io/blog/markdown-zh</link><guid isPermaLink="true">https://zhaospei.github.io/blog/markdown-zh</guid><description>Markdown 是一种轻量级的「标记语言」。</description><pubDate>Fri, 26 Jul 2024 08:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;基本语法&lt;/h2&gt;
-&lt;p&gt;Markdown 是一种轻量级且易于使用的语法，用于为您的写作设计风格。&lt;/p&gt;
-&lt;h3&gt;标题&lt;/h3&gt;
-&lt;p&gt;文章内容较多时，可以用标题分段：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# 标题 1
+&lt;p&gt;Hơi lạc đề một chút, cá nhân tôi nghĩ seq2seq rất giống với AutoEncoder.&lt;/p&gt;
+&lt;h2&gt;Hãy bắt đầu giải thích mã&lt;/h2&gt;
+&lt;p&gt;Đầu tiên, import thư viện, ở đây tôi dùng &apos;S&apos; làm ký tự bắt đầu và &apos;E&apos; làm ký tự kết thúc, nếu đầu vào hoặc đầu ra quá ngắn, tôi sẽ padding nó bằng ký tự &apos;?&apos;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# code by Tae Hwan Jung(Jeff Jung) @graykode, modify by zhaospei
+import torch
+import numpy as np
+import torch.nn as nn
+import torch.utils.data as Data
 
-## 标题 2
+device = torch.device(&apos;cuda&apos; if torch.cuda.is_available() else &apos;cpu&apos;)
+# S: Symbol that shows starting of decoding input
+# E: Symbol that shows starting of decoding output
+# ?: Symbol that will fill in blank sequence if current batch data size is short than n_step
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Xác định tập dữ liệu và các tham số tập dữ liệu ở đây rất đơn giản, có thể coi như một công việc dịch thuật, chỉ là dịch tiếng Anh sang tiếng Anh.
+`n_step`` là độ dài của từ dài nhất, tất cả các từ khác không đủ dài sẽ được padding bằng &apos;?&apos;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;letter = [c for c in &apos;SE?abcdefghijklmnopqrstuvwxyz&apos;]
+letter2idx = {n: i for i, n in enumerate(letter)}
 
-## 大标题
+seq_data = [[&apos;man&apos;, &apos;women&apos;], [&apos;black&apos;, &apos;white&apos;], [&apos;king&apos;, &apos;queen&apos;], [&apos;girl&apos;, &apos;boy&apos;], [&apos;up&apos;, &apos;down&apos;], [&apos;high&apos;, &apos;low&apos;]]
 
-### 小标题
+# Seq2Seq Parameter
+n_step = max([max(len(i), len(j)) for i, j in seq_data]) # max_len(=5)
+n_hidden = 128
+n_class = len(letter2idx) # classfication problem
+batch_size = 3
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;标题预览会打乱文章的结构，所以在此不展示。&lt;/p&gt;
-&lt;h3&gt;粗斜体&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;_斜体文本_
+&lt;p&gt;Sau đây là xử lý dữ liệu, trước tên là xử lý các từ không đủ độ dài, sử dụng ký tự &apos;?&apos; để padding; Sau đó thêm flag kết thúc &apos;E&apos; vào cuối dữ liệu đầu vào của Encoder, thêm flag bắt đầu &apos;S&apos; vào đầu dữ liệu đầu vào của Decoder và flag kết thúc &apos;E&apos; vào cuối dữ liệu đầu ra của Decoder. Xem hình phía dưới để hiểu rõ hơn.&lt;/p&gt;
+&lt;p&gt;{% include image.html url=&quot;/assets/media/post/gFRU1O.png&quot; %}&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;def make_data(seq_data):
+    enc_input_all, dec_input_all, dec_output_all = [], [], []
 
-**粗体文本**
+    for seq in seq_data:
+        for i in range(2):
+            seq[i] = seq[i] + &apos;?&apos; * (n_step - len(seq[i])) # &apos;man??&apos;, &apos;women&apos;
 
-**_粗斜体文本_**
+        enc_input = [letter2idx[n] for n in (seq[0] + &apos;E&apos;)] # [&apos;m&apos;, &apos;a&apos;, &apos;n&apos;, &apos;?&apos;, &apos;?&apos;, &apos;E&apos;]
+        dec_input = [letter2idx[n] for n in (&apos;S&apos; + seq[1])] # [&apos;S&apos;, &apos;w&apos;, &apos;o&apos;, &apos;m&apos;, &apos;e&apos;, &apos;n&apos;]
+        dec_output = [letter2idx[n] for n in (seq[1] + &apos;E&apos;)] # [&apos;w&apos;, &apos;o&apos;, &apos;m&apos;, &apos;e&apos;, &apos;n&apos;, &apos;E&apos;]
+
+        enc_input_all.append(np.eye(n_class)[enc_input])
+        dec_input_all.append(np.eye(n_class)[dec_input])
+        dec_output_all.append(dec_output) # not one-hot
+
+    # make tensor
+    return torch.Tensor(enc_input_all), torch.Tensor(dec_input_all), torch.LongTensor(dec_output_all)
+
+&apos;&apos;&apos;
+enc_input_all: [6, n_step+1 (because of &apos;E&apos;), n_class]
+dec_input_all: [6, n_step+1 (because of &apos;S&apos;), n_class]
+dec_output_all: [6, n_step+1 (because of &apos;E&apos;)]
+&apos;&apos;&apos;
+enc_input_all, dec_input_all, dec_output_all = make_data(seq_data)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;预览：&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;斜体文本&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;粗体文本&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;粗斜体文本&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;h3&gt;链接&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;文字链接 [链接名称](http://链接网址)
+&lt;p&gt;Ví có ba dữ liệu trả về ở đây, vì vậy cần tùy chỉnh Dataset, cụ thể là kế thừa lớp &lt;code&gt;torch.utils.data.Dataset&lt;/code&gt;, sau đó triển khai các phương thức &lt;code&gt;__len__&lt;/code&gt; và &lt;code&gt;__getitem__&lt;/code&gt; bên trong.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;class TranslateDataSet(Data.Dataset):
+    def __init__(self, enc_input_all, dec_input_all, dec_output_all):
+        self.enc_input_all = enc_input_all
+        self.dec_input_all = dec_input_all
+        self.dec_output_all = dec_output_all
+    
+    def __len__(self): # return dataset size
+        return len(self.enc_input_all)
+    
+    def __getitem__(self, idx):
+        return self.enc_input_all[idx], self.dec_input_all[idx], self.dec_output_all[idx]
+
+loader = Data.DataLoader(TranslateDataSet(enc_input_all, dec_input_all, dec_output_all), batch_size, True)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;预览：&lt;/p&gt;
-&lt;p&gt;文字链接 &lt;a href=&quot;http://xn--ses510ahtve0t&quot;&gt;链接名称&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;行内代码&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;这是一条 `单行代码`
+&lt;p&gt;Xác định mô hình seq2seq bên dưới, tôi sử dụng RNN đơn giản làm Encoder và Decoder. Nếu bạn đã quen thuộc với RNN thì thực sự không có gì phải nói về việc xác định cấu trúc mạng, tôi cũng đã viết nhận xét rất rõ ràng, bao gồm cả những thay đổi về kích thước dữ liệu.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Model
+class Seq2Seq(nn.Module):
+    def __init__(self):
+        super(Seq2Seq, self).__init__()
+        self.encoder = nn.RNN(input_size=n_class, hidden_size=n_hidden, dropout=0.5) # encoder
+        self.decoder = nn.RNN(input_size=n_class, hidden_size=n_hidden, dropout=0.5) # decoder
+        self.fc = nn.Linear(n_hidden, n_class)
+
+    def forward(self, enc_input, enc_hidden, dec_input):
+        # enc_input(=input_batch): [batch_size, n_step+1, n_class]
+        # dec_inpu(=output_batch): [batch_size, n_step+1, n_class]
+        enc_input = enc_input.transpose(0, 1) # enc_input: [n_step+1, batch_size, n_class]
+        dec_input = dec_input.transpose(0, 1) # dec_input: [n_step+1, batch_size, n_class]
+
+        # h_t : [num_layers(=1) * num_directions(=1), batch_size, n_hidden]
+        _, h_t = self.encoder(enc_input, enc_hidden)
+        # outputs : [n_step+1, batch_size, num_directions(=1) * n_hidden(=128)]
+        outputs, _ = self.decoder(dec_input, h_t)
+
+        model = self.fc(outputs) # model : [n_step+1, batch_size, n_class]
+        return model
+
+model = Seq2Seq().to(device)
+criterion = nn.CrossEntropyLoss().to(device)
+optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;预览：&lt;/p&gt;
-&lt;p&gt;这是一条 &lt;code&gt;行内代码&lt;/code&gt;&lt;/p&gt;
-&lt;h3&gt;代码块&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;```js
-// calculate fibonacci
-function fibonacci(n) {
-  if (n &amp;lt;= 1) return 1
-  return fibonacci(n - 1) + fibonacci(n - 2)
-}
-```
+&lt;p&gt;Sau đây là phần training. Vì giá trị đầu ra là dữ liệu ba chiều nên việc tính toán loss đòi hỏi phải tính toán từng mẫu riêng biệt, do đó có mã vòng for sau đây.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;for epoch in range(5000):
+  for enc_input_batch, dec_input_batch, dec_output_batch in loader:
+      # make hidden shape [num_layers * num_directions, batch_size, n_hidden]
+      h_0 = torch.zeros(1, batch_size, n_hidden).to(device)
+
+      (enc_input_batch, dec_intput_batch, dec_output_batch) = (enc_input_batch.to(device), dec_input_batch.to(device), dec_output_batch.to(device))
+      # enc_input_batch : [batch_size, n_step+1, n_class]
+      # dec_intput_batch : [batch_size, n_step+1, n_class]
+      # dec_output_batch : [batch_size, n_step+1], not one-hot
+      pred = model(enc_input_batch, h_0, dec_intput_batch)
+      # pred : [n_step+1, batch_size, n_class]
+      pred = pred.transpose(0, 1) # [batch_size, n_step+1(=6), n_class]
+      loss = 0
+      for i in range(len(dec_output_batch)):
+          # pred[i] : [n_step+1, n_class]
+          # dec_output_batch[i] : [n_step+1]
+          loss += criterion(pred[i], dec_output_batch[i])
+      if (epoch + 1) % 1000 == 0:
+          print(&apos;Epoch:&apos;, &apos;%04d&apos; % (epoch + 1), &apos;cost =&apos;, &apos;{:.6f}&apos;.format(loss))
+          
+      optimizer.zero_grad()
+      loss.backward()
+      optimizer.step()
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;预览：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;// calculate fibonacci
-function fibonacci(n) {
-  if (n &amp;lt;= 1) return 1
-  return fibonacci(n - 1) + fibonacci(n - 2)
-}
+&lt;p&gt;Như có thể thấy từ mã testing bên dưới, trong quá trình testing, đầu vào của Decoder là một phần giữ chỗ vô nghĩa và độ dài của vị trí bị chiếm giữ là độ dài tối đa &lt;code&gt;n_step&lt;/code&gt;. Và tìm vị trí của dấu kết thúc đầu tiên ở đầu ra, chặn tất cả các ký tự trước nó.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Test
+def translate(word):
+    enc_input, dec_input, _ = make_data([[word, &apos;?&apos; * n_step]])
+    enc_input, dec_input = enc_input.to(device), dec_input.to(device)
+    # make hidden shape [num_layers * num_directions, batch_size, n_hidden]
+    hidden = torch.zeros(1, 1, n_hidden).to(device)
+    output = model(enc_input, hidden, dec_input)
+    # output : [n_step+1, batch_size, n_class]
+
+    predict = output.data.max(2, keepdim=True)[1] # select n_class dimension
+    decoded = [letter[i] for i in predict]
+    translated = &apos;&apos;.join(decoded[:decoded.index(&apos;E&apos;)])
+
+    return translated.replace(&apos;?&apos;, &apos;&apos;)
+
+print(&apos;test&apos;)
+print(&apos;man -&amp;gt;&apos;, translate(&apos;man&apos;))
+print(&apos;mans -&amp;gt;&apos;, translate(&apos;mans&apos;))
+print(&apos;king -&amp;gt;&apos;, translate(&apos;king&apos;))
+print(&apos;black -&amp;gt;&apos;, translate(&apos;black&apos;))
+print(&apos;up -&amp;gt;&apos;, translate(&apos;up&apos;))
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;当前使用 shiki 作为代码高亮插件，支持的语言请参考 &lt;a href=&quot;https://shiki.matsu.io/languages.html&quot;&gt;shiki / languages&lt;/a&gt;。&lt;/p&gt;
-&lt;h3&gt;行内公式&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;这是一条行内公式 $e^{i\pi} + 1 = 0$
+&lt;h2&gt;Mã hoàn chỉnh như sau&lt;/h2&gt;
+&lt;p&gt;Phần thực thi bạn có thể xem tại notebook trên kaggle tại &lt;a href=&quot;https://www.kaggle.com/code/overvisual/seq2seq-torch?scriptVersionId=145596925&quot;&gt;https://www.kaggle.com/code/overvisual/seq2seq-torch?scriptVersionId=145596925&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# code by Tae Hwan Jung(Jeff Jung) @graykode, modify by zhaospei
+import torch
+import numpy as np
+import torch.nn as nn
+import torch.utils.data as Data
+
+device = torch.device(&apos;cuda&apos; if torch.cuda.is_available() else &apos;cpu&apos;)
+# S: Symbol that shows starting of decoding input
+# E: Symbol that shows starting of decoding output
+# ?: Symbol that will fill in blank sequence if current batch data size is short than n_step
+
+letter = [c for c in &apos;SE?abcdefghijklmnopqrstuvwxyz&apos;]
+letter2idx = {n: i for i, n in enumerate(letter)}
+
+seq_data = [[&apos;man&apos;, &apos;women&apos;], [&apos;black&apos;, &apos;white&apos;], [&apos;king&apos;, &apos;queen&apos;], [&apos;girl&apos;, &apos;boy&apos;], [&apos;up&apos;, &apos;down&apos;], [&apos;high&apos;, &apos;low&apos;]]
+
+# Seq2Seq Parameter
+n_step = max([max(len(i), len(j)) for i, j in seq_data]) # max_len(=5)
+n_hidden = 128
+n_class = len(letter2idx) # classfication problem
+batch_size = 3
+
+def make_data(seq_data):
+    enc_input_all, dec_input_all, dec_output_all = [], [], []
+
+    for seq in seq_data:
+        for i in range(2):
+            seq[i] = seq[i] + &apos;?&apos; * (n_step - len(seq[i])) # &apos;man??&apos;, &apos;women&apos;
+
+        enc_input = [letter2idx[n] for n in (seq[0] + &apos;E&apos;)] # [&apos;m&apos;, &apos;a&apos;, &apos;n&apos;, &apos;?&apos;, &apos;?&apos;, &apos;E&apos;]
+        dec_input = [letter2idx[n] for n in (&apos;S&apos; + seq[1])] # [&apos;S&apos;, &apos;w&apos;, &apos;o&apos;, &apos;m&apos;, &apos;e&apos;, &apos;n&apos;]
+        dec_output = [letter2idx[n] for n in (seq[1] + &apos;E&apos;)] # [&apos;w&apos;, &apos;o&apos;, &apos;m&apos;, &apos;e&apos;, &apos;n&apos;, &apos;E&apos;]
+
+        enc_input_all.append(np.eye(n_class)[enc_input])
+        dec_input_all.append(np.eye(n_class)[dec_input])
+        dec_output_all.append(dec_output) # not one-hot
+
+    # make tensor
+    return torch.Tensor(enc_input_all), torch.Tensor(dec_input_all), torch.LongTensor(dec_output_all)
+
+&apos;&apos;&apos;
+enc_input_all: [6, n_step+1 (because of &apos;E&apos;), n_class]
+dec_input_all: [6, n_step+1 (because of &apos;S&apos;), n_class]
+dec_output_all: [6, n_step+1 (because of &apos;E&apos;)]
+&apos;&apos;&apos;
+enc_input_all, dec_input_all, dec_output_all = make_data(seq_data)
+
+class TranslateDataSet(Data.Dataset):
+    def __init__(self, enc_input_all, dec_input_all, dec_output_all):
+        self.enc_input_all = enc_input_all
+        self.dec_input_all = dec_input_all
+        self.dec_output_all = dec_output_all
+    
+    def __len__(self): # return dataset size
+        return len(self.enc_input_all)
+    
+    def __getitem__(self, idx):
+        return self.enc_input_all[idx], self.dec_input_all[idx], self.dec_output_all[idx]
+
+loader = Data.DataLoader(TranslateDataSet(enc_input_all, dec_input_all, dec_output_all), batch_size, True)
+
+# Model
+class Seq2Seq(nn.Module):
+    def __init__(self):
+        super(Seq2Seq, self).__init__()
+        self.encoder = nn.RNN(input_size=n_class, hidden_size=n_hidden, dropout=0.5) # encoder
+        self.decoder = nn.RNN(input_size=n_class, hidden_size=n_hidden, dropout=0.5) # decoder
+        self.fc = nn.Linear(n_hidden, n_class)
+
+    def forward(self, enc_input, enc_hidden, dec_input):
+        # enc_input(=input_batch): [batch_size, n_step+1, n_class]
+        # dec_inpu(=output_batch): [batch_size, n_step+1, n_class]
+        enc_input = enc_input.transpose(0, 1) # enc_input: [n_step+1, batch_size, n_class]
+        dec_input = dec_input.transpose(0, 1) # dec_input: [n_step+1, batch_size, n_class]
+
+        # h_t : [num_layers(=1) * num_directions(=1), batch_size, n_hidden]
+        _, h_t = self.encoder(enc_input, enc_hidden)
+        # outputs : [n_step+1, batch_size, num_directions(=1) * n_hidden(=128)]
+        outputs, _ = self.decoder(dec_input, h_t)
+
+        model = self.fc(outputs) # model : [n_step+1, batch_size, n_class]
+        return model
+
+model = Seq2Seq().to(device)
+criterion = nn.CrossEntropyLoss().to(device)
+optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+
+for epoch in range(5000):
+  for enc_input_batch, dec_input_batch, dec_output_batch in loader:
+      # make hidden shape [num_layers * num_directions, batch_size, n_hidden]
+      h_0 = torch.zeros(1, batch_size, n_hidden).to(device)
+
+      (enc_input_batch, dec_intput_batch, dec_output_batch) = (enc_input_batch.to(device), dec_input_batch.to(device), dec_output_batch.to(device))
+      # enc_input_batch : [batch_size, n_step+1, n_class]
+      # dec_intput_batch : [batch_size, n_step+1, n_class]
+      # dec_output_batch : [batch_size, n_step+1], not one-hot
+      pred = model(enc_input_batch, h_0, dec_intput_batch)
+      # pred : [n_step+1, batch_size, n_class]
+      pred = pred.transpose(0, 1) # [batch_size, n_step+1(=6), n_class]
+      loss = 0
+      for i in range(len(dec_output_batch)):
+          # pred[i] : [n_step+1, n_class]
+          # dec_output_batch[i] : [n_step+1]
+          loss += criterion(pred[i], dec_output_batch[i])
+      if (epoch + 1) % 1000 == 0:
+          print(&apos;Epoch:&apos;, &apos;%04d&apos; % (epoch + 1), &apos;cost =&apos;, &apos;{:.6f}&apos;.format(loss))
+          
+      optimizer.zero_grad()
+      loss.backward()
+      optimizer.step()
+    
+# Test
+def translate(word):
+    enc_input, dec_input, _ = make_data([[word, &apos;?&apos; * n_step]])
+    enc_input, dec_input = enc_input.to(device), dec_input.to(device)
+    # make hidden shape [num_layers * num_directions, batch_size, n_hidden]
+    hidden = torch.zeros(1, 1, n_hidden).to(device)
+    output = model(enc_input, hidden, dec_input)
+    # output : [n_step+1, batch_size, n_class]
+
+    predict = output.data.max(2, keepdim=True)[1] # select n_class dimension
+    decoded = [letter[i] for i in predict]
+    translated = &apos;&apos;.join(decoded[:decoded.index(&apos;E&apos;)])
+
+    return translated.replace(&apos;?&apos;, &apos;&apos;)
+
+print(&apos;test&apos;)
+print(&apos;man -&amp;gt;&apos;, translate(&apos;man&apos;))
+print(&apos;mans -&amp;gt;&apos;, translate(&apos;mans&apos;))
+print(&apos;king -&amp;gt;&apos;, translate(&apos;king&apos;))
+print(&apos;black -&amp;gt;&apos;, translate(&apos;black&apos;))
+print(&apos;up -&amp;gt;&apos;, translate(&apos;up&apos;))
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;预览：&lt;/p&gt;
-&lt;p&gt;这是一条行内公式 $e^{i\pi} + 1 = 0$&lt;/p&gt;
-&lt;h3&gt;公式块&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;$$
-\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} \, dx
-$$
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;预览：&lt;/p&gt;
+&lt;h2&gt;Tham khảo&lt;/h2&gt;
+&lt;p&gt;[1] &lt;a href=&quot;https://www.kaggle.com/code/overvisual/seq2seq-torch?scriptVersionId=145596925&quot;&gt;https://www.kaggle.com/code/overvisual/seq2seq-torch?scriptVersionId=145596925&lt;/a&gt;&lt;/p&gt;
+</content:encoded><h:img src="/_astro/pytorch.BgBWJuWz.png"/><enclosure url="/_astro/pytorch.BgBWJuWz.png"/></item><item><title>Attention is All You Need</title><link>https://zhaospei.github.io/blog/attention-is-all-you-need</link><guid isPermaLink="true">https://zhaospei.github.io/blog/attention-is-all-you-need</guid><description>Transformer là mô hình seq2seq được Google Brain đề xuất trong một bài báo xuất bản vào cuối năm 2017</description><pubDate>Fri, 06 Oct 2023 08:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;code&gt;Transformer&lt;/code&gt; là mô hình seq2seq được Google Brain đề xuất trong một bài báo xuất bản vào cuối năm 2017. Giờ đây, nó đã đạt được nhiều ứng dụng và tiện ích mở rộng và &lt;code&gt;BERT&lt;/code&gt; là mô hình ngôn ngữ được đào tạo trước có nguồn gốc từ Transformer.&lt;/p&gt;
+&lt;p&gt;Việc đào tạo &lt;code&gt;RNN&lt;/code&gt; truyền thống là nối tiếp và nó phải đợi từ hiện tại được xử lý trước khi có thể xử lý từ tiếp theo. Transformer được huấn luyện song song, tức là tất cả các từ đều được huấn luyện cùng một lúc, điêu này làm tăng đáng kể hiệu quả tính toán.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;src/assets/media/post/transformer-model-architecture.png&quot; alt=&quot;Kiến trúc mô hình Transformer&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;Self-Attention&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;Scaled Dot-Product Attention&lt;/code&gt; là tích chấm chuẩn hóa Attention, chi tiết cụ thể được thể hiện trong hình.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;src/assets/media/post/attention.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;$$
-\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} , dx
+Attention(Q,K,V)=softmax(\dfrac{QK^T}{\sqrt{d_k}})V
 $$&lt;/p&gt;
-&lt;p&gt;当前使用 KaTeX 作为数学公式插件，支持的语法请参考 &lt;a href=&quot;https://katex.org/docs/supported.html&quot;&gt;KaTeX Supported Functions&lt;/a&gt;。&lt;/p&gt;
-&lt;h4&gt;图片&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;![CWorld](https://cravatar.cn/avatar/1ffe42aa45a6b1444a786b1f32dfa8aa?s=200)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;预览：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://cravatar.cn/avatar/1ffe42aa45a6b1444a786b1f32dfa8aa?s=200&quot; alt=&quot;CWorld&quot; /&gt;&lt;/p&gt;
-&lt;h4&gt;删除线&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;~~删除线~~
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;预览：&lt;/p&gt;
-&lt;p&gt;&lt;s&gt;删除线&lt;/s&gt;&lt;/p&gt;
-&lt;h3&gt;列表&lt;/h3&gt;
-&lt;p&gt;普通无序列表&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;- 1
-- 2
-- 3
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;预览：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;1&lt;/li&gt;
-&lt;li&gt;2&lt;/li&gt;
-&lt;li&gt;3&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;普通有序列表&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;1. GPT-4
-2. Claude Opus
-3. LLaMa
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;预览：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;GPT-4&lt;/li&gt;
-&lt;li&gt;Claude Opus&lt;/li&gt;
-&lt;li&gt;LLaMa&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;列表里可以继续嵌套语法&lt;/p&gt;
-&lt;h3&gt;引用&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt; 枪响，雷鸣，剑起。繁花血景。
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;预览：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;枪响，雷鸣，剑起。繁花血景。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;引用里也可以继续嵌套语法。&lt;/p&gt;
-&lt;h3&gt;换行&lt;/h3&gt;
-&lt;p&gt;markdown 分段落是需要空一行的。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;如果不空行
-就会在一段
-
-第一段
-
-第二段
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;预览：&lt;/p&gt;
-&lt;p&gt;如果不空行
-就会在一段&lt;/p&gt;
-&lt;p&gt;第一段&lt;/p&gt;
-&lt;p&gt;第二段&lt;/p&gt;
-&lt;h3&gt;分隔符&lt;/h3&gt;
-&lt;p&gt;如果你有写分割线的习惯，可以新起一行输入三个减号&lt;code&gt;---&lt;/code&gt; 或者星号 &lt;code&gt;***&lt;/code&gt;。当前后都有段落时，请空出一行：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;---
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;预览：&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h2&gt;高级技巧&lt;/h2&gt;
-&lt;h3&gt;行内 HTML 元素&lt;/h3&gt;
-&lt;p&gt;目前只支持部分段内 HTML 元素效果，包括 &lt;code&gt;&amp;lt;kdb&amp;gt; &amp;lt;b&amp;gt; &amp;lt;i&amp;gt; &amp;lt;em&amp;gt; &amp;lt;sup&amp;gt; &amp;lt;sub&amp;gt; &amp;lt;br&amp;gt;&lt;/code&gt; ，如&lt;/p&gt;
-&lt;h4&gt;键位显示&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;使用 &amp;lt;kbd&amp;gt;Ctrl&amp;lt;/kbd&amp;gt; + &amp;lt;kbd&amp;gt;Alt&amp;lt;/kbd&amp;gt; + &amp;lt;kbd&amp;gt;Del&amp;lt;/kbd&amp;gt; 重启电脑
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;预览：&lt;/p&gt;
-&lt;p&gt;使用 &amp;lt;kbd&amp;gt;Ctrl&amp;lt;/kbd&amp;gt; + &amp;lt;kbd&amp;gt;Alt&amp;lt;/kbd&amp;gt; + &amp;lt;kbd&amp;gt;Del&amp;lt;/kbd&amp;gt; 重启电脑&lt;/p&gt;
-&lt;h4&gt;粗斜体&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;b&amp;gt; Markdown 在此处同样适用，如 _加粗_ &amp;lt;/b&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;预览：&lt;/p&gt;
-&lt;p&gt;&amp;lt;b&amp;gt; Markdown 在此处同样适用，如 &lt;em&gt;加粗&lt;/em&gt; &amp;lt;/b&amp;gt;&lt;/p&gt;
-&lt;h3&gt;其他 HTML 写法&lt;/h3&gt;
-&lt;h4&gt;折叠块&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;details&amp;gt;&amp;lt;summary&amp;gt;点击展开&amp;lt;/summary&amp;gt;它被隐藏了&amp;lt;/details&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;预览：&lt;/p&gt;
-&lt;p&gt;&amp;lt;details&amp;gt;&amp;lt;summary&amp;gt;点击展开&amp;lt;/summary&amp;gt;它被隐藏了&amp;lt;/details&amp;gt;&lt;/p&gt;
-&lt;h3&gt;表格&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;| 表头1 | 表头2 |
-| ----- | ----- |
-| 内容1 | 内容2 |
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;预览：&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;表头1&lt;/th&gt;
-&lt;th&gt;表头2&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;内容1&lt;/td&gt;
-&lt;td&gt;内容2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3&gt;注释&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;在引用的地方使用 [^注释] 来添加注释。
-
-然后在文档的结尾，添加注释的内容（会默认于文章结尾渲染之）。
-
-[^注释]: 这里是注释的内容
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;预览：&lt;/p&gt;
-&lt;p&gt;在引用的地方使用 &lt;a href=&quot;%E8%BF%99%E9%87%8C%E6%98%AF%E6%B3%A8%E9%87%8A%E7%9A%84%E5%86%85%E5%AE%B9&quot;&gt;^注释&lt;/a&gt; 来添加注释。&lt;/p&gt;
-&lt;p&gt;然后在文档的结尾，添加注释的内容（会默认于文章结尾渲染之）。&lt;/p&gt;
-&lt;h3&gt;To-Do 列表&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;- [ ] 未完成的任务
-- [x] 已完成的任务
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;预览：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;[ ] 未完成的任务&lt;/li&gt;
-&lt;li&gt;[x] 已完成的任务&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;特别引用块&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt; [!NOTE]
-&amp;gt; 在浏览内容时，用户也应该知道的有用信息。
-
-&amp;gt; [!TIP]
-&amp;gt; 可以更好或更容易地完成事情的有用建议。
-
-&amp;gt; [!IMPORTANT]
-&amp;gt; 用户需要知道的关键信息。
-
-&amp;gt; [!WARNING]
-&amp;gt; 需要用户立即关注以避免问题的紧急信息。
-
-&amp;gt; [!CAUTION]
-&amp;gt; 就某些行为的风险或负面结果提供建议。
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;预览：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;[!NOTE]
-在浏览内容时，用户也应该知道的有用信息。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;[!TIP]
-可以更好或更容易地完成事情的有用建议。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;[!IMPORTANT]
-用户需要知道的关键信息。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;[!WARNING]
-需要用户立即关注以避免问题的紧急信息。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;[!CAUTION]
-就某些行为的风险或负面结果提供建议。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3&gt;符号转义&lt;/h3&gt;
-&lt;p&gt;如果你的描述中需要用到 markdown 的符号，比如 _ # * 等，但又不想它被转义，这时候可以在这些符号前加反斜杠，如 &lt;code&gt;\_&lt;/code&gt; &lt;code&gt;\#&lt;/code&gt; &lt;code&gt;\*&lt;/code&gt; 进行避免。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;\_不想这里的文本变斜体\_
-
-\*\*不想这里的文本被加粗\*\*
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;预览：&lt;/p&gt;
-&lt;p&gt;_不想这里的文本变斜体_&lt;/p&gt;
-&lt;p&gt;**不想这里的文本被加粗**&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h2&gt;内嵌 Astro 组件&lt;/h2&gt;
-&lt;p&gt;源代码位于 &lt;code&gt;src/components&lt;/code&gt; 目录下，一般不用于写作，而是用于页面的客制化。&lt;/p&gt;
-&lt;p&gt;你可以仿照现有组件的写法，自行添加新的组件。&lt;/p&gt;
-</content:encoded><h:img src="/_astro/thumbnail.HAXFr_hw.jpg"/><enclosure url="/_astro/thumbnail.HAXFr_hw.jpg"/></item><item><title>Markdown Syntax Support</title><link>https://zhaospei.github.io/blog/markdown</link><guid isPermaLink="true">https://zhaospei.github.io/blog/markdown</guid><description>Markdown is a lightweight &quot;markup language.&quot;</description><pubDate>Fri, 26 Jul 2024 08:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;Basic Syntax&lt;/h2&gt;
-&lt;p&gt;Markdown is a lightweight and easy-to-use syntax for styling your writing.&lt;/p&gt;
-&lt;h3&gt;Headers&lt;/h3&gt;
-&lt;p&gt;When the content of the article is extensive, you can use headers to segment:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# Header 1
-
-## Header 2
-
-## Large Header
-
-### Small Header
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Header previews would disrupt the structure of the article, so they are not displayed here.&lt;/p&gt;
-&lt;h3&gt;Bold and Italics&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;_Italic text_
-
-**Bold text**
-
-**_Bold Italic text_**
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Italic text&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Bold text&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Bold Italic text&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;h3&gt;Links&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;Text link [Link Name](http://link-url)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
-&lt;p&gt;Text link &lt;a href=&quot;http://link-url&quot;&gt;Link Name&lt;/a&gt;&lt;/p&gt;
-&lt;h3&gt;Inline Code&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;This is an `inline code`
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
-&lt;p&gt;This is an &lt;code&gt;inline code&lt;/code&gt;&lt;/p&gt;
-&lt;h3&gt;Code Blocks&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;```js
-// calculate fibonacci
-function fibonacci(n) {
-  if (n &amp;lt;= 1) return 1
-  return fibonacci(n - 1) + fibonacci(n - 2)
-}
-```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;// calculate fibonacci
-function fibonacci(n) {
-  if (n &amp;lt;= 1) return 1
-  return fibonacci(n - 1) + fibonacci(n - 2)
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Currently using shiki as the code highlighting plugin. For supported languages, refer to &lt;a href=&quot;https://shiki.matsu.io/languages.html&quot;&gt;shiki / languages&lt;/a&gt;.&lt;/p&gt;
-&lt;h3&gt;Inline Formula&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;This is an inline formula $e^{i\pi} + 1 = 0$
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
-&lt;p&gt;This is an inline formula $e^{i\pi} + 1 = 0$&lt;/p&gt;
-&lt;h3&gt;Formula Blocks&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;$$
-\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} \, dx
-$$
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;Sự chú ý của nhiều đầu vào sử dụng nhiều bộ trọng số (&lt;code&gt;weights&lt;/code&gt;) ($$ W_q,W_k,W_v $$), ghép lại cho ra kết quả cuối cùng.&lt;/p&gt;
 &lt;p&gt;$$
-\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i x \xi} , dx
+MultiHead(Q,K,V)=Concat(head_1,...,head_h)W^O
 $$&lt;/p&gt;
-&lt;p&gt;Currently using KaTeX as the math formula plugin. For supported syntax, refer to &lt;a href=&quot;https://katex.org/docs/supported.html&quot;&gt;KaTeX Supported Functions&lt;/a&gt;.&lt;/p&gt;
-&lt;h4&gt;Images&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;![CWorld](https://cravatar.cn/avatar/1ffe42aa45a6b1444a786b1f32dfa8aa?s=200)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://cravatar.cn/avatar/1ffe42aa45a6b1444a786b1f32dfa8aa?s=200&quot; alt=&quot;CWorld&quot; /&gt;&lt;/p&gt;
-&lt;h4&gt;Strikethrough&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;~~Strikethrough~~
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
-&lt;p&gt;&lt;s&gt;Strikethrough&lt;/s&gt;&lt;/p&gt;
-&lt;h3&gt;Lists&lt;/h3&gt;
-&lt;p&gt;Regular unordered list&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;- 1
-- 2
-- 3
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;trong đó&lt;/p&gt;
+&lt;p&gt;$$
+head_i=Attention(QW^Q_i,KW^K_i,VW^V_i)
+$$&lt;/p&gt;
+&lt;p&gt;Trong đó $$h = 8$$, $$ d_q=d_k=d_v=d_{model}/4=64 $$.&lt;/p&gt;
+&lt;h2&gt;Encoder&lt;/h2&gt;
+&lt;p&gt;Encoder được xếp chồng lên nhau bởi sáu lớp giống hệt nhau, mỗi lớp bao gồm hai lớp con - cơ chế tự chú ý nhiều đầu (&lt;code&gt;multi-head self-attention mechanism&lt;/code&gt;) và mạng nơ ron vị trí chuyển tiếp được kết nối đầy đủ (&lt;code&gt;position-wise fully connected feed-forward network&lt;/code&gt;). Mỗi lớp con sử dụng các kết nối dư (&lt;code&gt;residual connection&lt;/code&gt;) và lớp chuẩn hóa (&lt;code&gt;layer normalization&lt;/code&gt;). Kích thước đầu ra của các lớp con là $$ d_{model} = 512 $$.&lt;/p&gt;
+&lt;p&gt;Đầu ra của lớp con có thể được biểu diễn dưới dạng:&lt;/p&gt;
+&lt;p&gt;$$
+LayerNorm(x+Sublayer(x))
+$$&lt;/p&gt;
+&lt;h3&gt;position-wise fully connected feed-forward network&lt;/h3&gt;
+&lt;p&gt;Mạng nơ-ron chuyển tiếp được kết nối đầy đủ (&lt;code&gt;position-wise fully connected feed-forward network&lt;/code&gt;) bao gồm hai phép biến đổi tuyến tính với kích hoạt &lt;code&gt;ReLU&lt;/code&gt; ở giữa.&lt;/p&gt;
+&lt;p&gt;$$
+FFN(x)=ReLU(xW_1+b_1)W_2+b_2
+$$&lt;/p&gt;
+&lt;p&gt;Kích thước lớp bên trong (inner-layer) là 2048.&lt;/p&gt;
+&lt;h3&gt;residual connection&lt;/h3&gt;
+&lt;p&gt;Mạng dư (&lt;code&gt;Residual Network&lt;/code&gt;), các kết nối tắt có khả năng bỏ qua một hoặc nhiều lớp, do sự tồn tại của kết nối tắt nên hiệu suất của mạng sâu (có nhiều lớp) không kém hơn so với các mạng nông (mạng có ít lớp). Phương pháp này giải quyết vấn đề suy thoái do các lớp chập xếp chồng lên nhau gây ra, số lượng lớp của mạng nơ-ron tích chập đã được tăng lên rất nhiều lên hàng trăm lớp, và cải thiện đáng kể hiệu suất của mạng thần kinh tích chập (&lt;code&gt;resnet&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;src/assets/media/post/resnet.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;Batch Norm và Layer Norm&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;src/assets/media/post/normalization.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Đặt kích thước hình ảnh đầu vào là $$ [N, C, H, W] $$:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;1&lt;/li&gt;
-&lt;li&gt;2&lt;/li&gt;
-&lt;li&gt;3&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Batch Norm&lt;/code&gt;, chuẩn hóa theo từng batch NHW, là để chuẩn hóa đầu vào từng kênh đơn, đều này không hiệu quả đối với &lt;code&gt;batch-size&lt;/code&gt; nhỏ.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Layer Norm&lt;/code&gt;, chuẩn hóa theo từng layer CHW, là để chuẩn hóa đầu vào ở mỗi độ sâu, chủ yếu có tác dụng rõ ràng trên RNN.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Regular ordered list&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;1. GPT-4
-2. Claude Opus
-3. LLaMa
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
+&lt;p&gt;Sự hiểu biết cá nhân:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dành cho CNN, nếu hạt nhân tích chập quét hình ảnh đầu vào, nó được tính là thao tác tích chập, cần có tổng thao tác batchsize. Do đó, chuẩn hóa cần được thực hiện theo batch.&lt;/li&gt;
+&lt;li&gt;Dành cho RNN, batchsize thường là 1, số vòng lặp là số độ dài đầu vào (số channel). Do đó, chuẩn hóa cần được thực hiện theo channel.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Toàn bộ kiến trúc Encoder&lt;/h2&gt;
+&lt;h3&gt;input &amp;amp; positional embedding&lt;/h3&gt;
+&lt;p&gt;$$
+X=Embedding-Lookup(X)+Positional-Encoding
+$$&lt;/p&gt;
+&lt;h3&gt;multi-head attention&lt;/h3&gt;
+&lt;p&gt;$$
+Q=Linear_q(X)=XW_q
+$$&lt;/p&gt;
+&lt;p&gt;$$
+K=Linear_q(X)=XW_k
+$$&lt;/p&gt;
+&lt;p&gt;$$
+V=Linear_v(X)=XW_v
+$$&lt;/p&gt;
+&lt;p&gt;$$
+X_{attention}=Self-Attention(Q,K,V)
+$$&lt;/p&gt;
+&lt;h3&gt;add &amp;amp; norm&lt;/h3&gt;
+&lt;p&gt;$$
+X_{attention}=LayerNorm(X+X_{attention})
+$$&lt;/p&gt;
+&lt;h3&gt;feed forward&lt;/h3&gt;
+&lt;p&gt;$$
+X_{hidden}=Linear(ReLU(Linear(X_{attention})))
+$$&lt;/p&gt;
+&lt;h3&gt;add &amp;amp; norm&lt;/h3&gt;
+&lt;p&gt;$$
+X_{hidden}=LayerNorm(X_{hidden}+X_{attention})
+$$&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;multi-head attention&lt;/code&gt; trong &lt;code&gt;Encoder&lt;/code&gt; là một cơ chế tự chú ý (&lt;code&gt;self-attention mechanism&lt;/code&gt;). $$k$$, $$q$$ và $$v$$ trong cơ chế tự chú ý đều xuất phát từ cùng một vị trí, mỗi lớp của Encoder có thể nhận được tất cả vị trí của lớp trước.&lt;/p&gt;
+&lt;h2&gt;Decoder&lt;/h2&gt;
+&lt;p&gt;Decoder bao gồm sáu lớp giống hệt xếp chồng lên nhau; trong Multi-head Attention, $$q$$ được đến từ lớp trước đó của Decoder, k và v đến từ đầu ra của Encoder. Điều cho phép mỗi vị trí trong Decoder nhận biết được tất cả các vị trí của chuỗi đầu vào.&lt;/p&gt;
+&lt;p&gt;Ngoài hai lớp con trong Encoder, Decoder thêm một lớp con mới xử lý đầu ra của Encoder - &lt;code&gt;masked multi-head self-attention mechanism&lt;/code&gt;. Encoder trong seq2seq truyền thống sử dụng mô hình RNN, vì vậy nếu các từ tại thời điểm t được nhập vào trong quá trình huấn luyện thì mô hình sẽ không thể nhìn thấy các từ trước đó vào các thời điểm trong tương lai, bởi vì RNN hoạt động theo thời gian và chỉ khi thao tác tại thời điểm t hoàn thành, chỉ khi đó ta mới có thể nhìn thấy các từ tại thời điểm t + 1. Và Transformer Decoder đã không sử dụng RNN, thay đổi sang Self-Attention, điều này tạo ra một vấn đề, trong quá trình huấn luyện, toàn bộ ground truth đã được hiển thị với Decoder, điều này rõ ràng là sai, chúng ta cần phải thực hiện một số xử lý trên đầu vào của Decoder, quá trình này được gọi là &lt;code&gt;Mask&lt;/code&gt; - Đặt tất cả các giá trị sau postion thành $$-\infty $$ trước khi vào softmax.&lt;/p&gt;
+&lt;p&gt;Ví dụ, ground truth của Decoder là &quot;&amp;lt;start&amp;gt; I am fine&quot;, chúng ta cho câu này vào bộ Decoder, sau khi Word Embedding và Positional Encoding, thực hiện phép biến đổi tuyến tính bậc 3 trên ma trận thu được $$(W_Q,W_K,W_V)$$ Sau đó thực hiện self-attention, trước tiên, nhận Scaled Scores thông qua $$\dfrac{Q×K^T}{\sqrt{d_k}}$$, bước tiếp theo rất quan trọng, chúng ta cần mask theo Scaled Scores, ví dụ, khi nhập &quot;I&quot;, hiện tại mô hình chỉ biết thông tin của tất cả các từ trước đó của &quot;I&quot;, tức thông tin của &quot;&amp;lt;start&amp;gt;&quot; và &quot;I&quot;, không được phép biết được thông tin của các từ sau &quot;I&quot;. Lý do rất đơn giản, khi dự đoán là chúng ta dự đoán theo thứ tự từng chữ, làm sao có thể biết được thông tin của những từ sau trước khi dự đoán xong từ này? Mask rất đơn giản, đầu tiên tạo một ma trận có tam giác hoàn toàn phía dưới bằng 0 và tam giác hoàn tòan phía trên bằng âm vô cùng, sau đó chỉ cần thêm nó vào Scaled Scores.&lt;/p&gt;
+&lt;h2&gt;Word Embedding và Positional Embedding&lt;/h2&gt;
+&lt;h3&gt;Word Embedding&lt;/h3&gt;
+&lt;p&gt;Phần nhúng từ sử dụng nhúng từ có thể học được, kích thước của nó là $$d_{model}$$.
+Hình thức mã hóa &lt;code&gt;One-hot&lt;/code&gt; ngắn gọn, nhưng quá thưa thớt, nó không phản ánh sự giống nhau về nghĩa của từ. Vì vậy hãy sử dụng &lt;code&gt;the Skip-Gram Model&lt;/code&gt; hoặc &lt;code&gt;continuous bag of words model&lt;/code&gt; hoặc các nhúng từ khác có thể học được khác.&lt;/p&gt;
+&lt;h3&gt;Positional Embedding&lt;/h3&gt;
+&lt;p&gt;Bởi vì mô hình không bao gồm các cấu trúc tuần hoàn, vì vậy nắm bắt được các thông tin thứ tự tuần tự, ví dụ nếu $$K$$ và $$V$$ được xóa trộn theo từng hàng thì kết quả sau Attention sẽ giống nhau. Tuy nhiên, thông tin tuần tự rất quan trọng và thể hiện cấu trúc toàn cầu, do đó thông tin position tuyệt đối và tương đối của token tuần tự phải được sử dụng.&lt;/p&gt;
+&lt;h4&gt;Nhúng vị trí tùy chinh&lt;/h4&gt;
+&lt;p&gt;Một ý tưởng là lấy một số trong khoảng $$[0, 1]$$ và gán nó cho mỗi từ, trong đó 0 được trao cho từ đầu tiên, 1 cho từ cuối cùng, công thức cụ thể là $$PE=\dfrac{pos}{T−1}$$. Vấn đề của việc gán theo công thức này là nó bị phụ thuộc và kích thước của văn bản. Tức
+là văn bản có số kí tự là 30. Khi đó theo công thức trên, thì khoảng cách giữa hai từ sẽ là 0.0333. Khi văn bản khác có số lượng kí từ &amp;lt; 30, thì con số 0.0333 vẫn mô tả đúng vị trí tương đối giữa chúng, tuy nhiên với văn bản &amp;gt; 30, ví dụ 90 thì 0.0333 đang gộp khoảng cách thực tế đang được phân tách bởi hai ký tự. Điều này rõ ràng là không phù hợp, vì sự khác biệt giống nhau không có nghĩa là giống nhau trong các câu khác nhau.&lt;/p&gt;
+&lt;p&gt;Một ý tưởng khác là gắn tuyến tính mỗi bước theo thời gian, nghĩa là từ đầu tiên được gán là 1, từ thứ hai được gán là 2, ... Phương pháp này cũng có những vấn đề lớn: 1. Nó lớn hơn giá trị nhúng từ thông từ, có thể gây nhiễu cho mô hình; 2. Ký tự cuối cùng lớn hơn nhiều ký tự đầu tiên, sau khi hợp nhất với các từ nhúng, giá trị của các đặc trưng sẽ bị sai lệch.&lt;/p&gt;
+&lt;h4&gt;Nhúng từ vị trí &quot;lý tuởng&quot;&lt;/h4&gt;
+&lt;p&gt;Một lý tưởng là thiết kế nhúng vị trí phải đáp ứng những tiêu chí sau:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Nó sẽ xuất ra mã hóa duy nhất cho mỗi từ.&lt;/li&gt;
+&lt;li&gt;Sự khác biệt giữa hai từ phải nhất quán giữa các câu có độ dài khác nhau.&lt;/li&gt;
+&lt;li&gt;Giá trị của nó phải được giới hạn.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Do đó việc nhúng vị trí sin và cosin đã được sử dụng cho Transformer.&lt;/p&gt;
+&lt;p&gt;Bây giờ hãy định nghĩa lại Positional Embedding, kích thước của việc nhúng vị trí là &lt;code&gt;[max_sequence_length, embedding_dimension]&lt;/code&gt;, kích thước của phần nhúng vị trí giống với kích thước của vector từ, đều bằng &lt;code&gt;embedding_dimension&lt;/code&gt;. &lt;code&gt;max_sequence_length&lt;/code&gt; là một hyperparameter, đề cập đến số lượng tối đa mà một câu bao gồm.&lt;/p&gt;
+&lt;p&gt;Kích thước của việc nhúng vị trí cũng giống như kích thước của việc nhúng từ, cùng là $$d_{model}$$. Công thước tính toán của nó là:&lt;/p&gt;
+&lt;p&gt;$$
+PE_{(pos,2i)}=sin(pos/10000^{2i/d_{model}})
+$$&lt;/p&gt;
+&lt;p&gt;$$
+PE_{(pos,2i+1)}=cos(pos/10000^{2i/d_{model}})
+$$&lt;/p&gt;
+&lt;p&gt;Trong đó, $$pos$$ đại diện cho chỉ mục vị trí, $$i$$ đại diện cho chỉ số chiều. Nghĩa là mỗi chiều $$i$$ của positional embedding pos tương ứng với một sóng sin.&lt;/p&gt;
+&lt;p&gt;Trong hình dưới này minh họa cho cách tính position embedding của tác giả với số chiều là 6. Giá trị của các vector tại mỗi vị trí được tính toán theo công thức ở hình dưới.
+&lt;img src=&quot;src/assets/media/post/pe.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Bản thân việc nhúng vị trí là một thông tin vị trí tuyệt đối, nhưng trong ngôn ngữ, vị trí tương đối cũng rất quan trọng, bởi vì&lt;/p&gt;
+&lt;p&gt;$$
+sin(\alpha+\beta)=sin\alpha cos\beta+cos\alpha sin\beta\cos(\alpha+\beta)=cos\alpha cos\beta-sin\alpha sin\beta
+$$&lt;/p&gt;
+&lt;p&gt;cho thấy vector tại vị trí $$p + k$$ có thể được biểu diễn dưới dạng phép biến đổi tuyến tính của vectơ tại vị trí $$p$$, điều này cung cấp khả năng thể hiện thông tin vị trí tương đối. Phiên bản hình sin cũng cho phép mô hình ngoại suy với độ dài chuỗi dài hơn so với độ dài chuỗi gặp phải trong quá trình huấn luyện.&lt;/p&gt;
+&lt;h2&gt;Q &amp;amp; A&lt;/h2&gt;
+&lt;h3&gt;Tại sao Transformer cần Multi-head Attention ?&lt;/h3&gt;
+&lt;p&gt;Bài báo đề cập lý do việc tiến hành Multi-head Attention là để chia mô hình thành nhiều đầu để tạo thành nhiều không gian con, cho phép mô hình chú ý đến các khía cạnh khác nhau của thông tin và cuối cùng tổng hợp thông tin từ tất cả các khía cạnh. Trên thực tế, có thể hình dung bằng trực giác rằng nếu bạn tự thiết kế một mô hình như vậy, attention sẽ không chỉ được thực hiện một lần, kết quả tổng hợp của nhiều lần chú ý ít nhất có thể nâng cao mô hình và cũng có thể được so sánh với vai trò của việc sử dụng nhiều tích chập cùng lúc trong CNN, theo trực giác, sự chú ý của nhiều người đứng đầu giúp mạng nắm bắt được các tính năng/ thông tin phong phú hơn.&lt;/p&gt;
+&lt;h3&gt;Ưu điểm của Transformer so với RNN/LSTM là gì? Tại sao?&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;GPT-4&lt;/li&gt;
-&lt;li&gt;Claude Opus&lt;/li&gt;
-&lt;li&gt;LLaMa&lt;/li&gt;
+&lt;li&gt;Các mô hình RNN không thể tính toán song song vì việc tính toán tại thời điểm T phụ thuộc vào kết quả tính toán của lớp ẩn tại thời điểm T - 1, còn việc tính toán tại thời điểm T - 1 lại phụ thuộc tính toán của lớp ẩn tại thời điểm T - 2.&lt;/li&gt;
+&lt;li&gt;Khả năng trích xuất đặc trưng của Transformer tốt hơn so với các mô hình RNN.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;You can continue to nest syntax within lists.&lt;/p&gt;
-&lt;h3&gt;Blockquotes&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt; Gunshot, thunder, sword rise. A scene of flowers and blood.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Gunshot, thunder, sword rise. A scene of flowers and blood.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;You can continue to nest syntax within blockquotes.&lt;/p&gt;
-&lt;h3&gt;Line Breaks&lt;/h3&gt;
-&lt;p&gt;Markdown needs a blank line to separate paragraphs.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;If you don&apos;t leave a blank line
-it will be in one paragraph
-
-First paragraph
-
-Second paragraph
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
-&lt;p&gt;If you don&apos;t leave a blank line
-it will be in one paragraph&lt;/p&gt;
-&lt;p&gt;First paragraph&lt;/p&gt;
-&lt;p&gt;Second paragraph&lt;/p&gt;
-&lt;h3&gt;Separators&lt;/h3&gt;
-&lt;p&gt;If you have the habit of writing separators, you can start a new line and enter three dashes &lt;code&gt;---&lt;/code&gt; or asterisks &lt;code&gt;***&lt;/code&gt;. Leave a blank line before and after when there are paragraphs:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;---
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h2&gt;Advanced Techniques&lt;/h2&gt;
-&lt;h3&gt;Inline HTML Elements&lt;/h3&gt;
-&lt;p&gt;Currently, only some inline HTML elements are supported, including &lt;code&gt;&amp;lt;kdb&amp;gt; &amp;lt;b&amp;gt; &amp;lt;i&amp;gt; &amp;lt;em&amp;gt; &amp;lt;sup&amp;gt; &amp;lt;sub&amp;gt; &amp;lt;br&amp;gt;&lt;/code&gt;, such as&lt;/p&gt;
-&lt;h4&gt;Key Display&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;Use &amp;lt;kbd&amp;gt;Ctrl&amp;lt;/kbd&amp;gt; + &amp;lt;kbd&amp;gt;Alt&amp;lt;/kbd&amp;gt; + &amp;lt;kbd&amp;gt;Del&amp;lt;/kbd&amp;gt; to reboot the computer
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
-&lt;p&gt;Use &amp;lt;kbd&amp;gt;Ctrl&amp;lt;/kbd&amp;gt; + &amp;lt;kbd&amp;gt;Alt&amp;lt;/kbd&amp;gt; + &amp;lt;kbd&amp;gt;Del&amp;lt;/kbd&amp;gt; to reboot the computer&lt;/p&gt;
-&lt;h4&gt;Bold Italics&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;b&amp;gt; Markdown also applies here, such as _bold_ &amp;lt;/b&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
-&lt;p&gt;&amp;lt;b&amp;gt; Markdown also applies here, such as &lt;em&gt;bold&lt;/em&gt; &amp;lt;/b&amp;gt;&lt;/p&gt;
-&lt;h3&gt;Other HTML Writing&lt;/h3&gt;
-&lt;h4&gt;Foldable Blocks&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;details&amp;gt;&amp;lt;summary&amp;gt;Click to expand&amp;lt;/summary&amp;gt;It is hidden&amp;lt;/details&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
-&lt;p&gt;&amp;lt;details&amp;gt;&amp;lt;summary&amp;gt;Click to expand&amp;lt;/summary&amp;gt;It is hidden&amp;lt;/details&amp;gt;&lt;/p&gt;
-&lt;h3&gt;Tables&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;| Header1  | Header2  |
-| -------- | -------- |
-| Content1 | Content2 |
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Header1&lt;/th&gt;
-&lt;th&gt;Header2&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Content1&lt;/td&gt;
-&lt;td&gt;Content2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3&gt;Footnotes&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;Use [^footnote] to add a footnote at the point of reference.
-
-Then, at the end of the document, add the content of the footnote (it will be rendered at the end of the article by default).
-
-[^footnote]: Here is the content of the footnote
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
-&lt;p&gt;Use [^footnote] to add a footnote at the point of reference.&lt;/p&gt;
-&lt;p&gt;Then, at the end of the document, add the content of the footnote (it will be rendered at the end of the article by default).&lt;/p&gt;
-&lt;p&gt;[^footnote]: Here is the content of the footnote&lt;/p&gt;
-&lt;h3&gt;To-Do Lists&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;- [ ] Incomplete task
-- [x] Completed task
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;[ ] Incomplete task&lt;/li&gt;
-&lt;li&gt;[x] Completed task&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;Special Blockquotes&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt; [!NOTE]
-&amp;gt; Useful information that users should also know when browsing the content.
-
-&amp;gt; [!TIP]
-&amp;gt; Useful tips for doing things better or easier.
-
-&amp;gt; [!IMPORTANT]
-&amp;gt; Key information that users need to know.
-
-&amp;gt; [!WARNING]
-&amp;gt; Urgent information that requires users&apos; immediate attention to avoid problems.
-
-&amp;gt; [!CAUTION]
-&amp;gt; Provides advice on the risks or negative consequences of certain actions.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;[!NOTE]
-Useful information that users should also know when browsing the content.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;[!TIP]
-Useful tips for doing things better or easier.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;[!IMPORTANT]
-Key information that users need to know.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;[!WARNING]
-Urgent information that requires users&apos; immediate attention to avoid problems.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;[!CAUTION]
-Provides advice on the risks or negative consequences of certain actions.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3&gt;Symbol Escaping&lt;/h3&gt;
-&lt;p&gt;If you need to use markdown symbols like _ # * in your description but don&apos;t want them to be escaped, you can add a backslash before these symbols, such as &lt;code&gt;\_&lt;/code&gt; &lt;code&gt;\#&lt;/code&gt; &lt;code&gt;\*&lt;/code&gt; to avoid it.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;\_Don&apos;t want the text here to be italic\_
-
-\*\*Don&apos;t want the text here to be bold\*\*
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Preview:&lt;/p&gt;
-&lt;p&gt;_Don&apos;t want the text here to be italic_&lt;/p&gt;
-&lt;p&gt;**Don&apos;t want the text here to be bold**&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h2&gt;Embedding Astro Components&lt;/h2&gt;
-&lt;p&gt;The source code is located in the &lt;code&gt;src/components&lt;/code&gt; directory, generally not for writing, but for page customization.&lt;/p&gt;
-&lt;p&gt;You can add new components by following the writing style of existing components.&lt;/p&gt;
-</content:encoded><h:img src="/_astro/thumbnail.HAXFr_hw.jpg"/><enclosure url="/_astro/thumbnail.HAXFr_hw.jpg"/></item></channel></rss>
+&lt;h3&gt;Tại sao Transformer có thể thay thế seq2seq?&lt;/h3&gt;
+&lt;p&gt;Từ thay thế ở đây hơi không phù hợp, seq2seq tuy cũ nhưng vẫn có chỗ đứng, vấn đề lớn nhất của seq2seq là ở chỗ &lt;strong&gt;Nén thông tin ở phía Encoder thành một vector có độ dài cố định&lt;/strong&gt; và sử dụng nó làm đầu vào của trạng thái đầu tiên ở phía Decoder, để dự đoán trạng thái ẩn của từ đầu tiên (mã thông báo) ở phía Decoder. Khi chuỗi đầu vào tương đối dài, điều này rõ ràng sẽ mất rất nhiều thông tin ở phía Encoder và vector cố định sẽ được gửi đến phía Decoder cùng một lúc, &lt;strong&gt;bên Decoder không thể chú ý đến thông tin mà nó muốn chú ý&lt;/strong&gt;. Mô hinh transformer không chỉ cải thiện đáng kể hai khuyết điểm này của mô hình seq2seq (Mô-đun attention tương tác nhiều đầu), và cũng giới thiệu mô-đun self-attention, trước tiên hãy để trình tự nguồn và trình tự đích được &quot;tự liên kết&quot;, trong trường hợp này, thông tin chứa trong embedding của trình tự nguồn và trình tự đích sẽ phong phú hơn và lớp FFN tiếp theo cũng nâng cao khả năng biểu đạt của mô hình, và tính toán song song của Transfomer vượt xa các model seq2seq.&lt;/p&gt;
+&lt;h2&gt;Tham khảo&lt;/h2&gt;
+&lt;p&gt;[1] &lt;a href=&quot;https://arxiv.org/abs/1706.03762&quot;&gt;Attention is All You Need&lt;/a&gt;&lt;/p&gt;
+</content:encoded><h:img src="/_astro/transformers.B3j2LRDv.jpg"/><enclosure url="/_astro/transformers.B3j2LRDv.jpg"/></item><item><title>Từ nơ-ron sinh học đến nơ-ron nhân tạo</title><link>https://zhaospei.github.io/blog/neuron2neuron</link><guid isPermaLink="true">https://zhaospei.github.io/blog/neuron2neuron</guid><description>Con người lấy cảm hứng từ các loài chim để bay,...</description><pubDate>Sat, 13 May 2023 08:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Con người lấy cảm hứng từ các loài chim để bay, loài sứa biển để điều trị ung thư, da cá mập để làm bề mặt vật liệu chống bám và còn rất nhiều phát minh khác lấy cảm hứng từ thiên nhiên.&lt;/p&gt;
+&lt;p&gt;Vì thế, rất dễ hiểu khi ta xem xét cấu trúc bộ não sinh học để tìm cảm hứng cho việc xây dựng một bộ máy thông minh. Đây cũng chính là ý tưởng đằng sau của &lt;strong&gt;Mạng nơ-ron nhân tạo (artificial neural network - ANN)&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Tuy nhiên, dù máy bay lấy cảm hứng từ loài chim, chúng lại không cần phải vỗ cánh. Tương tự, ANN đã dần trở nên rất khác biệt so với phiên bản sinh học của nó. Một số nhà nghiên cứu còn cho rằng chúng ta nên ngừng sử dụng phép so sánh với sinh học (ví dụ như sử dụng từ &quot;&lt;em&gt;đơn vị&lt;/em&gt;&quot; - &quot;&lt;em&gt;unit&lt;/em&gt;&quot; - thay cho &quot;&lt;em&gt;nơ-ron&lt;/em&gt;&quot;), vì lo rằng phép so sánh này sẽ giới hạn sự sáng tạo trong các hệ thống hợp lý về mặt sinh học.&lt;/p&gt;
+&lt;h2&gt;Nơ-ron Sinh học&lt;/h2&gt;
+&lt;p&gt;Trước khi chúng ta bàn về nơ-ron nhân tạo, chúng ta cùng tìm hiểu qua nơ-ron sinh học. &lt;em&gt;Nơ-ron sinh học&lt;/em&gt; là một tế bào với vẻ ngoài khác thường được tìm thấy trong não động vật. Nó bao gồm một &lt;em&gt;thân tế bào&lt;/em&gt; chứa nhân và hầu hết các thành phần phức tạp khác, với các nhánh mở rộng được gọi là &lt;em&gt;sợi nhánh&lt;/em&gt;, cùng với một phần mở rộng rất dài được gọi là &lt;em&gt;sợi trục&lt;/em&gt;. Chiều dài của sợi trục lớn hơn thân tế bào từ vài lần cho đến hàng chục nghìn lần. Ở gần cuối, sợi trục tách thành nhiều nhành được gọi là &lt;em&gt;telodendria&lt;/em&gt;, và tại đỉnh của những nhành này là các cấu trúc siêu nhỏ được gọi là &lt;em&gt;điểm tiếp hợp synap&lt;/em&gt; (hoặc đơn giản là &lt;em&gt;synap&lt;/em&gt;), được nối với các sợi nhánh hoặc thân tế bào của những nơ-ron khác. Các nơ-ron sinh học sinh ra các xung điện ngắn được gọi là &lt;em&gt;điện thế hoạt động&lt;/em&gt; (hoặc đơn giản  là &lt;em&gt;tín hiệu&lt;/em&gt;). Chúng di chuyển dọc theo sợi trục và kích thích synap giải phóng ra tín hiệu hoá học được gọi &lt;em&gt;chất dẫn truyền thần kinh&lt;/em&gt;. Khi một nơ-ron nhận đủ một lượng chất dẫn truyền thần kinh này trong một vài mili giây, nó sẽ phát ra các xung điện của chính nó (thật ra, điều này còn phụ thuộc vào chất dẫn truyền thần kinh bởi có một số chất ức chế sự kích hoạt của nơ-ron).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;src/assets/media/post/no-ron-sinh-hocc.png&quot; alt=&quot;Nơ-ron sinh học&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Do đó, mặc dù các nơ-ron sinh học riêng lẻ dường như có cách hoạt động khá đơn giản, chúng lại được tổ chức trong một mạng lưới rộng lớn với hàng tỷ nơ-ron, và ở đố mỗi nơ-ron được kết nối với hàng nghìn nơ-ron khác. Các phép tính với độ phức tạp cao có thể được xử lý bởi một mạng nơ-ron khá đơn giản, tương tự như cách một tổ kiến phức tạp được tạo nên bởi nỗ lực tổng hợp từ những các thể kiến riêng lẻ. &lt;em&gt;Kiến trúc mạng nơ-ron sinh học (biological neural network - BNN)&lt;/em&gt; vẫn đang là chủ đề được tích cực nghiên cứ, tuy nhiên một vài phần của não đã được khám phá, và có vẻ như các nơ-ron thường được sắp xếp thành các tầng liên tiếp, đặc biệt là ở vùng đại não (lớp ngoài cùng của bộ não), như có thể thấy ở hình bên dưới.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;src/assets/media/post/cac-tang-trong-mang-no-ron-sinh-hoc.png&quot; alt=&quot;Các tầng trong mạng nơ-ron sinh học (Võ não người)&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;Nơ-ron Nhân tạo&lt;/h2&gt;
+&lt;p&gt;Mạng nơ-ron Nhân tạo là một phương thức, công cụ trong lĩnh vực trí tuệ nhân tạo, được lấy cảm hứng từ cấu trúc bộ não con người, để máy tính có thể xử lý dữ liệu một cách tự động. Đây là một loại Học máy(Machine Learning), còn được gọi là Học sâu (Deep Learning), sử dụng các nơ-ron kết nối với nhau trong một cấu trúc phân lớp tương tự như bộ não con người. Quá trình này cho phép máy tính học hỏi từ sai lầm và cải thiện liên tục, tạo ra một hệ thống thích ứng. Mạng nơ-ron nhân tạo được áp dụng để giải quyết các vấn đề phức tạp, chẳng hạn như tóm tắt tài liệu hoặc nhận diện khuôn mặt, với độ chính xác cao hơn.&lt;/p&gt;
+&lt;p&gt;Bộ não sinh học chính là nguồn cảm hứng cho kiến trúc mạng nơ ron. Các tế bào não của con người, có được gọi là nơ-ron, tạo thành một mạng lưới phức tạp, có tính liên kết cao và gửi các tín hiệu điện đến nhau để giúp con người xử lý thông tin. Tương tự, một mạng nơ-ron nhân tạo được tạo ra từ các tế bào nơ-ron nhân tạo, cùng nhau phối hợp để giải quyết một vấn đề. Nơ-ron nhân tạo là các mô đun phần mềm, được gọi là nút và mạng nơ-ron nhân tạo là các chương trình phần mềm hoặc thuật toán mà về cơ bản, sử dụng hệ thống máy tính để giải quyết các phép toán.&lt;/p&gt;
+&lt;p&gt;McCulloch và Pitts đề xuất một mô hình rất đơn giản để mô tả mạng nơ-ron sinh học, và mô hình này về sau được biết đến là nơ-ron nhân tạo: nó có một hoặc nhiều đầu vào nhị phân (bật/tắt) và một đầu ra nhị phân. Nơ-ron nhân tạo kích hoạt đầu vào của nó khi có nhiều hơn một lượng đầu vào nhất định được kích hoạt. Trong bài báo, họ đã chứng minh rằng ngay cả với một mô hình đơn giản như trên, ta vẫn có thể xây dựng một mạng chứa các nơ-ron nhân tạo với khả năng tính toán bất kỳ mệnh đề logic nào. Hình phía dưới là một vài ANN thực hiện các phép toán khác nhau, với giả định rằng một nơ-ron được kích hoạt khi ít nhất hai trong số các đầu vào của nó được kích hoạt.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;src/assets/media/post/ANN-phep-tinh-logic.png&quot; alt=&quot;ANN thực hiện các phép tính logic đơn giản&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;Các mạng nơ-ron nhân tạo được nghiên cứu và phát triển thay đổi liên tục trong nhiều năm, với nhiều kiến trúc mạng nơ-ron nhân tạo khác nhau. Ngày nay, một mạng nơ-ron nhân tạo bao gồm 3 &lt;em&gt;lớp (layer)&lt;/em&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Lớp đầu vào&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Thông tin từ thế giới bên ngoài đi vào mạng nơ-ron nhân tạo thông qua lớp đầu vào. Các nút đầu vào xử lý dữ liệu, phân tích hoặc phân loại và sau đó chuyển dữ liệu sang lớp tiếp theo.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Lớp ẩn&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Dữ liệu đi vào lớp ẩn đến từ lớp đầu vào hoặc các lớp ẩn khác. Mạng nơ-ron nhân tạo có thể có một số lượng lớn lớp ẩn. Mỗi lớp ẩn phân tích dữ liệu đầu ra từ lớp trước, xử lý dữ liệu đó sâu hơn và rồi chuyển dữ liệu sang lớp tiếp theo.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Lớp đầu ra&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Lớp đầu ra cho ra kết quả cuối cùng của tất cả dữ liệu được xử lý bởi mạng nơ-ron nhân tạo. Lớp này có thể có một hoặc nhiều nút. Ví dụ: giả sử chúng ta gặp phải một vấn đề phân loại nhị phân (có/không), lớp đầu ra sẽ có một nút đầu ra, nút này sẽ cho kết quả 1 hoặc 0. Tuy nhiên, nếu chúng ta gặp phải vấn đề phân loại nhiều lớp, lớp đầu ra sẽ có thể bao gồm nhiều hơn một nút đầu ra.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Kiến trúc mạng nơ-ron chuyên sâu&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Mạng nơ-ron chuyên sâu, hoặc mạng deep learning, có nhiều lớp ẩn với hàng triệu nơ-ron nhân tạo liên kết với nhau. Một con số, có tên gọi là trọng số, đại diện cho các kết nối giữa hai nút. Trọng số sẽ dương nếu một nút kích thích nút còn lại, hoặc âm nếu một nút ngăn cản nút còn lại. Các nút với trọng số cao hơn sẽ có ảnh hưởng lớn hơn lên các nút khác.&lt;/p&gt;
+&lt;p&gt;Về mặt lý thuyết, mạng nơ-ron chuyên sâu có thể ánh xạ bất kỳ loại dữ liệu đầu vào với bất kỳ loại dữ liệu đầu ra nào. Tuy nhiên, chúng cũng cần được đào tạo hơn rất nhiều so với các phương pháp máy học khác. Chúng cần hàng triệu ví dụ về dữ liệu đào tạo thay vì hàng trăm hoặc hàng nghìn ví dụ mà một mạng đơn giản hơn thường cần.&lt;/p&gt;
+&lt;p&gt;Phía dưới là một ví dụ cho kiến trúc mạng nơ-ron nhân tạo&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;src/assets/media/post/no-ron-nhan-tao.png&quot; alt=&quot;Mạng nơ-ron nhân tạo&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;Từ Nơ-ron Sinh học đến Nơ-ron Nhân tạo&lt;/h2&gt;
+&lt;p&gt;Một điều đáng nhiên là ANN đã tồn tại từ khá lâu: chúng được giới thiệu vào năm 1943 bởi nhà sinh lý học thần kinh &lt;strong&gt;Warren McCulloch&lt;/strong&gt; và nhà toán học &lt;strong&gt;Walter Pitts&lt;/strong&gt;. Trong bài báo mang tính bước ngoặt của họ &quot;&lt;em&gt;A Logical Calculus of Ideas Immanent in Nervous Activity&lt;/em&gt;&quot;, McCulloch và Pitts đã trình bày một mô hình tính toán giản lược của cách mà các nơ-ron sinh học có thể làm việc cùng nhau trong não bộ động vật để thực hiện các phép tính phức tạp bằng &lt;em&gt;logic mệnh đề (propositional logic)&lt;/em&gt;. Đây chính là kiến trúc mạng nơ-ron nhân tạo đầu tiên. Kể từ đó, hàng loạt các kiến trúc khác đã được phát minh, xử lý tính toán linh hoạt và hoạt động hiệu quả hơn.&lt;/p&gt;
+&lt;p&gt;Sự thành công sớm của ANN đã khiến nhiều người tin rằng họ sẽ sớm được nói chuyện với những cố máy thực sự thông minh. Vào thập niên 1960, khi rõ ràng là lời hứa này sẽ không được thực hiện (ít nhất là trong một khoảng thời gian dài), các nguồn tài trợ được chuyển sang lĩnh vực khác, và ANN bước vào một mùa đông dài. Vào thập niên 1980, các kiến trúc mới được phát minh và các kỹ thuật huấn luyện tốt hơn được phát triển, giúp cho &lt;em&gt;thuyết kết nối (connectionism - ngành nghiên cứu về mạng nơ-ron)&lt;/em&gt; bắt đầu được quan tâm trở lại. Tuy nhiên, tiến độ trong ngành này khá chậm, vào vào thập niên 1990, các kỹ thuật Học Máy mạnh mẽ khác đã được phát minh, ví dụ &lt;em&gt;Máy Vector Hỗ trợ&lt;/em&gt;,... Có vẻ những kỹ thuật này đem lại kết quả tốt hơn và nền tảng lý thuyết vững chắc hơn so với ANN, nên lần nữa việc nghiên cứu ANN lại bị trì hoãn.&lt;/p&gt;
+&lt;p&gt;Giờ đây, khi lượng dữ liệu lớn bùng nổ và sự phát triển vượt bậc về năng lực tính toán từ thập niên 1990, chúng ta lại đang chứng kiến thêm một làn sống quan tâm khác tới ANN. Liệu xu hướng này sẽ lại lụi tàn như trước?&lt;/p&gt;
+</content:encoded><h:img src="/_astro/no-ron-sinh-hoc.D7jpf-Pg.png"/><enclosure url="/_astro/no-ron-sinh-hoc.D7jpf-Pg.png"/></item><item><title>Welcome to the new world!</title><link>https://zhaospei.github.io/blog/about-this-blog</link><guid isPermaLink="true">https://zhaospei.github.io/blog/about-this-blog</guid><description>The first post in the world</description><pubDate>Wed, 22 Feb 2023 08:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Chào!
+Hmm, đầu tiên phải giới thiệu đôi chút về bản thân nhỉ? À chắc không cần, vì mấy cái câu giới thiệu bản thân tớ
+viết đi viết lại ở hầu hết mọi trang của blog rồi... LOL.&lt;/p&gt;
+&lt;p&gt;Lần đầu tiên viết bài, không biết viết như nào :)). Chắc tớ sẽ nói vì sao tớ lại tạo cái blog nào và cách tớ thực hiện nó.&lt;/p&gt;
+&lt;h2&gt;Tại sao tớ lại xây dựng cái blog này?&lt;/h2&gt;
+&lt;p&gt;À chắc cái blog này được tạo bởi vì các ý nghĩ vớ vẩn của tớ tại một thời điểm nào đấy.
+Tớ tạo blog này với mục đích ban đầu là tạo ra một chỗ lưu trữ những bài viết của tớ, nó có thể là các bài viết học thuật hay là
+những bài viết vớ vẩn chia sẻ trải nghiệm của bản thân tớ. Nhưng mục đích cuối cùng tớ muốn hướng tới là cải thiện khả năng viết
+lách của bản thân và tìm một niềm vui khác khi rảnh.&lt;/p&gt;
+&lt;h2&gt;Cách tớ thực hiện cái blog này...&lt;/h2&gt;
+&lt;p&gt;Ban đầu, tớ định dùng &lt;strong&gt;Django&lt;/strong&gt; để xây dựng blog nhưng nghĩ lại là dùng &lt;strong&gt;Django&lt;/strong&gt; thì host kiểu gì vì tớ không có tiền để duy trì hosting. Tớ cũng đã nghĩ đến các hosting free nhưng mà nó khá là ba chấm và deloy &lt;strong&gt;Django&lt;/strong&gt; rất rườm rà. Và rồi, tớ nghĩ sao tớ
+không dùng chính &lt;strong&gt;Github Pages&lt;/strong&gt; để host nhỉ? Cuối cùng, tớ đã quyết định dùng nó để host và sử dụng &lt;strong&gt;jekyll&lt;/strong&gt; để xây dựng blog.
+Và rồi, tớ đã bắt tay vào làm nó...&lt;/p&gt;
+&lt;p&gt;Về giao diện của blog, tớ lấy cảm hứng từ &lt;a href=&quot;https://reaganhenke.com/&quot;&gt;Reaganhenke&lt;/a&gt; và &lt;a href=&quot;https://www.digitalocean.com/&quot;&gt;Digital Ocean&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Tớ biết đến &lt;a href=&quot;https://reaganhenke.com/&quot;&gt;Reaganhenke&lt;/a&gt; nhờ vào một hôm tìm cái trang web nghe nhạc lofi để học. Sau khi tìm hiểu, tớ có biết đến &lt;a href=&quot;https://imissmycafe.com/&quot;&gt;I Miss My Cafe&lt;/a&gt;. Đây là một trang đối với tớ khá là hay, recommend cậu trang này nhé!(à cậu có thể vào để tìm hiểu về nó nhé :))). Tính tớ hay tò mò nên tớ đã lục lọi để tìm ra source của nó để clone lại một trang giống như vậy :)). Kết quả là tớ chỉ tìm được page của người làm ra nó. Và rồi, tớ bị thu hút bởi thiết kế của page, nhất là mấy cái card đầu của page. Haha, và rồi tớ lấy nó để làm giao diện.
+&lt;em&gt;(Reagan Henke, if you see this blog, please forgive me for using it without your permission!)&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Còn &lt;a href=&quot;https://www.digitalocean.com/&quot;&gt;Digital Ocean&lt;/a&gt; thì một lần tớ tìm tutorial và tìm ra nó. Đây cũng một trang chất lượng, recommend cậu trang này nữa nhé! (À thực ra ai cũng biết đến trang này :))).&lt;/p&gt;
+&lt;p&gt;Ngoài ra tớ còn sử dụng &lt;a href=&quot;https://vincentgarreau.com/particles.js/&quot;&gt;particles.js&lt;/a&gt; để làm mấy cái lines nối nhau trông rườm rà ở background và &lt;a href=&quot;https://talk.hyvor.com/&quot;&gt;Hyvor&lt;/a&gt; để làm phần comment (Tớ chỉ được dùng thử 15 ngày nên không biết 15 ngày sau nó có bị mất không :))).&lt;/p&gt;
+&lt;h2&gt;Mục đích hướng đến của blog...&lt;/h2&gt;
+&lt;p&gt;Blog này tớ dự định sẽ là chia sẻ những bài viết, chủ đề mà tớ tìm hiểu và nghiên cứu. Hiện tại, tớ đang theo Lab CNPM nên đa số bài viết sẽ liên quan đến chủ đề này. Nếu cậu cũng đang tìm hiểu về chủ đề này thì có thể đọc blog của tớ nhé để giúp tớ cản thiện bài viết của bản thân. Ngoài ra, tớ cũng đang tìm hiểu về AI/ML nữa. Cũng có thể sẽ là những bài viết chia sẻ những trải nghiệm của bản thân. Nhưng mà tớ rất là lười viết nên có thể rất lâu tớ mới viết một bài mới _D:.&lt;/p&gt;
+&lt;p&gt;Cậu cũng có thể gửi bài tới blog nhé. Rất là khuyến khích ủng hộ luôn.&lt;/p&gt;
+&lt;h2&gt;Mong muốn của tớ...&lt;/h2&gt;
+&lt;p&gt;Tớ tạo blog vì ý nghĩ nhất thời và mục đích cá nhân là nhiều nên tớ cũng không mong blog sẽ được biết đến rộng rãi. À được nhiều người biết thì cũng không sao. Mong rằng với những người biết đến blog của tớ sẽ nhận được điều gì đó mới mẻ khi đọc những bài viết vớ vẩn của tớ. Vậy thôi...&lt;/p&gt;
+&lt;p&gt;Cậu có thể xem source code của blog tớ tại &lt;a href=&quot;https://github.com/zhaospei/zhaospei.github.io&quot;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Cảm ơn cậu đã ghé thăm blog của tớ và đọc cái post mở đầu xàm này.
+Nếu có gì góp ý cho blog thì cậu comment phía dưới nhé, tớ sẽ sớm khắc phục. (À comment sớm nhé chứ phần comment chỉ được dùng thử 15 ngày :)).&lt;/p&gt;
+&lt;p&gt;&amp;lt;br&amp;gt;
+&amp;lt;div style=&quot;text-align: right&quot;&amp;gt;
+See yaaaaaaaaaaaaaaaaaaaaaaaaaaaa,
+&amp;lt;/div&amp;gt;&lt;/p&gt;
+&lt;p&gt;&amp;lt;div style=&quot;text-align: right&quot;&amp;gt;
+&amp;lt;strong&amp;gt;Zhao&amp;lt;/strong&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/p&gt;
+</content:encoded><h:img src="/_astro/about-this-blog.Cm-HNgCo.jpg"/><enclosure url="/_astro/about-this-blog.Cm-HNgCo.jpg"/></item></channel></rss>
