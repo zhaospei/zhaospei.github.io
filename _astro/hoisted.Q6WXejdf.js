@@ -1,1 +1,0 @@
-import"./hoisted.33BSnmmm.js";class e extends HTMLElement{constructor(){super()}connectedCallback(){fetch("https://v1.hitokoto.cn").then(t=>t.json()).then(t=>{let o=this.querySelector("#hitokoto");o&&(o.innerText=t.hitokoto)})}}customElements.define("hitokoto-component",e);
