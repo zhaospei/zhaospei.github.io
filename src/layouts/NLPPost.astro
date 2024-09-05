@@ -1,0 +1,102 @@
+---
+import type { CollectionEntry } from 'astro:content'
+
+import PageLayout from '@/layouts/BaseLayout.astro'
+import TOC from '@/components/pages/TOC.astro'
+import BlogHero from '@/components/blog/HeroNLP.astro'
+import Copyright from '@/components/blog/Copyright.astro'
+import ArticleBottom from '@/components/blog/ArticleBottom.astro'
+import Comment from '@/components/Comment.astro'
+import Button from '@/components/Button.astro'
+import BackToTop from '@/components/pages/BackToTop.astro'
+
+import '@waline/client/style'
+
+interface Props {
+  post: CollectionEntry<'post'>
+}
+
+const { post } = Astro.props
+const {
+  data: { description, ogImage, coverImage, publishDate, title, updatedDate }
+} = post
+const socialImage =
+  ogImage ??
+  (coverImage
+    ? typeof coverImage.src === 'string'
+      ? coverImage.src
+      : coverImage.src.src
+    : '/images/social-card.png')
+const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString()
+const { headings } = await post.render()
+const primaryColor = post.data.coverImage?.color ?? 'hsl(var(--primary) / var(--tw-text-opacity))'
+---
+
+<PageLayout
+  meta={{ articleDate, description, ogImage: socialImage, title }}
+  highlightColor={primaryColor}
+>
+  <div class='w-full'>
+    <Button title='Back' href='/blog' style='back' />
+    <div class='mt-8 gap-x-10 lg:flex lg:items-start'>
+      {!!headings.length && <TOC headings={headings} />}
+      <article
+        class='flex-grow break-words'
+        style='flex-grow: 3; flex-shrink: 1; flex-basis: 60%;'
+        data-pagefind-body
+      >
+        <div id='blog-hero'><BlogHero content={post} /></div>
+        <div
+          id='content'
+          class='animate prose prose-base prose-zinc mt-8 text-muted-foreground dark:prose-invert prose-headings:font-medium prose-headings:text-foreground prose-headings:before:absolute prose-headings:before:-ms-4 prose-th:before:content-none max-lg:mx-auto'
+        >
+          <slot />
+        </div>
+      </article>
+    </div>
+    <div
+      class='prose prose-base prose-zinc mt-8 text-muted-foreground dark:prose-invert prose-headings:font-medium prose-headings:text-foreground prose-headings:before:absolute prose-headings:before:-ms-4 prose-th:before:content-none'
+    >
+      <!-- copyright -->
+      <Copyright content={post} />
+      <!-- article recommend -->
+      <ArticleBottom content={post} class='mt-3 sm:mt-6' />
+      <!-- comment -->
+      {!post.data.draft && <Comment class='mt-3 sm:mt-6' />}
+    </div>
+    <BackToTop header='blog-hero' content='content' />
+  </div>
+</PageLayout>
+
+<style define:vars={{ primaryColor }}>
+  :global(.highlight) {
+    color: var(--primaryColor) !important;
+  }
+  :global(.highlight-bg) {
+    background-color: var(--primaryColor) !important;
+  }
+
+  #content :global(h2:target::before),
+  #content :global(h3:target::before) {
+    display: inline-block;
+    content: '#';
+    margin-inline-start: -30px;
+    width: 30px;
+  }
+
+  #content :global(blockquote) {
+    position: relative;
+    overflow: hidden;
+  }
+  #content :global(blockquote::after) {
+    position: absolute;
+    content: '”';
+    top: -5.4rem;
+    right: 0;
+    font-size: 10rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial,
+      sans-serif;
+    transform: rotate(-15deg);
+    opacity: 5%;
+  }
+</style>

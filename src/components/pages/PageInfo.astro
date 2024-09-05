@@ -1,6 +1,7 @@
 ---
 import { cn } from '@/utils'
 const { class: className, hideComment, path, ...props } = Astro.props
+console.log('path', path)
 ---
 
 <div class={cn('text-base text-sm text-muted-foreground', className)} {...props}>
