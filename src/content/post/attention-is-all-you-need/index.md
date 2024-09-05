@@ -10,7 +10,8 @@ coverImage: { src: 'src/assets/media/feature/transformers.jpg', color: '#64574D'
 language: 'Vietnamese'
 ---
 
-`Transformer` là mô hình seq2seq được Google Brain đề xuất trong một bài báo xuất bản vào cuối năm 2017. Giờ đây, nó đã đạt được nhiều ứng dụng và tiện ích mở rộng và `BERT` là mô hình ngôn ngữ được đào tạo trước có nguồn gốc từ Transformer.
+> [!NOTE]
+> `Transformer` là mô hình seq2seq được Google Brain đề xuất trong một bài báo xuất bản vào cuối năm 2017. Giờ đây, nó đã đạt được nhiều ứng dụng và tiện ích mở rộng và `BERT` là mô hình ngôn ngữ được đào tạo trước có nguồn gốc từ Transformer.
 
 Việc đào tạo `RNN` truyền thống là nối tiếp và nó phải đợi từ hiện tại được xử lý trước khi có thể xử lý từ tiếp theo. Transformer được huấn luyện song song, tức là tất cả các từ đều được huấn luyện cùng một lúc, điêu này làm tăng đáng kể hiệu quả tính toán.
 
