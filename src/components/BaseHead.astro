@@ -95,6 +95,16 @@ const { walineServerUrl } = siteConfig
 {/* Styles */}
 <link rel='stylesheet' href='/styles/global.css' />
 
+{/*-- Google tag (gtag.js) */}
+<script is:inline type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-ZXSL3CH9MS"></script>
+<script is:inline type="text/partytown">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZXSL3CH9MS');
+</script>
+
 {/* Transitions */}
 <script>
   import type { TransitionBeforeSwapEvent } from 'astro:transitions/client'

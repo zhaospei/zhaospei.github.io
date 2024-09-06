@@ -19,6 +19,7 @@ import remarkMath from 'remark-math'
 import remarkUnwrapImages from 'remark-unwrap-images'
 import { siteConfig } from './src/site.config.ts'
 import { remarkGithubCards, remarkReadingTime, remarkArxivCards } from './src/utils/remarkParser.ts'
+import partytown from '@astrojs/partytown'
 
 // https://astro.build/config
 export default defineConfig({
@@ -48,6 +49,11 @@ export default defineConfig({
     icon(),
     playformCompress({
       SVG: false
+    }),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
     })
   ],
   // root: './my-project-directory',

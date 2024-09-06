@@ -215,9 +215,11 @@ const headings = [
 
 <script is:inline type='module' data-astro-rerun>
   import { pageviewCount } from 'https://unpkg.com/@waline/client@v3/dist/pageview.js'
+  const realPath = window.location.pathname.endsWith('/') ? window.location.pathname : window.location.pathname + '/'
+  console.log('realPathPage', realPath)
 
   pageviewCount({
     serverURL: document.querySelector('meta[name="waline-server-url"]').getAttribute('content'),
-    path: window.location.pathname
+    path: realPath
   })
 </script>
