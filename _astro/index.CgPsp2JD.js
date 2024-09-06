@@ -1,4 +1,4 @@
-import{c as i,r as c,m as h,u as s}from"./hoisted.BgXd1hyF.js";import"./astro/assets-service.DxDlkXph.js";import"./_commonjsHelpers.C4iS2aBk.js";import"./hoisted.33BSnmmm.js";const n=`<p>Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp
+import{c as i,r as c,m as h,u as s}from"./hoisted.BH1iQ6Yg.js";import"./astro/assets-service.DxDlkXph.js";import"./_commonjsHelpers.C4iS2aBk.js";import"./hoisted.33BSnmmm.js";const n=`<p>Trong bài viết này, chúng ta sẽ tìm hiểu về một kỹ thuật kiểm thử tổ hợp (Combinatorial Testing) được gọi là Kiểm thử theo cặp
 (Pairwise Testing hay All-Pairs Testing).</p>
 <h2 id="định-nghĩa-thế-nào-là-all-pairs-testing">Định nghĩa: Thế nào là All-Pairs Testing?</h2>
 <p>Theo <strong>ISTQB</strong>, <strong>All-Pairs Testing (hay Pairwise Testing)</strong> là một kỹ thuật kiểm thử hộp đen trong đó các test cases được thiết kế để thực hiện tất cả các tổ hợp có thể có của từng cặp tham số đầu vào. Tức là với mỗi cặp input đầu vào, tất cả các giá trị của cặp input đấy được phủ toàn bộ (Một test case có thể phủ được nhiều cặp input khác nhau).</p>

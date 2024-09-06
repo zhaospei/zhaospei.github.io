@@ -1,4 +1,4 @@
-import{c as o,r as n,m as s,u as i}from"./hoisted.BgXd1hyF.js";import"./astro/assets-service.DxDlkXph.js";import"./_commonjsHelpers.C4iS2aBk.js";import"./hoisted.33BSnmmm.js";const e=`<p>To be completely honest, I had no particularly strong reasons to do a PhD. I in fact started it believing I would not finish. In the end, I picked based on gut, and my gut said that the PhD would be the most new and exciting possibility.</p>
+import{c as o,r as n,m as s,u as i}from"./hoisted.BH1iQ6Yg.js";import"./astro/assets-service.DxDlkXph.js";import"./_commonjsHelpers.C4iS2aBk.js";import"./hoisted.33BSnmmm.js";const e=`<p>To be completely honest, I had no particularly strong reasons to do a PhD. I in fact started it believing I would not finish. In the end, I picked based on gut, and my gut said that the PhD would be the most new and exciting possibility.</p>
 <p>If I were to go back and re-justify my choice to myself, with the power of hindsight, I’d say I asked myself <strong>“which option opens the most doors?”</strong></p>
 <blockquote>
 <p>Pick the option that opens the most doors.</p>
